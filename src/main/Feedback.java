@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table (name = "Feebback")
 
+
 public class Feedback {
 
 	@Id @Column (nullable = false, unique = true)
