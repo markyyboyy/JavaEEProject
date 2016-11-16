@@ -14,20 +14,12 @@ public class Feedback {
 		this.comment = comment;
 	}
 
-	public int getIdFeedback() {
-		return idFeedback;
-	}
-
 	public String getRating() {
 		return rating;
 	}
 	
 	public String getComment() {
 		return comment;
-	}
-
-	public void setIdFeedback(int idFeedback) {
-		this.idFeedback = idFeedback;
 	}
 
 	public void setRating(String rating) {

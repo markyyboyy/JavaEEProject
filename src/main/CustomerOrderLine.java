@@ -1,5 +1,6 @@
 public class CustomerOrderLine {
-
+	
+	private int id;
 	private int quantity;
 	private float price;
 	private CustomerOrder CustomerOrder_idOrder;
@@ -8,7 +9,8 @@ public class CustomerOrderLine {
 	public CustomerOrderLine() {
 	}
 
-	public CustomerOrderLine(int quantity, float price, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
+	public CustomerOrderLine(int id, int quantity, float price, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
+		this.id = id;
 		this.quantity = quantity;
 		this.price = price;
 		this.CustomerOrder_idOrder = CustomerOrder_idOrder;
