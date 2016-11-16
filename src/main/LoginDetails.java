@@ -1,17 +1,20 @@
 
+@Entity
+@Table(name="login Details")
 public class LoginDetails {
-
+	@Column (name="email",length=20,nullable=false,unique=true)
+	@Size(max = 20)
 	private String email;
+	@Column (name="password",length=45,nullable=false)
+	@Size(max = 45)
 	private String password;
-	private int id;
 
 	public LoginDetails() {
 	}
 
-	public LoginDetails(String email, String password,int id) {
+	public LoginDetails(String email, String password) {
 		this.email = email;
 		this.password = password;
-		this.id = id;
 	}
 
 	public String getEmail() {

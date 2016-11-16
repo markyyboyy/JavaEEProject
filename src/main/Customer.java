@@ -1,16 +1,57 @@
+import java.util.Calendar;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+import javax.persistance.Entity;
+import javax.persistance.Table;
+
+@Entity
+@Table(name="Customer")
 public class Customer {
 
-	private String sSurname;
-	private String sFirstname;
-	private String sFacebook;
-	private String sSecretAnswer;
-	private String sTelMain;
-	private Calendar dtDOB;
-	private LoginDetails loginDetails;
-	private int id;
-	// create enum for Acc Status
+	@Id @Column(nullable=false, unique=true)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	
+	@Column(nullable=false)
+	@NotNull
+	private String sSurname;
+	
+	@Column(nullable=false)
+	@NotNull
+	private String sFirstname;
+	
+	@Column(nullable=true)
+	private String sFacebook;
+	
+	@Column(nullable=false)
+	@NotNull
+	private String sSecretAnswer;
+	
+	@Column(nullable=true)
+	private String sTelMain;
+	
+	@Column(nullable=false)
+	@NotNull
+	private Calendar dtDOB;	
+
+	@OneToOne
+	@JoinColumn(name="loginDetails_id", nullable=false)
+	@NotNull
+	private LoginDetails loginDetails;
+		
+	@OneToMany
+	@JoinColumn(name="address_id", nullable=false)
+	@NotNull
+	private List<Address> address;
+	
+	
+		
 	public int getID(){
 		return this.id;
 	}	
@@ -39,7 +80,7 @@ public class Customer {
 		this.sFirstname = sFirstname;
 	}
 
-	public String getFacebook()
+	public String getFacebook(){
 		return this.sFirstname;
 	}
 
@@ -47,7 +88,7 @@ public class Customer {
 		this.sFacebook = sFacebook;
 	}
 
-	public String getSecretAnswer()
+	public String getSecretAnswer(){
 		return this.sSecretAnswer;
 	}
 
@@ -55,7 +96,7 @@ public class Customer {
 		this.sSecretAnswer = sSecretAnswer;
 	}
 
-	public String getTelephone()
+	public String getTelephone(){
 		return this.sTelMain;
 	}
 
@@ -63,8 +104,8 @@ public class Customer {
 		this.sTelMain = sTelMain;
 	}
 
-	public Calendar getDateOfBirth()
-		return this.sTelMain;
+	public Calendar getDateOfBirth(){
+		return this.dtDOB;
 	}
 
 	public void setDateOfBirth(Calendar dtDOB) {
@@ -77,7 +118,7 @@ public class Customer {
 
 	}
 	
-	public Customer(String sSurname, String sFirstname String sSecretAnswer,
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer,
 			Calendar dtDOB, LoginDetails loginDetails) {
 
 		this.sSurname = sSurname;

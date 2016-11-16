@@ -1,8 +1,31 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "Supplier_Supplies_Product")
+
 
 public class Supplier_Supplies_Product {
 	
+	@OneToOne
+	@JoinColumn(name = "Supplier_id", nullable = false)
+	@NotNull
 	private Supplier supplier;
+	
+	@OneToOne
+	@JoinColumn(name = "Product_id", nullable = false)
+	@NotNull
 	private	Product product;
+	
+	@Column(name = "price", nullable = false)
+	@NotNull
 	private float price;
 	
 	public Supplier_Supplies_Product()
