@@ -1,5 +1,6 @@
-
-class Product {
+@Entity
+class Product implements Serializable{
+		
 	private int productId;
 	private String name;
 	private String desc;
@@ -8,6 +9,7 @@ class Product {
 	private String colour;
 	private int size;
 	private int quantity;
+	private static final long serialVersionUID = 7526472295622776147L;
 
 	private enum status {
 		COMINGSOON, ACTIVE, DISCONTINUED

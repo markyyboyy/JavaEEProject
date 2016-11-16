@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,10 +29,10 @@ public class PurchaseOrder {
 	private String status;
 	
 	@Column(name = "datePlaced", nullable = true)
-	private Date datePlaced;
+	private Calendar datePlaced;
 	
 	@Column(name = "dateReceived", nullable = true)
-	private Date dateReceived;
+	private Calendar dateReceived;
 
 	public PurchaseOrder() {
 	}
@@ -80,22 +80,22 @@ public class PurchaseOrder {
 		this.status = status;
 	}
 	
-	public Date getdatePlaced()
+	public Calendar getdatePlaced()
 	{
 		return this.datePlaced;
 	}
 	
-	public void setdatePlaced(Date datePlaced)
+	public void setdatePlaced(Calendar datePlaced)
 	{
 		this.datePlaced = datePlaced;
 	}
 	
-	public Date getdateReceived()
+	public Calendar getdateReceived()
 	{
 		return this.dateReceived;
 	}
 	
-	public void setdateReceived(Date dateReceived)
+	public void setdateReceived(Calendar dateReceived)
 	{
 		this.dateReceived = dateReceived;
 	}
