@@ -1,8 +1,19 @@
 
+@Entity
+@Table (name = "Feebback")
+
 public class Feedback {
 
+	@Id @Column (nullable = false, unique = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idFeedback;
-	private String rating;
+	
+	@Size(min=3, max=225)
+	@Column(name="rating_id", nullable=true)
+	private int rating;
+	
+	@Size(min=3, max=225)
+	@Column(name="cooment_id", nullable=true)
 	private String comment;
 
 	public Feedback() {
@@ -14,7 +25,7 @@ public class Feedback {
 		this.comment = comment;
 	}
 
-	public String getRating() {
+	public int getRating() {
 		return rating;
 	}
 	
