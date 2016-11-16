@@ -5,9 +5,10 @@ private String NameOnCard;
 private String IssueNumber;
 private Customer Customer;
 private Address Address;
+private int id;
 
 public Payment() { }
-public LoginDetails(String Type,String CardNumber, Date ExpiryDate, String NameOnCard, String IssueNumber, Customer Customer, Address Address) {
+public LoginDetails(String Type,String CardNumber, Date ExpiryDate, String NameOnCard, String IssueNumber, Customer Customer, Address Address, int id) {
 	this.Type = Type;
 	this.CardNumber = CardNumber;
 	this.ExpiryDate = ExpiryDate;
@@ -15,6 +16,7 @@ public LoginDetails(String Type,String CardNumber, Date ExpiryDate, String NameO
 	this.IssueNumber = IssueNumber;
 	this.Customer = Customer;
 	this.Address = Address;
+	this.id = id;
 }
 public String getType(){
 	return this.Type;

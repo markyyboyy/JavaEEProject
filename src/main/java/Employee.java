@@ -1,7 +1,9 @@
 private LoginDetails logInDetails;
+private int id;
 public Employee() { }
-public Employee(LoginDetails logInDetails) {
+public Employee(LoginDetails logInDetails, int id) {
 	this.logInDetails = logInDetails;
+	this.id = id;
 }
 public String getLogInDetails(){
 	return this.logInDetails;
