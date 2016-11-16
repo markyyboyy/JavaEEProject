@@ -23,52 +23,52 @@ public class PurchaseOrder {
 		this.Supplier_idSupplier = Supplier_idSupplier;
 	}
 
-	public getOrder_idOrder()
+	public int getOrder_idOrder()
 	{
 		return this.Order_idOrder;
 	}
 	
-	public setOrder_idOrder(int Order_idOrder)
+	public void setOrder_idOrder(int Order_idOrder)
 	{
 		this.Order_idOrder = Order_idOrder;
 	}
 	
-	public getSupplier_idSupplier()
+	public Supplier getSupplier_idSupplier()
 	{
 		return this.Supplier_idSupplier;
 	}
 	
-	public setOrder_idOrder(int Supplier Supplier_idSupplier)
+	public void setOrder_idOrder(int Supplier Supplier_idSupplier)
 	{
 		this.Supplier_idSupplier = Supplier_idSupplier;
 	}
 	
-	public getstatus()
+	public String getstatus()
 	{
 		return this.status;
 	}
 	
-	public setstatus(int String status)
+	public void setstatus(int String status)
 	{
 		this.status = status;
 	}
 	
-	public getdatePlaced()
+	public Date getdatePlaced()
 	{
 		return this.datePlaced;
 	}
 	
-	public setdatePlaced(int Date datePlaced)
+	public void setdatePlaced(int Date datePlaced)
 	{
 		this.datePlaced = datePlaced;
 	}
 	
-	public getdateReceived()
+	public Date getdateReceived()
 	{
 		return this.dateReceived;
 	}
 	
-	public setdateReceived(int Date dateReceived)
+	public void setdateReceived(int Date dateReceived)
 	{
 		this.dateReceived = dateReceived;
 	}
