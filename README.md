@@ -1,3 +1,3 @@
 # JavaEEProject
 
-# NB GARDNES :(
+# NB GARDENS :(
