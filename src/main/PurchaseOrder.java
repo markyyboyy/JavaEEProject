@@ -21,9 +21,9 @@ public class PurchaseOrder {
 	private int Order_idOrder;
 	
 	@OneToOne
-	@JoinColumn(name = "Supplier_idSupplier", nullable = false)
+	@JoinColumn(name = "Supplier_id", nullable = false)
 	@NotNull
-	private Supplier Supplier_idSupplier;
+	private Supplier Supplier_id;
 	
 	@Column(name = "Supplier_idSupplier", nullable = true)
 	private String status;
@@ -37,37 +37,37 @@ public class PurchaseOrder {
 	public PurchaseOrder() {
 	}
 
-	public PurchaseOrder(int Order_idOrder, Supplier Supplier_idSupplier, String status, Date datePlaced, Date dateReceived) {
-		this.Order_idOrder = Order_idOrder;
-		this.Supplier_idSupplier = Supplier_idSupplier;
+	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Date datePlaced, Date dateReceived) {
+		this.Order_idOrder = Order_id;
+		this.Supplier_id= Supplier_id;
 		this.status = status;
 		this.datePlaced = datePlaced;
 		this.dateReceived = dateReceived;
 	}
 	
-	public PurchaseOrder(int Order_idOrder, Supplier Supplier_idSupplier) {
-		this.Order_idOrder = Order_idOrder;
-		this.Supplier_idSupplier = Supplier_idSupplier;
+	public PurchaseOrder(int Order_id, Supplier Supplier_id) {
+		this.Order_id= Order_id;
+		this.Supplier_id= Supplier_id;
 	}
 
 	public int getOrder_idOrder()
 	{
-		return this.Order_idOrder;
+		return this.Order_id;
 	}
 	
-	public void setOrder_idOrder(int Order_idOrder)
+	public void setOrder_idOrder(int Order_id)
 	{
-		this.Order_idOrder = Order_idOrder;
+		this.Order_id= Order_id;
 	}
 	
-	public Supplier getSupplier_idSupplier()
+	public Supplier getSupplier_id()
 	{
-		return this.Supplier_idSupplier;
+		return this.Supplier_id;
 	}
 	
-	public void setSupplier_idSupplier(Supplier Supplier_idSupplier)
+	public void setSupplier_idSupplier(Supplier Supplier_id)
 	{
-		this.Supplier_idSupplier = Supplier_idSupplier;
+		this.Supplier_id= Supplier_id;
 	}
 	
 	public String getstatus()
