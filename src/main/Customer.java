@@ -55,14 +55,16 @@ public class Customer {
 	@NotNull
 	private SecurityQuestion question;
 		
-//	@OneToMany
-//	@JoinColumn(name="order_id")
-//	@NotNull
-//	private List<Order> orderHistory;
+	@OneToMany
+	@JoinColumn(name="order_id")
+	@NotNull
+	private List<Order> orderHistory;
 //	
 //	@OneToMany
-//	@JoinColumn(name="payment_")
-	
+//	@JoinColumn(name="payment_id")
+//	@NotNull
+//	private List<P>
+//	
 	
 	
 	
