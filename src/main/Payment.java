@@ -1,7 +1,8 @@
+@Entity
 import java.sql.Date;
 
-public class Payment {
-
+public class Payment implements Serializable{
+	
 	private String Type;
 	private String CardNumber;
 	private Date ExpiryDate;
@@ -9,7 +10,7 @@ public class Payment {
 	private String IssueNumber;
 	private Customer Customer;
 	private Address Address;
-	private int id;
+	@Id private int id;
 
 	public Payment() {
 	}
