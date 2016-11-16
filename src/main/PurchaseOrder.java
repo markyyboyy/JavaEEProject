@@ -18,7 +18,7 @@ public class PurchaseOrder {
 	@Id
 	@Column(name = "Order_idOrder", nullable = false, unique = true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int Order_idOrder;
+	private int Order_id;
 	
 	@OneToOne
 	@JoinColumn(name = "Supplier_id", nullable = false)
@@ -38,7 +38,7 @@ public class PurchaseOrder {
 	}
 
 	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Date datePlaced, Date dateReceived) {
-		this.Order_idOrder = Order_id;
+		this.Order_id= Order_id;
 		this.Supplier_id= Supplier_id;
 		this.status = status;
 		this.datePlaced = datePlaced;
