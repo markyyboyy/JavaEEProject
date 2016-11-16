@@ -1,3 +1,4 @@
+import java.util.Calendar;
 
 public class Customer {
 
@@ -39,7 +40,7 @@ public class Customer {
 		this.sFirstname = sFirstname;
 	}
 
-	public String getFacebook()
+	public String getFacebook(){
 		return this.sFirstname;
 	}
 
@@ -47,7 +48,7 @@ public class Customer {
 		this.sFacebook = sFacebook;
 	}
 
-	public String getSecretAnswer()
+	public String getSecretAnswer(){
 		return this.sSecretAnswer;
 	}
 
@@ -55,7 +56,7 @@ public class Customer {
 		this.sSecretAnswer = sSecretAnswer;
 	}
 
-	public String getTelephone()
+	public String getTelephone(){
 		return this.sTelMain;
 	}
 
@@ -63,8 +64,8 @@ public class Customer {
 		this.sTelMain = sTelMain;
 	}
 
-	public Calendar getDateOfBirth()
-		return this.sTelMain;
+	public Calendar getDateOfBirth(){
+		return this.dtDOB;
 	}
 
 	public void setDateOfBirth(Calendar dtDOB) {
@@ -77,7 +78,7 @@ public class Customer {
 
 	}
 	
-	public Customer(String sSurname, String sFirstname String sSecretAnswer,
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer,
 			Calendar dtDOB, LoginDetails loginDetails) {
 
 		this.sSurname = sSurname;

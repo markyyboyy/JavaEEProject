@@ -1,3 +1,4 @@
+import java.util.Date;
 
 public class PurchaseOrder {
 
@@ -48,7 +49,7 @@ public class PurchaseOrder {
 		return this.status;
 	}
 	
-	public void setstatus(int String status)
+	public void setstatus(String status)
 	{
 		this.status = status;
 	}

@@ -43,7 +43,7 @@ public class Address {
 		return this.sAddressLine2;
 	}
 
-	public void setAddressLine1(String sAddressLine2) {
+	public void setAddressLine2(String sAddressLine2) {
 		this.sAddressLine2 = sAddressLine2;
 	}
 	
