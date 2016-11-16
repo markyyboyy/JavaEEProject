@@ -2,7 +2,6 @@
 import java.sql.Date;
 
 public class Payment implements Serializable{
-	
 	private String Type;
 	private String CardNumber;
 	private Date ExpiryDate;
@@ -12,6 +11,9 @@ public class Payment implements Serializable{
 	private Address Address;
 	@Id private int id;
 
+	private static final long serialVersionUID = -2174734891446114791L;
+
+	
 	public Payment() {
 	}
 

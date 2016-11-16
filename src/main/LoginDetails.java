@@ -1,12 +1,11 @@
-
 @Entity
 @Table(name="login Details")
 public class LoginDetails {
-	@Column (name="email",length=20,nullable=false,unique=true)
-	@Size(max = 20)
+	@Column (name="email",length=100,nullable=false,unique=true)
+	@Size(max = 100)
 	private String email;
-	@Column (name="password",length=45,nullable=false)
-	@Size(max = 45)
+	@Column (name="password",length=100,nullable=false)
+	@Size(max = 100)
 	private String password;
 
 	public LoginDetails() {
@@ -32,5 +31,4 @@ public class LoginDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }

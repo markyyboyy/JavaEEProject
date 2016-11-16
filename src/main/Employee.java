@@ -2,7 +2,6 @@
 @Table(name="employees")
 
 public class Employee {
-	
 	@OneToOne
 	@JoinColumn(name="logindetails_ID",joinColumns=
 	@JoinTable(name="employee",
@@ -13,7 +12,7 @@ public class Employee {
 	private LoginDetails logInDetails;
 	
 	@Id
-	@Column(name="id", nullable=false,
+	@Column(name="idEmployee", nullable=false,
 	unique=true)
 	@GeneratedValue(strategy=GenerationType.
 	IDENTITY)
@@ -30,5 +29,4 @@ public class Employee {
 	public LoginDetails getLogInDetails() {
 		return this.logInDetails;
 	}
-
 }
