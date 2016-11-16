@@ -1,7 +1,18 @@
+import java.io.Serializable;
 
-public class Address {
+import javax.persistence.Entity;
 
-	private String sName, sAddressLine1, sAddressLine2, sAddressLine3, sTown, sPostcode, sCounty;
+@Entity
+public class Address implements Serializable {
+
+	static final long serialVersionUID = 2342342342342L;
+	
+	private String sName;
+	private String sAddressLine1;
+	private String sAddressLine2;
+	private String sAddressLine3;
+	private String sTown;
+	private String sPostcode sCounty;	
 	int id;
 	
 	
@@ -9,7 +20,7 @@ public class Address {
 		return this.sCounty;
 	}
 
-	public void setCounty(String sCounty) {
+	public void setCounty(String sCounty) {s
 		this.sCounty = sCounty;
 	}
 	
