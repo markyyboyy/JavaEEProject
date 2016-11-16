@@ -8,8 +8,16 @@ public class Customer {
 	private String sTelMain;
 	private Calendar dtDOB;
 	private LoginDetails loginDetails;
+	private int id;
 	// create enum for Acc Status
 
+	
+	
+	
+	public int getID(){
+		return this.id;
+	}	
+	
 	public LoginDetails getLoginDetails() {
 		return this.loginDetails;
 	}
