@@ -8,8 +8,13 @@ public class Customer {
 	private String sTelMain;
 	private Calendar dtDOB;
 	private LoginDetails loginDetails;
+	private int id;
 	// create enum for Acc Status
-
+	
+	public int getID(){
+		return this.id;
+	}	
+	
 	public LoginDetails getLoginDetails() {
 		return this.loginDetails;
 	}
@@ -71,7 +76,17 @@ public class Customer {
 	public Customer() {
 
 	}
+	
+	public Customer(String sSurname, String sFirstname String sSecretAnswer,
+			Calendar dtDOB, LoginDetails loginDetails) {
 
+		this.sSurname = sSurname;
+		this.sFirstname = sFirstname;
+		this.sSecretAnswer = sSecretAnswer;
+		this.dtDOB = dtDOB;
+		this.loginDetails = loginDetails;
+
+	}
 	public Customer(String sSurname, String sFirstname, String sFacebook, String sSecretAnswer, String sTelMain,
 			Calendar dtDOB, LoginDetails loginDetails) {
 

@@ -2,6 +2,7 @@
 public class Address {
 
 	private String sName, sAddressLine1, sAddressLine2, sAddressLine3, sTown, sPostcode, sCounty;
+	int id;
 	
 	
 	public String getCounty() {
@@ -67,7 +68,9 @@ public class Address {
 
 	
 	
-	
+	public int getID(){
+		return this.id;
+	}
 	
 	
 	

@@ -38,7 +38,7 @@ public class PurchaseOrder {
 		return this.Supplier_idSupplier;
 	}
 	
-	public void setOrder_idOrder(int Supplier Supplier_idSupplier)
+	public void setSupplier_idSupplier(Supplier Supplier_idSupplier)
 	{
 		this.Supplier_idSupplier = Supplier_idSupplier;
 	}
@@ -58,7 +58,7 @@ public class PurchaseOrder {
 		return this.datePlaced;
 	}
 	
-	public void setdatePlaced(int Date datePlaced)
+	public void setdatePlaced(Date datePlaced)
 	{
 		this.datePlaced = datePlaced;
 	}
@@ -68,7 +68,7 @@ public class PurchaseOrder {
 		return this.dateReceived;
 	}
 	
-	public void setdateReceived(int Date dateReceived)
+	public void setdateReceived(Date dateReceived)
 	{
 		this.dateReceived = dateReceived;
 	}
