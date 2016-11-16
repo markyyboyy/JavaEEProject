@@ -6,12 +6,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "purchaseOrder")
+@Table(name = "PurchaseOrder")
+
+@NamedQuery(name = "FindByOrderID", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Order_id = :Order_id")
+@NamedQuery(name = "FindBySupplierID", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Supplier_id = :Supplier_id")
+@NamedQuery(name = "FindByStatus", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Status = :Status")
+@NamedQuery(name = "FindBydatePlaced", query = "SELECT * FROM PurchaseOrder pO WHERE pO.datePlaced = :datePlaced")
+@NamedQuery(name = "FindBydateReceived", query = "SELECT * FROM PurchaseOrder pO WHERE pO.dateReceived = :dateReceived ")
 
 public class PurchaseOrder {
 
@@ -25,7 +32,7 @@ public class PurchaseOrder {
 	@NotNull
 	private Supplier Supplier_id;
 	
-	@Column(name = "Supplier_idSupplier", nullable = true)
+	@Column(name = "Status", nullable = true)
 	private String status;
 	
 	@Column(name = "datePlaced", nullable = true)
