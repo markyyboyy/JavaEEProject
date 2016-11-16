@@ -8,36 +8,38 @@
 </project>
 <dependencies
 <dependency>
-	<groupId>javax</groupId>
-		<artifactId>javaee-api</artifactId>
-		<version>7.0</version>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-annotations
-	</artifactId>
-	<version>3.5.6-Final</version>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-core</artifactId>
-		<version>4.3.0.Final</version>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-entitymanager</artifactId>
-		<version>4.3.0.Final</version>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-validator
-		</artifactId>
-		<version>5.0.2.Final</version>
-	</dependency>
-	<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java
-		</artifactId>
-		<version>5.1.28</version>
-	</dependency>
+<groupId>javax</groupId>
+<artifactId>javaee-api</artifactId>
+<version>7.0</version>
+</dependency>
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-annotations
+</artifactId>
+<version>3.5.6-Final</version>
+</dependency>
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-core
+</artifactId>
+<version>4.3.0.Final</version>
+</dependency>
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-entitymanager
+</artifactId>
+<version>4.3.0.Final</version>
+</dependency>
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-validator
+</artifactId>
+<version>5.0.2.Final</version>
+</dependency>
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java
+</artifactId>
+<version>5.1.28</version>
+</dependency>
 </dependencies>
