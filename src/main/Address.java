@@ -1,6 +1,7 @@
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 
 @Entity
 public class Address implements Serializable {
@@ -29,7 +30,7 @@ public class Address implements Serializable {
 	}
 
 	public void setPostcode(String sPostcode) {
-		this.sPostcode = sPostcode;
+		this.sPostcode = sPostcode;		
 	}
 	
 	

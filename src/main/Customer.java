@@ -12,6 +12,7 @@ import javax.persistance.Table;
 
 @Entity
 @Table(name="Customer")
+@NamedQuery(name="findByUsername", query="select c from Customer c inner join on LoginDetails ld where ld.username = :user")
 public class Customer {
 
 	@Id @Column(nullable=false, unique=true)
@@ -40,6 +41,12 @@ public class Customer {
 	@NotNull
 	private Calendar dtDOB;	
 
+	
+	@Column(nullable=false)
+	@NotNull
+	private Double dBalance;	
+	
+	
 	@OneToOne
 	@JoinColumn(name="loginDetails_id", nullable=false)
 	@NotNull
@@ -64,11 +71,6 @@ public class Customer {
 //	@JoinColumn(name="payment_id")
 //	@NotNull
 //	private List<P>
-//	
-	
-	
-	
-	
 		
 	public int getID(){
 		return this.id;
@@ -133,7 +135,6 @@ public class Customer {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public Customer() {
-
 	}
 	
 	public Customer(String sSurname, String sFirstname, String sSecretAnswer,
@@ -144,8 +145,8 @@ public class Customer {
 		this.sSecretAnswer = sSecretAnswer;
 		this.dtDOB = dtDOB;
 		this.loginDetails = loginDetails;
-
 	}
+		
 	public Customer(String sSurname, String sFirstname, String sFacebook, String sSecretAnswer, String sTelMain,
 			Calendar dtDOB, LoginDetails loginDetails) {
 
