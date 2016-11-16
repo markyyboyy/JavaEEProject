@@ -1,9 +1,15 @@
 import java.util.Calendar;
-
+@Entity
+@Table(name = "CustomerOrder")
 class CustomerOrder {
-
+	
+	@Column(name = "customerOrderId", nullable = false, unique = true)
 	private int customerOrderId;
+	
+	@Column(name = "feedbackId", nullable = true, unique = false)
 	private int feedbackId;
+	
+	@Column(name = "customerId", nullable = false, unique = false)
 	private int customerId;
 
 	private enum status {
