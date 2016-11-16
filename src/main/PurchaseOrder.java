@@ -1,11 +1,37 @@
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "purchaseOrder")
+
 public class PurchaseOrder {
 
+	@Id
+	@Column(name = "Order_idOrder", nullable = false, unique = true)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int Order_idOrder;
+	
+	@OneToOne
+	@JoinColumn(name = "Supplier_idSupplier", nullable = false)
+	@NotNull
 	private Supplier Supplier_idSupplier;
+	
+	@Column(name = "Supplier_idSupplier", nullable = true)
 	private String status;
+	
+	@Column(name = "datePlaced", nullable = true)
 	private Date datePlaced;
+	
+	@Column(name = "dateReceived", nullable = true)
 	private Date dateReceived;
 
 	public PurchaseOrder() {
