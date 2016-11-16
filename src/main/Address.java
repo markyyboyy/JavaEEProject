@@ -13,14 +13,15 @@ public class Address implements Serializable {
 	private String sAddressLine2;
 	private String sAddressLine3;
 	private String sTown;
-	private String sPostcode sCounty;	
+	private String sPostcode;
+	private string sCounty;	
 	int id;
 	
 	public String getCounty() {
 		return this.sCounty;
 	}
 
-	public void setCounty(String sCounty) {s
+	public void setCounty(String sCounty) {
 		this.sCounty = sCounty;
 	}
 	
