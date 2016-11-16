@@ -62,9 +62,7 @@ public class Customer {
 	@NotNull
 	private SecurityQuestion question;
 		
-	@OneToMany
-	@JoinColumn(name="order_id")
-	@NotNull
+	@OneToMany(mappedBy="id")
 	private List<Order> orderHistory;
 //	
 //	@OneToMany
