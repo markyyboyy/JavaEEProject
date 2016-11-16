@@ -1,27 +1,38 @@
+@Entity
+@Table(name="Rating")
 public class Rating {
-	private String score;
+	@NotNull @Size(min=1, max=10)
+	@Column(name="name", nullable=false,length=10)
+	private int score;
+	@Column(name="comment", nullable=true,length=225)
 	private String comment;
+	@ManyToOne
+	@JoinColumn(name="customerID", nullable=false)
+	@NotNull
 	private int customerID;
+	@ManyToOne
+	@JoinColumn(name="productID", nullable=false)
+	@NotNull
 	private int productID;
 
-	public Rating(String score,String comment,int customerID,int productID) {
+	public Rating(int score,String comment,int customerID,int productID) {
 		this.score = score;
 		this.comment = comment;
 		this.productID = productID;
 		this.customerID=customerID;
 	}
 	
-	public Rating(String score, int customerID, int productID) {
+	public Rating(int score, int customerID, int productID) {
 		super();
 		this.score = score;
 		this.customerID = customerID;
 		this.productID = productID;
 	}
 
-	public String getScore() {
+	public int getScore() {
 		return score;
 	}
-	public void setScore(String score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
 	public String getComment() {

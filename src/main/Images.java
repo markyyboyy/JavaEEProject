@@ -1,6 +1,13 @@
-public class Images {
+@Entity
+@Table(name"Image")
+public class Image {
+	@Id
+	@Column(name="url",nullable=false,unique=true)
 	private String url;
+	@Column(nullable=true, length=225)
+	@Size(max=225)
 	private String desc;
+	@Column(nullable=false,unique=true )
 	private int productID;
 	
 	public Images(String url, String desc, int productID) {

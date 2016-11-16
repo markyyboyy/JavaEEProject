@@ -1,9 +1,18 @@
+@Entity
+@Table(name="Stock")
 public class Stock {
-
+	@Id
+	@Column(name="id", nullable=false,unique=true)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	private int stockID;
+	@NotNull @Column(name="poroursware", nullable=false)
 	private boolean porousware;
+	@NotNull @Column(name="refurbished", nullable=false)
 	private boolean refurbished;
+	@NotNull @Column(name="quantity", nullable=false)
 	private int quantity;
+	@ManyToOne 
+	@NotNull @JoinColumn(name="productID", nullable=false)
 	private int productID;
 		
 	public Stock(int stockID, boolean porousware, int quantity,boolean refurbished, int productID) {

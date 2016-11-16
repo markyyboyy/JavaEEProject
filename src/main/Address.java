@@ -16,7 +16,6 @@ public class Address implements Serializable {
 	private String sPostcode sCounty;	
 	int id;
 	
-	
 	public String getCounty() {
 		return this.sCounty;
 	}
@@ -32,7 +31,6 @@ public class Address implements Serializable {
 	public void setPostcode(String sPostcode) {
 		this.sPostcode = sPostcode;		
 	}
-	
 	
 	public String getTown() {
 		return this.sTown;
@@ -83,17 +81,6 @@ public class Address implements Serializable {
 	public int getID(){
 		return this.id;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public Address() {
 	}
 

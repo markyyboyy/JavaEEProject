@@ -2,16 +2,27 @@ import java.util.Calendar;
 @Entity
 @Table(name = "CustomerOrder")
 class CustomerOrder {
-	
-	@Column(name = "customerOrderId", nullable = false, unique = true)
+
+	@OneToOne 
+	@NotNull
+	@JoinColumn(name = "customerOrderId", nullable = false, unique = true)
 	private int customerOrderId;
 	
-	@Column(name = "feedbackId", nullable = true, unique = false)
+	@OneToOne 
+	@NotNull
+	@JoinColumn(name = "feedbackId", nullable = false, unique = false)
 	private int feedbackId;
 	
-	@Column(name = "customerId", nullable = false, unique = false)
+	@OneToOne 
+	@NotNull
+	@JoinColumn(name = "customerId", nullable = false, unique = false)
 	private int customerId;
 
+	
+	
+	
+
+	
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
 	};
