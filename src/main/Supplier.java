@@ -1,13 +1,14 @@
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
 
 @Entity 
-@Table(name = "Supplier")
 
-public class Supplier {
+public class Supplier  implements Serializable {
 	
-	@Id
-	@Column(name ="id", nullable = false, unique = true)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	static final long serialVersionUID = 6586263742271776754L;
+	@Id private long id;
 	
 	private int idSupplier;
 	

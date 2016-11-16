@@ -1,9 +1,40 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="CustomerOrderLine")
 public class CustomerOrderLine {
 	
+	@Id
+	@Column(nullable=false, unique=true)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@NotNull
+	@Size(min=3, max=225)
+	@Column(name="quantity_id", nullable=false)
 	private int quantity;
+	
+	@NotNull 
+	@Size(min=5, max=12)
+	@Column(name="price_id", nullable = false)
 	private float price;
+	
+	@ManyToOne
+	@JoinColumn(name="CustomerOrder_idOrder", nullable=false)
+	@NotNull
 	private CustomerOrder CustomerOrder_idOrder;
+	
+	@ManyToOne
+	@JoinColumn(name="Stock_idStock", nullable=false)
+	@NotNull
 	private Stock Stock_idStock;
 
 	public CustomerOrderLine() {

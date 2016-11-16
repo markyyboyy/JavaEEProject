@@ -50,6 +50,22 @@ public class Customer {
 	@NotNull
 	private List<Address> address;
 	
+	@OneToOne
+	@JoinColumn(name="customer_id", nullable)
+	@NotNull
+	private SecurityQuestion question;
+		
+//	@OneToMany
+//	@JoinColumn(name="order_id")
+//	@NotNull
+//	private List<Order> orderHistory;
+//	
+//	@OneToMany
+//	@JoinColumn(name="payment_")
+	
+	
+	
+	
 	
 		
 	public int getID(){

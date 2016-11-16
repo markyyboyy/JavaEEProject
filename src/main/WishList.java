@@ -1,9 +1,18 @@
-
+@Entity
+@Table("WishList")
 class WishList {
 
-	private int customerId;
-	private int stockId;
-
+//	@Column(name = "customer id", nullable = false, unique = true)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private long customerId;
+//	
+//	@Column(name = "stock id", nullable = false, unique = true)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private long stockId;
+//
+//	@
+	
+	
 	public WishList() {
 	}
 

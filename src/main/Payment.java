@@ -1,10 +1,8 @@
 @Entity
-import java.sql.Date;
-
 public class Payment implements Serializable{
 	private String Type;
 	private String CardNumber;
-	private Date ExpiryDate;
+	private Calendar ExpiryDate;
 	private String NameOnCard;
 	private String IssueNumber;
 	private Customer Customer;
@@ -17,7 +15,7 @@ public class Payment implements Serializable{
 	public Payment() {
 	}
 
-	public Payment(String Type, String CardNumber, Date ExpiryDate, String NameOnCard, String IssueNumber,
+	public Payment(String Type, String CardNumber, Calendar ExpiryDate, String NameOnCard, String IssueNumber,
 			Customer Customer, Address Address, int id) {
 		this.Type = Type;
 		this.CardNumber = CardNumber;
@@ -37,7 +35,7 @@ public class Payment implements Serializable{
 		return this.CardNumber;
 	}
 
-	public Date getExpiryDate() {
+	public Calendar getExpiryDate() {
 		return this.ExpiryDate;
 	}
 
@@ -65,7 +63,7 @@ public class Payment implements Serializable{
 		this.CardNumber = CardNumber;
 	}
 
-	public void setExpiryDate(Date ExpiryDate) {
+	public void setExpiryDate(Calendar ExpiryDate) {
 		this.ExpiryDate = ExpiryDate;
 	}
 
