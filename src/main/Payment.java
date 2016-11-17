@@ -1,3 +1,6 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Entity
 public class Payment implements Serializable{
 	private String Type;

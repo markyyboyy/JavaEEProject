@@ -1,13 +1,14 @@
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
+import javax.persistence.Id;
 
 @Entity
 public class Address implements Serializable {
 
 	static final long serialVersionUID = 2342342342342L;
 	
+	@Id int id;
 	private String sName;
 	private String sAddressLine1;
 	private String sAddressLine2;
@@ -15,7 +16,22 @@ public class Address implements Serializable {
 	private String sTown;
 	private String sPostcode;
 	private string sCounty;	
-	int id;
+
+	public Address() {
+	}
+
+	public Address(String sName, String sAddressLine1, String sAddressLine2, String sAddressLine3, String sTown,
+			String sPostcode, String sCounty) {
+
+		this.sName = sName;
+		this.sAddressLine1 = sAddressLine1;
+		this.sAddressLine2 = sAddressLine2;
+		this.sAddressLine3 = sAddressLine3;
+		this.sTown = sTown;
+		this.sPostcode = sPostcode;
+		this.sCounty = sCounty;
+
+	}
 	
 	public String getCounty() {
 		return this.sCounty;
@@ -82,20 +98,6 @@ public class Address implements Serializable {
 	public int getID(){
 		return this.id;
 	}
-	public Address() {
-	}
 
-	public Address(String sName, String sAddressLine1, String sAddressLine2, String sAddressLine3, String sTown,
-			String sPostcode, String sCounty) {
-
-		this.sName = sName;
-		this.sAddressLine1 = sAddressLine1;
-		this.sAddressLine2 = sAddressLine2;
-		this.sAddressLine3 = sAddressLine3;
-		this.sTown = sTown;
-		this.sPostcode = sPostcode;
-		this.sCounty = sCounty;
-
-	}
 
 }

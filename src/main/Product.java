@@ -1,7 +1,10 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Entity
 class Product implements Serializable{
 		
-	private int productId;
+	@Id private int productId;
 	private String name;
 	private String desc;
 	private double price;
