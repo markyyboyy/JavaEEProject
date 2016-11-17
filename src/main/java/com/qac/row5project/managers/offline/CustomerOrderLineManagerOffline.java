@@ -5,6 +5,8 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+
+import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.CustomerOrderLineManager;
@@ -27,8 +29,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	//READ - Customer and Inventory Manager Only
 	@Override
 	public CustomerOrderLine readById(int id) {
-
-		List<> rQuantity = testData.getCustomerOrderLines();
+		List<CustomerOrderLine> rQuantity = testData.getCustomerOrderLines();
 		for (CustomerOrderLine c : rQuantity) {
 			if (c.getQuantity() == id) {
 				return c;
@@ -38,33 +39,10 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 	
 	@Override
-	public List<CustomerOrderLine> readByQuantity(int quantity) {
-		List<CustomerOrderLine> rQuantity = testData.getCustomerOrderLines();
-		for (CustomerOrderLine c : rQuantity) {
-			if (c.getQuantity() == quantity) {
-				return c;
-			}
-		}
-		return null;
-	}
-	
-	@Override
-	public List<CustomerOrderLine> readByTotalPrice(int totalPrice) {
-		ArrayList<> rTotalPrice = testData.getCustomerOrderLines();
-		for (CustomerOrderLine c : rTotalPrice) {
-			if (c.getTotalPrice() == totalPrice) {
-				return c;
-			}
-
-		}
-		return null;
-	}
-	
-	@Override
-	public List<CustomerOrderLine> readByCustomerOrder_idOrder(CustomerOrder CustomerOrder_idOrder) {
-		ArrayList<> rCO_idOrder = testData.getCustomerOrderLines();
+	public List<CustomerOrderLine> readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
+		List<CustomerOrderLine> rCO_idOrder = testData.getCustomerOrderLines();
 		for (CustomerOrderLine c : rCO_idOrder) {
-			if (c.getCustomerOrder_idOrder().getId() == CustomerOrder_idOrder.getId()) {
+			if (c.getCustomerOrder_idOrder().getCustomerOrderId() == CustomerOrder_idOrder.getId()) {
 				return c;
 			}
 
@@ -73,10 +51,10 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 	
 	@Override
-	public List<CustomerOrderLine> readByStock_idStock(CustomerOrder Stock_idStock) {
-		ArrayList<> rS_idStock = testData.getCustomerOrderLines();
+	public List<CustomerOrderLine> readByStock_idStock(CustomerOrderLine Stock_idStock) {
+		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLines();
 		for (CustomerOrderLine c : rS_idStock) {
-			if (c.getStock_idStock().getId() == Stock_idStock.getId()) {
+			if (c.getStock_idStock().getStockID() == Stock_idStock.getId()) {
 				return c;
 			}
 
@@ -86,7 +64,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		
 	//UPDATE - Customer Only
 	@Override
-	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine);
+	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine) {
+		
+	}
 
 	
 }
