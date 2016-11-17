@@ -1,9 +1,9 @@
 
-public interface SupplierSuppliesProduct {
+public class SupplierSuppliesProductManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY
-	public void createSupplierSuppliesProduct();	
-	
+	public void createSupplierSuppliesProduct(Supplier_Supplies_Product newSSP);	
+		
 	//READ - INVENTORY MANAGER ONLY
 	public Supplier_Supplies_Product readSupplierSuppliesProductByProductID(int pID);
 	public Supplier_Supplies_Product readSupplierSuppliesProductBySupplierID(int sID);

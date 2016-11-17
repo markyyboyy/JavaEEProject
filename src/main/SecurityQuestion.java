@@ -24,5 +24,16 @@ public class SecurityQuestion {
 	
 	public SecurityQuestion(String question){
 		this.question = question;
+		
 	} 
+	
+	public String getQuestion(){
+		return question;
+	
+	}
+	
+	public void setQuestions(String newQ)
+	{
+		this.question = newQ;
+	}
 }

@@ -8,6 +8,6 @@ public interface SecurityQuestionManager {
 	public SecurityQuestion readSecurityQuestion(String question);	
 	
 	//UPDATE - CUSTOMER ONLY
-	public void updateSecurityQuestion(SecurityQuestion newQuestion);
+	public void updateSecurityQuestion(SecurityQuestion newQuestion, SecurityQuestion oldQuestion);
 	
 }
