@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "CustomerOrder")
-class CustomerOrder {
+public class CustomerOrder {
 
 	@OneToOne 
 	@NotNull

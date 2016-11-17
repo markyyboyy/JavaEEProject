@@ -1,6 +1,10 @@
 package com.qac.row5project.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 @Entity
-@Table("WishList")
+@Table(name = "WishList")
 class WishList {
 
 //	@Column(name = "customer id", nullable = false, unique = true)

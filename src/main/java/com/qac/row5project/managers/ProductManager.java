@@ -1,4 +1,5 @@
 package com.qac.row5project.managers;
+import com.qac.row5project.entities.Product;
 
 public interface  ProductManager {
 

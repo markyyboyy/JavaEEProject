@@ -52,7 +52,7 @@ public class Feedback {
 		this.idFeedback = idFeedback;
 	}
 	
-	public void setFeedbackRating(String feedbackRating) {
+	public void setFeedbackRating(int feedbackRating) {
 		this.feedbackRating = feedbackRating;
 	}
 	

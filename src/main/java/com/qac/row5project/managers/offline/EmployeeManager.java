@@ -1,11 +1,13 @@
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
 
+import com.qac.row5project.entities.Employee;
+
 public interface EmployeeManager {
 	
 	//READ - Inventory Manager Only
 	public Employee readEmployee(String emailAddress){
-		ArrayList<> returned = testData.getLoginDetails();
+		List<> returned = testData.getLoginDetails();
 		for(Employee e: returned){
 			if (e.getEmailAddress.equals(emailAddress)){
 				return e
