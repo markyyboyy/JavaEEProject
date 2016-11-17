@@ -1,9 +1,13 @@
 
 public interface EmployeeManager {
-	public void createPayment(Employee employee);
+	
+	//READ - Inventory Manager Only
 	public Employee readEmployee(String emailAddress);
 	public Employee readEmployee(int ID);
+	
+	//UPDATE - Inventory Manager Only
 	public void updateEmployee(String email);
+	
 	public void listEmployees(List<>Employee);
 	
 }
