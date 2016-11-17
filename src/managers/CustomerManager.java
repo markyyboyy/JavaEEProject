@@ -9,11 +9,7 @@ public interface CustomerManager {
 	public Customer readCustomerByNames(String fName, String sName);
 	
 	//UPDATE - CUSTOMER ONLY
-	public void updateCustomerForename(String newFName);
-	public void updateCustomerSurname(String newSName);
-	public void updateCustomerFacebook(String newFBook);
-	public void updateCustomerSecretAnswer(String newSAnswer);
-	public void updateCustomerTelephone(String newTel);
-	public void updateCustomerDOB(Calendar newDOB);
+	public void updateCustomer(Customer customer);
+
 	
 }
