@@ -42,14 +42,13 @@ class CustomerOrder {
 	public CustomerOrder() {
 	};
 
-	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,
-			Calendar dateReceived, int addressId, int paymentId) {
+	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
 		super();
 		this.customerOrderId = customerOrderId;
 		this.feedbackId = feedbackId;
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
-		this.dateReceived = dateReceived;
+	//	this.dateReceived = dateReceived;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
 		//Maybe add OrdLine array/linked list
