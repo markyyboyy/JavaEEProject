@@ -4,6 +4,6 @@ public interface SupplierManager {
 	public void createSupplier();
 	
 	//READ - Inventory Manager Only
-	public Supplier readById(int idSupplier);
+	public Supplier readByIdSupplier(int idSupplier);
 	
 }

@@ -19,19 +19,19 @@ public class Feedback {
 	private int idFeedback;
 	
 	@Size(min=3, max=225)
-	@Column(name="rating_id", nullable=true)
-	private int rating;
+	@Column(name="feedbackRating_id", nullable=true)
+	private int feedbackRating;
 	
 	@Size(min=3, max=225)
-	@Column(name="cooment_id", nullable=true)
+	@Column(name="comment_id", nullable=true)
 	private String comment;
 
 	public Feedback() {
 	}
 
-	public Feedback(int idFeedback, int rating, String comment) {
+	public Feedback(int idFeedback, int feedbackRating, String comment) {
 		this.idFeedback = idFeedback;
-		this.rating = rating;
+		this.feedbackRating = feedbackRating;
 		this.comment = comment;
 	}
 	
@@ -39,8 +39,8 @@ public class Feedback {
 		return idFeedback;
 	}
 	
-	public int getRating() {
-		return rating;
+	public int getFeedbackRating() {
+		return feedbackRating;
 	}
 	
 	public String getComment() {
@@ -51,8 +51,8 @@ public class Feedback {
 		this.idFeedback = idFeedback;
 	}
 	
-	public void setRating(String rating) {
-		this.rating = rating;
+	public void setFeedbackRating(String feedbackRating) {
+		this.feedbackRating = feedbackRating;
 	}
 	
 	public void setComment(String comment) {

@@ -25,7 +25,7 @@ public class CustomerOrderLine {
 	
 	@NotNull 
 	@Size(min=5, max=12)
-	@Column(name="price_id", nullable = false)
+	@Column(name="totalPrice_id", nullable = false)
 	private float totalPrice;
 		
 	@ManyToOne
