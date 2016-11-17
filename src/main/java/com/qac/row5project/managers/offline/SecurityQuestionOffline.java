@@ -1,3 +1,4 @@
+package com.qac.row5project.managers.offline;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
