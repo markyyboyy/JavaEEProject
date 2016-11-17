@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table (name = "Feebback")
+@Table (name = "Feedback")
 
 
 public class Feedback {
@@ -29,7 +29,7 @@ public class Feedback {
 	public Feedback() {
 	}
 
-	public Feedback(int idFeedback, String rating, String comment) {
+	public Feedback(int idFeedback, int rating, String comment) {
 		this.idFeedback = idFeedback;
 		this.rating = rating;
 		this.comment = comment;
