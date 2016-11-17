@@ -16,7 +16,7 @@ public class Address implements Serializable {
 	private String sAddressLine3;
 	private String sTown;
 	private String sPostcode;
-	private string sCounty;	
+	private String sCounty;	
 
 	public Address() {
 	}
