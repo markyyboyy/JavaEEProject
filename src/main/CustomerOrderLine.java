@@ -18,14 +18,15 @@ public class CustomerOrderLine {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-	@NotNull
+	
 	@Size(min=3, max=225)
 	@Column(name="quantity_id", nullable=false)
+	@NotNull
 	private int quantity;
 	
-	@NotNull 
 	@Size(min=5, max=12)
 	@Column(name="totalPrice_id", nullable = false)
+	@NotNull
 	private float totalPrice;
 		
 	@ManyToOne
