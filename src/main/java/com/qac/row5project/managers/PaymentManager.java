@@ -1,0 +1,18 @@
+package com.qac.row5project.managers;
+
+public interface Payment {
+	//CREATE - Customer Only
+	public void createPayment(Payment payment);
+	
+	//READ - Customer Only
+	public Payment readPayment(int ID);
+	public Payment readPayment(String cardNumber);
+	public Payment readPayment(String issueNumber);
+	
+	//UPDATE - Customer Only
+	public void updatePayment(Payment payment);
+	
+	//Methods
+	public Customer findCustomer(int ID);
+	public Address findAddress(int ID);
+}
