@@ -1,6 +1,8 @@
 package com.qac.row5project.managers;
-import java.List;
-import java.Rating;
+
+import java.util.List;
+
+import com.qac.row5project.entities.Rating;
 
 public interface RatingManager {
 	//CREATE: CUSTOMER
@@ -17,6 +19,6 @@ public interface RatingManager {
 	public List<Rating> findRatingsbyScore(int Score);
 	
 	//UPDATE	
-	public void updateRating(Rating rating)
+	public void updateRating(Rating rating);
 	
 }

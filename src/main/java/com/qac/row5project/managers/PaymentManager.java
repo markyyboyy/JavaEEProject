@@ -1,16 +1,19 @@
 package com.qac.row5project.managers;
 
-public interface Payment {
+import com.qac.row5project.entities.Address;
+import com.qac.row5project.entities.Customer;
+
+public interface PaymentManager {
 	//CREATE - Customer Only
-	public void createPayment(Payment payment);
+	public void createPayment(PaymentManager payment);
 	
 	//READ - Customer Only
-	public Payment readPayment(int ID);
-	public Payment readPayment(String cardNumber);
-	public Payment readPayment(String issueNumber);
+	public PaymentManager readPayment(int ID);
+	public PaymentManager readPaymentCard(String cardNumber);
+	public PaymentManager readPaymentIssueNumber(String issueNumber);
 	
 	//UPDATE - Customer Only
-	public void updatePayment(Payment payment);
+	public void updatePayment(PaymentManager payment);
 	
 	//Methods
 	public Customer findCustomer(int ID);

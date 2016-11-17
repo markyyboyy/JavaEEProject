@@ -1,6 +1,8 @@
 package com.qac.row5project.managers;
 
-public class SupplierSuppliesProductManager {
+import com.qac.row5project.entities.Supplier_Supplies_Product;
+
+public interface SupplierSuppliesProductManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY
 	public void createSupplierSuppliesProduct(Supplier_Supplies_Product newSSP);	

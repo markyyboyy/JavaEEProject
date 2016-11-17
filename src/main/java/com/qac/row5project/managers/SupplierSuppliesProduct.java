@@ -1,5 +1,7 @@
 package com.qac.row5project.managers;
 
+import com.qac.row5project.entities.Supplier_Supplies_Product;
+
 public interface SupplierSuppliesProduct {
 	
 	//CREATE - INVENTORY MANAGER ONLY

@@ -1,5 +1,9 @@
 package com.qac.row5project.managers;
 
+import java.util.Calendar;
+
+import com.qac.row5project.entities.PurchaseOrder;
+
 public interface PurchaseOrderManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY
