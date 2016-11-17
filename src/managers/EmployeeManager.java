@@ -8,6 +8,7 @@ public interface EmployeeManager {
 	//UPDATE - Inventory Manager Only
 	public void updateEmployee(String email);
 	
+	//Methods
 	public void listEmployees(List<>Employee);
 	
 }
