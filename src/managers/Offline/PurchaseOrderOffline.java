@@ -14,7 +14,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	// CREATE - INVENTORY MANAGER ONLY
 	@Override
 	public void createPurchaseOrder(PurchaseOrder newPOrder) {
-		List<PurchaseOrder> pOrders = testData.getPurchaseOrder();
+		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
 		newPOrder.setOrder_idOrder(pOrders.size() + 1);
 		pOrders.add(newPorder);
 		testData.setPurchaseOrder();
@@ -24,7 +24,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	// READ - INVENTORY MANAGER ONLY
 	@Override
 	public PurchaseOrder readByID(int pOrdID) {
-		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrder()) {
+		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
 			if (purchaseOrder.getOrder_id() == pOrdID) {
 				return purchaseOrder;
 			}
@@ -34,7 +34,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 
 	@Override
 	public PurchaseOrder readBySupplier(int supID) {
-		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrder()) {
+		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
 			if (purchaseOrder.getSupplier_id() == supID) {
 				return purchaseOrder;
 			}
@@ -44,7 +44,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 
 	@Override
 	public PurchaseOrder readByStatus(String status) {
-		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrder()) {
+		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
 			if (purchaseOrder.getstatus() == status) {
 				return purchaseOrder;
 			}
@@ -54,7 +54,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 
 	@Override
 	public PurchaseOrder readByDatePlaced(Calendar datePlaced) {
-		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrder()) {
+		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
 			if (purchaseOrder.getdatePlaced() == datePlaced) {
 				return purchaseOrder;
 			}
@@ -64,7 +64,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 
 	@Override
 	public PurchaseOrder readByDateReceived(Calendar dateRecd) {
-		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrder()) {
+		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
 			if (purchaseOrder.getdateReceived() == dateRecd) {
 				return purchaseOrder;
 			}
@@ -75,11 +75,9 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	// UPDATE - INVENTORY MANAGER ONLY
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder newPOrder) {
-		PurchaseOrder existingPOrder = readByID(newPorder.getOrder_id());
-		existingPOrder.setSupplier_idSupplier(newPOrder.getSupplier_id());
-		existingPOrder.setstatus(newPOrder.getstatus());
-		existingPOrder.setdatePlaced(newPOrder.getdatePlaced());
-		existingPOrder.setdateReceived(newPOrder.getdateReceived());
+		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
+		pOrders.add(newPorder);
+		testData.setPurchaseOrder(pOrders);
 
 	}
 
