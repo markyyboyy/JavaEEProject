@@ -1,6 +1,7 @@
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 @Entity 
@@ -19,5 +20,12 @@ public class Supplier  implements Serializable {
 		this.idSupplier = idSupplier;
 	}
 	
+	public int getIdSupplier() {
+		return idSupplier;
+	}
+	
+	public void setIdSupplier(int idSupplier) {
+		this.idSupplier = idSupplier;
+	}
 	
 }
