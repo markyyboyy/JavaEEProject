@@ -5,7 +5,7 @@ public interface FeedbackManager {
 	public void createFeedback(Feedback feedback);
 		
 	//READ 
-	public Feedback readById(int id);
+	public Feedback readById(int idFeedback);
 	public List<Feedback> readByFeedbackRating(int feedbackRating);
 	public List<Feedback> readByComment(String comment);
 	
