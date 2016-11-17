@@ -1,6 +1,6 @@
 
 public interface LoginDetailsManager {
-	public Payment createLoginDetails(LoginDetails loginDetails);
-	public LoginDetails readLoginDetails();
+	public void createLoginDetails(LoginDetails loginDetails);
+	public LoginDetails readLoginDetails(String emailAddress);
 	public void updateLoginDetails(String email, String password);
 }

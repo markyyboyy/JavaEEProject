@@ -1,6 +1,8 @@
 
 public interface Payment {
-	public Payment createPayment(Payment payment);
-	public Payment readPayment();
+	public void createPayment(Payment payment);
+	public Payment readPayment(int ID);
+	public Payment readPayment(String cardNumber);
+	public Payment readPayment(String issueNumber);
 	public void updatePayment(String type, String cardNumber,Calender expiryDate, String nameOnCard, String issueNumber, Customer customer, Address address);
 }
