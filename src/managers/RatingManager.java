@@ -3,9 +3,9 @@ import java.Rating;
 
 public interface RatingManager {
 	
-	//CREATE
+	//CREATE - CUSTOMER
 	public void createRating(Rating rating);
-	//READ
+	//READ - CUSTOMER/VISITOR/INV MANAGER
 	public Rating findRatingsbyProductCustomerID(int productID, int CustomerID);
 	public List<Rating> findRatingsbyCustomerID(int CustomerID);
 	public List<Rating> findRatingsbyProductID(int productID);
