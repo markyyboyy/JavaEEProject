@@ -2,7 +2,7 @@
 public interface PurchaseOrderManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY
-	public void createPurchaseOrder();	
+	public void createPurchaseOrder(PurchaseOrder newPOrder);	
 	
 	//READ - INVENTORY MANAGER ONLY
 	public PurchaseOrder readByID(int pOrdID);

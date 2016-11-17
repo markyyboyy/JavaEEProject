@@ -57,7 +57,7 @@ public class PurchaseOrder {
 		this.Supplier_id= Supplier_id;
 	}
 
-	public int getOrder_idOrder()
+	public int getOrder_id()
 	{
 		return this.Order_id;
 	}
