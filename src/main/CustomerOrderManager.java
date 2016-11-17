@@ -2,10 +2,13 @@ import java.util.Calendar;
 
 public interface CustomerOrderManager {
 	
+	//CREATE - CUSTOMER
 	public CustomerOrder createCustomerOrder(CustomerOrder co);
 	
-	public void updateCustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,
-			Calendar dateReceived, int addressId, int paymentId);
+	//UPDATE - CUSTOMER
+	public void updateCustomerOrder(CustomerOrder co);
 	
-	public CustomerOrder readCustomerOrder(long id);
+	//READ - CUSTOMER/INVENTORY MANAGER
+	public CustomerOrder readCustomerOrderById(long id);
+	public CustomerOrder readCustomerOrderByDatePlaced(Calendar date);
 }

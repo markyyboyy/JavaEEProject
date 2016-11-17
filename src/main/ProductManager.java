@@ -1,10 +1,17 @@
 
 public interface  ProductManager {
 
-	public Product createProduct(Product product);
-	public void updateProduct(String name, String desc, double price, double weight, String colour, int size,
-			int quantity);
-	public Product readProduct(long id);
+	
+	//CREATE - INVENTORY MANAGER
+	public Product createProduct(Product p);
+	
+	//UPDATE - INVENTORY MANAGER
+	public void updateProduct(Product p);
+	
+	//READ - CUSTOMER/INVENTORY MANAGER
+	public Product readProductById(long id);
+	public Product readProductByName(String name);
+	public Product readProductByColour(String colour);
 	
 	
 }
