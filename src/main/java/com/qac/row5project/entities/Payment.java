@@ -1,4 +1,7 @@
 package com.qac.row5project.entities;
+import java.io.Serializable;
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

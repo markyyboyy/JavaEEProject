@@ -5,7 +5,7 @@ import java.util.Calendar;
 public interface CustomerOrderManager {
 	
 	//CREATE - CUSTOMER
-	public CustomerOrderLineManager createCustomerOrder(CustomerOrder co);
+	public CustomerOrder createCustomerOrder(CustomerOrder co);
 	
 	//UPDATE - CUSTOMER
 	public void updateCustomerOrder(CustomerOrder co);

@@ -13,9 +13,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "Supplier_Supplies_Product")
 
-@NamedQuery(name = "FindBySupplier", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.Supplier_id = :Supplier_id ")
-@NamedQuery(name = "FindByProduct", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.Product_id = :Product_id ")
-@NamedQuery(name = "FindByPrice", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.price = :price ")
+//@NamedQuery(name = "FindBySupplier", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.Supplier_id = :Supplier_id ")
+//@NamedQuery(name = "FindByProduct", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.Product_id = :Product_id ")
+//@NamedQuery(name = "FindByPrice", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.price = :price ")
 
 
 public class Supplier_Supplies_Product {

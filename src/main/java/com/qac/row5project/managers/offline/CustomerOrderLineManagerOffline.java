@@ -1,13 +1,12 @@
 package com.qac.row5project.managers.offline;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-
 import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.TestData;
-import com.qac.row5project.managers.CustomerOrder;
 import com.qac.row5project.managers.CustomerOrderLineManager;
 
 @Stateless
@@ -27,18 +26,24 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		
 	//READ - Customer and Inventory Manager Only
 	@Override
-	public CustomerOrderLine readbyId(int id) {
-		for 
+	public CustomerOrderLine readById(int id) {
+
+		List<> rQuantity = testData.getCustomerOrderLines();
+		for (CustomerOrderLine c : rQuantity) {
+			if (c.getQuantity() == id) {
+				return c;
+			}
+		}
+		return null;
 	}
 	
 	@Override
 	public List<CustomerOrderLine> readByQuantity(int quantity) {
-		ArrayList<> rQuantity = testData.getCustomerOrderLines();
+		List<CustomerOrderLine> rQuantity = testData.getCustomerOrderLines();
 		for (CustomerOrderLine c : rQuantity) {
 			if (c.getQuantity() == quantity) {
 				return c;
 			}
-
 		}
 		return null;
 	}
@@ -83,188 +88,5 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	@Override
 	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine);
 
-	@Override
-	public void createCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public com.qac.row5project.managers.CustomerOrderLine readbyId(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByQuantity(
-			int quantity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByTotalPrice(
-			int totalPrice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByCustomerOrder_idOrder(
-			CustomerOrder CustomerOrder_idOrder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByStock_idStock(
-			CustomerOrder Stock_idStock) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void createCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public com.qac.row5project.managers.CustomerOrderLine readbyId(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByQuantity(
-			int quantity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByTotalPrice(
-			int totalPrice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByCustomerOrder_idOrder(
-			CustomerOrder CustomerOrder_idOrder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByStock_idStock(
-			CustomerOrder Stock_idStock) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void createCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public com.qac.row5project.managers.CustomerOrderLine readbyId(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByQuantity(
-			int quantity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByTotalPrice(
-			int totalPrice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByCustomerOrder_idOrder(
-			CustomerOrder CustomerOrder_idOrder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByStock_idStock(
-			CustomerOrder Stock_idStock) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void createCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public com.qac.row5project.managers.CustomerOrderLine readbyId(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByQuantity(
-			int quantity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByTotalPrice(
-			int totalPrice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByCustomerOrder_idOrder(
-			CustomerOrder CustomerOrder_idOrder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public com.qac.row5project.managers.List<com.qac.row5project.managers.CustomerOrderLine> readByStock_idStock(
-			CustomerOrder Stock_idStock) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateCustomerOrderLine(com.qac.row5project.managers.CustomerOrderLine customerOrderLine) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

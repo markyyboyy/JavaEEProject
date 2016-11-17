@@ -1,10 +1,8 @@
 package com.qac.row5project.managers.offline;
+import java.List;
+import java.Rating;
 
-import java.util.List;
-
-import com.qac.row5project.entities.Rating;
-
-public interface RatingManagerOffline {
+public interface RatingManager {
 	//CREATE: CUSTOMER
 	public void createRating(Rating rating);
 	
@@ -19,6 +17,6 @@ public interface RatingManagerOffline {
 	public List<Rating> findRatingsbyScore(int Score);
 	
 	//UPDATE	
-	public void updateRating(Rating rating);
+	public void updateRating(Rating rating)
 	
 }

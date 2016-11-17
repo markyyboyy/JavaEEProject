@@ -16,9 +16,10 @@ import javax.validation.constraints.Size;
 @Table(name="employees")
 
 public class Employee {
+
 	@OneToOne
-	@JoinColumn(name="logindetails_ID",joinColumns=
-	@JoinTable(name="employee",
+	@JoinTable(name="logindetails_ID",joinColumns=
+	@JoinColumn(name="employee",
 	referencedColumnName="Details_email"),
 	inverseJoinColumns=
 	@JoinColumn(name="logindetails",

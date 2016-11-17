@@ -10,9 +10,7 @@ public interface CustomerOrderLineManager {
 	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine);
 	
 	//READ - Customer and Inventory Manager Only
-	public CustomerOrderLine readbyId(int id);
-	public List<CustomerOrderLine> readByQuantity(int quantity);
-	public List<CustomerOrderLine> readByTotalPrice(int totalPrice);
+	public CustomerOrderLine readById(int id);
 	public List<CustomerOrderLine> readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder);
 	public List<CustomerOrderLine> readByStock_idStock(CustomerOrderLine Stock_idStock);
 	

@@ -15,11 +15,12 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "PurchaseOrder")
 
-@NamedQuery(name = "FindByOrderID", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Order_id = :Order_id")
-@NamedQuery(name = "FindBySupplierID", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Supplier_id = :Supplier_id")
-@NamedQuery(name = "FindByStatus", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Status = :Status")
-@NamedQuery(name = "FindBydatePlaced", query = "SELECT * FROM PurchaseOrder pO WHERE pO.datePlaced = :datePlaced")
-@NamedQuery(name = "FindBydateReceived", query = "SELECT * FROM PurchaseOrder pO WHERE pO.dateReceived = :dateReceived ")
+
+//@NamedQuery(name = "FindByOrderID", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Order_id = :Order_id")
+//@NamedQuery(name = "FindBySupplierID", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Supplier_id = :Supplier_id")
+//@NamedQuery(name = "FindByStatus", query = "SELECT * FROM PurchaseOrder pO WHERE pO.Status = :Status")
+//@NamedQuery(name = "FindBydatePlaced", query = "SELECT * FROM PurchaseOrder pO WHERE pO.datePlaced = :datePlaced")
+//@NamedQuery(name = "FindBydateReceived", query = "SELECT * FROM PurchaseOrder pO WHERE pO.dateReceived = :dateReceived ")
 
 public class PurchaseOrder {
 
@@ -42,10 +43,7 @@ public class PurchaseOrder {
 	@Column(name = "dateReceived", nullable = true)
 	private Calendar dateReceived;
 
-	public PurchaseOrder() {
-	}
-
-	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Date datePlaced, Date dateReceived) {
+	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Calendar datePlaced, Calendar dateReceived) {
 		this.Order_id= Order_id;
 		this.Supplier_id= Supplier_id;
 		this.status = status;

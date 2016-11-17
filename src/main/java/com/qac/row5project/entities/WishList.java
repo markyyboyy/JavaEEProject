@@ -1,44 +1,46 @@
 package com.qac.row5project.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "WishList")
 class WishList {
 
-//	@Column(name = "customer id", nullable = false, unique = true)
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private long customerId;
-//	
-//	@Column(name = "stock id", nullable = false, unique = true)
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private long stockId;
-//
-//	@
 	
 	
+	@Column(name = "customer id", nullable = false, unique = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long customerId;
+	
+	@Column(name = "stock id", nullable = false, unique = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long stockId;
+
 	public WishList() {
 	}
 
-	public WishList(int customerId, int stockId) {
+	public WishList(long customerId, long stockId) {
 		this.customerId = customerId;
 		this.stockId = stockId;
 	}
 
-	public int getCustomerId() {
+	public long getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(long customerId) {
 		this.customerId = customerId;
 	}
 
-	public int getStockId() {
+	public long getStockId() {
 		return stockId;
 	}
 
-	public void setStockId(int stockId) {
+	public void setStockId(long stockId) {
 		this.stockId = stockId;
 	}
 

@@ -1,5 +1,14 @@
 package com.qac.row5project.managers.offline;
 import java.util.Calendar;
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+import javax.inject.Inject;
+
+import com.qac.row5project.entities.CustomerOrder;
+import com.qac.row5project.entities.TestData;
+import com.qac.row5project.managers.CustomerOrderManager;
 
 @Stateless
 @Default
@@ -11,37 +20,37 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	//CREATE - CUSTOMER
 	@Override
 	public CustomerOrder createCustomerOrder(CustomerOrder co) {
-		List<CustomerOrder> co = testData.getCustomerOrder();
-		co.setcustomerOrderId(customerOrder.size()+1));
-		CustomerOrder.add(co);
-		testData.setCustomerOrder();
-		return CustomerOrder;
+		List<CustomerOrder> co1 = testData.getCustomerOrders();
+		co.setCustomerOrderId(co1.size()+1);
+		co1.add(co);
+		testData.setCustomerOrders(co1);
+		return co;
 		}
 	
 	//UPDATE - CUSTOMER
 	@Override
 	public void updateCustomerOrder(CustomerOrder co){
-		List<customerOrder> co = testData.getcustomerOrder();
-		for(customerOrder co : CustomerOrders)
-			if(customerOrder.getId()) == customerOrderId)
-				testData.setCustomerOrder();
-		
+		List<CustomerOrder> co1 = testData.getCustomerOrders();
+		for(int i=0;i<co1.size();i++)
+			if(co1.get(i).getCustomerId() == co.getCustomerId())
+				co1.set(i, co);
 	}
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
 	@Override
 	public CustomerOrder readCustomerOrderById(long id) {
-		{for(CustomerOrder co : testData.getCustomerOrder())
-				if(co.getId() == Id))
+			for(CustomerOrder co : testData.getCustomerOrders())
+				if(co.getCustomerId() == id)
 					return co;
-				else {return null;}
-		
+			return null;
 	}
+	
 	@Override
 	public CustomerOrder readCustomerOrderByDatePlaced(Calendar date){
-			for(CustomerOrder co : testData.getCustomerOrder())
-			if(co.getdatePlaced() == date)
+		for(CustomerOrder co : testData.getCustomerOrders())
+			if(co.getDatePlaced() == date)
 				return co;
-			else {return null;}
+		return null;
 	
+}
 }
