@@ -58,7 +58,7 @@ public class Customer {
 	private List<Address> address;
 	
 	@OneToOne
-	@JoinColumn(name="customer_id", nullable)
+	@JoinColumn(name="customer_id", nullable = false)
 	@NotNull
 	private SecurityQuestion question;
 		
