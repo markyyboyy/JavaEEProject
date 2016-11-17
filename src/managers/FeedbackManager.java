@@ -6,10 +6,9 @@ public interface FeedbackManager {
 		
 	//READ 
 	public Feedback readById(int id);
-	public Feedback readByRating(int rating);
-	public Feedback readByComment(int comment);
+	public List<Feedback>Feedback readByRating(int rating);
+	public List<Feedback> readByComment(int comment);
 	
 	//UPDATE - Customer Only
-	public void updateRating(int rating);
-	public void updateComment(String comment);
+	public void updateFeedback(Feedback feedback);
 }
