@@ -1,15 +1,18 @@
 package com.qac.row5project.entities;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-import javax.persistance.Entity;
-import javax.persistance.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="Customer")
@@ -62,14 +65,14 @@ public class Customer {
 	private SecurityQuestion question;
 		
 	@OneToMany(mappedBy="id")
-	private List<Order> orderHistory;
+	private List<CustomerOrder> orderHistory;
 //	
 //	@OneToMany
 //	@JoinColumn(name="payment_id")
 //	@NotNull
 //	private List<P>
 		
-	public int getID(){
+	public long getID(){
 		return this.id;
 	}	
 	
