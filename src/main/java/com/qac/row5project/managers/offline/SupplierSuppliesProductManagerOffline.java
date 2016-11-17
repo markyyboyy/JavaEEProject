@@ -3,6 +3,8 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.Supplier_Supplies_Product;
+import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.SupplierSuppliesProductManager;
 
 import java.util.List;
@@ -29,8 +31,9 @@ public class SupplierSuppliesProductManagerOffline implements SupplierSuppliesPr
 			if (SSP.getProduct().getProductId() == pID) {
 				return SSP;
 			}
-			return null;
 		}
+		return null;
+		
 	}
 	
 	@Override
@@ -39,8 +42,9 @@ public class SupplierSuppliesProductManagerOffline implements SupplierSuppliesPr
 			if (SSP.getSupplier().getIdSupplier() == sID) {
 				return SSP;
 			}
-			return null;
 		}
+		return null;
+		
 	}
 
 }
