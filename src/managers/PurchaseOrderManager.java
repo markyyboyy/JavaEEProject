@@ -12,8 +12,8 @@ public interface PurchaseOrderManager {
 	public PurchaseOrder readByDateReceived(Calendar dateRecd);
 	
 	//UPDATE - INVENTORY MANAGER ONLY
-	public void updateStatus(String status);
-	public void updateDateReceived(Calendar dateRecd);	
+	public void updatePurchaseOrder(PurchaseOrder purchaseOrder);
+
 	
 	
 }
