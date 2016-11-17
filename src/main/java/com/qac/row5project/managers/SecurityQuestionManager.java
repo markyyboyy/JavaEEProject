@@ -1,5 +1,7 @@
 package com.qac.row5project.managers;
 
+import com.qac.row5project.entities.SecurityQuestion;
+
 public interface SecurityQuestionManager {
 
 	//CREATE - CUSTOMER ONLY

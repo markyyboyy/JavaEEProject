@@ -1,9 +1,13 @@
 package com.qac.row5project.managers;
+
+import java.util.List;
+
+import com.qac.row5project.entities.Stock;
+
 public interface StockManager {
 	
 	//CREATE, UPDATE: INVENTORY MANAGER
 	public Stock createStock(Stock Stock);
-	public void updateStock(Stock Stock);
 	
 	//READ: VISITOR, CUSTOMER, INVENTORY MANAGER
 	public Stock findStocksbyID(int stockID);

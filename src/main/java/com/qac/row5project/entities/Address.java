@@ -59,7 +59,7 @@ public class Address implements Serializable {
 	}
 	
 	public String getAddressLine3() {
-		return this.sAddressLine2;
+		return this.sAddressLine3;
 	}
 
 	public void setAddressLine3(String sAddressLine3) {

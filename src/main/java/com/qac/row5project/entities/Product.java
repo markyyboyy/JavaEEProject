@@ -1,9 +1,11 @@
 package com.qac.row5project.entities;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-class Product implements Serializable{
+public class Product implements Serializable{
 		
 	@Id private int productId;
 	private String name;

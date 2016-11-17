@@ -1,5 +1,9 @@
 package com.qac.row5project.managers;
 
+import java.util.List;
+
+import com.qac.row5project.entities.Employee;
+
 public interface EmployeeManager {
 	
 	//READ - Inventory Manager Only
@@ -10,6 +14,6 @@ public interface EmployeeManager {
 	public void updateEmployee(String email);
 	
 	//Methods
-	public void listEmployees(List<>Employee);
+	public void listEmployees(List<Employee> employee);
 	
 }
