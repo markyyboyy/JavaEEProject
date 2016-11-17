@@ -11,7 +11,12 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	
 	//CREATE - Customer Only
 	@Override
-	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine);
+	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine) {
+		List<CustomerOrderLine> newCOLine = testData.getCustomerOrderLine();
+		newCOLine.setId(newCOLine.size()+1);
+		newCOLine.add(customerOrderLine);
+		testData.setCustomerOrderLine(newCOLine);
+	}
 		
 	//READ - Customer and Inventory Manager Only
 	@Override
