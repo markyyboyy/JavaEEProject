@@ -1,7 +1,10 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Entity
 class Product implements Serializable{
 		
-	private int productId;
+	@Id private int productId;
 	private String name;
 	private String desc;
 	private double price;
@@ -18,7 +21,7 @@ class Product implements Serializable{
 	public Product() {
 	}
 
-	public Product(Product product, String name, String desc, double price, double weight, String colour, int size,
+	public Product(String name, String desc, double price, double weight, String colour, int size,
 			int quantity) {
 		this.productId = productId;
 		this.name = name;

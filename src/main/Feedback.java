@@ -6,9 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table (name = "Feebback")
+@Table (name = "Feedback")
+
 
 public class Feedback {
 
@@ -17,32 +19,40 @@ public class Feedback {
 	private int idFeedback;
 	
 	@Size(min=3, max=225)
-	@Column(name="rating_id", nullable=true)
-	private int rating;
+	@Column(name="feedbackRating_id", nullable=true)
+	private int feedbackRating;
 	
 	@Size(min=3, max=225)
-	@Column(name="cooment_id", nullable=true)
+	@Column(name="comment_id", nullable=true)
 	private String comment;
 
 	public Feedback() {
 	}
 
-	public Feedback(int idFeedback, String rating, String comment) {
+	public Feedback(int idFeedback, int feedbackRating, String comment) {
 		this.idFeedback = idFeedback;
-		this.rating = rating;
+		this.feedbackRating = feedbackRating;
 		this.comment = comment;
 	}
-
-	public int getRating() {
-		return rating;
+	
+	public int getIdFeedback() {
+		return idFeedback;
+	}
+	
+	public int getFeedbackRating() {
+		return feedbackRating;
 	}
 	
 	public String getComment() {
 		return comment;
 	}
 
-	public void setRating(String rating) {
-		this.rating = rating;
+	public void setIdFeedback(int idFeedback) {
+		this.idFeedback = idFeedback;
+	}
+	
+	public void setFeedbackRating(String feedbackRating) {
+		this.feedbackRating = feedbackRating;
 	}
 	
 	public void setComment(String comment) {

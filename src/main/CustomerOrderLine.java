@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="CustomerOrderLine")
@@ -24,9 +25,9 @@ public class CustomerOrderLine {
 	
 	@NotNull 
 	@Size(min=5, max=12)
-	@Column(name="price_id", nullable = false)
-	private float price;
-	
+	@Column(name="totalPrice_id", nullable = false)
+	private float totalPrice;
+		
 	@ManyToOne
 	@JoinColumn(name="CustomerOrder_idOrder", nullable=false)
 	@NotNull
@@ -40,20 +41,24 @@ public class CustomerOrderLine {
 	public CustomerOrderLine() {
 	}
 
-	public CustomerOrderLine(int id, int quantity, float price, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
+	public CustomerOrderLine(int id, int quantity, float totalPrice, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
 		this.id = id;
 		this.quantity = quantity;
-		this.price = price;
+		this.totalPrice = totalPrice;
 		this.CustomerOrder_idOrder = CustomerOrder_idOrder;
 		this.Stock_idStock = Stock_idStock;
 	}
 
+	public int getId() {
+		return id;
+	}
+	
 	public int getQuantity() {
 		return quantity;
 	}
 
-	public float getPrice() {
-		return price;
+	public float getTotalPrice() {
+		return totalPrice;
 	}
 	
 	public CustomerOrder getCustomer_idOrder() {
@@ -64,12 +69,16 @@ public class CustomerOrderLine {
 		return Stock_idStock;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 
-	public void setPrice(float price) {
-		this.price = price;
+	public void setTotalPrice(float totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 	
 	public void setCustomerOrder_idOrder(CustomerOrder CustomerOrder_idOrder) {
