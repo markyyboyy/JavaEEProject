@@ -11,13 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-<<<<<<< HEAD
-@Table(name="Image")
-||||||| merged common ancestors
-@Table(name"Image")
-=======
 @Table(name = "Image")
->>>>>>> aaf1a947a92e2aada6424ddb1a5c440930f4c9fa
 public class Image {
 	@Id
 	@Column(name="url",nullable=false,unique=true)
