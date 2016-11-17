@@ -55,9 +55,7 @@ public class FeedbackManagerOffline implements FeedbackManger {
 		
 	//UPDATE - Customer Only
 	public void updateFeedback(Feedback feedback) {
-		List<Feedback> updateFeedback = testData.getFeedback();
-		updateFeedback.add(feedback);
-		testData.setFeedback(feedback);
+	
 	}
 
 }
