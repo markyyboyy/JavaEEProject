@@ -1,7 +1,7 @@
 public interface CustomerOrderLineManager {
 	
 	//CREATE - Customer Only
-	public void createCustomerOrderLine();
+	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine);
 	
 	//READ - Custoemr and Inventory Manager Only
 	public CustomerOrderLine readbyId(int id);
@@ -11,9 +11,5 @@ public interface CustomerOrderLineManager {
 	public CustomerOrderLine readByStock_idStock(CustomerOrder Stock_idStock);
 	
 	//UPDATE - Customer Only
-	public CustomerOrderLine updatebyId(int id);
-	public CustomerOrderLine updateByQuantity(int quantity);
-	public CustomerOrderLine updateByTotalPrice(int totalPrice);
-	public CustomerOrderLine updateByCustomerOrder_idOrder(CustomerOrder CustomerOrder_idOrder);
-	public CustomerOrderLine updateByStock_idStock(CustomerOrder Stock_idStock);
+	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine);
 }
