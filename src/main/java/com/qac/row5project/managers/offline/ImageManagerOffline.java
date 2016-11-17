@@ -1,5 +1,9 @@
+package com.qac.row5project.managers.offline;
 
-public interface ImageManager {
+import java.util.List;
+import com.qac.row5project.entities.Image;
+
+public interface ImageManagerOffline {
 	
 	//CREATE, READ, UPDATE:INVENTORY MANAGER
 

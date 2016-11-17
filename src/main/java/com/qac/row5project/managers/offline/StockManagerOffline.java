@@ -1,6 +1,13 @@
+package com.qac.row5project.managers.offline;
+
+import java.util.List;
+import javax.inject.Inject;
+import com.qac.row5project.entities.*;
+import com.qac.row5project.managers.StockManager;
+
 @Stateless
 	@Default
-public interface StockManagerOffline implements StockManager {
+public class StockManagerOffline implements StockManager {
 	
 		
 	@Inject
@@ -13,7 +20,7 @@ public interface StockManagerOffline implements StockManager {
 		List<Stock> stockList = testData.getStockItems();
 		stock.setId(stockList.size()+1);
 		customers.add(stock);
-		testData.setStockitems(stockList);
+		testData.setStockItems(stockList);
 		return stock;
 	}
 	public void updateStock(Stock stock){

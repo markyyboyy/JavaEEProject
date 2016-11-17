@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name"Image")
+@Table(name="Image")
 public class Image {
 	@Id
 	@Column(name="url",nullable=false,unique=true)
@@ -22,14 +22,12 @@ public class Image {
 	@Column(nullable=false,unique=true )
 	private int productID;
 	
-	public Images(String url, String desc, int productID) {
-		super();
+	public void Images(String url, String desc, int productID) {
 		this.url = url;
 		this.desc = desc;
 		this.productID = productID;
 	}
-	public Images(String url, int productID) {
-		super();
+	public void Images(String url, int productID) {
 		this.url = url;
 		this.productID = productID;
 	}
