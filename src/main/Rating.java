@@ -6,10 +6,12 @@ public class Rating {
 	private int score;
 	@Column(name="comment", nullable=true,length=225)
 	private String comment;
+	@Id
 	@ManyToOne
 	@JoinColumn(name="customerID", nullable=false)
 	@NotNull
 	private int customerID;
+	@Id
 	@ManyToOne
 	@JoinColumn(name="productID", nullable=false)
 	@NotNull

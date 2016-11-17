@@ -1,6 +1,8 @@
 @Entity
 @Table(name="Stock")
 public class Stock {
+	
+	//should stock id be generated if its the same as product
 	@Id
 	@Column(name="id", nullable=false,unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
@@ -11,6 +13,8 @@ public class Stock {
 	private boolean refurbished;
 	@NotNull @Column(name="quantity", nullable=false)
 	private int quantity;
+	
+	//does this need to be changed to Product isntead of int
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private int productID;
