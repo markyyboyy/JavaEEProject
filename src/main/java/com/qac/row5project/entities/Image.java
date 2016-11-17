@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name"Image")
+@Table(name = "Image")
 public class Image {
 	@Id
 	@Column(name="url",nullable=false,unique=true)
