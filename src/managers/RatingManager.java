@@ -2,9 +2,13 @@ import java.List;
 import java.Rating;
 
 public interface RatingManager {
-	
-	//CREATE - CUSTOMER
+	//CREATE: CUSTOMER
 	public void createRating(Rating rating);
+	
+	
+	//what if someone buys a product twice
+	//READ: CUSTOMER, VISITOR INVENTORY MANAGER
+
 	//READ - CUSTOMER/VISITOR/INV MANAGER
 	public Rating findRatingsbyProductCustomerID(int productID, int CustomerID);
 	public List<Rating> findRatingsbyCustomerID(int CustomerID);
@@ -12,7 +16,6 @@ public interface RatingManager {
 	public List<Rating> findRatingsbyScore(int Score);
 	
 	//UPDATE	
-	public void updateRating(Rating rating);
-	//what if someone buys a product twice
+	public void updateRating(Rating rating)
 	
 }
