@@ -20,5 +20,12 @@ public class Supplier  implements Serializable {
 		this.idSupplier = idSupplier;
 	}
 	
+	public int getIdSupplier() {
+		return idSupplier;
+	}
+	
+	public void setIdSupplier(int idSupplier) {
+		this.idSupplier = idSupplier;
+	}
 	
 }

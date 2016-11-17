@@ -34,7 +34,11 @@ public class Feedback {
 		this.rating = rating;
 		this.comment = comment;
 	}
-
+	
+	public int getIdFeedback() {
+		return idFeedback;
+	}
+	
 	public int getRating() {
 		return rating;
 	}
@@ -43,6 +47,10 @@ public class Feedback {
 		return comment;
 	}
 
+	public void setIdFeedback(int idFeedback) {
+		this.idFeedback = idFeedback;
+	}
+	
 	public void setRating(String rating) {
 		this.rating = rating;
 	}
