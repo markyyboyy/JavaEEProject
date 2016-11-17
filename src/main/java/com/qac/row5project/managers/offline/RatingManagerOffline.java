@@ -1,4 +1,3 @@
-package com.qac.row5project.managers.offline;
 import java.List;
 import java.Rating;
 

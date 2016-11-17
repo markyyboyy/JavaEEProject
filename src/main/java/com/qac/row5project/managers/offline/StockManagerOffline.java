@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/managers/Offline/StockManagerOffline.java
 @Stateless
 	@Default
 public interface StockManagerOffline implements StockManager {
@@ -8,12 +7,6 @@ public interface StockManagerOffline implements StockManager {
 	private TestData testData;
 	
 	@Override	
-||||||| merged common ancestors
-public interface StockManager {
-=======
-package com.qac.row5project.managers.offline;
-public interface StockManager {
->>>>>>> 0876c97bc956b9fb28b70847b7cd8c0e2c1da5b9:src/main/java/com/qac/row5project/managers/offline/StockManagerOffline.java
 	
 	//CREATE, UPDATE: INVENTORY MANAGER
 	public Stock createStock(Stock stock){
