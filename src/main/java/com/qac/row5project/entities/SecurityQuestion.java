@@ -33,8 +33,10 @@ public class SecurityQuestion {
 	
 	}
 	
-	public void setQuestions(String newQ)
+	public void setQuestion(String newQ)
 	{
 		this.question = newQ;
 	}
+
+
 }
