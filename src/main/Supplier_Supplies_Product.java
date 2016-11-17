@@ -33,6 +33,8 @@ public class Supplier_Supplies_Product {
 	@NotNull
 	private float price;
 	
+	// ADD DATE CREATED
+	
 	public Supplier_Supplies_Product()
 	{}
 	

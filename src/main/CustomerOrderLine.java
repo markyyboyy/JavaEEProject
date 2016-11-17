@@ -26,6 +26,7 @@ public class CustomerOrderLine {
 	@Size(min=5, max=12)
 	@Column(name="price_id", nullable = false)
 	private float price;
+	//Change name :)
 	
 	@ManyToOne
 	@JoinColumn(name="CustomerOrder_idOrder", nullable=false)

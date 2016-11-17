@@ -45,6 +45,7 @@ class CustomerOrder {
 		this.dateReceived = dateReceived;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
+		//Maybe add OrdLine array/linked list
 	}
 
 	public int getCustomerOrderId() {
