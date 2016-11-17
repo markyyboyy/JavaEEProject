@@ -41,11 +41,9 @@ public class Customer {
 	@NotNull
 	private Calendar dtDOB;	
 
-	
 	@Column(nullable=false)
 	@NotNull
 	private Double dBalance;	
-	
 	
 	@OneToOne
 	@JoinColumn(name="loginDetails_id", nullable=false)
