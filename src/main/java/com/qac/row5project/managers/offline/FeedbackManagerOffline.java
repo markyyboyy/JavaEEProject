@@ -13,7 +13,13 @@ public class FeedbackManagerOffline implements FeedbackManger {
 	
 	//CREATE - Customer Only
 	@Override 
-	public void createFeedback(Feedback feedback);
+	public void createFeedback(Feedback feedback) {
+		List<Feedback> newFeedback = testData.getFeedback();
+		newFeedback.setIdFeedback(newFeedback.size()+1);
+		newFeedback.add(feedback);
+		testData.setFeedback(newFeedback);
+		
+	}
 			
 	//READ 
 	@Override
@@ -50,5 +56,7 @@ public class FeedbackManagerOffline implements FeedbackManger {
 		
 	//UPDATE - Customer Only
 	public void updateFeedback(Feedback feedback) {
+	
+	}
 
 }
