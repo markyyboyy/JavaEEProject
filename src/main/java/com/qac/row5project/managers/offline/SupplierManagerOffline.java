@@ -36,8 +36,9 @@ public class SupplierManagerOffline implements SupplierManager {
 			if (supplier.getIdSupplier() == idSupplier) {
 				return supplier;
 			}
-			return null;
+			
 		}
+		return null;
 	}
 		
 	
