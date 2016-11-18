@@ -5,6 +5,10 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.LoginDetails;
+import com.qac.row5project.entities.TestData;
+import com.qac.row5project.managers.LoginDetailsManager;
+
 @Stateless
 @Default
 
@@ -15,19 +19,34 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	//CREATE - Inventory Manager Only
 	@Override
 	public void createLoginDetails(LoginDetails loginDetails){
-		ArrayList<E> returned = testData.getLoginDetails();
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();
 		returned.add(loginDetails);
 		testData.setLoginDetails(returned);
 	}
-		
+	@Override
 	public LoginDetails readLoginDetails(String emailAddress){
-		ArrayList<E> returned = testData.getLoginDetails();
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();
 		for(LoginDetails l: returned){
-			if (l.getEmailAddress.equals(emailAddress)){
-				return l
+			if (l.getEmail().equals(emailAddress)){
+				return l;
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public void updateLoginDetails(LoginDetails logInDetails) {
+		// TODO Auto-generated method stub
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();
+		int i = 0;
+		for(LoginDetails l: returned){
+			if (l.getEmail().equals(logInDetails.getEmail())){
+				returned.remove(i);
+				returned.add(logInDetails);
+			}
+			i++;
+		}
+		testData.setLoginDetails(returned);
 	}
 }
 	

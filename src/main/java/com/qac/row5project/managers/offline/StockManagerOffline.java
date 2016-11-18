@@ -1,21 +1,30 @@
 package com.qac.row5project.managers.offline;
+
+import java.util.ArrayList;
+
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+import javax.inject.Inject;
+import com.qac.row5project.entities.*;
+import com.qac.row5project.managers.StockManager;
+
 @Stateless
-	@Default
-public interface StockManagerOffline implements StockManager {
+@Default
+public class StockManagerOffline implements StockManager {
 	
 		
-	@Inject
-	private TestData testData;
+	@Inject 
+	TestData testData;
 	
 	@Override	
-	
 	//CREATE, UPDATE: INVENTORY MANAGER
 	public Stock createStock(Stock stock){
-		List<Stock> stockList = testData.getStockItems();
+		ArrayList<Stock> stockList = testData.getStockItems();
 		stock.setId(stockList.size()+1);
 		customers.add(stock);
 		testData.setStockitems(stockList);
 		return stock;
+		return null;
 	}
 	public void updateStock(Stock stock){
 
