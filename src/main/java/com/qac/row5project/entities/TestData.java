@@ -25,7 +25,7 @@ public class TestData {
 	private ArrayList<Rating> ratings;
 	private ArrayList<SecurityQuestion> securityQuestions;
 	private ArrayList<Stock> stockItems;
-	private ArrayList<ProductSupplier> productSupplier;
+	private ArrayList<ProductSupplier> productSuppliers;
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<WishList> wishlists;
 
@@ -46,7 +46,7 @@ public class TestData {
 		ratings = new ArrayList<Rating>();
 		securityQuestions = new ArrayList<SecurityQuestion>();
 		stockItems = new ArrayList<Stock>();
-		productSupplier = new ArrayList<ProductSupplier>();
+		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 		wishlists = new ArrayList<WishList>();
 	}
@@ -173,11 +173,11 @@ public class TestData {
 
 
 	public ArrayList<ProductSupplier> getProductSupplier() {
-		return productSupplier;
+		return productSuppliers;
 	}
 
 	public void setProductSupplier(ArrayList<ProductSupplier> productSupplier) {
-		this.productSupplier = productSupplier;
+		this.productSuppliers = productSupplier;
 	}
 
 	public ArrayList<Supplier> getSuppliers() {

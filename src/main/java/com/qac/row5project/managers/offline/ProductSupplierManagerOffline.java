@@ -18,8 +18,8 @@ public class ProductSupplierManagerOffline implements SupplierSuppliesProductMan
 	
 	//CREATE - INVENTORY MANAGER ONLY
 	@Override
-	public void createSupplierSuppliesProduct(ProductSupplier newSSP){
-		List<ProductSupplier> SSPOrders = testData.getSupplierSuppliesProducts();
+	public void createProductSupplier(ProductSupplier newSSP){
+		List<ProductSupplier> SSPOrders = testData.getProductSupplier();
 		SSPOrders.add(newSSP);
 		testData.setSupplierSuppliesProducts(SSPOrders);
 	}
