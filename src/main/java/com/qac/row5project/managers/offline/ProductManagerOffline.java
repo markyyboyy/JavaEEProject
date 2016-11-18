@@ -1,8 +1,6 @@
 package com.qac.row5project.managers.offline;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;

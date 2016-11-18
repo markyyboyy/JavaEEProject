@@ -5,13 +5,14 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.ProductSupplier;
 import com.qac.row5project.entities.TestData;
-import com.qac.row5project.managers.SupplierSuppliesProductManager;
+import com.qac.row5project.managers.ProductSupplierManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
 @Default
-public class ProductSupplierManagerOffline implements SupplierSuppliesProductManager{
+public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	
 	@Inject
 	private TestData testData;
@@ -19,15 +20,15 @@ public class ProductSupplierManagerOffline implements SupplierSuppliesProductMan
 	//CREATE - INVENTORY MANAGER ONLY
 	@Override
 	public void createProductSupplier(ProductSupplier newSSP){
-		List<ProductSupplier> SSPOrders = testData.getProductSupplier();
+		ArrayList<ProductSupplier> SSPOrders = testData.getProductSupplier();
 		SSPOrders.add(newSSP);
-		testData.setSupplierSuppliesProducts(SSPOrders);
+		testData.setProductSupplier(SSPOrders);
 	}
 	
 	//READ - INVENTORY MANAGER ONLY
 	@Override
-	public ProductSupplier readSupplierSuppliesProductByProductID(int pID){
-		for (ProductSupplier SSP : testData.getSupplierSuppliesProducts()) {
+	public ProductSupplier readProductSupplierByProductID(int pID){
+		for (ProductSupplier SSP : testData.getProductSupplier()) {
 			if (SSP.getProduct().getProductId() == pID) {
 				return SSP;
 			}
@@ -37,8 +38,8 @@ public class ProductSupplierManagerOffline implements SupplierSuppliesProductMan
 	}
 	
 	@Override
-	public ProductSupplier readSupplierSuppliesProductBySupplierID(int sID){
-		for (ProductSupplier SSP : testData.getSupplierSuppliesProducts()) {
+	public ProductSupplier readProductSupplierBySupplierID(int sID){
+		for (ProductSupplier SSP : testData.getProductSupplier()) {
 			if (SSP.getSupplier().getIdSupplier() == sID) {
 				return SSP;
 			}
