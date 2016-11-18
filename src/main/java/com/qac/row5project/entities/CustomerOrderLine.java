@@ -17,7 +17,7 @@ public class CustomerOrderLine {
 	@Id
 	@Column(nullable=false, unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	
 	
 	@Size(min=3, max=225)
@@ -43,7 +43,7 @@ public class CustomerOrderLine {
 	public CustomerOrderLine() {
 	}
 
-	public CustomerOrderLine(int id, int quantity, float totalPrice, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
+	public CustomerOrderLine(long id, int quantity, float totalPrice, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
 		this.id = id;
 		this.quantity = quantity;
 		this.totalPrice = totalPrice;
@@ -51,7 +51,7 @@ public class CustomerOrderLine {
 		this.Stock_idStock = Stock_idStock;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	
@@ -63,7 +63,7 @@ public class CustomerOrderLine {
 		return totalPrice;
 	}
 	
-	public CustomerOrder getCustomer_idOrder() {
+	public CustomerOrder getCustomerOrder_idOrder() {
 		return CustomerOrder_idOrder;
 	}
 

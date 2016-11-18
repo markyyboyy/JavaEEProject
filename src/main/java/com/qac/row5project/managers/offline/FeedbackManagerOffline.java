@@ -1,7 +1,12 @@
 package com.qac.row5project.managers.offline;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+
+import com.qac.row5project.entities.Feedback;
+import com.qac.row5project.entities.TestData;
 
 @Stateless
 @Default

@@ -68,7 +68,7 @@ public class PurchaseOrder {
 	
 	public Supplier getSupplier_id()
 	{
-		return this.Supplier_id;
+		return Supplier_id;
 	}
 	
 	public void setSupplier_idSupplier(Supplier Supplier_id)
