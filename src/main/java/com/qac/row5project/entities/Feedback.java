@@ -27,6 +27,9 @@ public class Feedback {
 	@Column(name="comment_id", nullable=true)
 	private String comment;
 
+	
+	
+	
 	public Feedback() {
 	}
 

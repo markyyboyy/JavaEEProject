@@ -35,7 +35,7 @@ public class EmployeeManagerOffline {
 		for(Employee e: returned){
 			if (e.getID() == employee.getID()){
 				returned.remove(i);
-				returned.set(i, e);
+				returned.add(i, e);
 			}
 			i++;
 		}
