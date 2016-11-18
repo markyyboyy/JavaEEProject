@@ -11,5 +11,5 @@ public interface LoginDetailsManager {
 	public LoginDetails readLoginDetails(String emailAddress);
 	
 	//UPDATE - Customer And Inventory Manager
-	public void updateLoginDetails(String email, String password);
+	public void updateLoginDetails(LoginDetails logInDetails);
 }

@@ -90,4 +90,9 @@ public class Payment implements Serializable{
 		this.Address = Address;
 	}
 
+	public int getID() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+
 }

@@ -5,7 +5,7 @@ public interface  ProductManager {
 
 	
 	//CREATE - INVENTORY MANAGER
-	public Product createProduct(Product p);
+	public void createProduct(Product p);
 	
 	//UPDATE - INVENTORY MANAGER
 	public void updateProduct(Product p);
