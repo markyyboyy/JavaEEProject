@@ -7,6 +7,7 @@ import com.qac.row5project.entities.PurchaseOrder;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.PurchaseOrderManager;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	// CREATE - INVENTORY MANAGER ONLY
 	@Override
 	public void createPurchaseOrder(PurchaseOrder newPOrder) {
-		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
+		ArrayList<PurchaseOrder> pOrders = testData.getPurchaseOrders();
 		newPOrder.setOrder_idOrder(pOrders.size() + 1);
 		pOrders.add(newPOrder);
 		testData.setPurchaseOrders(pOrders);
@@ -87,10 +88,9 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	// UPDATE - INVENTORY MANAGER ONLY
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder newPOrder) {
-		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
+		ArrayList<PurchaseOrder> pOrders = testData.getPurchaseOrders();
 		pOrders.add(newPOrder);
 		testData.setPurchaseOrders(pOrders);
-
 	}
 
 }

@@ -7,6 +7,7 @@ import com.qac.row5project.entities.SecurityQuestion;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.SecurityQuestionManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -19,7 +20,7 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 	
 	@Override
 	public void createSecurityQuestion(SecurityQuestion newQuestion){
-		List<SecurityQuestion> sQuestion = testData.getSecurityQuestions();
+		ArrayList<SecurityQuestion> sQuestion = testData.getSecurityQuestions();
 		sQuestion.add(newQuestion);
 		testData.setSecurityQuestions(sQuestion);
 		
@@ -43,11 +44,9 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 		for (SecurityQuestion sQuestion : testData.getSecurityQuestions()) {
 			if (sQuestion.getQuestion().equalsIgnoreCase(oldQuestion)) {
 				sQuestion.setQuestion(newQuestion);
-				List<SecurityQuestion> sQuestions = testData.getSecurityQuestions();
+				ArrayList<SecurityQuestion> sQuestions = testData.getSecurityQuestions();
 				testData.setSecurityQuestions(sQuestions);
 			}
 		}
-		
-		
 	}
 }
