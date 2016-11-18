@@ -37,16 +37,6 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		return null;
 	}
 	
-	@Override
-	public List<CustomerOrderLine> readByQuantity(int quantity) {
-		List<CustomerOrderLine> rQuantity = testData.getCustomerOrderLines();
-		for (CustomerOrderLine c : rQuantity) {
-			if (c.getQuantity() == quantity) {
-				return c;
-			}
-		}
-		return null;
-	}
 	
 	@Override
 	public List<CustomerOrderLine> readByTotalPrice(int totalPrice) {

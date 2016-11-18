@@ -1,157 +1,197 @@
 package com.qac.row5project.entities;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+
 @Startup
 @Singleton
 public class TestData {
-private List<Product> products;
-private List<Stock> stocks;
-private List<Customer> customers;
-private List<Address> addresses;
-private List<CustomerOrder> customerorders;
-private List<CustomerOrderLine> customerorderline;
-private List<Employee> employees;
-private List<Feedback> feedbacks;
-private List<Image> images;
-private List<LoginDetails> logindetails;
-private List<Payment> payments;
-private List<PurchaseOrder> purchaseorders;
-private List<Rating> ratings;
-private List<SecurityQuestion> securityquestions;
-private List<Stock> stockitems;
-private List<Supplier_Supplies_Product> supplierSuppliesProducts;
-private List<Supplier> suppliers;
-private List<WishList> wishlists;
-@PostConstruct
-private void setupData() {
+	private ArrayList<Product> products;
+	private ArrayList<Stock> stocks;
+	private ArrayList<Customer> customers;
+	private ArrayList<Address> addresses;
+	private ArrayList<CustomerOrder> customerOrders;
+	private ArrayList<CustomerOrderLine> customerOrderLine;
+	private ArrayList<Employee> employees;
+	private ArrayList<Feedback> feedbacks;
+	private ArrayList<Image> images;
+	private ArrayList<LoginDetails> loginDetails;
+	private ArrayList<Payment> payments;
+	private ArrayList<PurchaseOrder> purchaseOrders;
+	private ArrayList<Rating> ratings;
+	private ArrayList<SecurityQuestion> securityQuestions;
+	private ArrayList<Stock> stockItems;
+	private ArrayList<Supplier_Supplies_Product> supplierSuppliesProducts;
+	private ArrayList<Supplier> suppliers;
+	private ArrayList<WishList> wishlists;
+
+	@PostConstruct
+	private void setupData() {
 		products = new ArrayList<Product>();
-stocks = new ArrayList<Stock>();
-customers = new ArrayList<Customer>();
-addresses = new ArrayList<Address>();
-customerorders = new ArrayList<CustomerOrder>();
-customerorderline = new ArrayList<CustomerOrderLine>();
-employees = new ArrayList<Employee>();
-feedbacks = new ArrayList<Feedback>();
-images = new ArrayList<Image>();
-logindetails = new ArrayList<LoginDetails>();
-payments = new ArrayList<Payment>();
-purchaseorders = new ArrayList<PurchaseOrder>();
-ratings = new ArrayList<Rating>();
-securityquestions = new ArrayList<SecurityQuestion>();
-stockitems = new ArrayList<Stock>();
-supplierSuppliesProducts = new ArrayList<Supplier_Supplies_Product>();
-suppliers = new ArrayList<Supplier>();
-wishlists = new ArrayList<WishList>();
-}
-public void setProducts(List<Product> products){
-	this.products = products;
-}
-public void setStocks(List<Stock> stocks){
-	this.stocks = stocks;
-}
-public void setCustomers(List<Customer> customers){
-	this.customers = customers;
-}
-public void setAddresses(List<Address> addresses){
-	this.addresses = addresses;
-}
-public void setCustomerOrders(List<CustomerOrder> customerorders){
-	this.customerorders = customerorders;
-}
-public void setCustomerOrderLines(List<CustomerOrderLine> customerorderlines){
-	this.customerorderline = customerorderlines;
-}
-public void setEmployees(List<Employee> employees){
-	this.employees = employees;
-}
-public void setFeedbacks(List<Feedback> feedbacks){
-	this.feedbacks = feedbacks;
-}
-public void setImages(List<Image> images){
-	this.images = images;
-}
-public void setLoginDetails(List<LoginDetails> logindetails){
-	this.logindetails = logindetails;
-}
-public void setPayments(List<CustomerOrderLine> customerorderlines){
-	this.customerorderline = customerorderlines;
-}
-public void setPurchaseOrders(List<PurchaseOrder> purchaseorders){
-	this.purchaseorders = purchaseorders;
-}
-public void setRatings(List<Rating> ratings){
-	this.ratings = ratings;
-}
-public void setSecurityQuestions(List<SecurityQuestion> securityquestions){
-	this.securityquestions = securityquestions;
-}
-public void setStockItems(List<Stock> stockitems){
-	this.stockitems = stockitems;
-}
-public void setSupplierSuppliesProducts(List<Supplier_Supplies_Product> suppliersuppliesproducts){
-	this.supplierSuppliesProducts = suppliersuppliesproducts;
-}
-public void setSuppliers(List<Supplier> suppliers){
-	this.suppliers = suppliers;
-}
-public void setWishlists(List<WishList> wishlists){
-	this.wishlists = wishlists;
-}
-public List<Product> getProducts(){
-	return products;
-}
-public List<Stock> getStocks(){
-	return stocks;
-}
-public List<Customer> getCustomers(){
-	return customers;
-}
-public List<Address> getAddresses(){
-	return addresses;
-}
-public List<CustomerOrder> getCustomerOrders(){
-	return customerorders;
-}
-public List<CustomerOrderLine> getCustomerOrderLines(){
-	return customerorderline;
-}
-public List<Employee> getEmployees(){
-	return employees;
-}
-public List<Feedback> getFeedbacks(){
-	return feedbacks;
-}
-public List<Image> getImages(){
-	return images;
-}
-public List<LoginDetails> getLoginDetails(){
-	return logindetails;
-}
-public List<CustomerOrderLine> getPayments(){
-	return customerorderline;
-}
-public List<PurchaseOrder> getPurchaseOrders(){
-	return purchaseorders;
-}
-public List<Rating> getRatings(){
-	return ratings;
-}
-public List<SecurityQuestion> getSecurityQuestions(){
-	return securityquestions;
-}
-public List<Stock> getStockItems(){
-	return stockitems;
-}
-public List<Supplier_Supplies_Product> getSupplierSuppliesProducts(){
-	return supplierSuppliesProducts;
-}
-public List<Supplier> getSuppliers(){
-	return suppliers;
-}
-public List<WishList> getWishlists(){
-	return wishlists;
-}
+		stocks = new ArrayList<Stock>();
+		customers = new ArrayList<Customer>();
+		addresses = new ArrayList<Address>();
+		customerOrders = new ArrayList<CustomerOrder>();
+		customerOrderLine = new ArrayList<CustomerOrderLine>();
+		employees = new ArrayList<Employee>();
+		feedbacks = new ArrayList<Feedback>();
+		images = new ArrayList<Image>();
+		loginDetails = new ArrayList<LoginDetails>();
+		payments = new ArrayList<Payment>();
+		purchaseOrders = new ArrayList<PurchaseOrder>();
+		ratings = new ArrayList<Rating>();
+		securityQuestions = new ArrayList<SecurityQuestion>();
+		stockItems = new ArrayList<Stock>();
+		supplierSuppliesProducts = new ArrayList<Supplier_Supplies_Product>();
+		suppliers = new ArrayList<Supplier>();
+		wishlists = new ArrayList<WishList>();
+	}
+
+	public ArrayList<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
+	}
+
+	public ArrayList<Stock> getStocks() {
+		return stocks;
+	}
+
+	public void setStocks(ArrayList<Stock> stocks) {
+		this.stocks = stocks;
+	}
+
+	public ArrayList<Customer> getCustomers() {
+		return customers;
+	}
+
+	public void setCustomers(ArrayList<Customer> customers) {
+		this.customers = customers;
+	}
+
+	public ArrayList<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(ArrayList<Address> addresses) {
+		this.addresses = addresses;
+	}
+
+	public ArrayList<CustomerOrder> getCustomerorders() {
+		return customerOrders;
+	}
+
+	public void setCustomerorders(ArrayList<CustomerOrder> customerorders) {
+		this.customerOrders = customerorders;
+	}
+
+	public ArrayList<CustomerOrderLine> getCustomerorderline() {
+		return customerOrderLine;
+	}
+
+	public void setCustomerorderline(ArrayList<CustomerOrderLine> customerorderline) {
+		this.customerOrderLine = customerorderline;
+	}
+
+	public ArrayList<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(ArrayList<Employee> employees) {
+		this.employees = employees;
+	}
+
+	public ArrayList<Feedback> getFeedbacks() {
+		return feedbacks;
+	}
+
+	public void setFeedbacks(ArrayList<Feedback> feedbacks) {
+		this.feedbacks = feedbacks;
+	}
+
+	public ArrayList<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(ArrayList<Image> images) {
+		this.images = images;
+	}
+
+	public ArrayList<LoginDetails> getLogindetails() {
+		return loginDetails;
+	}
+
+	public void setLogindetails(ArrayList<LoginDetails> logindetails) {
+		this.loginDetails = logindetails;
+	}
+
+	public ArrayList<Payment> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(ArrayList<Payment> payments) {
+		this.payments = payments;
+	}
+
+	public ArrayList<PurchaseOrder> getPurchaseorders() {
+		return purchaseOrders;
+	}
+
+	public void setPurchaseorders(ArrayList<PurchaseOrder> purchaseorders) {
+		this.purchaseOrders = purchaseorders;
+	}
+
+	public ArrayList<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(ArrayList<Rating> ratings) {
+		this.ratings = ratings;
+	}
+
+	public ArrayList<SecurityQuestion> getSecurityquestions() {
+		return securityQuestions;
+	}
+
+	public void setSecurityquestions(ArrayList<SecurityQuestion> securityquestions) {
+		this.securityQuestions = securityquestions;
+	}
+
+	public ArrayList<Stock> getStockitems() {
+		return stockItems;
+	}
+
+	public void setStockitems(ArrayList<Stock> stockitems) {
+		this.stockItems = stockitems;
+	}
+
+	public ArrayList<Supplier_Supplies_Product> getSupplierSuppliesProducts() {
+		return supplierSuppliesProducts;
+	}
+
+	public void setSupplierSuppliesProducts(ArrayList<Supplier_Supplies_Product> supplierSuppliesProducts) {
+		this.supplierSuppliesProducts = supplierSuppliesProducts;
+	}
+
+	public ArrayList<Supplier> getSuppliers() {
+		return suppliers;
+	}
+
+	public void setSuppliers(ArrayList<Supplier> suppliers) {
+		this.suppliers = suppliers;
+	}
+
+	public ArrayList<WishList> getWishlists() {
+		return wishlists;
+	}
+
+	public void setWishlists(ArrayList<WishList> wishlists) {
+		this.wishlists = wishlists;
+	}
+
 }
