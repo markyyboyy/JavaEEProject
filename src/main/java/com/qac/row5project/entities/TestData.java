@@ -1,7 +1,7 @@
 package com.qac.row5project.entities;
-
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -9,6 +9,7 @@ import javax.ejb.Startup;
 @Startup
 @Singleton
 public class TestData {
+
 	private ArrayList<Product> products;
 	private ArrayList<Stock> stocks;
 	private ArrayList<Customer> customers;
@@ -24,7 +25,7 @@ public class TestData {
 	private ArrayList<Rating> ratings;
 	private ArrayList<SecurityQuestion> securityQuestions;
 	private ArrayList<Stock> stockItems;
-	private ArrayList<Supplier_Supplies_Product> supplierSuppliesProducts;
+	private ArrayList<ProductSupplier> productSupplier;
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<WishList> wishlists;
 
@@ -45,7 +46,7 @@ public class TestData {
 		ratings = new ArrayList<Rating>();
 		securityQuestions = new ArrayList<SecurityQuestion>();
 		stockItems = new ArrayList<Stock>();
-		supplierSuppliesProducts = new ArrayList<Supplier_Supplies_Product>();
+		productSupplier = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 		wishlists = new ArrayList<WishList>();
 	}
@@ -82,20 +83,20 @@ public class TestData {
 		this.addresses = addresses;
 	}
 
-	public ArrayList<CustomerOrder> getCustomerorders() {
+	public ArrayList<CustomerOrder> getCustomerOrders() {
 		return customerOrders;
 	}
 
-	public void setCustomerorders(ArrayList<CustomerOrder> customerorders) {
-		this.customerOrders = customerorders;
+	public void setCustomerOrders(ArrayList<CustomerOrder> customerOrders) {
+		this.customerOrders = customerOrders;
 	}
 
-	public ArrayList<CustomerOrderLine> getCustomerorderline() {
+	public ArrayList<CustomerOrderLine> getCustomerOrderLine() {
 		return customerOrderLine;
 	}
 
-	public void setCustomerorderline(ArrayList<CustomerOrderLine> customerorderline) {
-		this.customerOrderLine = customerorderline;
+	public void setCustomerOrderLine(ArrayList<CustomerOrderLine> customerOrderLine) {
+		this.customerOrderLine = customerOrderLine;
 	}
 
 	public ArrayList<Employee> getEmployees() {
@@ -122,12 +123,12 @@ public class TestData {
 		this.images = images;
 	}
 
-	public ArrayList<LoginDetails> getLogindetails() {
+	public ArrayList<LoginDetails> getLoginDetails() {
 		return loginDetails;
 	}
 
-	public void setLogindetails(ArrayList<LoginDetails> logindetails) {
-		this.loginDetails = logindetails;
+	public void setLoginDetails(ArrayList<LoginDetails> loginDetails) {
+		this.loginDetails = loginDetails;
 	}
 
 	public ArrayList<Payment> getPayments() {
@@ -138,12 +139,12 @@ public class TestData {
 		this.payments = payments;
 	}
 
-	public ArrayList<PurchaseOrder> getPurchaseorders() {
+	public ArrayList<PurchaseOrder> getPurchaseOrders() {
 		return purchaseOrders;
 	}
 
-	public void setPurchaseorders(ArrayList<PurchaseOrder> purchaseorders) {
-		this.purchaseOrders = purchaseorders;
+	public void setPurchaseOrders(ArrayList<PurchaseOrder> purchaseOrders) {
+		this.purchaseOrders = purchaseOrders;
 	}
 
 	public ArrayList<Rating> getRatings() {
@@ -154,28 +155,29 @@ public class TestData {
 		this.ratings = ratings;
 	}
 
-	public ArrayList<SecurityQuestion> getSecurityquestions() {
+	public ArrayList<SecurityQuestion> getSecurityQuestions() {
 		return securityQuestions;
 	}
 
-	public void setSecurityquestions(ArrayList<SecurityQuestion> securityquestions) {
-		this.securityQuestions = securityquestions;
+	public void setSecurityQuestions(ArrayList<SecurityQuestion> securityQuestions) {
+		this.securityQuestions = securityQuestions;
 	}
 
-	public ArrayList<Stock> getStockitems() {
+	public ArrayList<Stock> getStockItems() {
 		return stockItems;
 	}
 
-	public void setStockitems(ArrayList<Stock> stockitems) {
-		this.stockItems = stockitems;
+	public void setStockItems(ArrayList<Stock> stockItems) {
+		this.stockItems = stockItems;
 	}
 
-	public ArrayList<Supplier_Supplies_Product> getSupplierSuppliesProducts() {
-		return supplierSuppliesProducts;
+
+	public ArrayList<ProductSupplier> getProductSupplier() {
+		return productSupplier;
 	}
 
-	public void setSupplierSuppliesProducts(ArrayList<Supplier_Supplies_Product> supplierSuppliesProducts) {
-		this.supplierSuppliesProducts = supplierSuppliesProducts;
+	public void setProductSupplier(ArrayList<ProductSupplier> productSupplier) {
+		this.productSupplier = productSupplier;
 	}
 
 	public ArrayList<Supplier> getSuppliers() {
@@ -193,5 +195,4 @@ public class TestData {
 	public void setWishlists(ArrayList<WishList> wishlists) {
 		this.wishlists = wishlists;
 	}
-
 }
