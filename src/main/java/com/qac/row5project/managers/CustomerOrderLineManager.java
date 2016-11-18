@@ -11,8 +11,8 @@ public interface CustomerOrderLineManager {
 	
 	//READ - Customer and Inventory Manager Only
 	public CustomerOrderLine readById(int id);
-	public List<CustomerOrderLine> readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder);
-	public List<CustomerOrderLine> readByStock_idStock(CustomerOrderLine Stock_idStock);
+	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder);
+	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock);
 	
 	//UPDATE - Customer Only
 	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine);

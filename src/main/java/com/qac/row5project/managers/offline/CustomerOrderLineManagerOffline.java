@@ -30,20 +30,20 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	@Override
 	public CustomerOrderLine readById(int id) {
 		List<CustomerOrderLine> rQuantity = testData.getCustomerOrderLines();
-		for (CustomerOrderLine c : rQuantity) {
-			if (c.getQuantity() == id) {
-				return c;
+		for (CustomerOrderLine col : rQuantity) {
+			if (col.getQuantity() == id) {
+				return col;
 			}
 		}
 		return null;
 	}
 	
 	@Override
-	public List<CustomerOrderLine> readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
+	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
 		List<CustomerOrderLine> rCO_idOrder = testData.getCustomerOrderLines();
-		for (CustomerOrderLine c : rCO_idOrder) {
-			if (c.getCustomerOrder_idOrder().getCustomerOrderId() == CustomerOrder_idOrder.getId()) {
-				return c;
+		for (CustomerOrderLine col : rCO_idOrder) {
+			if (col.getCustomerOrder_idOrder().getCustomerOrderId() == CustomerOrder_idOrder.getId()) {
+				return col;
 			}
 
 		}
@@ -51,11 +51,11 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 	
 	@Override
-	public List<CustomerOrderLine> readByStock_idStock(CustomerOrderLine Stock_idStock) {
+	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock) {
 		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLines();
-		for (CustomerOrderLine c : rS_idStock) {
-			if (c.getStock_idStock().getStockID() == Stock_idStock.getId()) {
-				return c;
+		for (CustomerOrderLine col : rS_idStock) {
+			if (col.getStock_idStock().getStockID() == Stock_idStock.getId()) {
+				return col;
 			}
 
 		}
@@ -65,8 +65,11 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	//UPDATE - Customer Only
 	@Override
 	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine) {
-		
-	}
+		List<CustomerOrderLine> uCOrders = testData.getCustomerOrderLines();
+		uCOrders.add(customerOrderLine);
+
+		testData.setCustomerOrderLines(uCOrders);
+		}
 
 	
 }
