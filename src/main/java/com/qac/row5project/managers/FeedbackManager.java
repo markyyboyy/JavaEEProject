@@ -11,8 +11,8 @@ public interface FeedbackManager {
 		
 	//READ 
 	public Feedback readById(int idFeedback);
-	public Feedback readByFeedbackRating(int feedbackRating);
-	public Feedback readByComment(String comment);
+	public List<Feedback> readByFeedbackRating(int feedbackRating);
+//	public List<Feedback> readByComment(String comment);
 	
 	//UPDATE - Customer Only
 	public void updateFeedback(Feedback feedback);

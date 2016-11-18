@@ -1,17 +1,20 @@
 package com.qac.row5project.managers.offline;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Feedback;
 import com.qac.row5project.entities.TestData;
+import com.qac.row5project.managers.FeedbackManager;
 
 @Stateless
 @Default
 
-public class FeedbackManagerOffline implements FeedbackManger {
+public class FeedbackManagerOffline implements FeedbackManager {
 	@Inject
 	private TestData testData;
 	
@@ -19,49 +22,60 @@ public class FeedbackManagerOffline implements FeedbackManger {
 	//CREATE - Customer Only
 	@Override 
 	public void createFeedback(Feedback feedback) {
-		List<Feedback> newFeedback = testData.getFeedback();
-		newFeedback.setIdFeedback(newFeedback.size()+1);
+		ArrayList<Feedback> newFeedback = testData.getFeedbacks();
+		feedback.setIdFeedback(newFeedback.size()+1);
 		newFeedback.add(feedback);
-		testData.setFeedback(newFeedback);
+		testData.setFeedbacks(newFeedback);
 		
 	}
 			
 	//READ 
 	@Override
 	public Feedback readById(int idFeedback) {
-		for (Feedback feedback : testData.getIdFeedback()) {
+		for (Feedback feedback : testData.getFeedbacks()) {
 			if (feedback.getIdFeedback() == idFeedback) {
 				return feedback;
 			}
-			return null;
 		}
+		return null;
 			
 	}
 	
 	@Override
 	public List<Feedback> readByFeedbackRating(int feedbackRating) {
-		for (Feedback feedback : testData.getFeedbackRating()) {
-			if (feedback.getFeedbackRating() == feedbackRating) {
-				return feedback;
+		
+		List<Feedback> arrFeedback = new ArrayList<>();
+		
+		for (Feedback feedback : testData.getFeedbacks()) {
+			if (feedback.getFeedbackRating() == feedbackRating) {							
+				arrFeedback.add(feedback);
 			}
-			return null;
-		}
-			
+		}			
+		
+		return arrFeedback;		
 	}
 	
-	@Override
-	public List<Feedback> readByComment(String comment) {
-		for (Feedback feedback : testData.getComment()) {
-			if (feedback.getComment() == comment) {
-				return feedback;
-			}
-			return null;
-		}
-	}
+
 		
 	//UPDATE - Customer Only
 	public void updateFeedback(Feedback feedback) {
 	
+		List<Feedback> co1 = testData.getFeedbacks();
+
+		for (int i = 0; i < co1.size(); i++) {
+			if (co1.get(i).getIdFeedback() == feedback.getIdFeedback())
+				co1.set(i, feedback);
+		}
+
+		
+
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }

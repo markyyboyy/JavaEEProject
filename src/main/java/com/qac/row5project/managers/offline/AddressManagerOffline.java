@@ -18,7 +18,7 @@ public class AddressManagerOffline implements AddressManager {
 		
 		address.setID(newFeedback.size() + 1);
 		newFeedback.add(address);
-		testData.setAddress(newFeedback);
+		testData.setAddresses(newFeedback);
 		
 		return address;
 
