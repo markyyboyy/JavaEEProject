@@ -34,6 +34,11 @@ public class Address implements Serializable {
 
 	}
 	
+	
+	public void setID(int id){
+		this.id = id;
+	}
+		
 	public String getCounty() {
 		return this.sCounty;
 	}

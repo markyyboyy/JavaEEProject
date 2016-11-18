@@ -76,6 +76,13 @@ public class Customer {
 		return this.id;
 	}	
 	
+	
+	public void setID(int id){
+		this.id = id;
+	}
+	
+
+	
 	public LoginDetails getLoginDetails() {
 		return this.loginDetails;
 	}
