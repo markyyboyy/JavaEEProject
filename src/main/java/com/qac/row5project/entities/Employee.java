@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @Table(name="employees")
 
 public class Employee {
-
+	
 	@OneToOne
 	@JoinTable(name="logindetails_ID",joinColumns=
 	@JoinColumn(name="employee",
@@ -44,4 +44,11 @@ public class Employee {
 	public LoginDetails getLogInDetails() {
 		return this.logInDetails;
 	}
+
+	public int getID() {
+		// TODO Auto-generated method stub
+		return id;
+	}
+	
+	
 }
