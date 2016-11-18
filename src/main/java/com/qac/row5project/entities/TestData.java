@@ -46,7 +46,7 @@ public class TestData {
 		ratings = new ArrayList<Rating>();
 		securityQuestions = new ArrayList<SecurityQuestion>();
 		stockItems = new ArrayList<Stock>();
-		productSupplier = new ArrayList<ProductSupplier>();
+		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 		wishlists = new ArrayList<WishList>();
 	}
