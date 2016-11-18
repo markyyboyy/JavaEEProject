@@ -30,7 +30,7 @@ public class EmployeeManagerOffline {
 	
 	//UPDATE - Inventory Manager Only
 	public void updateEmployee(Employee employee){
-		List<Employee> returned = testData.getEmployees();
+		ArrayList<Employee> returned = testData.getEmployees();
 		int i = 0;
 		for(Employee e: returned){
 			if (e.getID() == employee.getID()){
