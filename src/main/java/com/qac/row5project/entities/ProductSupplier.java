@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
 //@NamedQuery(name = "FindByPrice", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.price = :price ")
 
 
-public class Supplier_Supplies_Product {
+public class ProductSupplier {
 	
 	@OneToOne
 	@JoinColumn(name = "Supplier_id", nullable = false)
@@ -36,10 +36,10 @@ public class Supplier_Supplies_Product {
 	
 	// ADD DATE CREATED
 	
-	public Supplier_Supplies_Product()
+	public ProductSupplier()
 	{}
 	
-	public Supplier_Supplies_Product(Supplier supplier, Product product, float price)
+	public ProductSupplier(Supplier supplier, Product product, float price)
 	{
 		this.supplier = supplier;
 		this.product = product;

@@ -3,7 +3,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
-import com.qac.row5project.entities.Supplier_Supplies_Product;
+import com.qac.row5project.entities.ProductSupplier;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.SupplierSuppliesProductManager;
 
@@ -11,23 +11,23 @@ import java.util.List;
 
 @Stateless
 @Default
-public class SupplierSuppliesProductManagerOffline implements SupplierSuppliesProductManager{
+public class ProductSupplierManagerOffline implements SupplierSuppliesProductManager{
 	
 	@Inject
 	private TestData testData;
 	
 	//CREATE - INVENTORY MANAGER ONLY
 	@Override
-	public void createSupplierSuppliesProduct(Supplier_Supplies_Product newSSP){
-		List<Supplier_Supplies_Product> SSPOrders = testData.getSupplierSuppliesProducts();
+	public void createSupplierSuppliesProduct(ProductSupplier newSSP){
+		List<ProductSupplier> SSPOrders = testData.getSupplierSuppliesProducts();
 		SSPOrders.add(newSSP);
 		testData.setSupplierSuppliesProducts(SSPOrders);
 	}
 	
 	//READ - INVENTORY MANAGER ONLY
 	@Override
-	public Supplier_Supplies_Product readSupplierSuppliesProductByProductID(int pID){
-		for (Supplier_Supplies_Product SSP : testData.getSupplierSuppliesProducts()) {
+	public ProductSupplier readSupplierSuppliesProductByProductID(int pID){
+		for (ProductSupplier SSP : testData.getSupplierSuppliesProducts()) {
 			if (SSP.getProduct().getProductId() == pID) {
 				return SSP;
 			}
@@ -37,8 +37,8 @@ public class SupplierSuppliesProductManagerOffline implements SupplierSuppliesPr
 	}
 	
 	@Override
-	public Supplier_Supplies_Product readSupplierSuppliesProductBySupplierID(int sID){
-		for (Supplier_Supplies_Product SSP : testData.getSupplierSuppliesProducts()) {
+	public ProductSupplier readSupplierSuppliesProductBySupplierID(int sID){
+		for (ProductSupplier SSP : testData.getSupplierSuppliesProducts()) {
 			if (SSP.getSupplier().getIdSupplier() == sID) {
 				return SSP;
 			}
