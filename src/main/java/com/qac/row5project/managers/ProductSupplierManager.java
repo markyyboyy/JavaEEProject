@@ -5,10 +5,10 @@ import com.qac.row5project.entities.ProductSupplier;
 public interface ProductSupplierManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY
-	public void createSupplierSuppliesProduct();	
+	public void createProductSupplier();	
 	
 	//READ - INVENTORY MANAGER ONLY
-	public ProductSupplier readSupplierSuppliesProductByProductID(int pID);
-	public ProductSupplier readSupplierSuppliesProductBySupplierID(int sID);
+	public ProductSupplier readProductSupplierByProductID(int pID);
+	public ProductSupplier readProductSupplierBySupplierID(int sID);
 
 }
