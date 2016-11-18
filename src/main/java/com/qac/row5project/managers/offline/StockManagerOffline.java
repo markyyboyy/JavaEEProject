@@ -30,8 +30,11 @@ public class StockManagerOffline implements StockManager {
 		ArrayList<Stock> stockList = testData.getStockItems();
 		for(Stock s: stockList)
 		{
-			if(s==stock)
+			if(s.getStockID()==stock.getStockID()){
+				s=stock;
 				testData.setStockItems(stockList);
+				return;
+			}
 		}
 	}
 	
