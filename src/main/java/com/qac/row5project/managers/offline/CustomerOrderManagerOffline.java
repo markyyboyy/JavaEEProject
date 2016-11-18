@@ -20,17 +20,17 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	//CREATE - CUSTOMER
 	@Override
 	public CustomerOrder createCustomerOrder(CustomerOrder co) {
-		List<CustomerOrder> co1 = testData.getCustomerOrders();
+		List<CustomerOrder> co1 = testData.getCustomerorders();
 		co.setCustomerOrderId(co1.size()+1);
 		co1.add(co);
-		testData.setCustomerOrders(co1);
+		testData.setCustomerorders(co1);
 		return co;
 		}
 	
 	//UPDATE - CUSTOMER
 	@Override
 	public void updateCustomerOrder(CustomerOrder co){
-		List<CustomerOrder> co1 = testData.getCustomerOrders();
+		List<CustomerOrder> co1 = testData.getCustomerorders();
 		for(int i=0;i<co1.size();i++)
 			if(co1.get(i).getCustomerId() == co.getCustomerId())
 				co1.set(i, co);
@@ -39,7 +39,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	//READ - CUSTOMER/INVENTORY MANAGER
 	@Override
 	public CustomerOrder readCustomerOrderById(long id) {
-			for(CustomerOrder co : testData.getCustomerOrders())
+			for(CustomerOrder co : testData.getCustomerorders())
 				if(co.getCustomerId() == id)
 					return co;
 			return null;
@@ -47,7 +47,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	
 	@Override
 	public CustomerOrder readCustomerOrderByDatePlaced(Calendar date){
-		for(CustomerOrder co : testData.getCustomerOrders())
+		for(CustomerOrder co : testData.getCustomerorders())
 			if(co.getDatePlaced() == date)
 				return co;
 		return null;

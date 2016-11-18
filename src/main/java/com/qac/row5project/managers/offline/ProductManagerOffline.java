@@ -1,5 +1,6 @@
 package com.qac.row5project.managers.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -20,7 +21,7 @@ public class ProductManagerOffline implements ProductManager {
 	// CREATE - INVENTORY MANAGER
 	@Override
 	public void createProduct(Product p) {
-		List<Product> pList = testData.getProducts();
+		ArrayList<Product> pList = testData.getProducts();
 		p.setProductId(pList.size() + 1);
 		pList.add(p);
 		testData.setProducts(pList);
@@ -29,7 +30,7 @@ public class ProductManagerOffline implements ProductManager {
 	// UPDATE - INVENTORY MANAGER
 	@Override
 	public void updateProduct(Product p) {
-		List<Product> pList = testData.getProducts();
+		ArrayList<Product> pList = testData.getProducts();
 		for (Product prod : pList)
 			if (prod.getProductId() == p.getProductId())
 				testData.setProducts(pList);
