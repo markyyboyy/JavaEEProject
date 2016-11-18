@@ -8,10 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "WishList")
-class WishList {
-
-	
-	
+public class WishList {
 	@Column(name = "customer id", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerId;
