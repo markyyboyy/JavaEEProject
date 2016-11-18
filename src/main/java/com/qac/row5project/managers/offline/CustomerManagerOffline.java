@@ -1,5 +1,6 @@
 package com.qac.row5project.managers.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,12 +17,13 @@ public class CustomerManagerOffline implements CustomerManager {
 	@Override
 	public void createCustomer(Customer newCustomer) {
 
-		List<Customer> customerList = testData.getCustomers();
+		ArrayList<Customer> customerList = testData.getCustomers();
 
 		newCustomer.setID(customerList.size() + 1);
 		customerList.add(newCustomer);
 		testData.setCustomers(customerList);
 
+		
 	}
 
 	@Override
