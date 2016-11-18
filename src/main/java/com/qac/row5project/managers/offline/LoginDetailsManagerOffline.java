@@ -19,13 +19,13 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	//CREATE - Inventory Manager Only
 	@Override
 	public void createLoginDetails(LoginDetails loginDetails){
-		ArrayList<LoginDetails> returned = testData.getLogindetails();
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();
 		returned.add(loginDetails);
-		testData.setLogindetails(returned);
+		testData.setLoginDetails(returned);
 	}
 	@Override
 	public LoginDetails readLoginDetails(String emailAddress){
-		ArrayList<LoginDetails> returned = testData.getLogindetails();
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();
 		for(LoginDetails l: returned){
 			if (l.getEmail().equals(emailAddress)){
 				return l;
@@ -37,7 +37,7 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	@Override
 	public void updateLoginDetails(LoginDetails logInDetails) {
 		// TODO Auto-generated method stub
-		ArrayList<LoginDetails> returned = testData.getLogindetails();
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();
 		int i = 0;
 		for(LoginDetails l: returned){
 			if (l.getEmail().equals(logInDetails.getEmail())){
@@ -46,7 +46,7 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 			}
 			i++;
 		}
-		testData.setLogindetails(returned);
+		testData.setLoginDetails(returned);
 	}
 }
 	
