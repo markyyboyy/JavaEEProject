@@ -43,7 +43,7 @@ public class CustomerManagerOffline implements CustomerManager {
 				return a;
 		}
 
-		return null;
+		return null;	
 	}
 
 	@Override
