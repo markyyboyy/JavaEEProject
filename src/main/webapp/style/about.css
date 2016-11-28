@@ -1,0 +1,11 @@
+html, a {
+color: #0DE00D
+}
+body {
+overflow-x: hidden;
+padding-top: 50px;
+padding-bottom: 20px;
+}
+footer {
+padding: 30px 0;
+}
