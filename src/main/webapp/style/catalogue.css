@@ -8,3 +8,22 @@
 body{
 	background-color: #fff;
 }
+
+.productResult{
+	
+	margin: 10px 0;
+	
+	
+}
+
+
+button{
+	color: #fefefe;
+	background-color: #241828;
+	border: none;
+	padding: 10px 5%;
+}
+
+.productSmallView{
+	margin-bottom: 10px;
+}
