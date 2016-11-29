@@ -26,28 +26,18 @@ form label {
 	margin-left: 2%;
 } 
 	
-input[type="text"], input[type="password"], input[type="submit"],  input[type="number"]{
-		font-size: 90%; 
-		width: 100%;
-		border: 1px dashed red;	
-		
-}
-	
-input[type="submit"]{
-		font-size: 90%; 
-		margin-left: 24%;
-		border: 1px solid black;
-		
-} 
+
 
 #search{
-	display: inline-block;
+	
 }
 
-#login{
-	width: 20%;
-	padding: 5px 10px;
-		box-sizing: border-box;
+#login, #register{
+	width: 50%;
+	align: center;
+	margin-left: 24%;
+	font-size: 100%;
+} 
 		
 }
 

@@ -28,3 +28,17 @@ nav{
 	font-family: "Abel", Helvetica;	
 	
 }
+
+input[type="text"], input[type="password"], input[type="submit"],  input[type="number"]{
+		font-size: 90%; 
+		width: 100%;
+		border: 1px dashed red;	
+		
+}
+	
+input[type="submit"]{
+		font-size: 100%; 
+		
+		border: 1px solid black;
+		
+} 
