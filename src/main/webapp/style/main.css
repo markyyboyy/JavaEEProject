@@ -15,6 +15,11 @@
 	position: relative;
 }
 
+	
+nav{
+	background-color: #73AF55;
+	padding: 5%;
+}
 
 *{
 	box-sizing: border-box;
