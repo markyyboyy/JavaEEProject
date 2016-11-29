@@ -1,5 +1,5 @@
 .form{
-
+	width: 80%;
 	margin:5%;
 	padding-bottom: 5%;
 	padding-top: 5%;
@@ -21,7 +21,10 @@
 	
 
 #search{
+	width: 50%;
+	float: left;
 	
+
 }
 
 #login, #register{
@@ -29,9 +32,10 @@
 	align: center;
 	margin-left: 24%;
 	font-size: 100%;
+	display: inline-block;
 } 
 		
-}
+
 
 
 

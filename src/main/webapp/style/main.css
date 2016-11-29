@@ -10,7 +10,6 @@
 @import url("product.css");
 
 
-
 .navbar-wrapper{
 	position: relative;
 	
@@ -38,7 +37,6 @@ input[type="text"], input[type="password"], input[type="submit"],  input[type="n
 	
 input[type="submit"]{
 		font-size: 100%; 
-		
 		border: 1px solid black;
 		
 } 
