@@ -28,17 +28,22 @@ body {
 .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
+  background-color:#C2FF54;
 }
 .navbar-wrapper .navbar .container {
   width: auto;
 }
-
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+	background-color:#D2FF80;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
+	
+  text-align: center;
   height: 500px;
   margin-bottom: 60px;
 }
@@ -130,5 +135,8 @@ body {
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;
+  }
+  .navbar-form navbar-left{
+	  width:100%;
   }
 }
