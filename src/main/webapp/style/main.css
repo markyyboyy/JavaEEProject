@@ -3,3 +3,8 @@
 @import url("home.css");
 @import url("faq.css");
 @import url("product.css");
+
+
+.navbar-wrapper{
+	position: relative;
+}
