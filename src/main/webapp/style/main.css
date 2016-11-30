@@ -17,6 +17,15 @@
 	
 }
 
+.navWrapper{
+	width: 80%;
+	margin:auto;
+}
+
+.homeLogo{
+	float: left;	
+}
+
 	
 nav{
 	background-color: #73AF55;
