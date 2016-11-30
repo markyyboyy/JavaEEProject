@@ -20,8 +20,9 @@
 } 
 
 .navButton{
-	background-color: #a8d9aa; 
+	 background-color: #260f33;	 
     border: solid black;
+    border: none;
     color: white;
     text-align: center;
     display: inline-block;
@@ -44,7 +45,10 @@
 	display: inline-block;
 } 
 		
-
+#navWrapper{
+	width: 80%;
+	margin:auto;
+}
 #homeLogo{
 	float: left;
 }
@@ -59,6 +63,11 @@
 	padding-left: 5%;
 	padding-top: 2%;
 	width: 80%;
+}
+
+#loginButton{
+	float:left;
+	padding-left: 5%;
 }
 
 

@@ -2,82 +2,82 @@
 
 <html>
 
-	<head>
-		<title> Login </title>
-		<meta name = "description" content = "Login to NB Gardens"/>
-		<meta name = "Author" content = "Richard Allen" />
-		<link rel = "stylesheet" media = "screen" href = "style/bootstrap.min.css"/>
-		<link href ="style/main.css"  type="text/css" rel="stylesheet" />
-	
-	</head>
-	
-	<header>
-		<nav>
-			<div id = "homeLogo">
-				<a href = "home.html">  <img src=logo.png width = 129px height = 101px /></a>
-			</div>
-			<div id = "search">
-				<input name = "search" type = text placeholder = "search.."/>
-					<input type = "submit" value = "Search"/>
-			</div>
-			
-			<div id = "navigation">
-				<button href = "catalogue.html" class = "navButton"> Browse </button>
-				<button href = "SpecialOffers.html" class = "navButton"> Special Offers </button>
-				<button href = "FAQpage.html" class = "navButton"> FAQ </button>
-				<button href = "aboutus.html" class = "navButton"> About Us </button>	
-				<button href = "myAccount.html" class = "navButton"> MyAccount </button>
-			</div>
-		</nav>
-	</header>
-	
-	<body>
-	
+<head>
+<title>Login</title>
+<meta name="description" content="Login to NB Gardens" />
+<meta name="Author" content="Richard Allen" />
+<link rel="stylesheet" media="screen" href="style/bootstrap.min.css" />
+<link href="style/main.css" type="text/css" rel="stylesheet" />
 
-	
-		<form id = login>
-			<h4> Login </h4>
-				<label>  Email  </label>
-				<input name = login type = text placeholder = "email address" required = "required"><br>
-				<label>Password</label>
-				<input name = login type = password placeholder = "password" required = "required"><br>
-				<input type = "submit" value = "Login"><br>
-				<input type = "submit" value = "Forgotten Password"/>
-				
-		</form>
-	
-		<hr>
+</head>
+
+<header>
+	<nav>
+		<div id=navWrapper>
+			<div id="homeLogo">
+				<a href="home.html"> <img src=logo.png width=129px height=101px /></a>
+			</div>
+			<div id="search">
+				<input name="search" type=text placeholder="search.." /> <input
+					type="submit" value="Search" />
+			</div>
 			
-		<form id = register>
-			<h4> Register </h4>
-				<label>Email</label>
-				<input name = register type = text placeholder = "email address" required = "required"><br>
-				<label>Password</label>
-				<input name = register type = password placeholder = "password" required = "required"><br>
-				<label>Name</label>
-				<input name = register type = text placeholder = "name" required = "required"><br>
-				
-				
-					<h5>Address </h5>
-						<label> House Number </label>
-							<input name = register_address type = number placeholder = "1"><br>
-						<label> House Name</label>
-							<input name = register_address type = text placeholder = "Number One"><br>
-						<label> Street</label>
-							<input name = register_address type = text placeholder = "street" required = "required"><br>
-						<label> Town</label>
-							<input name = register_address type = text placeholder = "town" required = "required"><br>
-						<label> Postcode</label>
-							<input name = register_address type = text placeholder = "postcode" required = "required"><br>
-					
-					
-					<input type = "submit" value = "Register">
-		</form>
-		
-	
-	</body>
-	
-	<footer>
-	
-	</footer>
-	
+			<div id=loginButton>
+				<input type="submit" name="Login/Reg" value="Login/Register"/>
+			</div>
+
+			<div id="navigation">
+				<button href="catalogue.html" class="navButton">Browse</button>
+				<button href="SpecialOffers.html" class="navButton">
+					Special Offers</button>
+				<button href="FAQpage.html" class="navButton">FAQ</button>
+				<button href="aboutus.html" class="navButton">About Us</button>
+				<button href="myAccount.html" class="navButton">MyAccount</button>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<body>
+
+
+
+	<form id=login>
+		<h4>Login</h4>
+		<label> Email </label> <input name=login type=text
+			placeholder="email address" required="required"><br> <label>Password</label>
+		<input name=login type=password placeholder="password"
+			required="required"><br> <input type="submit"
+			value="Login"><br> <input type="submit"
+			value="Forgotten Password" />
+
+	</form>
+
+	<hr>
+
+	<form id=register>
+		<h4>Register</h4>
+		<label>Email</label> <input name=register type=text
+			placeholder="email address" required="required"><br> <label>Password</label>
+		<input name=register type=password placeholder="password"
+			required="required"><br> <label>Name</label> <input
+			name=register type=text placeholder="name" required="required"><br>
+
+
+		<h5>Address</h5>
+		<label> House Number </label> <input name=register_address type=number
+			placeholder="1"><br> <label> House Name</label> <input
+			name=register_address type=text placeholder="Number One"><br>
+		<label> Street</label> <input name=register_address type=text
+			placeholder="street" required="required"><br> <label>
+			Town</label> <input name=register_address type=text placeholder="town"
+			required="required"><br> <label> Postcode</label> <input
+			name=register_address type=text placeholder="postcode"
+			required="required"><br> <input type="submit"
+			value="Register">
+	</form>
+
+
+</body>
+
+<footer> </footer>
