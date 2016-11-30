@@ -131,12 +131,16 @@ body {
     font-size: 50px;
   }
 }
-
+.navbar-header{
+	  width:100%
+  }
+  
+  .navbar-form.navbar-right,  .navbar-form.navbar-right  input{
+	  width: 90%
+  }
+  
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;
-  }
-  .navbar-form navbar-left{
-	  width:100%;
   }
 }
