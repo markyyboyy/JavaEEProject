@@ -3,8 +3,12 @@ body {
 }
 
 #search {
-	width: 30%;
+	width: 60%;
 	float: right;
+	
+	position: absolute;
+    left: 18%;
+    top: 101px;
 }
 
 .button {
@@ -21,18 +25,19 @@ body {
 	margin: 4px 2px;
 	transition-duration: 0.4s;
 	cursor: pointer;
-	box-shadow: 5px 5px 5px lightgrey;
 }
 
 .button1 {
-	background-color: white;
+	background-color: #5dce49;
 	color: black;
 	border: 2px solid #5dce49;
 	font-size: 25px;
+	box-shadow: 5px 5px 5px lightgrey;
+	
 }
 
 .button1:hover {
-	background-color: #5dce49;
+	font-weight: bold;
 	color: white;
 }
 
@@ -44,16 +49,31 @@ body {
 	margin: 10px 1%;
 	padding: 10px 0px;
 	font-size: 100%;
+	box-shadow: 5px 5px 5px lightgrey;
+	
+	
 }
 
-.button2:hover {
-	background-color: white;
+.button3 {
+	background-color: #F4F4F4;
 	color: black;
+	border: 2px solid #5dce49;
+	width: 8%;
+	margin: 10px 1%;
+	padding: 10px 0px;
+	font-size: 100%;
+	
+}
+
+
+.button2:hover {
+	color: white;
+	font-weight: bold;
 }
 
 .element {
 	position: fixed;
-	bottom: 30px;
+	bottom: 52px;
 	right: 0px;
 }
 
@@ -92,7 +112,7 @@ html, body {
 
 .footer {
 	background-color: #F4F4F4;
-	height: 24px;
+	height: 50px;
 	width: 100%; background-image : none;
 	background-repeat: repeat;
 	background-attachment: scroll;
@@ -100,4 +120,5 @@ html, body {
 	position: fixed;
 	bottom: 0pt;
 	left: 0pt;
+	font-size: 112%;
 }
