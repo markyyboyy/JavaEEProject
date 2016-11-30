@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
 html, a {
 color: #0DE00D
 }
 body {
 overflow-x: hidden;
-padding-top: 50px;
 padding-bottom: 20px;
-background-color:#5dce49;
+background-color:#F4F4F4;
 height:100%;
-width:110%;
+width:100%;
+float:left;
+font-family:Abel;
 }
 footer {
 padding: 30px 0;
@@ -18,14 +20,34 @@ padding: 30px 0;
 }
 .navbar-form{
 	color:white;
+	float:left;
 }
-#navbar{
-	width:80%;
-	background-color:#5dce49;
-	float:right;
-}
-#content{
-	background-color:blue;
+.navbar{
 	width:100%;
-	height:400px;
+	background-color:#92D050;
+	float:left;
+	margin:0px auto;
+	padding: 0px;
+	height:18%;
+}
+
+
+.navbar-fixed-top{
+	position:relative;
+}
+.content{
+	background-color:#F4F4F4;
+	width:50%;
+	margin:0px auto;
+	padding:0px;
+}
+.contentblock{
+	background-color:#F4F4F4;
+}
+.container{
+	background-color:#F4F4F4;
+	width:70%;
+}
+img{
+	width:20%;
 }
