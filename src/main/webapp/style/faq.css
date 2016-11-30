@@ -16,6 +16,7 @@ body {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    box-shadow: 5px 5px 5px lightgrey;
     
 }
 
