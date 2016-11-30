@@ -19,44 +19,5 @@ template="about.xhtml">
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d37997.78605435545!2d-2.292304!3d53.470933!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x15d2cfb3bf9cb54d!2sBurger+King!5e0!3m2!1sen!2suk!4v1480353052867" frameborder="0" style="border:0" allowfullscreen style="position: absolute; height: 50%;></iframe>
  
 </div>
-<div class="row">
-<h:form>
-<h:outputText escape="false" value="No Products Found"
-rendered="#{browse.products.rowCount==0}" />
-<h:panelGroup rendered="#{browse.products.rowCount>0}">
-<h:commandLink value="Previous" action="#{browse.previous}"
-rendered="#{browse.pagination.hasPreviousPage}" />
-<h:outputText value="
-#{browse.pagination.pageFirstItem + 1}..
-#{browse.pagination.pageLastItem + 1}/
-#{browse.pagination.itemsCount}" />
-<h:commandLink value="Next" action="#{browse.next}"
-rendered="#{browse.pagination.hasNextPage}" />
-<div>
-<ui:repeat var="product"
-value="#{browse.products}">
-<div class="col-xs-12 col-md-4">
-<h:commandLink
-action="#{products.select(product.id)}"
-value="#{product.name}" />
-<p><h:outputText
-value="#{product.description}" /></p>
-<h:button action=
-"#{wishlist.addToWishlist(product.id)}"
-value="Add to Wishlist" />
-</div>
-</ui:repeat>
-</div>
-<h:commandLink value="Previous" action="#{browse.previous}"
-rendered="#{browse.pagination.hasPreviousPage}" />
-<h:outputText value="
-#{browse.pagination.pageFirstItem + 1}..
-#{browse.pagination.pageLastItem + 1}/
-#{browse.pagination.itemsCount}" />
-<h:commandLink value="Next" action="#{browse.next}"
-rendered="#{browse.pagination.hasNextPage}" />
-</h:panelGroup>
-</h:form>
-</div>
 </ui:define>
 </ui:composition>
