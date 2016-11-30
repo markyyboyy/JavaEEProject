@@ -19,6 +19,15 @@
 	margin-left: 2%;
 } 
 
+.navButton{
+	background-color: #a8d9aa; 
+    border: solid black;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 100%;
+    cursor: pointer;
+}
 
 #search{
 	width: 50%;
