@@ -4,8 +4,8 @@
 	<groupId>com.qac</groupId>
 	<artifactId>row5project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Row 6 Project</name>
-	<description>The project for row 6.</description>
+	<name>Row 5 Project</name>
+	<description>The project for row 5.</description>
 	<build>
 		<plugins>
 			<plugin>
