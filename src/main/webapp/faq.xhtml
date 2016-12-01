@@ -1,183 +1,374 @@
-<!DOCTYPE html>
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<head>
 
-<!�- Meta Tags -->
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description"
-	content="NB Gardens Online Catalogue. Your One-Stop-Shop for high-end Garden Gnomes!" />
-<meta name="author" content="Iman Hassan" />
-<title><ui:insert name="Frequently Asked Questions" /></title>
 
-<!�- CSS links -->
-<link rel="stylesheet" media="screen" href="css/bootstrap.min.css" />
-<link rel="stylesheet" media="screen" href="style/main.css" />
 
-<meta charset="ISO-8859-1" />
-<link rel="style" type="text/css" href="style.css">
-</head>
 
-<body>
-	<div class="container">
-		<nav class="navbar navbar-fixed-top navbar-inverse">
-			<div class="container">
-				<div class="navbar-header">
+<h:body>
+	<ui:composition template="./templates/main.xhtml">
+		<ui:define name="mainContent">
+			<p>
+			<div id="wrapper"></div>
 
-					<!� burger button -->
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-						aria-controls="navbar">
-						<span class="sr-only">Toggle Navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="nbgardens.xhtml">NBGardens</a>
-				</div>
-
-				<div id="navbar" class="collapse navbar-collapse">
-					<a href="home.html" href="#top"> <img src=logo.png width=129px
-						height=101px /></a>
-
-					<ul class="nav navbar-nav navbar-left">
-						<li><a class="navbar-brand" href="nbgardens.xhtml">home</a></li>
-						<li><a class="navbar-brand" href="browse.xhtml">catalogue</a></li>
-						<li><h:outputLink styleClass="navbar-brand"
-								rendered="#{user.loggedIn}" value="wishlist.xhtml">wishlist</h:outputLink>
-						</li>
-						<li><h:outputLink styleClass="navbar-brand"
-								rendered="#{!user.loggedIn}" value="register.xhtml">register</h:outputLink>
-						</li>
-					</ul>
-
-					<h:form class="navbar-form navbar-left">
-						<h:inputText value="#{search.term}" class="form-control">
-							<f:passThroughAttribute name="type" value="text" />
-							<f:passThroughAttribute name="placeholder" value="Search..." />
-							<f:passThroughAttribute name="alt" value="Search" />
-						</h:inputText>
-						<h:commandButton action="#{search.search}" value="Seach"
-							class="btn btn-success">
-							<f:passThroughAttribute name="style" value="display: none;" />
-						</h:commandButton>
-					</h:form>
-
-					<h:form class="navbar-form navbar-right"
-						rendered="#{!user.loggedIn}">
-						<div class="form-group">
-							<h:inputText class="form-control" value="#{login.email}">
-								<f:passThroughAttribute name="type" value="email" />
-								<f:passThroughAttribute name="placeholder" value="email..." />
-								<f:passThroughAttribute name="alt" value="Enter Email" />
-								<f:passThroughAttribute name="required" value="required" />
-							</h:inputText>
-							<h:inputText class="form-control" value="#{login.password}">
-								<f:passThroughAttribute name="type" value="password" />
-								<f:passThroughAttribute name="placeholder" value="password..." />
-								<f:passThroughAttribute name="alt" value="Enter Password" />
-								<f:passThroughAttribute name="required" value="required" />
-							</h:inputText>
-							<h:commandButton class="btn btn-success" action="#{login.login}"
-								value="Sign In" />
-						</div>
-					</h:form>
-				</div>
-			</div>
-		</nav>
-		<div id="wrapper">
 			<h1>Frequently Asked Questions</h1>
-			</a>
+
 			<p>
 				If your question is not answered here, <a href="about.html">please
 					get in touch</a>
 			</p>
-			</br>
-			</br>
+			<br />
+			<br />
 
 			<div>
-
-
-				<link rel="stylesheet" href="style/faq.css">
-				</head>
-
-
 
 				<p>
 					<a href="#Delivery" class="button button1">Delivery</a> <a
 						href="#Products" class="button button1">Products</a> <a
-						href="#Basket" class="button button1">Basket</a> <a
-						href="#Orders" class="button button1">Orders</a> <a
-						href="#Account" class="button button1">Account</a> <a
-						href="#Returns" class="button button1">Returns</a>
+						href="#Basket" class="button button1">Basket</a> <a href="#Orders"
+						class="button button1">Orders</a> <a href="#Account"
+						class="button button1">Account</a> <a href="#Returns"
+						class="button button1">Returns</a>
 				</p>
-				</br>
-				</br>
-				</br> <a href="#top" class="button button2 element">Back to top</a>
+				<br /> <br /> <br /> <a href="#top"
+					class="button button2 element">Back to top</a>
 
 			</div>
+
 			<div>
-				<div>
-					<h2 id="Delivery">Delivery Questions</h2>
-					</br>
-					<ol>
-						<li><h3>How to change your delivery address</h3></li>
-						<p>Lorem ipsum dolor sit amet, porttitor pellentesque
-							porttitor magna, elit pellentesque, nullam vel. Adipiscing
-							tellus, elit nunc maecenas, quam elit, donec est dui wisi
-							consectetuer massa. Hendrerit pellentesque rutrum vel, malesuada
-							etiam curabitur, velit morbi nam, cras tellus ac vel a, lacinia
-							scelerisque semper lacinia ante ipsum nisl. Auctor augue wisi
-							integer, viverra vitae libero sem wisi nec. Ipsum dignissim mi
-							praesent dignissim, at quam neque id, a nullam pellentesque id
-							libero duis, mattis velit, nullam laoreet euismod pede sed. Lorem
-							consectetuer sodales vitae tortor, eget vehicula nulla aenean
-							imperdiet, et morbi purus suspendisse erat, dis sed quis metus
-							pretium ad neque, euismod lectus condimentum dui tempor.</p>
-						</br>
-						<li><h3>How to track your orders</h3></li>
-						<p>Lorem ipsum dolor sit amet, porttitor pellentesque
-							porttitor magna, elit pellentesque, nullam vel. Adipiscing
-							tellus, elit nunc maecenas, quam elit, donec est dui wisi
-							consectetuer massa. Hendrerit pellentesque rutrum vel, malesuada
-							etiam curabitur, velit morbi nam, cras tellus ac vel a, lacinia
-							scelerisque semper lacinia ante ipsum nisl. Auctor augue wisi
-							integer, viverra vitae libero sem wisi nec. Ipsum dignissim mi
-							praesent dignissim, at quam neque id, a nullam pellentesque id
-							libero duis, mattis velit, nullam laoreet euismod pede sed. Lorem
-							consectetuer sodales vitae tortor, eget vehicula nulla aenean
-							imperdiet, et morbi purus suspendisse erat, dis sed quis metus
-							pretium ad neque, euismod lectus condimentum dui tempor.</p>
-						</br>
-						<li><h3>How to add another delivery address</h3></li>
-						<p>Lorem ipsum dolor sit amet, porttitor pellentesque
-							porttitor magna, elit pellentesque, nullam vel. Adipiscing
-							tellus, elit nunc maecenas, quam elit, donec est dui wisi
-							consectetuer massa. Hendrerit pellentesque rutrum vel, malesuada
-							etiam curabitur, velit morbi nam, cras tellus ac vel a, lacinia
-							scelerisque semper lacinia ante ipsum nisl. Auctor augue wisi
-							integer, viverra vitae libero sem wisi nec. Ipsum dignissim mi
-							praesent dignissim, at quam neque id, a nullam pellentesque id
-							libero duis, mattis velit, nullam laoreet euismod pede sed. Lorem
-							consectetuer sodales vitae tortor, eget vehicula nulla aenean
-							imperdiet, et morbi purus suspendisse erat, dis sed quis metus
-							pretium ad neque, euismod lectus condimentum dui tempor.</p>
-						</br>
-						</br>
-						</br>
-				</div>
+				<h2 id="Delivery">Delivery Questions</h2>
+				<br />
+				<ol>
+					<li><h3>How to change your delivery address</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
 
-				<ui:insert name="maincontent" />
-				<hr />
-				<footer>
-					<p>� 2016</p>
-				</footer>
+					<br />
+					
+					<li><h3>How to track your orders</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />	
+						
+					<li><h3>How to add another delivery address</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />
+
+				</ol>
+				
+				<br /><br /><br />
+
 			</div>
-			<script
-				src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" />
-			<script src="js/bootstrap.min.js" type="text/javascript" />
-</body>
+			
+				
+
+			<div>
+				<h2 id="Products">Product Questions</h2>
+				<br />
+				<ol>
+					<li><h3>How to search for a product</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+
+					<br />
+					
+					<li><h3>How to create a wishlist</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />	
+						
+					<li><h3>How to rate a product</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />
+					
+					<li><h3>What is Porousware</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+
+				</ol>
+				
+				<br /><br /><br />
+
+			</div>
+			
+			<div>
+				<h2 id="Basket">Basket Questions</h2>
+				<br />
+				<ol>
+					<li><h3>How to place an item into your basket</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+
+					<br />
+					
+					<li><h3>How to delete an item from your basket</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+			
+
+				</ol>
+				
+				<br /><br /><br />
+
+			</div>
+			
+			<div>
+				<h2 id="Orders">Order Questions</h2>
+				<br />
+				<ol>
+					<li><h3>How to place an order</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+
+					<br />
+					
+					<li><h3>How to track your orders</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />	
+						
+					<li><h3>How to view your previous orders</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />
+
+				</ol>
+				
+				<br /><br /><br />
+
+			</div>
+			
+			<div>
+				<h2 id="Account">Account Questions</h2>
+				<br />
+				<ol>
+					<li><h3>How to set up an account</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+
+					<br />
+					
+					<li><h3>Forgotten Password</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+						
+					<br />	
+						
+					<li><h3>How to change account details</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+				
+				</ol>
+				
+				<br /><br /><br />
+
+			</div>
+			
+						<div>
+						
+				<h2 id="Returns">Return Questions</h2>
+				<br />
+				<ol>
+					<li><h3>How to return an item</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+
+					<br />
+					
+					<li><h3>How to report a complaint</h3></li>
+					<p>Lorem ipsum dolor sit amet, porttitor pellentesque porttitor
+						magna, elit pellentesque, nullam vel. Adipiscing tellus, elit nunc
+						maecenas, quam elit, donec est dui wisi consectetuer massa.
+						Hendrerit pellentesque rutrum vel, malesuada etiam curabitur,
+						velit morbi nam, cras tellus ac vel a, lacinia scelerisque semper
+						lacinia ante ipsum nisl. Auctor augue wisi integer, viverra vitae
+						libero sem wisi nec. Ipsum dignissim mi praesent dignissim, at
+						quam neque id, a nullam pellentesque id libero duis, mattis velit,
+						nullam laoreet euismod pede sed. Lorem consectetuer sodales vitae
+						tortor, eget vehicula nulla aenean imperdiet, et morbi purus
+						suspendisse erat, dis sed quis metus pretium ad neque, euismod
+						lectus condimentum dui tempor.</p>
+			
+
+				</ol>
+				
+				<br /><br /><br />
+
+			</div>
+
+			</p>
+		</ui:define>
+
+	</ui:composition>
+</h:body>
 </html>
+
