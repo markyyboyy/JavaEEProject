@@ -4,52 +4,90 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <head>
-	<!-- Meta Tags -->
-	<title><ui:insert name="pageName" /></title>
-	
-	<link rel="stylesheet" media="screen" href="./style/bootstrap.min.css" />
-	<link href="./style/main.css" type="text/css" rel="stylesheet" />
-	
-	<!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
+<!-- Meta Tags -->
+<title><ui:insert name="pageName" /></title>
+
+<link rel="stylesheet" media="screen" href="./style/bootstrap.min.css" />
+<link href="./style/main.css" type="text/css" rel="stylesheet" />
+
+<!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
 </head>
 
 <h:body>
 
 	<header>
 
-			<div class="homeLogo">
-				<a href="home.html"> <img src="img/logo.png"></img></a>
-			</div>
-			
+		<div class="homeLogo">
+			<a href="home.html"> <img src="img/logo.png"></img></a>
+		</div>
+
 		<nav>
 
- 			<div class="navWrapper">
+			<div class="navWrapper">
 
-				<div class="searchInputBanner">					
-						<h:inputText alt="search"  >
+				<div class="searchInputBanner">
+					
+					<div class="mainSearchBanner">
+						<h:inputText alt="search">
 							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
 						</h:inputText>
-					
+					</div>
+
+					<div style="float: left">
+						<span class="glyphicon glyphicon-search	Try it searchIcon" />
+					</div>
+
 				</div>
 
 				<div class="">
-				<div class="navigation row">
-					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
-					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
-					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
-					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
-				</div>	
+					<div class="navigation row">
+						<div class="col-sm-3 buttonMargin">
+							<h:commandButton styleClass="navButton" action="#" value="Browse" />
+						</div>
+						<div class="col-sm-3 buttonMargin">
+							<h:commandButton styleClass="navButton" action="#" value="Browse" />
+						</div>
+						<div class="col-sm-3 buttonMargin">
+							<h:commandButton styleClass="navButton" action="#" value="Browse" />
+						</div>
+						<div class="col-sm-3 buttonMargin">
+							<h:commandButton styleClass="navButton" action="#" value="Browse" />
+						</div>
+					</div>
 
-</div>
-				<div class="loginButton">
-					<h:commandButton styleClass="yellowAction borderless" action="#" value="Login/Register" />
 				</div>
-</div>
+				<div class="loginButton">
+					<h:commandButton styleClass="yellowAction borderless" action="#"
+						value="Login/Register" />
+				</div>
+			</div>
 		</nav>
 	</header>
 
 
 	<main class="content"> <ui:insert name="mainContent" /> </main>
+	
+	
+	<footer class="">
+	
+		<div class="footerWrapper">
+			<div><a href="#">| FooterTestA</a></div>
+			<div><a href="#">| FooterTestA</a></div>
+			<div><a href="#">| FooterTestA</a></div>
+			<div><a href="#">| FooterTestA</a></div>
+			<div><a href="#">| FooterTestA</a></div>
+			
+		</div>
+		
+	</footer>
+	
+	
+	
+	
+	
+	
+	
+	
 
 </h:body>
 </html>
