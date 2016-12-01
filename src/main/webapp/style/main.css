@@ -10,9 +10,29 @@
 }
 
 
+.yellowAction{
+	background-color: rgb(249, 246, 126);
+}
+
+
+.loginButton{
+	position: absolute;
+    top: -10;
+   	right: 5;
+}
+
+
+
 .navbar-wrapper{
 	position: relative;
 	
+}
+
+header{
+	width: 98%;
+	float: left;
+    background-color: #73AF55;
+	padding: 10px 1%;
 }
 
 .navWrapper{
@@ -27,8 +47,24 @@
 	
 nav{
 	background-color: #73AF55;
-	padding: 20px 5%;
+	position: relative;
+	padding: 30px 0;
 	float: left;
+	width: 80%;
+}
+
+
+.homeLogo{
+	width: 20%;
+	float: left;
+}
+
+label{
+	width: 100%;
+	float: left;
+}
+
+img{
 	width: 100%;
 }
 
@@ -39,13 +75,58 @@ nav{
 	
 }
 
-input[type="text"], input[type="password"], input[type="submit"],  input[type="number"]{
+input[type="text"], input[type="password"], input[type="submit"],  input[type="number"], select{
 		font-size: 90%; 
 		width: 100%;		
 }
 	
 input[type="submit"]{
 		font-size: 100%; 
-		border: 1px solid black;
+		/*  border: 1px solid black;*/
 		
 } 
+
+
+
+.searchInputBanner{
+	width: 80%; 
+}
+
+main{
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
+.borderless{
+	border: none;
+}
+
+
+
+.navigation .navButton{
+	
+	width: 100%;
+	
+}
+
+.navigation{
+	margin: 5px 0;
+}
+
+.navigation div{
+	float: left;
+}
+
+.navigation div input{
+	background-color: #73af55;
+}
+
+
+
+
+
+
+
+
