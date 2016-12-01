@@ -16,30 +16,35 @@
 <h:body>
 
 	<header>
-		<nav>
-			<div class="navWrapper">
-				<div class="homeLogo">
-					<a href="home.xhtml"> <img src="img/logo.png"></img></a>
-				</div>
 
-				<div id="search">
-					<input name="search" type="text" placeholder="search.." /> <input
-						type="submit" value="Search" />
-				</div>
-
-				<div id="loginButton">
-					<input type="submit" name="Login/Reg" value="Login/Register" />
-				</div>
-
-				<div id="navigation">
-					<!-- 					<button href="catalogue.html" class="navButton">Browse</button>
-					<button href="SpecialOffers.html" class="navButton">
-						Special Offers</button>
-					<button href="FAQpage.html" class="navButton">FAQ</button>
-					<button href="aboutus.html" class="navButton">About Us</button>
-					<button href="myAccount.html" class="navButton">MyAccount</button> -->
-				</div>
+			<div class="homeLogo">
+				<a href="home.html"> <img src="img/logo.png"></img></a>
 			</div>
+			
+		<nav>
+
+ 			<div class="navWrapper">
+
+				<div class="searchInputBanner">					
+						<h:inputText alt="search"  >
+							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
+						</h:inputText>
+					
+				</div>
+
+				<div class="">
+				<div class="navigation row">
+					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
+					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
+					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
+					<div class="col-sm-3"><h:commandButton styleClass="navButton" action="#" value="Browse" /></div>
+				</div>	
+
+</div>
+				<div class="loginButton">
+					<h:commandButton styleClass="yellowAction borderless" action="#" value="Login/Register" />
+				</div>
+</div>
 		</nav>
 	</header>
 
