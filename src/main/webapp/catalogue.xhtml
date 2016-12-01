@@ -1,0 +1,111 @@
+<!DOCTYPE HTML >
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+<h:head>
+	<meta charset="UTF-8" />
+	<ui:insert name="pageTitle" />
+
+
+</h:head>
+
+
+<h:body>
+
+	<nav></nav>
+
+
+	<!--  Main View -->
+	<ui:insert name="mainContent" />
+
+
+	<h:form>
+
+		<h:inputText value="#{search.term}" class="form-control">
+
+			<f:passThroughAttribute name="type" value="text" />
+			<f:passThroughAttribute name="placeholder" value="Search..." />
+			<f:passThroughAttribute name="alt" value="Search" />
+
+			<h:commandButton action="#{search.search}" value="Seach"
+				class="btn btn-success">
+				<f:passThroughAttribute name="style" value="display: none;" />
+			</h:commandButton>
+
+		</h:inputText>
+
+		<h:inputText value="#{search.term}" class="form-control">
+
+			<f:passThroughAttribute name="type" value="text" />
+			<f:passThroughAttribute name="placeholder" value="Search..." />
+			<f:passThroughAttribute name="alt" value="Search" />
+
+			<h:commandButton action="#{search.search}" value="Seach"
+				class="btn btn-success">
+				<f:passThroughAttribute name="style" value="display: none;" />
+			</h:commandButton>
+
+		</h:inputText>
+
+		<div class="inputDivider obj50">
+			<label for="Rating">Min Rating</label>
+			<h:selectOneMenu ID="Rating">
+				<f:selectItem itemValue="1" itemLabel="1 Start" />
+				<f:selectItem itemValue="2" itemLabel="2 Start" />
+				<f:selectItem itemValue="3" itemLabel="3 Start" />
+				<f:selectItem itemValue="4" itemLabel="4 Start" />
+				<f:selectItem itemValue="5" itemLabel="5 Start" />
+			</h:selectOneMenu>
+		</div>
+
+
+		<div class="inputDivider obj50">
+			<label for="maxPrice">Max Price</label> <input type="range"
+				name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
+				max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value">
+			<output name="ageOutputName" id="maxPriceRange">2500</output>
+		</div>
+
+
+		<div class="inputDivider obj50">
+			<button name="btnSearch"value"Search">Search</button>
+		</div>
+
+
+	</h:form>
+
+
+	<ui:repeat var="prod" value="#{product.ProductList}" varStatus="status">
+
+		<div>
+
+			<div class="imgWrapper">
+				<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />
+			</div>
+
+			<div class="productInfo"></div>
+
+		</div>
+
+	</ui:repeat>
+
+
+
+
+
+	<footer>
+
+		<div class="footerWrapper"></div>
+
+	</footer>
+
+
+	<script type="text/javascript"></script>
+	<script type="text/javascript"></script>
+
+</h:body>
+
+</html>

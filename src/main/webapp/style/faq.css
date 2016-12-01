@@ -2,98 +2,126 @@ body {
 	background-color: #F4F4F4;
 }
 
+#search {
+	width: 60%;
+	float: right;
+	
+	position: absolute;
+    left: 18%;
+    top: 80px;
+}
+
 .button {
-    background-color: #4CAF50; 
-    border: none;
-    border-radius: 10px;
-    color: white;
-    width: 31%;
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	width: 31%;
 	margin: 10px 1%;
 	padding: 30px 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
 }
 
 .button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #5dce49;
-    font-size: 25px;
-   
+	background-color: #5dce49;
+	color: black;
+	border: 2px solid #5dce49;
+	font-size: 25px;
+	box-shadow: 5px 5px 5px lightgrey;
+	border-radius: 10px;
 }
 
 .button1:hover {
-    background-color: #5dce49;
-    color: white;
+	font-weight: bold;
+	color: white;
 }
 
 .button2 {
-    background-color: #5dce49; 
-    color: black; 
-    border: 2px solid #5dce49;
+	background-color: #5dce49;
+	color: black;
+	border: 2px solid #5dce49;
 	width: 8%;
 	margin: 10px 1%;
 	padding: 10px 0px;
 	font-size: 100%;
+	box-shadow: 5px 5px 5px lightgrey;
+	border-radius: 10px;
 }
 
+
 .button2:hover {
-    background-color: white;
-    color: black;
-	
+	color: white;
+	font-weight: bold;
+}
+
+.navButton {
+
+	color: white;
+	width: 8%;
+	margin: 0px 1%;
+	padding: 10px 0px;
+	font-size: 100%;
+	font-weight: bold;
+   
+}
+
+.navButton:hover {
+	background-color: white;
+	color: black;
 }
 
 .element {
-position: fixed;
-bottom: 0;
-right: 0;
+	position: fixed;
+	bottom: 52px;
+	right: 0px;
 }
 
+.boldlist ol, li {
+	font-weight: bold;
+}
 
-
-h1 
-
-{
-    font-size: 250%;
-    font-family: "Abel"
+h1 {
+	font-size: 250%;
+	font-family: "Abel"
 }
 
 h2 {
-    font-size: 200%;
-    font-family: "Abel"
+	font-size: 200%;
+	font-family: "Abel"
 }
 
 p {
-    font-size: 120%;
-    font-family: "Abel"
+	font-size: 120%;
+	font-family: "Abel"
 }
 
 #wrapper {
 	background: #fff;
 	width: 80%;
 	margin: 0 auto;
-	
 }
 
 * {
-margin: 0;
+	margin: 0;
 }
+
 html, body {
-height: 100%;
+	height: 100%;
 }
 
-#footer {
+.footer {
 	background-color: #F4F4F4;
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    height:50px;
-    margin-bottom:0px;
+	height: 50px;
+	width: 100%; background-image : none;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: 0% 0%;
+	position: fixed;
+	bottom: 0pt;
+	left: 0pt;
+	font-size: 112%;
 }
-

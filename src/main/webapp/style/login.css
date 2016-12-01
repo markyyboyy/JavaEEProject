@@ -30,11 +30,27 @@
     cursor: pointer;
 }
 
+.login{
+	width: 50%;
+	align: center;
+	margin-left: 24%;
+	font-size: 100%;
+	display: inline-block;
+	
+}
+
+
+.register{
+	width: 50%;
+	align: center;
+	margin-left: 24%;
+	font-size: 100%;
+	display: inline-block;
+}
+
 #search{
 	width: 50%;
 	float: left;
-	
-
 }
 
 #login, #register{
@@ -44,11 +60,7 @@
 	font-size: 100%;
 	display: inline-block;
 } 
-		
-#navWrapper{
-	width: 80%;
-	margin:auto;
-}
+
 #homeLogo{
 	float: left;
 }
