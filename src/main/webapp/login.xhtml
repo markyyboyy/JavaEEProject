@@ -43,11 +43,11 @@
 		<h:commandButton action="#{customer.login}" value="Login">
 			<f:passThroughAttribute name="type" value="submit"/>
 		</h:commandButton>
-		<br>
+		<br></br>
 		
-	</h:form>
+	</h:form />
 
-	<hr>
+	<hr />
 	<h:form class=register>
 		<h4>Register</h4>
 		<label>Email</label> 
@@ -57,7 +57,7 @@
 		 	<f:passThroughAttribute	name="alt" value="email address"/> 
 		 	<f:passThroughAttribute	name="required" value="required"/> 
 		 </h:inputText>
-		  <br>
+		  <br></br>
 		<label>Password</label> 
 			<h:inputText value="#{customer.password}">
 			 	<f:passThroughAttribute name="type" value="password"/>
@@ -65,7 +65,7 @@
 			 	<f:passThroughAttribute	name="alt" value="password"/> 
 			 	<f:passThroughAttribute	name="required" value="required"/> 
 			 </h:inputText>
-		<br>
+		<br></br>
 		<label>Name</label>
 			<h:inputText value="#{customer.password}">
 			 	<f:passThroughAttribute name="type" value="text"/>
@@ -73,7 +73,7 @@
 			 	<f:passThroughAttribute	name="alt" value="name"/> 
 			 	<f:passThroughAttribute	name="required" value="required"/> 
 			 </h:inputText>
-		<br>
+		<br></br>
 		<h5>Address</h5>
 		<label> House Number </label>
 			<h:inputText value="#{customer.houseNumber}">
@@ -81,14 +81,14 @@
 			 	<f:passThroughAttribute	name="placeholder" value="house number.."/> 
 			 	<f:passThroughAttribute	name="alt" value="house number"/> 
 			 </h:inputText>
-			<br>
+			<br></br>
 		<label> House Name</label> 
 			<h:inputText value="#{customer.houseName}">
 			 	<f:passThroughAttribute name="type" value="text"/>
 			 	<f:passThroughAttribute	name="placeholder" value="house name.."/> 
 			 	<f:passThroughAttribute	name="alt" value="house name"/>
 			 </h:inputText>
-			<br>
+			<br></br>
 		<label> Street</label> 
 			<h:inputText value="#{customer.street}">
 			 	<f:passThroughAttribute name="type" value="text"/>
@@ -96,7 +96,7 @@
 			 	<f:passThroughAttribute	name="alt" value="street"/> 
 			 	<f:passThroughAttribute	name="required" value="required"/> 
 			 </h:inputText>
-			<br>
+			<br></br>
 		<label> Town</label> 
 			<h:inputText value="#{customer.town}">
 			 	<f:passThroughAttribute name="type" value="text"/>
@@ -104,7 +104,7 @@
 			 	<f:passThroughAttribute	name="alt" value="town"/> 
 			 	<f:passThroughAttribute	name="required" value="required"/> 
 			 </h:inputText>
-			 <br>
+			 <br></br>
 		
 		<label> Postcode</label>
 			<h:inputText value="#{customer.postcode}">
@@ -113,7 +113,7 @@
 			 	<f:passThroughAttribute	name="alt" value="postcode"/> 
 			 	<f:passThroughAttribute	name="required" value="required"/> 
 			 </h:inputText>
-			<br>
+			<br></br>
 		<h:commandButton action="#{customer.register}" value="Register">
 			<f:passThroughAttribute name="type" value="submit"/>
 		</h:commandButton>
