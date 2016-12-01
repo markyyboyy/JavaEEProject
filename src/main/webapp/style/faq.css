@@ -52,9 +52,15 @@ body {
 	border-radius: 10px;
 }
 
-.button3 {
-	background-color: white;
-	color: black;
+
+.button2:hover {
+	color: white;
+	font-weight: bold;
+}
+
+.navButton {
+
+	color: white;
 	width: 8%;
 	margin: 0px 1%;
 	padding: 10px 0px;
@@ -63,14 +69,8 @@ body {
    
 }
 
-
-.button2:hover {
-	color: white;
-	font-weight: bold;
-}
-
-.button3:hover {
-	font-size: 110%;
+.navButton:hover {
+	background-color: white;
 	color: black;
 }
 
