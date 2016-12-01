@@ -41,9 +41,7 @@ nav{
 
 input[type="text"], input[type="password"], input[type="submit"],  input[type="number"]{
 		font-size: 90%; 
-		width: 100%;
-		border: 1px dashed red;	
-		
+		width: 100%;		
 }
 	
 input[type="submit"]{

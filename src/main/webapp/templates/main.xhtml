@@ -7,10 +7,10 @@
 	<!-- Meta Tags -->
 	<title><ui:insert name="pageName" /></title>
 	
-	<!-- 	<link rel="stylesheet" media="screen" href="./style/bootstrap.min.css" />
-		<link href="./style/main.css" type="text/css" rel="stylesheet" /> -->
+	<link rel="stylesheet" media="screen" href="./style/bootstrap.min.css" />
+	<link href="./style/main.css" type="text/css" rel="stylesheet" />
 	
-	<h:outputStylesheet library="style" name="main.css"></h:outputStylesheet>
+	<!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
 </head>
 
 <h:body>
@@ -19,8 +19,7 @@
 		<nav>
 			<div class="navWrapper">
 				<div class="homeLogo">
-					<a href="home.html"> 
-					<img src="img/logo.png"></img></a>
+					<a href="home.html"> <img src="img/logo.png"></img></a>
 				</div>
 
 				<div id="search">
@@ -33,7 +32,7 @@
 				</div>
 
 				<div id="navigation">
-<!-- 					<button href="catalogue.html" class="navButton">Browse</button>
+					<!-- 					<button href="catalogue.html" class="navButton">Browse</button>
 					<button href="SpecialOffers.html" class="navButton">
 						Special Offers</button>
 					<button href="FAQpage.html" class="navButton">FAQ</button>
@@ -44,8 +43,8 @@
 		</nav>
 	</header>
 
-	<ui:insert name="mainContent" />
 
+	<main class="content"> <ui:insert name="mainContent" /> </main>
 
 </h:body>
 </html>
