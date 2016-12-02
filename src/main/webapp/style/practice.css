@@ -2,60 +2,6 @@
 
 
 
-
-body
-{
-background-color: #F4F4F4;
-}
-
-#container
-{
-padding: 0 10px;
-}
-
-#wholenavbar{
-width:100%;
-background-color: #73AF55;
-padding: 5px;
-height: 125px;
-}
-
-.navButton
-{
-width:50x;
-}
-#logo
-{
-padding-left:2%;
-padding-right:5%;
-width:15%;
-float:left;
-}
-
-#searchandnav
-{
-float: left;
-padding-left:5%;
-padding-right:5%;
-width:40%;
-height:75%;
-padding-top:2%;
-}
-
-#searchandnav input
-{ 
-	width:100%;
-}
-
-#loginregister
-{
-
-width:25%;
-padding-right:5%;
-padding-top:2%;
-height:25%;
-float:left;
-}
 #product
 {
 padding-top:1%;
@@ -99,12 +45,12 @@ width:100%;
 background-color: #F4F4F4;
 }
 
-#buttons button
+#navButtonproduct
 {
-
-float:left;
-width:50%
+width: 100%;	
 }
+
+
 
 #delivery
 {
