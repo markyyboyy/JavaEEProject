@@ -1,0 +1,33 @@
+#plusbutton, #minusbutton, #quantitybutton {
+	align: left;
+	font-size: 100%;
+	display: inline-block;
+	
+}
+
+hr { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+
+.quantitybuttons{
+	width: 10%;
+	float: right;
+}
+
+.quantitybuttons div{
+	float: left;
+	width: 33%;
+	margin: 0;
+	padding:  5px 0;
+	height: 30px;
+}
+
+.quantitybuttons div{
+	height: auto;
+}

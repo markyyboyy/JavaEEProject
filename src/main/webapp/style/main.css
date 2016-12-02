@@ -9,6 +9,8 @@
 @import url("product.css");
 @import url("about.css");
 @import url("wishlist.css");
+@import url("basket.css");
+
 
 @font-face {
 	font-family: Myriad;
