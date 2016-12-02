@@ -6,12 +6,35 @@
 	width:100%;
 }
 .wish1{
-	width:40%;
+	width:45%;
 	float:left;
-	color:blue;
+		padding:0px;
+	margin:0px;
+	height:20%;
 }
 .wish2{
-	width:40%;
+	width:45%;
 	float:left;
-	color:blue;
+		padding:0px;
+	margin:0px;
+	height:20%;
+}
+.gnome{
+	width:100%;
+}
+.left{
+	width:50%;
+	padding:0px;
+	margin:0px;
+	float:left;
+}
+.right{
+	width:50%;
+	padding-left:5%;
+	padding-right:5%;
+	padding-bottom:0%;
+	padding-top:0%;
+	margin:0px;
+	float:left;
+	height:100%;
 }
