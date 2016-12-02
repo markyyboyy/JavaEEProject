@@ -10,7 +10,7 @@ import javax.ejb.Startup;
 @Singleton
 public class TestData {
 
-	private ArrayList<Product> products;
+	private List<Product> products;
 	private ArrayList<Stock> stocks;
 	private ArrayList<Customer> customers;
 	private ArrayList<Address> addresses;
@@ -51,11 +51,11 @@ public class TestData {
 		wishlists = new ArrayList<WishList>();
 	}
 
-	public ArrayList<Product> getProducts() {
+	public List<Product> getProducts() {
 		return products;
 	}
 
-	public void setProducts(ArrayList<Product> products) {
+	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 

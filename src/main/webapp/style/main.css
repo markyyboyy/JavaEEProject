@@ -25,7 +25,8 @@
 .loginButton {
 	position: absolute;
 	top: -10;
-    right: 11%;}
+    right: 30%;
+   }
 
 .navbar-wrapper {
 	position: relative;
@@ -94,7 +95,7 @@ main, .navWrapper, .footerWrapper{
 }
 
 .navWrapper{
-	    margin-left: 12%;
+	    margin-left: 5%;
 }
 
 
@@ -108,7 +109,7 @@ main{
 
 .mainSearchBanner{
 	    float: left;
-    width: 96%;
+    width: 94%;
     margin-right: 1%;
 }
 
@@ -145,7 +146,7 @@ main{
 
 
 .searchIcon{
-	font-size: 2rem;
+	font-size: 3rem;
 	color: white;
 }
 
@@ -154,5 +155,41 @@ main{
 	float: left;
 	margin: 0 10px;
 }
+
+
+/* Yellow Buttons  */
+.btn.btn-primary{
+	background-color: rgb(249, 246, 126);
+	color: black;
+	border: 1px solid black;
+}
+
+.btn.btn-primary:hover{
+	background-color: #280240;
+		color: white;
+	
+}
+
+
+/* Dark Purple Buttons  */
+.btn.btn-secondary{
+	background-color: #280240;
+	color: white;
+	border: 1px solid black;	
+}
+
+
+
+.mainSearchBanner input{
+	font-size: 2rem;	
+}
+
+.mainSearchBanner {
+	margin-bottom: 10px;
+}
+
+
+
+
 
 

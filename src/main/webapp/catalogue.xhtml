@@ -77,6 +77,13 @@
 				
 			</div>
 
+			
+			<ui:repeat var="prod" value="#{Catalogue.testList}">
+			
+				<h2>#{prod}</h2>
+			
+			</ui:repeat>
+
 
 			<div class="imgWrapper">
 				<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />
