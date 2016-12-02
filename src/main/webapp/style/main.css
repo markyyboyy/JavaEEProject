@@ -23,14 +23,14 @@
 .loginButton {
 	position: absolute;
 	top: -10;
-    right: 10%;}
+    right: 11%;}
 
 .navbar-wrapper {
 	position: relative;
 }
 
 header {
-	width: 98%;
+	width: 100%;
 	float: left;
 	background-color: #73AF55;
 	padding: 10px 1%;
