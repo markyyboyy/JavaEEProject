@@ -5,6 +5,7 @@
 	<artifactId>row5project</artifactId>
 	<version>0.1</version>
 	<name>Row 5 Project</name>
+	<packaging>war</packaging>
 	<description>The project for row 5.</description>
 
 	<dependencies>
