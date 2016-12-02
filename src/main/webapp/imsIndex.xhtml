@@ -1,0 +1,49 @@
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+<ui:composition template="templates/imsTemplate.xhtml">
+
+	<ui:define name="pageName">IMS</ui:define>
+
+	<ui:define name="mainContent">
+
+		<h2>NB Gardens -- Admin Page</h2>
+
+
+		<div class="">
+			<h:form>
+				<div>
+					<h:inputText value="" required="true" />
+				</div>
+
+				<div>
+					<h:outputLabel value="Password" />
+					
+					<h:inputSecret id="password" size="20" label="Password"
+						required="true" redisplay="true">
+						<f:validateLength for="password" minimum="6"   />
+					</h:inputSecret>
+					
+					<h:message for="password" style="color:red">Password doesn't meet criteria</h:message>
+
+				</div>
+
+				<div>
+					<h:commandButton action="'" value="Login" />
+				</div>
+
+
+
+			</h:form>
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>
+
+
+</html>
