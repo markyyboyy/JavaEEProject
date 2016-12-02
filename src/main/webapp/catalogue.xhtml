@@ -31,36 +31,52 @@
 
 
 			<div class="row">
-			
-					<div class="col-md-6">
-						<label for="Rating">Min Rating</label>
-						<h:selectOneMenu ID="Rating">
-							<f:selectItem itemValue="1" itemLabel="1 Start" />
-							<f:selectItem itemValue="2" itemLabel="2 Start" />
-							<f:selectItem itemValue="3" itemLabel="3 Start" />
-							<f:selectItem itemValue="4" itemLabel="4 Start" />
-							<f:selectItem itemValue="5" itemLabel="5 Start" />
-						</h:selectOneMenu>
-					</div>
-				
 
-					<div class="col-md-6">
-						<label for="maxPrice">Max Price</label> <input type="range"
-							name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
-							max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value" />
-						<output name="ageOutputName" id="maxPriceRange">2500</output>
-					</div>
+				<div class="col-md-6">
+					<label for="Rating">Min Rating</label>
+					<h:selectOneMenu ID="Rating">
+						<f:selectItem itemValue="1" itemLabel="1 Start" />
+						<f:selectItem itemValue="2" itemLabel="2 Start" />
+						<f:selectItem itemValue="3" itemLabel="3 Start" />
+						<f:selectItem itemValue="4" itemLabel="4 Start" />
+						<f:selectItem itemValue="5" itemLabel="5 Start" />
+					</h:selectOneMenu>
+				</div>
+
+
+				<div class="col-md-6">
+					<label for="maxPrice">Max Price</label> <input type="range"
+						name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
+						max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value" />
+					<output name="ageOutputName" id="maxPriceRange">2500</output>
+				</div>
 			</div>
-					
-			
-			
+
+
+
 			<div class="text-right">
 				<button name="btnSearch">Search</button>
 			</div>
-			
+
 		</h:form>
 
-		<div>
+		<div class="resultsPane row">
+
+			<div class="col-md-12">
+			
+				<div class="col-md-2 fr">
+				
+					<h:selectOneMenu ID="Rating">
+						<f:selectItem itemValue="sortByRatingA" itemLabel="Rating (asc)" />
+						<f:selectItem itemValue="sortByRatingD" itemLabel="Rating (desc)" />
+						<f:selectItem itemValue="sortByPriceA" itemLabel="Price (asc)" />
+						<f:selectItem itemValue="sortByPriceD" itemLabel="Price (desc)" />
+					</h:selectOneMenu>
+					
+				</div>
+				
+			</div>
+
 
 			<div class="imgWrapper">
 				<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />

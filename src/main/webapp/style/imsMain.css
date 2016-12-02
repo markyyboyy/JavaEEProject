@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+
+
+*{
+	box-sizing: border-box;
+	line-height: 1.4;
+	color: #373740;
+	background-color: #f5f5f5;
+}
+
+
+nav{
+	width: 100%;
+	float: left;
+}
+
+nav .navButton{
+	
+	float: left;
+	width: 48%;
+	margin: 10px 1%;
+	
+}
+
+main{
+	width: 100%;
+		float: left;
+	
+}
+
+main div, main nav{
+	width: 90%;
+	margin-left: 5%;
+	float: left;
+}
+
+main nav input[type="submit"]{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
