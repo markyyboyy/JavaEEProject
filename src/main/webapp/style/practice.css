@@ -1,0 +1,120 @@
+
+
+
+
+
+body
+{
+background-color: #F4F4F4;
+}
+
+#container
+{
+padding: 0 10px;
+}
+
+#wholenavbar{
+width:100%;
+background-color: #73AF55;
+padding: 5px;
+height: 125px;
+}
+
+.navButton
+{
+width:50x;
+}
+#logo
+{
+padding-left:2%;
+padding-right:5%;
+width:15%;
+float:left;
+}
+
+#searchandnav
+{
+float: left;
+padding-left:5%;
+padding-right:5%;
+width:40%;
+height:75%;
+padding-top:2%;
+}
+
+#searchandnav input
+{ 
+	width:100%;
+}
+
+#loginregister
+{
+
+width:25%;
+padding-right:5%;
+padding-top:2%;
+height:25%;
+float:left;
+}
+#product
+{
+padding-top:1%;
+padding-left:5%;
+padding-right:5%;
+}
+#titlepricecarousel
+{
+float:left;
+padding-left:4%;
+width:50%;
+padding-right:5%;
+height:400px;
+}
+
+#carousel
+{
+float:left;
+width:75%;
+}
+
+#info
+{
+float: left;
+width:50%;
+height:500px;
+}
+
+#basketwishlist
+{
+float:right;
+height:80px;
+}
+
+#productinfo 
+{
+padding-left:5%;
+padding-right:5%;
+float:left;
+width:100%;
+background-color: #F4F4F4;
+}
+
+#buttons button
+{
+
+float:left;
+width:50%
+}
+
+#delivery
+{
+padding-top:5%;
+width:100%;
+}
+
+#recommendations
+{
+padding-left:15%;
+width: 100%;
+padding-right:15%;
+}

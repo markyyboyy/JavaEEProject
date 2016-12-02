@@ -28,9 +28,6 @@ public class CustomerOrder {
 
 	
 	
-	
-
-	
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
 	};

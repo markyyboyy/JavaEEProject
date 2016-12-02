@@ -6,10 +6,10 @@
 
 @import url("faq.css");
 
-@import url("product.css");
 @import url("about.css");
 @import url("wishlist.css");
 @import url("basket.css");
+@import url("practice.css");
 
 
 @font-face {
