@@ -41,6 +41,8 @@ header {
 
 .homeLogo {
 	float: left;
+	padding-left: 5%;
+	width: 15%;
 }
 
 nav {
@@ -51,10 +53,7 @@ nav {
 	width: 80%;
 }
 
-.homeLogo {
-	width: 10%;
-	float: left;
-}
+
 
 label {
 	width: 100%;
@@ -103,6 +102,7 @@ main{
 	
 	margin-bottom: 5px;
 	margin-bottom: 5px;
+	width: 50%;
 }
 
 
