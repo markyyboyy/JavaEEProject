@@ -12,13 +12,15 @@
 			<div id="shopping">
 				<a href="catalogue.xhtml">
 					<button name="continueShopping">Continue Shopping</button>
-				</a> 
+				</a>
 				<section class="container">
-					
 
 
-					<div class="productInfo">
+
+					<div class="productItem">
 						<form>
+
+
 
 							<div class="quantitybuttons">
 
@@ -27,7 +29,13 @@
 								</div>
 
 								<div>
-									<input type="text" placeholder="1" name="quantity" />
+									<h:input type="text" placeholder="1" name="quantity" >
+
+									<f:passThroughAttribute name="quantity" value="text" />
+									<f:passThroughAttribute name="placeholder" value="Search..." />
+									<f:passThroughAttribute name="alt" value="Search" />
+									
+									</h:input>
 								</div>
 
 
@@ -40,7 +48,7 @@
 
 						</form>
 
-						
+
 					</div>
 				</section>
 
