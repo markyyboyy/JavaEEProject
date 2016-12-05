@@ -1,5 +1,5 @@
 package com.qac.row5project.managers.offline;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -29,7 +29,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	 */
 	@Override
 	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine) {
-		ArrayList<CustomerOrderLine> newCOLine = testData.getCustomerOrderLine();
+		List<CustomerOrderLine> newCOLine = testData.getCustomerOrderLine();
 		customerOrderLine.setId(newCOLine.size()+1);
 		newCOLine.add(customerOrderLine);
 		testData.setCustomerOrderLine(newCOLine);
