@@ -1,6 +1,6 @@
 package com.qac.row5project.managers.offline;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -17,12 +17,12 @@ public class AddressManagerOffline implements AddressManager {
 	private TestData testData;
 
 	/***
-	 * @address new address filled with all necceasry attributes
+	 * @address new address filled with all necceasry attributes	
 	 */
 	@Override
 	public Address createAddress(Address address) {
 
-		ArrayList<Address> newFeedback = testData.getAddresses();
+		List<Address> newFeedback = testData.getAddresses();
 		
 		address.setID(newFeedback.size() + 1);
 		newFeedback.add(address);
