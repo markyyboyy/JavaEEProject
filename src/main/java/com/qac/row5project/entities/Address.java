@@ -3,7 +3,11 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Id;
-
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
 @Entity
 public class Address implements Serializable {
 
