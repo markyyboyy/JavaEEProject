@@ -60,7 +60,7 @@ public class CustomerManagerOffline implements CustomerManager {
 	
 	/**
 	 * Update a customer which is already in the system
-	 * @customer customer of the update details
+	 * @customer customer with the update details
 	 */
 	@Override
 	public void updateCustomer(Customer customer) {
