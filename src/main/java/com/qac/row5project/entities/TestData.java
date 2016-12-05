@@ -1,16 +1,15 @@
+
+package com.qac.row5project.entities;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
 /***
  * 
  * @author Mark Freeman & Ynyr Williams
  *
  */
-package com.qac.row5project.entities;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
-
 @Startup
 @Singleton
 public class TestData {
