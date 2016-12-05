@@ -14,8 +14,8 @@
 	<h:form class="login">
 		<h4>Login</h4>
 		<label> Email </label>
-		<h:inputText value ="#{login.email}">
-			<f:passThroughAttribute name="type" value="text" ></f:passThroughAttribute>
+		<h:inputText class="form-control" value="#{login.email}">
+			<f:passThroughAttribute name="type" value="email" ></f:passThroughAttribute>
 			<f:passThroughAttribute name="placeholder" value="email.."  ></f:passThroughAttribute>
 			<f:passThroughAttribute name="alt" value="Email" ></f:passThroughAttribute>
 			<f:passThroughAttribute name="required" value="required"  ></f:passThroughAttribute>
@@ -30,7 +30,7 @@
 		</h:inputText>
 		<br></br>
 		<br></br>
-		<h:commandButton action="#{login.login}" value="Login" styleClass="btn btn-primary">
+		<h:commandButton action="#{login.loginTest}" value="Login" styleClass="btn btn-primary">
 			<f:passThroughAttribute name="type" value="submit"/>
 		</h:commandButton>
 		<br></br>

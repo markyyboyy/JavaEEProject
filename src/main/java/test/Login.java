@@ -7,7 +7,7 @@ import javax.inject.Named;
 import com.qac.services.LoginService;
 
 @RequestScoped
-@Named(value = "login")
+@Named(value="login")
 public class Login {
 
 	@Inject
@@ -35,7 +35,7 @@ public class Login {
 		this.password = password;
 	}
 
-	public String login() {
+	public String loginTest() {
 		if (!email.isEmpty() && !password.isEmpty()) {
 			if (loginService.validLogin(email, password)) {
 				currentUser.setCustomer(loginService.loginUser(email));
