@@ -1,4 +1,6 @@
-@Author "Mark Freeman"
+/**
+ * @author Mark Freeman
+ */
 package test;
 import java.util.ArrayList;
 
@@ -10,18 +12,17 @@ public class Wishlist {
    public Wishlist() {
       System.out.println("HelloWorld started!");
    }
-	public ArrayList<WishlistItem> getList(){
+	public ArrayList<WishlistItem> getList(){	//Returns a users wishlist.
 		return items;
 		
 	}
-	public WishlistItem 
-   public String getDescription() {
+   public String getDescription() {		//Returns a wishlist items description.
       return "This gnome is tired. He is sleeping. Not suitable for guarding purposes.";
    }
-   public String getTitle() {
+   public String getTitle() {		//Returns a wishlist items title.
 	      return "Sleeping Gnome";
 	   }
-   public String getImage() {
+   public String getImage() {		//Returns a wishlist items image.
 	      return "img/featuregnome2.jpg";
 	   }
 }

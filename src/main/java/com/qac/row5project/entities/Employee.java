@@ -1,3 +1,6 @@
+/**
+ * @author Mark Freeman
+ */
 package com.qac.row5project.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +19,9 @@ import javax.validation.constraints.Size;
 @Table(name="employees")
 
 public class Employee {
-	
+	/**
+	Each employee needs to be linked to a user account.
+	 */
 	@OneToOne
 	@JoinTable(name="logindetails_ID",joinColumns=
 	@JoinColumn(name="employee",
@@ -35,12 +40,16 @@ public class Employee {
 
 	public Employee() {
 	}
-
+	/**
+	To construct a user you need a username, a password and an employeeID.
+	 */
 	public Employee(LoginDetails logInDetails, int id) {
 		this.logInDetails = logInDetails;
 		this.id = id;
 	}
-
+	/**
+	Getters and setters
+	 */
 	public LoginDetails getLogInDetails() {
 		return this.logInDetails;
 	}

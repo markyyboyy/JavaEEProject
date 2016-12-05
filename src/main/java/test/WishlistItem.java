@@ -1,4 +1,6 @@
-@Author "Mark Freeman"
+/**
+ * @author Mark Freeman
+ */
 package test;
 import javax.faces.bean.ManagedBean;
 
@@ -8,13 +10,13 @@ public class WishlistItem {
       System.out.println("HelloWorld started!");
    }
 	
-   public String getDescription() {
-      return "This gnome is tired. He is sleeping. Not suitable for guarding purposes.";
-   }
-   public String getTitle() {
-	      return "Sleeping Gnome";
+   public String getDescription() {		//Returns a wishlist items description.
+	      return "This gnome is tired. He is sleeping. Not suitable for guarding purposes.";
 	   }
-   public String getImage() {
-	      return "img/featuregnome2.jpg";
-	   }
+	   public String getTitle() {		//Returns a wishlist items title.
+		      return "Sleeping Gnome";
+		   }
+	   public String getImage() {		//Returns a wishlist items image.
+		      return "img/featuregnome2.jpg";
+		   }
 }

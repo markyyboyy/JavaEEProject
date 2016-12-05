@@ -1,3 +1,6 @@
+/**
+ * @author Mark Freeman
+ */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
 
@@ -18,35 +21,35 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	
 	//CREATE - Inventory Manager Only
 	@Override
-	public void createLoginDetails(LoginDetails loginDetails){
+	public void createLoginDetails(LoginDetails loginDetails){	//Add a user to the database
 		ArrayList<LoginDetails> returned = testData.getLoginDetails();
-		returned.add(loginDetails);
-		testData.setLoginDetails(returned);
+		returned.add(loginDetails);	//Construct the updated ArrayList.
+		testData.setLoginDetails(returned);	//Replace the ArrayList in the database.
 	}
 	@Override
 	public LoginDetails readLoginDetails(String emailAddress){
 		ArrayList<LoginDetails> returned = testData.getLoginDetails();
-		for(LoginDetails l: returned){
-			if (l.getEmail().equals(emailAddress)){
+		for(LoginDetails l: returned){	//For every user account in the list.
+			if (l.getEmail().equals(emailAddress)){	//When we find a useraccount with the given email address return it.
 				return l;
 			}
 		}
-		return null;
+		return null;	//If we didnt find an account return null.
 	}
 
 	@Override
 	public void updateLoginDetails(LoginDetails logInDetails) {
 		// TODO Auto-generated method stub
-		ArrayList<LoginDetails> returned = testData.getLoginDetails();
-		int i = 0;
-		for(LoginDetails l: returned){
-			if (l.getEmail().equals(logInDetails.getEmail())){
-				returned.remove(i);
-				returned.add(logInDetails);
+		ArrayList<LoginDetails> returned = testData.getLoginDetails();	
+		int i = 0;	//Used as a counter variable.
+		for(LoginDetails l: returned){	//For every user account in the list.
+			if (l.getEmail().equals(logInDetails.getEmail())){	//Find the old version of the acccount.
+				returned.remove(i);	//Remove the old user account.
+				returned.add(logInDetails);	//Add the updated user account.
 			}
 			i++;
 		}
-		testData.setLoginDetails(returned);
+		testData.setLoginDetails(returned);	//Update the datbase with the new user account list.
 	}
 }
 	
