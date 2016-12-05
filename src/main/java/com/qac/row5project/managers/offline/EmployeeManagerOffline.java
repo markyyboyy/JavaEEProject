@@ -33,7 +33,7 @@ public class EmployeeManagerOffline {
 	
 	//UPDATE - Inventory Manager Only
 	public void updateEmployee(Employee employee){
-		ArrayList<Employee> returned = testData.getEmployees();	//Get all of the employees each employee
+		List<Employee> returned = testData.getEmployees();	//Get all of the employees each employee
 		int i = 0;	//A counter variable
 		for(Employee e: returned){	//For each employee
 			if (e.getID() == employee.getID()){	//If the current employee is the same as the given employee.

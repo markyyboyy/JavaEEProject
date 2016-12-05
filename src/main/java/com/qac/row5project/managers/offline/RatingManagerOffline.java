@@ -5,6 +5,7 @@
  */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.RatingManager;
@@ -14,7 +15,7 @@ public class RatingManagerOffline implements RatingManager {
 	TestData testData;
 	//CREATE: CUSTOMER
 	public void createRating(Rating rating){
-		ArrayList<Rating> ratingList = testData.getRatings();
+		List<Rating> ratingList = testData.getRatings();
 		ratingList.add(rating);
 		testData.setRatings(ratingList);
 	}
@@ -25,7 +26,7 @@ public class RatingManagerOffline implements RatingManager {
 	//READ - CUSTOMER/VISITOR/INV MANAGER
 	public Rating findRatingsbyProductCustomerID(int productID, int customerID){
 		
-		ArrayList<Rating> ratingList = testData.getRatings();
+		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
 		{
 			if(r.getProductID()==productID&&r.getCustomerID()== customerID)
@@ -33,9 +34,9 @@ public class RatingManagerOffline implements RatingManager {
 		}
 		return null;
 	}
-	public ArrayList<Rating> findRatingsbyCustomerID(int customerID){
-		ArrayList<Rating> tRatingList = new ArrayList<Rating>();
-		ArrayList<Rating> ratingList = testData.getRatings();
+	public List<Rating> findRatingsbyCustomerID(int customerID){
+		List<Rating> tRatingList = new ArrayList<Rating>();
+		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
 		{
 			if(r.getCustomerID()== customerID)
@@ -46,9 +47,9 @@ public class RatingManagerOffline implements RatingManager {
 		else
 			return tRatingList;
 	}
-	public ArrayList<Rating> findRatingsbyProductID(int productID){
-		ArrayList<Rating> tRatingList = new ArrayList<Rating>();
-		ArrayList<Rating> ratingList = testData.getRatings();
+	public List<Rating> findRatingsbyProductID(int productID){
+		List<Rating> tRatingList = new ArrayList<Rating>();
+		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
 		{
 			if(r.getProductID()== productID)
@@ -59,10 +60,10 @@ public class RatingManagerOffline implements RatingManager {
 		else
 			return tRatingList;
 	}
-	public ArrayList<Rating> findRatingsbyScore(int score)
+	public List<Rating> findRatingsbyScore(int score)
 	{
-		ArrayList<Rating> tRatingList = new ArrayList<Rating>();
-		ArrayList<Rating> ratingList = testData.getRatings();
+		List<Rating> tRatingList = new ArrayList<Rating>();
+		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
 		{
 			if(r.getScore() == score)
@@ -76,7 +77,7 @@ public class RatingManagerOffline implements RatingManager {
 	
 	//UPDATE	
 	public void updateRating(Rating rating){
-		ArrayList<Rating> ratingList = testData.getRatings();
+		List<Rating> ratingList = testData.getRatings();
 		for(Rating r: ratingList)
 		{
 			if(r.getProductID()==rating.getProductID()&&r.getCustomerID()== rating.getCustomerID())

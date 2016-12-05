@@ -20,6 +20,4 @@ public interface  ProductManager {
 	public Product readProductById(long id);
 	public List<Product> readProductByName(String name);
 	public List<Product> readProductByColour(String colour);
-	
-	
 }

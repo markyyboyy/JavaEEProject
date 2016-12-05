@@ -5,6 +5,7 @@
  */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -23,7 +24,7 @@ public class StockManagerOffline implements StockManager {
 	@Override	
 	//CREATE, UPDATE: INVENTORY MANAGER
 	public Stock createStock(Stock stock){
-		ArrayList<Stock> stockList = testData.getStockItems();
+		List<Stock> stockList = testData.getStockItems();
 		stock.setStockID(stockList.size()+1);
 		stockList.add(stock);
 		testData.setStockItems(stockList);
@@ -31,7 +32,7 @@ public class StockManagerOffline implements StockManager {
 	}
 	public void updateStock(Stock stock){
 
-		ArrayList<Stock> stockList = testData.getStockItems();
+		List<Stock> stockList = testData.getStockItems();
 		for(Stock s: stockList)
 		{
 			if(s.getStockID()==stock.getStockID()){
@@ -44,7 +45,7 @@ public class StockManagerOffline implements StockManager {
 	
 	//READ: VISITOR, CUSTOMER, INVENTORY MANAGER
 	public Stock findStocksbyID(int stockID){
-		ArrayList<Stock> stockList = testData.getStockItems();
+		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
 			if(s.getStockID()==stockID)
@@ -53,9 +54,9 @@ public class StockManagerOffline implements StockManager {
 		return null;
 		
 	}
-	public ArrayList<Stock> findStocksbyPorousware(boolean porous){
-		ArrayList<Stock> tStockList= new ArrayList<Stock>();
-		ArrayList<Stock> stockList = testData.getStockItems();
+	public List<Stock> findStocksbyPorousware(boolean porous){
+		List<Stock> tStockList= new ArrayList<Stock>();
+		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
 			if(s.isPorousware()==porous)
@@ -66,11 +67,11 @@ public class StockManagerOffline implements StockManager {
 		else
 			return null;
 	}
-	public ArrayList<Stock> findStocksbyRefurbished(boolean refurbished)
+	public List<Stock> findStocksbyRefurbished(boolean refurbished)
 	{
 
-		ArrayList<Stock> tStockList= new ArrayList<Stock>();
-		ArrayList<Stock> stockList = testData.getStockItems();
+		List<Stock> tStockList= new ArrayList<Stock>();
+		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
 			if(s.isRefurbished()==refurbished)

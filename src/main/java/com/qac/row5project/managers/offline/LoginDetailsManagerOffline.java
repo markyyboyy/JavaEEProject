@@ -2,7 +2,7 @@
  * @author Mark Freeman
  */
 package com.qac.row5project.managers.offline;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -22,13 +22,13 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	//CREATE - Inventory Manager Only
 	@Override
 	public void createLoginDetails(LoginDetails loginDetails){	//Add a user to the database
-		ArrayList<LoginDetails> returned = testData.getLoginDetails();
+		List<LoginDetails> returned = testData.getLoginDetails();
 		returned.add(loginDetails);	//Construct the updated ArrayList.
 		testData.setLoginDetails(returned);	//Replace the ArrayList in the database.
 	}
 	@Override
 	public LoginDetails readLoginDetails(String emailAddress){
-		ArrayList<LoginDetails> returned = testData.getLoginDetails();
+		List<LoginDetails> returned = testData.getLoginDetails();
 		for(LoginDetails l: returned){	//For every user account in the list.
 			if (l.getEmail().equals(emailAddress)){	//When we find a useraccount with the given email address return it.
 				return l;
@@ -40,7 +40,7 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	@Override
 	public void updateLoginDetails(LoginDetails logInDetails) {
 		// TODO Auto-generated method stub
-		ArrayList<LoginDetails> returned = testData.getLoginDetails();	
+		List<LoginDetails> returned = testData.getLoginDetails();	
 		int i = 0;	//Used as a counter variable.
 		for(LoginDetails l: returned){	//For every user account in the list.
 			if (l.getEmail().equals(logInDetails.getEmail())){	//Find the old version of the acccount.
