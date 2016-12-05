@@ -25,6 +25,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	private TestData testData;
 
 	// CREATE - INVENTORY MANAGER ONLY
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create a new purchase order
+	 */
 	@Override
 	public void createPurchaseOrder(PurchaseOrder newPOrder) {
 		ArrayList<PurchaseOrder> pOrders = testData.getPurchaseOrders();
@@ -35,6 +40,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	}
 
 	// READ - INVENTORY MANAGER ONLY
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the purchase order with a certain ID or return null if no order exists
+	 */
 	@Override
 	public PurchaseOrder readByID(int pOrdID) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
@@ -45,7 +55,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 		return null;
 		
 	}
-
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return purchase order by supplier ID
+	 */
 	@Override
 	public PurchaseOrder readBySupplier(int supID) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
@@ -56,7 +70,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 		return null;
 		
 	}
-
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return purchase order by current status
+	 */
 	@Override
 	public PurchaseOrder readByStatus(String status) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
@@ -68,6 +86,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 		
 	}
 
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the purchase order by date placed
+	 */
 	@Override
 	public PurchaseOrder readByDatePlaced(Calendar datePlaced) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
@@ -79,7 +102,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 		return null;
 		
 	}
-
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return purchase order by date order was received
+	 */
 	@Override
 	public PurchaseOrder readByDateReceived(Calendar dateRecd) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
@@ -90,7 +117,11 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 		return null;
 		
 	}
-
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Update a purchase order
+	 */
 	// UPDATE - INVENTORY MANAGER ONLY
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder newPOrder) {

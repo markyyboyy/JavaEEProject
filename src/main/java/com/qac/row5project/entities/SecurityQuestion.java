@@ -23,18 +23,38 @@ public class SecurityQuestion {
 	@NotNull
 	private String question;
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create new security question
+	 */
 	public SecurityQuestion(){}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Set new security question
+	 */
 	public SecurityQuestion(String question){
 		this.question = question;
 		
 	} 
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the security question
+	 */
 	public String getQuestion(){
 		return question;
 	
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * update the security question
+	 */
 	public void setQuestion(String newQ)
 	{
 		this.question = newQ;

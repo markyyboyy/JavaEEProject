@@ -148,6 +148,14 @@ public class Customer {
 	public Customer() {
 	}
 	
+	/***
+	 * 
+	 * @param sSurname
+	 * @param sFirstname
+	 * @param sSecretAnswer
+	 * @param dtDOB
+	 * @param loginDetails
+	 */
 	public Customer(String sSurname, String sFirstname, String sSecretAnswer,
 			Calendar dtDOB, LoginDetails loginDetails) {
 
@@ -158,6 +166,16 @@ public class Customer {
 		this.loginDetails = loginDetails;
 	}
 		
+	/***
+	 * 
+	 * @param sSurname
+	 * @param sFirstname
+	 * @param sFacebook
+	 * @param sSecretAnswer
+	 * @param sTelMain format starts with 0 no need for international code
+	 * @param dtDOB
+	 * @param loginDetails
+	 */
 	public Customer(String sSurname, String sFirstname, String sFacebook, String sSecretAnswer, String sTelMain,
 			Calendar dtDOB, LoginDetails loginDetails) {
 

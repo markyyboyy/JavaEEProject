@@ -27,6 +27,11 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 	private TestData testData;
 	
 	@Override
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create new security question
+	 */
 	public void createSecurityQuestion(SecurityQuestion newQuestion){
 		ArrayList<SecurityQuestion> sQuestion = testData.getSecurityQuestions();
 		sQuestion.add(newQuestion);
@@ -35,6 +40,11 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 	}
 	
 	//READ - CUSTOMER ONLY
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the security question
+	 */
 	@Override
 	public SecurityQuestion readSecurityQuestion(String question){
 		for (SecurityQuestion sQuestion : testData.getSecurityQuestions()) {
@@ -47,6 +57,11 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 	}
 	
 	//UPDATE - CUSTOMER ONLY
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * update the security question
+	 */
 	@Override
 	public void updateSecurityQuestion(String newQuestion, String oldQuestion){
 		for (SecurityQuestion sQuestion : testData.getSecurityQuestions()) {
