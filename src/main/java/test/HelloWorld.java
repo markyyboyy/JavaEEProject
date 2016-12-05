@@ -1,3 +1,4 @@
+@Author "Mark Freeman"
 package test;
 import javax.faces.bean.ManagedBean;
 
