@@ -55,8 +55,8 @@ public class ProductService {
 	public ProductItem getProductItem(Product product, Stock stock) {
 		ProductItem productItem = new ProductItem(stock.getStockID());
 		if (product != null)
-			productItem.addProductInfo(product.getName(), product.getDesc(), product.getSize(),
-					product.getPrice(), product.getWeight(), product.getColour());
+			productItem.addProductInfo(productItem.getName(), productItem.getDescription(), productItem.getHeight(), 
+					productItem.getWidth(), productItem.getDepth(), productItem.getWeight());
 		if (stock != null)
 			productItem.addStockInfo(stock.getStockLevel(), stock.getStatus(), stock.getPrice());
 		return productItem;

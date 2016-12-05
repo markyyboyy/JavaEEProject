@@ -36,14 +36,13 @@ package com.qac.row5project.entities;
 		}
 
 		public void addProductInfo(String name, String description, double height, double width, double depth,
-				double weight, List<String> categories, List<Rating> ratings) {
+				double weight) {
 			this.name = name;
 			this.description = description;
 			this.height = height;
 			this.width = width;
 			this.depth = depth;
 			this.weight = weight;
-			this.categories = categories;
 		}
 
 		public void addStockInfo(int stockLevel, float price) {
