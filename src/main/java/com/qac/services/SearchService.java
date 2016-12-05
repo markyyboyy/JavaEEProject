@@ -2,7 +2,7 @@
  * 
  * @author Ynyr Williams
  *
- */
+ *//*
 package com.qac.services;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,4 +39,8 @@ public class SearchService {
 		});
 		return productItems;
 		}
-}
+<<<<<<< HEAD
+		}
+
+}*/
+
