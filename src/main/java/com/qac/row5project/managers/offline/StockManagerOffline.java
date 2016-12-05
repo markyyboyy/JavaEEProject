@@ -81,4 +81,11 @@ public class StockManagerOffline implements StockManager {
 		else
 			return null;
 	}
+	
+	//TODO
+	@Override
+	public Stock findStocksbyID(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
