@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.Stock;
 import com.qac.row5project.managers.ProductManager;
 import com.qac.row5project.managers.StockManager;
 
@@ -37,8 +38,16 @@ public class ProductService {
 			return null;}
 			}
 	
-	public Product getProduct(long id) {
-		return getProductItem(productManager.findById(id), stockManager.findById(id));
-
+	public Product getProductQty(long id) {
+		//return getProduct(productManager.readProductById(id), stockManager.findStocksbyID(id));
+		return null;
 	}
+
+	private Product getProduct(long id, Stock stock) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}
 		
