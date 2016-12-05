@@ -1,3 +1,7 @@
+/**
+ * @Author RyanB
+ */
+
 package com.qac.row5project.entities;
 import java.util.Calendar;
 
@@ -11,6 +15,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "CustomerOrder")
 public class CustomerOrder {
 
+	//JOINS ORDER ID, FEEDBACK ID AND CUSTOMER ID TOGETHER TO ENABLE REVIEWS TO BE RETRIEVED
 	@OneToOne 
 	@NotNull
 	@JoinColumn(name = "customerOrderId", nullable = false, unique = true)
@@ -35,21 +40,23 @@ public class CustomerOrder {
 	private int addressId;
 	private int paymentId;
 
+	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER
 	public CustomerOrder() {
 	};
 
+	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
 	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
 		super();
 		this.customerOrderId = customerOrderId;
 		this.feedbackId = feedbackId;
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
-	//	this.dateReceived = dateReceived;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
-		//Maybe add OrdLine array/linked list
-	}
 
+	}
+	
+	//GETTERS AND SETTERS
 	public int getCustomerOrderId() {
 		return customerOrderId;
 	}
