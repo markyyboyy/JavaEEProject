@@ -1,4 +1,6 @@
 package com.qac.row5project.managers;
+import java.util.ArrayList;
+
 import com.qac.row5project.entities.Product;
 
 public interface  ProductManager {
@@ -13,7 +15,7 @@ public interface  ProductManager {
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public Product readProductById(long id);
 	public Product readProductByName(String name);
-	public Product readProductByColour(String colour);
+	public ArrayList<Product> readProductByColour(String colour);
 	
 	
 }

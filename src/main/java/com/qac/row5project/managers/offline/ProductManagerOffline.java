@@ -1,4 +1,6 @@
-
+/**
+ * @Author RyanB (helper Ynyr)
+ */
 package com.qac.row5project.managers.offline;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class ProductManagerOffline implements ProductManager {
 
 	// CREATE - INVENTORY MANAGER
 	@Override
+	//METHOD TO CREATE A NEW PRODUCT AND ADD IT TO A NEW PRODUCT LIST
 	public void createProduct(Product p) {
 		ArrayList<Product> pList = (ArrayList<Product>) testData.getProducts();
 		p.setProductId(pList.size() + 1);
@@ -28,6 +31,7 @@ public class ProductManagerOffline implements ProductManager {
 
 	// UPDATE - INVENTORY MANAGER
 	@Override
+	//UPDATE A PRODUCT'S DETAILS BASED ON THE PRODUCT ITEM PASSED IN THE METHOD
 	public void updateProduct(Product p) {
 		ArrayList<Product> pList = (ArrayList<Product>) testData.getProducts();
 		for (Product prod : pList)
@@ -37,6 +41,7 @@ public class ProductManagerOffline implements ProductManager {
 
 	// READ - CUSTOMER/INVENTORY MANAGER
 	@Override
+	//RETURN PRODUCT BASED ON A SEARCH OF ID
 	public Product readProductById(long id) {
 		for (Product prod : testData.getProducts())
 			if (prod.getProductId() == id)
@@ -45,6 +50,7 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	@Override
+	//RETURN PRODUCT BASED ON A SEARCH OF NAME
 	public Product readProductByName(String name) {
 		for (Product prod : testData.getProducts())
 			if (prod.getName() == name)
@@ -53,10 +59,13 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	@Override
-	public Product readProductByColour(String colour) {
-		for (Product prod : testData.getProducts())
+	//RETURN PRODUCT LIST BASED ON COLOUR MATCH
+	public ArrayList<Product> readProductByColour(String colour) {
+		ArrayList<Product> pList = new ArrayList<Product>();
+		for (Product prod : testData.getProducts()){
 			if (prod.getColour() == colour)
-				return prod;
-		return null;
+				pList.add(prod);
+		}
+		return pList;
 	}
 }

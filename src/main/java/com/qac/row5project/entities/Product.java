@@ -1,4 +1,6 @@
-
+/**
+ * @Author RyanB
+ */
 package com.qac.row5project.entities;
 import java.io.Serializable;
 
