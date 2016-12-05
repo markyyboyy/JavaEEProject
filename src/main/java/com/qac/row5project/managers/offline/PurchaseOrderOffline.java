@@ -11,6 +11,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 @Stateless
 @Default
 public class PurchaseOrderOffline implements PurchaseOrderManager {

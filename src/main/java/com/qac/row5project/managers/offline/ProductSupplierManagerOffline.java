@@ -10,6 +10,12 @@ import com.qac.row5project.managers.ProductSupplierManager;
 import java.util.ArrayList;
 import java.util.List;
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 @Stateless
 @Default
 public class ProductSupplierManagerOffline implements ProductSupplierManager{

@@ -4,6 +4,12 @@ import java.util.Calendar;
 
 import com.qac.row5project.entities.PurchaseOrder;
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 public interface PurchaseOrderManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY

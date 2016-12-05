@@ -10,8 +10,16 @@ import com.qac.row5project.managers.SecurityQuestionManager;
 import java.util.ArrayList;
 import java.util.List;
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 @Stateless
 @Default
+
+
 
 public class SecurityQuestionOffline implements SecurityQuestionManager {
 	//CREATE - CUSTOMER ONLY
