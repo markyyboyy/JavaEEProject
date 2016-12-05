@@ -9,12 +9,15 @@ import com.qac.row5project.entities.Product;
 import com.qac.row5project.managers.WishlistManager;
 import com.qac.row5project.managers.offline.WishlistManagerOffline;
 
+import test.ProductItemTest;
+
 @Stateless
 
 public class WishlistService {
 	@Inject
 	private WishlistManager manager = new WishlistManagerOffline();
-	private List<Product> listProducts(){
-		return manager.readWishlist().getProducts();
+	public List<ProductItemTest> listProducts(){
+		List<ProductItemTest> products = manager.readWishlist().getProducts();
+		return products;
 	}
 }

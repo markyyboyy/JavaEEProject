@@ -4,6 +4,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+
+import test.ProductItemTest;
 /***
  * 
  * @author Mark Freeman & Ynyr Williams
@@ -53,10 +55,9 @@ public class TestData {
 		suppliers = new ArrayList<Supplier>();
 		wishlists = new ArrayList<WishList>();
 		WishList list = new WishList();
-		ArrayList<Product> products = new ArrayList<Product>();
-		Product p = new Product();
-		p.setName("Gnome");
-		p.setDesc("Gnome Desc");
+		ArrayList<ProductItemTest> products = new ArrayList<ProductItemTest>();
+		ProductItemTest p = new ProductItemTest();
+		p.setTitle("A gnome");
 		products.add(p);
 		list.setProducts(products);
 		wishlists.add(list);
