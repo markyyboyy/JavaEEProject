@@ -26,8 +26,6 @@ public class CustomerOrder {
 	@JoinColumn(name = "customerId", nullable = false, unique = false)
 	private int customerId;
 
-	
-	
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
 	};

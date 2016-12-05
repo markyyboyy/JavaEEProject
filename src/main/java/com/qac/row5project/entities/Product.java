@@ -1,3 +1,4 @@
+
 package com.qac.row5project.entities;
 import java.io.Serializable;
 
@@ -26,7 +27,7 @@ public class Product implements Serializable{
 
 	public Product(String name, String desc, double price, double weight, String colour, int size,
 			int quantity) {
-		this.productId = productId;
+		
 		this.name = name;
 		this.desc = desc;
 		this.price = price;

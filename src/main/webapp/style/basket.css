@@ -24,10 +24,18 @@ hr {
 	float: left;
 	width: 33%;
 	margin: 0;
-	padding:  5px 0;
+	padding:  10px 0;
 	height: 30px;
 }
 
 .quantitybuttons div{
 	height: auto;
+}
+
+.productItem{
+	width:20%;
+	float:left;
+	padding:30px;
+	margin:10px;
+	height:15%;
 }
