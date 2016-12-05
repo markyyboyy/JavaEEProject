@@ -21,10 +21,11 @@ public class WishlistManagerOffline implements WishlistManager {
 	//CREATE - Inventory Manager Only
 	@Override
 	public WishList createWishlist(WishList wishlist) {
-		ArrayList<WishList> s = testData.getWishlists();
-		s.add(wishlist);
-		testData.setWishlists(s);
-		return wishlist;
+		//ArrayList<WishList> s = testData.getWishlists();
+		//s.add(wishlist);
+		//testData.setWishlists(s);
+		//return wishlist;
+		return null;
 	}
 		
 		

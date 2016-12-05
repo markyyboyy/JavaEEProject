@@ -8,16 +8,12 @@
 	</div>
 	<div class = "wish2">
 		<div class="left">
-			<img class="gnome" src="#{wishlist.image}"></img>
+			<img class="gnome" src="#{wishlistTest.image}"></img>
 		</div>
 		<div class="right">
-			<h:form>
-							<ui:repeat var="product" value="#{wishlist.wishlist}">
-								<tr>
-									<th><h:outputText value="#{product.title}" /></h:commandLink></th>
-									</tr>
-									</ui:repeat>
-									</h:form>
+							<ui:repeat var="product" value="#{wishlistTest.wishlist}">
+										<h:outputText value="test"></h:outputText>
+							</ui:repeat>
 									
 		</div>
 	</div>

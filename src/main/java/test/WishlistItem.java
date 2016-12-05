@@ -2,12 +2,16 @@
  * @author Mark Freeman
  */
 package test;
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
 
-@ManagedBean(name = "wishlist", eager = true)
-public class WishlistItem {
+@Named ("wishlist")
+@RequestScoped
+public class WishlistItem implements Serializable{
 	private String image = "img/featuregnome2.jpg";
    public WishlistItem() {
       System.out.println("HelloWorld started!");

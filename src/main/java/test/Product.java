@@ -4,7 +4,7 @@
 package test;
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name = "wishlist", eager = true)
+@ManagedBean(name = "product", eager = true)
 public class Product {
    public Product() {
       System.out.println("Product started!");
@@ -16,7 +16,7 @@ public class Product {
 	   public String getTitle() {		//Returns a wishlist items title.
 		      return "Sleeping Gnome";
 		   }
-	   public String getImage() {		//Returns a wishlist items image.
+	   /*public String getImage() {		//Returns a wishlist items image.
 		      return "img/featuregnome2.jpg";
-		   }
+		   }*/
 }
