@@ -1,3 +1,4 @@
+
 package com.qac.row5project.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * 
+ * @author Iman Hassan
+ *
+ */
 @Entity
 @Table(name="CustomerOrderLine")
 public class CustomerOrderLine {
@@ -18,7 +24,6 @@ public class CustomerOrderLine {
 	@Column(nullable=false, unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	
 	
 	@Size(min=3, max=225)
 	@Column(name="quantity_id", nullable=false)
@@ -40,9 +45,20 @@ public class CustomerOrderLine {
 	@NotNull
 	private Stock Stock_idStock;
 
+	/**
+	 * Constructor with no arguments
+	 */
 	public CustomerOrderLine() {
 	}
 
+	/**
+	 * Constructor for each variable
+	 * @param id
+	 * @param quantity
+	 * @param totalPrice
+	 * @param CustomerOrder_idOrder
+	 * @param Stock_idStock
+	 */
 	public CustomerOrderLine(long id, int quantity, float totalPrice, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
 		this.id = id;
 		this.quantity = quantity;
@@ -51,6 +67,11 @@ public class CustomerOrderLine {
 		this.Stock_idStock = Stock_idStock;
 	}
 
+	
+	/**
+	 * 
+	 * @return Getters and Setters
+	 */
 	public long getId() {
 		return id;
 	}

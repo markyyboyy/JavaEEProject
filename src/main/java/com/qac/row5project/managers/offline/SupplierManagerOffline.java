@@ -10,7 +10,11 @@ import com.qac.row5project.entities.Supplier;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.SupplierManager;
 
-
+/**
+ * 
+ * @author Iman Hassan
+ *
+ */
 @Stateless
 @Default
 
@@ -19,6 +23,9 @@ public class SupplierManagerOffline implements SupplierManager {
 	private TestData testData;
 	
 	//CREATE - Inventory Manager Only
+	/**
+	 * creating a new supplier id
+	 */
 	@Override
 	public Supplier createSupplier(Supplier supplier) {
 		ArrayList<Supplier> s = testData.getSuppliers();
@@ -30,6 +37,9 @@ public class SupplierManagerOffline implements SupplierManager {
 		
 		
 	//READ - Inventory Manager Only
+	/**
+	 * reading a supplier by id
+	 */
 	@Override
 	public Supplier readByIdSupplier(int idSupplier) {
 		for (Supplier supplier : testData.getSuppliers()) {

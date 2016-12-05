@@ -14,12 +14,20 @@ import com.qac.row5project.managers.FeedbackManager;
 @Stateless
 @Default
 
+/**
+ * 
+ * @author Iman Hassan
+ *
+ */
 public class FeedbackManagerOffline implements FeedbackManager {
 	@Inject
 	private TestData testData;
 	
 	
 	//CREATE - Customer Only
+	/**
+	 * creating a new feedback
+	 */
 	@Override 
 	public void createFeedback(Feedback feedback) {
 		ArrayList<Feedback> newFeedback = testData.getFeedbacks();
@@ -30,6 +38,9 @@ public class FeedbackManagerOffline implements FeedbackManager {
 	}
 			
 	//READ 
+	/**
+	 * reading feedback by id
+	 */
 	@Override
 	public Feedback readById(int idFeedback) {
 		for (Feedback feedback : testData.getFeedbacks()) {
@@ -41,6 +52,9 @@ public class FeedbackManagerOffline implements FeedbackManager {
 			
 	}
 	
+	/**
+	 * reading feedback by rating
+	 */
 	@Override
 	public List<Feedback> readByFeedbackRating(int feedbackRating) {
 		

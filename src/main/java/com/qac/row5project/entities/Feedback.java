@@ -1,3 +1,4 @@
+
 package com.qac.row5project.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,11 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name = "Feedback")
 
-
+/**
+ * 
+ * @author Iman Hassan
+ *
+ */
 public class Feedback {
 
 	@Id @Column (nullable = false, unique = true)
@@ -25,18 +30,28 @@ public class Feedback {
 	@Column(name="comment_id", nullable=true)
 	private String comment;
 
-	
-	
-	
+	/**
+	 * Constructor with no arguments
+	 */
 	public Feedback() {
 	}
 
+	/**
+	 * Constructor for each variable
+	 * @param idFeedback
+	 * @param feedbackRating
+	 * @param comment
+	 */
 	public Feedback(int idFeedback, int feedbackRating, String comment) {
 		this.idFeedback = idFeedback;
 		this.feedbackRating = feedbackRating;
 		this.comment = comment;
 	}
 	
+	/**
+	 * 
+	 * @return Getters and Setters
+	 */
 	public int getIdFeedback() {
 		return idFeedback;
 	}
