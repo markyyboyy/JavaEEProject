@@ -14,23 +14,23 @@ import javax.ejb.Startup;
 public class TestData {
 
 	private List<Product> products;
-	private ArrayList<Stock> stocks;
-	private ArrayList<Customer> customers;
-	private ArrayList<Address> addresses;
-	private ArrayList<CustomerOrder> customerOrders;
-	private ArrayList<CustomerOrderLine> customerOrderLine;
-	private ArrayList<Employee> employees;
-	private ArrayList<Feedback> feedbacks;
-	private ArrayList<Image> images;
-	private ArrayList<LoginDetails> loginDetails;
-	private ArrayList<Payment> payments;
-	private ArrayList<PurchaseOrder> purchaseOrders;
-	private ArrayList<Rating> ratings;
-	private ArrayList<SecurityQuestion> securityQuestions;
-	private ArrayList<Stock> stockItems;
-	private ArrayList<ProductSupplier> productSuppliers;
-	private ArrayList<Supplier> suppliers;
-	private ArrayList<WishList> wishlists;
+	private List<Stock> stocks;
+	private List<Customer> customers;
+	private List<Address> addresses;
+	private List<CustomerOrder> customerOrders;
+	private List<CustomerOrderLine> customerOrderLine;
+	private List<Employee> employees;
+	private List<Feedback> feedbacks;
+	private List<Image> images;
+	private List<LoginDetails> loginDetails;
+	private List<Payment> payments;
+	private List<PurchaseOrder> purchaseOrders;
+	private List<Rating> ratings;
+	private List<SecurityQuestion> securityQuestions;
+	private List<Stock> stockItems;
+	private List<ProductSupplier> productSuppliers;
+	private List<Supplier> suppliers;
+	private List<WishList> wishlists;
 
 	@PostConstruct
 	private void setupData() {
@@ -98,15 +98,15 @@ public class TestData {
 		return customerOrders;
 	}
 
-	public void setCustomerOrders(ArrayList<CustomerOrder> customerOrders) {
-		this.customerOrders = customerOrders;
+	public void setCustomerOrders(List<CustomerOrder> co1) {
+		this.customerOrders = co1;
 	}
 
 	public ArrayList<CustomerOrderLine> getCustomerOrderLine() {
 		return customerOrderLine;
 	}
 
-	public void setCustomerOrderLine(ArrayList<CustomerOrderLine> customerOrderLine) {
+	public void setCustomerOrderLine(List<CustomerOrderLine> customerOrderLine) {
 		this.customerOrderLine = customerOrderLine;
 	}
 
@@ -114,7 +114,7 @@ public class TestData {
 		return employees;
 	}
 
-	public void setEmployees(ArrayList<Employee> employees) {
+	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
 
@@ -122,7 +122,7 @@ public class TestData {
 		return feedbacks;
 	}
 
-	public void setFeedbacks(ArrayList<Feedback> feedbacks) {
+	public void setFeedbacks(List<Feedback> feedbacks) {
 		this.feedbacks = feedbacks;
 	}
 
