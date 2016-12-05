@@ -9,7 +9,8 @@ import javax.persistence.Id;
 
 @Entity
 public class Product implements Serializable{
-		
+	
+	//VARIABLES
 	@Id private int productId;
 	private String name;
 	private String desc;
@@ -24,9 +25,11 @@ public class Product implements Serializable{
 		COMINGSOON, ACTIVE, DISCONTINUED
 	}
 
+	//NO ARGS CONSTRUCTOR FOR A PRODUCT
 	public Product() {
 	}
-
+	
+	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
 	public Product(String name, String desc, double price, double weight, String colour, int size,
 			int quantity) {
 		
@@ -39,6 +42,7 @@ public class Product implements Serializable{
 		this.quantity = quantity;
 	}
 
+	//GETTERS AND SETTERS
 	public int getProductId() {
 		return productId;
 	}
