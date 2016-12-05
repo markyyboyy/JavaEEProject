@@ -73,5 +73,14 @@ public class CustomerManagerOffline implements CustomerManager {
 		}
 
 	}
+	@Override
+	public Customer readCustomerByEmail(String sEmail) {
+
+		for (Customer a : testData.getCustomers()) {
+			if (a.getLoginDetails().getEmail().equalsIgnoreCase(sEmail))
+				return a;
+		}
+
+		return null;		}
 
 }

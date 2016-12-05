@@ -5,6 +5,7 @@
  */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.ImageManager;
@@ -15,13 +16,13 @@ public class ImageManagerOffline implements ImageManager{
 	TestData testData;
 	public void createImage(Image img){
 
-		ArrayList<Image> imageList = testData.getImages();
+		List<Image> imageList = testData.getImages();
 		imageList.add(img);
 		testData.setImages(imageList);
 	}
 	public void updateImage(Image img)
 	{
-		ArrayList<Image> imgList = testData.getImages();
+		List<Image> imgList = testData.getImages();
 		for(Image i: imgList)
 		{
 			if(i.getUrl().equals(img.getUrl()))
@@ -29,7 +30,7 @@ public class ImageManagerOffline implements ImageManager{
 		}
 	}
 	public Image findImagebyURL(String url){
-		ArrayList<Image> imgList = testData.getImages();
+		List<Image> imgList = testData.getImages();
 		for(Image i: imgList)
 		{
 			if(i.getUrl().equals(url))
@@ -38,10 +39,10 @@ public class ImageManagerOffline implements ImageManager{
 		return null;
 		
 	}
-	public ArrayList<Image> findImagesbyProductID(int productID){
+	public List<Image> findImagesbyProductID(int productID){
 
-		ArrayList<Image> tImgList = new ArrayList<Image>();
-		ArrayList<Image> imgList = testData.getImages();
+		List<Image> tImgList = new ArrayList<Image>();
+		List<Image> imgList = testData.getImages();
 		for(Image i: imgList)
 		{
 			if(i.getProductID()==productID)

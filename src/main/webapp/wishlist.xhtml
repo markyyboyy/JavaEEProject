@@ -14,8 +14,7 @@
 			<h:form>
 							<ui:repeat var="product" value="#{wishlist.wishlist}">
 								<tr>
-									<th><h:commandLink action="#{products.select(product.id)}"><h:outputText value="#{product.id}" /></h:commandLink></th>
-									<th><h:commandLink action="#{products.select(product.id)}"><h:outputText value="#{product.name}" /></h:commandLink></th>
+									<th><h:outputText value="#{product.title}" /></h:commandLink></th>
 									</tr>
 									</ui:repeat>
 									</h:form>

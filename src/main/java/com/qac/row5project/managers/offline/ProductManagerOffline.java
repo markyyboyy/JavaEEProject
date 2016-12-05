@@ -4,6 +4,8 @@
 package com.qac.row5project.managers.offline;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
@@ -23,7 +25,7 @@ public class ProductManagerOffline implements ProductManager {
 	@Override
 	//METHOD TO CREATE A NEW PRODUCT AND ADD IT TO A NEW PRODUCT LIST
 	public void createProduct(Product p) {
-		ArrayList<Product> pList = (ArrayList<Product>) testData.getProducts();
+		List<Product> pList = (ArrayList<Product>) testData.getProducts();
 		p.setProductId(pList.size() + 1);
 		pList.add(p);
 		testData.setProducts(pList);
@@ -33,7 +35,7 @@ public class ProductManagerOffline implements ProductManager {
 	@Override
 	//UPDATE A PRODUCT'S DETAILS BASED ON THE PRODUCT ITEM PASSED IN THE METHOD
 	public void updateProduct(Product p) {
-		ArrayList<Product> pList = (ArrayList<Product>) testData.getProducts();
+		List<Product> pList = (List<Product>) testData.getProducts();
 		for (Product prod : pList)
 			if (prod.getProductId() == p.getProductId())
 				testData.setProducts(pList);
@@ -51,19 +53,21 @@ public class ProductManagerOffline implements ProductManager {
 
 	@Override
 	//RETURN PRODUCT BASED ON A SEARCH OF NAME
-	public Product readProductByName(String name) {
-		for (Product prod : testData.getProducts())
-			if (prod.getName() == name)
-				return prod;
-		return null;
+	public List<Product> readProductByName(String name) {
+		List<Product> pList = new ArrayList<Product>();
+		for (Product prod : testData.getProducts()){
+			if (prod.getName().toLowerCase().contains(name.toLowerCase()))
+				pList.add(prod);
+		}
+		return pList;
 	}
 
 	@Override
 	//RETURN PRODUCT LIST BASED ON COLOUR MATCH
-	public ArrayList<Product> readProductByColour(String colour) {
-		ArrayList<Product> pList = new ArrayList<Product>();
+	public List<Product> readProductByColour(String colour) {
+		List<Product> pList = new ArrayList<Product>();
 		for (Product prod : testData.getProducts()){
-			if (prod.getColour() == colour)
+			if (prod.getColour().contains(colour))
 				pList.add(prod);
 		}
 		return pList;
