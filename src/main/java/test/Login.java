@@ -4,6 +4,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.qac.services.LoginService;
+
 @RequestScoped
 @Named(value = "login")
 public class Login {
