@@ -4,7 +4,7 @@ import com.qac.row5project.entities.ProductSupplier;
 
 /** 
  * 
- * @author Richard Allen
+ * @author Richard Allen & Ynyr Williams
  *
  */
 
