@@ -3,7 +3,7 @@ package test;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.inject.Inject;
-import com.qac.services.Basket;
+//import com.qac.services.BasketService;
 /**
  * 
  * @author Iman Hassan
@@ -12,9 +12,9 @@ import com.qac.services.Basket;
 
 @Named("customer order")
 @RequestScoped 
-public class SearchController {
+public class Basket {
 	
 @Inject
-private 
+
 }
 
