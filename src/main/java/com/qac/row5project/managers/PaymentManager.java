@@ -3,8 +3,6 @@
  */
 package com.qac.row5project.managers;
 
-import com.qac.row5project.entities.Address;
-import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Payment;
 
 public interface PaymentManager {

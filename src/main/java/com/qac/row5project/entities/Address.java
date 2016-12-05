@@ -1,7 +1,7 @@
 package com.qac.row5project.entities;
 import java.io.Serializable;
+
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
 import javax.persistence.Id;
 /***
  * 
