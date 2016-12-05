@@ -1,3 +1,7 @@
+/**
+ * @Author RyanB
+ */
+
 package com.qac.row5project.managers;
 import com.qac.row5project.entities.CustomerOrder;
 import java.util.Calendar;

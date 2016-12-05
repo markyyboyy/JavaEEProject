@@ -1,3 +1,7 @@
+/**
+ * @Author RyanB
+ */
+
 package com.qac.row5project.managers;
 import java.util.ArrayList;
 
