@@ -62,5 +62,4 @@ public class ProductService {
 			productItem.addStockInfo(stock.getQuantity());
 		return productItem;
 	}
-
 }

@@ -82,4 +82,6 @@ public class ProductManagerOffline implements ProductManager {
 		}
 		return pList;
 	}
+
+
 }
