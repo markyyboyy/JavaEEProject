@@ -1,7 +1,7 @@
 package com.qac.row5project.entities;
 import java.io.Serializable;
+
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
 import javax.persistence.Id;
 /***
  * 
@@ -25,6 +25,16 @@ public class Address implements Serializable {
 	public Address() {
 	}
 
+	/***
+	 * 
+	 * @param sName Name/Number of Address of 
+	 * @param sAddressLine1
+	 * @param sAddressLine2
+	 * @param sAddressLine3
+	 * @param sTown Town/City
+	 * @param sPostcode formatted with no spaces
+	 * @param sCounty 
+	 */
 	public Address(String sName, String sAddressLine1, String sAddressLine2, String sAddressLine3, String sTown,
 			String sPostcode, String sCounty) {
 

@@ -2,10 +2,8 @@ package com.qac.row5project.managers.offline;
 
 import java.util.ArrayList;
 import javax.inject.Inject;
-
-import com.qac.row5project.entities.Address;
-import com.qac.row5project.entities.TestData;
-import com.qac.row5project.managers.AddressManager;
+import com.qac.row5project.entities.*;
+import com.qac.row5project.managers.*;
 /***
  * 
  * @author Michael Crowther
@@ -15,6 +13,9 @@ public class AddressManagerOffline implements AddressManager {
 	@Inject
 	private TestData testData;
 
+	/***
+	 * @address new address filled with all necceasry attributes
+	 */
 	@Override
 	public Address createAddress(Address address) {
 
@@ -28,6 +29,9 @@ public class AddressManagerOffline implements AddressManager {
 
 	}
 
+	/***
+	 * @id id of employees address you want to get
+	 */
 	@Override
 	public Address readEmployee(int id) {
 

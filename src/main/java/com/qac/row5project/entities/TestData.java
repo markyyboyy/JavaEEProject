@@ -1,4 +1,3 @@
-
 package com.qac.row5project.entities;
 import java.util.ArrayList;
 import java.util.List;

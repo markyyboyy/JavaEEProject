@@ -88,7 +88,7 @@ input[type="submit"] {
 
 main, .navWrapper, .footerWrapper{
 	float: left;
-	width: 60%;
+	width: 80%;
 	margin-left: 20%;
 
 }
@@ -102,7 +102,7 @@ main{
 	
 	margin-bottom: 5px;
 	margin-bottom: 5px;
-	width: 50%;
+	width: 60%;
 }
 
 

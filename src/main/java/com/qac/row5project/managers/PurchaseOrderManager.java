@@ -14,13 +14,13 @@ public interface PurchaseOrderManager {
 	
 	//CREATE - INVENTORY MANAGER ONLY
 	/** 
-	 * 
 	 * @author Richard Allen
 	 * Create a new purchase order
 	 */
 	public void createPurchaseOrder(PurchaseOrder newPOrder);	
 	
 	//READ - INVENTORY MANAGER ONLY
+	
 	/** 
 	 * 
 	 * @author Richard Allen
@@ -28,10 +28,11 @@ public interface PurchaseOrderManager {
 	 * Find a purchase order by ID
 	 */
 	public PurchaseOrder readByID(int pOrdID);
+	
 	/** 
 	 * 
 	 * @author Richard Allen
-	 * @return PurchaseOrder]
+	 * @return PurchaseOrder
 	 * Find a purchase order by supplier ID
 	 */
 	public PurchaseOrder readBySupplier(int supID);
