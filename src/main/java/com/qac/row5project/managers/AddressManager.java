@@ -1,7 +1,11 @@
 package com.qac.row5project.managers;
 
 import com.qac.row5project.entities.Address;
-
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
 public interface AddressManager {
 	
 	//CREATE - Customer And Inventory Manager

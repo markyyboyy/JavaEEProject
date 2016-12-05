@@ -13,7 +13,11 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
 @Entity
 @Table(name="Customer")
 @NamedQuery(name="findByUsername", query="select c from Customer c inner join on LoginDetails ld where ld.username = :user")

@@ -2,6 +2,12 @@ package com.qac.row5project.managers;
 
 import com.qac.row5project.entities.SecurityQuestion;
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 public interface SecurityQuestionManager {
 
 	//CREATE - CUSTOMER ONLY

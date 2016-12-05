@@ -6,7 +6,11 @@ import javax.inject.Inject;
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.CustomerManager;
-
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
 public class CustomerManagerOffline implements CustomerManager {
 
 	@Inject

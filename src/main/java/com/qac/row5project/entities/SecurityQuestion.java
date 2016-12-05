@@ -13,6 +13,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "SecurityQuestion")
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 public class SecurityQuestion {
 	
 	@Id

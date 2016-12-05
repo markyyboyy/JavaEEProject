@@ -22,6 +22,12 @@ import javax.validation.constraints.NotNull;
 //@NamedQuery(name = "FindBydatePlaced", query = "SELECT * FROM PurchaseOrder pO WHERE pO.datePlaced = :datePlaced")
 //@NamedQuery(name = "FindBydateReceived", query = "SELECT * FROM PurchaseOrder pO WHERE pO.dateReceived = :dateReceived ")
 
+/** 
+ * 
+ * @author Richard Allen
+ *
+ */
+
 public class PurchaseOrder {
 
 	@Id
