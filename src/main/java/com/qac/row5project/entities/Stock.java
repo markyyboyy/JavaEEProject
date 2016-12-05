@@ -1,3 +1,8 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.row5project.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;

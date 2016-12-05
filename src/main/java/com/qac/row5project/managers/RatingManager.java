@@ -3,7 +3,11 @@ package com.qac.row5project.managers;
 import java.util.List;
 
 import com.qac.row5project.entities.Rating;
-
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 public interface RatingManager {
 	//CREATE: CUSTOMER
 	public void createRating(Rating rating);

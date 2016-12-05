@@ -1,5 +1,9 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.row5project.managers.offline;
-
 import java.util.ArrayList;
 
 import com.qac.row5project.entities.*;

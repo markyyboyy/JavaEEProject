@@ -1,3 +1,8 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
 
@@ -5,7 +10,7 @@ import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.RatingManager;
 
 public class RatingManagerOffline implements RatingManager {
-	
+
 	TestData testData;
 	//CREATE: CUSTOMER
 	public void createRating(Rating rating){
