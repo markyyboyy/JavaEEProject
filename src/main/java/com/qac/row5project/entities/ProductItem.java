@@ -45,9 +45,8 @@ package com.qac.row5project.entities;
 			this.weight = weight;
 		}
 
-		public void addStockInfo(int stockLevel, float price) {
+		public void addStockInfo(int stockLevel) {
 			this.stockLevel = stockLevel;
-			this.price = price;
 		}
 
 		public long getId() { return id; }
