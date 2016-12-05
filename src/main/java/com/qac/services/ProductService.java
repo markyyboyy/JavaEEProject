@@ -41,25 +41,27 @@ public class ProductService {
 	}
 
 	public ProductItem getProductItem(long id) {
-		return getProductItem(id, stockManager.findStocksbyID(id));
+		return getProductItem(productManager.readProductById(id), stockManager.findStocksbyID(id));
 	}
 
 	public ProductItem getProductItem(long id, Stock stock) {
 		return getProductItem(productManager.readProductById(id), stock);
 
 	}
+
 	public ProductItem getProductItem(Product product, long id) {
 		return getProductItem(product, stockManager.findStocksbyID(id));
-		}
+	}
 
 	public ProductItem getProductItem(Product product, Stock stock) {
 		ProductItem productItem = new ProductItem(stock.getStockID());
 		if (product != null)
-			productItem.addProductInfo(productItem.getName(), productItem.getDescription(), productItem.getHeight(), 
+			productItem.addProductInfo(productItem.getName(), productItem.getDescription(), productItem.getHeight(),
 					productItem.getWidth(), productItem.getDepth(), productItem.getWeight());
 		if (stock != null)
-			productItem.addStockInfo(stock.getStockLevel(), stock.getStatus(), stock.getPrice());
+			productItem.addStockInfo(stock.getQuantity());
 		return productItem;
 	}
+
 }
 */
