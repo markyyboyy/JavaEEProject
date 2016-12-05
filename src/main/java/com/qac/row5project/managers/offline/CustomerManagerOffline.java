@@ -27,7 +27,10 @@ public class CustomerManagerOffline implements CustomerManager {
 
 		
 	}
-
+	/**
+	 * @cID id of the customer you want to retrueve
+	 * @return Customer
+	 */
 	@Override
 	public Customer readCustomerByID(int cID) {
 
@@ -38,7 +41,11 @@ public class CustomerManagerOffline implements CustomerManager {
 
 		return null;
 	}
-
+	/**
+	 * @fName firstname of customer
+	 * @sName surname of customer
+	 * @return Customer
+	 */
 	@Override
 	public Customer readCustomerByNames(String fName, String sName) {
 
@@ -49,7 +56,12 @@ public class CustomerManagerOffline implements CustomerManager {
 
 		return null;	
 	}
-
+	
+	
+	/**
+	 * Update a customer which is already in the system
+	 * @customer customer of the update details
+	 */
 	@Override
 	public void updateCustomer(Customer customer) {
 

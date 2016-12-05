@@ -13,6 +13,9 @@ public class AddressManagerOffline implements AddressManager {
 	@Inject
 	private TestData testData;
 
+	/***
+	 * @address new address filled with all necceasry attributes
+	 */
 	@Override
 	public Address createAddress(Address address) {
 
@@ -26,6 +29,9 @@ public class AddressManagerOffline implements AddressManager {
 
 	}
 
+	/***
+	 * @id id of employees address you want to get
+	 */
 	@Override
 	public Address readEmployee(int id) {
 
