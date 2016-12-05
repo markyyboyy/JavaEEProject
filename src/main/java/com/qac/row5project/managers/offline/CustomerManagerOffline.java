@@ -19,7 +19,7 @@ public class CustomerManagerOffline implements CustomerManager {
 	@Override
 	public void createCustomer(Customer newCustomer) {
 
-		ArrayList<Customer> customerList = testData.getCustomers();
+		List<Customer> customerList = testData.getCustomers();
 
 		newCustomer.setID(customerList.size() + 1);
 		customerList.add(newCustomer);
