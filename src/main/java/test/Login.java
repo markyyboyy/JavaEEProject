@@ -12,6 +12,7 @@ public class Login {
 
 	@Inject
 	private CurrentUser currentUser;
+	
 	@Inject
 	private LoginService loginService;
 
@@ -37,7 +38,7 @@ public class Login {
 	public String login() {
 		if (!email.isEmpty() && !password.isEmpty()) {
 			if (loginService.validLogin(email, password)) {
-				// currentUser.(loginService.loginUser(email));
+				//currentUser.(loginService.loginUser(email));
 				System.out.println("Logged In");
 			} else {
 				password = "";
