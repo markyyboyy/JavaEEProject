@@ -1,6 +1,6 @@
 package com.qac.row5project.managers.offline;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -28,7 +28,7 @@ public class SupplierManagerOffline implements SupplierManager {
 	 */
 	@Override
 	public Supplier createSupplier(Supplier supplier) {
-		ArrayList<Supplier> s = testData.getSuppliers();
+		List<Supplier> s = testData.getSuppliers();
 		supplier.setIdSupplier(s.size() +1);
 		s.add(supplier);
 		testData.setSuppliers(s);

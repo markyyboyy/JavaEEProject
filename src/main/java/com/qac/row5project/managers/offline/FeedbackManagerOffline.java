@@ -30,7 +30,7 @@ public class FeedbackManagerOffline implements FeedbackManager {
 	 */
 	@Override 
 	public void createFeedback(Feedback feedback) {
-		ArrayList<Feedback> newFeedback = testData.getFeedbacks();
+		List<Feedback> newFeedback = testData.getFeedbacks();
 		feedback.setIdFeedback(newFeedback.size()+1);
 		newFeedback.add(feedback);
 		testData.setFeedbacks(newFeedback);
