@@ -99,13 +99,9 @@ public class TestData {
 		return customerOrders;
 	}
 
-<<<<<<< HEAD
-	public void setCustomerOrders(List<CustomerOrder> co1) {
-		this.customerOrders = co1;
-=======
+
 	public void setCustomerOrders(List<CustomerOrder> customerOrders) {
 		this.customerOrders = customerOrders;
->>>>>>> 6aac73953f1afc43d07ff85a30aff289371a44bc
 	}
 
 	public List<CustomerOrderLine> getCustomerOrderLine() {
