@@ -14,7 +14,7 @@ public interface StockManager {
 	public Stock createStock(Stock Stock);
 	
 	//READ: VISITOR, CUSTOMER, INVENTORY MANAGER
-	public Stock findStocksbyID(int stockID);
+	public Stock findStocksbyID(long id);
 	public List<Stock> findStocksbyPorousware(boolean porous);
 	public List<Stock> findStocksbyRefurbished(boolean refurbished);
 	
