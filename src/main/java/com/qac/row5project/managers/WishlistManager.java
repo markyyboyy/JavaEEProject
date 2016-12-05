@@ -1,8 +1,5 @@
 package com.qac.row5project.managers;
 
-import java.util.ArrayList;
-
-import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.WishList;
 
 public interface WishlistManager {

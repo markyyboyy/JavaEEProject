@@ -1,4 +1,5 @@
-package test;
+package com.qac.services;
+
 
 public class LoginService {
 

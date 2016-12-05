@@ -11,8 +11,15 @@
 			<img class="gnome" src="#{wishlist.image}"></img>
 		</div>
 		<div class="right">
-			<h1><h:outputText value="#{wishlist.title}" /></h1>
-			<p><h:outputText value="#{wishlist.description}" /></p>
+			<h:form>
+							<ui:repeat var="product" value="#{wishlist.wishlist}">
+								<tr>
+									<th><h:commandLink action="#{products.select(product.id)}"><h:outputText value="#{product.id}" /></h:commandLink></th>
+									<th><h:commandLink action="#{products.select(product.id)}"><h:outputText value="#{product.name}" /></h:commandLink></th>
+									</tr>
+									</ui:repeat>
+									</h:form>
+									
 		</div>
 	</div>
 </div>

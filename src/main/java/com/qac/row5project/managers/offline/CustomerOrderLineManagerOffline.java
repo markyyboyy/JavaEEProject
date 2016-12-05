@@ -14,11 +14,19 @@ import com.qac.row5project.managers.CustomerOrderLineManager;
 @Stateless
 @Default
 
+/**
+ * 
+ * @author Iman Hassan
+ *
+ */
 public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager {
 	@Inject
 	private TestData testData;
 	
 	//CREATE - Customer Only
+	/**
+	 * creating a new customer order line
+	 */
 	@Override
 	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine) {
 		ArrayList<CustomerOrderLine> newCOLine = testData.getCustomerOrderLine();
@@ -28,6 +36,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 		
 	//READ - Customer and Inventory Manager Only
+	/**
+	 * reading a new customer order line by id
+	 */
 	@Override
 	public CustomerOrderLine readById(int id) {
 		List<CustomerOrderLine> rQuantity = testData.getCustomerOrderLine();
@@ -39,6 +50,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		return null;
 	}
 	
+	/**
+	 * reading a customer order line by customer order id
+	 */
 	@Override
 	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
 		List<CustomerOrderLine> rCO_idOrder = testData.getCustomerOrderLine();
@@ -51,6 +65,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		return null;
 	}
 	
+	/**
+	 * reading a customer order line by stock id
+	 */
 	@Override
 	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock) {
 		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLine();
@@ -64,6 +81,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 		
 	//UPDATE - Customer Only
+	/**
+	 * updating customer order line from customer order 
+	 */
 	@Override
 	public void updateCustomerOrderLine(CustomerOrderLine customerOrderLine) {
 		List<CustomerOrderLine> uCOrders = testData.getCustomerOrderLine();

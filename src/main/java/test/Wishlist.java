@@ -1,14 +1,18 @@
+
+package test;
+import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
+
+import com.qac.services.WishlistService;
 /**
  * @author Mark Freeman
  */
-package test;
-import java.util.ArrayList;
-
-import javax.faces.bean.ManagedBean;
-
 @ManagedBean(name = "wishlist", eager = true)
 public class Wishlist {
-	ArrayList<Product> items = new ArrayList<Product>();
+	@Inject 
+	private WishlistService service;
+//	ArrayList<Product> items = new ArrayList<Product>();
+//	private List<Product> products;
    public Wishlist() {
       System.out.println("HelloWorld started!");
    }
@@ -17,7 +21,8 @@ public class Wishlist {
       return "This gnome is tired. He is sleeping. Not suitable for guarding purposes.";
    }
    public String getTitle() {		//Returns a wishlist items title.
-	      return items.get(0).getTitle();
+	 //     return items.get(0).getTitle();
+	   return null;
 	   }
    public String getImage() {		//Returns a wishlist items image.
 	      return "img/featuregnome2.jpg";
