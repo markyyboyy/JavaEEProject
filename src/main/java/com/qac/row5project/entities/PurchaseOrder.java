@@ -49,6 +49,11 @@ public class PurchaseOrder {
 	@Column(name = "dateReceived", nullable = true)
 	private Calendar dateReceived;
 
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create a new purchase order with all the elements completed
+	 */
 	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Calendar datePlaced, Calendar dateReceived) {
 		this.Order_id= Order_id;
 		this.Supplier_id= Supplier_id;
@@ -56,57 +61,108 @@ public class PurchaseOrder {
 		this.datePlaced = datePlaced;
 		this.dateReceived = dateReceived;
 	}
-	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create a new purchase order with only the order and supplier IDs
+	 */
 	public PurchaseOrder(int Order_id, Supplier Supplier_id) {
 		this.Order_id= Order_id;
 		this.Supplier_id= Supplier_id;
 	}
 
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the order ID
+	 */
 	public int getOrder_id()
 	{
 		return this.Order_id;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Set the order ID
+	 */
 	public void setOrder_idOrder(int Order_id)
 	{
 		this.Order_id= Order_id;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the supplier ID
+	 */
 	public Supplier getSupplier_id()
 	{
 		return Supplier_id;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Set the order ID
+	 */
 	public void setSupplier_idSupplier(Supplier Supplier_id)
 	{
 		this.Supplier_id= Supplier_id;
 	}
-	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the order status
+	 */
 	public String getstatus()
 	{
 		return this.status;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * set the order status
+	 */
 	public void setstatus(String status)
 	{
 		this.status = status;
 	}
-	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return the order placed date
+	 */
 	public Calendar getdatePlaced()
 	{
 		return this.datePlaced;
 	}
-	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Set the date order was placed
+	 */
 	public void setdatePlaced(Calendar datePlaced)
 	{
 		this.datePlaced = datePlaced;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return date order was received
+	 */
 	public Calendar getdateReceived()
 	{
 		return this.dateReceived;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Set the order date received
+	 */
 	public void setdateReceived(Calendar dateReceived)
 	{
 		this.dateReceived = dateReceived;
