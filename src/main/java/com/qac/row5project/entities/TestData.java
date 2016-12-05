@@ -53,6 +53,14 @@ public class TestData {
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 		wishlists = new ArrayList<WishList>();
+		WishList list = new WishList();
+		ArrayList<Product> products = new ArrayList<Product>();
+		Product p = new Product();
+		p.setName("Gnome");
+		p.setDesc("Gnome Desc");
+		products.add(p);
+		list.setProducts(products);
+		wishlists.add(list);
 	}
 
 	public List<Product> getProducts() {

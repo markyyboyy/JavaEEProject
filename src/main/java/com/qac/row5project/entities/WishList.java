@@ -1,4 +1,6 @@
 package com.qac.row5project.entities;
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ public class WishList {
 	@Column(name = "stock id", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long stockId;
-
+	private ArrayList<Product> products = new ArrayList<>();
 	public WishList() {
 	}
 
@@ -43,6 +45,14 @@ public class WishList {
 	@Override
 	public String toString() {
 		return "WishList [customerId=" + customerId + ", stockId=" + stockId + "]";
+	}
+
+	public ArrayList<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
 	}
 
 }
