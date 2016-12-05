@@ -16,94 +16,114 @@
 
 			<div id="shopping">
 
-				<a href="catalogue.xhtml">
-					<button name="continueShopping">Continue Shopping</button>
-				</a> <br />
-				<br />
-				<br />
 
-				<!-- Repeater -->
-				<div class="row">
-					<div class="col-sm-3" style="background-color: #F4F4F4;">
-						<img src="img/fgnome1.jpeg" />
+
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-md-12 ">
+							<a href="catalogue.xhtml">
+								<button name="continueShopping">Continue Shopping</button>
+							</a>
+						</div>
 					</div>
 
-					<div class="col-sm-3" style="background-color: #F4F4F4;">
-						Product Description<br />
-					</div>
 
-					<div class="col-sm-3" style="background-color: #F4F4F4;">
-						Product Price<br />
-					</div>
-					<div class="col-sm-3" style="background-color: #F4F4F4;"></div>
-
-					<div class="col-sm-3">
-
-						<div class="col-sm-4">
-							<input type="submit" value="-"></input>
+					<!-- Repeater -->
+					<div class="row">
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							<img src="img/fgnome1.jpeg" />
 						</div>
 
-						<div class="col-sm-4">
-
-							<h:inputText value="">
-
-								<f:passThroughAttribute name="quantity" value="text" />
-								<f:passThroughAttribute name="placeholder" value="1" />
-								<f:passThroughAttribute name="alt" value="1" />
-
-							</h:inputText>
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							Product Description<br />
 						</div>
 
-
-						<div class="col-sm-4">
-							<input type="submit" value="+"></input>
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							Product Price<br />
 						</div>
 
-			
-					</div>
+						<div class="col-sm-3">
 
-	</div>
+							<div class="row quantityChange">
 
-				<!-- Repeater -->
-				
-				<div class="row">
-					<div class="col-sm-3" style="background-color: #F4F4F4;">
-						<img src="img/fgnome1.jpeg" />
-					</div>
+								<div class="col-sm-4">
+									<input type="submit" value="-"></input>
+								</div>
 
-					<div class="col-sm-3" style="background-color: #F4F4F4;">
-						Product Description<br />
-					</div>
+								<div class="col-sm-4">
 
-					<div class="col-sm-3" style="background-color: #F4F4F4;">
-						Product Price<br />
-					</div>
-					<div class="col-sm-3" style="background-color: #F4F4F4;"></div>
+									<h:inputText value="">
 
-					<div class="col-sm-3">
+										<f:passThroughAttribute name="quantity" value="text" />
+										<f:passThroughAttribute name="placeholder" value="1" />
+										<f:passThroughAttribute name="alt" value="1" />
 
-						<div class="col-sm-4">
-							<input type="submit" value="-"></input>
-						</div>
-
-						<div class="col-sm-4">
-
-							<h:inputText value="">
-
-								<f:passThroughAttribute name="quantity" value="text" />
-								<f:passThroughAttribute name="placeholder" value="1" />
-								<f:passThroughAttribute name="alt" value="1" />
-
-							</h:inputText>
-						</div>
+									</h:inputText>
+								</div>
 
 
-						<div class="col-sm-4">
-							<input type="submit" value="+"></input>
+								<div class="col-sm-4">
+									<input type="submit" value="+"></input>
+								</div>
+							</div>
+
 						</div>
 
 					</div>
 
+					<!-- Repeater -->
+
+					<div class="row">
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							<img src="img/fgnome1.jpeg" />
+						</div>
+
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							Product Description<br />
+						</div>
+
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							Product Price<br />
+						</div>
+
+						<div class="col-sm-3">
+
+							<div class="row quantityChange">
+
+								<div class="col-sm-4">
+									<input type="submit" value="-"></input>
+								</div>
+
+								<div class="col-sm-4">
+
+									<h:inputText value="">
+
+										<f:passThroughAttribute name="quantity" value="text" />
+										<f:passThroughAttribute name="placeholder" value="1" />
+										<f:passThroughAttribute name="alt" value="1" />
+
+									</h:inputText>
+								</div>
+
+
+								<div class="col-sm-4">
+									<input type="submit" value="+"></input>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+
+					<div class="row">
+						<div class="text-right col-xs-12">
+							<button name="proceedToCheckout">Proceed to Checkout</button>
+						</div>
+					</div>
 
 				</div>
 
@@ -111,16 +131,7 @@
 
 
 
-				<div class="text-right">
-					<button name="proceedToCheckout">Proceed to Checkout</button>
-				</div>
 			</div>
-
-
-
-
-
-
 
 
 
