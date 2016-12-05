@@ -8,7 +8,7 @@
 <!-- Meta Tags -->
 <title><ui:insert name="pageName" /></title>
 
-<link rel="stylesheet" media="screen" href="./style/bootstrap.min.css" />
+<!-- <link rel="stylesheet" media="screen" href="./style/bootstrap.min.css" /> -->
 <link href="./style/imsMain.css" type="text/css" rel="stylesheet" />
 
 <!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
@@ -16,24 +16,24 @@
 
 <h:body>
 
+	
 
-	<nav>
-		<ul>
-			<li><h:commandButton action="#" value="Go"
-					styleClass="btn btn-primary" /></li>
-			<li><h:commandButton action="#" value="Go"
-					styleClass="btn btn-primary" /></li>
-			<li><h:commandButton action="#" value="Go"
-					styleClass="btn btn-primary" /></li>
-			<li><h:commandButton action="#" value="Go"
-					styleClass="btn btn-primary" /></li>
-		</ul>
-	</nav>
+	<section class="sidebar">
+	
+		<div class="filter">
+			<ui:insert name="filterName"></ui:insert>
+		</div>
+		<div class="filterResults">
+			<ui:insert name="filterResults"></ui:insert>		
+			
+		</div>
+	
+	</section>
 
-	<main class="content"> <ui:insert name="mainContent" /> </main>
+	<main class="content"> <ui:insert name="mainContent2" /> </main>
 
 
-	<footer class="">
+	<footer>
 
 		<div class="footerWrapper">
 			<div>

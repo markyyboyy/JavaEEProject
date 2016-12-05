@@ -1,41 +1,84 @@
 @CHARSET "ISO-8859-1";
- /*Michael Crowther*/
-
-*{
+/*Michael Crowther*/
+* {
 	box-sizing: border-box;
 	line-height: 1.4;
 	color: #373740;
 	background-color: #f5f5f5;
 }
 
-w
-nav{
+.sidebar {
+	width: 18%;
+	margin: 0 1%;
+	float: left;
+}
+
+.sidebar, .content{
+	height: 90%;
+}
+
+
+body{
+	height: 98%;
+}
+
+.sidebar div {
+	margin: 10px 0;
+	float: left;
+	width: 100%;
+}
+
+.content {
+	width: 80%;
+	float: left;
+	border-left: 1px solid black;
+}
+
+input {
 	width: 100%;
 	float: left;
 }
 
-nav .navButton{
-	
+nav {
+	width: 100%;
+	float: left;
+}
+
+nav .navButton {
 	float: left;
 	width: 48%;
 	margin: 10px 1%;
-	
 }
 
-main{
+main {
 	width: 100%;
-		float: left;
-	
+	float: left;
 }
 
-main div, main nav{
+footer, .footerWrapper {
+	float: left;
+	width: 100%;
+}
+
+footer{
+	height: 2%;
+}
+
+.footerWrapper div{
+	float: left;
+	width: 18%;
+	padding: 0 1%;
+	margin: 10px 1%;
+}
+
+
+main div, main nav {
 	width: 90%;
 	margin-left: 5%;
 	float: left;
 }
 
-main nav input[type="submit"]{
+main nav input[type="submit"] {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-
