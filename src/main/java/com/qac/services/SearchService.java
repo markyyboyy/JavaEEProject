@@ -2,7 +2,7 @@
  * 
  * @author Ynyr Williams
  *
- *//*
+ */
 package com.qac.services;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class SearchService {
 	@Inject
 	private ProductService productService;
 	private List<Product> searchByProductName(String name) {
-	return productRepository.findByNameLike(name);
+	return productRepository.readProductByName(name);
 	}
 	private List<Product> searchByProductDescription(String description) {
 	return productRepository.findByDescriptionLike(description);
@@ -41,4 +41,3 @@ public class SearchService {
 		}
 
 }
-*/
