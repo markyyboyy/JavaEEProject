@@ -33,7 +33,7 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 	 * Create new security question
 	 */
 	public void createSecurityQuestion(SecurityQuestion newQuestion){
-		ArrayList<SecurityQuestion> sQuestion = testData.getSecurityQuestions();
+		List<SecurityQuestion> sQuestion = testData.getSecurityQuestions();
 		sQuestion.add(newQuestion);
 		testData.setSecurityQuestions(sQuestion);
 		
@@ -67,7 +67,7 @@ public class SecurityQuestionOffline implements SecurityQuestionManager {
 		for (SecurityQuestion sQuestion : testData.getSecurityQuestions()) {
 			if (sQuestion.getQuestion().equalsIgnoreCase(oldQuestion)) {
 				sQuestion.setQuestion(newQuestion);
-				ArrayList<SecurityQuestion> sQuestions = testData.getSecurityQuestions();
+				List<SecurityQuestion> sQuestions = testData.getSecurityQuestions();
 				testData.setSecurityQuestions(sQuestions);
 			}
 		}
