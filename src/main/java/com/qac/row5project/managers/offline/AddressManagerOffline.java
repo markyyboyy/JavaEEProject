@@ -1,9 +1,12 @@
 package com.qac.row5project.managers.offline;
 
 import java.util.ArrayList;
+
 import javax.inject.Inject;
-import com.qac.row5project.entities.*;
-import com.qac.row5project.managers.*;
+
+import com.qac.row5project.entities.Address;
+import com.qac.row5project.entities.TestData;
+import com.qac.row5project.managers.AddressManager;
 /***
  * 
  * @author Michael Crowther
