@@ -57,10 +57,14 @@ public class TestData {
 		WishList list = new WishList();
 		ArrayList<ProductItemTest> products = new ArrayList<ProductItemTest>();
 		ProductItemTest p = new ProductItemTest();
+		
 		p.setTitle("A gnome");
 		products.add(p);
 		list.setProducts(products);
 		wishlists.add(list);
+		
+		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
+		loginDetails.add(testLogin);
 	}
 
 	public List<Product> getProducts() {

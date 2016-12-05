@@ -1,5 +1,5 @@
 /**
- * @Author RyanB (helper Ynyr)
+ * @Author RyanB & Ynyr
  */
 package com.qac.row5project.managers.offline;
 
@@ -72,4 +72,16 @@ public class ProductManagerOffline implements ProductManager {
 		}
 		return pList;
 	}
+
+	@Override
+	public List<Product> readProductByDescription(String desc) {
+		List<Product> pList = new ArrayList<Product>();
+		for (Product prod : testData.getProducts()){
+			if (prod.getDesc().contains(desc))
+				pList.add(prod);
+		}
+		return pList;
+	}
+
+
 }

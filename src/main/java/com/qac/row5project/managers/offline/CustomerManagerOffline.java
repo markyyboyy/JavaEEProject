@@ -2,6 +2,9 @@ package com.qac.row5project.managers.offline;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.TestData;
@@ -11,6 +14,8 @@ import com.qac.row5project.managers.CustomerManager;
  * @author Michael Crowther
  *
  */
+@Stateless
+@Default
 public class CustomerManagerOffline implements CustomerManager {
 
 	@Inject
@@ -73,5 +78,14 @@ public class CustomerManagerOffline implements CustomerManager {
 		}
 
 	}
+	@Override
+	public Customer readCustomerByEmail(String sEmail) {
+
+		for (Customer a : testData.getCustomers()) {
+			if (a.getLoginDetails().getEmail().equalsIgnoreCase(sEmail))
+				return a;
+		}
+
+		return null;		}
 
 }

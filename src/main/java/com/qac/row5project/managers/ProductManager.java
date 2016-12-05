@@ -18,8 +18,9 @@ public interface  ProductManager {
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public Product readProductById(long id);
+	
 	public List<Product> readProductByName(String name);
 	public List<Product> readProductByColour(String colour);
-	
-	
+	public List<Product> readProductByDescription(String desc);
+
 }

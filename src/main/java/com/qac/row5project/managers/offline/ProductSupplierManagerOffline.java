@@ -32,7 +32,7 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	 */
 	@Override
 	public void createProductSupplier(ProductSupplier newSSP){
-		ArrayList<ProductSupplier> SSPOrders = testData.getProductSupplier();
+		List<ProductSupplier> SSPOrders = testData.getProductSupplier();
 		SSPOrders.add(newSSP);
 		testData.setProductSupplier(SSPOrders);
 	}

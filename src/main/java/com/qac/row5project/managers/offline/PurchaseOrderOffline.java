@@ -32,7 +32,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	 */
 	@Override
 	public void createPurchaseOrder(PurchaseOrder newPOrder) {
-		ArrayList<PurchaseOrder> pOrders = testData.getPurchaseOrders();
+		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
 		newPOrder.setOrder_idOrder(pOrders.size() + 1);
 		pOrders.add(newPOrder);
 		testData.setPurchaseOrders(pOrders);
@@ -125,7 +125,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	// UPDATE - INVENTORY MANAGER ONLY
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder newPOrder) {
-		ArrayList<PurchaseOrder> pOrders = testData.getPurchaseOrders();
+		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
 		pOrders.add(newPOrder);
 		testData.setPurchaseOrders(pOrders);
 	}
