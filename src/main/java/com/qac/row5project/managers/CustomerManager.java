@@ -1,7 +1,11 @@
 package com.qac.row5project.managers;
 
 import com.qac.row5project.entities.Customer;
-
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
 public interface CustomerManager {
 	
 	//CREATE - VISITOR ONLY

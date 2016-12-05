@@ -6,7 +6,11 @@ import javax.inject.Inject;
 import com.qac.row5project.entities.Address;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.AddressManager;
-
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
 public class AddressManagerOffline implements AddressManager {
 	@Inject
 	private TestData testData;
