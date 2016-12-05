@@ -2,7 +2,7 @@
  * @Author RyanB
  */
 package com.qac.row5project.managers.offline;
-import java.util.ArrayList;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	@Override
 	//RETUSN A CUSTOMER ORDER
 	public CustomerOrder createCustomerOrder(CustomerOrder co) {
-		ArrayList<CustomerOrder> co1 = testData.getCustomerOrders();
+		List<CustomerOrder> co1 = testData.getCustomerOrders();
 		co.setCustomerOrderId(co1.size()+1);
 		co1.add(co);
 		testData.setCustomerOrders(co1);

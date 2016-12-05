@@ -43,6 +43,8 @@ public class CustomerOrder {
 	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER
 	public CustomerOrder() {
 	};
+	
+	
 
 	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
 	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
