@@ -24,6 +24,12 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	private TestData testData;
 	
 	//CREATE - INVENTORY MANAGER ONLY
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create new supplier with an ID 
+	 * 
+	 */
 	@Override
 	public void createProductSupplier(ProductSupplier newSSP){
 		ArrayList<ProductSupplier> SSPOrders = testData.getProductSupplier();
@@ -32,6 +38,11 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	}
 	
 	//READ - INVENTORY MANAGER ONLY
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return supplier by product ID
+	 */
 	@Override
 	public ProductSupplier readProductSupplierByProductID(int pID){
 		for (ProductSupplier SSP : testData.getProductSupplier()) {
@@ -43,6 +54,11 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 		
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return Supplier by supplier ID
+	 */
 	@Override
 	public ProductSupplier readProductSupplierBySupplierID(int sID){
 		for (ProductSupplier SSP : testData.getProductSupplier()) {

@@ -45,38 +45,72 @@ public class ProductSupplier {
 	public ProductSupplier()
 	{}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Create new supplier with an ID 
+	 * 
+	 */
 	public ProductSupplier(Supplier supplier, Product product, float price)
 	{
 		this.supplier = supplier;
 		this.product = product;
 		this.price = price;
 	}
-	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return Supplier by supplier ID
+	 */
 	public Supplier getSupplier()
 	{
 		return this.supplier;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * Set supplier
+	 */
 	public void setSupplier(Supplier supplier)
 	{
 		this.supplier = supplier;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return product associated with a supplier
+	 */
 	public Product getProduct()
 	{
 		return this.product;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * set product associated with a supplier
+	 */
 	public void setProduct(Product product)
 	{
 		this.product = product;
 	}
 	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * @return price for a product
+	 */
 	public float getPrice()
 	{
 		return this.price;
 	}
-	
+	/** 
+	 * 
+	 * @author Richard Allen
+	 * set supplier price
+	 */
 	public void setPrice(float price)
 	{
 		this.price = price;
