@@ -10,79 +10,88 @@
 
 	<ui:define name="mainContent">
 
-		<h2>Catalogue</h2>
 
 		<h:form>
-			<div class="row">
-				<div class="col-md-12">
-					<h:inputText value="#{search.term}" class="form-control">
-
-						<f:passThroughAttribute name="type" value="text" />
-						<f:passThroughAttribute name="placeholder" value="Search..." />
-						<f:passThroughAttribute name="alt" value="Search" />
-
-						<h:commandButton action="#{search.search}" value="Seach"
-							class="btn btn-success">
-							<f:passThroughAttribute name="style" value="display: none;" />
-						</h:commandButton>
-
-					</h:inputText>
-				</div>
-			</div>
+			<div class="container-fluid">
+		<h2>Catalogue</h2>
 
 
-			<div class="row">
+				<div class="row">
+					<div class="col-md-12">
+						<h:inputText value="#{search.term}" class="form-control">
 
-				<div class="col-md-6">
-					<label for="Rating">Min Rating</label>
-					<h:selectOneMenu ID="Rating">
-						<f:selectItem itemValue="1" itemLabel="1 Start" />
-						<f:selectItem itemValue="2" itemLabel="2 Start" />
-						<f:selectItem itemValue="3" itemLabel="3 Start" />
-						<f:selectItem itemValue="4" itemLabel="4 Start" />
-						<f:selectItem itemValue="5" itemLabel="5 Start" />
-					</h:selectOneMenu>
+							<f:passThroughAttribute name="type" value="text" />
+							<f:passThroughAttribute name="placeholder" value="Search..." />
+							<f:passThroughAttribute name="alt" value="Search" />
+
+							<h:commandButton action="#{search.search}" value="Seach"
+								class="btn btn-success">
+								<f:passThroughAttribute name="style" value="display: none;" />
+							</h:commandButton>
+
+						</h:inputText>
+					</div>
 				</div>
 
 
-				<div class="col-md-6">
-					<label for="maxPrice">Max Price</label> <input type="range"
-						name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
-						max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value" />
-					<output name="ageOutputName" id="maxPriceRange">2500</output>
+				<div class="row">
+
+					<div class="col-md-6 col-xs-12">
+						<label for="Rating">Min Rating</label>
+						<h:selectOneMenu ID="Rating">
+							<f:selectItem itemValue="1" itemLabel="1 Start" />
+							<f:selectItem itemValue="2" itemLabel="2 Start" />
+							<f:selectItem itemValue="3" itemLabel="3 Start" />
+							<f:selectItem itemValue="4" itemLabel="4 Start" />
+							<f:selectItem itemValue="5" itemLabel="5 Start" />
+						</h:selectOneMenu>
+					</div>
+
+
+					<div class="col-md-6 col-xs-12">
+						<label for="maxPrice">Max Price</label> <input type="range"
+							name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
+							max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value" />
+						<output name="ageOutputName" id="maxPriceRange">2500</output>
+					</div>
 				</div>
-			</div>
 
 
 
-			<div class="text-right">
-				<button name="btnSearch">Search</button>
+				<div class="row">
+					<div class="text-right col-md-2 col-xs-12">
+						<button name="btnSearch">Search</button>
+					</div>
+
+				</div>
+
 			</div>
 
 		</h:form>
+			<div class="container-fluid">
 
 		<div class="resultsPane row">
 
 			<div class="col-md-12">
-			
-				<div class="col-md-2 fr sortBy">
-				
+
+				<div class="col-md-2 col-xs-12 fr sortBy">
+
 					<h:selectOneMenu ID="Rating">
 						<f:selectItem itemValue="sortByRatingA" itemLabel="Rating (asc)" />
 						<f:selectItem itemValue="sortByRatingD" itemLabel="Rating (desc)" />
 						<f:selectItem itemValue="sortByPriceA" itemLabel="Price (asc)" />
 						<f:selectItem itemValue="sortByPriceD" itemLabel="Price (desc)" />
 					</h:selectOneMenu>
-					
+
 				</div>
-				
+
 			</div>
 
-			
+
 			<ui:repeat var="prod" value="#{Catalogue.testList}">
-			
+
 				<h2>#{prod}</h2>
-			
+
 			</ui:repeat>
 
 
@@ -94,7 +103,7 @@
 
 		</div>
 
-
+</div>
 
 	</ui:define>
 </ui:composition>

@@ -1,4 +1,4 @@
-package com.qac.services;
+/*package com.qac.services;
 
 import java.util.List;
 
@@ -62,3 +62,4 @@ public class ProductService {
 		return productItem;
 	}
 }
+*/
