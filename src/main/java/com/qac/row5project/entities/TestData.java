@@ -1,3 +1,8 @@
+/***
+ * 
+ * @author Mark Freeman & Ynyr Williams
+ *
+ */
 package com.qac.row5project.entities;
 import java.util.ArrayList;
 import java.util.List;

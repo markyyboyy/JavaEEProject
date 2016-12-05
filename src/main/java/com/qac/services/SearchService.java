@@ -1,11 +1,13 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.services;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.managers.ProductManager;
 
