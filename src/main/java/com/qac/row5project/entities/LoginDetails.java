@@ -1,3 +1,6 @@
+/**
+ * @author Mark Freeman
+ */
 package com.qac.row5project.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,21 +16,29 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="login Details")
 public class LoginDetails {
+	/**
+	The table has two columns
+	 */
 	@Column (name="email",length=100,nullable=false,unique=true)
 	@Size(max = 100)
 	private String email;
 	@Column (name="password",length=100,nullable=false)
 	@Size(max = 100)
 	private String password;
+	
 
 	public LoginDetails() {
 	}
-
-	public LoginDetails(String email, String password) {
+	/**
+	To construct a user you need a username and a password
+	 */
+	public LoginDetails(String email, String password) { 
 		this.email = email;
 		this.password = password;
 	}
-
+	/**
+	Gettters and setters
+	 */
 	public String getEmail() {
 		return email;
 	}

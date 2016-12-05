@@ -1,3 +1,6 @@
+/**
+ * @author Mark Freeman
+ */
 package com.qac.row5project.entities;
 import java.io.Serializable;
 import java.util.Calendar;
@@ -21,7 +24,9 @@ public class Payment implements Serializable{
 	
 	public Payment() {
 	}
-
+	/**
+	To construct a payment you need a customer, their address and their card details.
+	 */
 	public Payment(String Type, String CardNumber, Calendar ExpiryDate, String NameOnCard, String IssueNumber,
 			Customer Customer, Address Address, int id) {
 		this.Type = Type;
@@ -33,7 +38,9 @@ public class Payment implements Serializable{
 		this.Address = Address;
 		this.id = id;
 	}
-
+	/**
+	Getters and setters
+	 */
 	public String getType() {
 		return this.Type;
 	}
