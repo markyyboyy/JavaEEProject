@@ -37,12 +37,45 @@ button{
 
 
 .resultsPane{
-	margin: 5px 0;
-	
-	
-	
+	margin: 5px 0;	
 }
 
 .fr{
 	float: right;
 }
+
+.imgWrapper{
+	
+	position: relative;
+	
+}
+
+
+.imgWrapper div{
+	position: absolute;
+	bottom: 0;	
+} 
+
+.obHover{
+	right: 10px;
+	z-index: 10;
+	background-color: gray;
+	opacity: 0.8;
+}
+
+.imgHover{
+	left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

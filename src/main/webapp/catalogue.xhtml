@@ -89,36 +89,57 @@
 
 
 				<div class="container-fluid">
-					
+
 
 					<div class="row">
-						
+
 
 						<ui:repeat var="prod" value="#{Catalogue.products}">
 
-							<div class="col-md-3 col-sm-6 col-xs-12 resultsPane" style="background-color: blue;">
+							<div class="imgWrapper">
 
-								<h2>#{prod.name}</h2>
+								<div class="img absPlace"></div>
 
-								<div>
-									<span>#{prod.desc}</span>
+								<div class="onHover absPlace">
+								
+									<div class="star"><span class="glyphicon glyphicon-star"></span></div>
+									<div class="basket"><span class="glyphicon glyphicon-shopping-cart"></span></div>								
+								
 								</div>
 
 
 							</div>
 
+							<div class="resultDesc">
+
+								<div class="col-md-3 col-sm-6 col-xs-12 resultsPane"
+									style="background-color: blue;">
+
+									<h2>#{prod.name}</h2>
+
+									<div>
+										<span>#{prod.desc}</span>
+									</div>
+
+
+								</div>
+							</div>
+							
+							
+							
+							
 						</ui:repeat>
-						
-						
+
+
 					</div>
 				</div>
-				
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
+
 				<div class="imgWrapper">
 					<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />
 				</div>
