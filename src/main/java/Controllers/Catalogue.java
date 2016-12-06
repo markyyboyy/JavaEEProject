@@ -11,7 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qac.row5project.entities.Product;
-import com.qac.row5project.entities.TestData;
+import com.qac.row5project.entities.TestData;	
 import com.qac.row5project.helpers.PaginationHelper;
 import com.qac.services.ProductService;
 
@@ -46,7 +46,7 @@ public class Catalogue implements Serializable {
 
 				@Override
 				public int getItemsCount() {
-					return 15;
+					return productService.findAllProducts().size();
 				}
 
 				@Override

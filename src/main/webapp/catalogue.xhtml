@@ -13,7 +13,7 @@
 
 		<h:form>
 			<div class="container-fluid">
-		<h2>Catalogue</h2>
+				<h2>Catalogue</h2>
 
 
 				<div class="row">
@@ -68,42 +68,80 @@
 			</div>
 
 		</h:form>
-			<div class="container-fluid">
+		<div class="container-fluid">
 
-		<div class="resultsPane row">
+			<div class="resultsPane row">
 
-			<div class="col-md-12">
+				<div class="col-md-12">
 
-				<div class="col-md-2 col-xs-12 fr sortBy">
+					<div class="col-md-2 col-xs-12 fr sortBy">
 
-					<h:selectOneMenu ID="Rating">
-						<f:selectItem itemValue="sortByRatingA" itemLabel="Rating (asc)" />
-						<f:selectItem itemValue="sortByRatingD" itemLabel="Rating (desc)" />
-						<f:selectItem itemValue="sortByPriceA" itemLabel="Price (asc)" />
-						<f:selectItem itemValue="sortByPriceD" itemLabel="Price (desc)" />
-					</h:selectOneMenu>
+						<h:selectOneMenu ID="Rating">
+							<f:selectItem itemValue="sortByRatingA" itemLabel="Rating (asc)" />
+							<f:selectItem itemValue="sortByRatingD" itemLabel="Rating (desc)" />
+							<f:selectItem itemValue="sortByPriceA" itemLabel="Price (asc)" />
+							<f:selectItem itemValue="sortByPriceD" itemLabel="Price (desc)" />
+						</h:selectOneMenu>
+
+					</div>
 
 				</div>
 
+
+				<div class="container-fluid">
+					
+					<div class="row">
+					
+					<h:commandLink value="Previous" action="#{browse.previous}"
+						rendered="#{browse.pagination.hasPreviousPage}" />
+						
+						<h:outputText value="						
+						#{browse.pagination.pageFirstItem + 1}..						
+						#{browse.pagination.pageLastItem + 1}/						
+						#{browse.pagination.itemsCount}" />
+						
+						<h:commandLink value="Next" action="#{browse.next}"						
+						rendered="#{browse.pagination.hasNextPage}" />
+
+					</div>
+					
+					<div class="row">
+						
+
+						<ui:repeat var="prod" value="#{Catalogue.products}">
+
+							<div class="col-md-3 col-sm-6 col-xs-12 resultsPane" style="background-color: blue;">
+
+								<h2>#{prod.name}</h2>
+
+								<div>
+									<span>#{prod.desc}</span>
+								</div>
+
+
+							</div>
+
+						</ui:repeat>
+						
+						
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="imgWrapper">
+					<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />
+				</div>
+
+				<div class="productInfo"></div>
+
 			</div>
-
-
-			<ui:repeat var="prod" value="#{Catalogue.products}">
-
-				<h2>1</h2>
-
-			</ui:repeat>
-
-
-			<div class="imgWrapper">
-				<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />
-			</div>
-
-			<div class="productInfo"></div>
 
 		</div>
-
-</div>
 
 	</ui:define>
 </ui:composition>

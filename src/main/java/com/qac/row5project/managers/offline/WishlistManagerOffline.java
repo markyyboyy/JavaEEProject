@@ -8,8 +8,12 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
+<<<<<<< HEAD
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Product;
+=======
+import com.qac.row5project.entities.Stock;
+>>>>>>> f9d42f309a0b57702bb318e883d7088812bb4444
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.managers.WishlistManager;
 
@@ -19,6 +23,7 @@ import com.qac.row5project.managers.WishlistManager;
 public class WishlistManagerOffline implements WishlistManager {
 	@Inject
 	private TestData testData;
+<<<<<<< HEAD
 	
 
 	//READ - Customer Only
@@ -44,4 +49,20 @@ public class WishlistManagerOffline implements WishlistManager {
 			}
 		}
 	}
+=======
+
+	@Override
+	public List<Stock> findByCustomerId(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Stock> readWishlist(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+>>>>>>> f9d42f309a0b57702bb318e883d7088812bb4444
 }

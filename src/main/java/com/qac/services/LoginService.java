@@ -4,10 +4,9 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Customer;
-//import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.LoginDetails;
 import com.qac.row5project.managers.CustomerManager;
-//import com.qac.row5project.managers.CustomerManager;
+
 import com.qac.row5project.managers.LoginDetailsManager;
 
 /**
@@ -21,7 +20,7 @@ public class LoginService {
 	private CustomerManager customerManager;
 	@Inject
 	private LoginDetailsManager loginManager;
-	@Inject
+	
 	private LoginDetails login;
 	
 	public boolean validLogin(String email, String password){

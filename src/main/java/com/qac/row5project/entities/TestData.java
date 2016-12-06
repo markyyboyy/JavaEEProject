@@ -1,5 +1,6 @@
 package com.qac.row5project.entities;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -31,7 +32,6 @@ public class TestData {
 	private List<Stock> stockItems;
 	private List<ProductSupplier> productSuppliers;
 	private List<Supplier> suppliers;
-	private List<WishList> wishlists;
 
 	@PostConstruct
 	private void setupData() {
@@ -52,8 +52,22 @@ public class TestData {
 		stockItems = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
-		wishlists = new ArrayList<WishList>();
 
+		
+		
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18));
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18));
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18));
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18));
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18));
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18));
+		
+		
+		
+		Calendar c= Calendar.getInstance();
+		c.set(1990, 11, 05);
+		
+		customers.add(new Customer("Allen", "Richard", "Fall", c, new LoginDetails("test@test.com", "password")));
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
@@ -197,11 +211,5 @@ public class TestData {
 		this.suppliers = suppliers;
 	}
 
-	public List<WishList> getWishlists() {
-		return wishlists;
-	}
 
-	public void setWishlists(List<WishList> wishlists) {
-		this.wishlists = wishlists;
-	}
 }

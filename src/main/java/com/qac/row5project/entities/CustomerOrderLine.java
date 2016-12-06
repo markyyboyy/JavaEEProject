@@ -26,24 +26,20 @@ public class CustomerOrderLine {
 	private long id;
 	
 	@Size(min=3, max=225)
-	@Column(name="quantity_id", nullable=false)
+	@Column(name="quantity", nullable=false)
 	@NotNull
 	private int quantity;
 	
 	@Size(min=5, max=12)
-	@Column(name="totalPrice_id", nullable = false)
+	@Column(name="totalPrice", nullable = false)
 	@NotNull
 	private float totalPrice;
 		
+
 	@ManyToOne
-	@JoinColumn(name="CustomerOrder_idOrder", nullable=false)
+	@JoinColumn(name="stock", nullable=false)
 	@NotNull
-	private CustomerOrder CustomerOrder_idOrder;
-	
-	@ManyToOne
-	@JoinColumn(name="Stock_idStock", nullable=false)
-	@NotNull
-	private Stock Stock_idStock;
+	private Stock stock;
 
 	/**
 	 * Constructor with no arguments
@@ -56,18 +52,16 @@ public class CustomerOrderLine {
 	 * @param id
 	 * @param quantity
 	 * @param totalPrice
-	 * @param CustomerOrder_idOrder
-	 * @param Stock_idStock
+	 * @param customerOrder
+	 * @param stock
 	 */
-	public CustomerOrderLine(long id, int quantity, float totalPrice, CustomerOrder CustomerOrder_idOrder, Stock Stock_idStock) {
+	public CustomerOrderLine(long id, int quantity, Stock stock) {
 		this.id = id;
 		this.quantity = quantity;
-		this.totalPrice = totalPrice;
-		this.CustomerOrder_idOrder = CustomerOrder_idOrder;
-		this.Stock_idStock = Stock_idStock;
+		this.stock = stock;
+		
 	}
 
-	
 	/**
 	 * 
 	 * @return Getters and Setters
@@ -84,12 +78,9 @@ public class CustomerOrderLine {
 		return totalPrice;
 	}
 	
-	public CustomerOrder getCustomerOrder_idOrder() {
-		return CustomerOrder_idOrder;
-	}
 
-	public Stock getStock_idStock() {
-		return Stock_idStock;
+	public Stock getStock() {
+		return stock;
 	}
 
 	public void setId(int id) {
@@ -104,12 +95,9 @@ public class CustomerOrderLine {
 		this.totalPrice = totalPrice;
 	}
 	
-	public void setCustomerOrder_idOrder(CustomerOrder CustomerOrder_idOrder) {
-		this.CustomerOrder_idOrder = CustomerOrder_idOrder;
-	}
 
-	public void setStock_idStock(Stock Stock_idStock) {
-		this.Stock_idStock = Stock_idStock;
+	public void setStock(Stock stock) {
+		this.stock = stock;
 	}
 
 }

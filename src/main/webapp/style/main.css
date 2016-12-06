@@ -131,6 +131,10 @@ main{
 	width: 100%;
 }
 
+.navigation div input{
+	width: 100%;
+} 
+
 .navigation {
 	margin: 5px 0;
 }
