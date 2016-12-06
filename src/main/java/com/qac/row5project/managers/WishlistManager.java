@@ -16,6 +16,4 @@ public interface WishlistManager {
 	//CUSTOMER ONLY
 	public void updateWishlist(long id, List<Product> wishList);
 	
-	// CUSTOMER ONLY
-	
 }
