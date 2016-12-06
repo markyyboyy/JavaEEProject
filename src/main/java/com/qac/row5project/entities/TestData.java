@@ -61,6 +61,8 @@ public class TestData {
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18));
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18));
 		
+		customers.add(new Customer("Allen", "Richard", "Fall", 1990-11-05, new LoginDetails("test@test.com", "password"))));
+		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 	}
