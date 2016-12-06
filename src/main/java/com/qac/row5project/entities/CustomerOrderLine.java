@@ -92,6 +92,7 @@ public class CustomerOrderLine {
 	}
 
 	public void setTotalPrice(float totalPrice) {
+		
 		this.totalPrice = totalPrice;
 	}
 	

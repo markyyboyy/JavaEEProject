@@ -49,9 +49,8 @@ public class BasketService {
 
 	/**
 	 * Adding a product to a customer's basket
-	 * 
 	 * @param customerId
-	 * @param stockID
+	 * @param stock
 	 */
 	public void addToBasket(long customerId, Stock stock) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
@@ -69,7 +68,7 @@ public class BasketService {
 	}
 
 	/**
-	 * removing an item from the basket
+	 * removing an item from customer's basket
 	 * 
 	 * @param customerId
 	 * @param stockID
@@ -88,5 +87,10 @@ public class BasketService {
 				}
 			}
 		}
+	}
+	
+	public void totalBasketPrice(CustomerOrder customerOrder, CustomerOrderLine customerOrderLine) {
+		
+		
 	}
 }
