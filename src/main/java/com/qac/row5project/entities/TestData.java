@@ -54,14 +54,7 @@ public class TestData {
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 		wishlists = new ArrayList<WishList>();
-		WishList list = new WishList();
-		ArrayList<ProductItemTest> products = new ArrayList<ProductItemTest>();
-		ProductItemTest p = new ProductItemTest();
-		
-		p.setTitle("A gnome");
-		products.add(p);
-		list.setProducts(products);
-		wishlists.add(list);
+
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
