@@ -55,7 +55,8 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
 		return stock;
 		
-	}
+
 		
+	}	
 	}
 	
