@@ -29,7 +29,7 @@ public class WishlistManagerOffline implements WishlistManager {
 		
 	//READ - Customer Only
 	@Override
-	public WishList readWishlist(int cID) {
+	public List<Product> findByCustomerId(long id); {
 		List<WishList> wishL = testData.getWishlists();
 		for(WishList wish: wishL)
 		{
