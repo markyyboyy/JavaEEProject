@@ -60,13 +60,18 @@
 											<f:passThroughAttribute name="placeholder" value="1" />
 											<f:passThroughAttribute name="alt" value="1" />
 
-											<th><h:commondLink
-													action="#{products.select(product.id)}" /></th>
-											<th><h:commondLink
-													action="#{products.select(product.id)}" /></th>
-											<th><h:outputText value="#{product.price}" /></th>
-											<th><h:outputText value="#{product.status}" /></th>
-											<th><h:commandButton value="Remove From Basket" action="#{basket.removeItem(product.id)}" class="btn btn-primary btn-block" /></th>
+
+
+	<!-- 										<<h:commondLink action="#{products.select(product.id)}" />
+											<h:commondLink action="#{products.select(product.id)}" /> -->
+											
+											
+											<h:outputText value="#{product.price}" />
+											<h:outputText value="#{product.name}" />
+											
+											
+											
+											<h:commandButton value="Remove From Basket" action="#{basket.removeItem(product.id)}" class="btn btn-primary btn-block" />
 
 										</h:inputText>
 									</div>
