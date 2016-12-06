@@ -27,6 +27,7 @@ public interface CustomerOrderLineManager {
 	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder);
 	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock);
 	
+	public void deriveTotalPrice(long id);
 	
 	/**
 	 * UPDATE - Customer Only

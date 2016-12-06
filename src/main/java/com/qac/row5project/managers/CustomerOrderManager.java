@@ -5,6 +5,7 @@
 package com.qac.row5project.managers;
 import com.qac.row5project.entities.CustomerOrder;
 import java.util.Calendar;
+import java.util.List;
 
 public interface CustomerOrderManager {
 	
@@ -12,7 +13,7 @@ public interface CustomerOrderManager {
 	public CustomerOrder createCustomerOrder(CustomerOrder co);
 	
 	//UPDATE - CUSTOMER
-	public void updateCustomerOrder(CustomerOrder co);
+	public List<CustomerOrder> updateCustomerOrder(CustomerOrder co);
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public CustomerOrder readCustomerOrderById(long id);

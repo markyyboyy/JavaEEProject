@@ -1,4 +1,4 @@
-package test;
+package Controllers;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -48,18 +48,18 @@ public class Basket {
 	public String removeItem(long id) {
 		
 		if (basket == null)
-			basket = basketService.getBasket(currentUser.getCustomer().getID(), id);
+			basket = basketService.getBasket(currentUser.getCustomer().getID());
 		return "basket";
 		
 	}
 	
 	/**
-	 * customer can 
+	 * selecting the basket for the customer when logged in
 	 * @return
 	 */
 	public List<ProductItem> getBasket() {
 		if (basket == null)
-			basket = basketService.getBasket(currentUser.getCustomer().getID(), id);
+			basket = basketService.getBasket(currentUser.getCustomer().getID());
 		return basket;
 	}
 	
