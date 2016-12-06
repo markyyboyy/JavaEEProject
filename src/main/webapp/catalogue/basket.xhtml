@@ -30,47 +30,57 @@
 
 
 					<!-- Repeater -->
-					<div class="row">
-						<div class="col-sm-3" style="background-color: #F4F4F4;">
-							<img src="img/fgnome1.jpeg" />
-						</div>
+					<ui:repeat var="product" value="#{basket.basket}">
+						<div class="row">
+							<div class="col-sm-3" style="background-color: #F4F4F4;">
+								<img src="img/fgnome1.jpeg" />
+							</div>
 
-						<div class="col-sm-3" style="background-color: #F4F4F4;">
-							Product Description<br />
-						</div>
+							<div class="col-sm-3" style="background-color: #F4F4F4;">
+								Product Description<br />
+							</div>
 
-						<div class="col-sm-3" style="background-color: #F4F4F4;">
-							Product Price<br />
-						</div>
+							<div class="col-sm-3" style="background-color: #F4F4F4;">
+								Product Price<br />
+							</div>
 
-						<div class="col-sm-3">
+							<div class="col-sm-3">
 
-							<div class="row quantityChange">
+								<div class="row quantityChange">
 
-								<div class="col-sm-4">
-									<input type="submit" value="-"></input>
+									<div class="col-sm-4">
+										<input type="submit" value="-"></input>
+									</div>
+
+									<div class="col-sm-4">
+
+										<h:inputText>
+
+											<f:passThroughAttribute name="quantity" value="text" />
+											<f:passThroughAttribute name="placeholder" value="1" />
+											<f:passThroughAttribute name="alt" value="1" />
+
+											<th><h:commondLink
+													action="#{products.select(product.id)}" /></th>
+											<th><h:commondLink
+													action="#{products.select(product.id)}" /></th>
+											<th><h:outputText value="#{product.price}" /></th>
+											<th><h:outputText value="#{product.status}" /></th>
+											<th><h:commandButton value="Remove From Basket" action="#{basket.removeItem(product.id)}" class="btn btn-primary btn-block" /></th>
+
+										</h:inputText>
+									</div>
+
+
+									<div class="col-sm-4">
+										<input type="submit" value="+"></input>
+									</div>
 								</div>
 
-								<div class="col-sm-4">
-
-									<h:inputText value="">
-
-										<f:passThroughAttribute name="quantity" value="text" />
-										<f:passThroughAttribute name="placeholder" value="1" />
-										<f:passThroughAttribute name="alt" value="1" />
-
-									</h:inputText>
-								</div>
-
-
-								<div class="col-sm-4">
-									<input type="submit" value="+"></input>
-								</div>
 							</div>
 
 						</div>
-
-					</div>
+					</ui:repeat>
 
 					<!-- Repeater -->
 
@@ -124,7 +134,6 @@
 							<button name="proceedToCheckout">Proceed to Checkout</button>
 						</div>
 					</div>
-
 				</div>
 
 
