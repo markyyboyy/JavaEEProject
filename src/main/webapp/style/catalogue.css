@@ -37,12 +37,71 @@ button{
 
 
 .resultsPane{
-	margin: 5px 0;
-	
-	
-	
+	margin: 5px 0;	
 }
 
 .fr{
 	float: right;
 }
+
+.imgWrapper, .resultDesc{
+	
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 5px 0;
+	
+}
+
+
+.imgWrapper div{
+	position: absolute;
+	bottom: -10px;	
+} 
+
+.onHover{
+	position: relative;
+	width: 100%;
+	float: left;
+		z-index: 10;
+	background-color: gray;
+	opacity: 0.8;
+}
+
+
+
+.star, .basket{
+	font-size: 4rem;
+}
+
+.star{
+		position: absolute;
+	
+	right: 10px;
+
+}
+
+.star a:hover,
+.basket a:hover{
+	color: #967505;
+}
+
+
+.basket{
+		position: absolute;
+	
+	left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

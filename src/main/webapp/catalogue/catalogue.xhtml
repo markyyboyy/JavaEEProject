@@ -88,37 +88,67 @@
 				</div>
 
 
-				<div class="container-fluid">
-					
 
-					<div class="row">
-						
+				<h:form>
+					<div class="container-fluid">
 
-						<ui:repeat var="prod" value="#{Catalogue.products}">
 
-							<div class="col-md-3 col-sm-6 col-xs-12 resultsPane" style="background-color: blue;">
+						<div class="row">
 
-								<h2>#{prod.name}</h2>
 
-								<div>
-									<span>#{prod.desc}</span>
+							<ui:repeat var="prod" value="#{Catalogue.products}">
+
+								<div class="col-md-3 col-sm-6 col-xs-12">
+									<div class="imgWrapper">
+
+										<div class="imgHover absPlace"></div>
+
+										<div class="onHover">
+
+											<div class="star">
+												<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+													styleClass="glyphicon glyphicon-star"></h:commandLink>
+
+											</div>
+											<div class="basket">
+												<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+													styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+											</div>
+
+										</div>
+
+
+									</div>
+
+									<div class="resultDesc">
+
+										<div class=" resultsPane" style="background-color: blue;">
+
+											<h2>#{prod.name}</h2>
+
+											<div>
+												<span>#{prod.desc}</span>
+											</div>
+
+
+										</div>
+									</div>
+
 								</div>
 
 
-							</div>
+							</ui:repeat>
 
-						</ui:repeat>
-						
-						
+
+						</div>
 					</div>
-				</div>
-				
-				
-				
-				
-				
-				
-				
+				</h:form>
+
+
+
+
+
+
 				<div class="imgWrapper">
 					<img src="#{prod.images.get(0).src}" alt="#{prod.name}" />
 				</div>
