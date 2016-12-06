@@ -45,7 +45,7 @@
 				<div class="">
 					<div class="navigation row">
 						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="catalogue.xhtml" value="Browse" />
+							<h:button styleClass="btn btn-primary" outcome="catalogue" value="Browse" />
 						</div>
 						<div class="col-sm-3 buttonMargin">
 							<h:button styleClass="btn btn-primary" outcome="SpecialOffer.xhtml" value="Special Offers" />
@@ -69,6 +69,7 @@
 			<div class="dropdown-menu">
             	 <f:selectItem itemLabel="Payment Details" itemValue="1" outcome=""/>
             	 <f:selectItem itemLabel="Order History" itemValue="2"/>
+            	 
        		</div>
          	</h:selectOneMenu>
 			</div>
@@ -79,7 +80,7 @@
 			</div>
 			
 			<div class="logoffButton">
-				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}" action="#{user.logoff}" value="Log Out" />
+				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}" value="Log Out" onclick="#{user.logoff()}"/>
 			</div>
     		
 			

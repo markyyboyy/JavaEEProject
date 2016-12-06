@@ -12,33 +12,19 @@
 	<ui:composition template="../templates/main.xhtml">
 		<ui:define name="mainContent">
 			<h:form class="login">
-				<h4>Login</h4>
-				<label> Email </label>
-
-				<input name="login" type="text" placeholder="email address"	required="required" value="#{login.email}" />
-				<br /> 
-				<label>Password</label>
-		<input name="login" type="password" placeholder="password" required="required" value="#{login.password}" />
-			<br /> 
-			<input type="submit" value="Login" action="#{login.login()}"/>
-			<br /> 
-			<input type="submit" value="Forgotten Password" />
-				
-				
-				
-					<!-- <h:inputText>
-					<f:passThroughAttribute name="value" value="#{login.email}"></f:passThroughAttribute>
+			<br />
+				<label>Email</label>	
+					<h:inputText value="#{login.email}">
 					<f:passThroughAttribute name="class" value="form-control"></f:passThroughAttribute>
 					<f:passThroughAttribute name="type" value="text"></f:passThroughAttribute>
 					<f:passThroughAttribute name="placeholder" value="email.."></f:passThroughAttribute>
 					<f:passThroughAttribute name="alt" value="Email"></f:passThroughAttribute>
 					<f:passThroughAttribute name="required" value="required"></f:passThroughAttribute>
-				</h:inputText> -->
+				</h:inputText> 
 				
-			<!-- 	<br />
+				<br />
 				<label>Password</label>
-				<h:inputText>
-					<f:passThroughAttribute name="value" value="#{login.password}"></f:passThroughAttribute>
+				<h:inputText value="#{login.password}">
 					<f:passThroughAttribute name="type" value="password"></f:passThroughAttribute>
 					<f:passThroughAttribute name="placeholder" value="password.."></f:passThroughAttribute>
 					<f:passThroughAttribute name="alt" value="Password"></f:passThroughAttribute>
@@ -46,19 +32,33 @@
 				</h:inputText>
 				<br></br>
 				<br></br>
-				<h:commandButton>
-					<f:passThroughAttribute name="action" value="#{login.login()}" />
+				<h:commandButton action="#{login.login()}">
+					
 					<f:passThroughAttribute name="styleClass" value="btn btn-primary" />
 					<f:passThroughAttribute name="value" value="Login" />
 					<f:passThroughAttribute name="type" value="submit" />
 				</h:commandButton>
 				<br></br>
-				<br></br> -->
+				<h:commandButton action="">
+					
+					<f:passThroughAttribute name="styleClass" value="btn btn-primary" />
+					<f:passThroughAttribute name="value" value="Forgotten Password" />
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+				<br></br>
+				<h:commandButton action="#{login.login()}">
+					
+					<f:passThroughAttribute name="styleClass" value="btn btn-primary" />
+					<f:passThroughAttribute name="value" value="Register" />
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+				<br />
+				<br />
 
 			</h:form>
 
 			<hr />
-			<h:form class="register">
+			<h:form class="register" style="visibility: hidden">
 				<h4>Register</h4>
 				<label>Email</label>
 				<h:inputText value="#{customer.email}">

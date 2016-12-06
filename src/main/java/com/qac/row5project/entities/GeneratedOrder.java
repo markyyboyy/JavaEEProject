@@ -15,16 +15,18 @@ public class GeneratedOrder implements Serializable {
 	static final long serialVersionUID = 2342342342342L;
 	
 	@Id int id;
-	private ArrayList<Stock> goStock = new ArrayList<Stock>();
-	private String sAddressLine1;
-	private String sAddressLine2;
-	private String sAddressLine3;
-	private String sTown;
-	private String sPostcode;
-	private String sCounty;	
+	private PurchaseOrder goStock = null;
 
 	public GeneratedOrder() {
 		
+	}
+
+	public PurchaseOrder getGoStock() {
+		return goStock;
+	}
+
+	public void setGoStock(PurchaseOrder goStock) {
+		this.goStock = goStock;
 	}
 
 	/***
