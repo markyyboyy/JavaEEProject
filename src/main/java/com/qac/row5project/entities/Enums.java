@@ -9,6 +9,10 @@ public enum Enums {
 		/**
 		 * Is no longer sold
 		 */
-		DISCONTINUED, SPRING, SUMMER, AUTUM, WINTER
+		DISCONTINUED,
+		/**
+		 * Arriving soon, new product line
+		 */
+		COMINGSOON
 	}
 
