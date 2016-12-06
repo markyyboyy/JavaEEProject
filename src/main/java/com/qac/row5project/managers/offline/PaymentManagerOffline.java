@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import com.qac.row5project.entities.Address;
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Payment;
-import com.qac.row5project.entities.TestData;
+import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.PaymentManager;
 
 @Stateless

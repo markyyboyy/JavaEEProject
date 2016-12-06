@@ -1,10 +1,12 @@
-package com.qac.row5project.entities;
+package com.qac.row5project.helpers;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+
+import com.qac.row5project.entities.*;
 
 /***
  * 
