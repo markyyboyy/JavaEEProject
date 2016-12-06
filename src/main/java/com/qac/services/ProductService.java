@@ -1,6 +1,8 @@
+/**
+ * @Author RyanB
+ */
 package com.qac.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -65,12 +67,7 @@ public class ProductService {
 	}
 	
 	public List<Product> findAllProducts(){
-		List<Product> prod = new ArrayList<>();
-		for(Product p: productManager.findAllProducts()){
-			prod.add(p);
-		}
-		return prod;
-		
+		return productManager.findAllProducts();
 	}
 }
 
