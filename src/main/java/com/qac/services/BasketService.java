@@ -15,7 +15,6 @@ import com.qac.row5project.managers.CustomerOrderManager;
 import com.qac.row5project.managers.ProductManager;
 import com.qac.row5project.managers.StockManager;
 
-
 /**
  * 
  * @author Iman Hassan
@@ -23,7 +22,7 @@ import com.qac.row5project.managers.StockManager;
  */
 
 public class BasketService {
-	
+
 	@Inject
 	private CustomerOrderManager customerOrderManager;
 	@Inject
@@ -32,64 +31,62 @@ public class BasketService {
 	private ProductService productService;
 	@Inject
 	private StockManager stockManager;
-	
+
 	/**
 	 * To get basket for the customer order
+	 * 
 	 * @param id
 	 * @return
 	 */
 	public List<ProductItem> getBasket(long id) {
-		List<ProductItem> basket = new ArrayList<>();		
+		List<ProductItem> basket = new ArrayList<>();
 		try {
-			CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(id); 
-	} 
-		finally { }
+			CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(id);
+		} finally {
+		}
 		return basket;
-	} 
-	
+	}
+
 	/**
 	 * Adding a product to a customer's basket
+	 * 
 	 * @param customerId
 	 * @param stockID
 	 */
 	public void addToBasket(long customerId, Stock stock) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
 		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
-			
-			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()){
-				if (stock.getStockID() == customerOrderLine.getStock().getStockID())
-				{
+
+			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
+				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
 					customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
 					return;
 				}
 			}
-				//stockId or Product ID
-				customerOrder.addToCustomerOrderLine(new CustomerOrderLine());
+			// stockId or Product ID
+			customerOrder.addToCustomerOrderLine(new CustomerOrderLine());
 		}
-		
-		for(Stock stock : customerOrder)
-			if (stock.getstockID() == stockID)
-				return;
-		customerOrder.add(stockManager.findStocksbyID(stockID));
-		customerOrderManager.updateCustomerOrder(customerOrder);
-			
 	}
-	
+
 	/**
 	 * removing an item from the basket
+	 * 
 	 * @param customerId
 	 * @param stockID
 	 */
-	public void removeFromBasket(long customerId, long stockID) {
-		CustomerOrder customerOrder = new ArrayList<>();
-		for (Stock stock : customerOrderManager.readCustomerOrderById(customerId))
-			if (stock.getstockID() != stockID)
-				customerOrder.add(stock);
-		customerOrderManager.updateCustomerOrder(customerOrder);
+	public void removeFromBasket(long customerId, Stock stock) {
+		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
+		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
 
+			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
+				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+					if (customerOrderLine.getQuantity() > 1) {
+						customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
+					} else {
+						customerOrder.removeFromCustomerOrderLine(customerOrderLine);
+					}
+				}
+			}
+		}
 	}
-	
-	
 }
-
-

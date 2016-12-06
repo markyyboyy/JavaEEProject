@@ -7,7 +7,7 @@ import javax.inject.Named;
 import java.util.List;
 
 import com.qac.row5project.entities.ProductItem;
-
+import com.qac.row5project.entities.Stock;
 import com.qac.services.BasketService;
 
 /**
@@ -34,7 +34,7 @@ public class Basket {
 	 * Adding product item to basket if customer is logged in
 	 * @param id
 	 */
-	public void addToBasket(long id) {
+	public void addToBasket(Stock id) {
 		if (currentUser.isLoggedIn()) 
 			basketService.addToBasket(currentUser.getCustomer().getID(), id);
 		
