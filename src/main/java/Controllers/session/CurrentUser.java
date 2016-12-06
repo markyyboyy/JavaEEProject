@@ -36,5 +36,6 @@ public class CurrentUser implements Serializable{
 	
 	public void logoff(){
 		this.customer = null;
+		System.out.println("Logged out");
 	}
 }

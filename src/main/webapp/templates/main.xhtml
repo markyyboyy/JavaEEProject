@@ -69,18 +69,17 @@
 			<div class="dropdown-menu">
             	 <f:selectItem itemLabel="Payment Details" itemValue="1" outcome=""/>
             	 <f:selectItem itemLabel="Order History" itemValue="2"/>
-            	 <f:selectItem styleClass="" itemLabel="Log Off" itemValue="3" onclick="#{user.logoff}"/>
-			</div>
+       		</div>
          	</h:selectOneMenu>
 			</div>
 			</div>
 			
 			<div class="loginButton" >
-					<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn==false}" outcome="login.xhtml" value="Login/Register" />
+					<h:button styleClass="btn btn-primary" rendered="#{!user.loggedIn}" outcome="login.xhtml" value="Login/Register" />
 			</div>
 			
 			<div class="logoffButton">
-				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn==true}" action="#{user.logoff}" value="Log Out" />
+				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}" action="#{user.logoff}" value="Log Out" />
 			</div>
     		
 			
