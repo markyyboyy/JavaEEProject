@@ -5,7 +5,6 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
-import test.ProductItemTest;
 /***
  * 
  * @author Mark Freeman & Ynyr Williams
