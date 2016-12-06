@@ -1,18 +1,17 @@
-/***
- * 
- * @author Ynyr Williams
- *
- */package com.qac.row5project.managers.offline;
+package com.qac.row5project.managers.offline;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.WishlistManager;
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 
 @Stateless
 @Default
