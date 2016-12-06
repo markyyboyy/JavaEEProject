@@ -1,0 +1,62 @@
+@CHARSET "utf8";
+
+html{}
+
+body{
+box-sizing: border-box;
+line-height: 1.4;
+color: #373740;
+background-color: #D3D3D3;
+height:100%
+}
+
+.btn-primary
+{
+  color: black;
+  background-color: #F9F67E;
+  border-color: #F9F67E;
+  width:95%;
+
+}
+
+.leftnavbar
+{
+float: left;
+padding-left:2%;
+width: 30%;
+}
+
+.search
+{
+width:95%;
+padding-bottom: 15%;
+}
+
+.search1
+{
+float:left;
+width:60%;
+}
+
+.buttonsubmit
+{
+float: left;
+width:38%;
+}
+
+.logo
+{
+padding-left:6%;
+}
+
+.righttitletable
+{
+width:70%;
+float: left;
+
+}
+
+.table
+{
+width:100%;
+}
