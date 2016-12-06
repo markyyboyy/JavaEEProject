@@ -21,7 +21,7 @@ public class LoginService {
 	private CustomerManager customerManager;
 	@Inject
 	private LoginDetailsManager loginManager;
-	@Inject
+	
 	private LoginDetails login;
 	
 	public boolean validLogin(String email, String password){
