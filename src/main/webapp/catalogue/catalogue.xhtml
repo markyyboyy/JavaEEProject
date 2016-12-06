@@ -18,20 +18,16 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 		<SCRIPT type="text/javascript">
+			function showHover(args) {
 
-
-	function showHover(args) {	
- 	 			
-				var onHover = $(args).children()[0].children[1];				
-				$(onHover).show();							
+				var onHover = $(args).children()[0].children[1];
+				$(onHover).show();
 			}
 
-			function hideHover(args) {					
+			function hideHover(args) {
 				var onHover = $(args).children()[0].children[1];
-				$(onHover).hide();	
-			}			
-
-			
+				$(onHover).hide();
+			}
 		</SCRIPT>
 
 
@@ -45,7 +41,7 @@
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-								<h:inputText value="#{search.term}" class="form-control">
+								<h:inputText value="#{Catalogue.name}" class="form-control">
 
 									<f:passThroughAttribute name="type" value="text" />
 									<f:passThroughAttribute name="placeholder" value="Search..." />
@@ -89,7 +85,8 @@
 
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<button name="btnSearch">Search</button>
+						<h:commandButton action="#{Catalogue.filer()}" value="Search" ></h:commandButton>
+<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
 				</div>
@@ -118,6 +115,23 @@
 
 
 
+				<div class="row marginBottom">
+					<div class="col-md-12" style="height: 20px">
+
+						<h:commandLink value="Previous" action="#{Catalogue.previous}"
+							rendered="#{Catalogue.pagination.hasPreviousPage}" />
+
+						<h:outputText
+							value="#{Catalogue.pagination.pageFirstItem + 1}..
+									#{Catalogue.pagination.pageLastItem + 1}/
+									#{Catalogue.pagination.itemsCount}" />
+
+						<h:commandLink value="Next" action="#{Catalogue.next}"
+							rendered="#{Catalogue.pagination.hasNextPage}" />
+					</div>
+				</div>
+
+
 
 				<div class="row marginBottom">
 
@@ -126,47 +140,27 @@
 
 					<ui:repeat var="prod" value="#{Catalogue.products}">
 
-						<div id="produc1t" onmouseover="showHover(this)"
-							onmouseleave="hideHover(this)"
-							class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
+						<h:commandLink action="#{Catalogue.view}">
 
-							<div class="imgWrapper">
-								<img src="../img/ggnome1.jpg" />
+							<div id="produc1t" onmouseover="showHover(this)"
+								onmouseleave="hideHover(this)"
+								class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
 
-								<div id="imgProduct" class="onHover">
+								<div class="imgWrapper">
+									<img src="../img/ggnome1.jpg" />
 
-									<div class="star">
-										<h:commandLink action="#{basket.addToBasket(prod.productId)}"
-											styleClass="glyphicon glyphicon-star"></h:commandLink>
+									<div id="imgProduct" class="onHover">
 
-									</div>
-									<div class="basket">
-										<h:commandLink action="#{basket.addToBasket(prod.productId)}"
-											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
-									</div>
+										<div class="star">
+											<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+												styleClass="glyphicon glyphicon-star"></h:commandLink>
 
+										</div>
+										<div class="basket">
+											<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+												styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+										</div>
 
-								</div>
-
-
-							</div>
-
-
-
-							<div class="resultDesc">
-
-								<div class="">
-									<h2>#{prod.name}</h2>
-
-									<div>
-										<span>#{prod.desc}</span>
-									</div>
-
-									<div>
-
-										<span class="glyphicon glyphicon-star"></span> <span
-											class="glyphicon glyphicon-star"></span> <span
-											class="glyphicon glyphicon-star"></span>
 
 									</div>
 
@@ -174,8 +168,31 @@
 								</div>
 
 
+
+								<div class="resultDesc">
+
+									<div class="">
+										<h2>#{prod.name}</h2>
+
+										<div>
+											<span>#{prod.desc}</span>
+										</div>
+
+										<div>
+
+											<span class="glyphicon glyphicon-star"></span> <span
+												class="glyphicon glyphicon-star"></span> <span
+												class="glyphicon glyphicon-star"></span>
+
+										</div>
+
+
+									</div>
+
+
+								</div>
 							</div>
-						</div>
+						</h:commandLink>
 					</ui:repeat>
 
 
@@ -184,7 +201,21 @@
 
 
 
+				<div class="row marginBottom">
+					<div class="col-md-12" style="height: 20px">
 
+						<h:commandLink value="Previous" action="#{Catalogue.previous}"
+							rendered="#{Catalogue.pagination.hasPreviousPage}" />
+
+						<h:outputText
+							value="#{Catalogue.pagination.pageFirstItem + 1}..
+									#{Catalogue.pagination.pageLastItem + 1}/
+									#{Catalogue.pagination.itemsCount}" />
+
+						<h:commandLink value="Next" action="#{Catalogue.next}"
+							rendered="#{Catalogue.pagination.hasNextPage}" />
+					</div>
+				</div>
 
 
 
