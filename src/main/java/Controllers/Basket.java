@@ -10,6 +10,8 @@ import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 import com.qac.services.BasketService;
 
+import Controllers.session.CurrentUser;
+
 /**
  * 
  * @author Iman Hassan
