@@ -44,26 +44,52 @@ button{
 	float: right;
 }
 
-.imgWrapper{
+.imgWrapper, .resultDesc{
 	
 	position: relative;
+	float: left;
+	width: 100%;
+	padding: 5px 0;
 	
 }
 
 
 .imgWrapper div{
 	position: absolute;
-	bottom: 0;	
+	bottom: -10px;	
 } 
 
-.obHover{
-	right: 10px;
-	z-index: 10;
+.onHover{
+	position: relative;
+	width: 100%;
+	float: left;
+		z-index: 10;
 	background-color: gray;
 	opacity: 0.8;
 }
 
-.imgHover{
+
+
+.star, .basket{
+	font-size: 4rem;
+}
+
+.star{
+		position: absolute;
+	
+	right: 10px;
+
+}
+
+.star a:hover,
+.basket a:hover{
+	color: #967505;
+}
+
+
+.basket{
+		position: absolute;
+	
 	left: 10px;
 }
 
