@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.session;
 
 import java.io.Serializable;
 
@@ -32,5 +32,9 @@ public class CurrentUser implements Serializable{
 	
 	public boolean isLoggedIn(){
 		return (customer ==null) ? true : false;
+	}
+	
+	public void logoff(){
+		this.customer = null;
 	}
 }

@@ -16,15 +16,18 @@
 	<h:form class="login">
 		<h4>Login</h4>
 		<label> Email </label>
-		<h:inputText class="form-control" value="#{login.email}">
-			<f:passThroughAttribute name="type" value="email" ></f:passThroughAttribute>
+		<h:inputText>
+			<f:passThroughAttribute name="value" value="#{login.email}" ></f:passThroughAttribute>
+			<f:passThroughAttribute name="class" value="form-control" ></f:passThroughAttribute>
+			<f:passThroughAttribute name="type" value="text" ></f:passThroughAttribute>
 			<f:passThroughAttribute name="placeholder" value="email.."  ></f:passThroughAttribute>
 			<f:passThroughAttribute name="alt" value="Email" ></f:passThroughAttribute>
 			<f:passThroughAttribute name="required" value="required"  ></f:passThroughAttribute>
 		</h:inputText>		
 		<br />
 		<label>Password</label>
-		<h:inputText value ="#{login.password}">
+		<h:inputText>
+			<f:passThroughAttribute name="value" value="#{login.password}"  ></f:passThroughAttribute>
 			<f:passThroughAttribute name="type" value="password"  ></f:passThroughAttribute>
 			<f:passThroughAttribute name="placeholder" value="password.." ></f:passThroughAttribute>
 			<f:passThroughAttribute name="alt" value="Password"  ></f:passThroughAttribute>
@@ -32,7 +35,10 @@
 		</h:inputText>
 		<br></br>
 		<br></br>
-		<h:commandButton action="#{login.loginTest}" value="Login" styleClass="btn btn-primary">
+		<h:commandButton>
+			<f:passThroughAttribute name="action" value="#{login.login}"/>
+			<f:passThroughAttribute name="styleClass" value="btn btn-primary"/>
+			<f:passThroughAttribute name="value" value="Login"/>
 			<f:passThroughAttribute name="type" value="submit"/>
 		</h:commandButton>
 		<br></br>

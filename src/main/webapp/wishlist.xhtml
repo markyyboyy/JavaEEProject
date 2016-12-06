@@ -8,11 +8,10 @@
 	</div>
 	<div class = "wish2">
 		<div class="left">
-			<img class="gnome" src="#{wishlistTest.image}"></img>
 		</div>
 		<div class="right">
 							<ui:repeat var="product" value="#{wishlistTest.wishlist}">
-										<h:outputText value="test"></h:outputText>
+										<h:outputText value="product.title"></h:outputText>
 							</ui:repeat>
 									
 		</div>
@@ -21,4 +20,5 @@
 </ui:define>
 </ui:composition>
 </h:body>
-</html>
+</html>                                                                                       																																										
+

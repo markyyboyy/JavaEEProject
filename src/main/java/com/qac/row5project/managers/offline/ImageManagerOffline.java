@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.ImageManager;
+import com.qac.row5project.helpers.*;
 
 public class ImageManagerOffline implements ImageManager{
 	

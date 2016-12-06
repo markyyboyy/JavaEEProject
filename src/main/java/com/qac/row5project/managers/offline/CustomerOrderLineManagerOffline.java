@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.entities.TestData;
+import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.CustomerOrderLineManager;
 
 @Stateless
@@ -57,7 +57,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
 		List<CustomerOrderLine> rCO_idOrder = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rCO_idOrder) {
-			if (col.getCustomerOrder_idOrder().getCustomerOrderId() == CustomerOrder_idOrder.getId()) {
+			if (col.getId() == CustomerOrder_idOrder.getId()) {
 				return col;
 			}
 
@@ -72,7 +72,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock) {
 		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rS_idStock) {
-			if (col.getStock_idStock().getStockID() == Stock_idStock.getId()) {
+			if (col.getStock().getStockID() == Stock_idStock.getId()) {
 				return col;
 			}
 
@@ -94,6 +94,12 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		}
 		
 		}
+
+	@Override
+	public void deriveTotalPrice(long id) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 }

@@ -90,21 +90,7 @@
 
 				<div class="container-fluid">
 					
-					<div class="row">
-					
-					<h:commandLink value="Previous" action="#{browse.previous}"
-						rendered="#{browse.pagination.hasPreviousPage}" />
-						
-						<h:outputText value="						
-						#{browse.pagination.pageFirstItem + 1}..						
-						#{browse.pagination.pageLastItem + 1}/						
-						#{browse.pagination.itemsCount}" />
-						
-						<h:commandLink value="Next" action="#{browse.next}"						
-						rendered="#{browse.pagination.hasNextPage}" />
 
-					</div>
-					
 					<div class="row">
 						
 

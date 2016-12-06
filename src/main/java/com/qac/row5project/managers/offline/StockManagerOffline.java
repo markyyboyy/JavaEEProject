@@ -12,6 +12,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.StockManager;
+import com.qac.row5project.helpers.*;
 
 @Stateless
 @Default

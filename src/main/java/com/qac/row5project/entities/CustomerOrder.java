@@ -70,6 +70,9 @@ public class CustomerOrder {
 	public void addToCustomerOrderLine(CustomerOrderLine cL){
 		customerOrderLines.add(cL);
 	}
+	public void removeFromCustomerOrderLine(CustomerOrderLine cL){
+		customerOrderLines.remove(cL);
+	}
 	public int getCustomerOrderId() {
 		return customerOrderId;
 	}

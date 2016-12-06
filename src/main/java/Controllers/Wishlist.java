@@ -23,7 +23,6 @@ public class Wishlist {
 //	ArrayList<Product> items = new ArrayList<Product>();
 //	private List<Product> products;
    public Wishlist() {
-      System.out.println("HelloWorld started!");
    }
    
    public String getDescription() {		//Returns a wishlist items description.
