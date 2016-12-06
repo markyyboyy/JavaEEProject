@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.RatingManager;
+import com.qac.row5project.helpers.*;
 
 public class RatingManagerOffline implements RatingManager {
 

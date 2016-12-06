@@ -25,11 +25,11 @@ import Controllers.session.CurrentUser;
 @RequestScoped 
 public class Basket {
 	
-	@Inject
 	private BasketService basketService;
 
 	@Inject
 	private CurrentUser currentUser;
+	
 	private List<ProductItem> basket;
 	
 	/**

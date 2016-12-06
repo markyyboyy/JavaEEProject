@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.entities.TestData;
+import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.CustomerOrderLineManager;
 
 @Stateless

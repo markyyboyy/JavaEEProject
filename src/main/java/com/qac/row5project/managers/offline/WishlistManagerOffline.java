@@ -5,7 +5,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Product;
-import com.qac.row5project.entities.TestData;
+import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.WishlistManager;
 /***
  * 
