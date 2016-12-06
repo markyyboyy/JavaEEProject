@@ -51,11 +51,11 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 	@Override
 	public List<Stock> readOrderByQuantity() {
 		// TODO Auto-generated method stub
+		/*
 		List<Stock> stock = purchaseOrder.getStockList()
-		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
-		return stock;
+		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());*/
+		return null;
 		
-	}
-		
+	}	
 	}
 	
