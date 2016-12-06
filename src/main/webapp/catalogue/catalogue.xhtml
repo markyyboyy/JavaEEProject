@@ -88,7 +88,7 @@
 				</div>
 
 				<div class="row marginBottom">
-					<div class="text-right col-md-2 col-xs-12">
+					<div class="text-right col-md-12 col-xs-12">
 						<button name="btnSearch">Search</button>
 					</div>
 
@@ -132,35 +132,45 @@
 
 							<div class="imgWrapper">
 								<img src="../img/ggnome1.jpg" />
-								
-											<div id="imgProduct" class="onHover">
 
-								<div class="star">
-									<h:commandLink action="#{basket.addToBasket(prod.productId)}"
-										styleClass="glyphicon glyphicon-star"></h:commandLink>
+								<div id="imgProduct" class="onHover">
 
-								</div>
-								<div class="basket">
-									<h:commandLink action="#{basket.addToBasket(prod.productId)}"
-										styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+									<div class="star">
+										<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+											styleClass="glyphicon glyphicon-star"></h:commandLink>
+
+									</div>
+									<div class="basket">
+										<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+									</div>
+
+
 								</div>
 
 
 							</div>
-								
-								
-							</div>
 
-				
+
 
 							<div class="resultDesc">
 
-								<div class="" style="background-color: blue;">
+								<div class="">
 									<h2>#{prod.name}</h2>
 
 									<div>
 										<span>#{prod.desc}</span>
 									</div>
+
+									<div>
+
+										<span class="glyphicon glyphicon-star"></span> <span
+											class="glyphicon glyphicon-star"></span> <span
+											class="glyphicon glyphicon-star"></span>
+
+									</div>
+
+
 								</div>
 
 

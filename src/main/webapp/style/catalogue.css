@@ -78,6 +78,11 @@ button {
 	text-decoration: none;
 	bottom: 5px;
 }
+.star a, .basket a{
+		color: white;
+	
+}
+
 
 .star {
 	position: absolute;
