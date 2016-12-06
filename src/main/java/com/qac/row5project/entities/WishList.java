@@ -1,23 +1,22 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.row5project.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
-import test.ProductItemTest;
 
 @Entity
 @Table(name = "WishList")
 public class WishList {
-	@Column(name = "customer id", nullable = false, unique = true)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerId;
 
-	private List<ProductItemTest> products = new ArrayList<>();
+	private List<ProductItem> products = new ArrayList<>();
 	public WishList() {
 	}
 
@@ -33,18 +32,16 @@ public class WishList {
 		this.customerId = customerId;
 	}
 
-
-	@Override
-	public String toString() {
-		return "WishList [customerId=" + customerId + ", stockId=" + stockId + "]";
-	}
-
-	public List<ProductItemTest> getProducts() {
+	public List<ProductItem> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<ProductItemTest> products) {
+	public void setProducts(List<ProductItem> products) {
 		this.products = products;
 	}
 
+	@Override
+	public String toString() {
+		return "WishList [customerId=" + customerId  + "]";
+	}
 }
