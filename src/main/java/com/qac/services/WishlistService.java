@@ -1,11 +1,7 @@
 package com.qac.services;
 
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-
-import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.managers.WishlistManager;
 import com.qac.row5project.managers.offline.WishlistManagerOffline;
 

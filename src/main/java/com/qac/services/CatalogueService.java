@@ -1,9 +1,12 @@
-package com.qac.services;
+/*package com.qac.services;
+
+import java.util.List;
 
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.helpers.PaginationHelper;
 
@@ -14,7 +17,7 @@ public class CatalogueService {
 
 	private PaginationHelper pagenationHelper;
 
-	private DataModel<ProductItem> products = null;
+	private DataModel<Product> products = null;
 
 	private void recreateModel() {
 		products = null;
@@ -37,16 +40,19 @@ public class CatalogueService {
 				}
 
 				@Override
-				public DataModel<ProductItem> createPageDataModel() {
+				public DataModel<Product> createPageDataModel() {
 
 					try {
-						return new ListDataModel<ProductItem>(productService.getProductItem(0).subList(getPageFirstItem(),
-								getPageFirstItem() + getPageSize()));
+						
+						List<Product> lstAll = productService.findAllProducts();
+						
+						
+						return new ListDataModel<Product>(lstAll.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 
 					} catch (Exception e) {
 
-						return new ListDataModel<ProductItem>(
-								productService.findAllActive().subList(getPageFirstItem(), getItemsCount()));
+						return new ListDataModel<Product>(
+								productService.findAllProducts().subList(getPageFirstItem(), getItemsCount()));
 					}
 
 				}
@@ -58,4 +64,23 @@ public class CatalogueService {
 		return pagenationHelper;
 	}
 
+	public String next() {
+
+		getPagination().nextPage();
+		recreateModel();
+
+		return "catalogue";
+	}
+
+	public String previous() {
+
+		getPagination().previousPage();
+		recreateModel();
+
+		return "catalogue";
+	}
+
+
+
 }
+*/

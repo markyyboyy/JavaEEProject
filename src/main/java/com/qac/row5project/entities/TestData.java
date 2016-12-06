@@ -5,7 +5,6 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
-import test.ProductItemTest;
 /***
  * 
  * @author Mark Freeman & Ynyr Williams
@@ -32,7 +31,6 @@ public class TestData {
 	private List<Stock> stockItems;
 	private List<ProductSupplier> productSuppliers;
 	private List<Supplier> suppliers;
-	private List<WishList> wishlists;
 
 	@PostConstruct
 	private void setupData() {
@@ -53,8 +51,10 @@ public class TestData {
 		stockItems = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
-		wishlists = new ArrayList<WishList>();
 
+		
+		
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18));
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
@@ -198,11 +198,5 @@ public class TestData {
 		this.suppliers = suppliers;
 	}
 
-	public List<WishList> getWishlists() {
-		return wishlists;
-	}
 
-	public void setWishlists(List<WishList> wishlists) {
-		this.wishlists = wishlists;
-	}
 }
