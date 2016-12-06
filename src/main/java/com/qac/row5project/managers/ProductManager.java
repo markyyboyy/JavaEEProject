@@ -22,5 +22,6 @@ public interface  ProductManager {
 	public List<Product> readProductByName(String name);
 	public List<Product> readProductByColour(String colour);
 	public List<Product> readProductByDescription(String desc);
+	public List<Product> findAllProducts();
 
 }

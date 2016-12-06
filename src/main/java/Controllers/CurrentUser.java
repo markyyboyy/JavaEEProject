@@ -7,6 +7,10 @@ import javax.inject.Named;
 
 import com.qac.row5project.entities.Customer;
 
+/**
+ * @Author Richard Allen
+ */
+
 @Named("user")
 @SessionScoped
 public class CurrentUser implements Serializable{

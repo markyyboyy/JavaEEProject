@@ -1,5 +1,9 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.row5project.managers;
-
 import com.qac.row5project.entities.WishList;
 
 public interface WishlistManager {
@@ -7,10 +11,8 @@ public interface WishlistManager {
 	public WishList createWishlist(WishList w);
 	
 	//UPDATE - INVENTORY MANAGER
-	public WishList updateWishlist(WishList w);
+	public void updateWishlist(WishList w);
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
-	public WishList readWishlist();
-	
-	
+	public WishList readWishlist(int cID);
 }
