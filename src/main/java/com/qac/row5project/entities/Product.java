@@ -19,6 +19,8 @@ public class Product implements Serializable{
 	private String colour;
 	private int size;
 	private int quantity;
+	private String category;
+	private String status;
 	private static final long serialVersionUID = 7526472295622776147L;
 
 	private enum status {
@@ -31,7 +33,7 @@ public class Product implements Serializable{
 	
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
 	public Product(String name, String desc, double price, double weight, String colour, int size,
-			int quantity) {
+			int quantity, String category, String status) {
 		
 		this.name = name;
 		this.desc = desc;
@@ -40,6 +42,8 @@ public class Product implements Serializable{
 		this.colour = colour;
 		this.size = size;
 		this.quantity = quantity;
+		this.category = category;
+		this.status = status;
 	}
 
 	//GETTERS AND SETTERS
@@ -106,11 +110,21 @@ public class Product implements Serializable{
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
+	public int getCategory() {
+		return quantity;
+	}
 
-	@Override
-	public String toString() {
-		return "Product [productId=" + productId + ", name=" + name + ", desc=" + desc + ", price=" + price
-				+ ", weight=" + weight + ", colour=" + colour + ", size=" + size + ", quantity=" + quantity + "]";
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
+	public int getStatus() {
+		return quantity;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

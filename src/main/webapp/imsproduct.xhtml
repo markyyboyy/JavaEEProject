@@ -1,0 +1,138 @@
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<!-- RyanB -->
+
+<h:head>
+	<ui:define name="pageName" value = "Product Information">
+	</ui:define>
+</h:head>
+
+<h:body>
+	<ui:composition template="./templates/main.xhtml">
+	<ui:define name="mainContent">
+	<div class="container">
+			<div class="leftnavbar">
+			<br/>
+				<div class="search">
+					<h:inputText alt="search">
+						<f:passThroughAttribute name="placeholder" value="Search by Product ID..."></f:passThroughAttribute>
+					</h:inputText>
+				</div>
+					
+				<div class="filter">
+					<div class="category dropdown">
+						<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"/>
+								<h:selectOneMenu value="dropdown">
+								<ui:repeat var="Cat" value="#{product.product.category}">
+								   	<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
+								</ui:repeat>
+								</h:selectOneMenu>
+							 </div>
+						<div class="status dropdown">
+						<br/>
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"/>
+								<h:selectOneMenu value="dropdown">
+									<ui:repeat var="Cat" value="#{product.product.status}">
+								   		<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
+									</ui:repeat>
+								</h:selectOneMenu>
+						</div>
+					<div class="supplier dropdown">
+						<br/>
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"/>
+							<h:selectOneMenu value="dropdown">
+									<ui:repeat var="Cat" value="#{product.product.status}">
+								   		<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
+									</ui:repeat>
+								</h:selectOneMenu>
+					</div>
+				</div>
+				<div class="logo">
+				<br/>
+				<br/>
+				<br/>
+				<img src=logo.png width=250px height=210px /></a>
+				</div>
+			</div>
+			</div>
+			<div class="righttitletable">
+				<div class= "title">
+				<h2><b><center><u>Product Information Table</u><center></b></h2>
+				<br/>
+				</div>
+				<div class="table">
+					<div class="table-wrapper">
+						<div class="table-scroll">
+							<table border="1" style="width:100%">
+								<thead>
+									<tr>
+									<th>ID</th>
+									<th>Category</th>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Supplier</th>
+									<th>Qty. In Stock</th>
+									<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<th>Garden Ornaments</th>
+										<td>Blue Gnome</td>
+										<td>Large blue gnome. 35cm x 15cm x 10cm.</td>
+										<td>James and the Giant Gnomes</td>
+										<td>32</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<th>Garden Ornaments</th>
+										<td>Red Gnome</td>
+										<td>Large red gnome. 35cm x 15cm x 10cm.</td>
+										<td>James and the Giant Gnomes</td>
+										<td>25</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<th>Garden Ornaments</th>
+										<td>Ynyr Lookalike Gnome</td>
+										<td>Large red gnome. 35cm x 15cm x 10cm.</td>
+										<td>Ynyr's Garden Emporium</td>
+										<td>5</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<th>Garden Furniture</th>
+										<td>Garden Bench</td>
+										<td>Perfect for all of your sitting needs.</td>
+										<td>Ynyr's Garden Emporium</td>
+										<td>46</td>
+										<td>Active</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<th>Miscellaneous</th>
+										<td>Birdfeeder</td>
+										<td>6ft bird feeder.</td>
+										<td>Ynyr's Garden Emporium</td>
+										<td>71</td>
+										<td>Active</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+</ui:define>
+
+</ui:composition>
+</h:body>
+</html>
