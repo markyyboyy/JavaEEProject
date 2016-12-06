@@ -39,12 +39,26 @@
 					<f:passThroughAttribute name="type" value="submit" />
 				</h:commandButton>
 				<br></br>
+				<h:commandButton action="">
+					
+					<f:passThroughAttribute name="styleClass" value="btn btn-primary" />
+					<f:passThroughAttribute name="value" value="Forgotten Password" />
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
 				<br></br>
+				<h:commandButton action="#{login.login()}">
+					
+					<f:passThroughAttribute name="styleClass" value="btn btn-primary" />
+					<f:passThroughAttribute name="value" value="Register" />
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+				<br />
+				<br />
 
 			</h:form>
 
 			<hr />
-			<h:form class="register">
+			<h:form class="register" style="visibility: hidden">
 				<h4>Register</h4>
 				<label>Email</label>
 				<h:inputText value="#{customer.email}">
