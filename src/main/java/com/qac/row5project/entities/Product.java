@@ -42,10 +42,6 @@ public class Product implements Serializable{
 		this.quantity = quantity;
 	}
 
-	public Product(int productID) {
-		this.productId = productId;
-	}
-
 	//GETTERS AND SETTERS
 	public int getProductId() {
 		return productId;

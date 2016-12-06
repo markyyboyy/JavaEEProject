@@ -1,4 +1,5 @@
 package com.qac.row5project.entities;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -69,7 +70,10 @@ public class Customer {
 	private SecurityQuestion question;
 		
 	@OneToMany(mappedBy="id")
-	private List<CustomerOrder> orderHistory;
+	private List<CustomerOrder> orderHistory;	
+	
+	@OneToOne(mappedBy="id")
+	private List<Product> wishList = new ArrayList<>();
 //	
 //	@OneToMany
 //	@JoinColumn(name="payment_id")
@@ -164,6 +168,7 @@ public class Customer {
 		this.sSecretAnswer = sSecretAnswer;
 		this.dtDOB = dtDOB;
 		this.loginDetails = loginDetails;
+		
 	}
 		
 	/***

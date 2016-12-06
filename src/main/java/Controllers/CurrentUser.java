@@ -1,4 +1,4 @@
-package test;
+package Controllers;
 
 import java.io.Serializable;
 
@@ -6,6 +6,10 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import com.qac.row5project.entities.Customer;
+
+/**
+ * @Author Richard Allen
+ */
 
 @Named("user")
 @SessionScoped

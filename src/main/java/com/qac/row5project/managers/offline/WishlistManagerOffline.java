@@ -1,12 +1,12 @@
-package com.qac.row5project.managers.offline;
-
-
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */package com.qac.row5project.managers.offline;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.entities.WishList;
 import com.qac.row5project.managers.WishlistManager;
@@ -18,37 +18,37 @@ public class WishlistManagerOffline implements WishlistManager {
 	@Inject
 	private TestData testData;
 	
-	//CREATE - Inventory Manager Only
+	//CREATE - Customer Only
 	@Override
 	public WishList createWishlist(WishList wishlist) {
-<<<<<<< HEAD
-		//ArrayList<WishList> s = testData.getWishlists();
-		//s.add(wishlist);
-		//testData.setWishlists(s);
-		//return wishlist;
-		return null;
-=======
-		List<WishList> s = testData.getWishlists();
-		s.add(wishlist);
-		testData.setWishlists(s);
+		List<WishList> wishL = testData.getWishlists();
+		wishL.add(wishlist);
+		testData.setWishlists(wishL);
 		return wishlist;
->>>>>>> ab076522435c64e459a1d044d30bf581fe3f5fc0
 	}
 		
-		
-	//READ - Inventory Manager Only
+	//READ - Customer Only
 	@Override
-	public WishList readWishlist() {
-		return testData.getWishlists().get(0);
-	}
-
-	//UODATE - Inventory Manager Only
-	@Override
-	public WishList updateWishlist(WishList w) {
+	public List<Product> findByCustomerId(long id); {
+		List<WishList> wishL = testData.getWishlists();
+		for(WishList wish: wishL)
+		{
+			if(wish.getCustomerId()==cID)
+			return wish;
+		}
 		return null;
-		
 	}
-		
-	
-	
+	//UODATE - Customer Only
+	@Override
+	public void updateWishlist(WishList w) {
+		List<WishList> wishL = testData.getWishlists();
+		for(WishList wish: wishL)
+		{
+			if(wish.getCustomerId()==w.getCustomerId()){
+				wish=w;
+				testData.setWishlists(wishL);
+				return;
+			}
+		}
+	}	 
 }

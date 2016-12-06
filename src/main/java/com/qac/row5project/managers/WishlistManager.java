@@ -1,16 +1,18 @@
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */
 package com.qac.row5project.managers;
+import java.util.List;
 
-import com.qac.row5project.entities.WishList;
+import com.qac.row5project.entities.Stock;
 
 public interface WishlistManager {
-	//CREATE - INVENTORY MANAGER
-	public WishList createWishlist(WishList w);
-	
 	//UPDATE - INVENTORY MANAGER
-	public WishList updateWishlist(WishList w);
+	public List<Stock> findByCustomerId(long id);
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
-	public WishList readWishlist();
-	
+	public List<Stock> readWishlist(long id);
 	
 }

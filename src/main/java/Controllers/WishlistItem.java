@@ -1,7 +1,7 @@
 /**
  * @author Mark Freeman
  */
-package test;
+package Controllers;
 import java.io.Serializable;
 import java.util.List;
 

@@ -1,10 +1,14 @@
-package test;
+package Controllers;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qac.services.LoginService;
+
+/**
+ * @Author Richard Allen
+ */
 
 @RequestScoped
 @Named(value="login")

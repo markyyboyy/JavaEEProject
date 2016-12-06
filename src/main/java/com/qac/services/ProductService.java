@@ -1,3 +1,6 @@
+/**
+ * @Author RyanB
+ */
 package com.qac.services;
 
 import java.util.List;
@@ -61,6 +64,10 @@ public class ProductService {
 		if (stock != null)
 			productItem.addStockInfo(stock.getQuantity());
 		return productItem;
+	}
+	
+	public List<Product> findAllProducts(){
+		return productManager.findAllProducts();
 	}
 }
 
