@@ -6,20 +6,11 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
-
 import com.qac.row5project.entities.Address;
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.LoginDetails;
 import com.qac.row5project.entities.SecurityQuestion;
 import com.qac.row5project.managers.CustomerManager;
-import com.qac.services.LoginService;
-
-import Controllers.session.CurrentUser;
 
 /**
  * @Author Richard Allen
