@@ -3,6 +3,7 @@ package com.qac.row5project.managers;
 	import java.util.List;
 	import com.qac.row5project.entities.Product;
 	import com.qac.row5project.entities.PurchaseOrder;
+import com.qac.row5project.entities.Stock;
 
 	public interface  GeneratedOrderManager {
 		//CREATE
@@ -12,6 +13,5 @@ package com.qac.row5project.managers;
 		public void updateProduct(PurchaseOrder p);
 		
 		//READ - CUSTOMER/INVENTORY MANAGER
-		public List<Product> readOrderByQuantity(String name);
-		public List<Product> readOrderByPrice(String name);
+		public List<Stock> readOrderByQuantity();
 	}
