@@ -1,4 +1,4 @@
-package test;
+package Controllers;
 
 public class ProductItemTest {
 	private String title = "A good gnome";

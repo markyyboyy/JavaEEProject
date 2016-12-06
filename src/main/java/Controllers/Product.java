@@ -1,7 +1,7 @@
 /**
  * @author Mark Freeman
  */
-package test;
+package Controllers;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "product", eager = true)

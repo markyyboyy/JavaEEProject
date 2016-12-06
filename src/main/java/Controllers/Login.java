@@ -1,4 +1,4 @@
-package test;
+package Controllers;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
