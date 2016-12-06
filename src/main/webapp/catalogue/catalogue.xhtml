@@ -15,58 +15,62 @@
 			<div class="container-fluid">
 				<h2>Catalogue</h2>
 
-
 				<div class="row">
+
 					<div class="col-md-12">
-						<h:inputText value="#{search.term}" class="form-control">
+						<div class="row">
+							<div class="col-md-12">
+								<h:inputText value="#{search.term}" class="form-control">
 
-							<f:passThroughAttribute name="type" value="text" />
-							<f:passThroughAttribute name="placeholder" value="Search..." />
-							<f:passThroughAttribute name="alt" value="Search" />
+									<f:passThroughAttribute name="type" value="text" />
+									<f:passThroughAttribute name="placeholder" value="Search..." />
+									<f:passThroughAttribute name="alt" value="Search" />
 
-							<h:commandButton action="#{search.search}" value="Seach"
-								class="btn btn-success">
-								<f:passThroughAttribute name="style" value="display: none;" />
-							</h:commandButton>
+									<h:commandButton action="#{search.search}" value="Seach"
+										class="btn btn-success">
+										<f:passThroughAttribute name="style" value="display: none;" />
+									</h:commandButton>
 
-						</h:inputText>
+								</h:inputText>
+							</div>
+						</div>
 					</div>
+					<div class="col-md-12">
+
+						<div class="row">
+
+							<div class="col-md-6 col-xs-12">
+								<label for="Rating">Min Rating</label>
+								<h:selectOneMenu ID="Rating">
+									<f:selectItem itemValue="1" itemLabel="1 Start" />
+									<f:selectItem itemValue="2" itemLabel="2 Start" />
+									<f:selectItem itemValue="3" itemLabel="3 Start" />
+									<f:selectItem itemValue="4" itemLabel="4 Start" />
+									<f:selectItem itemValue="5" itemLabel="5 Start" />
+								</h:selectOneMenu>
+							</div>
+
+
+							<div class="col-md-6 col-xs-12">
+								<label for="maxPrice">Max Price</label> <input type="range"
+									name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
+									max="5000"
+									oninput="maxPriceRange.value = maxPriceRangeId.value" />
+								<output name="ageOutputName" id="maxPriceRange">2500</output>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="text-right col-md-2 col-xs-12">
+							<button name="btnSearch">Search</button>
+						</div>
+
+					</div>
+
 				</div>
-
-
-				<div class="row">
-
-					<div class="col-md-6 col-xs-12">
-						<label for="Rating">Min Rating</label>
-						<h:selectOneMenu ID="Rating">
-							<f:selectItem itemValue="1" itemLabel="1 Start" />
-							<f:selectItem itemValue="2" itemLabel="2 Start" />
-							<f:selectItem itemValue="3" itemLabel="3 Start" />
-							<f:selectItem itemValue="4" itemLabel="4 Start" />
-							<f:selectItem itemValue="5" itemLabel="5 Start" />
-						</h:selectOneMenu>
-					</div>
-
-
-					<div class="col-md-6 col-xs-12">
-						<label for="maxPrice">Max Price</label> <input type="range"
-							name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
-							max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value" />
-						<output name="ageOutputName" id="maxPriceRange">2500</output>
-					</div>
-				</div>
-
-
-
-				<div class="row">
-					<div class="text-right col-md-2 col-xs-12">
-						<button name="btnSearch">Search</button>
-					</div>
-
-				</div>
-
 			</div>
-
 		</h:form>
 		<div class="container-fluid">
 
@@ -86,14 +90,13 @@
 					</div>
 
 				</div>
+				<div class="container-fluid">
+					<div class="row">
+
+						<h:form>
 
 
 
-				<h:form>
-					<div class="container-fluid">
-
-
-						<div class="row">
 
 
 							<ui:repeat var="prod" value="#{Catalogue.products}">
@@ -101,17 +104,23 @@
 								<div class="col-md-3 col-sm-6 col-xs-12">
 									<div class="imgWrapper">
 
-										<div class="imgHover absPlace"></div>
+										<div class="imgHover absPlace">
+
+											<img src="../img/fgnome1.jpeg" alt="#{prod.name}" />
+
+										</div>
 
 										<div class="onHover">
 
 											<div class="star">
-												<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+												<h:commandLink
+													action="#{basket.addToBasket(prod.productId)}"
 													styleClass="glyphicon glyphicon-star"></h:commandLink>
 
 											</div>
 											<div class="basket">
-												<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+												<h:commandLink
+													action="#{basket.addToBasket(prod.productId)}"
 													styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 											</div>
 
@@ -140,11 +149,10 @@
 							</ui:repeat>
 
 
-						</div>
+						</h:form>
 					</div>
-				</h:form>
 
-
+				</div>
 
 
 

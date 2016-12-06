@@ -72,6 +72,7 @@ button{
 
 .star, .basket{
 	font-size: 4rem;
+	text-decoration: none;
 }
 
 .star{
@@ -84,6 +85,9 @@ button{
 .star a:hover,
 .basket a:hover{
 	color: #967505;
+		text-decoration: none;
+		
+	
 }
 
 
@@ -93,7 +97,10 @@ button{
 	left: 10px;
 }
 
-
+.ResultsPanel{
+	float: left;
+	width: 100%;
+}
 
 
 
