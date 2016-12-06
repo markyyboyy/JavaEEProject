@@ -23,7 +23,7 @@ public class Stock {
 	@Id
 	@Column(name="id", nullable=false,unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
-	private int stockID;
+	private long stockID;
 	@NotNull @Column(name="poroursware", nullable=false)
 	private boolean porousware;
 	@NotNull @Column(name="refurbished", nullable=false)
@@ -34,9 +34,9 @@ public class Stock {
 	//does this need to be changed to Product isntead of int
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
-	private int productID;
+	private long productID;
 		
-	public Stock(int stockID, boolean porousware, int quantity,boolean refurbished, int productID) {
+	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID) {
 		super();
 		this.stockID = stockID;
 		this.porousware = porousware;
@@ -45,7 +45,7 @@ public class Stock {
 		this.productID = productID;
 	}
 	
-	public Stock(int stockID, int quantity, boolean refurbished, int productID) {
+	public Stock(long stockID, int quantity, boolean refurbished, long productID) {
 		super();
 		this.porousware=false;
 		this.stockID = stockID;
@@ -55,7 +55,7 @@ public class Stock {
 	}
 	
 
-	public Stock(int stockID, boolean porousware, int quantity, int productID) {
+	public Stock(long stockID, boolean porousware, int quantity, long productID) {
 		super();
 		this.refurbished = false;
 		this.porousware=porousware;
@@ -65,7 +65,7 @@ public class Stock {
 		this.productID = productID;
 	}
 	
-	public Stock(int stockID, int quantity, int productID) {
+	public Stock(long stockID, int quantity, long productID) {
 		super();
 		this.porousware=false;
 		this.refurbished=false;
@@ -74,10 +74,10 @@ public class Stock {
 		this.productID = productID;
 	}
 
-	public int getStockID() {
+	public long getStockID() {
 		return stockID;
 	}
-	public void setStockID(int stockID) {
+	public void setStockID(long stockID) {
 		this.stockID = stockID;
 	}
 	public boolean isPorousware() {
@@ -98,10 +98,10 @@ public class Stock {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getProductID() {
+	public long getProductID() {
 		return productID;
 	}
-	public void setProductID(int productID) {
+	public void setProductID(long productID) {
 		this.productID = productID;
 	}
 

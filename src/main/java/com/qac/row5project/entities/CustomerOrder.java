@@ -3,10 +3,13 @@
  */
 
 package com.qac.row5project.entities;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -30,6 +33,11 @@ public class CustomerOrder {
 	@NotNull
 	@JoinColumn(name = "customerId", nullable = false, unique = false)
 	private int customerId;
+	
+	@OneToMany
+	@NotNull
+	@JoinColumn(name = "customerOrderLines", nullable = false, unique = false)
+	private List<CustomerOrderLine> customerOrderLines = new ArrayList<>();
 
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
@@ -59,9 +67,23 @@ public class CustomerOrder {
 	}
 	
 	//GETTERS AND SETTERS
+	public void addToCustomerOrderLine(CustomerOrderLine cL){
+		customerOrderLines.add(cL);
+	}
 	public int getCustomerOrderId() {
 		return customerOrderId;
 	}
+
+	public List<CustomerOrderLine> getCustomerOrderLines() {
+		return customerOrderLines;
+	}
+
+
+
+	public void setCustomerOrderLines(List<CustomerOrderLine> customerOrderLine) {
+		this.customerOrderLines = customerOrderLine;
+	}
+
 
 	public void setCustomerOrderId(int customerOrderId) {
 		this.customerOrderId = customerOrderId;
