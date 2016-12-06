@@ -13,7 +13,7 @@ public interface CustomerOrderManager {
 	public CustomerOrder createCustomerOrder(CustomerOrder co);
 	
 	//UPDATE - CUSTOMER
-	public List<CustomerOrder> updateCustomerOrder(CustomerOrder co);
+	public void updateCustomerOrder(CustomerOrder co);
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public CustomerOrder readCustomerOrderById(long id);
