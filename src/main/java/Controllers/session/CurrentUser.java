@@ -31,10 +31,12 @@ public class CurrentUser implements Serializable{
 	}
 	
 	public boolean isLoggedIn(){
-		return (customer ==null) ? true : false;
+		return (customer ==null) ? false : true;
 	}
 	
-	public void logoff(){
+	public String logoff(){
 		this.customer = null;
+		System.out.println("Logged out");
+		return "login";
 	}
 }

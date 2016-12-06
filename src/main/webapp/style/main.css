@@ -21,11 +21,20 @@
 	background-color: rgb(249, 246, 126);
 }
 
-.loginButton {
+.loginButton, .logoffButton {
+	width: 200px;
 	position: absolute;
 	top: -10;
     right: 30%;
    }
+.loginButton input{
+	width: 100%
+}
+
+.logoffButton input{
+	width: 100%
+}
+   
 
 .navbar-wrapper {
 	position: relative;

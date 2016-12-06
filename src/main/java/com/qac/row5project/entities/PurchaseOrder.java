@@ -1,5 +1,7 @@
 package com.qac.row5project.entities;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,6 +50,8 @@ public class PurchaseOrder {
 	
 	@Column(name = "dateReceived", nullable = true)
 	private Calendar dateReceived;
+	
+	private List<Stock> stockList = new ArrayList<Stock>();
 
 	/** 
 	 * 
@@ -166,6 +170,12 @@ public class PurchaseOrder {
 	public void setdateReceived(Calendar dateReceived)
 	{
 		this.dateReceived = dateReceived;
+	}
+	public List<Stock> getStockList() {
+		return stockList;
+	}
+	public void setStockList(List<Stock> stockList) {
+		this.stockList = stockList;
 	}
 
 }
