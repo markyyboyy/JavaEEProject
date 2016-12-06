@@ -1,13 +1,12 @@
-package com.qac.row5project.managers.offline;
-
-
+/***
+ * 
+ * @author Ynyr Williams
+ *
+ */package com.qac.row5project.managers.offline;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-
-import com.qac.row5project.entities.Stock;
 import com.qac.row5project.entities.TestData;
 import com.qac.row5project.entities.WishList;
 import com.qac.row5project.managers.WishlistManager;
@@ -19,22 +18,27 @@ public class WishlistManagerOffline implements WishlistManager {
 	@Inject
 	private TestData testData;
 	
-	//CREATE - Inventory Manager Only
+	//CREATE - Customer Only
 	@Override
 	public WishList createWishlist(WishList wishlist) {
 		List<WishList> wishL = testData.getWishlists();
 		wishL.add(wishlist);
-		testData.setWishlists(s);
+		testData.setWishlists(wishL);
 		return wishlist;
 	}
 		
-	//READ - Inventory Manager Only
+	//READ - Customer Only
 	@Override
-	public WishList readWishlist() {
-		return testData.getWishlists().get(0);
+	public WishList readWishlist(int cID) {
+		List<WishList> wishL = testData.getWishlists();
+		for(WishList wish: wishL)
+		{
+			if(wish.getCustomerId()==cID)
+			return wish;
+		}
+		return null;
 	}
-
-	//UODATE - Inventory Manager Only
+	//UODATE - Customer Only
 	@Override
 	public void updateWishlist(WishList w) {
 		List<WishList> wishL = testData.getWishlists();
