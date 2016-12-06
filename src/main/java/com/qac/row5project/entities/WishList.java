@@ -16,17 +16,13 @@ public class WishList {
 	@Column(name = "customer id", nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long customerId;
-	
-	@Column(name = "stock id", nullable = false, unique = true)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long stockId;
+
 	private List<ProductItemTest> products = new ArrayList<>();
 	public WishList() {
 	}
 
-	public WishList(long customerId, long stockId) {
+	public WishList(long customerId) {
 		this.customerId = customerId;
-		this.stockId = stockId;
 	}
 
 	public long getCustomerId() {
@@ -37,13 +33,6 @@ public class WishList {
 		this.customerId = customerId;
 	}
 
-	public long getStockId() {
-		return stockId;
-	}
-
-	public void setStockId(long stockId) {
-		this.stockId = stockId;
-	}
 
 	@Override
 	public String toString() {
