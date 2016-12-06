@@ -34,6 +34,7 @@ public class Catalogue implements Serializable {
 
 	public DataModel<Product> getProducts() {
 
+		System.out.println("djgkdfh");
 		return (DataModel<Product>) getPagination().createPageDataModel();
 
 	}
