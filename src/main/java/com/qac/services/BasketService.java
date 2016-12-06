@@ -49,6 +49,7 @@ public class BasketService {
 
 	/**
 	 * Adding a product to a customer's basket
+	 * 
 	 * @param customerId
 	 * @param stock
 	 */
@@ -88,8 +89,11 @@ public class BasketService {
 			}
 		}
 	}
-	
-	public void totalBasketPrice(CustomerOrder customerOrder, CustomerOrderLine customerOrderLine) {
+
+	/**
+	 * Getting the total price of the basket
+	 */
+	public void totalBasketPrice() {
 		
 		
 	}
