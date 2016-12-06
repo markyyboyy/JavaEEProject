@@ -10,8 +10,8 @@ import com.qac.services.LoginService;
  * @Author Richard Allen
  */
 
+@Named("login")
 @RequestScoped
-@Named(value="login")
 public class Login {
 
 	@Inject
