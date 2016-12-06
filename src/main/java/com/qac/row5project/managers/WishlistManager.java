@@ -7,7 +7,7 @@ public interface WishlistManager {
 	public WishList createWishlist(WishList w);
 	
 	//UPDATE - INVENTORY MANAGER
-	public WishList updateWishlist(WishList w);
+	public void updateWishlist(WishList w);
 	
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public WishList readWishlist();
