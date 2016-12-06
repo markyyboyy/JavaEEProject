@@ -74,12 +74,7 @@ public class Customer {
 	
 	@OneToOne(mappedBy="id")
 	private List<Product> wishList = new ArrayList<>();
-//	
-//	@OneToMany
-//	@JoinColumn(name="payment_id")
-//	@NotNull
-//	private List<P>
-		
+	
 	public long getID(){
 		return this.id;
 	}	
@@ -91,6 +86,16 @@ public class Customer {
 	
 
 	
+	public List<Product> getWishList() {
+		return wishList;
+	}
+
+
+	public void setWishList(List<Product> wishList) {
+		this.wishList = wishList;
+	}
+
+
 	public LoginDetails getLoginDetails() {
 		return this.loginDetails;
 	}
