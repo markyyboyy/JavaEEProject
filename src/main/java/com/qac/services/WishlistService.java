@@ -19,4 +19,8 @@ public class WishlistService {
 	{
 		return manager.findByCustomerId(id);
 	}
+	public void updateWishlist(long id,List<Product> w)
+	{
+		manager.updateWishlist(id, w);
+	}
 }
