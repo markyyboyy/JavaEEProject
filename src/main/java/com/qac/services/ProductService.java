@@ -75,9 +75,18 @@ public class ProductService {
 		if (stock != null)
 			productItem.addStockInfo(stock.getQuantity());
 		
-		if(ratingManager.findRatingsbyProductID(product.getProductId()) == null)
-			productItem.addRatingInfo(ratingManager.findRatingsbyProductID(product.getProductId()));	
+		if(ratingManager.findRatingsbyProductID(product.getProductId()).size() > 0){
+			
+			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductId());
+			productItem.addRatingInfo(r);	
+			
+			productItem.setAverageRating(ratingManager.findAvgRatingsbyProductID(product.getProductId() -1));
+
+		}else{
+			productItem.setAverageRating(0);
+		}
 				
+		
 		return productItem;
 		
 	}
