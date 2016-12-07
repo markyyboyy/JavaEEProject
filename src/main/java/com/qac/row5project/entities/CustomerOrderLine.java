@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 
 /**
  * 
- * @author Iman Hassan
+ * @author Iman Hassan & Ynyr Williams
  *
  */
 @Entity
