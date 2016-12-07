@@ -11,9 +11,15 @@ import com.qac.row5project.managers.WishlistManager;
 import com.qac.row5project.managers.offline.GeneratedOrderManagerOffline;
 import com.qac.row5project.managers.offline.WishlistManagerOffline;
 
-//@Stateless
+@Stateless
 
-//public class Generate {
+public class Generate {
+	@Inject
+	private GeneratedOrderManager generatedOrderManager;
+	public String getStock() {
+		// TODO Auto-generated method stub
+		generatedOrderManager.
+	}
 	
 	/*@Inject
 	private GeneratedOrderManager manager = new GeneratedOrderManagerOffline();
@@ -24,5 +30,5 @@ import com.qac.row5project.managers.offline.WishlistManagerOffline;
 	public void updateWishlist(long id,List<Product> w)
 	{
 		manager.updateWishlist(id, w);
-	}
-}*/
+	}*/
+}

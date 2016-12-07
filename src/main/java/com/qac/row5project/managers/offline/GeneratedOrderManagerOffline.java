@@ -1,4 +1,5 @@
 package com.qac.row5project.managers.offline;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -31,26 +32,42 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 	private TestData testData;
 	private GeneratedOrder generatedorder;
 	private PurchaseOrder purchaseOrder;
+	
+	public List<Stock> generateOrder(){
+		List<Stock> returnable = new ArrayList<Stock>();
+		List<Stock> stock = testData.getStockItems();
+		Iterator stockIT = stock.iterator();
+		while(stockIT.hasNext()){
+			Stock stockItem = (Stock) stockIT.next();
+			if (stockItem.getQuantity() < 5){
+				returnable.add(stockItem);
+			}
+		}
+		return returnable;
+	}
 	@Override
-	public void createOrder(PurchaseOrder p) {
-		purchaseOrder = p;
-		GeneratedOrder generatedOrder = null;
-		// TODO Auto-generated method stub
-		testData.setGeneratedOrder(generatedOrder);
+	public PurchaseOrder createOrder() {
+		return null;
+	
 	}
 
 	@Override
 	public void updateProduct(PurchaseOrder p) {
 		// TODO Auto-generated method stub
-		purchaseOrder = p;
+		/*purchaseOrder = p;
 		GeneratedOrder current = testData.getGeneratedOrder();
 		current.setGoStock(p);
-		testData.setGeneratedOrder(current);
+		testData.setGeneratedOrder(current);*/
 	}
 
 	@Override
 	public List<Stock> readOrderByQuantity() {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
+		List<Stock> stock = generateOrder();
+		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
+		return stock;
+=======
 		List<Stock> stock = purchaseOrder.getStockList();
 		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
 		return stock;
@@ -58,5 +75,6 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 
 		
 	}	
+>>>>>>> 6ff13a279b3a948a45f81ed81219f9be5d4313b7
 	}
-	
+}
