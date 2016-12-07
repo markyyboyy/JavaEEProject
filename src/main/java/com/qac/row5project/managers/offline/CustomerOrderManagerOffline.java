@@ -1,5 +1,5 @@
 /**
- * @Author RyanB & Iman
+ * @Author RyanB & Iman Hassan
  */
 package com.qac.row5project.managers.offline;
 
@@ -64,6 +64,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 
 	}
 
+	@Override
 	public void addToBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder cOrder = readCustomerOrderById(customerId);
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
@@ -75,18 +76,17 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 		cOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
 	}
 
-	public void removeFromBasket(long customerId, Stock stock) {
-
-			CustomerOrder cOrder = readCustomerOrderById(customerId);
-			for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
-				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
-					if (customerOrderLine.getQuantity() > 1) {
-						customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
-					} else {
-						cOrder.removeFromCustomerOrderLine(customerOrderLine);
-					}
+	@Override
+	public void removeFromBasket(long customerId, Stock stock, int quantity) {
+		CustomerOrder cOrder = readCustomerOrderById(customerId);
+		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
+			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+				if (customerOrderLine.getQuantity() > 1) {
+					customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
+				} else {
+					cOrder.removeFromCustomerOrderLine(customerOrderLine);
 				}
 			}
 		}
+	}
 }
-
