@@ -24,8 +24,8 @@ public class LoginService {
 	private LoginDetails login;
 	
 	public boolean validLogin(String email, String password){
-		login = loginManager.readLoginDetails(email.toLowerCase());
-		return (login.getPassword().equals(password))? true : false;
+		login = loginManager.readLoginDetails(email);
+		return login.getPassword().equals(password);
 	}
 	
 	public Customer loginUser(String email){

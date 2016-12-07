@@ -6,6 +6,7 @@ import javax.inject.Named;
 
 import java.util.List;
 
+import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 import com.qac.services.BasketService;
@@ -30,16 +31,15 @@ public class Basket {
 	@Inject
 	private CurrentUser currentUser;
 	
-	private List<ProductItem> basket;
+	private CustomerOrder cOrder;
 	
 	/**
 	 * Adding product item to basket if customer is logged in
 	 * @param id
 	 */
-	public void addToBasket(Stock id) {
+	public void addToBasket(Stock id, int quantity) {
 		if (currentUser.isLoggedIn()) 
-			basketService.addToBasket(currentUser.getCustomer().getID(), id);
-		
+			basketService.addToBasket(currentUser.getCustomer().getID(), id, quantity);	
 	}
 	
 	/**
@@ -49,8 +49,8 @@ public class Basket {
 	 */
 	public String removeItem(long id) {
 		
-		if (basket == null)
-			basket = basketService.getBasket(currentUser.getCustomer().getID());
+		if (cOrder == null)
+			cOrder = basketService.getBasket(currentUser.getCustomer().getID());
 		return "basket";
 		
 	}
@@ -59,12 +59,16 @@ public class Basket {
 	 * selecting the basket for the customer when logged in
 	 * @return
 	 */
-	public List<ProductItem> getBasket() {
-		if (basket == null)
-			basket = basketService.getBasket(currentUser.getCustomer().getID());
-		return basket;
+	public CustomerOrder getBasket() {
+		if (cOrder == null)
+			cOrder = basketService.getBasket(currentUser.getCustomer().getID());
+		return cOrder;
 	}
 	
 
+	public float getTotalBasketPrice() {
+		return cOrder.getTotalPrice();
+		
+	}
 
 }

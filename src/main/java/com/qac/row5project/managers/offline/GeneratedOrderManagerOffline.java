@@ -9,8 +9,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
-import com.qac.row5project.entities.Customer;
-import com.qac.row5project.entities.Feedback;
+import com.qac.row5project.entities.GeneratedOrder;
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.PurchaseOrder;
 import com.qac.row5project.entities.Stock;
@@ -29,6 +28,7 @@ import com.qac.row5project.managers.GeneratedOrderManager;
 public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 	@Inject
 	private TestData testData;
+	private GeneratedOrder generatedorder;
 	private PurchaseOrder purchaseOrder;
 	
 	public List<Stock> generateOrder(){
@@ -77,5 +77,6 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 			}
 	}
 		return productsToReturn;
+
+	}	
 	}
-}

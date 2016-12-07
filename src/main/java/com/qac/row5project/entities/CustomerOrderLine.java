@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 
 /**
  * 
- * @author Iman Hassan
+ * @author Iman Hassan & Ynyr Williams
  *
  */
 @Entity
@@ -51,15 +51,13 @@ public class CustomerOrderLine {
 	 * Constructor for each variable
 	 * @param id
 	 * @param quantity
-	 * @param totalPrice
-	 * @param customerOrder
 	 * @param stock
 	 */
 	public CustomerOrderLine(long id, int quantity, Stock stock) {
 		this.id = id;
 		this.quantity = quantity;
 		this.stock = stock;
-		
+		updateTotalPrice();
 	}
 
 	/**
@@ -74,11 +72,14 @@ public class CustomerOrderLine {
 		return quantity;
 	}
 
+	/**
+	 * checks the total price before being called
+	 */
 	public float getTotalPrice() {
+		updateTotalPrice();
 		return totalPrice;
 	}
 	
-
 	public Stock getStock() {
 		return stock;
 	}
@@ -91,9 +92,8 @@ public class CustomerOrderLine {
 		this.quantity = quantity;
 	}
 
-	public void setTotalPrice(float totalPrice) {
-		
-		this.totalPrice = totalPrice;
+	public void updateTotalPrice() {
+		totalPrice = stock.getPrice() * stock.getQuantity();
 	}
 	
 

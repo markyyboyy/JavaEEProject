@@ -82,7 +82,6 @@ public class ProductManagerOffline implements ProductManager {
 		}
 		return pList;
 	}
-
 	@Override
 	public List<Product> findAllProducts() {
 			return testData.getProducts();

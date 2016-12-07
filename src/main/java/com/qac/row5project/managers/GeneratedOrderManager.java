@@ -14,6 +14,5 @@ import com.qac.row5project.entities.Stock;
 		
 		//READ
 		public List<Stock> readOrderByQuantity();
-
 		public List<Integer> getQuantities();
 	}

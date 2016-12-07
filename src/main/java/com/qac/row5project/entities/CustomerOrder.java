@@ -39,6 +39,13 @@ public class CustomerOrder {
 	@JoinColumn(name = "customerOrderLines", nullable = false, unique = false)
 	private List<CustomerOrderLine> customerOrderLines = new ArrayList<>();
 
+	//ADD Total Price - derived from order lines
+	
+	@OneToOne
+	@NotNull
+	@JoinColumn(name="totalPrice", nullable=false)
+	private float totalPrice;
+	
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
 	};
@@ -53,7 +60,16 @@ public class CustomerOrder {
 	};
 	
 	
-
+	public CustomerOrder(int customerOrderId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
+		super();
+		this.customerOrderId = customerOrderId;
+		this.customerId = customerId;
+		this.datePlaced = datePlaced;
+		this.addressId = addressId;
+		this.paymentId = paymentId;
+		deriveTotalPrice();
+		
+	}
 	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
 	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
 		super();
@@ -63,8 +79,16 @@ public class CustomerOrder {
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
-
+		deriveTotalPrice();
+		
 	}
+	public void deriveTotalPrice(){
+		totalPrice=0;
+		for (CustomerOrderLine customerOrderLine : customerOrderLines ) {
+			totalPrice += customerOrderLine.getTotalPrice(); 
+		}
+	}
+	
 	
 	//GETTERS AND SETTERS
 	public void addToCustomerOrderLine(CustomerOrderLine cL){
@@ -82,6 +106,11 @@ public class CustomerOrder {
 	}
 
 
+
+	public float getTotalPrice() {
+		deriveTotalPrice();
+		return totalPrice;
+	}
 
 	public void setCustomerOrderLines(List<CustomerOrderLine> customerOrderLine) {
 		this.customerOrderLines = customerOrderLine;
@@ -139,6 +168,7 @@ public class CustomerOrder {
 	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
 	}
+
 
 	@Override
 	public String toString() {

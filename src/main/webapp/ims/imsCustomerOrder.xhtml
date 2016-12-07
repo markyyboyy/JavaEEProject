@@ -1,0 +1,119 @@
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:c="http://xmlns.jcp.org/jsf/core">
+<!-- RyanB -->
+
+<h:head>
+	<ui:define name="pageName" value="Product Information">
+	</ui:define>
+</h:head>
+
+<h:body>
+	<ui:composition template="../templates/imsTemplate.xhtml">
+		<div class="container">
+
+			<div class="leftnavbar">
+				<br />
+				<ui:define name="filterName">
+					<div class="search">
+						<h:inputText alt="search">
+							<f:passThroughAttribute name="placeholder"
+								value="Search by Customer Order ID..."></f:passThroughAttribute>
+						</h:inputText>
+					</div>
+				</ui:define>
+
+				<ui:define name="filterResults">
+					<div class="filter">
+
+						<div class="category dropdown">
+
+							<div class="dropdown">
+								<button class="btn btn-primary dropdown-toggle" type="button"
+									data-toggle="dropdown" />
+								<h:selectOneMenu value="dropdown">
+									<ui:repeat var="Cat" value="#{product.product.category}">
+										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
+									</ui:repeat>
+								</h:selectOneMenu>
+							</div>
+
+							<div class="status dropdown">
+								<br />
+								<button class="btn btn-primary dropdown-toggle" type="button"
+									data-toggle="dropdown" />
+								<h:selectOneMenu value="dropdown">
+									<ui:repeat var="Cat" value="#{product.product.status}">
+										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
+									</ui:repeat>
+								</h:selectOneMenu>
+							</div>
+
+							<div class="supplier dropdown">
+								<br />
+								<button class="btn btn-primary dropdown-toggle" type="button"
+									data-toggle="dropdown" />
+								<h:selectOneMenu value="dropdown">
+									<ui:repeat var="Cat" value="#{product.product.status}">
+										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
+									</ui:repeat>
+								</h:selectOneMenu>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="logo">
+						<br /> <br /> <br /> <a><img src="../img/logo.png"
+							width="250px" height="210px" /></a>
+					</div>
+
+				</ui:define>
+
+
+			</div>
+		</div>
+
+
+
+		<ui:define name="mainContent2">
+			<div class="righttitletable">
+				<div class="title">
+					<h2>
+						<b>Product Information Table</b>
+					</h2>
+					<br />
+				</div>
+				<div class="table">
+					<div class="table-wrapper">
+						<div class="table-scroll">
+							<table border="1" style="width: 100%">
+								<h:form>
+									<h:dataTable value="#{customerOrder.customerOrders}"
+										var="customer" border="2" cellspacing="1" cellpadding="1">
+										<h:column>
+											<c:facet name="header">Customer Order ID</c:facet>
+							                    #{customer.customerOrderId}
+							                </h:column>
+										<h:column>
+											<c:facet name="header">Price</c:facet>
+							                    #{customer.totalPrice}
+							                </h:column>
+										<h:column>
+											<c:facet name="header">Date</c:facet>
+							                    #{customer.datePlaced}
+							                </h:column>
+									</h:dataTable>
+								</h:form>
+							</table>
+</div>
+</div>
+</div>
+</div>
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+</html>

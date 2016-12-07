@@ -21,11 +21,9 @@ public class Product implements Serializable{
 	private int quantity;
 	private String category;
 	private String status;
+	private String supplier;
 	private static final long serialVersionUID = 7526472295622776147L;
 
-	private enum status {
-		COMINGSOON, ACTIVE, DISCONTINUED
-	}
 
 	//NO ARGS CONSTRUCTOR FOR A PRODUCT
 	public Product() {
@@ -33,7 +31,7 @@ public class Product implements Serializable{
 	
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
 	public Product(String name, String desc, double price, double weight, String colour, int size,
-			int quantity, String category, String status) {
+			int quantity, String category, String status, String supplier) {
 		
 		this.name = name;
 		this.desc = desc;
@@ -44,6 +42,7 @@ public class Product implements Serializable{
 		this.quantity = quantity;
 		this.category = category;
 		this.status = status;
+		this.supplier = supplier;
 	}
 
 	//GETTERS AND SETTERS
@@ -127,4 +126,12 @@ public class Product implements Serializable{
 		this.status = status;
 	}
 
+	
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
 }

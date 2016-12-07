@@ -16,13 +16,40 @@ package com.qac.row5project.entities;
 		private double weight;
 		private List<String> categories;
 		private int stockLevel;
-		private float price;
+		private double price;
+		private List<Rating> ratings;
+		private int averageRating;
+		
+		
+		public ProductItem(){}
+		
+		public int getAverageRating() {
+			return averageRating;
+		}
+
+		public void setAverageRating(int averageRating) {
+			this.averageRating = averageRating;
+		}
 
 		public ProductItem(long id) {
 			this.id = id;
 		}
 		
-		public ProductItem(long id, String name, String description, double height, double width, double depth, double weight, List<String> categories, int stockLevel, float price) {
+		/***
+		 * 
+		 * @param id
+		 * @param name
+		 * @param description
+		 * @param height
+		 * @param width
+		 * @param depth
+		 * @param weight
+		 * @param categories
+		 * @param stockLevel
+		 * @param price
+		 */
+		public ProductItem(long id, String name, String description, double height, double width, double depth, double weight,
+						List<String> categories, int stockLevel, double price) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
@@ -33,8 +60,18 @@ package com.qac.row5project.entities;
 			this.categories = categories;
 			this.stockLevel = stockLevel;
 			this.price = price;
+			this.averageRating = 0;
 		}
 
+		/***
+		 * 
+		 * @param name
+		 * @param description
+		 * @param height
+		 * @param width
+		 * @param depth
+		 * @param weight
+		 */
 		public void addProductInfo(String name, String description, double height, double width, double depth,
 				double weight) {
 			this.name = name;
@@ -48,6 +85,12 @@ package com.qac.row5project.entities;
 		public void addStockInfo(int stockLevel) {
 			this.stockLevel = stockLevel;
 		}
+		
+		public void addRatingInfo(List<Rating> r){
+			this.ratings = r;
+		}
+		
+		
 
 		public long getId() { return id; }
 		public String getName() { return name; }
@@ -58,6 +101,8 @@ package com.qac.row5project.entities;
 		public double getWeight() { return weight; }
 		public List<String> getCategories() { return categories; }
 		public int getStockLevel() { return stockLevel; }
-		public float getPrice() { return price; }
+		public double getPrice() { return price; }
+		public List<Rating> getRating() { return ratings; }
+		
 	}
 

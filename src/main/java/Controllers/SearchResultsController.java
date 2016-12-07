@@ -34,7 +34,7 @@ public class SearchResultsController implements Serializable {
 	 */
 	public PaginationHelper getPagination() {
 		if (pagination == null) {
-			pagination = new PaginationHelper(9) {
+			pagination = new PaginationHelper(3) {
 				
 				@Override
 				public int getItemsCount() {

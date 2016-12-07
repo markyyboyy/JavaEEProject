@@ -4,6 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.qac.row5project.managers.CustomerManager;
 import com.qac.services.LoginService;
 
 import Controllers.session.CurrentUser;
@@ -11,6 +12,7 @@ import Controllers.session.CurrentUser;
 /**
  * @Author Richard Allen
  */
+
 
 @Named("login")
 @RequestScoped
@@ -21,6 +23,9 @@ public class Login {
 	
 	@Inject
 	private LoginService loginService;
+	
+	@Inject
+	private CustomerManager customerManager;
 
 	private String email = "";
 	private String password = "";
@@ -44,12 +49,18 @@ public class Login {
 	public String login() {
 		if (!email.isEmpty() && !password.isEmpty()) {
 			if (loginService.validLogin(email, password)) {
-				currentUser.setCustomer(loginService.loginUser(email));
+				currentUser.setCustomer(customerManager.readCustomerByEmail(email.toLowerCase()));
 				System.out.println("Logged In");
 			} else {
 				password = "";
 			}
 		}
 		return "home";
+	}
+	
+	public String logoff(){
+		currentUser.setCustomer(null);
+		System.out.println("Logged out");
+		return "login";
 	}
 }
