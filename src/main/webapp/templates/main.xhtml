@@ -45,56 +45,76 @@
 				<div class="">
 					<div class="navigation row">
 						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="catalogue" value="Browse" />
+							<h:button styleClass="btn btn-primary" outcome="catalogue"
+								value="Browse" />
 						</div>
 						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="SpecialOffer.xhtml" value="Special Offers" />
+							<h:button styleClass="btn btn-primary"
+								outcome="SpecialOffer.xhtml" value="Special Offers" />
 						</div>
 						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="faq.xhtml" value="FAQ" />
+							<h:button styleClass="btn btn-primary" outcome="faq.xhtml"
+								value="FAQ" />
 						</div>
 						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="about.xhtml" value="About Us" />
+							<h:button styleClass="btn btn-primary" outcome="about.xhtml"
+								value="About Us" />
 						</div>
 					</div>
 				</div>
-		
-		<div class="loggedInMenu">
-			
-         	<h:selectOneMenu value="My Account" styleClass="dropdown-toggle dropdown" rendered="#{user.loggedIn}">
-				<f:passThroughAttribute name="data-toggle" value="dropdown"/>
-				<f:passThroughAttribute name="role" value="button"/>
-				<f:passThroughAttribute name="aria-haspopup" value="true"/>
-				<f:passThroughAttribute name="aria-expanded" value="false"/>
-			<div class="dropdown-menu">
-            	 <f:selectItem itemLabel="Payment Details" itemValue="1" outcome=""/>
-            	 <f:selectItem itemLabel="Order History" itemValue="2"/>
-            	 
-       		</div>
-         	</h:selectOneMenu>
+
+				<div class="loggedInMenu">
+
+					<h:selectOneMenu value="My Account"
+						styleClass="dropdown-toggle dropdown" rendered="#{user.loggedIn}">
+						<f:passThroughAttribute name="data-toggle" value="dropdown" />
+						<f:passThroughAttribute name="role" value="button" />
+						<f:passThroughAttribute name="aria-haspopup" value="true" />
+						<f:passThroughAttribute name="aria-expanded" value="false" />
+						<div class="dropdown-menu">
+							<f:selectItem itemLabel="Payment Details" itemValue="1"
+								outcome="" />
+							<f:selectItem itemLabel="Order History" itemValue="2" />
+
+						</div>
+					</h:selectOneMenu>
+				</div>
+
+
+				<div class="loginButton">
+					<h:button styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
+						outcome="login.xhtml" value="Login/Register" />
+				</div>
+
+				<div class="logoffButton">
+					<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}"
+						value="Log Out" onclick="#{user.logoff()}" />
+				</div>
+
 			</div>
-			</div>
-			
-			<div class="loginButton" >
-					<h:button styleClass="btn btn-primary" rendered="#{!user.loggedIn}" outcome="login.xhtml" value="Login/Register" />
-			</div>
-			
-			<div class="logoffButton">
-				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}" value="Log Out" onclick="#{user.logoff()}"/>
-			</div>
-    		
-			
+
+
 		</nav>
 	</header>
 	<main class="content"> <ui:insert name="mainContent" /> </main>
 	<footer class="">
 		<div class="footerWrapper">
-			<div><a href="#">| FooterTestA</a></div>
-			<div><a href="#">| FooterTestA</a></div>
-			<div><a href="#">| FooterTestA</a></div>
-			<div><a href="#">| FooterTestA</a></div>
-			<div><a href="#">| FooterTestA</a></div>	
-		</div>	
+			<div>
+				<a href="#">| FooterTestA</a>
+			</div>
+			<div>
+				<a href="#">| FooterTestA</a>
+			</div>
+			<div>
+				<a href="#">| FooterTestA</a>
+			</div>
+			<div>
+				<a href="#">| FooterTestA</a>
+			</div>
+			<div>
+				<a href="#">| FooterTestA</a>
+			</div>
+		</div>
 	</footer>
 </h:body>
 </html>
