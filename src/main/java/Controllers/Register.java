@@ -38,7 +38,7 @@ public class Register {
 	private String email = "";
 	private String sQuestion= "";
 	private LoginDetails loginDetails;
-	private List<Address> address;
+	private List<Address> address = new ArrayList<>();
 	private SecurityQuestion question;
 
 	public String getPassword() {
