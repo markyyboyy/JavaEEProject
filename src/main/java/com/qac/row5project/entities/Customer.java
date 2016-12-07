@@ -83,13 +83,10 @@ public class Customer {
 	public void setID(int id){
 		this.id = id;
 	}
-	
-
-	
+		
 	public List<Product> getWishList() {
 		return wishList;
 	}
-
 
 	public void setWishList(List<Product> wishList) {
 		this.wishList = wishList;
@@ -152,11 +149,19 @@ public class Customer {
 		this.dtDOB = dtDOB;
 	}
 	
+	/**
+	 * @author Richard Allen
+	 * @param address
+	 */
 	public void setAddress(List<Address> address){
 		this.address = address;
 	}
 	
-	public Address setAddress(){
+	/**
+	 * @author Richard Allen
+	 * @return address
+	 */
+	public List<Address> getAddress(){
 		return this.address;
 	}
 
