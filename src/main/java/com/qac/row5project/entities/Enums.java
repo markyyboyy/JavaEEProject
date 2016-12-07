@@ -1,11 +1,6 @@
-/**
- * @Author RyanB
- */
-
 package com.qac.row5project.entities;
 
 public enum Enums {
-	
 		/**
 		 * The product is active
 		 */
@@ -15,8 +10,7 @@ public enum Enums {
 		 */
 		DISCONTINUED,
 		/**
-		 * Arriving soon, new product line
+		 * Will be in stock soon, new product line
 		 */
 		COMINGSOON
 	}
-

@@ -69,13 +69,18 @@ public class TestData {
 		
 		
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 2, "Garden", "Active", "Brian"));
 
 		
-		Product product = new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian");
+		
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 3, "Garden", "Active", "Brian"));
+
+		
+		Product product = new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 4, "Garden", "Active", "Brian");
 		products.add(product);
 		Rating r = new Rating(3, product.getProductId(), product.getProductId());
 		ratings.add(r);
-		
+
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));

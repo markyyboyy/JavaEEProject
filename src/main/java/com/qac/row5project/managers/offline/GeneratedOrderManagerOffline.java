@@ -9,8 +9,6 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
-import com.qac.row5project.entities.Customer;
-import com.qac.row5project.entities.Feedback;
 import com.qac.row5project.entities.GeneratedOrder;
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.PurchaseOrder;
@@ -66,6 +64,19 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 		List<Stock> stock = generateOrder();
 		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
 		return stock;
+	}
+	@Override
+	public List<Integer> getQuantities() {
+		List<Product> products = testData.getProducts();
+		List<Integer> productsToReturn = new ArrayList<Integer>();
+		Iterator it = products.iterator();
+		while(it.hasNext()){
+			Product p = (Product) it.next();
+			if (p.getQuantity() < 5){
+				productsToReturn.add(5-p.getQuantity());
+			}
+	}
+		return productsToReturn;
 
 	}	
 	}

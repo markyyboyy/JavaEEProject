@@ -48,9 +48,7 @@ public class CustomerOrderController implements Serializable {
 		
 		
 		
-		
-	}
-	
+
 	public void setCustomerOrders(List<CustomerOrder> lstTemp ){
 		this.lsOrders = lstTemp;
 	}
