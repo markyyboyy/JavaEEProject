@@ -6,6 +6,7 @@ import javax.inject.Named;
 
 import java.util.List;
 
+import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 import com.qac.services.BasketService;
@@ -30,7 +31,7 @@ public class Basket {
 	@Inject
 	private CurrentUser currentUser;
 	
-	private List<ProductItem> basket;
+	private CustomerOrder basket;
 	
 	/**
 	 * Adding product item to basket if customer is logged in
@@ -38,7 +39,7 @@ public class Basket {
 	 */
 	public void addToBasket(Stock id) {
 		if (currentUser.isLoggedIn()) 
-			basketService.addToBasket(currentUser.getCustomer().getID(), id);
+			basketService.addToBasket(currentUser.getCustomer().getID(), id, 0);
 		
 	}
 	
@@ -59,7 +60,7 @@ public class Basket {
 	 * selecting the basket for the customer when logged in
 	 * @return
 	 */
-	public List<ProductItem> getBasket() {
+	public CustomerOrder getBasket() {
 		if (basket == null)
 			basket = basketService.getBasket(currentUser.getCustomer().getID());
 		return basket;
