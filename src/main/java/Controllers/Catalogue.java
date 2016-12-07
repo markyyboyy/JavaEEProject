@@ -48,7 +48,7 @@ public class Catalogue implements Serializable {
 		return selectItem;
 	}
 
-	public void setSelectıtem(ArrayList<SelectItem> selectItem) {
+	public void setSelectItem(ArrayList<SelectItem> selectItem) {
 		this.selectItem = selectItem;
 	}
 
