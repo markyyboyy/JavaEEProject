@@ -216,14 +216,4 @@ public class TestData {
 	public void setSuppliers(List<Supplier> suppliers) {
 		this.suppliers = suppliers;
 	}
-
-	public GeneratedOrder getGeneratedOrder() {
-		return generatedOrder;
-	}
-
-	public void setGeneratedOrder(GeneratedOrder generatedOrder) {
-		this.generatedOrder = generatedOrder;
-	}
-
-
 }

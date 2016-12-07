@@ -17,8 +17,8 @@
 <link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
 <link href="../style/main.css" type="text/css" rel="stylesheet" />
 <link href="../style/mobileMain.css" type="text/css" rel="stylesheet" />
-<script	src="../js/jquery-3.1.1.min.js"></script>
-		
+<script src="../js/jquery-3.1.1.min.js"></script>
+
 <!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
 </head>
 
@@ -80,19 +80,19 @@
 						</div>
 					</h:selectOneMenu>
 				</div>
-
-
-				<div class="loginButton">
-					<h:button styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
-						outcome="login.xhtml" value="Login/Register" />
-				</div>
-
-				<div class="logoffButton">
-					<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}"
-						value="Log Out" action="#{login.logoff}" />
-				</div>
-
 			</div>
+
+			<div class="loginButton">
+				<h:commandButton styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
+					outcome="login.xhtml" value="Login/Register" />
+			</div>
+
+			<div class="logoffButton">
+				<h:commandButton styleClass="btn btn-primary" rendered="#{user.loggedIn}"
+					value="Log Out" onlcick="#{login.logoff()}" />
+			</div>
+
+
 
 
 		</nav>
