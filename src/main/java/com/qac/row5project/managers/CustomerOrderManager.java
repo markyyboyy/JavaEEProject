@@ -18,4 +18,5 @@ public interface CustomerOrderManager {
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public CustomerOrder readCustomerOrderById(long id);
 	public CustomerOrder readCustomerOrderByDatePlaced(Calendar date);
+	
 }
