@@ -60,7 +60,16 @@ public class CustomerOrder {
 	};
 	
 	
-
+	public CustomerOrder(int customerOrderId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
+		super();
+		this.customerOrderId = customerOrderId;
+		this.customerId = customerId;
+		this.datePlaced = datePlaced;
+		this.addressId = addressId;
+		this.paymentId = paymentId;
+		deriveTotalPrice();
+		
+	}
 	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
 	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
 		super();
