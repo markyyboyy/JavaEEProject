@@ -18,7 +18,7 @@ public class Generate {
 	private GeneratedOrderManager generatedOrderManager;
 	public String getStock() {
 		// TODO Auto-generated method stub
-		generatedOrderManager.
+		return null;
 	}
 	
 	/*@Inject

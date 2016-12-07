@@ -63,18 +63,9 @@ public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 	@Override
 	public List<Stock> readOrderByQuantity() {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
 		List<Stock> stock = generateOrder();
 		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
 		return stock;
-=======
-		List<Stock> stock = purchaseOrder.getStockList();
-		Collections.sort(stock, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
-		return stock;
-		
 
-		
 	}	
->>>>>>> 6ff13a279b3a948a45f81ed81219f9be5d4313b7
 	}
-}

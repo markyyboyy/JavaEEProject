@@ -59,7 +59,7 @@ public class CustomerOrderLine {
 		this.id = id;
 		this.quantity = quantity;
 		this.stock = stock;
-	//	totalPrice = stock.getPrice() * stock.getQuantity();
+		updateTotalPrice();
 	}
 
 	/**

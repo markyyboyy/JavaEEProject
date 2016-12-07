@@ -70,6 +70,7 @@ public class CustomerOrder {
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
+		deriveTotalPrice();
 		
 	}
 	public void deriveTotalPrice(){
