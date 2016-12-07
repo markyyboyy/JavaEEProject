@@ -65,26 +65,28 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 
 	}
 
-	public CustomerOrder addToBasket(long customerId, Stock stock, int quantity) {
-		for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
-			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
-				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
-				return customerOrder;
-			}
-		}
-		customerOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
-	}
+//	public CustomerOrder addToBasket(long customerId, Stock stock, int quantity) {
+//		for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
+//			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+//				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
+//				return customerOrder;
+//			}
+//		}
+//		return customerOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
+//		
+//	}
 
-	public CustomerOrder removeFromBasket(long customerId, Stock stock) {
-			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
-				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
-					if (customerOrderLine.getQuantity() > 1) {
-						customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
-					} else {
-						customerOrder.removeFromCustomerOrderLine(customerOrderLine);
-					}
-				}
-			}
-		}
+//	public CustomerOrder removeFromBasket(long customerId, Stock stock) {
+//			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
+//				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+//					if (customerOrderLine.getQuantity() > 1) {
+//						customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
+//					} else {
+//						customerOrder.removeFromCustomerOrderLine(customerOrderLine);
+//					}
+//				}
+//			}
+//		}
+	
 	}
 
