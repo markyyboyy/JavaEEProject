@@ -39,6 +39,13 @@ public class CustomerOrder {
 	@JoinColumn(name = "customerOrderLines", nullable = false, unique = false)
 	private List<CustomerOrderLine> customerOrderLines = new ArrayList<>();
 
+	//ADD Total Price - derived from order lines
+	
+	@OneToOne
+	@NotNull
+	@JoinColumn(name="totalPrice", nullable=false)
+	private CustomerOrderLine totalPrice;
+	
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
 	};
@@ -55,7 +62,7 @@ public class CustomerOrder {
 	
 
 	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
-	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
+	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId, CustomerOrderLine totalPrice) {
 		super();
 		this.customerOrderId = customerOrderId;
 		this.feedbackId = feedbackId;
@@ -63,6 +70,9 @@ public class CustomerOrder {
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
+		this.totalPrice = totalPrice;
+		
+		
 
 	}
 	
@@ -139,6 +149,16 @@ public class CustomerOrder {
 	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
 	}
+
+	public CustomerOrderLine getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(CustomerOrderLine totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+
 
 	@Override
 	public String toString() {

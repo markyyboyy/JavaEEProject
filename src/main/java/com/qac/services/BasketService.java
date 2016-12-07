@@ -3,6 +3,7 @@ package com.qac.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 //import com.qac.row5project.entities;
@@ -20,16 +21,13 @@ import com.qac.row5project.managers.StockManager;
  * @author Iman Hassan
  *
  */
-
+@Stateless
 public class BasketService {
 
 	@Inject
 	private CustomerOrderManager customerOrderManager;
-	@Inject
 	private ProductManager productManager;
-	@Inject
 	private ProductService productService;
-	@Inject
 	private StockManager stockManager;
 
 	/**

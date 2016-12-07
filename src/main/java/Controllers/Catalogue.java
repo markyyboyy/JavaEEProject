@@ -27,7 +27,22 @@ public class Catalogue implements Serializable {
 	private PaginationHelper pagenationHelper;
 
 	private DataModel<Product> products = null;
+	
+	private String sortBy;
+	
+	private String name;
+	
 
+	public String getName(){
+		return this.name;
+	}
+	
+	
+	public void setName(String sName){
+		this.name = sName;
+	}
+	
+	
 	private void recreateModel() {
 		products = null;
 	}
@@ -38,11 +53,31 @@ public class Catalogue implements Serializable {
 		return (DataModel<Product>) getPagination().createPageDataModel();
 
 	}
+	
+	public void search(){
+		
+	}
+	
+	public void filer(){
+		
+		productService.readProductByName(name);
+		
+	}
+	
+	
+	public String view(){
+		
+		//return "catalogue/proudct.xhtml/faces-redirect=true&product=" + product;
+		return "";
+		
+	}
+	
+	
 
 	public PaginationHelper getPagination() {
 		if (pagenationHelper == null) {
 
-			pagenationHelper = new PaginationHelper(9) {
+			pagenationHelper = new PaginationHelper(4) {
 
 				@Override
 				public int getItemsCount() {

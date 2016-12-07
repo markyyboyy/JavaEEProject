@@ -71,10 +71,12 @@ public class TestData {
 		Calendar c= Calendar.getInstance();
 		c.set(1990, 11, 05);
 		
-		customers.add(new Customer("Allen", "Richard", "Fall", c, new LoginDetails("test@test.com", "password")));
-		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
+		
+		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
+		
+		
 	}
 
 	public List<Product> getProducts() {
