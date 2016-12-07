@@ -44,7 +44,7 @@ public class CustomerOrder {
 	@OneToOne
 	@NotNull
 	@JoinColumn(name="totalPrice", nullable=false)
-	private CustomerOrderLine totalPrice;
+	private float totalPrice;
 	
 	private enum status {
 		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
@@ -62,7 +62,7 @@ public class CustomerOrder {
 	
 
 	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
-	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId, CustomerOrderLine totalPrice) {
+	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
 		super();
 		this.customerOrderId = customerOrderId;
 		this.feedbackId = feedbackId;
@@ -70,11 +70,11 @@ public class CustomerOrder {
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
-		this.totalPrice = totalPrice;
 		
 		
 
 	}
+	
 	
 	//GETTERS AND SETTERS
 	public void addToCustomerOrderLine(CustomerOrderLine cL){
@@ -149,15 +149,6 @@ public class CustomerOrder {
 	public void setPaymentId(int paymentId) {
 		this.paymentId = paymentId;
 	}
-
-	public CustomerOrderLine getTotalPrice() {
-		return totalPrice;
-	}
-
-	public void setTotalPrice(CustomerOrderLine totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
 
 
 	@Override

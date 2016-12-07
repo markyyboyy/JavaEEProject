@@ -55,7 +55,7 @@ public class CustomerOrderLine {
 	 * @param customerOrder
 	 * @param stock
 	 */
-	public CustomerOrderLine(long id, int quantity, Stock stock, float totalPrice) {
+	public CustomerOrderLine(long id, int quantity, Stock stock) {
 		this.id = id;
 		this.quantity = quantity;
 		this.stock = stock;
@@ -91,9 +91,8 @@ public class CustomerOrderLine {
 		this.quantity = quantity;
 	}
 
-	public void setTotalPrice(float totalPrice) {
-		
-		this.totalPrice = totalPrice;
+	public void updateTotalPrice() {
+		totalPrice = stock.getPrice() * stock.getQuantity();
 	}
 	
 

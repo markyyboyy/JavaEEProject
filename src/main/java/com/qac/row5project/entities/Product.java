@@ -24,9 +24,6 @@ public class Product implements Serializable{
 	private String supplier;
 	private static final long serialVersionUID = 7526472295622776147L;
 
-	private enum status {
-		COMINGSOON, ACTIVE, DISCONTINUED
-	}
 
 	//NO ARGS CONSTRUCTOR FOR A PRODUCT
 	public Product() {
