@@ -5,15 +5,23 @@
  */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
+
 import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+import javax.inject.Inject;
 
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.RatingManager;
 import com.qac.row5project.helpers.*;
 
+@Stateless
+@Default
 public class RatingManagerOffline implements RatingManager {
 
-	TestData testData;
+	@Inject
+	private TestData testData;
 	//CREATE: CUSTOMER
 	public void createRating(Rating rating){
 		List<Rating> ratingList = testData.getRatings();
@@ -51,6 +59,7 @@ public class RatingManagerOffline implements RatingManager {
 	public List<Rating> findRatingsbyProductID(int productID){
 		List<Rating> tRatingList = new ArrayList<Rating>();
 		List<Rating> ratingList = testData.getRatings();
+		
 		for(Rating r:ratingList)
 		{
 			if(r.getProductID()== productID)

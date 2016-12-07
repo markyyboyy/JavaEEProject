@@ -2,12 +2,18 @@ package com.qac.row5project.managers;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
+
 import com.qac.row5project.entities.Rating;
 /***
  * 
  * @author Ynyr Williams
  *
  */
+
+@Stateless
+@Alternative
 public interface RatingManager {
 	//CREATE: CUSTOMER
 	public void createRating(Rating rating);

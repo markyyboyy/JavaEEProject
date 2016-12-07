@@ -4,6 +4,7 @@
  *
  */
 package com.qac.services;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,26 +19,34 @@ public class SearchService {
 	private ProductManager productRepository;
 	@Inject
 	private ProductService productService;
+
 	private List<Product> searchByProductName(String name) {
-	return productRepository.readProductByName(name);
+		return productRepository.readProductByName(name);
 	}
+
 	private List<Product> searchByProductDescription(String description) {
-	return productRepository.readProductByDescription(description);
+		return productRepository.readProductByDescription(description);
 	}
+
 	public List<ProductItem> searchBy(String term) {
+		
 		List<Product> results = new ArrayList<>();
-		if(term.matches("[0-9]")) {
-		Product result = productService.readProductByName(term);
-		if(result != null) results.add(result);
+		
+		if (term.matches("[0-9]")) {
+			Product result = productService.readProductByName(term);
+			if (result != null)
+				results.add(result);
 		}
 		results.addAll(searchByProductName(term));
 		results.addAll(searchByProductDescription(term));
-		if(results.isEmpty()) return null;
+		if (results.isEmpty())
+			return null;
 		List<ProductItem> productItems = new ArrayList<>();
-		results.forEach(product->{
-		productItems.add(productService.getProductItem(product, product.getProductId()));
+		
+		results.forEach(product -> {
+			productItems.add(productService.getProductItem(product, product.getProductId()));
 		});
 		return productItems;
-		}
-
 	}
+
+}

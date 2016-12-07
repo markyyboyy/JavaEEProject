@@ -85,7 +85,7 @@
 
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton action="#{Catalogue.filer()}" value="Search" ></h:commandButton>
+						<h:commandButton action="#{Catalogue.filter()}" value="Search" ></h:commandButton>
 <!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
@@ -99,12 +99,10 @@
 
 						<div class="col-md-2 col-xs-12 fr sortBy">
 
-							<h:selectOneMenu ID="Rating">
-								<f:selectItem itemValue="sortByRatingA" itemLabel="Rating (asc)" />
-								<f:selectItem itemValue="sortByRatingD"
-									itemLabel="Rating (desc)" />
-								<f:selectItem itemValue="sortByPriceA" itemLabel="Price (asc)" />
-								<f:selectItem itemValue="sortByPriceD" itemLabel="Price (desc)" />
+							<h:selectOneMenu ID="Rating" value="#{Catalogue.selectıtem}">
+		                    	<f:selectItems id="sortyBy" value="#{Catalogue.selectıtem}"/>
+		   						 <f:ajax listener="#{Catalogue.sort()}" onevent="#{Catalogue.sort()}"/>
+		
 							</h:selectOneMenu>
 
 						</div>
@@ -152,12 +150,12 @@
 									<div id="imgProduct" class="onHover">
 
 										<div class="star">
-											<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+											<h:commandLink action="#{basket.addToBasket(prod.id)}"
 												styleClass="glyphicon glyphicon-star"></h:commandLink>
 
 										</div>
 										<div class="basket">
-											<h:commandLink action="#{basket.addToBasket(prod.productId)}"
+											<h:commandLink action="#{basket.addToBasket(prod.id)}"
 												styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 										</div>
 
@@ -175,15 +173,15 @@
 										<h2>#{prod.name}</h2>
 
 										<div>
-											<span>#{prod.desc}</span>
+											<span>#{prod.description}</span>
 										</div>
-
+						
 										<div>
-
-											<span class="glyphicon glyphicon-star"></span> <span
-												class="glyphicon glyphicon-star"></span> <span
-												class="glyphicon glyphicon-star"></span>
-
+										
+											<ui:repeat var="rating" value="#{prod.rating}">
+												<span class="glyphicon glyphicon-star"></span>
+											</ui:repeat>
+																			
 										</div>
 
 
