@@ -26,5 +26,8 @@ public class CustomerOrderImsService {
 	{
 		return customerOrderManager.readCustomerOrderByDatePlaced(date);
 	}
-	
+	public List<CustomerOrder> readCustomerOrders()
+	{
+		return customerOrderManager.readCustomerOrders();
+	}	
 }
