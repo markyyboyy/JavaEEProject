@@ -44,12 +44,12 @@ public class Catalogue implements Serializable {
 	
 	private double iAverage;
 
-	public ArrayList<SelectItem> getSelectıtem() {
+	public ArrayList<SelectItem> getSelectItem() {
 		return selectItem;
 	}
 
-	public void setSelectıtem(ArrayList<SelectItem> selectıtem) {
-		this.selectItem = selectıtem;
+	public void setSelectıtem(ArrayList<SelectItem> selectItem) {
+		this.selectItem = selectItem;
 	}
 
 	public double getiAverage() {
