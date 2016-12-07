@@ -204,7 +204,10 @@ public class Register {
 		int month = Integer.parseInt(sMonth);
 		int date = Integer.parseInt(sDate);
 				
-		this.DOB.set(year, month, date);
+		Calendar tempDate = Calendar.getInstance();
+		tempDate.set(year, month, date);
+		
+		this.DOB = tempDate;
 	}
 
 	public String getsAnswer() {
