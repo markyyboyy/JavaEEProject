@@ -54,32 +54,7 @@ public class TestData {
 		stockItems = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
-		
-		
-		Calendar c= Calendar.getInstance();
-		c.set(1990, 11, 05);
-		CustomerOrder custOrder = new CustomerOrder(1,1,c,1,1);
-		customerOrders.add(custOrder);
-		customerOrders.add(custOrder);
-		customerOrders.add(custOrder);
 
-		
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-
-		
-		
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 2, "Garden", "Active", "Brian"));
-
-		
-		
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 3, "Garden", "Active", "Brian"));
-
-		
-		Product product = new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 4, "Garden", "Active", "Brian");
-		products.add(product);
-		Rating r = new Rating(3, product.getProductId(), product.getProductId());
-		ratings.add(r);
 
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
@@ -94,6 +69,8 @@ public class TestData {
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		
+		Calendar c = Calendar.getInstance();
+		c.set(1, 1, 1990);
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		
 		stocks.add(new Stock(20, false, 100, false, 13, 200));

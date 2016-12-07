@@ -40,12 +40,7 @@ public class CustomerOrderController implements Serializable {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
-	public String dateToString(){
 
-	}
-		
-		
 		
 		
 
