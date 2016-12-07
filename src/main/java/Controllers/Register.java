@@ -25,15 +25,49 @@ public class Register {
 	private String sSurname = "";
 	private String sFirstname = "";
 	private String sFacebook = "";
-	private String sSecretAnswer = "";
+	private String sAnswer = "";
 	private String sTelMain = "";
 	private Calendar dtDOB;
 	private Double dBalance;
+	private String sHName = "";
+	private String sStreet = "";
+	private String sTown = "";
+	private String sPost = "";
+	private String password = "";
+	private String email = "";
+	private String sQuestion= "";
+
+
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	private LoginDetails loginDetails;
 	private List<Address> address;
 	private SecurityQuestion question;
 
+	public void addAddress(){
+		Address temp = new Address(this.sHName, this.sStreet, " ", " ", this.sTown,
+			this.sPost, "UK");
+		this.address.add(temp);
+		System.out.println("Address Added");
+	}
+	
 	public CustomerManager getCustomerManager() {
 		return customerManager;
 	}
@@ -66,13 +100,6 @@ public class Register {
 		this.sFacebook = sFacebook;
 	}
 
-	public String getsSecretAnswer() {
-		return sSecretAnswer;
-	}
-
-	public void setsSecretAnswer(String sSecretAnswer) {
-		this.sSecretAnswer = sSecretAnswer;
-	}
 
 	public String getsTelMain() {
 		return sTelMain;
@@ -122,13 +149,66 @@ public class Register {
 		this.question = question;
 	}
 
+	public String getsHName() {
+		return sHName;
+	}
+
+	public void setsHName(String sHName) {
+		this.sHName = sHName;
+	}
+
+	public String getsStreet() {
+		return sStreet;
+	}
+
+	public void setsStreet(String sStreet) {
+		this.sStreet = sStreet;
+	}
+
+	public String getsTown() {
+		return sTown;
+	}
+
+	public void setsTown(String sTown) {
+		this.sTown = sTown;
+	}
+
+	public String getsPost() {
+		return sPost;
+	}
+
+	public void setsPost(String sPost) {
+		this.sPost = sPost;
+	}
+
 	public String register() {
 		Customer c = new Customer();
 		c.setFirstname(this.sFirstname);
 		c.setSurname(this.sSurname);
 		c.setDateOfBirth(this.dtDOB);
+		addAddress();
+		c.setAddress(this.address);
+		c.getLoginDetails(loginDetails = new LoginDetails(this.email, this.password));
+		c.setSecretAnswer(this.sAnswer);
+		c.setQuestion(this.sQuestion);
 		
-		return null;
+		return "home";
 
+	}
+
+	public String getsAnswer() {
+		return sAnswer;
+	}
+
+	public void setsAnswer(String sAnswer) {
+		this.sAnswer = sAnswer;
+	}
+
+	public String getsQuestion() {
+		return sQuestion;
+	}
+
+	public void setsQuestion(String sQuestion) {
+		this.sQuestion = sQuestion;
 	}
 }
