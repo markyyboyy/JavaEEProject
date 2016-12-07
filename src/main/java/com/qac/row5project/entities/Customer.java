@@ -62,7 +62,7 @@ public class Customer {
 	@OneToMany
 	@JoinColumn(name="address_id", nullable=false)
 	@NotNull
-	private List<Address> address;
+	private List<Address> address = new ArrayList<>();
 	
 	@OneToOne
 	@JoinColumn(name="customer_id", nullable = false)

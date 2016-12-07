@@ -179,21 +179,19 @@ public class Register {
 	}
 
 	public String register() {
-/*		Customer c = new Customer();
+		Customer c = new Customer();
 		c.setFirstname(this.sFirstname);
 		c.setSurname(this.sSurname);
-		c.setDateOfBirth(this.dtDOB);
 		addAddress();
 		c.setAddress(this.address);
 		c.getLoginDetails(new LoginDetails(this.email, this.password));
 		c.setSecretAnswer(this.sAnswer);
 		c.setQuestion(this.sQuestion);
-		System.out.println("Registered");*/
-		
-		//System.out.println(this.dtDOB);
+		System.out.println("Registered");
 		dateOfBirth(dtDOB);
+		customerManager.createCustomer(c);	
+		
 		return "home";
-
 	}
 	
 	public void dateOfBirth(String dtDOB){
