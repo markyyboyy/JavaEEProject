@@ -1,0 +1,65 @@
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<!-- Mark Freeman -->
+<ui:composition template="../templates/imsTemplate.xhtml">
+
+	<ui:define name="pageName">Stock Level</ui:define>
+
+	<ui:define name="filter">
+		<h:inputText value=""  >
+			<f:passThroughAttribute name="placeholder" value="Filter Results"/>
+			<f:passThroughAttribute name="alt" value="Filter Results"/>			
+		</h:inputText>
+	</ui:define>
+	
+	<ui:define name="filterResults">
+		<h1>Generate Order</h1>
+		<h:form>
+		<h:commandButton value="Sort By Quantity" action="#{generated.sortByQuantity}" />
+		<h:commandButton value="Unsort" action="#{generated.unsort}" />
+		</h:form>
+	</ui:define>
+		
+	<ui:define name="mainContent2">
+	<div id = "productID">
+	<h3>Name Of Product</h3>
+	<ui:repeat var="product" value="#{generated.productItems}">
+	<p><h:outputText value="#{product.productId}" /></p>
+	</ui:repeat>
+</div>
+	<div id = "productName">
+	<h3>Name Of Product</h3>
+	<ui:repeat var="product" value="#{generated.productItems}">
+	<p><h:outputText value="#{product.name}" /></p>
+	</ui:repeat>
+</div>
+	<div id="quantity">
+		<h3>Quantity Remaining</h3>
+		<ui:repeat var="product" value="#{generated.productItems}">
+	<p><h:outputText value="#{product.quantity}" /></p>
+	</ui:repeat>
+	</div>
+	<div id="suggested">
+		<h3>Suggested Order</h3>
+	<ui:repeat var="quantity" value="#{generated.suggestedQuanity}">
+	<p><h:outputText value="#{quantity.intValue()}" /></p>
+	</ui:repeat>
+		<ui:repeat var="quantity" value="#{generated.suggestedQuanity}">
+	</ui:repeat>
+	</div>
+	<div id = "form">
+	<h:form>
+		<label>Enter the number you would like to keep:</label>
+		<h:inputText value="#{generated.productID}">
+			<f:passThroughAttribute name="placeholder" value="message..."/>
+		</h:inputText>
+		<h:commandButton value="Add To Order" action="#{generated.addProductItem}" />
+	</h:form>
+	</div>
+	</ui:define>
+</ui:composition>
+
+
+</html>
