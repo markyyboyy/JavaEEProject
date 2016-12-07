@@ -17,7 +17,8 @@
 <link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
 <link href="../style/main.css" type="text/css" rel="stylesheet" />
 <link href="../style/mobileMain.css" type="text/css" rel="stylesheet" />
-
+<script	src="../js/jquery-3.1.1.min.js"></script>
+		
 <!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
 </head>
 
@@ -88,7 +89,7 @@
 
 				<div class="logoffButton">
 					<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}"
-						value="Log Out" onclick="#{user.logoff()}" />
+						value="Log Out" action="#{login.logoff}" />
 				</div>
 
 			</div>

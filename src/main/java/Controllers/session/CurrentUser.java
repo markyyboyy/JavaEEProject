@@ -18,7 +18,7 @@ public class CurrentUser implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1111L;
 	private Customer customer = null;
 
 	public void setCustomer(Customer customer) {
@@ -34,9 +34,5 @@ public class CurrentUser implements Serializable{
 		return (customer ==null) ? false : true;
 	}
 	
-	public String logoff(){
-		this.customer = null;
-		System.out.println("Logged out");
-		return "login";
-	}
+	
 }

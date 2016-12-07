@@ -56,4 +56,10 @@ public class Login {
 		}
 		return "home";
 	}
+	
+	public String logoff(){
+		currentUser.setCustomer(null);
+		System.out.println("Logged out");
+		return "login";
+	}
 }
