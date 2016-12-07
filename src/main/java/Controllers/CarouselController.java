@@ -11,7 +11,6 @@ public class CarouselController  implements Serializable {
 		
 	  @PostConstruct
 	    public void init() {
-	       // cars = service.createCars(9);
 	    }
 	 
 }
