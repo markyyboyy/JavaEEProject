@@ -31,13 +31,13 @@ public class Stock {
 	@NotNull @Column(name="quantity", nullable=false)
 	private int quantity;
 	@NotNull @Column(name="price", nullable=false)
-	private double price;
+	private float price;
 	//does this need to be changed to Product instead of int
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private long productID;
 		
-	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID, double price) {
+	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID, float price) {
 		super();
 		this.stockID = stockID;
 		this.porousware = porousware;
@@ -47,7 +47,7 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, boolean refurbished, long productID, double price) {
+	public Stock(long stockID, int quantity, boolean refurbished, long productID, float price) {
 		super();
 		this.porousware=false;
 		this.stockID = stockID;
@@ -58,7 +58,7 @@ public class Stock {
 	}
 	
 
-	public Stock(long stockID, boolean porousware, int quantity, long productID, double price) {
+	public Stock(long stockID, boolean porousware, int quantity, long productID, float price) {
 		super();
 		this.refurbished = false;
 		this.porousware=porousware;
@@ -69,7 +69,7 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, long productID, double price) {
+	public Stock(long stockID, int quantity, long productID, float price) {
 		super();
 		this.porousware=false;
 		this.refurbished=false;
@@ -110,11 +110,11 @@ public class Stock {
 		this.productID = productID;
 	}
 
-	public double getPrice() {
+	public float getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
 

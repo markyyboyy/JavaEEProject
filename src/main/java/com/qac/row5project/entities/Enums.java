@@ -1,3 +1,7 @@
+/**
+ * @Author RyanB
+ */
+
 package com.qac.row5project.entities;
 
 public enum Enums {

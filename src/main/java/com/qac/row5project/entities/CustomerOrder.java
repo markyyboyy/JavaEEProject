@@ -70,7 +70,6 @@ public class CustomerOrder {
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
 		this.paymentId = paymentId;
-		this.totalPrice = totalPrice;
 		
 	}
 	public void deriveTotalPrice(){
@@ -79,6 +78,7 @@ public class CustomerOrder {
 			totalPrice += customerOrderLine.getTotalPrice(); 
 		}
 	}
+	
 	
 	//GETTERS AND SETTERS
 	public void addToCustomerOrderLine(CustomerOrderLine cL){
