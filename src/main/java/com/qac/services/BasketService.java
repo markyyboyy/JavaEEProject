@@ -39,18 +39,12 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 * @param quantity
+	 * @return 
 	 */
-	public void addToBasket(long customerId, Stock stock, int quantity) {
+	public CustomerOrder addToBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
 		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
-
-			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
-				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
-					customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
-					return;
-				}
-			}
-			customerOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
+		return customerOrderManager.addToBasket(customerId, stock, quantity);
 		}
 	}
 
@@ -60,7 +54,7 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 */
-	public void removeFromBasket(long customerId, Stock stock) {
+	public CustomerOrder removeFromBasket(long customerId, Stock stock) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
 		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
 
@@ -74,6 +68,7 @@ public class BasketService {
 				}
 			}
 		}
+		return customerOrder;
 	}
 
 	/**
@@ -81,7 +76,7 @@ public class BasketService {
 	 * @param id
 	 * @return total price in basket
 	 */
-	public float totalBasketPrice(long id) {
+	public float getTotalBasketPrice(long id) {
 		CustomerOrder cOrder = getBasket(id);
 		return cOrder.getTotalPrice();
 

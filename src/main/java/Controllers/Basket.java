@@ -31,7 +31,7 @@ public class Basket {
 	@Inject
 	private CurrentUser currentUser;
 	
-	private CustomerOrder basket;
+	private CustomerOrder cOrder;
 	
 	/**
 	 * Adding product item to basket if customer is logged in
@@ -50,8 +50,8 @@ public class Basket {
 	 */
 	public String removeItem(long id) {
 		
-		if (basket == null)
-			basket = basketService.getBasket(currentUser.getCustomer().getID());
+		if (cOrder == null)
+			cOrder = basketService.getBasket(currentUser.getCustomer().getID());
 		return "basket";
 		
 	}
@@ -61,11 +61,15 @@ public class Basket {
 	 * @return
 	 */
 	public CustomerOrder getBasket() {
-		if (basket == null)
-			basket = basketService.getBasket(currentUser.getCustomer().getID());
-		return basket;
+		if (cOrder == null)
+			cOrder = basketService.getBasket(currentUser.getCustomer().getID());
+		return cOrder;
 	}
 	
 
+	public float getTotalBasketPrice() {
+		return cOrder.getTotalPrice();
+		
+	}
 
 }
