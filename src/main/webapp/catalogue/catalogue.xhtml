@@ -79,37 +79,26 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton type="submit" onclick="#{search.search()}"
-							value="Seach" />
+						<h:commandButton type="submit" action="#{search.search()}"	value="Seach" />
 						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
 				</div>
-
-
-
-
 				<div class="row marginBottom">
 					<div class="col-md-12">
 
 						<div class="col-md-2 col-xs-12 fr sortBy">
 
-							<h:selectOneMenu ID="Rating" value="#{Catalogue.selectItem}">
-								<f:selectItems id="sortyBy" value="#{Catalogue.selectItem}" />
-								<f:ajax listener="#{Catalogue.sort()}"
-									onevent="#{Catalogue.sort()}" />
-
-							</h:selectOneMenu>
-
+							
 						</div>
 
 					</div>
 				</div>
 
-
+				</h:form>
+				<h:form>
 
 
 				<div class="row marginBottom">
@@ -147,23 +136,22 @@
 
 								<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
 
-
 								<div id="imgProduct" class="onHover">
 
 									<div class="star">
-										<h:commandLink action="#{basket.addToBasket(prod.id)}"
-											styleClass="glyphicon glyphicon-star"></h:commandLink>
+										<c:if test="#{user.loggedIn}">
+											<h:commandLink action="#{basket.addToBasket(prod.id)}"
+												styleClass="glyphicon glyphicon-star"></h:commandLink>
+										</c:if>
 
 									</div>
+
 									<div class="basket">
 										<h:commandLink action="#{basket.addToBasket(prod.id)}"
 											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 									</div>
 
-
 								</div>
-
-
 							</div>
 
 

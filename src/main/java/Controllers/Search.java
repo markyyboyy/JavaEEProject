@@ -27,11 +27,11 @@ public class Search {
 	private Catalogue searchResults;
 	
 	
-	private String term;
+	private String term = "";
 
 	public String search() {
 		List<ProductItem> results = searchService.searchBy(term);
-
+		System.out.println("Searched for term " + term);
 		if (results != null)
 			if (results.size() == 1) {
 				selectedProduct.setProduct(results.get(0));

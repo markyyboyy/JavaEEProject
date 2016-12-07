@@ -33,6 +33,10 @@ public class Catalogue implements Serializable {
 	@Inject
 	private SearchService searchService;
 	
+	
+	@Inject
+	private Search conSearch;
+	
 	private PaginationHelper pagenationHelper;
 
 	private DataModel<ProductItem> products = null;
@@ -75,7 +79,8 @@ public class Catalogue implements Serializable {
 	@SuppressWarnings("unchecked")
 	public DataModel<ProductItem> getProducts() {
 
-		setResults(searchService.searchBy(""));
+
+		setResults(searchService.searchBy(conSearch.getTerm()));
 		
 		return (ListDataModel<ProductItem>) getPagination().createPageDataModel();
 
