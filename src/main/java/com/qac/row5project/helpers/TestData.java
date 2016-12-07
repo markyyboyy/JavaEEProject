@@ -58,14 +58,14 @@ public class TestData {
 		c.set(1990, 11, 05);
 		CustomerOrder custOrder = new CustomerOrder(1,1,c,1,1);
 		customerOrders.add(custOrder);
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 2, "Garden", "Active", "Brian"));
 
 		
 		
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
+		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 3, "Garden", "Active", "Brian"));
 
 		
-		Product product = new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian");
+		Product product = new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 4, "Garden", "Active", "Brian");
 		products.add(product);
 		Rating r = new Rating(3, product.getProductId(), product.getProductId());
 		ratings.add(r);

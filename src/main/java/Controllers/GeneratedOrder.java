@@ -1,10 +1,13 @@
 package Controllers;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import com.qac.row5project.entities.Stock;
 import com.qac.services.Generate;
 
@@ -67,4 +70,5 @@ public class GeneratedOrder {
 		productItems = generateService.getProducts();
 		return productItems;
 	}
+
 }
