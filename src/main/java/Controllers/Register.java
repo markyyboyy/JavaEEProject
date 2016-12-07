@@ -29,11 +29,25 @@ public class Register {
 	private String sTelMain = "";
 	private Calendar dtDOB;
 	private Double dBalance;
+	private String sHName = "";
+	private String sStreet = "";
+	private String sTown = "";
+	private String sPost = "";
+
+	
+	
 
 	private LoginDetails loginDetails;
 	private List<Address> address;
 	private SecurityQuestion question;
 
+	public void addAddress(){
+		Address temp = new Address(this.sHName, this.sStreet, " ", " ", this.sTown,
+			this.sPost, "UK");
+		this.address.add(temp);
+		System.out.println("Address Added");
+	}
+	
 	public CustomerManager getCustomerManager() {
 		return customerManager;
 	}
@@ -122,11 +136,44 @@ public class Register {
 		this.question = question;
 	}
 
+	public String getsHName() {
+		return sHName;
+	}
+
+	public void setsHName(String sHName) {
+		this.sHName = sHName;
+	}
+
+	public String getsStreet() {
+		return sStreet;
+	}
+
+	public void setsStreet(String sStreet) {
+		this.sStreet = sStreet;
+	}
+
+	public String getsTown() {
+		return sTown;
+	}
+
+	public void setsTown(String sTown) {
+		this.sTown = sTown;
+	}
+
+	public String getsPost() {
+		return sPost;
+	}
+
+	public void setsPost(String sPost) {
+		this.sPost = sPost;
+	}
+
 	public String register() {
 		Customer c = new Customer();
 		c.setFirstname(this.sFirstname);
 		c.setSurname(this.sSurname);
 		c.setDateOfBirth(this.dtDOB);
+		c.setAddress(this.address);
 		
 		return null;
 

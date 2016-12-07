@@ -151,6 +151,14 @@ public class Customer {
 	public void setDateOfBirth(Calendar dtDOB) {
 		this.dtDOB = dtDOB;
 	}
+	
+	public void setAddress(List<Address> address){
+		this.address = address;
+	}
+	
+	public Address setAddress(){
+		return this.address;
+	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
