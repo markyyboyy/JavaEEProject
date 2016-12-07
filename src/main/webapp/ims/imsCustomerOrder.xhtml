@@ -91,19 +91,19 @@
 						<div class="table-scroll">
 							<table border="1" style="width: 100%">
 								<h:form>
-									<h:dataTable value="#{customerOrder.customerOrders}"
-										var="customer" border="2" cellspacing="1" cellpadding="1">
+									<h:dataTable value="#{customerOrderrrr.customerOrders}"
+										var="cus" border="2" cellspacing="1" cellpadding="1">
 										<h:column>
 											<c:facet name="header">Customer Order ID</c:facet>
-							                    #{customer.customerOrderId}
+							                    #{cus.customerId}
 							                </h:column>
 										<h:column>
 											<c:facet name="header">Price</c:facet>
-							                    #{customer.totalPrice}
+							                    #{cus.totalPrice}
 							                </h:column>
 										<h:column>
 											<c:facet name="header">Date</c:facet>
-							                    #{customer.datePlaced}
+							                    #{cus.datePlaced)}
 							                </h:column>
 									</h:dataTable>
 								</h:form>

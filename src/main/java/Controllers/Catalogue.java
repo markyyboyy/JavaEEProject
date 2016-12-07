@@ -42,27 +42,16 @@ public class Catalogue implements Serializable {
 	private DataModel<ProductItem> products = null;
 	private List<ProductItem> productsResults = null;
 
-	private ArrayList<SelectItem> selectItem = new ArrayList<SelectItem>();
 
 	private String name;
 	
 	
 	private double iAverage;
 
-	public ArrayList<SelectItem> getSelectItem() {
-		return selectItem;
-	}
 
-	public void setSelectItem(ArrayList<SelectItem> selectItem) {
-		this.selectItem = selectItem;
-	}
 
-	public Catalogue() {
-		selectItem.add(new SelectItem("Price ASC"));
-		selectItem.add(new SelectItem("Price DECS"));
-		selectItem.add(new SelectItem("Rating ASC"));
-		selectItem.add(new SelectItem("Rating DECS"));
-	}
+	public Catalogue() {}
+
 
 	public String getName() {
 		return this.name;
@@ -101,7 +90,6 @@ public class Catalogue implements Serializable {
 
 	public void sort() {
 
-		selectItem = selectItem;
 
 		switch ("") {
 		case "sortByPriceA":
