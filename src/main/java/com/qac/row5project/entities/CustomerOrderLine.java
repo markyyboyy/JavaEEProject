@@ -51,8 +51,6 @@ public class CustomerOrderLine {
 	 * Constructor for each variable
 	 * @param id
 	 * @param quantity
-	 * @param totalPrice
-	 * @param customerOrder
 	 * @param stock
 	 */
 	public CustomerOrderLine(long id, int quantity, Stock stock) {
@@ -74,12 +72,14 @@ public class CustomerOrderLine {
 		return quantity;
 	}
 
+	/**
+	 * checks the total price before being called
+	 */
 	public float getTotalPrice() {
 		updateTotalPrice();
 		return totalPrice;
 	}
 	
-
 	public Stock getStock() {
 		return stock;
 	}

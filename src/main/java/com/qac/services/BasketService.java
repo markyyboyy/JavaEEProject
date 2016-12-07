@@ -1,7 +1,5 @@
 package com.qac.services;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -9,16 +7,13 @@ import javax.inject.Inject;
 //import com.qac.row5project.entities;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 //import com.qac.row5project.managers;
 import com.qac.row5project.managers.CustomerOrderManager;
-import com.qac.row5project.managers.ProductManager;
-import com.qac.row5project.managers.StockManager;
 
 /**
  * 
- * @author Iman Hassan
+ * @author Iman Hassan & Ynyr Williams
  *
  */
 @Stateless
@@ -26,9 +21,7 @@ public class BasketService {
 
 	@Inject
 	private CustomerOrderManager customerOrderManager;
-	private ProductManager productManager;
-	private ProductService productService;
-	private StockManager stockManager;
+
 
 	/**
 	 * To get basket for the customer order
@@ -45,6 +38,7 @@ public class BasketService {
 	 * 
 	 * @param customerId
 	 * @param stock
+	 * @param quantity
 	 */
 	public void addToBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
@@ -56,8 +50,7 @@ public class BasketService {
 					return;
 				}
 			}
-			// stockId or Product ID
-			customerOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId,quantity,stock));
+			customerOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
 		}
 	}
 
@@ -65,7 +58,7 @@ public class BasketService {
 	 * removing an item from customer's basket
 	 * 
 	 * @param customerId
-	 * @param stockID
+	 * @param stock
 	 */
 	public void removeFromBasket(long customerId, Stock stock) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
@@ -85,10 +78,12 @@ public class BasketService {
 
 	/**
 	 * Getting the total price of the basket
+	 * @param id
+	 * @return total price in basket
 	 */
 	public float totalBasketPrice(long id) {
 		CustomerOrder cOrder = getBasket(id);
 		return cOrder.getTotalPrice();
-		
+
 	}
 }
