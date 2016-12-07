@@ -54,21 +54,12 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 */
-	public CustomerOrder removeFromBasket(long customerId, Stock stock) {
-		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
-		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
-
-			for (CustomerOrderLine customerOrderLine : customerOrder.getCustomerOrderLines()) {
-				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
-					if (customerOrderLine.getQuantity() > 1) {
-						customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
-					} else {
-						customerOrder.removeFromCustomerOrderLine(customerOrderLine);
-					}
-				}
-			}
+	public void removeFromBasket(long customerId, Stock stock, int quantity) 
+	{
+		if (!customerOrderManager.readCustomerOrderById(customerId).getCustomerOrderLines().isEmpty()) {
+			customerOrderManager.removeFromBasket(customerId, stock, quantity);
 		}
-		return customerOrder;
+		
 	}
 
 	/**

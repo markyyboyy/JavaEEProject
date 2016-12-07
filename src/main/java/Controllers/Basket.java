@@ -37,9 +37,9 @@ public class Basket {
 	 * Adding product item to basket if customer is logged in
 	 * @param id
 	 */
-	public void addToBasket(Stock id) {
+	public void addToBasket(Stock id, int quantity) {
 		if (currentUser.isLoggedIn()) 
-			basketService.addToBasket(currentUser.getCustomer().getID(), id, 0);	
+			basketService.addToBasket(currentUser.getCustomer().getID(), id, quantity);	
 	}
 	
 	/**

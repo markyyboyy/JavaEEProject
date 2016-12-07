@@ -83,13 +83,17 @@
 			</div>
 
 			<div class="loginButton">
-				<h:button styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
-					outcome="login.xhtml" value="Login/Register" />
+			<h:form>
+				<h:commandButton styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
+					action="login.xhtml" value="Login/Register" />
+					</h:form>
 			</div>
 
 			<div class="logoffButton">
-				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}"
-					outcome="#{login.logoff()}" value="Log Out"  />
+				<h:form>
+				<h:commandButton styleClass="btn btn-primary" rendered="#{user.loggedIn}"
+					action="#{login.logoff()}" value="Log Out"  />
+					</h:form>
 			</div>
 
 

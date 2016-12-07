@@ -23,5 +23,5 @@ public interface CustomerOrderManager {
 	
 	//Basket - CUSTOMER
 	public void addToBasket(long customerId, Stock stock, int quantity);
-	public void removeFromBasket(long customerId, Stock stock);
+	public void removeFromBasket(long customerId, Stock stock, int quantity);
 }
