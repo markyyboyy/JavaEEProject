@@ -27,7 +27,8 @@ public class Register {
 	private String sFacebook = "";
 	private String sAnswer = "";
 	private String sTelMain = "";
-	private Calendar dtDOB;
+	private String dtDOB;
+	private Calendar DOB;
 	private Double dBalance;
 	private String sHName = "";
 	private String sStreet = "";
@@ -36,10 +37,9 @@ public class Register {
 	private String password = "";
 	private String email = "";
 	private String sQuestion= "";
-
-
-	
-	
+	private LoginDetails loginDetails;
+	private List<Address> address;
+	private SecurityQuestion question;
 
 	public String getPassword() {
 		return password;
@@ -57,9 +57,6 @@ public class Register {
 		this.email = email;
 	}
 
-	private LoginDetails loginDetails;
-	private List<Address> address;
-	private SecurityQuestion question;
 
 	public void addAddress(){
 		Address temp = new Address(this.sHName, this.sStreet, " ", " ", this.sTown,
@@ -109,11 +106,11 @@ public class Register {
 		this.sTelMain = sTelMain;
 	}
 
-	public Calendar getDtDOB() {
+	public String getDtDOB() {
 		return dtDOB;
 	}
 
-	public void setDtDOB(Calendar dtDOB) {
+	public void setDtDOB(String dtDOB) {
 		this.dtDOB = dtDOB;
 	}
 
@@ -182,18 +179,34 @@ public class Register {
 	}
 
 	public String register() {
-		Customer c = new Customer();
+/*		Customer c = new Customer();
 		c.setFirstname(this.sFirstname);
 		c.setSurname(this.sSurname);
 		c.setDateOfBirth(this.dtDOB);
 		addAddress();
 		c.setAddress(this.address);
-		c.getLoginDetails(loginDetails = new LoginDetails(this.email, this.password));
+		c.getLoginDetails(new LoginDetails(this.email, this.password));
 		c.setSecretAnswer(this.sAnswer);
 		c.setQuestion(this.sQuestion);
+		System.out.println("Registered");*/
 		
+		//System.out.println(this.dtDOB);
+		dateOfBirth(dtDOB);
 		return "home";
 
+	}
+	
+	public void dateOfBirth(String dtDOB){
+		
+		String sYear = dtDOB.substring(0,4);
+		String sMonth = dtDOB.substring(5,7);
+		String sDate = dtDOB.substring(8);	
+		
+		int year = Integer.parseInt(sYear);
+		int month = Integer.parseInt(sMonth);
+		int date = Integer.parseInt(sDate);
+				
+		this.DOB.set(year, month, date);
 	}
 
 	public String getsAnswer() {
