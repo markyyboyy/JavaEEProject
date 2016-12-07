@@ -41,10 +41,10 @@ public class BasketService {
 	 * @param quantity
 	 * @return 
 	 */
-	public CustomerOrder addToBasket(long customerId, Stock stock, int quantity) {
-		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
-		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
-		return customerOrderManager.addToBasket(customerId, stock, quantity);
+	public void addToBasket(long customerId, Stock stock, int quantity)
+	{
+		if (!customerOrderManager.readCustomerOrderById(customerId).getCustomerOrderLines().isEmpty()) {
+			customerOrderManager.addToBasket(customerId, stock, quantity);
 		}
 	}
 

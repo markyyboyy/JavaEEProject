@@ -39,8 +39,7 @@ public class Basket {
 	 */
 	public void addToBasket(Stock id) {
 		if (currentUser.isLoggedIn()) 
-			basketService.addToBasket(currentUser.getCustomer().getID(), id, 0);
-		
+			basketService.addToBasket(currentUser.getCustomer().getID(), id, 0);	
 	}
 	
 	/**
