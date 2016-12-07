@@ -2,6 +2,7 @@
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 
@@ -85,8 +86,8 @@
 
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton action="#{Catalogue.filter()}" value="Search" ></h:commandButton>
-<!-- 						<button name="btnSearch">Search</button> -->
+						<h:commandButton action="#{Catalogue.filter()}" value="Search"></h:commandButton>
+						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
 				</div>
@@ -100,9 +101,10 @@
 						<div class="col-md-2 col-xs-12 fr sortBy">
 
 							<h:selectOneMenu ID="Rating" value="#{Catalogue.selectıtem}">
-		                    	<f:selectItems id="sortyBy" value="#{Catalogue.selectıtem}"/>
-		   						 <f:ajax listener="#{Catalogue.sort()}" onevent="#{Catalogue.sort()}"/>
-		
+								<f:selectItems id="sortyBy" value="#{Catalogue.selectıtem}" />
+								<f:ajax listener="#{Catalogue.sort()}"
+									onevent="#{Catalogue.sort()}" />
+
 							</h:selectOneMenu>
 
 						</div>
@@ -175,13 +177,18 @@
 										<div>
 											<span>#{prod.description}</span>
 										</div>
-						
+
 										<div>
-										
-											<ui:repeat var="rating" value="#{prod.rating}">
+
+
+
+											<c:forEach begin="0" end="#{Catalogue.calcAverageRating()}">
 												<span class="glyphicon glyphicon-star"></span>
-											</ui:repeat>
-																			
+
+											</c:forEach>
+
+
+
 										</div>
 
 

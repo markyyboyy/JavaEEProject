@@ -15,6 +15,7 @@ import javax.inject.Named;
 
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.ProductItem;
+import com.qac.row5project.entities.Rating;
 import com.qac.row5project.helpers.*;
 import com.qac.row5project.helpers.PaginationHelper;
 import com.qac.services.ProductService;
@@ -29,45 +30,63 @@ public class Catalogue implements Serializable {
 	@Inject
 	private ProductService productService;
 
-	
 	@Inject
 	private SearchService searchService;
-	
+
 	private PaginationHelper pagenationHelper;
 
 	private DataModel<ProductItem> products = null;
-	
-	private ArrayList<SelectItem> selectıtem = new ArrayList<SelectItem>();
-	
+
+	private ArrayList<SelectItem> selectItem = new ArrayList<SelectItem>();
+
 	private String name;
 	
+	
+	private double iAverage;
+
 	public ArrayList<SelectItem> getSelectıtem() {
-	    return selectıtem;
+		return selectItem;
 	}
 
 	public void setSelectıtem(ArrayList<SelectItem> selectıtem) {
-	    this.selectıtem = selectıtem;
+		this.selectItem = selectıtem;
 	}
 
-	
-	public Catalogue(){
-		   selectıtem.add(new SelectItem("Price ASC"));
-		    selectıtem.add(new SelectItem("Price DECS"));
-		   selectıtem.add(new SelectItem("Rating ASC"));
-		    selectıtem.add(new SelectItem("Rating DECS"));
+	public double getiAverage() {
+		return iAverage;
 	}
-	
-	
-	public String getName(){
+
+	public void setiAverage(double iAverage) {
+		this.iAverage = iAverage;
+	}
+
+	public int calcAverageRating(ProductItem p){
+		
+		int dRating =0;
+		
+		for (Rating rating: p.getRating()) {			
+			dRating += rating.getScore();
+		}
+			
+		return dRating / p.getRating().size();
+		
+	}
+
+	public Catalogue() {
+		selectItem.add(new SelectItem("Price ASC"));
+		selectItem.add(new SelectItem("Price DECS"));
+		selectItem.add(new SelectItem("Rating ASC"));
+		selectItem.add(new SelectItem("Rating DECS"));
+	}
+
+	public String getName() {
 		return this.name;
 	}
-	
-	
-	public void setName(String sName){
+
+	public void setName(String sName) {
 		this.name = sName;
 	}
-	
-	
+
 	private void recreateModel() {
 		products = null;
 	}
@@ -78,75 +97,69 @@ public class Catalogue implements Serializable {
 		return (DataModel<ProductItem>) getPagination().createPageDataModel();
 
 	}
-	
-	public void search(){
-		
-		//products = searchService.searchBy(name);
-		
-	}
-	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void filter(){
-		
-		List list = new ArrayList<>();
-		list.add(productService.readProductByName(name));		
-		products = (DataModel<ProductItem>) list; 
-		
-	}
-	
-	
-	public void sort(){		
-		
-		selectıtem = selectıtem;
-				
-		switch(""){		
-			case "sortByPriceA":
-				sortByPrice(false);
-				break;
-		
-			case "sortByPriceD":
-				sortByPrice(true);
-				break;			
-			case "sortByRatingA":
-				sortByRating(false);
-				break;			
-			case "sortByRatingD":
-				sortByRating(true);
-				break;		
-		}
-		
-	}
-	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void sortByPrice(boolean asc){
-	
-		if(asc)
-			((List) products).sort(Comparator.comparing(Product::getPrice));
-		else
-			((List) products).sort(Comparator.comparing(Product::getPrice).reversed());	
-	}
-	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void sortByRating(boolean asc){
-		
-		if(asc)
-			((List) products).sort(Comparator.comparing(Product::getName));
-		else
-			((List) products).sort(Comparator.comparing(Product::getName).reversed());	
+
+	public void search() {
+
+		// products = searchService.searchBy(name);
+
 	}
 
-	
-	
-	
-	
-	public String view(){
-		
-		//return "catalogue/proudct.xhtml/faces-redirect=true&product=" + product;
-		return "";
-		
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void filter() {
+
+		List list = new ArrayList<>();
+		list.add(productService.readProductByName(name));
+		products = (DataModel<ProductItem>) list;
+
 	}
-	
-	
+
+	public void sort() {
+
+		selectItem = selectItem;
+
+		switch ("") {
+		case "sortByPriceA":
+			sortByPrice(false);
+			break;
+
+		case "sortByPriceD":
+			sortByPrice(true);
+			break;
+		case "sortByRatingA":
+			sortByRating(false);
+			break;
+		case "sortByRatingD":
+			sortByRating(true);
+			break;
+		}
+
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private void sortByPrice(boolean asc) {
+
+		if (asc)
+			((List) products).sort(Comparator.comparing(Product::getPrice));
+		else
+			((List) products).sort(Comparator.comparing(Product::getPrice).reversed());
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private void sortByRating(boolean asc) {
+
+		if (asc)
+			((List) products).sort(Comparator.comparing(Product::getName));
+		else
+			((List) products).sort(Comparator.comparing(Product::getName).reversed());
+	}
+
+	public String view() {
+
+		// return "catalogue/proudct.xhtml/faces-redirect=true&product=" +
+		// product;
+		return "";
+
+	}
 
 	public PaginationHelper getPagination() {
 		if (pagenationHelper == null) {
@@ -155,7 +168,7 @@ public class Catalogue implements Serializable {
 
 				@Override
 				public int getItemsCount() {
-					return productService.findAllProducts().size();					
+					return productService.findAllProducts().size();
 				}
 
 				@Override
