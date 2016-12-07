@@ -34,7 +34,6 @@ public class TestData {
 	private List<Stock> stockItems;
 	private List<ProductSupplier> productSuppliers;
 	private List<Supplier> suppliers;
-	private GeneratedOrder generatedOrder;
 
 	@PostConstruct
 	private void setupData() {

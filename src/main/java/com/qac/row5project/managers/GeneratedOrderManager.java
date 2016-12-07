@@ -7,11 +7,11 @@ import com.qac.row5project.entities.Stock;
 
 	public interface  GeneratedOrderManager {
 		//CREATE
-		public void createOrder(PurchaseOrder p);
+		public PurchaseOrder createOrder();
 		
-		//UPDATE - INVENTORY MANAGER
+		//UPDATE
 		public void updateProduct(PurchaseOrder p);
 		
-		//READ - CUSTOMER/INVENTORY MANAGER
+		//READ
 		public List<Stock> readOrderByQuantity();
 	}
