@@ -54,25 +54,20 @@ public class TestData {
 		stockItems = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
-<<<<<<< HEAD
+
 		Calendar c= Calendar.getInstance();
 		c.set(1990, 11, 05);
 		CustomerOrder custOrder = new CustomerOrder(1,1,c,1,1);
 		customerOrders.add(custOrder);
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-||||||| merged common ancestors
 
-		
-		
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-=======
 
 		
 		Product product = new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian");
 		products.add(product);
 		Rating r = new Rating(3, product.getProductId(), product.getProductId());
 		ratings.add(r);
->>>>>>> 6becf892731c11a84a0ad838740a97419cef7246
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
