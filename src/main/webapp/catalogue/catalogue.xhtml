@@ -42,16 +42,12 @@
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-								<h:inputText value="#{Catalogue.name}" class="form-control">
+
+								<h:inputText value="#{search.term}" class="form-control">
 
 									<f:passThroughAttribute name="type" value="text" />
 									<f:passThroughAttribute name="placeholder" value="Search..." />
 									<f:passThroughAttribute name="alt" value="Search" />
-
-									<h:commandButton action="#{search.search}" value="Seach"
-										class="btn btn-success">
-										<f:passThroughAttribute name="style" value="display: none;" />
-									</h:commandButton>
 
 								</h:inputText>
 							</div>
@@ -83,36 +79,26 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton action="#{Catalogue.filter()}" value="Search"></h:commandButton>
+						<h:commandButton type="submit" action="#{search.search()}"	value="Seach" />
 						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
 				</div>
-
-
-
-
 				<div class="row marginBottom">
 					<div class="col-md-12">
 
 						<div class="col-md-2 col-xs-12 fr sortBy">
 
-							<h:selectOneMenu ID="Rating" value="#{Catalogue.selectıtem}">
-								<f:selectItems id="sortyBy" value="#{Catalogue.selectıtem}" />
-								<f:ajax listener="#{Catalogue.sort()}"
-									onevent="#{Catalogue.sort()}" />
-
-							</h:selectOneMenu>
-
+							
 						</div>
 
 					</div>
 				</div>
 
-
+				</h:form>
+				<h:form>
 
 
 				<div class="row marginBottom">
@@ -140,64 +126,61 @@
 
 					<ui:repeat var="prod" value="#{Catalogue.products}">
 
-						<h:commandLink action="#{Catalogue.view}">
 
-							<div id="produc1t" onmouseover="showHover(this)"
-								onmouseleave="hideHover(this)"
-								class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
 
-								<div class="imgWrapper">
-									<img src="../img/ggnome1.jpg" />
+						<div id="produc1t" onmouseover="showHover(this)"
+							onmouseleave="hideHover(this)"
+							class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
 
-									<div id="imgProduct" class="onHover">
+							<div class="imgWrapper">
 
-										<div class="star">
+								<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
+
+								<div id="imgProduct" class="onHover">
+
+									<div class="star">
+										<c:if test="#{user.loggedIn}">
 											<h:commandLink action="#{basket.addToBasket(prod.id)}"
 												styleClass="glyphicon glyphicon-star"></h:commandLink>
-
-										</div>
-										<div class="basket">
-											<h:commandLink action="#{basket.addToBasket(prod.id)}"
-												styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
-										</div>
-
+										</c:if>
 
 									</div>
 
-
-								</div>
-
-
-
-								<div class="resultDesc">
-
-									<div class="">
-										<h2>#{prod.name}</h2>
-
-										<div>
-											<span>#{prod.description}</span>
-										</div>
-
-										<div>
-
-
-
-											<c:forEach begin="0" end="#{Catalogue.calcAverageRating()}">
-												<span class="glyphicon glyphicon-star"></span>
-
-											</c:forEach>
-
-
-
-										</div>
-
-
+									<div class="basket">
+										<h:commandLink action="#{basket.addToBasket(prod.id)}"
+											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 									</div>
-
 
 								</div>
 							</div>
-						</h:commandLink>
+
+
+
+							<div class="resultDesc">
+
+								<div class="">
+									<h2>#{prod.name}</h2>
+
+									<div>
+										<span>#{prod.description}</span>
+									</div>
+
+									<div>
+
+										<ui:repeat size="5">
+											<span class="glyphicon glyphicon-star"></span>
+										</ui:repeat>
+
+
+
+									</div>
+
+
+								</div>
+
+
+							</div>
+						</div>
 					</ui:repeat>
 
 

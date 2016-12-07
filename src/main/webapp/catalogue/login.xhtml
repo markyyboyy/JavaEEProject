@@ -74,7 +74,7 @@
 			<h:form id="formRegister" class="register" style="display: none">
 				<h4>Register</h4>
 				<label>Email</label>
-				<h:inputText value="#{customer.email}">
+				<h:inputText value="#{register.email}">
 					<f:passThroughAttribute name="type" value="text" />
 					<f:passThroughAttribute name="placeholder" value="email address" />
 					<f:passThroughAttribute name="alt" value="email address" />
@@ -82,38 +82,49 @@
 				</h:inputText>
 				<br></br>
 				<label>Password</label>
-				<h:inputText value="#{customer.password}">
+				<h:inputText value="#{register.password}">
 					<f:passThroughAttribute name="type" value="password" />
 					<f:passThroughAttribute name="placeholder" value="password" />
 					<f:passThroughAttribute name="alt" value="password" />
 					<f:passThroughAttribute name="required" value="required" />
 				</h:inputText>
 				<br></br>
-				<label>Name</label>
-				<h:inputText value="#{customer.password}">
+				<label>Forename</label>
+				<h:inputText value="#{register.sFirstname}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="forename" />
+					<f:passThroughAttribute name="alt" value="forename" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<label>Surname</label>
+				<h:inputText value="#{register.sSurname}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="surname" />
+					<f:passThroughAttribute name="alt" value="surname" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br />
+				<label>Date of Birth</label>
+				<h:inputText value="#{register.dtDOB}">
 					<f:passThroughAttribute name="type" value="text" />
 					<f:passThroughAttribute name="placeholder" value="name" />
 					<f:passThroughAttribute name="alt" value="name" />
 					<f:passThroughAttribute name="required" value="required" />
 				</h:inputText>
-				<br></br>
+				<br />
 				<h5>Address</h5>
-				<label> House Number </label>
-				<h:inputText value="#{customer.houseNumber}">
-					<f:passThroughAttribute name="type" value="number" />
-					<f:passThroughAttribute name="placeholder" value="house number.." />
-					<f:passThroughAttribute name="alt" value="house number" />
-				</h:inputText>
+				
 				<br></br>
-				<label> House Name</label>
-				<h:inputText value="#{customer.houseName}">
+				<label> House Name/Number</label>
+				<h:inputText value="#{register.sHName}">
 					<f:passThroughAttribute name="type" value="text" />
 					<f:passThroughAttribute name="placeholder" value="house name.." />
 					<f:passThroughAttribute name="alt" value="house name" />
 				</h:inputText>
 				<br></br>
 				<label> Street</label>
-				<h:inputText value="#{customer.street}">
+				<h:inputText value="#{register.sStreet}">
 					<f:passThroughAttribute name="type" value="text" />
 					<f:passThroughAttribute name="placeholder" value="street.." />
 					<f:passThroughAttribute name="alt" value="street" />
@@ -121,7 +132,7 @@
 				</h:inputText>
 				<br></br>
 				<label> Town</label>
-				<h:inputText value="#{customer.town}">
+				<h:inputText value="#{register.sTown}">
 					<f:passThroughAttribute name="type" value="text" />
 					<f:passThroughAttribute name="placeholder" value="town.." />
 					<f:passThroughAttribute name="alt" value="town" />
@@ -130,7 +141,7 @@
 				<br></br>
 
 				<label> Postcode</label>
-				<h:inputText value="#{customer.postcode}">
+				<h:inputText value="#{register.sPost}">
 					<f:passThroughAttribute name="type" value="text" />
 					<f:passThroughAttribute name="placeholder" value="postcode.." />
 					<f:passThroughAttribute name="alt" value="postcode" />
@@ -138,7 +149,26 @@
 				</h:inputText>
 				<br></br>
 				<br></br>
-				<h:commandButton action="#{customer.register}" value="Register"
+				<label> Secret Question</label>
+				<h:inputText value="#{register.sQuestion}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="secret question.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				<label> Secret Answer</label>
+				<h:inputText value="#{register.sAnswer}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="secret answer.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				
+				<h:commandButton action="#{register.register}" value="Register"
 					styleClass="btn btn-primary">
 					<f:passThroughAttribute name="type" value="submit" />
 				</h:commandButton>

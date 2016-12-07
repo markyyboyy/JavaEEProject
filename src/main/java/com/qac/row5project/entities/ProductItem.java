@@ -17,11 +17,20 @@ package com.qac.row5project.entities;
 		private List<String> categories;
 		private int stockLevel;
 		private double price;
-		List<Rating> ratings;
+		private List<Rating> ratings;
+		private int averageRating;
 		
 		
 		public ProductItem(){}
 		
+		public int getAverageRating() {
+			return averageRating;
+		}
+
+		public void setAverageRating(int averageRating) {
+			this.averageRating = averageRating;
+		}
+
 		public ProductItem(long id) {
 			this.id = id;
 		}
@@ -51,6 +60,7 @@ package com.qac.row5project.entities;
 			this.categories = categories;
 			this.stockLevel = stockLevel;
 			this.price = price;
+			this.averageRating = 0;
 		}
 
 		/***
