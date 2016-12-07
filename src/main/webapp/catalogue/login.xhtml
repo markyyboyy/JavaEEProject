@@ -149,6 +149,25 @@
 				</h:inputText>
 				<br></br>
 				<br></br>
+				<label> Secret Question</label>
+				<h:inputText value="#{register.sQuestion}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="secret question.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				<label> Secret Answer</label>
+				<h:inputText value="#{register.sAnswer}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="secret answer.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				
 				<h:commandButton action="#{register.register}" value="Register"
 					styleClass="btn btn-primary">
 					<f:passThroughAttribute name="type" value="submit" />

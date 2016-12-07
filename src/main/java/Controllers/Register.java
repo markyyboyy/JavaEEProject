@@ -25,7 +25,7 @@ public class Register {
 	private String sSurname = "";
 	private String sFirstname = "";
 	private String sFacebook = "";
-	private String sSecretAnswer = "";
+	private String sAnswer = "";
 	private String sTelMain = "";
 	private Calendar dtDOB;
 	private Double dBalance;
@@ -33,9 +33,29 @@ public class Register {
 	private String sStreet = "";
 	private String sTown = "";
 	private String sPost = "";
+	private String password = "";
+	private String email = "";
+	private String sQuestion= "";
+
 
 	
 	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	private LoginDetails loginDetails;
 	private List<Address> address;
@@ -80,13 +100,6 @@ public class Register {
 		this.sFacebook = sFacebook;
 	}
 
-	public String getsSecretAnswer() {
-		return sSecretAnswer;
-	}
-
-	public void setsSecretAnswer(String sSecretAnswer) {
-		this.sSecretAnswer = sSecretAnswer;
-	}
 
 	public String getsTelMain() {
 		return sTelMain;
@@ -173,9 +186,29 @@ public class Register {
 		c.setFirstname(this.sFirstname);
 		c.setSurname(this.sSurname);
 		c.setDateOfBirth(this.dtDOB);
+		addAddress();
 		c.setAddress(this.address);
+		c.getLoginDetails(loginDetails = new LoginDetails(this.email, this.password));
+		c.setSecretAnswer(this.sAnswer);
+		c.setQuestion(this.sQuestion);
 		
-		return null;
+		return "home";
 
+	}
+
+	public String getsAnswer() {
+		return sAnswer;
+	}
+
+	public void setsAnswer(String sAnswer) {
+		this.sAnswer = sAnswer;
+	}
+
+	public String getsQuestion() {
+		return sQuestion;
+	}
+
+	public void setsQuestion(String sQuestion) {
+		this.sQuestion = sQuestion;
 	}
 }

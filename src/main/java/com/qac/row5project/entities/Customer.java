@@ -164,6 +164,22 @@ public class Customer {
 	public List<Address> getAddress(){
 		return this.address;
 	}
+	
+	/**
+	 * @author Richard Allen
+	 * @param address
+	 */
+	public void setQuestion(String question){
+		new SecurityQuestion(question);
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @return address
+	 */
+	public List<Address> getQuestion(){
+		return this.address;
+	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
