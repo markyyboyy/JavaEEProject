@@ -75,6 +75,7 @@ public class CustomerOrderLine {
 	}
 
 	public float getTotalPrice() {
+		updateTotalPrice();
 		return totalPrice;
 	}
 	

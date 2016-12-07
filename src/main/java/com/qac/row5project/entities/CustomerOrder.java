@@ -98,6 +98,11 @@ public class CustomerOrder {
 
 
 
+	public float getTotalPrice() {
+		deriveTotalPrice();
+		return totalPrice;
+	}
+
 	public void setCustomerOrderLines(List<CustomerOrderLine> customerOrderLine) {
 		this.customerOrderLines = customerOrderLine;
 	}

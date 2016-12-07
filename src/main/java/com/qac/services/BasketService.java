@@ -36,13 +36,8 @@ public class BasketService {
 	 * @param id
 	 * @return
 	 */
-	public List<ProductItem> getBasket(long id) {
-		List<ProductItem> basket = new ArrayList<>();
-		try {
-			CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(id);
-		} finally {
-		}
-		return basket;
+	public CustomerOrder getBasket(long id) {
+		return customerOrderManager.readCustomerOrderById(id);
 	}
 
 	/**
@@ -51,7 +46,7 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 */
-	public void addToBasket(long customerId, Stock stock) {
+	public void addToBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder customerOrder = customerOrderManager.readCustomerOrderById(customerId);
 		if (!customerOrder.getCustomerOrderLines().isEmpty()) {
 
@@ -62,7 +57,7 @@ public class BasketService {
 				}
 			}
 			// stockId or Product ID
-			customerOrder.addToCustomerOrderLine(new CustomerOrderLine());
+			customerOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId,quantity,stock));
 		}
 	}
 
@@ -91,8 +86,9 @@ public class BasketService {
 	/**
 	 * Getting the total price of the basket
 	 */
-	public void totalBasketPrice() {
-		
+	public float totalBasketPrice(long id) {
+		CustomerOrder cOrder = getBasket(id);
+		return cOrder.getTotalPrice();
 		
 	}
 }
