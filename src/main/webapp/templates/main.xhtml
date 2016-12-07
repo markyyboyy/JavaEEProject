@@ -83,13 +83,13 @@
 			</div>
 
 			<div class="loginButton">
-				<h:commandButton styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
+				<h:button styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
 					outcome="login.xhtml" value="Login/Register" />
 			</div>
 
 			<div class="logoffButton">
-				<h:commandButton styleClass="btn btn-primary" rendered="#{user.loggedIn}"
-					value="Log Out" onlcick="#{login.logoff()}" />
+				<h:button styleClass="btn btn-primary" rendered="#{user.loggedIn}"
+					outcome="#{login.logoff()}" value="Log Out"  />
 			</div>
 
 

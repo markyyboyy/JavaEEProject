@@ -29,7 +29,9 @@ public class SearchService {
 	}
 
 	public List<ProductItem> searchBy(String term) {
+		
 		List<Product> results = new ArrayList<>();
+
 		if (term.matches("[0-9]")) {
 			Product result = productService.readProductByName(term);
 			if (result != null)
@@ -40,6 +42,7 @@ public class SearchService {
 		if (results.isEmpty())
 			return null;
 		List<ProductItem> productItems = new ArrayList<>();
+
 		results.forEach(product -> {
 			productItems.add(productService.getProductItem(product, product.getProductId()));
 		});
