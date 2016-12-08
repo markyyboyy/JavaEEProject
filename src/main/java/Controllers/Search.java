@@ -1,7 +1,11 @@
 package Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 import com.qac.row5project.entities.ProductItem;
@@ -26,9 +30,58 @@ public class Search {
 	@Inject
 	private Catalogue searchResults;
 	
-	
 	private String term = "";
+	private String sRatingFilter;	
+	private List<String> selectFilterRating;// = new ArrayList<SelectItem>();
 
+	public List<String> getSelectFilterRating() {
+		return selectFilterRating;
+	}
+
+	public void setSelectFilterItem(List<String> selectFilterRating) {
+		this.selectFilterRating = selectFilterRating;
+	}
+	public String getsRatingFilter() {
+		return sRatingFilter;
+	}
+
+	public void setsRatingFilter(String sRatingFilter) {
+		this.sRatingFilter = sRatingFilter;
+	}
+	
+	@PostConstruct
+	public void init(){	
+		
+		selectFilterRating = new ArrayList<String>();
+		selectFilterRating.add("1");
+		selectFilterRating.add("2");
+		selectFilterRating.add("3");
+		selectFilterRating.add("4");
+		selectFilterRating.add("5");
+		
+		sRatingFilter = "4";
+
+	}
+	
+	public void sortBy(ValueChangeEvent e) {		
+		
+		String sValue = e.getNewValue().toString();
+		System.out.println(sValue);
+		sRatingFilter = sValue;
+		
+		List<ProductItem> temp = searchService.search("", Integer.valueOf(sValue), -1);
+		
+		searchResults.setResults(temp);
+		
+		System.out.println(temp);
+		
+	}
+
+	
+	
+
+	
+	
 	public String search() {
 		List<ProductItem> results = searchService.searchBy(term);
 		System.out.println("Searched for term " + term);
