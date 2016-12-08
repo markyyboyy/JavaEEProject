@@ -75,7 +75,7 @@ public class ProductService {
 		if (stock != null)
 			productItem.addStockInfo(stock.getQuantity());
 		
-		if(product != null && ratingManager.findRatingsbyProductID(product.getProductId()).size() > 0){
+		if(product != null && ratingManager.findRatingsbyProductID(product.getProductId()) !=  null){
 			
 			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductId());
 			productItem.addRatingInfo(r);	

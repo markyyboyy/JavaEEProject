@@ -37,10 +37,49 @@ public class Register {
 	private String sPost = "";
 	private String password = "";
 	private String email = "";
-	private String sQuestion= "";
+	private String sQuestion = "";
 	private LoginDetails loginDetails;
 	private List<Address> address = new ArrayList<>();
 	private SecurityQuestion question;
+
+	public void addAddress() {
+		Address temp = new Address(this.sHName, this.sStreet, " ", " ", this.sTown, this.sPost, "UK");
+		this.address.add(temp);
+		System.out.println("Address Added");
+	}
+
+	public String register() {
+		Customer c = new Customer();
+		c.setFirstname(this.sFirstname);
+		c.setSurname(this.sSurname);
+		addAddress();
+		c.setAddress(this.address);
+		c.getLoginDetails(new LoginDetails(this.email, this.password));
+		c.setSecretAnswer(this.sAnswer);
+		c.setQuestion(this.sQuestion);
+		System.out.println("Registered");
+		dateOfBirth(dtDOB);
+		customerManager.createCustomer(c);
+
+		return "home";
+	}
+
+	public void dateOfBirth(String dtDOB) {
+
+		String sYear = dtDOB.substring(0, 4);
+		String sMonth = dtDOB.substring(5, 7);
+		String sDate = dtDOB.substring(8);
+
+		int year = Integer.parseInt(sYear);
+		int month = Integer.parseInt(sMonth);
+		int date = Integer.parseInt(sDate);
+
+		Calendar tempDate = Calendar.getInstance();
+		tempDate.set(year, month, date);
+		
+
+		this.setDOB(tempDate);
+	}
 
 	public String getPassword() {
 		return password;
@@ -58,14 +97,6 @@ public class Register {
 		this.email = email;
 	}
 
-
-	public void addAddress(){
-		Address temp = new Address(this.sHName, this.sStreet, " ", " ", this.sTown,
-			this.sPost, "UK");
-		this.address.add(temp);
-		System.out.println("Address Added");
-	}
-	
 	public CustomerManager getCustomerManager() {
 		return customerManager;
 	}
@@ -97,7 +128,6 @@ public class Register {
 	public void setsFacebook(String sFacebook) {
 		this.sFacebook = sFacebook;
 	}
-
 
 	public String getsTelMain() {
 		return sTelMain;
@@ -177,38 +207,6 @@ public class Register {
 
 	public void setsPost(String sPost) {
 		this.sPost = sPost;
-	}
-
-	public String register() {
-		Customer c = new Customer();
-		c.setFirstname(this.sFirstname);
-		c.setSurname(this.sSurname);
-		addAddress();
-		c.setAddress(this.address);
-		c.getLoginDetails(new LoginDetails(this.email, this.password));
-		c.setSecretAnswer(this.sAnswer);
-		c.setQuestion(this.sQuestion);
-		System.out.println("Registered");
-		dateOfBirth(dtDOB);
-		customerManager.createCustomer(c);	
-		
-		return "home";
-	}
-	
-	public void dateOfBirth(String dtDOB){
-		
-		String sYear = dtDOB.substring(0,4);
-		String sMonth = dtDOB.substring(5,7);
-		String sDate = dtDOB.substring(8);	
-		
-		int year = Integer.parseInt(sYear);
-		int month = Integer.parseInt(sMonth);
-		int date = Integer.parseInt(sDate);
-				
-		Calendar tempDate = Calendar.getInstance();
-		tempDate.set(year, month, date);
-		
-		this.setDOB(tempDate);
 	}
 
 	public String getsAnswer() {

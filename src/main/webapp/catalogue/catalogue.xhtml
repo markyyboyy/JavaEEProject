@@ -14,10 +14,6 @@
 
 	<ui:define name="mainContent">
 
-
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
 		<SCRIPT type="text/javascript">
 			function showHover(args) {
 
@@ -59,16 +55,13 @@
 
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
-								<h:selectOneMenu ID="Rating">
-									<f:selectItem itemValue="1" itemLabel="1 Start" />
-									<f:selectItem itemValue="2" itemLabel="2 Start" />
-									<f:selectItem itemValue="3" itemLabel="3 Start" />
-									<f:selectItem itemValue="4" itemLabel="4 Start" />
-									<f:selectItem itemValue="5" itemLabel="5 Start" />
+								<h:selectOneMenu ID="Rating" valueChangeListener="#{filter.sortBy()}">
+									    <f:selectItems value="#{filter.selectFilterRating}"/>
 								</h:selectOneMenu>
 							</div>
 
 
+							<!-- Slider to show the max price -->
 							<div class="col-md-6 col-xs-12">
 								<label for="maxPrice">Max Price</label> <input type="range"
 									name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
@@ -76,6 +69,9 @@
 									oninput="maxPriceRange.value = maxPriceRangeId.value" />
 								<output name="ageOutputName" id="maxPriceRange">2500</output>
 							</div>
+							
+							
+							
 						</div>
 					</div>
 				</div>
@@ -164,7 +160,11 @@
 									<div>
 										<span>#{prod.description}</span>
 									</div>
-
+									
+									<div>
+										<span>£ #{prod.price}</span>
+									</div>
+									
 									<div>
 
 										<ui:repeat size="5">
