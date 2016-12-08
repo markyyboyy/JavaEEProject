@@ -25,6 +25,23 @@ public class filterController {
 	private SelectedProduct selectedProduct;
 	@Inject
 	private Catalogue searchResults;
+	
+	
+	private String sRatingFilter;
+	
+	
+	
+	
+	
+
+	public String getsRatingFilter() {
+		return sRatingFilter;
+	}
+
+	public void setsRatingFilter(String sRatingFilter) {
+		this.sRatingFilter = sRatingFilter;
+	}
+
 
 	private List<String> selectFilterItem;// = new ArrayList<SelectItem>();
 
@@ -68,7 +85,7 @@ public class filterController {
 		selectFilterRating.add("5");
 
 		
-		
+		sRatingFilter = "4";
 		
 		
 		
