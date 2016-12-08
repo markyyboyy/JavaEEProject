@@ -4,18 +4,18 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-<!-- Meta Tags -->
-<title><ui:insert name="pageName" /></title>
+	<!-- Meta Tags -->
+	<title><ui:insert name="pageName" /></title>
 
 
 
-<link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
-<link href="../style/main.css" type="text/css" rel="stylesheet" />
-<link href="../style/mobileMain.css" type="text/css" rel="stylesheet" />
-<script src="../js/jquery-3.1.1.min.js"></script>
-<meta charset="UTF-8"/>
+	<link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
+	<link href="../style/main.css" type="text/css" rel="stylesheet" />
+	<link href="../style/mobileMain.css" type="text/css" rel="stylesheet" />
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<meta charset="UTF-8" />
 
-<!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
+	<!-- <h:outputStylesheet library="style" name="main.css"></h:outputStylesheet> -->
 </h:head>
 
 <h:body>
@@ -60,41 +60,30 @@
 					</div>
 				</div>
 
-				<div class="loggedInMenu">
+				<div class="dropdown" style="float: left;" rendered="#{user.loggedIn}">
+					<button class="dropbtn">Left</button>
+					<div class="dropdown-content" style="left: 0;">
+						<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
+							3</a>
+					</div>
+				</div>
 
-					<h:selectOneMenu value="My Account"
-						styleClass="dropdown-toggle dropdown" rendered="#{user.loggedIn}">
-						<f:passThroughAttribute name="data-toggle" value="dropdown" />
-						<f:passThroughAttribute name="role" value="button" />
-						<f:passThroughAttribute name="aria-haspopup" value="true" />
-						<f:passThroughAttribute name="aria-expanded" value="false" />
-						<div class="dropdown-menu">
-							<f:selectItem itemLabel="Payment Details" itemValue="1"
-								outcome="" />
-							<f:selectItem itemLabel="Order History" itemValue="2" />
+				<div class="loginButton">
+					<h:form>
+						<h:commandButton styleClass="btn btn-primary"
+							rendered="#{!user.loggedIn}" action="login.xhtml"
+							value="Login/Register" />
+					</h:form>
+				</div>
 
-						</div>
-					</h:selectOneMenu>
+				<div class="logoffButton">
+					<h:form>
+						<h:commandButton styleClass="btn btn-primary"
+							rendered="#{user.loggedIn}" action="#{login.logoff()}"
+							value="Log Out" />
+					</h:form>
 				</div>
 			</div>
-
-			<div class="loginButton">
-			<h:form>
-				<h:commandButton styleClass="btn btn-primary" rendered="#{!user.loggedIn}"
-					action="login.xhtml" value="Login/Register" />
-					</h:form>
-			</div>
-
-			<div class="logoffButton">
-				<h:form>
-				<h:commandButton styleClass="btn btn-primary" rendered="#{user.loggedIn}"
-					action="#{login.logoff()}" value="Log Out"  />
-					</h:form>
-			</div>
-
-
-
-
 		</nav>
 	</header>
 	<main class="content"> <ui:insert name="mainContent" /> </main>

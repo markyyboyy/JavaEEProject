@@ -1,6 +1,5 @@
 package com.qac.services;
 
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -10,6 +9,8 @@ import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.Stock;
 //import com.qac.row5project.managers;
 import com.qac.row5project.managers.CustomerOrderManager;
+
+import Controllers.session.CurrentUser;
 
 /**
  * 
@@ -22,6 +23,8 @@ public class BasketService {
 	@Inject
 	private CustomerOrderManager customerOrderManager;
 
+	@Inject
+	CurrentUser cu;
 
 	/**
 	 * To get basket for the customer order
@@ -39,13 +42,26 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 * @param quantity
-	 * @return 
+	 * @return
 	 */
-	public void addToBasket(long customerId, Stock stock, int quantity)
-	{
-		if (!customerOrderManager.readCustomerOrderById(customerId).getCustomerOrderLines().isEmpty()) {
-			customerOrderManager.addToBasket(customerId, stock, quantity);
-		}
+	
+	//long customerId
+	//, int quantity
+	
+	public void addToBasket(Stock stock) {
+		
+		cu.getBasket();
+		
+		
+		
+		/*if (cu != null) {
+
+			if (!customerOrderManager.readCustomerOrderById(cu.getCustomer().getID()).getCustomerOrderLines()
+					.isEmpty()) {
+				customerOrderManager.addToBasket(customerId, stock, quantity);
+			}
+
+		}*/
 	}
 
 	/**
@@ -54,16 +70,16 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 */
-	public void removeFromBasket(long customerId, Stock stock, int quantity) 
-	{
+	public void removeFromBasket(long customerId, Stock stock, int quantity) {
 		if (!customerOrderManager.readCustomerOrderById(customerId).getCustomerOrderLines().isEmpty()) {
 			customerOrderManager.removeFromBasket(customerId, stock, quantity);
 		}
-		
+
 	}
 
 	/**
 	 * Getting the total price of the basket
+	 * 
 	 * @param id
 	 * @return total price in basket
 	 */
