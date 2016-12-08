@@ -34,9 +34,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-									<ui:repeat var="Cat" value="#{product.product.category}">
-										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
-									</ui:repeat>
+								
 								</h:selectOneMenu>
 							</div>
 
@@ -45,9 +43,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-									<ui:repeat var="Cat" value="#{product.product.status}">
-										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
-									</ui:repeat>
+							
 								</h:selectOneMenu>
 							</div>
 
@@ -56,9 +52,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-									<ui:repeat var="Cat" value="#{product.product.status}">
-										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
-									</ui:repeat>
+									
 								</h:selectOneMenu>
 							</div>
 
@@ -91,43 +85,43 @@
 						<div class="table-scroll">
 							<table border="1" style="width: 100%">
 								<h:form>
-							        <h:dataTable value="#{product.product}" var="product1" border="2"
-							            cellspacing="1" cellpadding="1">
-							            <h:column>
-							                <c:facet name="header">PRODUCT ID</c:facet>
-							                    #{product1.productId}
+									<h:dataTable value="#{product.products}" var="prod"
+										border="2" cellspacing="1" cellpadding="1">
+										<h:column>
+											<c:facet name="header">PRODUCT ID</c:facet>
+							                    #{prod.id}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">CATEGORY</c:facet>
-							                    #{product1.category}
+										<h:column>
+											<c:facet name="header">CATEGORY</c:facet>
+												 #{prod.category}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">NAME</c:facet>
-							                    #{product1.name}
+										<h:column>
+											<c:facet name="header">NAME</c:facet>
+							                    #{prod.name}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">DESCRIPTION</c:facet>
-							                    #{product1.desc}
+										<h:column>
+											<c:facet name="header">DESCRIPTION</c:facet>
+							                    #{prod.description}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">SUPPLIER</c:facet>
-							                    #{product1.supplier}
+										<h:column>
+											<c:facet name="header">SUPPLIER</c:facet>
+											 #{prod.supplier}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">QUANTITY IN STOCK</c:facet>
-							                    #{product1.quantity}
+										<h:column>
+											<c:facet name="header">QUANTITY IN STOCK</c:facet>
+							                    #{prod.stockLevel}
 							            </h:column>
-							            <h:column>
-							                <c:facet name="header">STATUS</c:facet>
-							                    #{product1.status}
+										<h:column>
+											<c:facet name="header">STATUS</c:facet>
+												#{prod.status}
 							            </h:column>
-       							 </h:dataTable>
-</h:form>
-</table>
-</div>
-</div>
-</div>
-</div>
+									</h:dataTable>
+								</h:form>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 		</ui:define>
 
 	</ui:composition>

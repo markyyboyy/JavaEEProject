@@ -2,6 +2,8 @@ package com.qac.row5project.helpers;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -55,29 +57,47 @@ public class TestData {
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 
-
-		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
+		
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 3, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 5, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
-		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
+		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 6, "Ornament", "Active", "Bonnie"));
 		
 	
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		
+		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
+		loginDetails.add(imsLogin);
+		
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
+		CustomerOrder cOrder = new CustomerOrder(1,1,c,1,1);
+		customerOrders.add(cOrder);	
+		
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		
-		stocks.add(new Stock(20, false, 100, false, 13, 200));
-		stocks.add(new Stock(11, true, 50, false, 22, 250));
-		stocks.add(new Stock(11, true, 50, false, 22, 250));
+		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
+		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
+		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
 		
 		
+	}
+	public void generateCustomerOrder(int q){
+		CustomerOrder cOrder1;
+		Random rand = new Random();
+		int max = customers.size();
+		int min = 0;
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+
+		for(int i=1;i<=q;i++)
+		{
+			//cOrder1 = new CustomerOrder(i,randomNum,c,1,1);
+		}
 	}
 
 	public List<Product> getProducts() {

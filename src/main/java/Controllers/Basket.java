@@ -10,6 +10,7 @@ import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 import com.qac.services.BasketService;
+import com.qac.services.ProductService;
 
 import Controllers.session.CurrentUser;
 
@@ -26,10 +27,15 @@ import Controllers.session.CurrentUser;
 @RequestScoped 
 public class Basket {
 	
-	private BasketService basketService;
-
 	@Inject
-	private CurrentUser currentUser;
+	private BasketService basketService;
+	
+	
+	@Inject
+	private ProductService productService;
+	
+	@Inject
+	private CurrentUser user;
 	
 	private CustomerOrder cOrder;
 	
@@ -38,9 +44,38 @@ public class Basket {
 	 * @param id
 	 */
 	public void addToBasket(Stock id, int quantity) {
-		if (currentUser.isLoggedIn()) 
-			basketService.addToBasket(currentUser.getCustomer().getID(), id, quantity);	
+		if (user.isLoggedIn()) 
+			basketService.addToBasket(user.getCustomer().getID(), id, quantity);	
 	}
+	
+	public void addToBasket(String id){
+		
+		int productID = 0;
+		
+		try{
+			
+			productID = Integer.valueOf(id);
+			// create stock service to get Stock from id;
+			
+			// addToBasket(stock, 1)
+			
+			ProductItem temp = productService.getProductItem(productID);
+			
+			
+			System.out.println("Added to basket " + productID);
+			
+			
+			
+		}catch(NumberFormatException nm){
+			System.out.println(nm.getMessage());
+			
+		}
+		
+		
+		
+	}
+	
+	
 	
 	/**
 	 * Removing a selected item from the customer's basket
@@ -49,8 +84,8 @@ public class Basket {
 	 */
 	public String removeItem(long id) {
 		
-		if (cOrder == null)
-			cOrder = basketService.getBasket(currentUser.getCustomer().getID());
+		if (cOrder == null && user != null)
+			cOrder = basketService.getBasket(user.getCustomer().getID());
 		return "basket";
 		
 	}
@@ -60,8 +95,8 @@ public class Basket {
 	 * @return
 	 */
 	public CustomerOrder getBasket() {
-		if (cOrder == null)
-			cOrder = basketService.getBasket(currentUser.getCustomer().getID());
+		if (cOrder == null && user.getCustomer() != null)
+			cOrder = basketService.getBasket(user.getCustomer().getID());
 		return cOrder;
 	}
 	

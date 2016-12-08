@@ -90,4 +90,9 @@ public class StockManagerOffline implements StockManager {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public Stock getStockByProductID(long productId, boolean bPourseware, boolean bRefurbised) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
