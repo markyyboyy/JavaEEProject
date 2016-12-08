@@ -29,7 +29,7 @@ public class CustomerManagerOffline implements CustomerManager {
 		newCustomer.setID(customerList.size() + 1);
 		customerList.add(newCustomer);
 		testData.setCustomers(customerList);
-
+		System.out.println("Added to testData");
 		
 	}
 	/**
