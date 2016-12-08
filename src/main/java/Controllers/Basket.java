@@ -46,14 +46,14 @@ public class Basket {
 	private CustomerOrder cOrder;
 	
 	private List<CustomerOrderLine> custOrderMdl;
-	private List<CustomerOrder> custOrderResults = null;
+	private List<CustomerOrderLine> custOrderResults = null;
 
 		
-	public DataModel<CustomerOrder> getCustOrderMdl(){
+	public DataModel<CustomerOrderLine> getCustOrderMdl(){
 		
-		custOrderMdl = basketService.getBasket(0).getCustomerOrderLines();
+		custOrderMdl = basketService.getBasket(1).getCustomerOrderLines();
 		
-		return new ListDataModel<CustomerOrder>(custOrderResults);
+		return new ListDataModel<CustomerOrderLine>(custOrderResults);
 	}
 	
 	

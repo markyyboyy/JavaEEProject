@@ -71,8 +71,6 @@ package com.qac.row5project.entities;
 			this.name = name;
 			this.description = description;
 			this.weight = weight;
-			this.stockLevel = stockLevel;
-			this.price = price;
 			this.averageRating = 0;
 			this.status = status;
 			this.supplier = supplier;
