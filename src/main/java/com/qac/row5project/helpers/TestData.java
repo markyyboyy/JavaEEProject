@@ -75,6 +75,7 @@ public class TestData {
 		c.set(1, 1, 1990);
 		CustomerOrder cOrder = new CustomerOrder(1,1,c,1,1);
 		customerOrders.add(cOrder);	
+		
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		
 		stocks.add(new Stock(20, false, 100, false, 13, 200));
