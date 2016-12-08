@@ -32,18 +32,18 @@
 
 
 				<!-- 	Repeater -->
-				<ui:repeat var="product" value="#{basket.basket}">
+				<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
 					<div class="row">
 						<div class="col-sm-3" style="background-color: #F4F4F4;">
 							<img src="img/fgnome1.jpeg" />
 						</div>
 
 						<div class="col-sm-3" style="background-color: #F4F4F4;">
-							Product Description<br />
+							#{orderLine.stock.productID.desc}<br />
 						</div>
 
 						<div class="col-sm-3" style="background-color: #F4F4F4;">
-							Product Price<br />
+							#{orderLine.stock.price}<br />
 						</div>
 
 						<div class="col-sm-3">
