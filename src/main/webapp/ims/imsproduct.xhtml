@@ -78,21 +78,12 @@
 
 		<ui:define name="mainContent2">
 			<div class="righttitletable">
-				<div class="title">
-					<br />
-				</div>
-				<div class="table">
-					<div class="table-wrapper">
-						<table border="1" style="width: 100%">
-								<h:form>
-									<p:dataTable value="#{product.products}" var="prod"
-										sortMode="multiple">
-
+									<p:dataTable styleClass="table table-hover" value="#{product.products}" var="prod" border="2" cellspacing="1" cellpadding="1">
 										<f:facet name="header">
 											<h2>Product Information Table</h2>
 										</f:facet>
-
-										<p:column headerText="Product ID" sortBy="#{prod.id}">
+									
+										<p:column headerText="ID" sortBy="#{prod.id}">
 											<h:outputText value="#{prod.id}" />
 										</p:column>
 
@@ -120,15 +111,10 @@
 								        <p:column headerText="Status" sortBy="#{prod.status}">
 											<h:outputText value="#{prod.status}" />
 										</p:column>
-
+									
 									</p:dataTable>
-								</h:form>
-							</table>
-					</div>
-				</div>
 			</div>
 		</ui:define>
-
 	</ui:composition>
 </h:body>
 </html>

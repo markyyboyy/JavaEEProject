@@ -56,16 +56,15 @@ float: left;
 
 }
 
-.table, th, td
+.table1, th1, td1
 {
 width:100%;
 border: 1px solid black;
 text-align: center;
 }
 
-
-th{
-	width: 20%;
+#scrollpane
+{
+	overflow:scroll;
+	height: 100%;
 }
-
-
