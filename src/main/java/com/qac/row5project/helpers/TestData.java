@@ -77,9 +77,9 @@ public class TestData {
 		customerOrders.add(cOrder);	
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		
-		stocks.add(new Stock(20, false, 100, false, 13, 200));
-		stocks.add(new Stock(11, true, 50, false, 22, 250));
-		stocks.add(new Stock(11, true, 50, false, 22, 250));
+		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
+		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
+		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
 		
 		
 	}

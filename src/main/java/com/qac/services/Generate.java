@@ -61,7 +61,7 @@ public class Generate {
 		// TODO Auto-generated method stub
 		return generatedOrderManager.getQuantities();
 	}
-	public void generateOrder(){
+	public void generateOrder(String poID){
 		List<Stock> stock = new ArrayList<Stock>();
 		Stock e = stockManager.findStocksbyID(Integer.parseInt(poID));
 		stock.add(e);
