@@ -77,7 +77,11 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 				return;
 			}
 		}
-		cOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
+		
+		CustomerOrderLine cl = new CustomerOrderLine(customerId, quantity, stock);
+		
+		testData.setCustomerOrderLine(cl);
+		
 	}
 
 	@Override

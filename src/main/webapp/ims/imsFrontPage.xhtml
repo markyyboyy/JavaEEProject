@@ -6,27 +6,41 @@
 <!--  @author Iman Hassan  -->
 
 <ui:composition template="../templates/imsTemplate.xhtml">
+	
+	<ui:define name="pageName">IMS - Home Page</ui:define>
+	
 	<ui:define name="mainContent2">
 
-	<ui:define name="pageName">IMS - Home Page</ui:define>
-
-<div class="container-fluid">
-		<nav>
-
-			<h:commandButton styleClass="navButton" action="#" value="Purchase Order" />
-			<h:commandButton styleClass="navButton" action="#" value="Customer Order" />
-			<h:commandButton styleClass="navButton" action="#" value="Stock Level" />
-			<h:commandButton styleClass="navButton" action="#" value="Generate Order" />
-			<h:commandButton styleClass="navButton" action="#" value="Product" />
-			<h:commandButton styleClass="navButton" action="#" value="Suppliers" />
+		<div class="container-fluid">
+				<header>
 	<div class="logo">
-			<img src="../img/logo.png" width="250px" height="210px" />
+						<img src="../img/logo.png" width="250px" height="210px" />
+					</div>
+					
+					</header> <br /><br /><br />
+			<nav>
+						
+				<h:form>
+				
+					
+					
+					<h:button styleClass="navButton" outcome="IMSPurchaseOrder"
+						value="Purchase Order" />
+					<h:button styleClass="navButton" outcome="imsCustomerOrder" value="Customer Order" />
+					<h:button styleClass="navButton" outcome="imsStockLevel" value="Stock Level" />
+					<h:button styleClass="navButton" outcome="imsGenerateOrder" value="Generate Order" />
+					<h:button styleClass="navButton" outcome="imsproduct"
+						value="Product" />
+					<h:button styleClass="navButton" action="#" value="Suppliers" />
+
+
+				</h:form>
+
+			</nav>
 		</div>
-		</nav>
-</div>
 	</ui:define>
 
-		
+
 
 
 </ui:composition>

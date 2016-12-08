@@ -129,5 +129,10 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 		pOrders.add(newPOrder);
 		testData.setPurchaseOrders(pOrders);
 	}
+	
+	@Override
+	public List<PurchaseOrder> returnPurchaseOrders(){
+		return testData.getPurchaseOrders();
+	}
 
 }

@@ -72,7 +72,10 @@ public class TestData {
 		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
 		loginDetails.add(imsLogin);
 		
+		Supplier s = new Supplier(1);
+		
 		Calendar c = Calendar.getInstance();
+		Calendar c2 = Calendar.getInstance();
 		c.set(1, 1, 1990);
 		CustomerOrder cOrder = new CustomerOrder(1,1,c,1,1);
 		customerOrders.add(cOrder);	
@@ -82,6 +85,11 @@ public class TestData {
 		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
 		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
 		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
+		
+		c.set(5, 6, 2012);
+		c2.set(20, 6, 2012);
+		purchaseOrders.add(new PurchaseOrder(1,s, "Pending",c , c2));
+		
 	}
 	public void generateCustomerOrder(int q){
 		CustomerOrder cOrder1;
@@ -141,8 +149,9 @@ public class TestData {
 		return customerOrderLine;
 	}
 
-	public void setCustomerOrderLine(List<CustomerOrderLine> customerOrderLine) {
-		this.customerOrderLine = customerOrderLine;
+	public void setCustomerOrderLine(CustomerOrderLine customerOrderLine) {
+		
+		this.customerOrderLine.add(customerOrderLine);
 	}
 
 	public List<Employee> getEmployees() {

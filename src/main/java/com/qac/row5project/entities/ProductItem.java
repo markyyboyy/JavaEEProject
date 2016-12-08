@@ -40,21 +40,17 @@ package com.qac.row5project.entities;
 		 * @param id
 		 * @param name
 		 * @param description
-		 * @param height
-		 * @param width
-		 * @param depth
+		 * @param size
 		 * @param weight
 		 * @param stockLevel
 		 * @param price
 		 */
 		public ProductItem(long id, String name, String description, double size, double weight, 
-				int stockLevel, double price, String status, String supplier, String category) {
+			 String status, String supplier, String category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
 			this.weight = weight;
-			this.stockLevel = stockLevel;
-			this.price = price;
 			this.averageRating = 0;
 			this.status = status;
 			this.supplier = supplier;
@@ -70,8 +66,7 @@ package com.qac.row5project.entities;
 		 * @param depth
 		 * @param weight
 		 */
-		public void addProductInfo(long id, String name, String description, double size, double weight, 
-				int stockLevel, double price, String status, String supplier, String category) {
+		public void addProductInfo(long id, String name, String description, double size, double weight, String status, String supplier, String category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
@@ -84,8 +79,9 @@ package com.qac.row5project.entities;
 			this.category = category;
 		}
 
-		public void addStockInfo(int stockLevel) {
+		public void addStockInfo(int stockLevel, float price) {
 			this.stockLevel = stockLevel;
+			this.price = price;
 		}
 		
 		public void addRatingInfo(List<Rating> r){
@@ -101,6 +97,14 @@ package com.qac.row5project.entities;
 		public int getStockLevel() { return stockLevel; }
 		public double getPrice() { return price; }
 		public List<Rating> getRating() { return ratings; }
+
+		public double getWeight() {
+			return weight;
+		}
+
+		public List<Rating> getRatings() {
+			return ratings;
+		}
 
 		public String getCategory() {
 			return category;
