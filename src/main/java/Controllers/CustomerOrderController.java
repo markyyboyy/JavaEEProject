@@ -13,7 +13,7 @@ import com.qac.row5project.entities.CustomerOrder;
 import com.qac.services.CustomerOrderImsService;
 import java.io.Serializable;
 
-@Named("customerOrderrrr")
+@Named("customerOrder")
 @ConversationScoped
 public class CustomerOrderController implements Serializable {
 	
