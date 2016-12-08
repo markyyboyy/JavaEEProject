@@ -208,7 +208,7 @@ public class Register {
 		Calendar tempDate = Calendar.getInstance();
 		tempDate.set(year, month, date);
 		
-		this.DOB = tempDate;
+		this.setDOB(tempDate);
 	}
 
 	public String getsAnswer() {
@@ -225,5 +225,13 @@ public class Register {
 
 	public void setsQuestion(String sQuestion) {
 		this.sQuestion = sQuestion;
+	}
+
+	public Calendar getDOB() {
+		return DOB;
+	}
+
+	public void setDOB(Calendar dOB) {
+		DOB = dOB;
 	}
 }
