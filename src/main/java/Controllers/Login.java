@@ -13,6 +13,7 @@ import Controllers.session.CurrentUser;
  * @Author Richard Allen
  */
 
+
 @Named("login")
 @RequestScoped
 public class Login {

@@ -1,8 +1,9 @@
 /**
- * @Author RyanB & Iman
+ * @Author RyanB & Iman Hassan & Ynyr
  */
 package com.qac.row5project.managers.offline;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -33,7 +34,6 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 		testData.setCustomerOrders(co1);
 		return co;
 	}
-
 	// UPDATE - CUSTOMER
 	@Override
 	// UPDATES CUSTOMER ORDER DETAILS BASED ON THE ORDER THAT IS PASSED TO IT
@@ -53,17 +53,22 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 				return co;
 		return null;
 	}
-
+	@Override
+	public List<CustomerOrder> readCustomerOrders()
+	{
+		return testData.getCustomerOrders();
+	}
 	@Override
 	// ALLOWS A CUSTOMER ORDER TO BE VIEWED BASED ON THE ORDER DATE
-	public CustomerOrder readCustomerOrderByDatePlaced(Calendar date) {
+	public List<CustomerOrder> readCustomerOrderByDatePlaced(Calendar date) {
+		List<CustomerOrder> co1 = new ArrayList<>();
 		for (CustomerOrder co : testData.getCustomerOrders())
 			if (co.getDatePlaced() == date)
-				return co;
-		return null;
-
+				co1.add(co);
+		return co1;
 	}
 
+	@Override
 	public void addToBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder cOrder = readCustomerOrderById(customerId);
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
@@ -75,18 +80,17 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 		cOrder.addToCustomerOrderLine(new CustomerOrderLine(customerId, quantity, stock));
 	}
 
-	public void removeFromBasket(long customerId, Stock stock) {
-
-			CustomerOrder cOrder = readCustomerOrderById(customerId);
-			for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
-				if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
-					if (customerOrderLine.getQuantity() > 1) {
-						customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
-					} else {
-						cOrder.removeFromCustomerOrderLine(customerOrderLine);
-					}
+	@Override
+	public void removeFromBasket(long customerId, Stock stock, int quantity) {
+		CustomerOrder cOrder = readCustomerOrderById(customerId);
+		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
+			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+				if (customerOrderLine.getQuantity() > 1) {
+					customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
+				} else {
+					cOrder.removeFromCustomerOrderLine(customerOrderLine);
 				}
 			}
 		}
+	}
 }
-

@@ -62,7 +62,7 @@ public class Customer {
 	@OneToMany
 	@JoinColumn(name="address_id", nullable=false)
 	@NotNull
-	private List<Address> address;
+	private List<Address> address = new ArrayList<>();
 	
 	@OneToOne
 	@JoinColumn(name="customer_id", nullable = false)
@@ -83,13 +83,10 @@ public class Customer {
 	public void setID(int id){
 		this.id = id;
 	}
-	
-
-	
+		
 	public List<Product> getWishList() {
 		return wishList;
 	}
-
 
 	public void setWishList(List<Product> wishList) {
 		this.wishList = wishList;
@@ -150,6 +147,38 @@ public class Customer {
 
 	public void setDateOfBirth(Calendar dtDOB) {
 		this.dtDOB = dtDOB;
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @param address
+	 */
+	public void setAddress(List<Address> address){
+		this.address = address;
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @return address
+	 */
+	public List<Address> getAddress(){
+		return this.address;
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @param address
+	 */
+	public void setQuestion(String question){
+		new SecurityQuestion(question);
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @return address
+	 */
+	public List<Address> getQuestion(){
+		return this.address;
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

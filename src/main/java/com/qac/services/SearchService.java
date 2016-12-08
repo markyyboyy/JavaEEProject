@@ -32,6 +32,16 @@ public class SearchService {
 		
 		List<Product> results = new ArrayList<>();
 
+		if(term == null)
+			return null;
+		
+		if(term.equals("")){
+			results.addAll(productRepository.findAllProducts());
+			
+		}
+			
+		
+		
 		if (term.matches("[0-9]")) {
 			Product result = productService.readProductByName(term);
 			if (result != null)

@@ -32,52 +32,26 @@ public class Catalogue implements Serializable {
 
 	@Inject
 	private SearchService searchService;
-
+	
+	
+	@Inject
+	private Search conSearch;
+	
 	private PaginationHelper pagenationHelper;
 
 	private DataModel<ProductItem> products = null;
+	private List<ProductItem> productsResults = null;
 
-	private ArrayList<SelectItem> selectItem = new ArrayList<SelectItem>();
 
 	private String name;
 	
 	
 	private double iAverage;
 
-	public ArrayList<SelectItem> getSelectItem() {
-		return selectItem;
-	}
 
-	public void setSelectItem(ArrayList<SelectItem> selectItem) {
-		this.selectItem = selectItem;
-	}
 
-	public double getiAverage() {
-		return iAverage;
-	}
+	public Catalogue() {}
 
-	public void setiAverage(double iAverage) {
-		this.iAverage = iAverage;
-	}
-
-	public int calcAverageRating(ProductItem p){
-		
-		int dRating =0;
-		
-		for (Rating rating: p.getRating()) {			
-			dRating += rating.getScore();
-		}
-			
-		return dRating / p.getRating().size();
-		
-	}
-
-	public Catalogue() {
-		selectItem.add(new SelectItem("Price ASC"));
-		selectItem.add(new SelectItem("Price DECS"));
-		selectItem.add(new SelectItem("Rating ASC"));
-		selectItem.add(new SelectItem("Rating DECS"));
-	}
 
 	public String getName() {
 		return this.name;
@@ -91,10 +65,13 @@ public class Catalogue implements Serializable {
 		products = null;
 	}
 
+	@SuppressWarnings("unchecked")
 	public DataModel<ProductItem> getProducts() {
 
-		System.out.println("djgkdfh");
-		return (DataModel<ProductItem>) getPagination().createPageDataModel();
+
+		setResults(searchService.searchBy(conSearch.getTerm()));
+		
+		return (ListDataModel<ProductItem>) getPagination().createPageDataModel();
 
 	}
 
@@ -107,15 +84,12 @@ public class Catalogue implements Serializable {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void filter() {
 
-		List list = new ArrayList<>();
-		list.add(productService.readProductByName(name));
-		products = (DataModel<ProductItem>) list;
+		System.out.println(name);
 
 	}
 
 	public void sort() {
 
-		selectItem = selectItem;
 
 		switch ("") {
 		case "sortByPriceA":
@@ -139,18 +113,18 @@ public class Catalogue implements Serializable {
 	private void sortByPrice(boolean asc) {
 
 		if (asc)
-			((List) products).sort(Comparator.comparing(Product::getPrice));
+			((List) products).sort(Comparator.comparing(ProductItem::getPrice));
 		else
-			((List) products).sort(Comparator.comparing(Product::getPrice).reversed());
+			((List) products).sort(Comparator.comparing(ProductItem::getPrice).reversed());
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void sortByRating(boolean asc) {
 
 		if (asc)
-			((List) products).sort(Comparator.comparing(Product::getName));
+			((List) products).sort(Comparator.comparing(ProductItem::getAverageRating));
 		else
-			((List) products).sort(Comparator.comparing(Product::getName).reversed());
+			((List) products).sort(Comparator.comparing(ProductItem::getAverageRating).reversed());
 	}
 
 	public String view() {
@@ -175,16 +149,13 @@ public class Catalogue implements Serializable {
 				public DataModel<ProductItem> createPageDataModel() {
 
 					try {
-
-						List<ProductItem> lstAll = productService.findAllProducts();
-
 						return new ListDataModel<ProductItem>(
-								lstAll.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
+								productsResults.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 
 					} catch (Exception e) {
 
 						return new ListDataModel<ProductItem>(
-								productService.findAllProducts().subList(getPageFirstItem(), getItemsCount()));
+								productsResults.subList(getPageFirstItem(), getItemsCount()));
 					}
 
 				}
@@ -211,5 +182,15 @@ public class Catalogue implements Serializable {
 
 		return "catalogue";
 	}
+	
+	
+	public void setResults(List<ProductItem> results){
+		this.productsResults =  results;
+		
+		if(productsResults == null)
+			productsResults = productService.findAllProducts();
+		
+	}
+	
 
 }

@@ -55,9 +55,7 @@ public class TestData {
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 
-		
-		
-		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
+
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
@@ -66,15 +64,18 @@ public class TestData {
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 18, "Ornament", "Active", "Bonnie"));
 		
-		
-		
-		Calendar c= Calendar.getInstance();
-		c.set(1990, 11, 05);
+	
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		
+		Calendar c = Calendar.getInstance();
+		c.set(1, 1, 1990);
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
+		
+		stocks.add(new Stock(20, false, 100, false, 13, 200));
+		stocks.add(new Stock(11, true, 50, false, 22, 250));
+		stocks.add(new Stock(11, true, 50, false, 22, 250));
 		
 		
 	}

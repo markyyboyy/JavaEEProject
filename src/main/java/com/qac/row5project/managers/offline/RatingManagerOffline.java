@@ -70,6 +70,25 @@ public class RatingManagerOffline implements RatingManager {
 		else
 			return tRatingList;
 	}
+	
+	
+	public int findAvgRatingsbyProductID(int productID){
+		
+		List<Rating> tRatingList = findRatingsbyProductID(productID);
+		int average =0;
+		
+		if(tRatingList ==null)
+			return 0;
+		
+		for (Rating rating : tRatingList) {
+			average += rating.getScore();
+		}
+		
+		return average/ tRatingList.size();		
+		
+	}
+	
+	
 	public List<Rating> findRatingsbyScore(int score)
 	{
 		List<Rating> tRatingList = new ArrayList<Rating>();
