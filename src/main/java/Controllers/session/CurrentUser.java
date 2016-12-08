@@ -35,4 +35,8 @@ public class CurrentUser implements Serializable{
 	public boolean isLoggedIn(){
 		return (customer == null) ? false : true;
 	}
+	
+	public void getBasket() {
+		
+	}
 }
