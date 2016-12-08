@@ -14,11 +14,13 @@ package com.qac.row5project.entities;
 		private double width;
 		private double depth;
 		private double weight;
-		private List<String> categories;
 		private int stockLevel;
 		private double price;
 		private List<Rating> ratings;
 		private int averageRating;
+		private String status;
+		private String supplier;
+		private String category;
 		
 		
 		public ProductItem(){}
@@ -44,12 +46,11 @@ package com.qac.row5project.entities;
 		 * @param width
 		 * @param depth
 		 * @param weight
-		 * @param categories
 		 * @param stockLevel
 		 * @param price
 		 */
-		public ProductItem(long id, String name, String description, double height, double width, double depth, double weight,
-						List<String> categories, int stockLevel, double price) {
+		public ProductItem(long id, String name, String description, double height, double width, double depth, double weight, 
+				int stockLevel, double price, String status, String supplier, String category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
@@ -57,10 +58,12 @@ package com.qac.row5project.entities;
 			this.width = width;
 			this.depth = depth;
 			this.weight = weight;
-			this.categories = categories;
 			this.stockLevel = stockLevel;
 			this.price = price;
 			this.averageRating = 0;
+			this.status = status;
+			this.supplier = supplier;
+			this.category = category;
 		}
 
 		/***
@@ -99,10 +102,33 @@ package com.qac.row5project.entities;
 		public double getWidth() { return width; }
 		public double getDepth() { return depth; }
 		public double getWeight() { return weight; }
-		public List<String> getCategories() { return categories; }
 		public int getStockLevel() { return stockLevel; }
 		public double getPrice() { return price; }
 		public List<Rating> getRating() { return ratings; }
+
+		public String getCategory() {
+			return category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getSupplier() {
+			return supplier;
+		}
+
+		public void setSupplier(String supplier) {
+			this.supplier = supplier;
+		}
+
+		public String getStatus() {
+			return status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 		
 	}
 
