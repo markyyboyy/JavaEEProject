@@ -82,13 +82,13 @@
 					</h2>
 					<br />
 				</div>
-				<div class="table">
+				<div class="table" dir="ltr">
 					<div class="table-wrapper">
 						<div class="table-scroll">
 							<table border="1" style="width: 100%">
 								<h:form>
-									<h:dataTable value="#{customerOrder.customerOrders}"
-										var="cus" border="2" cellspacing="1" cellpadding="1">
+									<h:dataTable styleClass="table table-hover" value="#{customerOrder.customerOrders}"
+										var="cus" border="2" cellspacing="1" cellpadding="1" >
 										<h:column>
 											<c:facet name="header">Customer Order ID</c:facet>
 							                    #{cus.customerId}
