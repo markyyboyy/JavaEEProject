@@ -22,8 +22,7 @@ public class RegisterService {
 	public void Register(Customer newCust){
 		customerManager.createCustomer(newCust);
 		logManager.createLoginDetails(newCust.getLoginDetails());
-		addressMan.createAddress(newCust.getAddress().get(0));
-		
+		addressMan.createAddress(newCust.getAddress().get(0));		
 		
 		System.out.println("Register Service - registered" + newCust.getFirstname() + " " + newCust.getSurname());
 	}
