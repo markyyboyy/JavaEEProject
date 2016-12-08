@@ -25,9 +25,9 @@ public interface RatingManager {
 	//READ - CUSTOMER/VISITOR/INV MANAGER
 	public Rating findRatingsbyProductCustomerID(int productID, int CustomerID);
 	public List<Rating> findRatingsbyCustomerID(int CustomerID);
-	public List<Rating> findRatingsbyProductID(int productID);
+	public List<Rating> findRatingsbyProductID(long l);
 	public List<Rating> findRatingsbyScore(int Score);
-	public int findAvgRatingsbyProductID(int productID);
+	public int findAvgRatingsbyProductID(long l);
 
 	//UPDATE	
 	public void updateRating(Rating rating);

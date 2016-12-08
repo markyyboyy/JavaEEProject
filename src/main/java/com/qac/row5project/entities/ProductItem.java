@@ -10,9 +10,7 @@ package com.qac.row5project.entities;
 		private long id;
 		private String name;
 		private String description;
-		private double height;
-		private double width;
-		private double depth;
+		private double size;
 		private double weight;
 		private int stockLevel;
 		private double price;
@@ -49,14 +47,11 @@ package com.qac.row5project.entities;
 		 * @param stockLevel
 		 * @param price
 		 */
-		public ProductItem(long id, String name, String description, double height, double width, double depth, double weight, 
+		public ProductItem(long id, String name, String description, double size, double weight, 
 				int stockLevel, double price, String status, String supplier, String category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
-			this.height = height;
-			this.width = width;
-			this.depth = depth;
 			this.weight = weight;
 			this.stockLevel = stockLevel;
 			this.price = price;
@@ -75,14 +70,18 @@ package com.qac.row5project.entities;
 		 * @param depth
 		 * @param weight
 		 */
-		public void addProductInfo(String name, String description, double height, double width, double depth,
-				double weight) {
+		public void addProductInfo(long id, String name, String description, double size, double weight, 
+				int stockLevel, double price, String status, String supplier, String category) {
+			this.id = id;
 			this.name = name;
 			this.description = description;
-			this.height = height;
-			this.width = width;
-			this.depth = depth;
 			this.weight = weight;
+			this.stockLevel = stockLevel;
+			this.price = price;
+			this.averageRating = 0;
+			this.status = status;
+			this.supplier = supplier;
+			this.category = category;
 		}
 
 		public void addStockInfo(int stockLevel) {
@@ -98,10 +97,7 @@ package com.qac.row5project.entities;
 		public long getId() { return id; }
 		public String getName() { return name; }
 		public String getDescription() { return description; }
-		public double getHeight() { return height; }
-		public double getWidth() { return width; }
-		public double getDepth() { return depth; }
-		public double getWeight() { return weight; }
+		public double getSize() {return size;}
 		public int getStockLevel() { return stockLevel; }
 		public double getPrice() { return price; }
 		public List<Rating> getRating() { return ratings; }
