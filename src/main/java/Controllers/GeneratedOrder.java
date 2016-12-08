@@ -70,5 +70,7 @@ public class GeneratedOrder {
 		productItems = generateService.getProducts();
 		return productItems;
 	}
-
+	public void generateOrder(String poID){
+		generateService.generateOrder(poID);
+	}
 }

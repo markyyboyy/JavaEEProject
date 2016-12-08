@@ -7,10 +7,12 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.PurchaseOrder;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.GeneratedOrderManager;
 import com.qac.row5project.managers.ProductManager;
+import com.qac.row5project.managers.StockManager;
 import com.qac.row5project.managers.GeneratedOrderManager;
 import com.qac.row5project.managers.WishlistManager;
 import com.qac.row5project.managers.offline.GeneratedOrderManagerOffline;
@@ -23,7 +25,9 @@ public class Generate {
 	private GeneratedOrderManager generatedOrderManager;
 	@Inject
 	private ProductManager productManager;
+	private StockManager stockManager;
 	private List<Stock> stock;
+	private String poID;
 	public List<Stock> getStock() {
 		// TODO Auto-generated method stub
 		stock = generatedOrderManager.readOrderByQuantity();
@@ -56,5 +60,18 @@ public class Generate {
 	public List<Integer> getQuantities() {
 		// TODO Auto-generated method stub
 		return generatedOrderManager.getQuantities();
+	}
+	public void generateOrder(){
+		List<Stock> stock = new ArrayList<Stock>();
+		Stock e = stockManager.findStocksbyID(Integer.parseInt(poID));
+		stock.add(e);
+		PurchaseOrder po = new PurchaseOrder(0, null);
+		po.setStockList(stock);
+	}
+	public String getPoID() {
+		return poID;
+	}
+	public void setPoID(String poID) {
+		this.poID = poID;
 	}
 }

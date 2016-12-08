@@ -35,9 +35,9 @@ public class Stock {
 	//does this need to be changed to Product instead of int
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
-	private long productID;
+	private Product productID;
 		
-	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID, float price) {
+	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, Product productID, float price) {
 		super();
 		this.stockID = stockID;
 		this.porousware = porousware;
@@ -47,7 +47,7 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, boolean refurbished, long productID, float price) {
+	public Stock(long stockID, int quantity, boolean refurbished, Product productID, float price) {
 		super();
 		this.porousware=false;
 		this.stockID = stockID;
@@ -58,7 +58,7 @@ public class Stock {
 	}
 	
 
-	public Stock(long stockID, boolean porousware, int quantity, long productID, float price) {
+	public Stock(long stockID, boolean porousware, int quantity, Product productID, float price) {
 		super();
 		this.refurbished = false;
 		this.porousware=porousware;
@@ -69,7 +69,7 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, long productID, float price) {
+	public Stock(long stockID, int quantity, Product productID, float price) {
 		super();
 		this.porousware=false;
 		this.refurbished=false;
@@ -103,10 +103,10 @@ public class Stock {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public long getProductID() {
+	public Product getProductID() {
 		return productID;
 	}
-	public void setProductID(long productID) {
+	public void setProductID(Product productID) {
 		this.productID = productID;
 	}
 
