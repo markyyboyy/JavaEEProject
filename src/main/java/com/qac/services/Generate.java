@@ -27,7 +27,6 @@ public class Generate {
 	private ProductManager productManager;
 	private StockManager stockManager;
 	private List<Stock> stock;
-	private String poID;
 	public List<Stock> getStock() {
 		// TODO Auto-generated method stub
 		stock = generatedOrderManager.readOrderByQuantity();
@@ -67,11 +66,5 @@ public class Generate {
 		stock.add(e);
 		PurchaseOrder po = new PurchaseOrder(0, null);
 		po.setStockList(stock);
-	}
-	public String getPoID() {
-		return poID;
-	}
-	public void setPoID(String poID) {
-		this.poID = poID;
 	}
 }
