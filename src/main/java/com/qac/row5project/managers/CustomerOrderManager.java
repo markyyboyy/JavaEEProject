@@ -20,11 +20,8 @@ public interface CustomerOrderManager {
 	//READ - CUSTOMER/INVENTORY MANAGER
 	public CustomerOrder readCustomerOrderById(long id);
 	public List<CustomerOrder> readCustomerOrderByDatePlaced(Calendar date);
-	
 	//Basket - CUSTOMER
 	public void addToBasket(long customerId, Stock stock, int quantity);
 	public void removeFromBasket(long customerId, Stock stock, int quantity);
-
 	public List<CustomerOrder> readCustomerOrders();
 }
- 
