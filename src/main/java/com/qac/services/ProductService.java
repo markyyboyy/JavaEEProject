@@ -23,14 +23,12 @@ public class ProductService {
 	@Inject
 	private ProductManager productManager;
 	@Inject
-	private StockManager stockManager;		
+	private StockManager stockManager;
 	@Inject
 	private RatingManager ratingManager;
-	
-	
-	ProductItem productItem; 	
-	
-	
+
+	ProductItem productItem;
+
 	public Product readProductByName(String name) {
 		try {
 			return readProductById(Long.parseLong(name));
@@ -67,43 +65,55 @@ public class ProductService {
 
 	public ProductItem getProductItem(Product product, Stock stock) {
 		ProductItem productItem = new ProductItem();
-		
+
 		if (product != null)
-			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(), product.getWeight(), product.getStatus(), product.getSupplier(), product.getCategory());
-		
+			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(),
+					product.getWeight(), product.getStatus(), product.getSupplier(), product.getCategory());
+
 		if (stock != null)
 			productItem.addStockInfo(stock.getQuantity(), stock.getPrice());
-		
-		if(product != null && ratingManager.findRatingsbyProductID(product.getProductId()) !=  null){
-			
-			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductId());
-			productItem.addRatingInfo(r);	
-			
-			productItem.setAverageRating(ratingManager.findAvgRatingsbyProductID(product.getProductId() -1));
 
-		}else{
+		if (product != null && ratingManager.findRatingsbyProductID(product.getProductId()) != null) {
+
+			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductId());
+			productItem.addRatingInfo(r);
+
+			productItem.setAverageRating(setAverageRating(r));
+
+		} else {
 			productItem.setAverageRating(0);
 		}
-				
-		
+
 		return productItem;
+
+	}
+
+	public int setAverageRating(List<Rating> rating){
+		
+		int iRating = 0;
+		
+		for (Rating r : rating) {
+			iRating += r.getScore();
+		}
+		
+		return iRating / rating.size();
+		
 		
 	}
 	
-	public List<ProductItem> findAllProducts(){
-		
+	
+	
+	public List<ProductItem> findAllProducts() {
+
 		List<ProductItem> temp = new ArrayList<>();
-		
-		
+
 		productManager.findAllProducts().forEach(pro -> {
-			
+
 			temp.add(getProductItem(pro, 0));
-			
+
 		});
-		
+
 		return temp;
-		
-		
+
 	}
 }
-
