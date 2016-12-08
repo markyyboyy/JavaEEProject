@@ -9,9 +9,7 @@ import com.qac.services.LoginService;
 
 import Controllers.session.CurrentUser;
 
-/**
- * @Author Richard Allen
- */
+
 
 
 @Named("login")
@@ -67,7 +65,7 @@ public class Login {
 				password = "";
 			}
 		}
-		return "imsHome";
+		return "imsFrontPage";
 	}
 	
 	public String logoff(){

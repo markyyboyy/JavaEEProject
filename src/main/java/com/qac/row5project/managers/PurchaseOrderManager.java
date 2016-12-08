@@ -1,6 +1,7 @@
 package com.qac.row5project.managers;
 
 import java.util.Calendar;
+import java.util.List;
 
 import com.qac.row5project.entities.PurchaseOrder;
 
@@ -66,7 +67,7 @@ public interface PurchaseOrderManager {
 	 */
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder);
 
-
+	public List<PurchaseOrder> returnPurchaseOrders();
 	
 	
 }
