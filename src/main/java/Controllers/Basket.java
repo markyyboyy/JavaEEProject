@@ -77,13 +77,6 @@ public class Basket {
 	
 	
 	
-
-	
-	
-	
-	
-	
-	
 	/**
 	 * Removing a selected item from the customer's basket
 	 * @param id
