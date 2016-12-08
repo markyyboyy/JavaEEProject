@@ -34,7 +34,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-								
+
 								</h:selectOneMenu>
 							</div>
 
@@ -43,9 +43,9 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-								<ui:repeat  value="#{product.products}" var= "prod">
+									<ui:repeat value="#{product.products}" var="prod">
 										<f:selectItem itemValue="#{prod.category}" itemLabel="#{prod}" />
-									</ui:repeat> 
+									</ui:repeat>
 								</h:selectOneMenu>
 							</div>
 
@@ -54,7 +54,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-									<ui:repeat value="#{product.products}" var= "prod1">
+									<ui:repeat value="#{product.products}" var="prod1">
 										<f:selectItem itemValue="#{prod1.status}" itemLabel="#{prod1}" />
 									</ui:repeat>
 								</h:selectOneMenu>
@@ -79,53 +79,51 @@
 		<ui:define name="mainContent2">
 			<div class="righttitletable">
 				<div class="title">
-					<h2>
-						<b>Product Information Table</b>
-					</h2>
 					<br />
 				</div>
 				<div class="table">
 					<div class="table-wrapper">
-						<div class="table-scroll">
-							<table border="1" style="width: 100%">
+						<table border="1" style="width: 100%">
 								<h:form>
 									<p:dataTable value="#{product.products}" var="prod"
-									sortMode ="multiple"
-									border="2" cellspacing="1" cellpadding="1">
-									
-										<f:facet name ="header">Product Information Table</f:facet>
-										
-										 <p:column headerText="Product ID" sortBy="#{prod.id}">
-								            <h:outputText value="#{prod.id}" />
-								        </p:column>
-								 
-								        <p:column headerText="Category" sortBy="#{prod.category}">
-								            <h:outputText value="#{prod.category}" />
-								        </p:column>
+										sortMode="multiple">
+
+										<f:facet name="header">
+											<h2>Product Information Table</h2>
+										</f:facet>
+
+										<p:column headerText="Product ID" sortBy="#{prod.id}">
+											<h:outputText value="#{prod.id}" />
+										</p:column>
+
+										<p:column headerText="Category" sortBy="#{prod.category}" >
+											<h:outputText value="#{prod.category}" />
+										</p:column>
+
+										<p:column headerText="Name" sortBy="#{prod.name}" >
+											<h:outputText value="#{prod.name}" />
+										</p:column>
+
+										<p:column headerText="Description"
+											sortBy="#{prod.description}" >
+											<h:outputText value="#{prod.description}" />
+										</p:column>
+
+										<p:column headerText="Supplier" sortBy="#{prod.supplier}" >
+											<h:outputText value="#{prod.supplier}" />
+										</p:column>
+
+										<p:column headerText="Stock Level" sortBy="#{prod.stockLevel}" >
+											<h:outputText value="#{prod.stockLevel}" />
+										</p:column>> 
 								        
-								        <p:column headerText="Name" sortBy="#{prod.name}">
-								            <h:outputText value="#{prod.name}" />
-								        </p:column>
-								 
-								        <p:column headerText="Description" sortBy="#{prod.description}">
-								            <h:outputText value="#{prod.description}" />
-								        </p:column>
-								        
-								        <p:column headerText="Supplier" sortBy="#{prod.supplier}">
-								            <h:outputText value="#{prod.supplier}" />
-								        </p:column>
-								        
-								        <p:column headerText="Quantity in Stock" sortBy="#{prod.stockLevel}">
-								            <h:outputText value="#{prod.stockLevel}" />
-								            
 								        <p:column headerText="Status" sortBy="#{prod.status}">
-								        <h:outputText value="#{prod.status}" />
-								        </p:column>
-								        </p:column>
+											<h:outputText value="#{prod.status}" />
+										</p:column>
+
 									</p:dataTable>
 								</h:form>
 							</table>
-						</div>
 					</div>
 				</div>
 			</div>

@@ -15,7 +15,7 @@
 	<ui:define name="mainContent">
 
 		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
-		
+
 
 		<SCRIPT type="text/javascript">
 			function showHover(args) {
@@ -58,8 +58,11 @@
 
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
-								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}" onchange="submit()" valueChangeListener="#{search.sortBy}">
-									    <f:selectItems value="#{search.selectFilterRating}"/>
+								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}"
+									 >
+									<f:selectItems value="#{search.selectFilterRating}" />
+						
+
 								</h:selectOneMenu>
 							</div>
 
@@ -72,15 +75,16 @@
 									oninput="maxPriceRange.value = maxPriceRangeId.value" />
 								<output name="ageOutputName" id="maxPriceRange">2500</output>
 							</div>
-							
-							
-							
+
+
+
 						</div>
 					</div>
 				</div>
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton type="submit" action="#{search.search()}"	value="Seach" />
+						<h:commandButton type="submit" action="#{search.search()}"
+							value="Seach" />
 						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
@@ -88,16 +92,13 @@
 				<div class="row marginBottom">
 					<div class="col-md-12">
 
-						<div class="col-md-2 col-xs-12 fr sortBy">
-
-							
-						</div>
+						<div class="col-md-2 col-xs-12 fr sortBy"></div>
 
 					</div>
 				</div>
 
-				</h:form>
-				<h:form>
+			</h:form>
+			<h:form>
 
 
 				<div class="row marginBottom">
@@ -120,74 +121,74 @@
 
 				<div class="row marginBottom">
 
+					<h:panelGroup id="resultsSection">
+						<h:panelGroup>
+
+							<ui:repeat var="prod" value="#{Catalogue.products}">
 
 
 
-					<ui:repeat var="prod" value="#{Catalogue.products}">
+								<div id="produc1t" onmouseover="showHover(this)"
+									onmouseleave="hideHover(this)"
+									class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
 
+									<div class="imgWrapper">
 
+										<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
 
-						<div id="produc1t" onmouseover="showHover(this)"
-							onmouseleave="hideHover(this)"
-							class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
+										<div id="imgProduct" class="onHover">
 
-							<div class="imgWrapper">
+											<div class="star">
+												<c:if test="#{user.loggedIn}">
+													<h:commandLink action="#{basket.addToBasket(prod.id)}"
+														styleClass="glyphicon glyphicon-star"></h:commandLink>
+												</c:if>
 
-								<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
+											</div>
 
-								<div id="imgProduct" class="onHover">
+											<div class="basket">
+												<h:commandLink action="#{basket.addToBasket(prod.id)}"
+													styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+											</div>
 
-									<div class="star">
-										<c:if test="#{user.loggedIn}">
-											<h:commandLink action="#{basket.addToBasket(prod.id)}"
-												styleClass="glyphicon glyphicon-star"></h:commandLink>
-										</c:if>
-
+										</div>
 									</div>
 
-									<div class="basket">
-										<h:commandLink action="#{basket.addToBasket(prod.id)}"
-											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
-									</div>
 
+
+									<div class="resultDesc">
+
+										<div class="">
+											<h2>#{prod.name}</h2>
+
+											<div>
+												<span>#{prod.description}</span>
+											</div>
+
+											<div>
+												<span>£ #{prod.price}</span>
+											</div>
+
+											<div>
+
+												<ui:repeat size="5">
+													<span class="glyphicon glyphicon-star"></span>
+												</ui:repeat>
+
+
+
+											</div>
+
+
+										</div>
+
+
+									</div>
 								</div>
-							</div>
+							</ui:repeat>
 
-
-
-							<div class="resultDesc">
-
-								<div class="">
-									<h2>#{prod.name}</h2>
-
-									<div>
-										<span>#{prod.description}</span>
-									</div>
-									
-									<div>
-										<span>£ #{prod.price}</span>
-									</div>
-									
-									<div>
-
-										<ui:repeat size="5">
-											<span class="glyphicon glyphicon-star"></span>
-										</ui:repeat>
-
-
-
-									</div>
-
-
-								</div>
-
-
-							</div>
-						</div>
-					</ui:repeat>
-
-
-
+						</h:panelGroup>
+					</h:panelGroup>
 				</div>
 
 

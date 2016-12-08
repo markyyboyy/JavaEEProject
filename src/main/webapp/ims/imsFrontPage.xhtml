@@ -8,6 +8,7 @@
 <ui:composition template="../templates/imsTemplate.xhtml">
 	
 	<ui:define name="pageName">IMS - Home Page</ui:define>
+	<ui:param name="hideFooter" value="true" />
 	
 	<ui:define name="mainContent2">
 
@@ -17,21 +18,21 @@
 						<img src="../img/logo.png" width="250px" height="210px" />
 					</div>
 					
-					</header> <br /><br /><br />
+					</header> 
 			<nav>
 						
-				<h:form>
+				<h:form >
 				
 					
 					
-					<h:button styleClass="navButton" outcome="IMSPurchaseOrder"
+					<h:button  styleClass="navButton btn btn-success" outcome="IMSPurchaseOrder"
 						value="Purchase Order" />
-					<h:button styleClass="navButton" outcome="imsCustomerOrder" value="Customer Order" />
-					<h:button styleClass="navButton" outcome="imsStockLevel" value="Stock Level" />
-					<h:button styleClass="navButton" outcome="imsGenerateOrder" value="Generate Order" />
-					<h:button styleClass="navButton" outcome="imsproduct"
+					<h:button styleClass="navButton btn btn-success" outcome="imsCustomerOrder" value="Customer Order" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsStockLevel" value="Stock Level" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsGenerateOrder" value="Generate Order" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsproduct"
 						value="Product" />
-					<h:button styleClass="navButton" action="#" value="Suppliers" />
+					<h:button styleClass="navButton btn btn-success" action="#" value="Suppliers" />
 
 
 				</h:form>
@@ -41,7 +42,7 @@
 	</ui:define>
 
 
-<ui:param name="hideFooter" value="true" />
+
 
 </ui:composition>
 </html>

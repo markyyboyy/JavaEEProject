@@ -8,7 +8,11 @@ import com.qac.row5project.managers.CustomerManager;
 import com.qac.services.LoginService;
 
 import Controllers.session.CurrentUser;
-
+/**
+ * 
+ * @author Richard Allen
+ *
+ */
 
 
 
