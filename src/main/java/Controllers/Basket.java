@@ -1,12 +1,15 @@
 package Controllers;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import java.util.List;
 
 import com.qac.row5project.entities.CustomerOrder;
+import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 import com.qac.services.BasketService;
@@ -41,7 +44,20 @@ public class Basket {
 	private CurrentUser user;
 
 	private CustomerOrder cOrder;
+	
+	private List<CustomerOrderLine> custOrderMdl;
+	private List<CustomerOrder> custOrderResults = null;
 
+		
+	public DataModel<CustomerOrder> getCustOrderMdl(){
+		
+		custOrderMdl = basketService.getBasket(0).getCustomerOrderLines();
+		
+		return new ListDataModel<CustomerOrder>(custOrderResults);
+	}
+	
+	
+	
 	/**
 	 * Adding product item to basket if customer is logged in
 	 * 

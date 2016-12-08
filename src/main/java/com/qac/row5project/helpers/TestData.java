@@ -141,8 +141,9 @@ public class TestData {
 		return customerOrderLine;
 	}
 
-	public void setCustomerOrderLine(List<CustomerOrderLine> customerOrderLine) {
-		this.customerOrderLine = customerOrderLine;
+	public void setCustomerOrderLine(CustomerOrderLine customerOrderLine) {
+		
+		this.customerOrderLine.add(customerOrderLine);
 	}
 
 	public List<Employee> getEmployees() {
