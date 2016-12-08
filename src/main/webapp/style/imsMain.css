@@ -4,19 +4,11 @@
 /*Michael Crowther*/
 * {
 	box-sizing: border-box;
-	line-height: 1.4;
-	color: #373740;
 
-	background-color: #adadad;
-
-	background-color: #cecece;
 }
 
-table table-hover{
-	overflow:scroll;
-}
 body{
-	background-color: #adadad;
+	background-color: #D3D3D3;
 }
 .sidebar {
 	width: 18%;
@@ -111,3 +103,8 @@ main nav input[type="submit"] {
 	color: white;
 }
 
+.table table-hover{
+	overflow: scroll;
+	width:50%;
+  table-layout: fixed;
+}

@@ -6,12 +6,15 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
+import com.qac.row5project.managers.CustomerOrderLineManager;
+import com.qac.row5project.managers.CustomerOrderManager;
 import com.qac.services.BasketService;
 import com.qac.services.ProductService;
 import com.qac.services.StockService;
@@ -29,7 +32,7 @@ import Controllers.session.CurrentUser;
  */
 @Named("basket")
 @RequestScoped
-public class Basket {
+public class BasketController {
 
 	@Inject
 	private BasketService basketService;
@@ -42,18 +45,30 @@ public class Basket {
 
 	@Inject
 	private CurrentUser user;
+	
+	@Inject
+	private CustomerOrderManager cM;
+	
+	@Inject
+	private CustomerOrderLineManager olM;
 
 	private CustomerOrder cOrder;
 	
-	private List<CustomerOrderLine> custOrderMdl;
-	private List<CustomerOrderLine> custOrderResults = null;
+	private List<CustomerOrderLine> custOrderMdl = null;
+	//private List<CustomerOrderLine> custOrderResults = null;
 
-		
-	public DataModel<CustomerOrderLine> getCustOrderMdl(){
-		
-		custOrderMdl = basketService.getBasket(1).getCustomerOrderLines();
-		
-		return new ListDataModel<CustomerOrderLine>(custOrderResults);
+	
+	
+	
+	public List<CustomerOrderLine> getCustOrderMdl(){
+		try {
+			custOrderMdl = basketService.getBasket(user.getCustomer().getID()).getCustomerOrderLines();
+			if(custOrderMdl == null)
+				custOrderMdl = new ArrayList<>();
+		} catch (Exception e) {
+			custOrderMdl = new ArrayList<>();
+		}
+		return custOrderMdl;
 	}
 	
 	
@@ -65,9 +80,12 @@ public class Basket {
 	 */
 	public void addToBasket(Stock id, int quantity) {
 		if (user.isLoggedIn())
-			basketService.addToBasket(user.getCustomer().getID(), id, quantity);
+			basketService.addToBasket(id);
 	}
 
+	//add to basker stuff    vvv
+	//user.getCustomer().getID(), id, quantity
+	
 	public void addToBasket(String id) {
 
 		int productID = 0;
@@ -86,6 +104,16 @@ public class Basket {
 		} catch (NumberFormatException nm) {
 			System.out.println(nm.getMessage());
 
+		}
+		catch(NullPointerException e){
+			CustomerOrder newOrder = new CustomerOrder();
+			CustomerOrderLine newOL = new CustomerOrderLine();
+			Stock stock = stockService.getStockByProductID(productID);
+			newOrder.setCustomerId(user.getCustomer().getID());
+			newOL.setStock(stock);
+			olM.createCustomerOrderLine(newOL);
+			newOrder.addToCustomerOrderLine(newOL);
+			cM.createCustomerOrder(newOrder);
 		}
 
 	}
@@ -110,10 +138,14 @@ public class Basket {
 	 * @return
 	 */
 	public CustomerOrder getBasket() {
+	
 		if (cOrder == null && user.getCustomer() != null)
+			cOrder = new CustomerOrder();
 			cOrder = basketService.getBasket(user.getCustomer().getID());
 		return cOrder;
 	}
+	
+	
 
 	public float getTotalBasketPrice() {
 		return cOrder.getTotalPrice();

@@ -61,10 +61,7 @@
 						</div>
 					</div>
 
-					<div class="logo">
-						<br /> <br /> <br /> <a><img src="../img/logo.png"
-							width="250px" height="210px" /></a>
-					</div>
+				
 
 				</ui:define>
 
@@ -72,22 +69,17 @@
 			</div>
 		</div>
 
-
-
 		<ui:define name="mainContent2">
-			<div class="righttitletable">
 				<div class="title">
 					<h2>
 						<b>Customer Order Information Table</b>
 					</h2>
 					<br />
 				</div>
-				<div class="table" dir="ltr">
-					<div class="table-wrapper">
 						<div class="table-scroll">
 							<table border="1" style="width: 100%">
 								<h:form>
-									<h:dataTable styleClass="table table-hover" value="#{customerOrder.}"
+									<h:dataTable styleClass="table table-hover" value="#{customerOrder.customerOrders}"
 										var="cus" border="2" cellspacing="1" cellpadding="1" >
 										<h:column>
 											<c:facet name="header">Customer Order ID</c:facet>
@@ -106,12 +98,8 @@
 									</h:dataTable>
 								</h:form>
 							</table>
-</div>
-</div>
-</div>
-</div>
+						</div>
 		</ui:define>
-
 	</ui:composition>
 </h:body>
 </html>

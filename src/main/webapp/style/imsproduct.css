@@ -61,7 +61,7 @@ float: left;
 	margin: 0;
 }
 
-.table1, th1, td1, table th td, table tr td
+.table1, th1, td1, table th td, 
 {
 width:1%;
 text-align: center;

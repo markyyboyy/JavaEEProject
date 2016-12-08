@@ -32,7 +32,7 @@ public class CustomerOrder {
 	@OneToOne 
 	@NotNull
 	@JoinColumn(name = "customerId", nullable = false, unique = false)
-	private int customerId;
+	private long customerId;
 	
 	@OneToMany
 	@NotNull
@@ -57,6 +57,7 @@ public class CustomerOrder {
 
 	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER
 	public CustomerOrder() {
+		customerOrderLines = new ArrayList<>();
 	};
 	
 	
@@ -66,6 +67,10 @@ public class CustomerOrder {
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
+
+		this.paymentId = paymentId;
+		customerOrderLines = new ArrayList<>();
+
 		deriveTotalPrice();
 		
 	}
@@ -77,6 +82,10 @@ public class CustomerOrder {
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
+
+		this.paymentId = paymentId;
+		customerOrderLines = new ArrayList<>();
+
 		deriveTotalPrice();
 	}
 	public void deriveTotalPrice(){
@@ -126,12 +135,12 @@ public class CustomerOrder {
 		this.feedbackId = feedbackId;
 	}
 
-	public int getCustomerId() {
+	public long getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	public void setCustomerId(long l) {
+		this.customerId = l;
 	}
 
 	public Calendar getDatePlaced() {
