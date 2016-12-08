@@ -27,9 +27,9 @@ public class GeneratedOrder {
 	}
 
 	public List<com.qac.row5project.entities.Product> getProductItems() {
-		if (productItems.size() == 0){
+		//if (productItems.size() == 0){
 				productItems = generateService.getProducts();
-		}
+		//}
 		return productItems;
 	}
 	

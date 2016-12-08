@@ -16,6 +16,7 @@ import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.FeedbackManager;
 import com.qac.row5project.managers.GeneratedOrderManager;
+import com.qac.row5project.managers.ProductManager;
 
 @Stateless
 @Default
@@ -28,6 +29,8 @@ import com.qac.row5project.managers.GeneratedOrderManager;
 public class GeneratedOrderManagerOffline implements GeneratedOrderManager {
 	@Inject
 	private TestData testData;
+	@Inject
+	private ProductManager productManager;
 	private GeneratedOrder generatedorder;
 	private PurchaseOrder purchaseOrder;
 	
