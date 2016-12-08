@@ -12,6 +12,7 @@ import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.LoginDetails;
 import com.qac.row5project.entities.SecurityQuestion;
 import com.qac.row5project.managers.CustomerManager;
+import com.qac.services.RegisterService;
 
 /**
  * @Author Richard Allen
@@ -22,6 +23,9 @@ public class Register {
 
 	@Inject
 	private CustomerManager customerManager;
+	
+	@Inject
+	private RegisterService regServ;
 
 	private String sSurname = "";
 	private String sFirstname = "";
@@ -190,7 +194,7 @@ public class Register {
 		c.setQuestion(this.sQuestion);
 		System.out.println("Registered");
 		dateOfBirth(dtDOB);
-		customerManager.createCustomer(c);	
+		regServ.Register(c);
 		
 		return "home";
 	}
