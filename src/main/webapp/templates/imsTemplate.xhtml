@@ -34,27 +34,14 @@
 	<main class="content"> <ui:insert name="mainContent2" /> </main>
 
 
-	<footer>
+	<h:panelGroup id="footer" rendered="#{!hideFooter}">
 
 		<div class="footerWrapper">
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
+			<h:button styleClass="btn btn-primary" outcome="imsFrontPage"
+								value="Back"/>
 		</div>
 
-	</footer>
+	</h:panelGroup>
 
 
 
