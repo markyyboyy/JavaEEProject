@@ -46,7 +46,7 @@ width:38%;
 
 .logo
 {
-padding-left:6%;
+padding-left:15%;
 }
 
 .righttitletable
@@ -56,10 +56,16 @@ float: left;
 
 }
 
-.table
+.table, th, td
 {
 width:100%;
-border-style:solid;
+border: 1px solid black;
+text-align: center;
+}
+
+
+th{
+	width: 20%;
 }
 
 
