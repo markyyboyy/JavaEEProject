@@ -34,9 +34,11 @@ body{
 	border-left: 1px solid black;
 }
 
-input {
+input, inputText {
 	width: 100%;
 	float: left;
+	background-color: #c7c7c7;
+	
 }
 
 nav {
@@ -82,3 +84,18 @@ main nav input[type="submit"] {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.login{
+	padding-top: 25%;
+	padding-left: 10%;
+	width: 60%;
+}
+
+#loginBox #loginBox2{
+	color: white;
+}
+
+#loginButton{
+	color: white;
+}
+

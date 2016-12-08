@@ -71,6 +71,9 @@ public class TestData {
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		
+		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
+		loginDetails.add(imsLogin);
+		
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
 		CustomerOrder cOrder = new CustomerOrder(1,1,c,1,1);

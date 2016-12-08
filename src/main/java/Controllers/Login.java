@@ -58,7 +58,25 @@ public class Login {
 		return "home";
 	}
 	
+	public String ims() {
+		if (!email.isEmpty() && !password.isEmpty()) {
+			if (loginService.validLogin(email, password)) {
+				currentUser.setCustomer(customerManager.readCustomerByEmail(email.toLowerCase()));
+				System.out.println("Logged In");
+			} else {
+				password = "";
+			}
+		}
+		return "imsHome";
+	}
+	
 	public String logoff(){
+		currentUser.setCustomer(null);
+		System.out.println("Logged out");
+		return "login";
+	}
+	
+	public String imsLogoff(){
 		currentUser.setCustomer(null);
 		System.out.println("Logged out");
 		return "login";

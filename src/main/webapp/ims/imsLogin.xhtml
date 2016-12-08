@@ -1,0 +1,43 @@
+<!-- Author: Richard Allen -->
+
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<ui:composition template="../templates/imsTemplate.xhtml">
+
+	<ui:define name="pageName">IMS - Login</ui:define>
+
+	<ui:define name="mainContent2">
+
+		<h:form class="login">
+			
+			<label>User</label>
+				<h:inputText value="#{login.email}" id ="loginBox">
+					<f:passThroughAttribute name="type" value="text"></f:passThroughAttribute>
+					<f:passThroughAttribute name="placeholder" value="email.."></f:passThroughAttribute>
+					<f:passThroughAttribute name="alt" value="Email"></f:passThroughAttribute>
+					<f:passThroughAttribute name="required" value="required"></f:passThroughAttribute>
+				</h:inputText>
+
+				<br />
+				<label>Password</label>
+				<h:inputText value="#{login.password}" id="loginBox2">
+					<f:passThroughAttribute name="type" value="password"></f:passThroughAttribute>
+					<f:passThroughAttribute name="placeholder" value="password.."></f:passThroughAttribute>
+					<f:passThroughAttribute name="alt" value="Password"></f:passThroughAttribute>
+					<f:passThroughAttribute name="required" value="required"></f:passThroughAttribute>
+				</h:inputText>
+				<br />
+				<br />
+			<h:commandButton id="loginButton" action="#{login.ims}" value="Login" />
+
+		</h:form>
+		
+
+	</ui:define>
+
+</ui:composition>
+
+</html>
