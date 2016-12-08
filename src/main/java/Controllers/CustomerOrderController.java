@@ -14,7 +14,7 @@ import com.qac.services.CustomerOrderImsService;
 import java.io.Serializable;
 
 @Named("customerOrder")
-@ConversationScoped
+@RequestScoped
 public class CustomerOrderController implements Serializable {
 	
 	
@@ -30,7 +30,6 @@ public class CustomerOrderController implements Serializable {
 	
 	private List<CustomerOrder> lsOrders;
 	
-	@SuppressWarnings("unchecked")
 	public DataModel<CustomerOrder> getCustomerOrders() {
 		
 		setCustomerOrders(customerOrderService.readCustomerOrders());
@@ -38,11 +37,6 @@ public class CustomerOrderController implements Serializable {
 		return new ListDataModel<>(lsOrders);
 
 	}
-	
-	
-
-		
-		
 
 	public void setCustomerOrders(List<CustomerOrder> lstTemp ){
 		this.lsOrders = lstTemp;
