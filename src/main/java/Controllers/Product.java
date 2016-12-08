@@ -1,20 +1,32 @@
 /**
- * @author Mark Freeman
+ * @author RyanB
  */
 package Controllers;
-import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name = "product", eager = true)
+import java.util.List;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import com.qac.row5project.entities.ProductItem;
+import com.qac.services.ProductService;
+
+@Named("product")
+@RequestScoped
 public class Product {
 	
-	private com.qac.row5project.entities.Product product;
+@Inject
+private ProductService productService;
 
-	public com.qac.row5project.entities.Product getProduct() {
-		return product;
-	}
 
-	public void setProduct(com.qac.row5project.entities.Product product) {
-		this.product = product;
-	}
-	
+public List<ProductItem> findAll() {
+	List<ProductItem> p = productService.findAllProducts();
+		if(p != null)
+			return p;
+		else {
+			return null;}
+		}
+			
+			
 }

@@ -24,13 +24,13 @@
 		
 	<ui:define name="mainContent2">
 	<div id = "productID">
-	<h3>Name Of Product</h3>
+	<h3>ProductID</h3>
 	<ui:repeat var="product" value="#{generated.productItems}">
 	<p><h:outputText value="#{product.productId}" /></p>
 	</ui:repeat>
 </div>
 	<div id = "productName">
-	<h3>Name Of Product</h3>
+	<h3>Product Name</h3>
 	<ui:repeat var="product" value="#{generated.productItems}">
 	<p><h:outputText value="#{product.name}" /></p>
 	</ui:repeat>

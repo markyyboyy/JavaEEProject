@@ -2,7 +2,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:c="http://xmlns.jcp.org/jsf/core">
+	xmlns:c="http://xmlns.jcp.org/jsf/core">
 <!-- RyanB -->
 
 <h:head>
@@ -91,43 +91,43 @@
 						<div class="table-scroll">
 							<table border="1" style="width: 100%">
 								<h:form>
-							        <h:dataTable value="#{product.product}" var="product1" border="2"
-							            cellspacing="1" cellpadding="1">
-							            <h:column>
-							                <c:facet name="header">PRODUCT ID</c:facet>
+									<h:dataTable value="#{product.product}" var="product1"
+										border="2" cellspacing="1" cellpadding="1">
+										<h:column>
+											<c:facet name="header">PRODUCT ID</c:facet>
 							                    #{product1.productId}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">CATEGORY</c:facet>
+										<h:column>
+											<c:facet name="header">CATEGORY</c:facet>
 							                    #{product1.category}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">NAME</c:facet>
+										<h:column>
+											<c:facet name="header">NAME</c:facet>
 							                    #{product1.name}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">DESCRIPTION</c:facet>
+										<h:column>
+											<c:facet name="header">DESCRIPTION</c:facet>
 							                    #{product1.desc}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">SUPPLIER</c:facet>
+										<h:column>
+											<c:facet name="header">SUPPLIER</c:facet>
 							                    #{product1.supplier}
 							                </h:column>
-							            <h:column>
-							                <c:facet name="header">QUANTITY IN STOCK</c:facet>
+										<h:column>
+											<c:facet name="header">QUANTITY IN STOCK</c:facet>
 							                    #{product1.quantity}
 							            </h:column>
-							            <h:column>
-							                <c:facet name="header">STATUS</c:facet>
+										<h:column>
+											<c:facet name="header">STATUS</c:facet>
 							                    #{product1.status}
 							            </h:column>
-       							 </h:dataTable>
-</h:form>
-</table>
-</div>
-</div>
-</div>
-</div>
+									</h:dataTable>
+								</h:form>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 		</ui:define>
 
 	</ui:composition>
