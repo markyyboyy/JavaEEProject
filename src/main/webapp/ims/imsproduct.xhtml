@@ -34,7 +34,9 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-
+									<ui:repeat value="#{product.products}" var="prod1">
+										<f:selectItem itemValue="#{prod1.category}" itemLabel="#{prod1}" />
+									</ui:repeat>
 								</h:selectOneMenu>
 							</div>
 
@@ -62,15 +64,11 @@
 
 						</div>
 					</div>
-
 					<div class="logo">
 						<br /> <br /> <br /> <a><img src="../img/logo.png"
 							width="250px" height="210px" /></a>
 					</div>
-
 				</ui:define>
-
-
 			</div>
 		</div>
 
@@ -78,9 +76,11 @@
 
 		<ui:define name="mainContent2">
 			<div class="righttitletable">
+
+						<div id = "scrollpane">
 									<p:dataTable styleClass="table table-hover" value="#{product.products}" var="prod" border="2" cellspacing="1" cellpadding="1">
 										<f:facet name="header">
-											<h2>Product Information Table</h2>
+											<h2><center>Product Information Table</center></h2>
 										</f:facet>
 									
 										<p:column headerText="ID" sortBy="#{prod.id}">
@@ -113,6 +113,8 @@
 										</p:column>
 									
 									</p:dataTable>
+				
+				</div>
 			</div>
 		</ui:define>
 	</ui:composition>
