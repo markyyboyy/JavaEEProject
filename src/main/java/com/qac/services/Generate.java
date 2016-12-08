@@ -39,9 +39,9 @@ public class Generate {
 		Iterator i = stock.iterator();
 		while (i.hasNext()){
 			Product p = (Product) i.next();
-			if (p.getQuantity() < 5){
+			//if (p.getQuantity() < 5){
 				returnable.add(p);
-			}
+			//}
 		}
 		return returnable;
 	}

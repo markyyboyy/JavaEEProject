@@ -37,8 +37,8 @@
 </div>
 	<div id="quantity">
 		<h3>Quantity Remaining</h3>
-		<ui:repeat var="product" value="#{generated.productItems}">
-	<p><h:outputText value="#{product.quantity}" /></p>
+		<ui:repeat var="pro" value="#{product.products}">
+	<p><h:outputText value="#{pro.stockLevel}" /></p>
 	</ui:repeat>
 	</div>
 	<div id="suggested">
