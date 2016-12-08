@@ -118,14 +118,16 @@ public class RatingManagerOffline implements RatingManager {
 
 	@Override
 	public List<Rating> findRatingsbyProductID(long l) {
-		// TODO Auto-generated method stub
-		return null;
+		int iRating = (int) l;		
+		return findRatingsbyProductID(iRating);	
 	}
 
 	@Override
 	public int findAvgRatingsbyProductID(long l) {
-		// TODO Auto-generated method stub
+
 		return 0;
+	
+	
 	}
 	
 }

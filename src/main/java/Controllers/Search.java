@@ -1,10 +1,12 @@
 package Controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -53,17 +55,18 @@ public class Search {
 	public void init(){	
 		
 		selectFilterRating = new ArrayList<String>();
+		selectFilterRating.add("-1");
 		selectFilterRating.add("1");
 		selectFilterRating.add("2");
 		selectFilterRating.add("3");
 		selectFilterRating.add("4");
 		selectFilterRating.add("5");
 		
-		sRatingFilter = "4";
+		sRatingFilter = "3";
 
 	}
 	
-	public void sortBy(ValueChangeEvent e) {		
+/*	public void sortBy(ValueChangeEvent e) {		
 		
 		String sValue = e.getNewValue().toString();
 		System.out.println(sValue);
@@ -72,18 +75,40 @@ public class Search {
 		List<ProductItem> temp = searchService.search("", Integer.valueOf(sValue), -1);
 		
 		searchResults.setResults(temp);
+	    try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("catalogue.xhtml");
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 		
 		System.out.println(temp);
 		
+	}*/
+
+	
+	public String submit() {
+	    return "catalogue";
 	}
 
-	
-	
-
-	
+	public int toInt(String sRating){
+		
+		try{
+			
+			return Integer.parseInt(sRating);
+			
+		}catch(NumberFormatException ex){
+			
+			sRatingFilter = "3";			
+			return 3;
+		}
+		
+		
+	}
 	
 	public String search() {
-		List<ProductItem> results = searchService.searchBy(term);
+		List<ProductItem> results = searchService.search(term, toInt(sRatingFilter), 0.0d);
 		System.out.println("Searched for term " + term);
 		if (results != null)
 			if (results.size() == 1) {

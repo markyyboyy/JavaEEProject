@@ -68,8 +68,8 @@ public class Catalogue implements Serializable {
 	@SuppressWarnings("unchecked")
 	public DataModel<ProductItem> getProducts() {
 
-
-		setResults(searchService.searchBy(conSearch.getTerm()));
+		if(productsResults == null)
+			setResults(searchService.searchBy(""));
 		
 		return (ListDataModel<ProductItem>) getPagination().createPageDataModel();
 
@@ -136,12 +136,15 @@ public class Catalogue implements Serializable {
 	}
 
 	public PaginationHelper getPagination() {
-		if (pagenationHelper == null) {
 
 			pagenationHelper = new PaginationHelper(4) {
 
 				@Override
 				public int getItemsCount() {
+					
+					if(productsResults != null)
+						return productsResults.size();
+					
 					return productService.findAllProducts().size();
 				}
 
@@ -149,6 +152,8 @@ public class Catalogue implements Serializable {
 				public DataModel<ProductItem> createPageDataModel() {
 
 					try {
+						
+						
 						return new ListDataModel<ProductItem>(
 								productsResults.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 
@@ -160,9 +165,7 @@ public class Catalogue implements Serializable {
 
 				}
 
-			};
-
-		}
+			};		
 
 		return pagenationHelper;
 	}
@@ -186,6 +189,9 @@ public class Catalogue implements Serializable {
 	
 	public void setResults(List<ProductItem> results){
 		this.productsResults =  results;
+		
+/*		getPagination().getItemsCount();
+		getPagination().createPageDataModel();*/
 		
 		if(productsResults == null)
 			productsResults = productService.findAllProducts();

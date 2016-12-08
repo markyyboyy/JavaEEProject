@@ -53,7 +53,7 @@ public class SearchService {
 		
 		for (ProductItem productItem : results) {		
 			
-			if(productItem.getAverageRating() > iRating)
+			if(productItem.getAverageRating() > iRating) 
 				resultsRating.add(productItem);	
 			
 		}
@@ -66,6 +66,7 @@ public class SearchService {
 	public List<ProductItem> searchBy(String term) {
 		
 		List<Product> results = new ArrayList<>();
+		List<ProductItem> productItems = new ArrayList<>();
 
 		if(term == null)
 			return new ArrayList<>();
@@ -73,6 +74,11 @@ public class SearchService {
 		if(term.equals("")){
 			results.addAll(productRepository.findAllProducts());
 			
+			results.forEach(product -> {
+				productItems.add(productService.getProductItem(product, product.getProductId()));
+			});
+			
+			return productItems;
 		}
 			
 		
@@ -86,7 +92,6 @@ public class SearchService {
 		results.addAll(searchByProductDescription(term));
 		if (results.isEmpty())
 			return null;
-		List<ProductItem> productItems = new ArrayList<>();
 
 		results.forEach(product -> {
 			productItems.add(productService.getProductItem(product, product.getProductId()));
