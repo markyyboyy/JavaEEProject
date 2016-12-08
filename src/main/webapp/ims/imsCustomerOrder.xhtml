@@ -20,7 +20,7 @@
 					<div class="search">
 						<h:inputText alt="search">
 							<f:passThroughAttribute name="placeholder"
-								value="Search by Product ID..."></f:passThroughAttribute>
+								value="Search by Customer Order ID..."></f:passThroughAttribute>
 						</h:inputText>
 					</div>
 				</ui:define>
@@ -34,7 +34,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-									<ui:repeat var="Cat" value="#{product.product.category}">
+									<ui:repeat var="Cat" value="#{custo.category}">
 										<f:selectItem itemValue="#{Cat}" itemLabel="#{Cat}" />
 									</ui:repeat>
 								</h:selectOneMenu>
@@ -82,7 +82,7 @@
 			<div class="righttitletable">
 				<div class="title">
 					<h2>
-						<b>Product Information Table</b>
+						<b>Customer Order Information Table</b>
 					</h2>
 					<br />
 				</div>
