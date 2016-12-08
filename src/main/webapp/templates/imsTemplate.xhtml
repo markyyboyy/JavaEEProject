@@ -11,6 +11,7 @@
 <link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
 <link href="../style/imsMain.css" type="text/css" rel="stylesheet" />
 <link href="../style/imsGenerateOrder.css" type="text/css" rel="stylesheet" />
+<link href="../style/imsproduct.css" type="text/css" rel="stylesheet" />
 <script src="../js/jquery-3.1.1.min.js"></script>
 <meta charset="UTF-8"/>
 </head>
@@ -34,27 +35,14 @@
 	<main class="content"> <ui:insert name="mainContent2" /> </main>
 
 
-	<footer>
+	<h:panelGroup id="footer" rendered="#{!hideFooter}">
 
 		<div class="footerWrapper">
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
-			<div>
-				<a href="#">FooterTestA | </a>
-			</div>
+			<h:button styleClass="btn btn-primary" outcome="imsFrontPage"
+								value="Back"/>
 		</div>
 
-	</footer>
+	</h:panelGroup>
 
 
 
