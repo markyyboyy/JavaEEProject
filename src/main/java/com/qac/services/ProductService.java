@@ -69,11 +69,10 @@ public class ProductService {
 		ProductItem productItem = new ProductItem();
 		
 		if (product != null)
-			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(), product.getWeight(), 
-					stock.getQuantity(), stock.getPrice(), product.getStatus(), product.getSupplier(), product.getCategory());
+			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(), product.getWeight(), product.getStatus(), product.getSupplier(), product.getCategory());
 		
 		if (stock != null)
-			productItem.addStockInfo(stock.getQuantity());
+			productItem.addStockInfo(stock.getQuantity(), stock.getPrice());
 		
 		if(product != null && ratingManager.findRatingsbyProductID(product.getProductId()) !=  null){
 			

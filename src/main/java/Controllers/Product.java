@@ -35,5 +35,4 @@ public DataModel<ProductItem> getProducts() {
 		{
 			this.lsProducts =lsTemp;
 		}
-			
 }
