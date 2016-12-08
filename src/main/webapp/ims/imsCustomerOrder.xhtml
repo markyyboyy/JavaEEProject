@@ -103,7 +103,9 @@
 							                </h:column>
 										<h:column>
 											<c:facet name="header">Date</c:facet>
-							                    #{cus.datePlaced}
+							                    #{cus.datePlaced.get(0)} , 
+							                    #{cus.datePlaced.get(1)} , 
+							                    #{cus.datePlaced.get(2)} 
 							                </h:column>
 									</h:dataTable>
 								</h:form>

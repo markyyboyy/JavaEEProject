@@ -2,6 +2,8 @@ package com.qac.row5project.helpers;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -80,6 +82,18 @@ public class TestData {
 		stocks.add(new Stock(11, true, 50, false, 22, 250));
 		
 		
+	}
+	public void generateCustomerOrder(int q){
+		CustomerOrder cOrder1;
+		Random rand = new Random();
+		int max = customers.size();
+		int min = 0;
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+
+		for(int i=1;i<=q;i++)
+		{
+			cOrder1 = new CustomerOrder(i,randomNum,)
+		}
 	}
 
 	public List<Product> getProducts() {
