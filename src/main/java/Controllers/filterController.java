@@ -54,15 +54,6 @@ public class filterController {
 	}
 
 	
-	private List<String> selectFilterRating;// = new ArrayList<SelectItem>();
-
-	public List<String> getSelectFilterRating() {
-		return selectFilterRating;
-	}
-
-	public void setSelectFilterItem(List<String> selectFilterRating) {
-		this.selectFilterRating = selectFilterRating;
-	}
 
 	
 	
@@ -76,13 +67,6 @@ public class filterController {
 		selectFilterItem.add("Price DECS");
 		selectFilterItem.add("Rating ASC");
 		selectFilterItem.add("Rating DECS");
-		
-		selectFilterRating = new ArrayList<String>();
-		selectFilterRating.add("1");
-		selectFilterRating.add("2");
-		selectFilterRating.add("3");
-		selectFilterRating.add("4");
-		selectFilterRating.add("5");
 
 		
 		sRatingFilter = "4";
@@ -92,12 +76,5 @@ public class filterController {
 		
 	}
 
-	public void sortBy(ValueChangeEvent e) {
-
-		
-		System.out.println("Within the Sort");
-		
-		
-	}
 
 }

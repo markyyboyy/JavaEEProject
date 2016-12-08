@@ -115,5 +115,17 @@ public class RatingManagerOffline implements RatingManager {
 
 		testData.setRatings(ratingList);
 	}
+
+	@Override
+	public List<Rating> findRatingsbyProductID(long l) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int findAvgRatingsbyProductID(long l) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }

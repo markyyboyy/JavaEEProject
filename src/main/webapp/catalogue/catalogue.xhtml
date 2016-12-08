@@ -58,9 +58,8 @@
 
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
-								<h:selectOneMenu ID="Rating" value="#{filter.sRatingFilter}" valueChangeListener="#{filter.sortBy()}">
-									    <f:selectItems value="#{filter.selectFilterRating}"/>
-					                    <f:ajax event="valueChange" update="@this"/>									    
+								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}" onchange="submit()" valueChangeListener="#{search.sortBy}">
+									    <f:selectItems value="#{search.selectFilterRating}"/>
 								</h:selectOneMenu>
 							</div>
 

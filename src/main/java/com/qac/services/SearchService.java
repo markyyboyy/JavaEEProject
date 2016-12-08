@@ -28,12 +28,47 @@ public class SearchService {
 		return productRepository.readProductByDescription(description);
 	}
 
+	
+	public List<ProductItem> search(String sName, int iRating, double dMaxPrice){
+		
+		List<ProductItem> productResults = searchBy(sName);
+
+		if(iRating > 0 && iRating <=5){		
+			productResults = searchByRating(iRating, productResults);			
+		}
+		
+		if(dMaxPrice > 0){
+			System.out.println("Price match");
+		}		
+		
+		
+		return productResults;
+		
+	}
+	
+	
+	public List<ProductItem> searchByRating(int iRating, List<ProductItem> results){
+		
+		List<ProductItem> resultsRating = new ArrayList<>();
+		
+		for (ProductItem productItem : results) {		
+			
+			if(productItem.getAverageRating() > iRating)
+				resultsRating.add(productItem);	
+			
+		}
+		
+		
+		return resultsRating;
+	}
+	
+	
 	public List<ProductItem> searchBy(String term) {
 		
 		List<Product> results = new ArrayList<>();
 
 		if(term == null)
-			return null;
+			return new ArrayList<>();
 		
 		if(term.equals("")){
 			results.addAll(productRepository.findAllProducts());

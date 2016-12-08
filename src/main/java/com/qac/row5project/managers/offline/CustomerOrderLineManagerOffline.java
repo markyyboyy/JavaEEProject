@@ -20,6 +20,7 @@ import com.qac.row5project.managers.CustomerOrderLineManager;
  *
  */
 public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager {
+	
 	@Inject
 	private TestData testData;
 	
@@ -32,7 +33,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		List<CustomerOrderLine> newCOLine = testData.getCustomerOrderLine();
 		customerOrderLine.setId(newCOLine.size()+1);
 		newCOLine.add(customerOrderLine);
-		testData.setCustomerOrderLine(newCOLine);
+		testData.setCustomerOrderLine(customerOrderLine);
 	}
 		
 	//READ - Customer and Inventory Manager Only
