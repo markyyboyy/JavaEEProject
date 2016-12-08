@@ -57,7 +57,6 @@ public class TestData {
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 
-		
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active", "Bonnie"));
 		products.get(0).setProductId(0);
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
@@ -66,9 +65,7 @@ public class TestData {
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 5, "Ornament", "Active", "Bonnie"));
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 6, "Ornament", "Active", "Bonnie"));
-		
-	
-		
+
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		
@@ -85,8 +82,6 @@ public class TestData {
 		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
 		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
 		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
-		
-		
 	}
 	public void generateCustomerOrder(int q){
 		CustomerOrder cOrder1;
