@@ -56,15 +56,35 @@ float: left;
 
 }
 
-.table1, th1, td1
+table{
+	with:100%;
+	padding: 0;
+    margin: 0;
+}
+
+.ui-datatable-tablewrapper{
+	margin: 0;
+}
+
+.table1, th1, td1, table th td, table tr td
 {
-width:100%;
+width:1%;
 border: 1px solid black;
 text-align: center;
+
+}
+
+.table th
+
+{
+text-align: center;	
 }
 
 #scrollpane
 {
-	overflow:scroll;
-	height: 100%;
+width: 100%;
+overflow-y: scroll;
+height: 100%;
+	
+	
 }
