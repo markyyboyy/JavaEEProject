@@ -9,47 +9,40 @@
 	<ui:define name="mainContent2">
 
 
-		<div class="container-fluid">
+		<div class="container-fluid" >
+		<div class="wrapper">
 			<div class="row">
-				<div class="col-sm-4">
-					<a href="IMSPurcahseOrder.xhtml">
-						<button name="PurchaseOrder">Purchase Order</button>
-					</a>
-				</div>
-
-				<div class="col-sm-4">
-					<a href="imsCustomerOrder.xhtml">
-						<button name="CustomerOrder">Customer Order</button>
-					</a>
-				</div>
-				<div class="col-sm-4">
-					<a href="imsStockLevel.xhtml">
+				<div class="btn-group btn-group-justified">
+					<a href="IMSPurchaseOrder.xhtml" class="btn btn-primary" >Purchase
+							Order</a> 
+							<a href="imsCustomerOrder.xhtml" class="btn btn-primary"> Customer Order
+					</a> <a href="imsStockLevel.xhtml">
 						<button name="StockLevel">Stock Level</button>
 					</a>
+
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4">
+				
+				<div class="btn-group btn-group-justified">
 					<a href="imsGenerateOrder.xhtml">
 						<button name="GenerateOrder">Generate Order</button>
-					</a>
-				</div>
-
-				<div class="col-sm-4">
+					</a> 
 					<a href="imsproduct.xhtml">
 						<button name="product">Product</button>
 					</a>
-				</div>
-				<div class="col-sm-4">
 					<a href="imsSupplier.xhtml">
 						<button name="Suppliers">Suppliers</button>
 					</a>
-				</div>
-			</div>
+					
 
+				</div>
+
+
+			</div>
+			
+</div>
 
 		</div>
-		
+
 
 		<div class="logo">
 			<img src="../img/logo.png" width="250px" height="210px" />
