@@ -92,7 +92,7 @@ public class TestData {
 
 		for(int i=1;i<=q;i++)
 		{
-			cOrder1 = new CustomerOrder(i,randomNum,c,1,1);
+			//cOrder1 = new CustomerOrder(i,randomNum,c,1,1);
 		}
 	}
 
