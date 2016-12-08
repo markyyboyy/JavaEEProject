@@ -1,3 +1,5 @@
+<!-- Author: Richard Allen -->
+
 <html lang="en" 
 	xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
@@ -21,14 +23,17 @@
 		
 		<div id = "AccountMenu">
 			<div id = "TopSection">
-				<h3>Account Name:</h3>
+				<h3>Account Name: </h3> 
+				<h2> #{user.customer.firstname}</h2> 
+				<h2> #{user.customer.surname} </h2>
+				
 				<h3>Account Number:</h3>
 				<h3>Balance:</h3>
 			</div>			
-			
+			<h:form>
 			<div id ="ButtonSection">
 				<div class = "col-sm-4">
-				<h:commandButton action="#{navigation.editDetails}">
+				<h:commandButton action="#{MyAccount.editDetails()}">
 					<f:passThroughAttribute name="value" value="Edit Details"></f:passThroughAttribute>
 					<f:passThroughAttribute name="alt" value="edit details"  ></f:passThroughAttribute>
 				</h:commandButton>
@@ -79,6 +84,7 @@
 				</h:commandButton><br />	
 				</div>		
 			</div>
+			</h:form>
 		</div>
 		
 		
