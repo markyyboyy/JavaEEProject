@@ -1,3 +1,5 @@
+
+
 @CHARSET "ISO-8859-1";
 /*Michael Crowther*/
 * {
@@ -10,7 +12,9 @@
 	background-color: #cecece;
 }
 
-
+table table-hover{
+	overflow:scroll;
+}
 body{
 	background-color: #adadad;
 }
