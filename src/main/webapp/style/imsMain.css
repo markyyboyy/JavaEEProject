@@ -8,7 +8,7 @@
 }
 
 body{
-	background-color: #D3D3D3;
+	background-color: #adadad;
 }
 .sidebar {
 	width: 18%;
@@ -107,4 +107,11 @@ main nav input[type="submit"] {
 	overflow: scroll;
 	width:50%;
   table-layout: fixed;
+}
+
+.logoFP {
+	padding-top: 15%;
+	padding-left: 34%;
+
+	
 }
