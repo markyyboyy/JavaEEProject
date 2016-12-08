@@ -67,11 +67,10 @@ public class CustomerOrder {
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
-<<<<<<< HEAD
+
 		this.paymentId = paymentId;
 		customerOrderLines = new ArrayList<>();
-=======
->>>>>>> 3837e7feafc409140f3d52cca931c0305d14d41d
+
 		deriveTotalPrice();
 		
 	}
@@ -83,11 +82,10 @@ public class CustomerOrder {
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
-<<<<<<< HEAD
+
 		this.paymentId = paymentId;
 		customerOrderLines = new ArrayList<>();
-=======
->>>>>>> 3837e7feafc409140f3d52cca931c0305d14d41d
+
 		deriveTotalPrice();
 	}
 	public void deriveTotalPrice(){
