@@ -105,6 +105,6 @@ main nav input[type="submit"] {
 
 .table table-hover{
 	overflow: scroll;
-width:50%;
+	width:50%;
   table-layout: fixed;
 }
