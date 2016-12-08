@@ -8,47 +8,26 @@
 <ui:composition template="../templates/imsTemplate.xhtml">
 	<ui:define name="mainContent2">
 
+	<ui:define name="pageName">IMS - Home Page</ui:define>
 
-		<div class="container-fluid" >
-		<div class="wrapper">
-			<div class="row">
-				<div class="btn-group btn-group-justified">
-					<a href="IMSPurchaseOrder.xhtml" class="btn btn-primary" >Purchase
-							Order</a> 
-							<a href="imsCustomerOrder.xhtml" class="btn btn-primary"> Customer Order
-					</a> <a href="imsStockLevel.xhtml">
-						<button name="StockLevel">Stock Level</button>
-					</a>
+<div class="container-fluid">
+		<nav>
 
-				</div>
-				
-				<div class="btn-group btn-group-justified">
-					<a href="imsGenerateOrder.xhtml">
-						<button name="GenerateOrder">Generate Order</button>
-					</a> 
-					<a href="imsproduct.xhtml">
-						<button name="product">Product</button>
-					</a>
-					<a href="imsSupplier.xhtml">
-						<button name="Suppliers">Suppliers</button>
-					</a>
-					
-
-				</div>
-
-
-			</div>
-			
-</div>
-
-		</div>
-
-
-		<div class="logo">
+			<h:commandButton styleClass="navButton" action="#" value="Purchase Order" />
+			<h:commandButton styleClass="navButton" action="#" value="Customer Order" />
+			<h:commandButton styleClass="navButton" action="#" value="Stock Level" />
+			<h:commandButton styleClass="navButton" action="#" value="Generate Order" />
+			<h:commandButton styleClass="navButton" action="#" value="Product" />
+			<h:commandButton styleClass="navButton" action="#" value="Suppliers" />
+	<div class="logo">
 			<img src="../img/logo.png" width="250px" height="210px" />
 		</div>
-
+		</nav>
+</div>
 	</ui:define>
+
+		
+
 
 </ui:composition>
 </html>
