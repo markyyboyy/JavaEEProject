@@ -5,9 +5,14 @@ package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+
 import com.qac.row5project.entities.Employee;
 import com.qac.row5project.helpers.*;
 
+@Stateless
+@Default
 public class EmployeeManagerOffline {
 	TestData testData = new TestData();
 	//READ - Inventory Manager Only

@@ -86,32 +86,67 @@ public class TestData {
 		Supplier s = new Supplier(1);
 		
 		Calendar c = Calendar.getInstance();
-		Calendar c2 = Calendar.getInstance();
 		c.set(1, 1, 1990);
-		CustomerOrder cOrder = new CustomerOrder(1,1,c,1,1);
-		customerOrders.add(cOrder);	
+		
 		
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		
 		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
 		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
 		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
-		
-		c.set(5, 6, 2012);
-		c2.set(20, 6, 2012);
-		purchaseOrders.add(new PurchaseOrder(1,s, "Pending",c , c2));
-		
+
+		Calendar c1 = Calendar.getInstance();
+
+		c1.set(5, 6, 2012);
+		purchaseOrders.add(new PurchaseOrder(1,s, "Pending",c , c1));
+		generateCustomerOrder(50);
 	}
 	public void generateCustomerOrder(int q){
 		CustomerOrder cOrder1;
 		Random rand = new Random();
+		Calendar c2 = Calendar.getInstance();
 		int max = customers.size();
 		int min = 0;
-	    int randomNum = rand.nextInt((max - min) + 1) + min;
-
+		//quantity
+	    int randomNum ;
+	    int randomNumYear;
+	    int randomNumDay;
+	    int randomNumMonth;
+	    int  randomNumAddressID;
 		for(int i=1;i<=q;i++)
 		{
-			//cOrder1 = new CustomerOrder(i,randomNum,c,1,1);
+			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
+			randomNum =	rand.nextInt((max - min) + 1) + min;
+			randomNumYear = rand.nextInt((2016 - 1920) + 1) + 1920;
+			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
+			randomNumMonth = rand.nextInt((12 - 1) + 1) + 1;
+			c2.set(randomNumYear, randomNumMonth, randomNumDay);
+			cOrder1 = new CustomerOrder(i,randomNum,c2,randomNumAddressID);
+			customerOrders.add(cOrder1);
+		}
+	}
+	public void generateCustomerOrderLine(){
+		CustomerOrder cOrder1;
+		Random rand = new Random();
+		Calendar c2 = Calendar.getInstance();
+		ArrayList rStock =new ArrayList();
+	    int randomNumQuantity;
+	    int randomNumStock;
+	    int randomNumlines;
+		for(int i=1;i<=customerOrders.size();i++)
+		{
+
+			randomNumlines = rand.nextInt((10 - 1) + 1) + 1;
+			for(int j=1;j<=randomNumlines;i++)
+			{
+			randomNumQuantity = rand.nextInt((3 - 1) + 1) + 1;
+			randomNumStock = rand.nextInt((stocks.size() - 0) + 1) + 0;
+			for(int g=0;g<rStock.size();g++)
+			{
+			CustomerOrderLine cOrderLine = new CustomerOrderLine(i,randomNumQuantity,stocks.get(randomNumStock));
+			customerOrders.get(i).addToCustomerOrderLine(cOrderLine);
+			}
+			}
 		}
 	}
 
