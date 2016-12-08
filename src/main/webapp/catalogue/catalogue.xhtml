@@ -3,7 +3,8 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 
 
@@ -58,10 +59,9 @@
 
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
-								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}"
-									 >
+								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}">
 									<f:selectItems value="#{search.selectFilterRating}" />
-						
+
 
 								</h:selectOneMenu>
 							</div>
@@ -69,11 +69,8 @@
 
 							<!-- Slider to show the max price -->
 							<div class="col-md-6 col-xs-12">
-								<label for="maxPrice">Max Price</label> <input type="range"
-									name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
-									max="5000"
-									oninput="maxPriceRange.value = maxPriceRangeId.value" />
-								<output name="ageOutputName" id="maxPriceRange">2500</output>
+								<h:outputText id="displayRange" value="Between £ 100 and £5000}" />
+								<p:slider range="true" max="5000"/>
 							</div>
 
 
