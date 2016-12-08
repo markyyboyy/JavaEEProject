@@ -8,25 +8,29 @@
 <ui:composition template="../templates/imsTemplate.xhtml">
 	<ui:define name="mainContent2">
 
-	<ui:define name="pageName">IMS - Home Page</ui:define>
+	
 
-<div class="container-fluid">
-		<nav>
+		<div class="container-fluid">
+			<nav>
 
-			<h:commandButton styleClass="navButton" action="#" value="Purchase Order" />
-			<h:commandButton styleClass="navButton" action="#" value="Customer Order" />
-			<h:commandButton styleClass="navButton" action="#" value="Stock Level" />
-			<h:commandButton styleClass="navButton" action="#" value="Generate Order" />
-			<h:commandButton styleClass="navButton" action="#" value="Product" />
-			<h:commandButton styleClass="navButton" action="#" value="Suppliers" />
-	<div class="logo">
-			<img src="../img/logo.png" width="250px" height="210px" />
+				<h:commandButton styleClass="navButton" action="../IMSProductOrder.xhtml"
+					value="Purchase Order" />
+				<h:commandButton styleClass="navButton" action="#"
+					value="Customer Order" />
+				<h:commandButton styleClass="navButton" action="#"
+					value="Stock Level" />
+				<h:commandButton styleClass="navButton" action="#"
+					value="Generate Order" />
+				<h:commandButton styleClass="navButton" action="#" value="Product" />
+				<h:commandButton styleClass="navButton" action="#" value="Suppliers" />
+				<div class="logo">
+					<img src="../img/logo.png" width="250px" height="210px" />
+				</div>
+			</nav>
 		</div>
-		</nav>
-</div>
 	</ui:define>
 
-		
+
 
 
 </ui:composition>
