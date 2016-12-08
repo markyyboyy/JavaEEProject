@@ -2,6 +2,8 @@ package com.qac.row5project.managers.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Address;
@@ -12,6 +14,9 @@ import com.qac.row5project.managers.AddressManager;
  * @author Michael Crowther
  *
  */
+
+@Stateless
+@Default
 public class AddressManagerOffline implements AddressManager {
 	@Inject
 	private TestData testData;
