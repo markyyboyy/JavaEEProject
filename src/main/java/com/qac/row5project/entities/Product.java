@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Product implements Serializable{
 	
 	//VARIABLES
-	@Id private int productId;
+	@Id private long productId;
 	private String name;
 	private String desc;
 	private double price;
@@ -46,11 +46,11 @@ public class Product implements Serializable{
 	}
 
 	//GETTERS AND SETTERS
-	public int getProductId() {
+	public long getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
+	public void setProductId(long productId) {
 		this.productId = productId;
 	}
 
@@ -110,23 +110,22 @@ public class Product implements Serializable{
 		this.quantity = quantity;
 	}
 	
-	public int getCategory() {
-		return quantity;
+	public String getCategory() {
+		return category;
 	}
 
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-	public int getStatus() {
-		return quantity;
+
+	public String getStatus() {
+		return status;
 	}
 
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	
 	public String getSupplier() {
 		return supplier;
 	}
