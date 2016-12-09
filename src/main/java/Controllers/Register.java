@@ -27,6 +27,8 @@ public class Register {
 	@Inject
 	private RegisterService regServ;
 
+
+	//Variables for each form input
 	private String sSurname = "";
 	private String sFirstname = "";
 	private String sFacebook = "";
@@ -62,7 +64,9 @@ public class Register {
 		this.email = email;
 	}
 
-
+	/**
+	 * Add address object for the customer, using information from the form
+	 */
 	public void addAddress(){
 		Address temp = new Address(this.sHName, this.sStreet, " ", " ", this.sTown,
 			this.sPost, "UK");
@@ -182,7 +186,11 @@ public class Register {
 	public void setsPost(String sPost) {
 		this.sPost = sPost;
 	}
-
+	
+	/**
+	 * Register the customer, including address and login details
+	 * @return Home Page
+	 */
 	public String register() {
 		Customer c = new Customer();
 		c.setFirstname(this.sFirstname);
@@ -199,18 +207,27 @@ public class Register {
 		return "home";
 	}
 	
+	/**
+	 * Converts date of birth string from form into a calender type needed by the customer entity
+	 * 
+	 * @param date of birth string
+	 * 
+	 * 
+	 */
 	public void dateOfBirth(String dtDOB){
 		
+		//gets the substring of for each element
 		String sYear = dtDOB.substring(0,4);
-		String sMonth = dtDOB.substring(5,7);
-		String sDate = dtDOB.substring(8);	
+		String sMonth = dtDOB.substring(5,7); 
+		String sDate = dtDOB.substring(8);	 
 		
-		int year = Integer.parseInt(sYear);
+		//parse each string for the integer value
+		int year = Integer.parseInt(sYear); 
 		int month = Integer.parseInt(sMonth);
 		int date = Integer.parseInt(sDate);
-				
-		Calendar tempDate = Calendar.getInstance();
-		tempDate.set(year, month, date);
+		
+		Calendar tempDate = Calendar.getInstance(); //create new local calendar variable
+		tempDate.set(year, month, date); //set the variables to the correct format
 		
 		this.setDOB(tempDate);
 	}

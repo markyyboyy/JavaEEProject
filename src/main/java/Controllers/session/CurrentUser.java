@@ -17,21 +17,31 @@ import com.qac.row5project.entities.Customer;
 @SessionScoped	
 public class CurrentUser implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1111L;
 	private Customer customer = null;
 
+	/**
+	 * Set logged in customer
+	 * 
+	 * @param customer
+	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 	
+	/**
+	 * Retrive the current customer logged in
+	 * @return current customer
+	 */	
 	public Customer getCustomer()
 	{
 		return this.customer;
 	}
 	
+	/**
+	 * Check if a user is logged in
+	 * @return Boolean of current customer
+	 */
 	public boolean isLoggedIn(){
 		return (customer == null) ? false : true;
 	}
