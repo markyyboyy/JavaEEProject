@@ -67,29 +67,22 @@ public class TestData {
 		
 		
 		products.add(new Product("Blue Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active", suppliers.get(0)));
-		products.get(0).setProductId(5);
+		products.get(0).setProductId(0);
 		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
 
 		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
-		products.get(0).setProductId(1);
+		products.get(1).setProductId(1);
 		products.add(new Product("Red Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
-		products.get(1).setProductId(2);
+		products.get(2).setProductId(2);
 		
 		ratings.add(new Rating(4, 0, 1));
 		
 		products.add(new Product("Orange Gnome", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
-		products.get(2).setProductId(3);
+		products.get(3).setProductId(3);
 		products.add(new Product("Yellow Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 3, "Ornament", "Active", suppliers.get(0)));
-		products.get(3).setProductId(4);
+		products.get(4).setProductId(4);
 		products.add(new Product("Brown Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
-		products.get(4).setProductId(5);
-		products.add(new Product("Happy Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 5, "Ornament", "Active", suppliers.get(0)));
-		
-		products.get(5).setProductId(6);
-		products.add(new Product("Sad Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
-		products.get(6).setProductId(7);
-		products.add(new Product("Neutral Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 6, "Ornament", "Active", suppliers.get(0)));
-
+		products.get(5).setProductId(5);
 
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
