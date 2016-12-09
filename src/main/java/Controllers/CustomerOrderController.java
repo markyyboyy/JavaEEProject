@@ -1,8 +1,8 @@
 package Controllers;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -11,7 +11,6 @@ import javax.inject.Named;
 
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.services.CustomerOrderImsService;
-import java.io.Serializable;
 
 @Named("customerOrder")
 @RequestScoped
@@ -31,9 +30,7 @@ public class CustomerOrderController implements Serializable {
 	private List<CustomerOrder> lsOrders;
 	
 	public DataModel<CustomerOrder> getCustomerOrders() {
-		
 		setCustomerOrders(customerOrderService.readCustomerOrders());
-		
 		return new ListDataModel<>(lsOrders);
 	}
 

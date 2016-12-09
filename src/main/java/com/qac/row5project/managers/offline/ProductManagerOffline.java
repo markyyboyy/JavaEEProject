@@ -11,6 +11,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.ProductManager;
 
@@ -85,5 +86,14 @@ public class ProductManagerOffline implements ProductManager {
 	@Override
 	public List<Product> findAllProducts() {
 			return testData.getProducts();
+	}
+	@Override
+	public int findsTotalStockLevel(List<Stock> stocks){
+		int  tQuantity=0;
+		for(Stock s:stocks)
+		{
+			tQuantity+=s.getQuantity();
+		}
+		return tQuantity;
 	}
 }

@@ -75,7 +75,7 @@ public class SearchService {
 			results.addAll(productRepository.findAllProducts());
 			
 			results.forEach(product -> {
-				productItems.add(productService.getProductItem(product, product.getProductId()));
+				productItems.add(productService.getProductItem(product));
 			});
 			
 			return productItems;
@@ -94,7 +94,7 @@ public class SearchService {
 			return null;
 
 		results.forEach(product -> {
-			productItems.add(productService.getProductItem(product, product.getProductId()));
+			productItems.add(productService.getProductItem(product));
 		});
 		return productItems;
 	}

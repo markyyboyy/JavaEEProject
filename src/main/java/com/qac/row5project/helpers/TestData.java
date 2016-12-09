@@ -69,14 +69,24 @@ public class TestData {
 		
 		
 		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
+		products.get(0).setProductId(1);
+		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
+
+		products.get(1).setProductId(2);
 		
 		ratings.add(new Rating(4, 0, 1));
 		
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
+		products.get(2).setProductId(3);
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 3, "Ornament", "Active", suppliers.get(0)));
+		products.get(3).setProductId(4);
 		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
+		products.get(4).setProductId(5);
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 5, "Ornament", "Active", suppliers.get(0)));
+		
+		products.get(5).setProductId(6);
 		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
+		products.get(6).setProductId(7);
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 6, "Ornament", "Active", suppliers.get(0)));
 
 		
@@ -96,10 +106,11 @@ public class TestData {
 		
 		
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
+		employees.add(new Employee(imsLogin, 10));
 		
 		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
+		stocks.add(new Stock(11, true, 50, false, products.get(1), 250));
 		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
-		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
 
 		Calendar c1 = Calendar.getInstance();
 

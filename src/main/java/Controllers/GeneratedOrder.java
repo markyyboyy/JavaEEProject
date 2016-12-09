@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
 import com.qac.services.Generate;
 
@@ -18,7 +19,7 @@ public class GeneratedOrder {
 	private Generate generateService;
 	private String ProductID;
 	private List<Stock> stockItems;
-	private List<com.qac.row5project.entities.Product> productItems = new ArrayList<com.qac.row5project.entities.Product>();
+	private List<ProductItem> productItems = new ArrayList<ProductItem>();
 	private List<String> products = new ArrayList<String>();
 	List<Integer> suggestedQuanity = new ArrayList<Integer>();
 	
@@ -26,14 +27,14 @@ public class GeneratedOrder {
 		return generateService.getStock();
 	}
 
-	public List<com.qac.row5project.entities.Product> getProductItems() {
+	public List<ProductItem> getProductItems() {
 		//if (productItems.size() == 0){
 				productItems = generateService.getProducts();
 		//}
 		return productItems;
 	}
 	
-	public void setProductItems(List<com.qac.row5project.entities.Product> productItems) {
+	public void setProductItems(List<ProductItem> productItems) {
 		this.productItems = productItems;
 	}
 	public void addProductItem() {
@@ -49,8 +50,8 @@ public class GeneratedOrder {
 		Collections.sort(suggestedQuanity, (s1, s2) -> s1.intValue() - s2.intValue());
 		return suggestedQuanity;
 	}
-	public List<com.qac.row5project.entities.Product> sortByQuantity(){
-		Collections.sort(productItems, (s1, s2) -> s1.getQuantity() - s2.getQuantity());
+	public List<ProductItem> sortByQuantity(){
+		Collections.sort(productItems, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());
 		getSuggestedQuanitySorted();
 		return productItems;
 	}
@@ -65,7 +66,7 @@ public class GeneratedOrder {
 	public void createOrder(){
 		
 	}
-	public List<com.qac.row5project.entities.Product> unsort(){
+	public List<ProductItem> unsort(){
 		getSuggestedQuanity();
 		productItems = generateService.getProducts();
 		return productItems;
