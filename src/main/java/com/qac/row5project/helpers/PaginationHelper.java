@@ -1,7 +1,11 @@
 package com.qac.row5project.helpers;
 
 import javax.faces.model.DataModel;
-
+/***
+ * 
+ * @author Mike
+ *
+ */
 public abstract class PaginationHelper {
 
 	private int pageSize;
@@ -42,10 +46,8 @@ public abstract class PaginationHelper {
 	 */
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
-
 	}
 
-	
 	/***
 	 * 
 	 * @return the the index of the first item to shown on the 
@@ -56,7 +58,7 @@ public abstract class PaginationHelper {
 		return page * pageSize;
 
 	}
-
+//javadoc
 	public int getPageLastItem() {
 
 		int i = getPageFirstItem() + pageSize - 1;
@@ -87,7 +89,6 @@ public abstract class PaginationHelper {
 
 		if (isHasNextPage())
 			page++;
-
 	}
 
 	public boolean isHasPreviousPage() {
@@ -95,11 +96,7 @@ public abstract class PaginationHelper {
 	}
 
 	public void previousPage() {
-
 		if (isHasPreviousPage())
-
 			page--;
-
 	}
-
 }

@@ -104,6 +104,11 @@ public class CustomerOrder {
 	public void addToCustomerOrderLine(CustomerOrderLine cL){
 		customerOrderLines.add(cL);
 	}
+	
+	/**00
+	 * 
+	 * @param cL
+	 */
 	public void removeFromCustomerOrderLine(CustomerOrderLine cL){
 		customerOrderLines.remove(cL);
 	}
