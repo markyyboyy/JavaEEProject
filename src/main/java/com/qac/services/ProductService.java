@@ -29,6 +29,8 @@ public class ProductService {
 
 	ProductItem productItem;
 
+//SEARCH BY THE ID IF IT IS INPUT AS A STRING TO RETURN AN ITEM
+	
 	public Product readProductByName(String name) {
 		try {
 			return readProductById(Long.parseLong(name));
@@ -37,11 +39,12 @@ public class ProductService {
 			return null;
 		}
 	}
-
+	//SEARCH BY THE PRODUCT ID TO RETURN AN ITEM
 	public Product readProductById(long id) {
+		//CALL METHOD IN PRODUCTMANAGER BY PASSING THE ID
 		return productManager.readProductById(id);
 	}
-
+		//
 	public List<Product> readProductByColour(String colour) {
 		try {
 			return productManager.readProductByColour(colour);

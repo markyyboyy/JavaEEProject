@@ -3,6 +3,7 @@
  */
 package Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -23,16 +24,45 @@ private ProductService productService;
 
 private DataModel<ProductItem> productItem;
 
-private List<ProductItem> lsProducts;
+private List<ProductItem> products;
+
+private List<String> categories;
+
+
+
 public DataModel<ProductItem> getProducts() {
 	 	setProducts(productService.findAllProducts());
-		if(lsProducts != null)
-			return new ListDataModel<>(lsProducts);
+	 	
+		if(products != null)
+			return new ListDataModel<>(products);
 		else {
 			return null;}
 		}
+
+		public void setCategories(List<String> temp){
+			this.categories = temp;
+		}
+
+		public DataModel<String> getCategories(){
+			
+			List<ProductItem> lsTemp = productService.findAllProducts();			
+			categories = new ArrayList<>();
+			
+			for (ProductItem productItem : lsTemp) {
+				
+				if(!lsTemp.contains(productItem.getCategory()))
+					categories.add(productItem.getCategory());
+			}
+			
+			return new ListDataModel<>(categories) ;
+		}
+
+
+
 		public void setProducts(List<ProductItem> lsTemp)
 		{
-			this.lsProducts =lsTemp;
+			
+			System.out.println("Going in here " + lsTemp.get(0).getCategory());
+			this.products =lsTemp;
 		}
 }
