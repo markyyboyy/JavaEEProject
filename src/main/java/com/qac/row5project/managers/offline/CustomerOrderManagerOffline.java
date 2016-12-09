@@ -57,7 +57,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	public List<CustomerOrder> readCustomerOrders()
 	{
 		return testData.getCustomerOrders();
-	}
+	}   
 	@Override
 	// ALLOWS A CUSTOMER ORDER TO BE VIEWED BASED ON THE ORDER DATE
 	public List<CustomerOrder> readCustomerOrderByDatePlaced(Calendar date) {

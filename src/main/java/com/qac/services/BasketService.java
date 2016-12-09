@@ -17,7 +17,12 @@ import Controllers.session.CurrentUser;
 
 /**
  * 
- * @author Iman Hassan & Ynyr Williams
+ * @author Iman Hassan & Ynyr Williams & Mike Crowther
+ * 
+ *  Basket is the an active customer order
+ *  
+ *  Orderline is added to the basket of the logged in customer 
+ * 
  *
  */
 @Stateless	
@@ -25,13 +30,10 @@ public class BasketService {
 
 	@Inject
 	private CustomerOrderManager customerOrderManager;
-
 	
 	@Inject
 	private StockManager stockManager;
 	
-
-
 	/**
 	 * To get basket for the customer order
 	 * 
@@ -44,16 +46,13 @@ public class BasketService {
 
 	/**
 	 * Adding a product to a customer's basket
-	 * 
+	 * Uses the stock item to input into the user basket
+	 * The item is added to the active order, of the logged in customer
 	 * @param customerId
 	 * @param stock
 	 * @param quantity
 	 * @return
-	 */
-	
-	//long customerId
-	//, int quantity
-	
+	 */	
 	public void addToBasket(Stock stock, CurrentUser cu) {
 			
 		
@@ -71,7 +70,7 @@ public class BasketService {
 	}
 
 	/**
-	 * removing an item from customer's basket
+	 * removing an item from customer's active customer Order
 	 * 
 	 * @param customerId
 	 * @param stock

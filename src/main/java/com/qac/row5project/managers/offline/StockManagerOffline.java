@@ -32,6 +32,10 @@ public class StockManagerOffline implements StockManager {
 		testData.setStockItems(stockList);
 		return stock;
 	}
+	
+	/**
+	 * @param stock stock to be updated
+	 */
 	public void updateStock(Stock stock){
 
 		List<Stock> stockList = testData.getStockItems();
@@ -40,7 +44,7 @@ public class StockManagerOffline implements StockManager {
 			if(s.getStockID()==stock.getStockID()){
 				s=stock;
 				testData.setStockItems(stockList);
-				return;
+				break;
 			}
 		}
 	}
@@ -85,7 +89,9 @@ public class StockManagerOffline implements StockManager {
 			return null;
 	}
 		
-	
+	/***
+	 * 
+	 */
 	public List<Stock> getStockByProductID(long productId) {
 
 		List<Stock> tStockList= new ArrayList<Stock>();

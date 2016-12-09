@@ -24,7 +24,7 @@ import Controllers.session.CurrentUser;
 
 /**
  * 
- * @author Iman Hassan
+ * @author Iman Hassan & Mike Crowther
  *
  */
 
@@ -108,10 +108,6 @@ public class BasketController {
 
 			Stock stock = stockService.getStockByProductID(productID);
 			addToBasket(stock, 1);
-
-
-			
-
 
 		} catch (NumberFormatException nm) {
 			System.out.println(nm.getMessage());
