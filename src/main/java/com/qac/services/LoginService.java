@@ -23,11 +23,23 @@ public class LoginService {
 	
 	private LoginDetails login;
 	
+	/**
+	 * 
+	 * @param email
+	 * @param password
+	 * @return true or false, if the login is valid
+	 */
+			
 	public boolean validLogin(String email, String password){
 		login = loginManager.readLoginDetails(email);
 		return login.getPassword().equals(password);
 	}
 	
+	/**
+	 * 
+	 * @param email
+	 * @return the logged in Customer
+	 */
 	public Customer loginUser(String email){
 		return customerManager.readCustomerByEmail(email);
 	}
