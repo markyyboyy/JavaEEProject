@@ -10,10 +10,11 @@ import javax.enterprise.inject.Default;
 
 import com.qac.row5project.entities.Employee;
 import com.qac.row5project.helpers.*;
+import com.qac.row5project.managers.EmployeeManager;
 
 @Stateless
 @Default
-public class EmployeeManagerOffline {
+public class EmployeeManagerOffline implements EmployeeManager {
 	TestData testData = new TestData();
 	//READ - Inventory Manager Only
 	public Employee readEmployee(String emailAddress){
@@ -48,5 +49,17 @@ public class EmployeeManagerOffline {
 			i++;
 		}
 		testData.setEmployees(returned);	//We have created a new list of employees, we want to set it in testData, so the changes will be reflected.
+	}
+
+	@Override
+	public void updateEmployee(String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listEmployees(List<Employee> employee) {
+		// TODO Auto-generated method stub
+		
 	}
 }
