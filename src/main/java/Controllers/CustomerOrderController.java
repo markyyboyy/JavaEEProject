@@ -35,12 +35,9 @@ public class CustomerOrderController implements Serializable {
 		setCustomerOrders(customerOrderService.readCustomerOrders());
 		
 		return new ListDataModel<>(lsOrders);
-
 	}
 
 	public void setCustomerOrders(List<CustomerOrder> lstTemp ){
 		this.lsOrders = lstTemp;
 	}
-		
-		
 }
