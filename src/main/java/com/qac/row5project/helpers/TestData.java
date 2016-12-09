@@ -143,6 +143,7 @@ public class TestData {
 			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
 			//sets feedback id between 0 and the number of customers
 			randomFeedback =	rand.nextInt((customers.size() - 0) + 1) + 0;
+			//sets date between 1920 and 2016
 			randomNumYear = rand.nextInt((2016 - 1920) + 1) + 1920;
 			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
 			randomNumMonth = rand.nextInt((12 - 1) + 1) + 1;
@@ -151,11 +152,18 @@ public class TestData {
 			customerOrders.add(cOrder1);
 		}
 	}
+	/***
+	 * This method generates a random customerorder of the quantity specified.
+	 * 
+	 * @author Ynyr Williams
+	 *@param q
+	 *
+	 */
 	public void generateCustomerOrderLine(){
 		CustomerOrder cOrder1;
 		Random rand = new Random();
 		Calendar c2 = Calendar.getInstance();
-		ArrayList rStock =new ArrayList();
+		ArrayList rStock =new ArrayList<>();
 	    int randomNumQuantity;
 	    int randomNumStock;
 	    int randomNumlines;

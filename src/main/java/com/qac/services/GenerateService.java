@@ -6,7 +6,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.PurchaseOrder;
 import com.qac.row5project.entities.Stock;
@@ -14,14 +13,10 @@ import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.GeneratedOrderManager;
 import com.qac.row5project.managers.ProductManager;
 import com.qac.row5project.managers.StockManager;
-import com.qac.row5project.managers.GeneratedOrderManager;
-import com.qac.row5project.managers.WishlistManager;
-import com.qac.row5project.managers.offline.GeneratedOrderManagerOffline;
-import com.qac.row5project.managers.offline.WishlistManagerOffline;
 
 @Stateless
 
-public class Generate {
+public class GenerateService {
 	@Inject
 	private GeneratedOrderManager generatedOrderManager;
 	@Inject
@@ -47,17 +42,6 @@ public class Generate {
 		return returnable;	//Return the final list.
 	}
 
-	/*@Inject
-	private GeneratedOrderManager manager = new GeneratedOrderManagerOffline();
-	public List<Product> findWishList(long id)
-	{
-		return manager.findByCustomerId(id);
->>>>>>> 559d0c9b7e43509e6f15b080758b438af82dcead
-	}
-	/**
-	 * This method returns the suggested quantities for the user.
-	 * @return	The suggested quantities for the user.
-	 */
 	public List<Integer> getQuantities() {
 		// TODO Auto-generated method stub
 		return generatedOrderManager.getQuantities();

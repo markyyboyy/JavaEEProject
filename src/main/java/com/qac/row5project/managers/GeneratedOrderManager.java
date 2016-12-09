@@ -9,9 +9,6 @@ import com.qac.row5project.entities.Stock;
 		//CREATE
 		public PurchaseOrder createOrder();
 		
-		//UPDATE
-		public void updateProduct(PurchaseOrder p);
-		
 		//READ
 		public List<Stock> readOrderByQuantity();
 		public List<Integer> getQuantities();
