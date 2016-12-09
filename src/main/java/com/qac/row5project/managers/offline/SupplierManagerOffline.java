@@ -1,5 +1,4 @@
-package Controllers;
-
+package com.qac.row5project.managers.offline;
 import java.util.List;
 
 import javax.ejb.Stateless;

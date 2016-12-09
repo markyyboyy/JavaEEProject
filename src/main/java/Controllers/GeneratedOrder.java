@@ -10,13 +10,13 @@ import javax.inject.Named;
 
 import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
-import com.qac.services.Generate;
+import com.qac.services.GenerateService;
 
 @Named("generated")
 @RequestScoped
 public class GeneratedOrder {
 	@Inject
-	private Generate generateService;
+	private GenerateService generateService;
 	private String ProductID;
 	private List<Stock> stockItems;
 	private List<ProductItem> productItems = new ArrayList<ProductItem>();

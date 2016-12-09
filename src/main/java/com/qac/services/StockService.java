@@ -6,6 +6,11 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.managers.StockManager;
+/**
+ * 
+ * @author Iman Hassan
+ *
+ */
 
 @Stateless
 public class StockService {
