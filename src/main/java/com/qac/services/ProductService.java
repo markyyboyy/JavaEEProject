@@ -70,8 +70,9 @@ public class ProductService {
 			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(),
 					product.getWeight(), product.getStatus(), product.getSupplier(), product.getCategory());
 
-		if (stock != null)
-			productItem.addStockInfo(stock.getQuantity(), stock.getPrice());
+		if (stock != null){
+			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductId())), stock.getPrice());
+		}
 
 		if (product != null && ratingManager.findRatingsbyProductID(product.getProductId()) != null) {
 

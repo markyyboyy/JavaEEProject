@@ -6,6 +6,7 @@ package com.qac.row5project.managers;
 
 import java.util.List;
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.Stock;
 
 public interface  ProductManager {
 
@@ -23,5 +24,5 @@ public interface  ProductManager {
 	public List<Product> readProductByColour(String colour);
 	public List<Product> readProductByDescription(String desc);
 	public List<Product> findAllProducts();
-
+	public int findsTotalStockLevel(List<Stock> stocks);
 }
