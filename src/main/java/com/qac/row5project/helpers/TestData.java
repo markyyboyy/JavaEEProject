@@ -63,10 +63,9 @@ public class TestData {
 		
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active", suppliers.get(0)));
 
-		products.get(0).setProductId(0);
+		products.get(0).setProductId(5);
 		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
 
-		products.get(0).setProductId(1);
 		
 		
 		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
@@ -106,7 +105,7 @@ public class TestData {
 
 		c1.set(5, 6, 2012);
 		purchaseOrders.add(new PurchaseOrder(1,s, "Pending",c , c1));
-		generateCustomerOrder(50);
+		//generateCustomerOrder(50);
 	}
 	public void generateCustomerOrder(int q){
 		CustomerOrder cOrder1;

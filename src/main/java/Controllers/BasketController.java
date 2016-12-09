@@ -63,9 +63,15 @@ public class BasketController {
 	
 	public List<CustomerOrderLine> getCustOrderMdl(){
 		try {
-			custOrderMdl = basketService.getBasket(user.getCustomer().getID()).getCustomerOrderLines();
+			
+			
+			Customer currentUser = user.getCustomer();
+			CustomerOrder basket = basketService.getBasket(currentUser.getID());
+			custOrderMdl = basket.getCustomerOrderLines();
+						
 			if(custOrderMdl == null)
 				custOrderMdl = new ArrayList<>();
+			
 		} catch (Exception e) {
 			custOrderMdl = new ArrayList<>();
 		}

@@ -10,6 +10,7 @@ import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.Stock;	
 //import com.qac.row5project.managers;
 import com.qac.row5project.managers.CustomerOrderManager;
+import com.qac.row5project.managers.StockManager;
 import com.qac.row5project.managers.offline.StockManagerOffline;
 
 import Controllers.session.CurrentUser;
@@ -27,7 +28,7 @@ public class BasketService {
 
 	
 	@Inject
-	private StockManagerOffline stockManager;
+	private StockManager stockManager;
 	
 
 

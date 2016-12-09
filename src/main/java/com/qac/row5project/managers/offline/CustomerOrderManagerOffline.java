@@ -74,13 +74,20 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
 			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
 				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
-				return;
+				break;
 			}
 		}
 		
+		
+		
 		CustomerOrderLine cl = new CustomerOrderLine(customerId, quantity, stock);
 		
+		cOrder.addToCustomerOrderLine(cl);
+		
 		testData.setCustomerOrderLine(cl);
+		testData.setCustomerOrders(new ArrayList<CustomerOrder>());
+		
+		
 		
 	}
 

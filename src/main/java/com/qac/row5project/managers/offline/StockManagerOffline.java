@@ -88,8 +88,14 @@ public class StockManagerOffline implements StockManager {
 	//TODO
 	@Override
 	public Stock findStocksbyID(long id) {
-		// TODO Auto-generated method stub
+
+		for (Stock stock : testData.getStocks()) {
+			if(stock.getProductID().getProductId() == id)
+				return stock;
+		}
+		
 		return null;
+		
 	}
 	@Override
 	public Stock getStockByProductID(long productId, boolean bPourseware, boolean bRefurbised) {

@@ -137,7 +137,7 @@ public class Catalogue implements Serializable {
 
 	public PaginationHelper getPagination() {
 
-			pagenationHelper = new PaginationHelper(4) {
+			pagenationHelper = new PaginationHelper(12) {
 
 				@Override
 				public int getItemsCount() {
