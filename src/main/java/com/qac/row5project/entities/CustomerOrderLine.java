@@ -59,10 +59,11 @@ public class CustomerOrderLine {
 		this.stock = stock;
 		updateTotalPrice();
 	}
+	// Getters and Setters
 
 	/**
 	 * 
-	 * @return Getters and Setters
+	 * @return Id
 	 */
 	public long getId() {
 		return id;
@@ -83,7 +84,7 @@ public class CustomerOrderLine {
 	
 	/**
 	 * This is a method get stock
-	 * @return
+	 * @return stock
 	 */
 	public Stock getStock() {
 		return stock;
@@ -98,7 +99,7 @@ public class CustomerOrderLine {
 	}
 	
 	/**
-	 * 
+	 * method to set the quantity
 	 * @param quantity
 	 */
 	public void setQuantity(int quantity) {
@@ -113,7 +114,7 @@ public class CustomerOrderLine {
 	}
 	
 	/**
-	 * A method to 
+	 * A method to set Stock
 	 * @param stock
 	 */
 	public void setStock(Stock stock) {

@@ -38,6 +38,7 @@ public class FeedbackManagerOffline implements FeedbackManager {
 	}
 			
 	//READ 
+	
 	/**
 	 * reading feedback by id
 	 */
@@ -72,6 +73,9 @@ public class FeedbackManagerOffline implements FeedbackManager {
 
 		
 	//UPDATE - Customer Only
+	/**
+	 * upading reedback by customer
+	 */
 	public void updateFeedback(Feedback feedback) {
 	
 		List<Feedback> co1 = testData.getFeedbacks();

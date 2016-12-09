@@ -21,8 +21,9 @@ public class SupplierManagerOffline implements SupplierManager {
 	@Inject
 	private TestData testData;
 	
-	//CREATE - Inventory Manager Only
+	
 	/**
+	 * CREATE - Inventory Manager Only
 	 * creating a new supplier id
 	 */
 	@Override
@@ -35,8 +36,9 @@ public class SupplierManagerOffline implements SupplierManager {
 	}
 		
 		
-	//READ - Inventory Manager Only
+	
 	/**
+	 * READ - Inventory Manager Only
 	 * reading a supplier by id
 	 */
 	@Override

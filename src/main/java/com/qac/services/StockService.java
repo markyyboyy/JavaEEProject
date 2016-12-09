@@ -18,6 +18,11 @@ public class StockService {
 	@Inject
 	private StockManager stockManager;
 	
+	/**
+	 * 
+	 * @param id
+	 * @return Stock from product Id
+	 */
 	public Stock getStockByProductID(long id) {
 		return stockManager.findStocksbyID(id);
 	}
