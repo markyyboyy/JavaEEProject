@@ -5,6 +5,7 @@
  */
 package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -14,16 +15,16 @@ import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.StockManager;
 import com.qac.row5project.helpers.*;
 
-@Stateless
 @Default
+@Stateless
 public class StockManagerOffline implements StockManager {
 	
 		
 	@Inject 
 	TestData testData;
 	
-	@Override	
 	//CREATE, UPDATE: INVENTORY MANAGER
+	@Override	
 	public Stock createStock(Stock stock){
 		List<Stock> stockList = testData.getStockItems();
 		stock.setStockID(stockList.size()+1);
@@ -83,8 +84,8 @@ public class StockManagerOffline implements StockManager {
 		else
 			return null;
 	}
+		
 	
-	@Override
 	public List<Stock> getStockByProductID(long productId) {
 
 		List<Stock> tStockList= new ArrayList<Stock>();
