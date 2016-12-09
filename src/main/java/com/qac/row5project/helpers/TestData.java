@@ -100,6 +100,7 @@ public class TestData {
 		
 		
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
+		employees.add(new Employee(imsLogin, 10));
 		
 		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
 		stocks.add(new Stock(11, true, 50, false, products.get(1), 250));
