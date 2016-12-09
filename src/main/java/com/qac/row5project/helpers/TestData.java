@@ -11,6 +11,7 @@ import javax.ejb.Startup;
 import com.qac.row5project.entities.*;
 
 /***
+ * This class represents dummy data to be used for testing purposes.
  * 
  * @author Mark Freeman & Ynyr Williams
  *
@@ -18,7 +19,7 @@ import com.qac.row5project.entities.*;
 @Startup
 @Singleton
 public class TestData {
-
+	
 	private List<Product> products;
 	private List<Stock> stocks;
 	private List<Customer> customers;
@@ -36,7 +37,11 @@ public class TestData {
 	private List<Stock> stockItems;
 	private List<ProductSupplier> productSuppliers;
 	private List<Supplier> suppliers;
-
+	/***
+	 * 
+	 * This method runs after the object is made and initialises all the variables.
+	 *
+	 */
 	@PostConstruct
 	private void setupData() {
 		products = new ArrayList<Product>();
@@ -62,16 +67,12 @@ public class TestData {
 		
 		
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active", suppliers.get(0)));
-
 		products.get(0).setProductId(5);
 		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
 
-		
-		
 		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
 		products.get(0).setProductId(1);
 		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", suppliers.get(0)));
-
 		products.get(1).setProductId(2);
 		
 		ratings.add(new Rating(4, 0, 1));
@@ -89,18 +90,13 @@ public class TestData {
 		products.get(6).setProductId(7);
 		products.add(new Product("Gnome Gotta Gname", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 6, "Ornament", "Active", suppliers.get(0)));
 
-		
-		
-		
-		
+
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
-		
 		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
 		loginDetails.add(imsLogin);
 		
-		Supplier s = new Supplier(1);
-		
+		Supplier s = new Supplier(1);	
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
 		
@@ -119,29 +115,39 @@ public class TestData {
 
 		c1.set(5, 6, 2012);
 		purchaseOrders.add(new PurchaseOrder(1,s, "Pending",c , c1));
-		//generateCustomerOrder(50);
+		generateCustomerOrder(50);
 	}
+	/***
+	 * This method generates a random customerorder of the quantity specified.
+	 * 
+	 * @author Ynyr Williams
+	 *@param q
+	 *
+	 */
 	public void generateCustomerOrder(int q){
+		
+		//DECLARE ALL NECESSARY VARIABLES FOR CUSTOMER ORDER
 		CustomerOrder cOrder1;
 		Random rand = new Random();
 		Calendar c2 = Calendar.getInstance();
-		int max = customers.size();
-		int min = 0;
-		//quantity
-	    int randomNum ;
+	    int randomFeedback ;
 	    int randomNumYear;
 	    int randomNumDay;
 	    int randomNumMonth;
 	    int  randomNumAddressID;
+	    //ITERATES FOR THE QUANTITY OF CUSTOMER ORDER SPECIFIED
 		for(int i=1;i<=q;i++)
 		{
+			//SET VARIABLES TO RANDOM LEVELS
+			//address specified between 1 and 3
 			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
-			randomNum =	rand.nextInt((max - min) + 1) + min;
+			//sets feedback id between 0 and the number of customers
+			randomFeedback =	rand.nextInt((customers.size() - 0) + 1) + 0;
 			randomNumYear = rand.nextInt((2016 - 1920) + 1) + 1920;
 			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
 			randomNumMonth = rand.nextInt((12 - 1) + 1) + 1;
 			c2.set(randomNumYear, randomNumMonth, randomNumDay);
-			cOrder1 = new CustomerOrder(i,randomNum,c2,randomNumAddressID);
+			cOrder1 = new CustomerOrder(i,randomFeedback,c2,randomNumAddressID);
 			customerOrders.add(cOrder1);
 		}
 	}
