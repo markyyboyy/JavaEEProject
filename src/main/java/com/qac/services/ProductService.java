@@ -59,8 +59,8 @@ public class ProductService {
 
 	}
 
-	public ProductItem getProductItem(Product product, long id) {
-		return getProductItem(product, stockManager.findStocksbyID(id));
+	public ProductItem getProductItem(Product product) {
+		return getProductItem(product, stockManager.findStocksbyID(product.getProductId()));
 	}
 
 	public ProductItem getProductItem(Product product, Stock stock) {
@@ -106,13 +106,11 @@ public class ProductService {
 	public List<ProductItem> findAllProducts() {
 
 		List<ProductItem> temp = new ArrayList<>();
-
 		productManager.findAllProducts().forEach(pro -> {
-
-			temp.add(getProductItem(pro, 0));
+			temp.add(getProductItem(pro));
 
 		});
-
+		
 		return temp;
 
 	}

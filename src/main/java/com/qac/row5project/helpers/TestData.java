@@ -92,8 +92,8 @@ public class TestData {
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		
 		stocks.add(new Stock(20, false, 100, false, products.get(0), 200));
+		stocks.add(new Stock(11, true, 50, false, products.get(1), 250));
 		stocks.add(new Stock(11, true, 50, false, products.get(2), 250));
-		stocks.add(new Stock(11, true, 50, false, products.get(4), 250));
 
 		Calendar c1 = Calendar.getInstance();
 
