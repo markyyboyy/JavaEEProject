@@ -5,9 +5,11 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qac.row5project.managers.CustomerManager;
+import com.qac.row5project.managers.EmployeeManager;
 import com.qac.services.LoginService;
 
 import Controllers.session.CurrentUser;
+import Controllers.session.CurrentUserEmployee;
 /**
  * 
  * @author Richard Allen
@@ -24,10 +26,16 @@ public class Login {
 	private CurrentUser currentUser;
 	
 	@Inject
+	private CurrentUserEmployee currentUserEmployee;
+	
+	@Inject
 	private LoginService loginService;
 	
 	@Inject
 	private CustomerManager customerManager;
+	
+	@Inject
+	private EmployeeManager empManager;
 
 	private String email = "";
 	private String password = "";
@@ -63,7 +71,7 @@ public class Login {
 	public String ims() {
 		if (!email.isEmpty() && !password.isEmpty()) {
 			if (loginService.validLogin(email, password)) {
-				currentUser.setCustomer(customerManager.readCustomerByEmail(email.toLowerCase()));
+				currentUserEmployee.setEmployee(empManager.readEmployee(email.toLowerCase()));
 				System.out.println("Logged In");
 			} else {
 				password = "";
@@ -79,7 +87,7 @@ public class Login {
 	}
 	
 	public String imsLogoff(){
-		currentUser.setCustomer(null);
+		currentUserEmployee.setEmployee(null);
 		System.out.println("Logged out");
 		return "login";
 	}
