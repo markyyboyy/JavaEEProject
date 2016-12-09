@@ -1,4 +1,5 @@
 /**
+ *CUSTOMERORDER HOLDS ALL OF THE INFORMATION REGARDING AN INDIVIDUAL CUSTOMER ORDER
  * @Author RyanB
  */
 
@@ -55,12 +56,12 @@ public class CustomerOrder {
 	private int addressId;
 	private int paymentId;
 
-	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER
+	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER V1
 	public CustomerOrder() {
 		customerOrderLines = new ArrayList<>();
 	};
 	
-	
+	//CONSTRUCTOR V2
 	public CustomerOrder(int customerOrderId, int customerId, Calendar datePlaced,int addressId) {
 		super();
 		this.customerOrderId = customerOrderId;
@@ -74,7 +75,7 @@ public class CustomerOrder {
 		deriveTotalPrice();
 		
 	}
-	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
+	//CONSTRUCTOR V3
 	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId) {
 		super();
 		this.customerOrderId = customerOrderId;
@@ -88,6 +89,9 @@ public class CustomerOrder {
 
 		deriveTotalPrice();
 	}
+/**
+ * CALCULATES THE TOTAL PRICE BY ITERATING THROUGH THE ORDERLINES WHICH HAVE BEEN ADDED TO THE ORDER
+ */
 	public void deriveTotalPrice(){
 		totalPrice=0;
 		for (CustomerOrderLine customerOrderLine : customerOrderLines ) {
@@ -110,8 +114,6 @@ public class CustomerOrder {
 	public List<CustomerOrderLine> getCustomerOrderLines() {
 		return customerOrderLines;
 	}
-
-
 
 	public float getTotalPrice() {
 		deriveTotalPrice();
@@ -166,8 +168,6 @@ public class CustomerOrder {
 	public void setAddressId(int addressId) {
 		this.addressId = addressId;
 	}
-
-
 
 	@Override
 	public String toString() {

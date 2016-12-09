@@ -36,14 +36,20 @@ public class Supplier  implements Serializable {
 		this.idSupplier = idSupplier;
 	}
 	
+	// Getters and Setters
+	
 	/**
 	 * 
-	 * @return Getters and Setters
+	 * @return the Supplier Id
 	 */
 	public int getIdSupplier() {
 		return idSupplier;
 	}
 	
+	/**
+	 * Set the Supplier Id
+	 * @param idSupplier
+	 */
 	public void setIdSupplier(int idSupplier) {
 		this.idSupplier = idSupplier;
 	}

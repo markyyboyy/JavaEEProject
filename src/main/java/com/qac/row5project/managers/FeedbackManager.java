@@ -22,7 +22,7 @@ public interface FeedbackManager {
 	 * READ 
 	 * method to read feedback by id
 	 * @param idFeedback
-	 * @return
+	 * @return feedback Id
 	 */
 	public Feedback readById(int idFeedback);
 	
@@ -30,7 +30,7 @@ public interface FeedbackManager {
 	 * READ 
 	 * method to read feedback rating
 	 * @param feedbackRating
-	 * @return
+	 * @return feedback rating
 	 */
 	public List<Feedback> readByFeedbackRating(int feedbackRating);
 //	public List<Feedback> readByComment(String comment);
