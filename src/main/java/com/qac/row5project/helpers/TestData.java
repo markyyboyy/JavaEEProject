@@ -100,13 +100,13 @@ public class TestData {
 
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		employees.add(new Employee(imsLogin, 10));
-
-		stockItems.add(new Stock(0, false, 100, false, products.get(0), 200));
-		stockItems.add(new Stock(1, true, 50, false, products.get(1), 250));
-		stockItems.add(new Stock(2, true, 50, false, products.get(2), 250));
-		stockItems.add(new Stock(3, false, 100, false, products.get(3), 200));
-		stockItems.add(new Stock(4, true, 50, false, products.get(4), 250));
-		stockItems.add(new Stock(5, true, 50, false, products.get(5), 250));
+		
+		stockItems.add(new Stock(0, false, 5, false, products.get(0), 200));
+		stockItems.add(new Stock(1, true, 3, false, products.get(1), 250));
+		stockItems.add(new Stock(2, true, 10, false, products.get(2), 250));
+		stockItems.add(new Stock(3, false, 15, false, products.get(3), 200));
+		stockItems.add(new Stock(4, true, 1, false, products.get(4), 250));
+		stockItems.add(new Stock(5, true, 2, false, products.get(5), 250));
 
 		Calendar c1 = Calendar.getInstance();
 

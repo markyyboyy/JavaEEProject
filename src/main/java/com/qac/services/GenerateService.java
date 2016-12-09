@@ -41,12 +41,16 @@ public class GenerateService {
 		// TODO Auto-generated method stub
 		//DUMMY DATA FOR TESTING PURPOSES
 		List<Integer> quantities = new ArrayList<Integer>();
-		quantities.add(5);
-		quantities.add(5);
-		quantities.add(5);
-		quantities.add(5);
-		quantities.add(5);
-		quantities.add(5);
+		List<ProductItem> stock = productService.findAllProducts();	//Get all products
+		Iterator i = stock.iterator();
+		while (i.hasNext()){
+			ProductItem p = (ProductItem) i.next();	//If a ProductItem has less than 5 items then we add it to the list.
+			
+			int stockLevel = p.getStockLevel();
+			if (stockLevel < 5){
+				quantities.add(5-stockLevel);
+			} 
+		}
 		return quantities;
 	}
 	/**
