@@ -33,7 +33,7 @@ public class RatingManagerOffline implements RatingManager {
 	//READ: CUSTOMER, VISITOR INVENTORY MANAGER
 
 	//READ - CUSTOMER/VISITOR/INV MANAGER
-	public Rating findRatingsbyProductCustomerID(int productID, int customerID){
+	public Rating findRatingsbyProductCustomerID(long productID, long customerID){
 		
 		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
@@ -43,7 +43,7 @@ public class RatingManagerOffline implements RatingManager {
 		}
 		return null;
 	}
-	public List<Rating> findRatingsbyCustomerID(int customerID){
+	public List<Rating> findRatingsbyCustomerID(long customerID){
 		List<Rating> tRatingList = new ArrayList<Rating>();
 		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
@@ -56,7 +56,7 @@ public class RatingManagerOffline implements RatingManager {
 		else
 			return tRatingList;
 	}
-	public List<Rating> findRatingsbyProductID(int productID){
+	public List<Rating> findRatingsbyProductID(long productID){
 		List<Rating> tRatingList = new ArrayList<Rating>();
 		List<Rating> ratingList = testData.getRatings();
 		
@@ -72,7 +72,7 @@ public class RatingManagerOffline implements RatingManager {
 	}
 	
 	
-	public int findAvgRatingsbyProductID(int productID){
+	public int findAvgRatingsbyProductID(long productID){
 		
 		List<Rating> tRatingList = findRatingsbyProductID(productID);
 		int average =0;
@@ -116,18 +116,5 @@ public class RatingManagerOffline implements RatingManager {
 		testData.setRatings(ratingList);
 	}
 
-	@Override
-	public List<Rating> findRatingsbyProductID(long l) {
-		int iRating = (int) l;		
-		return findRatingsbyProductID(iRating);	
-	}
-
-	@Override
-	public int findAvgRatingsbyProductID(long l) {
-
-		return 0;
-	
-	
-	}
 	
 }

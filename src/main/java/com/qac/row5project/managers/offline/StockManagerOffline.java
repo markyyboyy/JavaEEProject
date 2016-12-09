@@ -45,7 +45,7 @@ public class StockManagerOffline implements StockManager {
 	}
 	
 	//READ: VISITOR, CUSTOMER, INVENTORY MANAGER
-	public Stock findStocksbyID(int stockID){
+	public Stock findStocksbyID(long stockID){
 		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
@@ -84,15 +84,16 @@ public class StockManagerOffline implements StockManager {
 			return null;
 	}
 	
-	//TODO
 	@Override
-	public Stock findStocksbyID(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public Stock getStockByProductID(long productId, boolean bPourseware, boolean bRefurbised) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Stock> getStockByProductID(long productId) {
+
+		List<Stock> tStockList= new ArrayList<Stock>();
+		List<Stock> stockList = testData.getStockItems();
+		for(Stock s:stockList)
+		{
+			if(s.getProductID().getProductId()==productId)
+				tStockList.add(s);
+		}
+		return tStockList;
 	}
 }
