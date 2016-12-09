@@ -14,7 +14,7 @@
 		<h:form class="login">
 			
 			<label>User</label>
-				<h:inputText value="#{login.email}" id ="loginBox">
+				<h:inputText value="#{login.email}">
 					<f:passThroughAttribute name="type" value="text"></f:passThroughAttribute>
 					<f:passThroughAttribute name="placeholder" value="email.."></f:passThroughAttribute>
 					<f:passThroughAttribute name="alt" value="Email"></f:passThroughAttribute>
@@ -23,7 +23,7 @@
 
 				<br />
 				<label>Password</label>
-				<h:inputText value="#{login.password}" id="loginBox2">
+				<h:inputText value="#{login.password}" >
 					<f:passThroughAttribute name="type" value="password"></f:passThroughAttribute>
 					<f:passThroughAttribute name="placeholder" value="password.."></f:passThroughAttribute>
 					<f:passThroughAttribute name="alt" value="Password"></f:passThroughAttribute>

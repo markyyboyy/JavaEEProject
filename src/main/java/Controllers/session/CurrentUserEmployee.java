@@ -24,7 +24,7 @@ public class CurrentUserEmployee implements Serializable {
 		this.employee = emp;
 	}
 	
-	public Employee getCustomer()
+	public Employee getEmployee()
 	{
 		return this.employee;
 	}
