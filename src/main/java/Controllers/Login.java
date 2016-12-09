@@ -89,6 +89,6 @@ public class Login {
 	public String imsLogoff(){
 		currentUserEmployee.setEmployee(null);
 		System.out.println("Logged out");
-		return "login";
+		return "imsLogin";
 	}
 }
