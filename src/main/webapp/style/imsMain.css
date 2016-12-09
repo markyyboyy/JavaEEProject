@@ -4,7 +4,11 @@
 /*Michael Crowther*/
 * {
 	box-sizing: border-box;
-
+	line-height: 1.4;
+	color: #373740;	
+	background-color: #cecece;
+	line-height: 1.4;
+	color: #373740;
 }
 
 body{
