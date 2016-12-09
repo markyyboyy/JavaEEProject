@@ -12,9 +12,9 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
-import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Rating;
 import com.qac.row5project.entities.Stock;
+import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.managers.ProductManager;
 import com.qac.row5project.managers.RatingManager;
 import com.qac.row5project.managers.StockManager;

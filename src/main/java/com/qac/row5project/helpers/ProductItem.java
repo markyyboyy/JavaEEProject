@@ -1,10 +1,8 @@
-package com.qac.row5project.entities;
-
-
-
+package com.qac.row5project.helpers;
 	import java.util.List;
 
-
+import com.qac.row5project.entities.Rating;
+import com.qac.row5project.entities.Supplier;
 
 	public class ProductItem {
 		private long id;
@@ -20,17 +18,8 @@ package com.qac.row5project.entities;
 		private Supplier supplier;
 		private String category;
 		
-		
 		public ProductItem(){}
 		
-		public int getAverageRating() {
-			return averageRating;
-		}
-
-		public void setAverageRating(int averageRating) {
-			this.averageRating = averageRating;
-		}
-
 		public ProductItem(long id) {
 			this.id = id;
 		}
@@ -56,14 +45,14 @@ package com.qac.row5project.entities;
 			this.supplier = supplier;
 			this.category = category;
 		}
-
+		//update javadoc
 		/***
-		 * 
+		 * @param id
 		 * @param name
 		 * @param description
 		 * @param height
 		 * @param width
-		 * @param depth
+		 * @param 
 		 * @param weight
 		 */
 		public void addProductInfo(long id, String name, String description, double size, double weight, String status, Supplier supplier, String category) {
@@ -76,6 +65,7 @@ package com.qac.row5project.entities;
 			this.supplier = supplier;
 			this.category = category;
 		}
+		//constructor for average rating
 
 		public void addStockInfo(int stockLevel, float price) {
 			this.stockLevel = stockLevel;
@@ -85,16 +75,62 @@ package com.qac.row5project.entities;
 		public void addRatingInfo(List<Rating> r){
 			this.ratings = r;
 		}
-		
-		
 
-		public long getId() { return id; }
-		public String getName() { return name; }
-		public String getDescription() { return description; }
-		public double getSize() {return size;}
-		public int getStockLevel() { return stockLevel; }
-		public double getPrice() { return price; }
-		public List<Rating> getRating() { return ratings; }
+		public long getId() {
+			return id;
+		}
+
+		public void setId(long id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public double getSize() {
+			return size;
+		}
+
+		public void setSize(double size) {
+			this.size = size;
+		}
+
+		public int getStockLevel() {
+			return stockLevel;
+		}
+
+		public void setStockLevel(int stockLevel) {
+			this.stockLevel = stockLevel;
+		}
+
+		public double getPrice() {
+			return price;
+		}
+
+		public void setPrice(double price) {
+			this.price = price;
+		}
+
+		public void setWeight(double weight) {
+			this.weight = weight;
+		}
+
+		public void setRatings(List<Rating> ratings) {
+			this.ratings = ratings;
+		}
 
 		public double getWeight() {
 			return weight;
@@ -127,6 +163,13 @@ package com.qac.row5project.entities;
 		public void setStatus(String status) {
 			this.status = status;
 		}
-		
+		public int getAverageRating() {
+			return averageRating;
+		}
+
+		public void setAverageRating(int averageRating) {
+			this.averageRating = averageRating;
+		}
+
 	}
 

@@ -20,6 +20,8 @@ import javax.validation.constraints.Size;
 public class Stock {
 	
 	//should stock id be generated if its the same as product
+	
+	//change to id
 	@Id
 	@Column(name="id", nullable=false,unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
@@ -30,9 +32,11 @@ public class Stock {
 	private boolean refurbished;
 	@NotNull @Column(name="quantity", nullable=false)
 	private int quantity;
+	//double
 	@NotNull @Column(name="price", nullable=false)
 	private float price;
 	//does this need to be changed to Product instead of int
+	//change to long
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private Product productID;

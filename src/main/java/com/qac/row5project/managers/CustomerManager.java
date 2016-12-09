@@ -7,7 +7,7 @@ import com.qac.row5project.entities.Customer;
  *
  */
 public interface CustomerManager {
-	
+	//long
 	//CREATE - VISITOR ONLY
 	public void createCustomer(Customer newCustomer);
 	
@@ -18,6 +18,4 @@ public interface CustomerManager {
 	
 	//UPDATE - CUSTOMER ONLY
 	public void updateCustomer(Customer customer);
-
-	
 }

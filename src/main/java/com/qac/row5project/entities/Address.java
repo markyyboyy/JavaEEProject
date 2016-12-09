@@ -13,7 +13,7 @@ public class Address implements Serializable {
 
 	static final long serialVersionUID = 2342342342342L;
 	
-	@Id int id;
+	@Id long id;
 	private String sName;
 	private String sAddressLine1;
 	private String sAddressLine2;
@@ -45,11 +45,10 @@ public class Address implements Serializable {
 		this.sTown = sTown;
 		this.sPostcode = sPostcode;
 		this.sCounty = sCounty;
-
 	}
 	
 	
-	public void setID(int id){
+	public void setID(long id){
 		this.id = id;
 	}
 		
@@ -115,7 +114,7 @@ public class Address implements Serializable {
 
 	
 	
-	public int getID(){
+	public long getID(){
 		return this.id;
 	}
 

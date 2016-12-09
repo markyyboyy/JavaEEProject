@@ -26,6 +26,8 @@ public class LoginDetails {
 	/**
 	To construct a user you need a username and a password
 	 */
+	
+	//params
 	public LoginDetails(String email, String password) { 
 		this.email = email;
 		this.password = password;

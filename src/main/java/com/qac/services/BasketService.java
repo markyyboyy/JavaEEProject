@@ -1,18 +1,11 @@
 package com.qac.services;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-
-//import com.qac.row5project.entities;
 import com.qac.row5project.entities.CustomerOrder;
-import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.entities.Stock;	
-//import com.qac.row5project.managers;
+import com.qac.row5project.entities.Stock;
 import com.qac.row5project.managers.CustomerOrderManager;
 import com.qac.row5project.managers.StockManager;
-import com.qac.row5project.managers.offline.StockManagerOffline;
-
 import Controllers.session.CurrentUser;
 
 /**
@@ -54,21 +47,19 @@ public class BasketService {
 	 * @return
 	 */	
 	public void addToBasket(Stock stock, CurrentUser cu) {
-			
-		
+				
 		if (cu.isLoggedIn()){
-			
 			CustomerOrder custOrder = customerOrderManager.readCustomerOrderById(cu.getCustomer().getID());
 
 			if (custOrder != null) {
-				
 				customerOrderManager.addToBasket(cu.getCustomer().getID(), stock, 1);
-				
 			}
-
 		}
 	}
 
+	//change variable names cID
+	//change from read to get
+	//include currentuser in method
 	/**
 	 * removing an item from customer's active customer Order
 	 * 
@@ -81,7 +72,7 @@ public class BasketService {
 		}
 
 	}
-
+//check if logged in
 	/**
 	 * Getting the total price of the basket
 	 * 
@@ -89,8 +80,6 @@ public class BasketService {
 	 * @return total price in basket
 	 */
 	public float getTotalBasketPrice(long id) {
-		CustomerOrder cOrder = getBasket(id);
-		return cOrder.getTotalPrice();
-
+		return getBasket(id).getTotalPrice();
 	}
 }

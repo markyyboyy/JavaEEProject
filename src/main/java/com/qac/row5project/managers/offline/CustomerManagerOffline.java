@@ -1,13 +1,11 @@
 package com.qac.row5project.managers.offline;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import com.qac.row5project.entities.Customer;
-import com.qac.row5project.helpers.*;
+import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.CustomerManager;
 /***
  * 
@@ -20,20 +18,17 @@ public class CustomerManagerOffline implements CustomerManager {
 
 	@Inject
 	private TestData testData;
-
+	
 	@Override
 	public void createCustomer(Customer newCustomer) {
 
 		List<Customer> customerList = testData.getCustomers();
-
 		newCustomer.setID(customerList.size() + 1);
 		customerList.add(newCustomer);
 		testData.setCustomers(customerList);
-		System.out.println("Added to testData");
-		
 	}
 	/**
-	 * @cID id of the customer you want to retrueve
+	 * @cID id of the customer you want to retrieve
 	 * @return Customer
 	 */
 	@Override
@@ -43,9 +38,9 @@ public class CustomerManagerOffline implements CustomerManager {
 			if (a.getID() == cID)
 				return a;
 		}
-
 		return null;
 	}
+	//param
 	/**
 	 * @fName firstname of customer
 	 * @sName surname of customer
@@ -62,7 +57,7 @@ public class CustomerManagerOffline implements CustomerManager {
 		return null;	
 	}
 	
-	
+	//params
 	/**
 	 * Update a customer which is already in the system
 	 * @customer customer with the update details
@@ -76,8 +71,9 @@ public class CustomerManagerOffline implements CustomerManager {
 			if (co1.get(i).getID() == customer.getID())
 				co1.set(i, customer);
 		}
-
 	}
+	//semail
+	//no javadoc
 	@Override
 	public Customer readCustomerByEmail(String sEmail) {
 
@@ -85,7 +81,7 @@ public class CustomerManagerOffline implements CustomerManager {
 			if (a.getLoginDetails().getEmail().equalsIgnoreCase(sEmail))
 				return a;
 		}
-
-		return null;		}
+		return null;		
+		}
 
 }

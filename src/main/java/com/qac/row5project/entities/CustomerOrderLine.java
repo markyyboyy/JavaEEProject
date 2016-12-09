@@ -29,13 +29,11 @@ public class CustomerOrderLine {
 	@Column(name="quantity", nullable=false)
 	@NotNull
 	private int quantity;
-	
+	//DOUBLE
 	@Size(min=5, max=12)
 	@Column(name="totalPrice", nullable = false)
 	@NotNull
 	private float totalPrice;
-		
-
 	@ManyToOne
 	@JoinColumn(name="stock", nullable=false)
 	@NotNull
@@ -59,7 +57,7 @@ public class CustomerOrderLine {
 		this.stock = stock;
 		updateTotalPrice();
 	}
-	// Getters and Setters
+	// Getters and Setters BIG D ;)
 
 	/**
 	 * 

@@ -1,5 +1,5 @@
 /**
- *PRODUCT ENTITY
+ *This represents the data associated with a product.
  * @Author RyanB
  */
 package com.qac.row5project.entities;
@@ -12,14 +12,18 @@ import javax.persistence.Id;
 public class Product implements Serializable{
 	
 	//VARIABLES
+	//id
 	@Id private long productId;
 	private String name;
 	private String desc;
 	private double price;
 	private double weight;
 	private String colour;
+	//double size
 	private int size;
+	//get rid
 	private int quantity;
+	//enum
 	private String category;
 	private String status;
 	private Supplier supplier;

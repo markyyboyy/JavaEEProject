@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-
 import com.qac.row5project.entities.*;
 
 /***
@@ -26,7 +24,7 @@ public class TestData {
 	private List<Customer> customers;
 	private List<Address> addresses;
 	private List<CustomerOrder> customerOrders;
-	private List<CustomerOrderLine> customerOrderLine;
+	private List<CustomerOrderLine> customerOrderLines;
 	private List<Employee> employees;
 	private List<Feedback> feedbacks;
 	private List<Image> images;
@@ -35,7 +33,6 @@ public class TestData {
 	private List<PurchaseOrder> purchaseOrders;
 	private List<Rating> ratings;
 	private List<SecurityQuestion> securityQuestions;
-	private List<Stock> stockItems;
 	private List<ProductSupplier> productSuppliers;
 	private List<Supplier> suppliers;
 
@@ -48,11 +45,10 @@ public class TestData {
 	@PostConstruct
 	private void setupData() {
 		products = new ArrayList<Product>();
-		stocks = new ArrayList<Stock>();
 		customers = new ArrayList<Customer>();
 		addresses = new ArrayList<Address>();
 		customerOrders = new ArrayList<CustomerOrder>();
-		customerOrderLine = new ArrayList<CustomerOrderLine>();
+		customerOrderLines = new ArrayList<CustomerOrderLine>();
 		employees = new ArrayList<Employee>();
 		feedbacks = new ArrayList<Feedback>();
 		images = new ArrayList<Image>();
@@ -61,7 +57,7 @@ public class TestData {
 		purchaseOrders = new ArrayList<PurchaseOrder>();
 		ratings = new ArrayList<Rating>();
 		securityQuestions = new ArrayList<SecurityQuestion>();
-		stockItems = new ArrayList<Stock>();
+		stocks = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
 
@@ -101,12 +97,12 @@ public class TestData {
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		employees.add(new Employee(imsLogin, 10));
 		
-		stockItems.add(new Stock(0, false, 5, false, products.get(0), 200));
-		stockItems.add(new Stock(1, true, 3, false, products.get(1), 250));
-		stockItems.add(new Stock(2, true, 10, false, products.get(2), 250));
-		stockItems.add(new Stock(3, false, 15, false, products.get(3), 200));
-		stockItems.add(new Stock(4, true, 1, false, products.get(4), 250));
-		stockItems.add(new Stock(5, true, 2, false, products.get(5), 250));
+		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
+		stocks.add(new Stock(1, true, 3, false, products.get(1), 250));
+		stocks.add(new Stock(2, true, 10, false, products.get(2), 250));
+		stocks.add(new Stock(3, false, 15, false, products.get(3), 200));
+		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
+		stocks.add(new Stock(5, true, 2, false, products.get(5), 250));
 
 		Calendar c1 = Calendar.getInstance();
 
@@ -128,6 +124,7 @@ public class TestData {
 		CustomerOrder cOrder1;
 		Random rand = new Random();
 		Calendar c2 = Calendar.getInstance();
+		//change variable names
 		int randomFeedback;
 		int randomNumYear;
 		int randomNumDay;
@@ -157,6 +154,7 @@ public class TestData {
 	 * @author Ynyr Williams
 	 *
 	 */
+	//TODO
 	public void generateCustomerOrderLine() {
 		CustomerOrder cOrder1;
 		Random rand = new Random();
@@ -220,12 +218,12 @@ public class TestData {
 	}
 
 	public List<CustomerOrderLine> getCustomerOrderLine() {
-		return customerOrderLine;
+		return customerOrderLines;
 	}
 
 	public void setCustomerOrderLine(CustomerOrderLine customerOrderLine) {
 
-		this.customerOrderLine.add(customerOrderLine);
+		this.customerOrderLines.add(customerOrderLine);
 	}
 
 	public List<Employee> getEmployees() {
@@ -293,11 +291,11 @@ public class TestData {
 	}
 
 	public List<Stock> getStockItems() {
-		return stockItems;
+		return stocks;
 	}
 
 	public void setStockItems(List<Stock> stockItems) {
-		this.stockItems = stockItems;
+		this.stocks = stockItems;
 	}
 
 	public List<ProductSupplier> getProductSupplier() {

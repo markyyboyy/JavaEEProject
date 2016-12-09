@@ -13,7 +13,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.qac.row5project.entities.ProductItem;
+import com.qac.row5project.helpers.ProductItem;
 import com.qac.services.ProductService;
 
 @Named("product")

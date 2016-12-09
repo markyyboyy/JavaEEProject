@@ -25,13 +25,13 @@ import javax.validation.constraints.NotNull;
 //@NamedQuery(name = "FindBydateReceived", query = "SELECT * FROM PurchaseOrder pO WHERE pO.dateReceived = :dateReceived ")
 
 /** 
- * 
+ * asdadsswhweg
  * @author Richard Allen
  *
  */
 
 public class PurchaseOrder {
-
+	//name change, long
 	@Id
 	@Column(name = "Order_idOrder", nullable = false, unique = true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -57,6 +57,7 @@ public class PurchaseOrder {
 	 * 
 	 * @author Richard Allen
 	 * Create a new purchase order with all the elements completed
+	 * parameters
 	 */
 	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Calendar datePlaced, Calendar dateReceived) {
 		this.Order_id= Order_id;
@@ -80,6 +81,7 @@ public class PurchaseOrder {
 	 * @author Richard Allen
 	 * @return the order ID
 	 */
+	//change
 	public int getOrder_id()
 	{
 		return this.Order_id;
@@ -177,5 +179,5 @@ public class PurchaseOrder {
 	public void setStockList(List<Stock> stockList) {
 		this.stockList = stockList;
 	}
-
+	//add method
 }

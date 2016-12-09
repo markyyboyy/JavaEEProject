@@ -7,8 +7,9 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
-import com.qac.row5project.entities.ProductItem;
+
 import com.qac.row5project.helpers.PaginationHelper;
+import com.qac.row5project.helpers.ProductItem;
 
 /**
  * This controller operates similarly to the browse controller but for the search results as opposed to the full catalogue

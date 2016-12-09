@@ -1,14 +1,10 @@
 package com.qac.row5project.managers.offline;
 import java.util.List;
-import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-
-import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.helpers.*;
+import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.CustomerOrderLineManager;
 
 @Stateless
@@ -35,7 +31,6 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		newCOLine.add(customerOrderLine);
 		testData.setCustomerOrderLine(customerOrderLine);
 	}
-		
 	
 	/**
 	 * READ - Customer and Inventory Manager Only
@@ -63,7 +58,6 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 			if (col.getId() == CustomerOrder_idOrder.getId()) {
 				return col;
 			}
-
 		}
 		return null;
 	}

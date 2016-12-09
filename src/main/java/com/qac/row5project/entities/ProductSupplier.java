@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
  *
  */
 
+//change name
 @Entity
 @Table(name = "Supplier_Supplies_Product")
 
@@ -26,6 +27,7 @@ import javax.validation.constraints.NotNull;
 
 public class ProductSupplier {
 	
+	//change names camelcase
 	@OneToOne
 	@JoinColumn(name = "Supplier_id", nullable = false)
 	@NotNull
@@ -35,7 +37,7 @@ public class ProductSupplier {
 	@JoinColumn(name = "Product_id", nullable = false)
 	@NotNull
 	private	Product product;
-	
+	//double
 	@Column(name = "price", nullable = false)
 	@NotNull
 	private float price;

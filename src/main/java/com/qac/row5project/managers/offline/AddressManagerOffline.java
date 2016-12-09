@@ -22,7 +22,9 @@ public class AddressManagerOffline implements AddressManager {
 	private TestData testData;
 
 	/***
-	 * @address new address filled with all necceasry attributes	
+	 *
+	 * 
+	 * @param address new address filled with all necceasry attributes	
 	 */
 	@Override
 	public Address createAddress(Address address) {
@@ -37,8 +39,10 @@ public class AddressManagerOffline implements AddressManager {
 
 	}
 
+	//change method name b y id
 	/***
-	 * @id id of employees address you want to get
+	 * 
+	 * @param id of employees address you want to get
 	 */
 	@Override
 	public Address readEmployee(int id) {
@@ -47,8 +51,6 @@ public class AddressManagerOffline implements AddressManager {
 			if (a.getID() == id)
 				return a;
 		}
-
 		return null;
 	}
-
 }
