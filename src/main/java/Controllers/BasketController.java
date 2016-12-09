@@ -9,6 +9,7 @@ import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.ProductItem;
@@ -23,7 +24,7 @@ import Controllers.session.CurrentUser;
 
 /**
  * 
- * @author Iman Hassan
+ * @author Iman Hassan & Mike Crowther
  *
  */
 
@@ -62,9 +63,15 @@ public class BasketController {
 	
 	public List<CustomerOrderLine> getCustOrderMdl(){
 		try {
-			custOrderMdl = basketService.getBasket(user.getCustomer().getID()).getCustomerOrderLines();
+			
+			
+			Customer currentUser = user.getCustomer();
+			CustomerOrder basket = basketService.getBasket(currentUser.getID());
+			custOrderMdl = basket.getCustomerOrderLines();
+						
 			if(custOrderMdl == null)
 				custOrderMdl = new ArrayList<>();
+			
 		} catch (Exception e) {
 			custOrderMdl = new ArrayList<>();
 		}
@@ -78,9 +85,14 @@ public class BasketController {
 	 * 
 	 * @param id
 	 */
-	public void addToBasket(Stock id, int quantity) {
-		if (user.isLoggedIn())
-			basketService.addToBasket(id);
+	public void addToBasket(Stock stock, int quantity) {
+		if (user.isLoggedIn() && user.getCustomer() != null){
+			//Stock stock = stockService.getStockByProductID(id);
+			basketService.addToBasket(stock, user);
+
+			
+			
+		}
 	}
 
 	//add to basker stuff    vvv
@@ -96,10 +108,6 @@ public class BasketController {
 
 			Stock stock = stockService.getStockByProductID(productID);
 			addToBasket(stock, 1);
-
-			ProductItem temp = productService.getProductItem(productID);
-
-			System.out.println("Added to basket " + productID);
 
 		} catch (NumberFormatException nm) {
 			System.out.println(nm.getMessage());

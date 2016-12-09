@@ -38,6 +38,7 @@ public class Generate {
 		List<ProductItem> returnable = new ArrayList<ProductItem>();
 		List<ProductItem> stock = productService.findAllProducts();	//Get all products
 		Iterator i = stock.iterator();
+<<<<<<< HEAD
 		while (i.hasNext()){
 			ProductItem p = (ProductItem) i.next();	//If a ProductItem has less than 5 items then we add it to the list.
 			if (p.getStockLevel() < 5){
@@ -45,6 +46,16 @@ public class Generate {
 			} 
 		}
 		return returnable;	//Return the final list.
+=======
+		return stock;
+	}
+
+	/*@Inject
+	private GeneratedOrderManager manager = new GeneratedOrderManagerOffline();
+	public List<Product> findWishList(long id)
+	{
+		return manager.findByCustomerId(id);
+>>>>>>> 559d0c9b7e43509e6f15b080758b438af82dcead
 	}
 	/**
 	 * This method returns the suggested quantities for the user.

@@ -2,11 +2,9 @@ package Controllers.session;
 
 import java.io.Serializable;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
-import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.Employee;
 
 /**
@@ -24,7 +22,7 @@ public class CurrentUserEmployee implements Serializable {
 		this.employee = emp;
 	}
 	
-	public Employee getCustomer()
+	public Employee getEmployee()
 	{
 		return this.employee;
 	}

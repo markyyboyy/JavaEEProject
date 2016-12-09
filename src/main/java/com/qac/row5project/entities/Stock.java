@@ -1,8 +1,3 @@
-/***
- * 
- * @author Ynyr Williams
- *
- */
 package com.qac.row5project.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +9,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
+/***
+ * This represents the data associated with a stock.
+ * 
+ * @author Ynyr Williams
+ *
+ */
 @Entity
 @Table(name="Stock")
 public class Stock {

@@ -1,31 +1,39 @@
 package com.qac.services;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 //import com.qac.row5project.entities;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.entities.Stock;
+import com.qac.row5project.entities.Stock;	
 //import com.qac.row5project.managers;
 import com.qac.row5project.managers.CustomerOrderManager;
+import com.qac.row5project.managers.StockManager;
+import com.qac.row5project.managers.offline.StockManagerOffline;
 
 import Controllers.session.CurrentUser;
 
 /**
  * 
- * @author Iman Hassan & Ynyr Williams
+ * @author Iman Hassan & Ynyr Williams & Mike Crowther
+ * 
+ *  Basket is the an active customer order
+ *  
+ *  Orderline is added to the basket of the logged in customer 
+ * 
  *
  */
-@Stateless
+@Stateless	
 public class BasketService {
 
 	@Inject
 	private CustomerOrderManager customerOrderManager;
-
+	
 	@Inject
-	CurrentUser cu;
-
+	private StockManager stockManager;
+	
 	/**
 	 * To get basket for the customer order
 	 * 
@@ -38,34 +46,31 @@ public class BasketService {
 
 	/**
 	 * Adding a product to a customer's basket
-	 * 
+	 * Uses the stock item to input into the user basket
+	 * The item is added to the active order, of the logged in customer
 	 * @param customerId
 	 * @param stock
 	 * @param quantity
 	 * @return
-	 */
-	
-	//long customerId
-	//, int quantity
-	
-	public void addToBasket(Stock stock) {
+	 */	
+	public void addToBasket(Stock stock, CurrentUser cu) {
+			
 		
-		cu.getBasket();
-		
-		
-		
-		/*if (cu != null) {
+		if (cu.isLoggedIn()){
+			
+			CustomerOrder custOrder = customerOrderManager.readCustomerOrderById(cu.getCustomer().getID());
 
-			if (!customerOrderManager.readCustomerOrderById(cu.getCustomer().getID()).getCustomerOrderLines()
-					.isEmpty()) {
-				customerOrderManager.addToBasket(customerId, stock, quantity);
+			if (custOrder != null) {
+				
+				customerOrderManager.addToBasket(cu.getCustomer().getID(), stock, 1);
+				
 			}
 
-		}*/
+		}
 	}
 
 	/**
-	 * removing an item from customer's basket
+	 * removing an item from customer's active customer Order
 	 * 
 	 * @param customerId
 	 * @param stock
