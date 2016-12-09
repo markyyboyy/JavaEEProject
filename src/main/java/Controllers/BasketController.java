@@ -56,11 +56,11 @@ public class BasketController {
 	private CustomerOrder cOrder;
 	
 	private List<CustomerOrderLine> custOrderMdl = null;
-	//private List<CustomerOrderLine> custOrderResults = null;
-
 	
-	
-	
+	/***
+	 * Gets logged in users Basket/Order
+	 * @return models to be used to iterate through the Order orderlines
+	 */
 	public List<CustomerOrderLine> getCustOrderMdl(){
 		try {
 			
@@ -97,7 +97,11 @@ public class BasketController {
 
 	//add to basker stuff    vvv
 	//user.getCustomer().getID(), id, quantity
-	
+	/***
+	 * Try to add to current customer basket, 
+	 * if not possible add new customer order and orderline.
+	 * @param id
+	 */
 	public void addToBasket(String id) {
 
 		int productID = 0;
@@ -114,11 +118,14 @@ public class BasketController {
 
 		}
 		catch(NullPointerException e){
+			
 			CustomerOrder newOrder = new CustomerOrder();
 			CustomerOrderLine newOL = new CustomerOrderLine();
+			
 			Stock stock = stockService.getStockByProductID(productID);
 			newOrder.setCustomerId(user.getCustomer().getID());
 			newOL.setStock(stock);
+			
 			olM.createCustomerOrderLine(newOL);
 			newOrder.addToCustomerOrderLine(newOL);
 			cM.createCustomerOrder(newOrder);
@@ -154,7 +161,10 @@ public class BasketController {
 	}
 	
 	
-
+	/**
+	 * 
+	 * @return total price of customers current Basket/Order
+	 */
 	public float getTotalBasketPrice() {
 		return cOrder.getTotalPrice();
 
