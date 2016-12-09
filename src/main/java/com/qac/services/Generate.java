@@ -47,17 +47,6 @@ public class Generate {
 		return returnable;	//Return the final list.
 	}
 
-	/*@Inject
-	private GeneratedOrderManager manager = new GeneratedOrderManagerOffline();
-	public List<Product> findWishList(long id)
-	{
-		return manager.findByCustomerId(id);
->>>>>>> 559d0c9b7e43509e6f15b080758b438af82dcead
-	}
-	/**
-	 * This method returns the suggested quantities for the user.
-	 * @return	The suggested quantities for the user.
-	 */
 	public List<Integer> getQuantities() {
 		// TODO Auto-generated method stub
 		return generatedOrderManager.getQuantities();
