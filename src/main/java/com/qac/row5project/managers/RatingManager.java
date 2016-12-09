@@ -7,6 +7,7 @@ import javax.enterprise.inject.Alternative;
 
 import com.qac.row5project.entities.Rating;
 /***
+ * This is the entity manager for the rating entity
  * 
  * @author Ynyr Williams
  *
@@ -20,15 +21,53 @@ public interface RatingManager {
 	
 	
 	//what if someone buys a product twice
-	//READ: CUSTOMER, VISITOR INVENTORY MANAGER
-
-	//READ - CUSTOMER/VISITOR/INV MANAGER
-	public Rating findRatingsbyProductCustomerID(int productID, int CustomerID);
-	public List<Rating> findRatingsbyCustomerID(int CustomerID);
-	public List<Rating> findRatingsbyProductID(long l);
+	/**
+	 * CUSTOMER/VISITOR/INV MANAGER
+	 *  finds a specific rating by product ID and customer ID
+	 * 
+	 * @param productID, customerID
+	 * @return
+	 */
+	public Rating findRatingsbyProductCustomerID(long pID, long cID);
+	/**
+	 * CUSTOMER/VISITOR/INV MANAGER
+	 * finds a collection of ratings of a customer
+	 * 
+	 * @param customerID
+	 * @return
+	 */
+	public List<Rating> findRatingsbyCustomerID(long cID);
+	/**
+	 * CUSTOMER, VISITOR INVENTORY MANAGER
+	 * finds a collection of ratings of a product by id
+	 * 
+	 * @param pID
+	 * @return
+	 */
+	public List<Rating> findRatingsbyProductID(long pID);
+	/**
+	 * CUSTOMER, VISITOR INVENTORY MANAGER
+	 * finds a collection of ratings by score
+	 * 
+	 * @param score
+	 * @return
+	 */
 	public List<Rating> findRatingsbyScore(int Score);
+	/**
+	 * CUSTOMER, VISITOR INVENTORY MANAGER
+	 * finds a collection of ratings by score
+	 * 
+	 * @param score
+	 * @return 
+	 */
 	public int findAvgRatingsbyProductID(long l);
-
+	/**
+	 * CUSTOMER, VISITOR INVENTORY MANAGER
+	 * Updates a collection of ratings by rating
+	 * 
+	 * @param rating
+	 * 
+	 */
 	//UPDATE	
 	public void updateRating(Rating rating);
 	
