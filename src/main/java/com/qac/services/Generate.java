@@ -40,13 +40,7 @@ public class Generate {
 		List<ProductItem> returnable = new ArrayList<ProductItem>();
 		List<ProductItem> stock = productService.findAllProducts();
 		Iterator i = stock.iterator();
-		while (i.hasNext()){
-			ProductItem p = (ProductItem) i.next();
-			//if (p.getQuantity() < 5){
-				returnable.add(p);
-			//}
-		}
-		return returnable;
+		return stock;
 	}
 
 	/*@Inject

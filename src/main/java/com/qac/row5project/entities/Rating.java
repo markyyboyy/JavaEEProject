@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 /***
- * 
+ * This represents the data associated with a rating.
  * @author Ynyr Williams
  *
  */
