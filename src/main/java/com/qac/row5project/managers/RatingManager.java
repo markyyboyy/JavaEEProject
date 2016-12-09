@@ -25,7 +25,8 @@ public interface RatingManager {
 	 * CUSTOMER/VISITOR/INV MANAGER
 	 *  finds a specific rating by product ID and customer ID
 	 * 
-	 * @param productID, customerID
+	 * @param productID
+	 * @param customerID
 	 * @return
 	 */
 	public Rating findRatingsbyProductCustomerID(long pID, long cID);

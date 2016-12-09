@@ -12,7 +12,7 @@ import com.qac.row5project.entities.Image;
 public interface ImageManager {
 	
 	//CREATE, READ, UPDATE:INVENTORY MANAGER
-	/**
+	/**	
 	 * Creates an image for a product
 	 * 
 	 * @param img
