@@ -9,6 +9,7 @@ import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.ProductItem;
@@ -78,9 +79,14 @@ public class BasketController {
 	 * 
 	 * @param id
 	 */
-	public void addToBasket(Stock id, int quantity) {
-		if (user.isLoggedIn())
-			basketService.addToBasket(id);
+	public void addToBasket(Stock stock, int quantity) {
+		if (user.isLoggedIn() && user.getCustomer() != null){
+			//Stock stock = stockService.getStockByProductID(id);
+			basketService.addToBasket(stock, user);
+
+			
+			
+		}
 	}
 
 	//add to basker stuff    vvv
@@ -97,9 +103,9 @@ public class BasketController {
 			Stock stock = stockService.getStockByProductID(productID);
 			addToBasket(stock, 1);
 
-			ProductItem temp = productService.getProductItem(productID);
 
-			System.out.println("Added to basket " + productID);
+			
+
 
 		} catch (NumberFormatException nm) {
 			System.out.println(nm.getMessage());

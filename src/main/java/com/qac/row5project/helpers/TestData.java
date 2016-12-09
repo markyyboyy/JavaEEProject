@@ -64,6 +64,9 @@ public class TestData {
 
 		products.get(0).setProductId(1);
 		
+		
+		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
+		
 		ratings.add(new Rating(4, 0, 1));
 		
 		products.add(new Product("Name", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active", "Brian"));
