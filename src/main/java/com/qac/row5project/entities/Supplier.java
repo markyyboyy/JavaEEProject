@@ -54,4 +54,10 @@ public class Supplier  implements Serializable {
 		this.idSupplier = idSupplier;
 	}
 	
+	@Override
+	public String toString() {
+		return (String.valueOf(this.idSupplier));
+		
+	}
+	
 }
