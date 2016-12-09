@@ -17,7 +17,7 @@ package com.qac.row5project.entities;
 		private List<Rating> ratings;
 		private int averageRating;
 		private String status;
-		private String supplier;
+		private Supplier supplier;
 		private String category;
 		
 		
@@ -46,7 +46,7 @@ package com.qac.row5project.entities;
 		 * @param price
 		 */
 		public ProductItem(long id, String name, String description, double size, double weight, 
-			 String status, String supplier, String category) {
+			 String status, Supplier supplier, String category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
@@ -66,7 +66,7 @@ package com.qac.row5project.entities;
 		 * @param depth
 		 * @param weight
 		 */
-		public void addProductInfo(long id, String name, String description, double size, double weight, String status, String supplier, String category) {
+		public void addProductInfo(long id, String name, String description, double size, double weight, String status, Supplier supplier, String category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
@@ -112,11 +112,11 @@ package com.qac.row5project.entities;
 			this.category = category;
 		}
 
-		public String getSupplier() {
+		public Supplier getSupplier() {
 			return supplier;
 		}
 
-		public void setSupplier(String supplier) {
+		public void setSupplier(Supplier supplier) {
 			this.supplier = supplier;
 		}
 
