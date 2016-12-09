@@ -73,39 +73,40 @@
 			<div class="righttitletable">
 
 						<div id = "scrollpane">
-					<p:dataTable styleClass="table table-hover" value="#{product.products}" var="prod" border="2" cellspacing="1" cellpadding="1">
-										<f:facet name="header">
-											<h2><center>Product Information Table</center></h2>
-										</f:facet>
-									
-										<p:column headerText="Product ID" sortFunction="#{prod.id}">
+						<h:form>
+					 <p:dataTable var="prod" value="#{product.products}" sortMode="multiple">
+        <f:facet name="header">
+            Product Information
+        </f:facet>
+										<p:column headerText="Product ID" sortBy="#{prod.id}">
 											<h:outputText value="#{prod.id}" />
 										</p:column>
 										
-										<p:column headerText="Category" sortFunction="#{prod.category}" >
+										<p:column headerText="Category" sortBy="#{prod.category}" >
 											<h:outputText value="#{prod.category}" />
 										</p:column>
 
-										<p:column headerText="Name" sortFunction="#{prod.name}" >
+										<p:column headerText="Name" sortBy="#{prod.name}" >
 											<h:outputText value="#{prod.name}" />
 										</p:column>
 
-										<p:column headerText="Description" sortFunction="#{prod.description}" >
+										<p:column headerText="Description" sortBy="#{prod.description}" >
 											<h:outputText value="#{prod.description}" />
 										</p:column>
 
-										<p:column headerText="Supplier" sortFunction="#{prod.supplier.idSupplier}" >
+										<p:column headerText="Supplier" sortBy="#{prod.supplier}" >
 											<h:outputText value="#{prod.supplier}" />
 										</p:column>
 
-										<p:column headerText="Stock Level" sortFunction="#{prod.stockLevel}" >
+										<p:column headerText="Stock Level" sortBy="#{prod.stockLevel}" >
 											<h:outputText value="#{prod.stockLevel}" />
 										</p:column>> 
 								        
-								        <p:column headerText="Status" sortFunction="#{prod.status}">
+								        <p:column headerText="Status" sortBy="#{prod.status}">
 											<h:outputText value="#{prod.status}" />
 										</p:column>
-									</p:dataTable>
+    </p:dataTable>
+    </h:form>
 
 
 
