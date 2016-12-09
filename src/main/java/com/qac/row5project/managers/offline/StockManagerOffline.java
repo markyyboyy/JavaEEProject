@@ -86,7 +86,14 @@ public class StockManagerOffline implements StockManager {
 	
 	@Override
 	public List<Stock> getStockByProductID(long productId) {
-		
-		return null;
+
+		List<Stock> tStockList= new ArrayList<Stock>();
+		List<Stock> stockList = testData.getStockItems();
+		for(Stock s:stockList)
+		{
+			if(s.getProductID().getProductId()==productId)
+				tStockList.add(s);
+		}
+		return tStockList;
 	}
 }
