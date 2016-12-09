@@ -112,6 +112,18 @@ main nav input[type="submit"] {
 .logoFP {
 	padding-top: 15%;
 	padding-left: 34%;
+}
 
-	
+.logoSB {
+	padding-bottom: 15%
+}
+
+.footerWrapper {
+	padding-top: 80%;
+	padding-left: 30%;
+}
+
+.logoffButton {
+	padding-top: 15%;
+	padding-left: 50%;
 }
