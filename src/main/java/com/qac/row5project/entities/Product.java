@@ -21,7 +21,7 @@ public class Product implements Serializable{
 	private int quantity;
 	private String category;
 	private String status;
-	private String supplier;
+	private Supplier supplier;
 	private static final long serialVersionUID = 7526472295622776147L;
 
 
@@ -31,7 +31,7 @@ public class Product implements Serializable{
 	
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
 	public Product(String name, String desc, double price, double weight, String colour, int size,
-			int quantity, String category, String status, String supplier) {
+			int quantity, String category, String status, Supplier supplier) {
 		
 		this.name = name;
 		this.desc = desc;
@@ -126,11 +126,11 @@ public class Product implements Serializable{
 		this.status = status;
 	}
 
-	public String getSupplier() {
+	public Supplier getSupplier() {
 		return supplier;
 	}
 
-	public void setSupplier(String supplier) {
+	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
 }

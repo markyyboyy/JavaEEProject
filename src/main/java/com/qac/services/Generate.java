@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.PurchaseOrder;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.TestData;
@@ -25,6 +26,8 @@ public class Generate {
 	private GeneratedOrderManager generatedOrderManager;
 	@Inject
 	private ProductManager productManager;
+	@Inject
+	private ProductService productService;
 	private StockManager stockManager;
 	private List<Stock> stock;
 	public List<Stock> getStock() {
@@ -33,12 +36,12 @@ public class Generate {
 		Iterator i = stock.iterator();
 		return stock;
 	}
-	public List<Product> getProducts(){
-		List<Product> returnable = new ArrayList<Product>();
-		List<Product> stock = productManager.findAllProducts();
+	public List<ProductItem> getProducts(){
+		List<ProductItem> returnable = new ArrayList<ProductItem>();
+		List<ProductItem> stock = productService.findAllProducts();
 		Iterator i = stock.iterator();
 		while (i.hasNext()){
-			Product p = (Product) i.next();
+			ProductItem p = (ProductItem) i.next();
 			//if (p.getQuantity() < 5){
 				returnable.add(p);
 			//}
