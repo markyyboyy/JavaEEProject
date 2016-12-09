@@ -1,3 +1,8 @@
+/**
+ * CUSTOMERORDERCONTROLLER CALLS ON THE SERVICE TO PERFORM METHODS
+ * @author RyanB
+ */
+
 package Controllers;
 
 import java.io.Serializable;
@@ -16,23 +21,24 @@ import com.qac.services.CustomerOrderImsService;
 @RequestScoped
 public class CustomerOrderController implements Serializable {
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 13423423L;
 
 	@Inject
 	private CustomerOrderImsService customerOrderService;
-
-	private DataModel<CustomerOrder> customerOrders;
 	
 	private List<CustomerOrder> lsOrders;
+
 	
+//GETTERS AND SETTERS
+/**
+ * GET'S A LIST OF ALL CUSTOMER ORDERS
+ * @return DataModel<CustomerOrder>
+ */
 	public DataModel<CustomerOrder> getCustomerOrders() {
 		setCustomerOrders(customerOrderService.readCustomerOrders());
 		return new ListDataModel<>(lsOrders);
 	}
+
 
 	public void setCustomerOrders(List<CustomerOrder> lstTemp ){
 		this.lsOrders = lstTemp;

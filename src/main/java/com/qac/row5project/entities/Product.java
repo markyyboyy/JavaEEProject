@@ -1,4 +1,5 @@
 /**
+ *PRODUCT ENTITY
  * @Author RyanB
  */
 package com.qac.row5project.entities;

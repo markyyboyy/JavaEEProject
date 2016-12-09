@@ -1,5 +1,7 @@
 /**
+ * PRODUCTSERVICE DETERMINES VALIDATES THE REQUESTED METHODS FROM THE FRONT END AND INSTRUCTS THE PRODUCTMANAGER TO CARRY OUT ITS METHODS
  * @Author RyanB
+ *
  */
 package com.qac.services;
 
@@ -29,8 +31,13 @@ public class ProductService {
 
 	ProductItem productItem;
 
-//SEARCH BY THE ID IF IT IS INPUT AS A STRING TO RETURN AN ITEM
-	
+
+/**
+ * CUSTOMER/INV MANAGER
+ * CONVERTS A STRING PRODUCT ID TO A LONG ID
+ * @param name
+ * @return PRODUCT
+ */
 	public Product readProductByName(String name) {
 		try {
 			return readProductById(Long.parseLong(name));
@@ -40,11 +47,24 @@ public class ProductService {
 		}
 	}
 	//SEARCH BY THE PRODUCT ID TO RETURN AN ITEM
+
+	/**
+	 * CUSTOMER/INV MANAGER
+	 * SEARCH BY THE PRODUCT ID 
+	 * @param id
+	 * @return PRODUCT/S
+	 */
 	public Product readProductById(long id) {
 		//CALL METHOD IN PRODUCTMANAGER BY PASSING THE ID
 		return productManager.readProductById(id);
 	}
-		//
+
+/**
+ * SEARCH PRODUCTS BY COLOUR
+ * @param colour
+ * @return PRODUCT/S
+ */
+	
 	public List<Product> readProductByColour(String colour) {
 		try {
 			return productManager.readProductByColour(colour);
@@ -53,30 +73,60 @@ public class ProductService {
 		}
 	}
 
+/**
+ * V1
+ * SEARCH FOR A PRODUCT ITEM BY USING THE PRODUCT AND STOCK MANAGERS
+ * @param id
+ * @return PRODUCTITEM
+ */
+	
 	public ProductItem getProductItem(long id) {
 		return getProductItem(productManager.readProductById(id), stockManager.findStocksbyID(id));
 	}
 
+	/**
+	 * V2
+	 * SEARCH FOR A PRODUCT ITEM BY USING THE PRODUCT AND STOCK MANAGERS
+	 * @param id
+	 * @param Stock
+	 * @return PRODUCT ITEM
+	 */
+	
 	public ProductItem getProductItem(long id, Stock stock) {
 		return getProductItem(productManager.readProductById(id), stock);
 
 	}
 
+	/**
+	 * V3
+	 * SEARCH FOR A PRODUCT'S INFORMATION
+	 * @param Product
+	 * @return PRODUCT ITEM
+	 */
+	
 	public ProductItem getProductItem(Product product) {
 		return getProductItem(product, stockManager.findStocksbyID(product.getProductId()));
 	}
 
+	/**
+	 * V4
+	 * SEARCH FOR A PRODUCT ITEM BY USING THE PRODUCT AND STOCK MANAGERS
+	 * @param Product
+	 * @param Stock
+	 * @return PRODUCT ITEM
+	 */
+	
 	public ProductItem getProductItem(Product product, Stock stock) {
 		ProductItem productItem = new ProductItem();
-
+		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
 			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(),
 					product.getWeight(), product.getStatus(), product.getSupplier(), product.getCategory());
-
+		//CHECK TO SEE IF THE STOCK IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (stock != null){
 			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductId())), stock.getPrice());
 		}
-
+		//CHECK TO SEE IF THE PRODUCT HAS RATINGS
 		if (product != null && ratingManager.findRatingsbyProductID(product.getProductId()) != null) {
 
 			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductId());
@@ -92,10 +142,15 @@ public class ProductService {
 
 	}
 
+	/**
+	 * AVERAGES THE PRODUCT'S RATINGS WHICH ARE LEFT BY CUSTOMERS
+	 * @param List<Rating>
+	 * @return int
+	 */
 	public int setAverageRating(List<Rating> rating){
 		
 		int iRating = 0;
-		
+	//LOOK THROUGH ALL RATINGS FOR THE ITEM AND ADD THEM TO THE ARRAYLIST	
 		for (Rating r : rating) {
 			iRating += r.getScore();
 		}
@@ -106,6 +161,11 @@ public class ProductService {
 	}
 	
 	
+/**
+ * 	LIST ALL PRODUCTS
+ * @return List<ProductItem>
+ * 
+ */
 	
 	public List<ProductItem> findAllProducts() {
 
@@ -119,3 +179,5 @@ public class ProductService {
 
 	}
 }
+
+
