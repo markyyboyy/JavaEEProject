@@ -26,7 +26,7 @@
 	<div id = "productID">
 	<h3>ProductID</h3>
 	<ui:repeat var="produc" value="#{generated.productItems}">
-	<p><h:outputText value="#{produc.productId}" /></p>
+	<p><h:outputText value="#{produc.id}" /></p>
 	</ui:repeat>
 </div>
 	<div id = "productName">
@@ -38,7 +38,7 @@
 	<div id="quantity">
 		<h3>Quantity Remaining</h3>
 		<ui:repeat var="pro" value="#{generated.productItems}">
-	<p><h:outputText value="#{pro.quantity}" /></p>
+	<p><h:outputText value="#{pro.stockLevel}" /></p>
 	</ui:repeat>
 	</div>
 	<div id="suggested">
