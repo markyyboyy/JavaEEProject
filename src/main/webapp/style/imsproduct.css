@@ -46,7 +46,7 @@ width:38%;
 
 .logo
 {
-padding-left:6%;
+padding-left:15%;
 }
 
 .righttitletable
@@ -56,10 +56,28 @@ float: left;
 
 }
 
-.table
-{
-width:100%;
-border-style:solid;
+
+.ui-datatable-tablewrapper{
+	margin: 0;
 }
 
+.table1, th1, td1, table th td, 
+{
+width:1%;
+text-align: center;
 
+}
+
+.table th
+{
+text-align: center;	
+}
+
+#scrollpane
+{
+width: 100%;
+overflow-y: scroll;
+height: 100%;
+	
+	
+}

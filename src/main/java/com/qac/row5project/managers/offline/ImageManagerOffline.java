@@ -7,10 +7,15 @@ package com.qac.row5project.managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+
 import com.qac.row5project.entities.*;
 import com.qac.row5project.managers.ImageManager;
 import com.qac.row5project.helpers.*;
 
+@Stateless
+@Default
 public class ImageManagerOffline implements ImageManager{
 	
 	//CREATE, READ, UPDATE:INVENTORY MANAGER

@@ -12,15 +12,13 @@
 <link href="../style/imsMain.css" type="text/css" rel="stylesheet" />
 <link href="../style/imsGenerateOrder.css" type="text/css" rel="stylesheet" />
 <link href="../style/imsproduct.css" type="text/css" rel="stylesheet" />
+<link href="../style/imsCustomerOrder.css" type="text/css" rel="stylesheet" />
+
 <script src="../js/jquery-3.1.1.min.js"></script>
 <meta charset="UTF-8"/>
 </head>
-
 <h:body>
-
-	
-
-	<section class="sidebar">
+	<section class="sidebar element">
 	
 		<div class="filter">
 			<ui:insert name="filterName"></ui:insert>
@@ -29,20 +27,24 @@
 			<ui:insert name="filterResults"></ui:insert>		
 			
 		</div>
+			<h:panelGroup id="footer" rendered="#{!hideFooter}">
+
+		<div class="footerWrapper">
+			<div class="logo">
+						<img src="../img/logo.png" width="200px" height="160px" />
+					</div> 
+			<h:button styleClass="btn btn-info" outcome="imsFrontPage"
+								value="Back"/>
+		</div>
+
+	</h:panelGroup>
+
 	
 	</section>
 
 	<main class="content"> <ui:insert name="mainContent2" /> </main>
 
 
-	<h:panelGroup id="footer" rendered="#{!hideFooter}">
-
-		<div class="footerWrapper">
-			<h:button styleClass="btn btn-primary" outcome="imsFrontPage"
-								value="Back"/>
-		</div>
-
-	</h:panelGroup>
 
 
 

@@ -1,3 +1,5 @@
+
+
 @CHARSET "ISO-8859-1";
 /*Michael Crowther*/
 * {
@@ -5,8 +7,9 @@
 	line-height: 1.4;
 	color: #373740;	
 	background-color: #cecece;
+	line-height: 1.4;
+	color: #373740;
 }
-
 
 body{
 	background-color: #adadad;
@@ -43,8 +46,8 @@ input, inputText {
 	background-color: #c7c7c7;
 	
 }
-td{
-	on-hover: #FFF;
+tr:hover td{
+	background-color: #FFF;
 }
 nav {
 	width: 100%;
@@ -104,3 +107,15 @@ main nav input[type="submit"] {
 	color: white;
 }
 
+.table table-hover{
+	overflow: scroll;
+	width:50%;
+  table-layout: fixed;
+}
+
+.logoFP {
+	padding-top: 15%;
+	padding-left: 34%;
+
+	
+}

@@ -32,7 +32,7 @@ public class CustomerOrder {
 	@OneToOne 
 	@NotNull
 	@JoinColumn(name = "customerId", nullable = false, unique = false)
-	private int customerId;
+	private long customerId;
 	
 	@OneToMany
 	@NotNull
@@ -57,30 +57,36 @@ public class CustomerOrder {
 
 	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER
 	public CustomerOrder() {
+		customerOrderLines = new ArrayList<>();
 	};
 	
 	
-	public CustomerOrder(int customerOrderId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
+	public CustomerOrder(int customerOrderId, int customerId, Calendar datePlaced,int addressId) {
 		super();
 		this.customerOrderId = customerOrderId;
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
+
 		this.paymentId = paymentId;
+		customerOrderLines = new ArrayList<>();
+
 		deriveTotalPrice();
 		
 	}
 	//CONSTRUCTOR FOR CUSTOMER ORDER THAT TAKES ALL VARIABLES
-	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId, int paymentId) {
+	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId) {
 		super();
 		this.customerOrderId = customerOrderId;
 		this.feedbackId = feedbackId;
 		this.customerId = customerId;
 		this.datePlaced = datePlaced;
 		this.addressId = addressId;
+
 		this.paymentId = paymentId;
+		customerOrderLines = new ArrayList<>();
+
 		deriveTotalPrice();
-		
 	}
 	public void deriveTotalPrice(){
 		totalPrice=0;
@@ -129,12 +135,12 @@ public class CustomerOrder {
 		this.feedbackId = feedbackId;
 	}
 
-	public int getCustomerId() {
+	public long getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	public void setCustomerId(long l) {
+		this.customerId = l;
 	}
 
 	public Calendar getDatePlaced() {
@@ -161,13 +167,6 @@ public class CustomerOrder {
 		this.addressId = addressId;
 	}
 
-	public int getPaymentId() {
-		return paymentId;
-	}
-
-	public void setPaymentId(int paymentId) {
-		this.paymentId = paymentId;
-	}
 
 
 	@Override
