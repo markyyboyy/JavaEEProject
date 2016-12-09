@@ -1,5 +1,6 @@
 /**
- * @author RyanB
+ * PRODUCTCONTROLLER ALLOWS THE INFORMATION TO BE GATHERED REGARDING INDIVIDUAL/GROUPS OF PRODUCTS
+ @author RyanB
  */
 package Controllers;
 
@@ -30,9 +31,14 @@ private List<String> categories;
 
 
 
+/**
+ * FIND ALL PRODUCTS BY INVOKING FINDALLPRODUCTS() FROM THE PRODUCTSERVICE
+ * @return DataModel<ProductItem>
+ */
+
 public DataModel<ProductItem> getProducts() {
 	 	setProducts(productService.findAllProducts());
-	 	
+	 
 		if(products != null)
 			return new ListDataModel<>(products);
 		else {
@@ -43,14 +49,21 @@ public DataModel<ProductItem> getProducts() {
 			this.categories = temp;
 		}
 
+/**
+*FIND PRODUCTS BY THEIR NAME 
+** @param DataModel<String>
+* @return ListDataModel<>
+*/
 		public DataModel<String> getCategories(){
 			
 			List<ProductItem> lsTemp = productService.findAllProducts();			
 			categories = new ArrayList<>();
 			
 			for (ProductItem productItem : lsTemp) {
+					
 				
 				if(!lsTemp.contains(productItem.getCategory()))
+					
 					categories.add(productItem.getCategory());
 			}
 			
@@ -62,7 +75,6 @@ public DataModel<ProductItem> getProducts() {
 		public void setProducts(List<ProductItem> lsTemp)
 		{
 			
-			System.out.println("Going in here " + lsTemp.get(0).getCategory());
-			this.products =lsTemp;
+				this.products =lsTemp;
 		}
 }

@@ -37,7 +37,7 @@ public class Feedback {
 	}
 
 	/**
-	 * Constructor for each variable
+	 * Create a new feedback with all elements completed
 	 * @param idFeedback
 	 * @param feedbackRating
 	 * @param comment
@@ -48,30 +48,52 @@ public class Feedback {
 		this.comment = comment;
 	}
 	
+	// Getters and Setters
+	
 	/**
 	 * 
-	 * @return Getters and Setters
+	 * @return feedback id
 	 */
 	public int getIdFeedback() {
 		return idFeedback;
 	}
 	
+	/**
+	 * 
+	 * @return feedback rating
+	 */
 	public int getFeedbackRating() {
 		return feedbackRating;
 	}
 	
+	/**
+	 * 
+	 * @return comment
+	 */
 	public String getComment() {
 		return comment;
 	}
-
+	
+	/**
+	 * Set the feedback Id
+	 * @param idFeedback
+	 */
 	public void setIdFeedback(int idFeedback) {
 		this.idFeedback = idFeedback;
 	}
 	
+	/**
+	 * Set the feedback rating
+	 * @param feedbackRating
+	 */
 	public void setFeedbackRating(int feedbackRating) {
 		this.feedbackRating = feedbackRating;
 	}
 	
+	/**
+	 * Set the comment
+	 * @param comment
+	 */
 	public void setComment(String comment) {
 		this.comment = comment;
 	}

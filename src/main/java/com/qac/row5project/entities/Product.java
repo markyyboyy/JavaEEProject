@@ -1,4 +1,5 @@
 /**
+ *PRODUCT ENTITY
  * @Author RyanB
  */
 package com.qac.row5project.entities;
@@ -133,4 +134,10 @@ public class Product implements Serializable{
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [supplier=" + supplier + "]";
+	}
+	
 }

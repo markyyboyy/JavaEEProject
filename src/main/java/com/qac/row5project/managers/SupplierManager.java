@@ -21,7 +21,7 @@ public interface SupplierManager {
 	 * READ - Inventory Manager Only
 	 * A method to read the supplier id
 	 * @param idSupplier
-	 * @return
+	 * @return supplier Id
 	 */
 	public Supplier readByIdSupplier(int idSupplier);
 }

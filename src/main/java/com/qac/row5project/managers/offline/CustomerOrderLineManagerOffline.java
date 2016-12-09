@@ -36,8 +36,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		testData.setCustomerOrderLine(customerOrderLine);
 	}
 		
-	//READ - Customer and Inventory Manager Only
+	
 	/**
+	 * READ - Customer and Inventory Manager Only
 	 * reading a new customer order line by id
 	 */
 	@Override
@@ -52,6 +53,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 	
 	/**
+	 * READ - Customer and Inventory Manager Only
 	 * reading a customer order line by customer order id
 	 */
 	@Override
@@ -67,6 +69,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	}
 	
 	/**
+	 * READ - Customer and Inventory Manager Only
 	 * reading a customer order line by stock id
 	 */
 	@Override
@@ -81,8 +84,9 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		return null;
 	}
 		
-	//UPDATE - Customer Only
+	
 	/**
+	 * UPDATE - Customer Only
 	 * updating customer order line from customer order 
 	 */
 	@Override
