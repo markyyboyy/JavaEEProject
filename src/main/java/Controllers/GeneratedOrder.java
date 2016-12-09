@@ -23,54 +23,76 @@ public class GeneratedOrder {
 	private List<String> products = new ArrayList<String>();
 	List<Integer> suggestedQuanity = new ArrayList<Integer>();
 	
-	public List<Stock> getStockItems() {
-		return generateService.getStock();
-	}
-
+	/**
+	 * This method returns a list of all of the products in the system.
+	 * @return All of the products in the system.
+	 */
 	public List<ProductItem> getProductItems() {
-		//if (productItems.size() == 0){
+		if (productItems.size() == 0){	//If we already have a list then the user called sort, so dont display the unsorted list.
 				productItems = generateService.getProducts();
-		//}
+		}
 		return productItems;
 	}
-	
-	public void setProductItems(List<ProductItem> productItems) {
-		this.productItems = productItems;
-	}
+	/**
+	 * This method is used to add a product that will be ordered.
+	 */
 	public void addProductItem() {
 		products.add(ProductID);
 	}
+	/**
+	 * This method returns the amount of stock items you need to get a product back to its recommended stokc level of 5.
+	 * @return	A list of integers, each represents a suggestion stock quantity.
+	 */
 	public List<Integer> getSuggestedQuanity(){
-		if (suggestedQuanity.size() == 0){
+		if (suggestedQuanity.size() == 0){	//If we dont already have a list then display the suggested qunatiries, else the user has called search.
 		suggestedQuanity = generateService.getQuantities();
 		}
 		return suggestedQuanity;
 	}
+	/**
+	 * This method returns the amount of stock items you need to get a product back to its recommended stock level of 5, but this time sorted by the amount needed..
+	 * @return	A list of integers, each represents a suggestion stock quantity.
+	 */
 	public List<Integer> getSuggestedQuanitySorted(){
-		Collections.sort(suggestedQuanity, (s1, s2) -> s1.intValue() - s2.intValue());
+		Collections.sort(suggestedQuanity, (s1, s2) -> s1.intValue() - s2.intValue());	//Get the suggested quantities and sort them.
 		return suggestedQuanity;
 	}
+	/**
+	 * This method returns the amount of stock items you need to get a product back to its recommended stock level of 5, but this time sorted by the amount needed..
+	 * @return	A list of integers, each represents a suggestion stock quantity.
+	 */
 	public List<ProductItem> sortByQuantity(){
-		Collections.sort(productItems, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());
+		Collections.sort(productItems, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());	//Get the products and sort them.
 		getSuggestedQuanitySorted();
 		return productItems;
 	}
-
+	/**
+	 * This method returns the product the user wanted to order.
+	 * @return	The productID of the product the user wanted to order.
+	 */
 	public String getProductID() {
 		return ProductID;
 	}
-
+	/**
+	 * This method sets the product the user wanted to order.
+	 * @param	The productID of the product the user wanted to order.
+	 */
 	public void setProductID(String productID) {
 		ProductID = productID;
 	}
-	public void createOrder(){
-		
-	}
+	/**
+	 * This method returns an unsorted list of all the products in the system.
+	 * @return	The productID of the product the user wanted to order.
+	 */
 	public List<ProductItem> unsort(){
 		getSuggestedQuanity();
 		productItems = generateService.getProducts();
 		return productItems;
 	}
+	/**
+	 * This method generates an order from a productID
+	 * @param	The productID of the product the user wanted to order.
+	 */
 	public void generateOrder(String poID){
 		generateService.generateOrder(poID);
 	}
