@@ -86,9 +86,7 @@ public class CustomerOrder {
 		this.feedbackID = feedbackId;
 		this.customerID = customerId;
 		this.datePlaced = datePlaced;
-		this.addressId = addressId;
-
-		this.paymentId = paymentId;
+		this.addressID = addressId;
 		customerOrderLines = new ArrayList<>();
 
 		deriveTotalPrice();
@@ -116,15 +114,11 @@ public class CustomerOrder {
 	public void removeFromCustomerOrderLine(CustomerOrderLine cL){
 		customerOrderLines.remove(cL);
 	}
-	public int getCustomerOrderId() {
-		return id;
-	}
-
 	public List<CustomerOrderLine> getCustomerOrderLines() {
 		return customerOrderLines;
 	}
 
-	public float getTotalPrice() {
+	public double getTotalPrice() {
 		deriveTotalPrice();
 		return totalPrice;
 	}
@@ -138,19 +132,19 @@ public class CustomerOrder {
 		this.id = customerOrderId;
 	}
 
-	public int getFeedbackId() {
+	public long getFeedbackID() {
 		return feedbackID;
 	}
 
-	public void setFeedbackId(int feedbackId) {
-		this.feedbackID = feedbackId;
+	public void setFeedbackID(int fID) {
+		this.feedbackID = fID;
 	}
 
-	public long getCustomerId() {
+	public long getCustomerID() {
 		return customerID;
 	}
 
-	public void setCustomerId(long l) {
+	public void setCustomerID(long l) {
 		this.customerID = l;
 	}
 
@@ -170,19 +164,12 @@ public class CustomerOrder {
 		this.dateReceived = dateReceived;
 	}
 
-	public int getAddressId() {
-		return addressId;
-	}
-
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
-	}
 
 	@Override
 	public String toString() {
 		return "CustomerOrder [customerOrderId=" + id + ", feedbackId=" + feedbackID + ", customerId="
 				+ customerID + ", datePlaced=" + datePlaced + ", dateReceived=" + dateReceived + ", addressId="
-				+ addressId + ", paymentId=" + paymentId + "]";
+				+ addressID + ", paymentId=" + paymentID + "]";
 	}
 
 }

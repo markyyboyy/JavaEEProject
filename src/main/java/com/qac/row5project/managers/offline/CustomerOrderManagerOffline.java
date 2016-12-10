@@ -40,7 +40,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	public void updateCustomerOrder(CustomerOrder co) {
 		List<CustomerOrder> co1 = testData.getCustomerOrders();
 		for (int i = 0; i < co1.size(); i++)
-			if (co1.get(i).getCustomerId() == co.getCustomerId())
+			if (co1.get(i).getCustomerID() == co.getCustomerID())
 				co1.set(i, co);
 	}
 
@@ -49,7 +49,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	// ALLOWS A CUSTOMER ORDER TO BE VIEWED BASED ON THE ORDER ID
 	public CustomerOrder readCustomerOrderById(long id) {
 		for (CustomerOrder co : testData.getCustomerOrders())
-			if (co.getCustomerId() == id)
+			if (co.getCustomerID() == id)
 				return co;
 		return null;
 	}

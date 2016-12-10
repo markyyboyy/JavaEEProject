@@ -79,7 +79,7 @@ public class BasketService {
 	 * @param id
 	 * @return total price in basket
 	 */
-	public float getTotalBasketPrice(long id) {
+	public double getTotalBasketPrice(long id) {
 		return getBasket(id).getTotalPrice();
 	}
 }

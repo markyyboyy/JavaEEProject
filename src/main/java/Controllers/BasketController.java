@@ -123,7 +123,7 @@ public class BasketController {
 			CustomerOrderLine newOL = new CustomerOrderLine();
 			
 			Stock stock = stockService.getStockByProductID(productID);
-			newOrder.setCustomerId(user.getCustomer().getID());
+			newOrder.setCustomerID(user.getCustomer().getID());
 			newOL.setStock(stock);
 			
 			olM.createCustomerOrderLine(newOL);
@@ -165,7 +165,7 @@ public class BasketController {
 	 * 
 	 * @return total price of customers current Basket/Order
 	 */
-	public float getTotalBasketPrice() {
+	public double getTotalBasketPrice() {
 		return cOrder.getTotalPrice();
 
 	}

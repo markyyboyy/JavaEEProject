@@ -13,6 +13,5 @@ public class CarouselController  implements Serializable {
 	    public void init() {
 	       // cars = service.createCars(9);
 	    }
-	 
 }
 	
