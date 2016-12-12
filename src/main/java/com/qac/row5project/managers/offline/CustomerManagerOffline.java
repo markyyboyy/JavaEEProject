@@ -10,7 +10,8 @@ import com.qac.row5project.managers.CustomerManager;
 /***
  * 
  * @author Michael Crowther
- *
+ * * Get the data from an offline state -- not  using a database
+
  */
 @Stateless
 @Default
@@ -72,8 +73,12 @@ public class CustomerManagerOffline implements CustomerManager {
 				co1.set(i, customer);
 		}
 	}
-	//semail
-	//no javadoc
+
+	
+	/***
+	 * @param sEmail 
+	 * @return the customer of the corresponding email, if no customer has sEmail, retuns null
+	 */
 	@Override
 	public Customer readCustomerByEmail(String sEmail) {
 
