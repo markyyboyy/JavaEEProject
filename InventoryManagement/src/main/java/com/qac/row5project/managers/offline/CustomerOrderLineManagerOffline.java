@@ -70,7 +70,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	public CustomerOrderLine readByStock(CustomerOrderLine Stock) {
 		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rS_idStock) {
-			if (col.getStock().getStockID() == Stock.getID()) {
+			if (col.getStock().getID() == Stock.getID()) {
 				return col;
 			}
 

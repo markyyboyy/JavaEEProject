@@ -35,7 +35,7 @@ public class StockManagerOffline implements StockManager {
 	@Override	
 	public Stock createStock(Stock stock){
 		List<Stock> stockList = testData.getStockItems();
-		stock.setStockID(stockList.size()+1);
+		stock.setID(stockList.size()+1);
 		stockList.add(stock);
 		testData.setStockItems(stockList);
 		return stock;
@@ -55,7 +55,7 @@ public class StockManagerOffline implements StockManager {
 		List<Stock> stockList = testData.getStockItems();
 		for(Stock s: stockList)
 		{
-			if(s.getStockID()==stock.getStockID()){
+			if(s.getID()==stock.getID()){
 				s=stock;
 				testData.setStockItems(stockList);
 				break;
@@ -76,7 +76,7 @@ public class StockManagerOffline implements StockManager {
 		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
-			if(s.getStockID()==sID)
+			if(s.getID()==sID)
 				return s;
 		}
 		return null;
