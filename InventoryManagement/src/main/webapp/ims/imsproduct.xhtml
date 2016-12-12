@@ -29,12 +29,11 @@
 					<div class="filter">
 
 						<div class="category dropdown">
-
 							<div class="dropdown">
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-										<f:selectItems value="#{product.categories}" />
+									<f:selectItems value="#{product.categories}" />
 								</h:selectOneMenu>
 							</div>
 
@@ -43,20 +42,7 @@
 								<button class="btn btn-primary dropdown-toggle" type="button"
 									data-toggle="dropdown" />
 								<h:selectOneMenu value="dropdown">
-									<ui:repeat value="#{product.products}" var="prod">
-										<f:selectItem itemValue="#{prod.category}" itemLabel="#{prod}" />
-									</ui:repeat>
-								</h:selectOneMenu>
-							</div>
-
-							<div class="supplier dropdown">
-								<br />
-								<button class="btn btn-primary dropdown-toggle" type="button"
-									data-toggle="dropdown" />
-								<h:selectOneMenu value="dropdown">
-									<ui:repeat value="#{product.products}" var="prod1">
-										<f:selectItem itemValue="#{prod1.status}" itemLabel="#{prod1}" />
-									</ui:repeat>
+									<f:selectItems value="#{product.statuses}" />
 								</h:selectOneMenu>
 							</div>
 
@@ -72,38 +58,39 @@
 		<ui:define name="mainContent2">
 			<div class="righttitletable">
 
-						<div id = "scrollpane">
-						<h:form>
-					 <p:dataTable var="prod" value="#{product.products}" sortMode="multiple">
-        <f:facet name="header">
+				<div id="scrollpane">
+					<h:form>
+						<p:dataTable var="prod" value="#{product.products}"
+							sortMode="multiple">
+							<f:facet name="header">
             Product Information
         </f:facet>
-										<p:column headerText="Product ID" sortBy="#{prod.ID}">
-											<h:outputText value="#{prod.ID}" />
-										</p:column>
-										
-										<p:column headerText="Category" sortBy="#{prod.category}" >
-											<h:outputText value="#{prod.category}" />
-										</p:column>
+							<p:column headerText="Product ID" sortBy="#{prod.ID}">
+								<h:outputText value="#{prod.ID}" />
+							</p:column>
 
-										<p:column headerText="Name" sortBy="#{prod.name}" >
-											<h:outputText value="#{prod.name}" />
-										</p:column>
+							<p:column headerText="Category" sortBy="#{prod.category}">
+								<h:outputText value="#{prod.category}" />
+							</p:column>
 
-										<p:column headerText="Description" sortBy="#{prod.description}" >
-											<h:outputText value="#{prod.description}" />
-										</p:column>
+							<p:column headerText="Name" sortBy="#{prod.name}">
+								<h:outputText value="#{prod.name}" />
+							</p:column>
 
-										<p:column headerText="Stock Level" sortBy="#{prod.stockLevel}" >
-											<h:outputText value="#{prod.stockLevel}" />
-										</p:column>> 
+							<p:column headerText="Description" sortBy="#{prod.description}">
+								<h:outputText value="#{prod.description}" />
+							</p:column>
+
+							<p:column headerText="Stock Level" sortBy="#{prod.stockLevel}">
+								<h:outputText value="#{prod.stockLevel}" />
+							</p:column>> 
 								        
 								        <p:column headerText="Status" sortBy="#{prod.status}">
-											<h:outputText value="#{prod.status}" />
-										</p:column>
-    </p:dataTable>
-    </h:form>
-   
+								<h:outputText value="#{prod.status}" />
+							</p:column>
+						</p:dataTable>
+					</h:form>
+
 
 
 
@@ -112,8 +99,8 @@
 
 
 				</div>
-							</div>
-					</ui:define>
-				</ui:composition>
-		</h:body>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
 </html>
