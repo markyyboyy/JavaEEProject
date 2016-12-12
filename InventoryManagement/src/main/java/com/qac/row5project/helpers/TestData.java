@@ -77,7 +77,7 @@ public class TestData {
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
-		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
+		LoginDetails imsLogin = new LoginDetails("m@nb.com", "p");
 		loginDetails.add(imsLogin);
 
 		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));

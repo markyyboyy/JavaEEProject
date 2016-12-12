@@ -30,7 +30,7 @@ public class ProductService {
 	private RatingManager ratingManager;
 
 	ProductItem productItem;
-
+	
 
 /**
  * CUSTOMER/INV MANAGER
