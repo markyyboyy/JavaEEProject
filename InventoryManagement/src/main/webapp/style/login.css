@@ -1,0 +1,87 @@
+.form{
+	width: 80%;
+	margin:5%;
+	padding-bottom: 5%;
+	padding-top: 10%;
+	text-align: center;
+}
+
+	
+.form label {
+
+	padding: 5px 5px 10px 5px;
+	display: inline-block;
+	width: 20%; 
+} 
+
+.label{
+	font-family: "Abel";
+	align: left;
+	margin-left: 2%;
+} 
+
+.navButton{
+	 background-color: #260f33;	 
+    border: solid black;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.login{
+	width: 50%;
+	align: center;
+	margin-left: 24%;
+	font-size: 100%;
+	display: inline-block;
+	
+}
+
+.register{
+	width: 50%;
+	align: center;
+	margin-left: 24%;
+	font-size: 100%;
+	display: inline-block;
+}
+
+#search{
+	width: 50%;
+	float: left;
+}
+
+#login, #register{
+	width: 50%;
+	align: center;
+	margin-left: 24%;
+	font-size: 100%;
+	display: inline-block;
+} 
+
+#homeLogo{
+	float: left;
+}
+
+#search{
+	padding-left: 5%;
+	float: left;
+}
+
+#navigation{
+	float:left;
+	padding-left: 5%;
+	padding-top: 2%;
+	width: 80%;
+}
+
+#loginButton{
+	float:left;
+	padding-left: 5%;
+}
+
+
+
+	

@@ -21,45 +21,10 @@ public class Product implements Serializable{
 	private String colour;
 	private double size;
 	private long supplierID;
+	private static final long serialVersionUID = 7526472295622776147L;
 	Category category;
 	ItemStatus status;
-	private static final long serialVersionUID = 7526472295622776147L;
 
-
-	//NO ARGS CONSTRUCTOR FOR A PRODUCT
-	public Product() {
-	}
-	
-	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
-	public Product(long productID, String name, String desc, double price, double weight, String colour, double size,
-			long supplierID, Category category, ItemStatus status) {
-		this.productID = productID;
-		this.name = name;
-		this.desc = desc;
-		this.price = price;
-		this.weight = weight;
-		this.colour = colour;
-		this.size = size;
-		this.supplierID = supplierID;
-		this.category = category;
-	}
-
-	//GETTERS AND SETTERS
-	public long getProductID() {
-		return productID;
-	}
-
-	public void setProductID(long productID) {
-		this.productID = productID;
-	}
-
-	public long getSupplierID() {
-		return supplierID;
-	}
-
-	public void setSupplierID(long supplierID) {
-		this.supplierID = supplierID;
-	}
 
 	public Category getCategory() {
 		return category;
@@ -69,12 +34,40 @@ public class Product implements Serializable{
 		this.category = category;
 	}
 
-	public ItemStatus getStatus() {
+	public ItemStatus getItemStatus() {
 		return status;
 	}
 
-	public void setStatus(ItemStatus status) {
+	public void setItemStatus(ItemStatus status) {
 		this.status = status;
+	}
+
+	//NO ARGS CONSTRUCTOR FOR A PRODUCT
+	public Product() {
+	}
+	
+	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
+	public Product(String name, String desc, double price, double weight, String colour, double size,
+			long supplierID, Category category, ItemStatus status) {
+		
+		this.name = name;
+		this.desc = desc;
+		this.price = price;
+		this.weight = weight;
+		this.colour = colour;
+		this.size = size;
+		this.supplierID = supplierID;
+		this.category = category;
+		this.status = status;
+	}
+
+	//GETTERS AND SETTERS
+	public long getProductID() {
+		return productID;
+	}
+
+	public void setProductID(long productID) {
+		this.productID = productID;
 	}
 
 	public String getName() {
@@ -125,6 +118,17 @@ public class Product implements Serializable{
 		this.colour = colour;
 	}
 
+	public long getSupplier() {
+		return supplierID;
+	}
 
+	public void setSupplier(long supplierID) {
+		this.supplierID = supplierID;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [supplier=" + supplierID + "]";
+	}
 	
 }

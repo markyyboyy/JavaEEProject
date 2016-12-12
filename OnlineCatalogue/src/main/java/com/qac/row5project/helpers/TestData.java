@@ -56,10 +56,6 @@ public class TestData {
 		ratings = new ArrayList<Rating>();
 		securityQuestions = new ArrayList<SecurityQuestion>();
 		stocks = new ArrayList<Stock>();
-		
-
-		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
-
 
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
@@ -71,6 +67,30 @@ public class TestData {
 		c.set(1, 1, 1990);
 
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
+				
+		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(0).setProductID(1);
+	
+		products.add(new Product("Ryan", "Gnome of Ryan", 14.99, 14.0, "Red", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(1).setProductID(2);
+		
+		products.add(new Product("Iman", "Gnome of Iman", 14.99, 14.0, "Orange", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(2).setProductID(3);
+		
+		products.add(new Product("Mark", "Gnome of Mark", 14.99, 14.0, "Purple", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(3).setProductID(4);
+		
+		products.add(new Product("Richard", "Gnome of Richard", 14.99, 14.0, "Green", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(4).setProductID(5);
+		
+		products.add(new Product("Michael", "Gnome of Michael", 14.99, 14.0, "Yellow", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(5).setProductID(6);
 		
 		
 		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
@@ -78,13 +98,11 @@ public class TestData {
 		stocks.add(new Stock(2, true, 10, false, products.get(2), 250));
 		stocks.add(new Stock(3, false, 15, false, products.get(3), 200));
 		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
-		stocks.add(new Stock(5, true, 2, false, products.get(5), 250));
-
 		Calendar c1 = Calendar.getInstance();
 
 		c1.set(5, 6, 2012);
 		
-		generateCustomerOrder(50);
+		//generateCustomerOrder(50);
 	}
 
 	/***

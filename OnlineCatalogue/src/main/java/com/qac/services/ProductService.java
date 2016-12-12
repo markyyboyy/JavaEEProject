@@ -121,26 +121,16 @@ public class ProductService {
 		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductID());
 		System.out.println(stock2.size());
 		
-		productItem.addStockInfo(stock2.size(), stock2.get(0).getPrice());
+		productItem.addStockInfo(stock2.size(), (float) stock2.get(0).getPrice());
 		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
 			productItem.addProductInfo(product.getProductID(), product.getName(), product.getDesc(), product.getSize(),
-					product.getWeight(), product.getStatus(), product.getSupplierID(), product.getCategory());
+					product.getWeight(), product.getItemStatus(), product.getSupplier(), product.getCategory());
 		//CHECK TO SEE IF THE STOCK IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (stock != null){
-			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())), stock.getPrice());
+			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())), (float) stock.getPrice());
 		}
-		//CHECK TO SEE IF THE PRODUCT HAS RATINGS
-		if (product != null && ratingManager.findRatingsbyProductID(product.getProductID()) != null) {
-
-			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductID());
-			productItem.addRatingInfo(r);
-
-			productItem.setAverageRating(setAverageRating(r));
-
-		} else {
-			productItem.setAverageRating(0);
-		}
+		
 
 		return productItem;
 
