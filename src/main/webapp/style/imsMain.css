@@ -129,8 +129,19 @@ main nav input[type="submit"] {
 
 .logoffButton {
 	float: left;
+	margin: 250px 1%;
+	
+}
+
+.logoffButton1 {
+	float: left;
+	padding-left: 10%;
+	margin: 250px 1%;
+	
 }
 
 .lButton {
 	float: left;
+	padding-left: 10%;
+	margin: 250px 1%;
 }

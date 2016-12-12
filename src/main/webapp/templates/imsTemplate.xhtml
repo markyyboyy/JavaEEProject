@@ -5,19 +5,19 @@
 <!-- Michael Crowther -->
 
 <h:head>
-<!-- Meta Tags -->
-<title><ui:insert name="pageName" /></title>
+	<!-- Meta Tags -->
+	<title><ui:insert name="pageName" /></title>
 
-<link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
-<link href="../style/imsMain.css" type="text/css" rel="stylesheet" />
-<link href="../style/imsGenerateOrder.css" type="text/css"
-	rel="stylesheet" />
-<link href="../style/imsproduct.css" type="text/css" rel="stylesheet" />
-<link href="../style/imsCustomerOrder.css" type="text/css"
-	rel="stylesheet" />
+	<link rel="stylesheet" media="screen" href="../style/bootstrap.min.css" />
+	<link href="../style/imsMain.css" type="text/css" rel="stylesheet" />
+	<link href="../style/imsGenerateOrder.css" type="text/css"
+		rel="stylesheet" />
+	<link href="../style/imsproduct.css" type="text/css" rel="stylesheet" />
+	<link href="../style/imsCustomerOrder.css" type="text/css"
+		rel="stylesheet" />
 
-<script src="../js/jquery-3.1.1.min.js"></script>
-<meta charset="UTF-8" />
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<meta charset="UTF-8" />
 </h:head>
 <h:body>
 	<section class="sidebar">
@@ -39,12 +39,13 @@
 				<h:button styleClass="btn btn-info " outcome="imsFrontPage"
 					value="Back" />
 
-				<div class="logoffButton">
+				<div class="logoffButton1">
 					<h:form class="lButton">
 						<h:commandButton styleClass="btn btn-primary"
-							rendered="#{userEmp.loggedIn}" action="#{login.imsLogoff()}"
-							value="Log Out" />
+							action="#{login.imsLogoff()}" value="Log Out" />
 					</h:form>
+					
+<!-- 					Removed rendered="#{userEmp.loggedIn}" - button was not appearing on page -->
 				</div>
 			</div>
 

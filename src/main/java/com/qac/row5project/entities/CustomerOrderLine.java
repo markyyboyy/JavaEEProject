@@ -29,11 +29,12 @@ public class CustomerOrderLine {
 	@Column(name="quantity", nullable=false)
 	@NotNull
 	private int quantity;
-	//DOUBLE
+
 	@Size(min=5, max=12)
 	@Column(name="totalPrice", nullable = false)
 	@NotNull
-	private float totalPrice;
+	private double totalPrice;
+	
 	@ManyToOne
 	@JoinColumn(name="stock", nullable=false)
 	@NotNull
@@ -75,7 +76,7 @@ public class CustomerOrderLine {
 	 * A method to get the total price
 	 * Total price is updated before being called
 	 */
-	public float getTotalPrice() {
+	public double getTotalPrice() {
 		updateTotalPrice();
 		return totalPrice;
 	}
