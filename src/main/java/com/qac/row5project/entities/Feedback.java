@@ -20,7 +20,7 @@ public class Feedback {
 
 	@Id @Column (nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idFeedback; //long / just id
+	private long id; 
 	
 	@Size(min=3, max=225)
 	@Column(name="feedbackRating_id", nullable=true)
@@ -42,8 +42,8 @@ public class Feedback {
 	 * @param feedbackRating
 	 * @param comment
 	 */
-	public Feedback(int idFeedback, int feedbackRating, String comment) {
-		this.idFeedback = idFeedback;
+	public Feedback(long id, int feedbackRating, String comment) {
+		this.id = id;
 		this.feedbackRating = feedbackRating;
 		this.comment = comment;
 	}
@@ -54,8 +54,8 @@ public class Feedback {
 	 * 
 	 * @return feedback id
 	 */
-	public int getIdFeedback() {
-		return idFeedback;
+	public long getID() {
+		return id;
 	}
 	
 	/**
@@ -78,8 +78,8 @@ public class Feedback {
 	 * Set the feedback Id
 	 * @param idFeedback
 	 */
-	public void setIdFeedback(int idFeedback) {
-		this.idFeedback = idFeedback;
+	public void setID(long id) {
+		this.id = id;
 	}
 	
 	/**
