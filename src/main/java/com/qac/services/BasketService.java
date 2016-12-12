@@ -22,7 +22,7 @@ import Controllers.session.CurrentUser;
 public class BasketService {
 
 	@Inject
-	private CustomerOrderManager customerOrderManager;
+	private CustomerOrderManager custOrderMan;
 	
 	@Inject
 	private StockManager stockManager;
@@ -31,10 +31,10 @@ public class BasketService {
 	 * To get basket for the customer order
 	 * 
 	 * @param id
-	 * @return
+	 * @return customer's basket
 	 */
 	public CustomerOrder getBasket(long id) {
-		return customerOrderManager.readCustomerOrderById(id);
+		return custOrderMan.readCustomerOrderById(id);
 	}
 
 	/**
@@ -46,13 +46,13 @@ public class BasketService {
 	 * @param quantity
 	 * @return
 	 */	
-	public void addToBasket(Stock stock, CurrentUser cu) {
+	public void addToBasket(Stock stock, CurrentUser cu, int quantity) {
 				
 		if (cu.isLoggedIn()){
-			CustomerOrder custOrder = customerOrderManager.readCustomerOrderById(cu.getCustomer().getID());
+			CustomerOrder custOrder = custOrderMan.readCustomerOrderById(cu.getCustomer().getID());
 
 			if (custOrder != null) {
-				customerOrderManager.addToBasket(cu.getCustomer().getID(), stock, 1);
+				custOrderMan.addToBasket(cu.getCustomer().getID(), stock, 1);
 			}
 		}
 	}
@@ -66,9 +66,9 @@ public class BasketService {
 	 * @param customerId
 	 * @param stock
 	 */
-	public void removeFromBasket(long customerId, Stock stock, int quantity) {
-		if (!customerOrderManager.readCustomerOrderById(customerId).getCustomerOrderLines().isEmpty()) {
-			customerOrderManager.removeFromBasket(customerId, stock, quantity);
+	public void removeFromBasket(long cID, Stock stock, int quantity) {
+		if (!custOrderMan.readCustomerOrderById(cID).getCustomerOrderLines().isEmpty()) {
+			custOrderMan.removeFromBasket(cID, stock, quantity);
 		}
 
 	}

@@ -46,7 +46,7 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	@Override
 	public ProductSupplier readProductSupplierByProductID(int pID){
 		for (ProductSupplier SSP : testData.getProductSupplier()) {
-			if (SSP.getProduct().getProductId() == pID) {
+			if (SSP.getProduct().getProductID() == pID) {
 				return SSP;
 			}
 		}
@@ -62,7 +62,7 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	@Override
 	public ProductSupplier readProductSupplierBySupplierID(int sID){
 		for (ProductSupplier SSP : testData.getProductSupplier()) {
-			if (SSP.getSupplier().getIdSupplier() == sID) {
+			if (SSP.getSupplier().getID() == sID) {
 				return SSP;
 			}
 		}

@@ -8,7 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 /***
  * This represents the data associated with a stock.
  * 
@@ -39,7 +38,7 @@ public class Stock {
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private long productID;
-		
+	//java dog for parameters
 	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID, double price) {
 		super();
 		this.stockID = stockID;

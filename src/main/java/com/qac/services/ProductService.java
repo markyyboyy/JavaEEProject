@@ -105,7 +105,7 @@ public class ProductService {
 	 */
 	
 	public ProductItem getProductItem(Product product) {
-		return getProductItem(product, stockManager.findStocksbyID(product.getProductId()));
+		return getProductItem(product, stockManager.findStocksbyID(product.getProductID()));
 	}
 
 	/**
@@ -118,22 +118,22 @@ public class ProductService {
 	
 	public ProductItem getProductItem(Product product, Stock stock) {
 		ProductItem productItem = new ProductItem();
-		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductId());
+		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductID());
 		System.out.println(stock2.size());
 		
 		productItem.addStockInfo(stock2.size(), stock2.get(0).getPrice());
 		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
-			productItem.addProductInfo(product.getProductId(), product.getName(), product.getDesc(), product.getSize(),
-					product.getWeight(), product.getStatus(), product.getSupplier(), product.getCategory());
+			productItem.addProductInfo(product.getProductID(), product.getName(), product.getDesc(), product.getSize(),
+					product.getWeight(), product.getItemStatus(), product.getSupplier(), product.getCategory());
 		//CHECK TO SEE IF THE STOCK IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (stock != null){
-			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductId())), stock.getPrice());
+			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())), stock.getPrice());
 		}
 		//CHECK TO SEE IF THE PRODUCT HAS RATINGS
-		if (product != null && ratingManager.findRatingsbyProductID(product.getProductId()) != null) {
+		if (product != null && ratingManager.findRatingsbyProductID(product.getProductID()) != null) {
 
-			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductId());
+			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductID());
 			productItem.addRatingInfo(r);
 
 			productItem.setAverageRating(setAverageRating(r));

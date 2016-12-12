@@ -27,7 +27,7 @@ public class ProductManagerOffline implements ProductManager {
 	//METHOD TO CREATE A NEW PRODUCT AND ADD IT TO A NEW PRODUCT LIST
 	public void createProduct(Product p) {
 		List<Product> pList = (ArrayList<Product>) testData.getProducts();
-		p.setProductId(pList.size() + 1);
+		p.setProductID(pList.size() + 1);
 		pList.add(p);
 		testData.setProducts(pList);
 	}
@@ -38,7 +38,7 @@ public class ProductManagerOffline implements ProductManager {
 	public void updateProduct(Product p) {
 		List<Product> pList = (List<Product>) testData.getProducts();
 		for (Product prod : pList)
-			if (prod.getProductId() == p.getProductId())
+			if (prod.getProductID() == p.getProductID())
 				testData.setProducts(pList);
 	}
 
@@ -47,7 +47,7 @@ public class ProductManagerOffline implements ProductManager {
 	//RETURN PRODUCT BASED ON A SEARCH OF ID
 	public Product readProductById(long id) {
 		for (Product prod : testData.getProducts())
-			if (prod.getProductId() == id)
+			if (prod.getProductID() == id)
 				return prod;
 		return null;
 	}

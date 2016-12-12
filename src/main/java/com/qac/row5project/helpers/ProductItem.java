@@ -1,11 +1,13 @@
 package com.qac.row5project.helpers;
 	import java.util.List;
 
+import com.qac.row5project.entities.Category;
+import com.qac.row5project.entities.ItemStatus;
 import com.qac.row5project.entities.Rating;
 import com.qac.row5project.entities.Supplier;
 
 	public class ProductItem {
-		private long id;
+		private long ID;
 		private String name;
 		private String description;
 		private double size;
@@ -14,14 +16,15 @@ import com.qac.row5project.entities.Supplier;
 		private double price;
 		private List<Rating> ratings;
 		private int averageRating;
-		private String status;
-		private Supplier supplier;
-		private String category;
+		Category category;
+		ItemStatus status;
+		private long supplierID;
+
 		
 		public ProductItem(){}
 		
-		public ProductItem(long id) {
-			this.id = id;
+		public ProductItem(long ID) {
+			this.ID = ID;
 		}
 		
 		/***
@@ -34,15 +37,15 @@ import com.qac.row5project.entities.Supplier;
 		 * @param stockLevel
 		 * @param price
 		 */
-		public ProductItem(long id, String name, String description, double size, double weight, 
-			 String status, Supplier supplier, String category) {
-			this.id = id;
+		public ProductItem(long ID, String name, String description, double size, double weight, 
+			 ItemStatus status, Category category, long supplierID) {
+			this.ID = ID;
 			this.name = name;
 			this.description = description;
 			this.weight = weight;
 			this.averageRating = 0;
 			this.status = status;
-			this.supplier = supplier;
+			this.supplierID = supplierID;
 			this.category = category;
 		}
 		//update javadoc
@@ -55,14 +58,14 @@ import com.qac.row5project.entities.Supplier;
 		 * @param 
 		 * @param weight
 		 */
-		public void addProductInfo(long id, String name, String description, double size, double weight, String status, Supplier supplier, String category) {
-			this.id = id;
+		public void addProductInfo(long ID, String name, String description, double size, double weight, ItemStatus status, long supplierID, Category category) {
+			this.ID = ID;
 			this.name = name;
 			this.description = description;
 			this.weight = weight;
 			this.averageRating = 0;
 			this.status = status;
-			this.supplier = supplier;
+			this.supplierID = supplierID;
 			this.category = category;
 		}
 		//constructor for average rating
@@ -76,12 +79,12 @@ import com.qac.row5project.entities.Supplier;
 			this.ratings = r;
 		}
 
-		public long getId() {
-			return id;
+		public long getID() {
+			return ID;
 		}
 
-		public void setId(long id) {
-			this.id = id;
+		public void setID(long ID) {
+			this.ID = ID;
 		}
 
 		public String getName() {
@@ -140,29 +143,22 @@ import com.qac.row5project.entities.Supplier;
 			return ratings;
 		}
 
-		public String getCategory() {
+		public Category getCategory() {
 			return category;
 		}
 
-		public void setCategory(String category) {
+		public void setCategory(Category category) {
 			this.category = category;
 		}
 
-		public Supplier getSupplier() {
-			return supplier;
-		}
-
-		public void setSupplier(Supplier supplier) {
-			this.supplier = supplier;
-		}
-
-		public String getStatus() {
+		public ItemStatus getStatus() {
 			return status;
 		}
 
-		public void setStatus(String status) {
+		public void setStatus(ItemStatus status) {
 			this.status = status;
 		}
+
 		public int getAverageRating() {
 			return averageRating;
 		}

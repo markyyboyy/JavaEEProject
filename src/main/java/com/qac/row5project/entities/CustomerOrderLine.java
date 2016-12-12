@@ -63,7 +63,7 @@ public class CustomerOrderLine {
 	 * 
 	 * @return Id
 	 */
-	public long getId() {
+	public long getID() {
 		return id;
 	}
 	
@@ -92,7 +92,7 @@ public class CustomerOrderLine {
 	 * Method to set the Id
 	 * @param id
 	 */
-	public void setId(int id) {
+	public void setID(int id) {
 		this.id = id;
 	}
 	

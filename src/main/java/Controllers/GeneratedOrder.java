@@ -12,16 +12,19 @@ import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.services.GenerateService;
 
+/**
+ * @author Mark Freeman
+**/
+
 @Named("generated")
 @RequestScoped
 public class GeneratedOrder {
 	@Inject
 	private GenerateService generateService;
 	private String ProductID;
-	private List<Stock> stockItems;
 	private List<ProductItem> productItems = new ArrayList<ProductItem>();
-	private List<String> products = new ArrayList<String>();
-	List<Integer> suggestedQuanity = new ArrayList<Integer>();
+	private List<String> productOrders = new ArrayList<String>();
+	List<Integer> suggestedQuantity = new ArrayList<Integer>();
 	
 	/**
 	 * This method returns a list of all of the products in the system.
@@ -37,25 +40,25 @@ public class GeneratedOrder {
 	 * This method is used to add a product that will be ordered.
 	 */
 	public void addProductItem() {
-		products.add(ProductID);
+		productOrders.add(ProductID);
 	}
 	/**
 	 * This method returns the amount of stock items you need to get a product back to its recommended stokc level of 5.
 	 * @return	A list of integers, each represents a suggestion stock quantity.
 	 */
 	public List<Integer> getSuggestedQuanity(){
-		if (suggestedQuanity.size() == 0){	//If we dont already have a list then display the suggested qunatiries, else the user has called search.
-		suggestedQuanity = generateService.getQuantities();
+		if (suggestedQuantity.size() == 0){	//If we dont already have a list then display the suggested qunatiries, else the user has called search.
+		suggestedQuantity = generateService.getQuantities();
 		}
-		return suggestedQuanity;
+		return suggestedQuantity;
 	}
 	/**
 	 * This method returns the amount of stock items you need to get a product back to its recommended stock level of 5, but this time sorted by the amount needed..
 	 * @return	A list of integers, each represents a suggestion stock quantity.
 	 */
 	public List<Integer> getSuggestedQuanitySorted(){
-		Collections.sort(suggestedQuanity, (s1, s2) -> s1.intValue() - s2.intValue());	//Get the suggested quantities and sort them.
-		return suggestedQuanity;
+		Collections.sort(suggestedQuantity, (s1, s2) -> s1.intValue() - s2.intValue());	//Get the suggested quantities and sort them.
+		return suggestedQuantity;
 	}
 	/**
 	 * This method returns the amount of stock items you need to get a product back to its recommended stock level of 5, but this time sorted by the amount needed..

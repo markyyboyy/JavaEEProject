@@ -31,7 +31,7 @@ public class FeedbackManagerOffline implements FeedbackManager {
 	@Override 
 	public void createFeedback(Feedback feedback) {
 		List<Feedback> newFeedback = testData.getFeedbacks();
-		feedback.setIdFeedback(newFeedback.size()+1);
+		feedback.setID(newFeedback.size()+1);
 		newFeedback.add(feedback);
 		testData.setFeedbacks(newFeedback);
 		
@@ -45,7 +45,7 @@ public class FeedbackManagerOffline implements FeedbackManager {
 	@Override
 	public Feedback readById(int idFeedback) {
 		for (Feedback feedback : testData.getFeedbacks()) {
-			if (feedback.getIdFeedback() == idFeedback) {
+			if (feedback.getID() == idFeedback) {
 				return feedback;
 			}
 		}
@@ -81,7 +81,7 @@ public class FeedbackManagerOffline implements FeedbackManager {
 		List<Feedback> co1 = testData.getFeedbacks();
 
 		for (int i = 0; i < co1.size(); i++) {
-			if (co1.get(i).getIdFeedback() == feedback.getIdFeedback())
+			if (co1.get(i).getID() == feedback.getID())
 				co1.set(i, feedback);
 		}
 
