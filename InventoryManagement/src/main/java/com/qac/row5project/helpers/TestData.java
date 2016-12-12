@@ -21,18 +21,11 @@ public class TestData {
 
 	private List<Product> products;
 	private List<Stock> stocks;
-	private List<Customer> customers;
-	private List<Address> addresses;
 	private List<CustomerOrder> customerOrders;
 	private List<CustomerOrderLine> customerOrderLines;
 	private List<Employee> employees;
-	private List<Feedback> feedbacks;
-	private List<Image> images;
 	private List<LoginDetails> loginDetails;
-	private List<Payment> payments;
 	private List<PurchaseOrder> purchaseOrders;
-	private List<Rating> ratings;
-	private List<SecurityQuestion> securityQuestions;
 	private List<ProductSupplier> productSuppliers;
 	private List<Supplier> suppliers;
 
@@ -45,18 +38,11 @@ public class TestData {
 	@PostConstruct
 	private void setupData() {
 		products = new ArrayList<Product>();
-		customers = new ArrayList<Customer>();
-		addresses = new ArrayList<Address>();
 		customerOrders = new ArrayList<CustomerOrder>();
 		customerOrderLines = new ArrayList<CustomerOrderLine>();
 		employees = new ArrayList<Employee>();
-		feedbacks = new ArrayList<Feedback>();
-		images = new ArrayList<Image>();
 		loginDetails = new ArrayList<LoginDetails>();
-		payments = new ArrayList<Payment>();
 		purchaseOrders = new ArrayList<PurchaseOrder>();
-		ratings = new ArrayList<Rating>();
-		securityQuestions = new ArrayList<SecurityQuestion>();
 		stocks = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
@@ -64,7 +50,6 @@ public class TestData {
 		suppliers.add(new Supplier());
 		suppliers.add(new Supplier());
 		short s = 5;
-		new Rating(s,0l,0l);
 		
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
@@ -100,7 +85,6 @@ public class TestData {
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
 
-		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		employees.add(new Employee(imsLogin, 10));
 		
 		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
@@ -124,7 +108,7 @@ public class TestData {
 	 *
 	 */
 	public void generateCustomerOrder(int q) {
-
+/*
 		// DECLARE ALL NECESSARY VARIABLES FOR CUSTOMER ORDER
 		CustomerOrder cOrder1;
 		Random rand = new Random();
@@ -150,6 +134,7 @@ public class TestData {
 			cOrder1 = new CustomerOrder(i, randomFeedback, i, c2, randomNumAddressID);
 			customerOrders.add(cOrder1);
 		}
+		*/
 	}
 
 	/***
@@ -198,21 +183,6 @@ public class TestData {
 		this.stocks = stocks;
 	}
 
-	public List<Customer> getCustomers() {
-		return customers;
-	}
-
-	public void setCustomers(List<Customer> customers) {
-		this.customers = customers;
-	}
-
-	public List<Address> getAddresses() {
-		return addresses;
-	}
-
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
 
 	public List<CustomerOrder> getCustomerOrders() {
 		return customerOrders;
@@ -239,22 +209,6 @@ public class TestData {
 		this.employees = employees;
 	}
 
-	public List<Feedback> getFeedbacks() {
-		return feedbacks;
-	}
-
-	public void setFeedbacks(List<Feedback> feedbacks) {
-		this.feedbacks = feedbacks;
-	}
-
-	public List<Image> getImages() {
-		return images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
 	public List<LoginDetails> getLoginDetails() {
 		return loginDetails;
 	}
@@ -263,36 +217,12 @@ public class TestData {
 		this.loginDetails = loginDetails;
 	}
 
-	public List<Payment> getPayments() {
-		return payments;
-	}
-
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
-	}
-
 	public List<PurchaseOrder> getPurchaseOrders() {
 		return purchaseOrders;
 	}
 
 	public void setPurchaseOrders(List<PurchaseOrder> purchaseOrders) {
 		this.purchaseOrders = purchaseOrders;
-	}
-
-	public List<Rating> getRatings() {
-		return ratings;
-	}
-
-	public void setRatings(List<Rating> ratings) {
-		this.ratings = ratings;
-	}
-
-	public List<SecurityQuestion> getSecurityQuestions() {
-		return securityQuestions;
-	}
-
-	public void setSecurityQuestions(List<SecurityQuestion> securityQuestions) {
-		this.securityQuestions = securityQuestions;
 	}
 
 	public List<Stock> getStockItems() {

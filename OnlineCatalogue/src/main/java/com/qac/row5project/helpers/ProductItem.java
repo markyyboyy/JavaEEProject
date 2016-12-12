@@ -1,8 +1,9 @@
 package com.qac.row5project.helpers;
 	import java.util.List;
 
+import com.qac.row5project.entities.Category;
+import com.qac.row5project.entities.ItemStatus;
 import com.qac.row5project.entities.Rating;
-import com.qac.row5project.entities.Supplier;
 
 	public class ProductItem {
 		private long id;
@@ -14,9 +15,9 @@ import com.qac.row5project.entities.Supplier;
 		private double price;
 		private List<Rating> ratings;
 		private int averageRating;
-		private String status;
-		private Supplier supplier;
-		private String category;
+		private long supplierID;
+		Category category;
+		ItemStatus status;
 		
 		public ProductItem(){}
 		
@@ -35,14 +36,14 @@ import com.qac.row5project.entities.Supplier;
 		 * @param price
 		 */
 		public ProductItem(long id, String name, String description, double size, double weight, 
-			 String status, Supplier supplier, String category) {
+			 ItemStatus status, long supplierID, Category category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
 			this.weight = weight;
 			this.averageRating = 0;
 			this.status = status;
-			this.supplier = supplier;
+			this.supplierID = supplierID;
 			this.category = category;
 		}
 		//update javadoc
@@ -55,14 +56,14 @@ import com.qac.row5project.entities.Supplier;
 		 * @param 
 		 * @param weight
 		 */
-		public void addProductInfo(long id, String name, String description, double size, double weight, String status, Supplier supplier, String category) {
+		public void addProductInfo(long id, String name, String description, double size, double weight, ItemStatus status, long supplierID, Category category) {
 			this.id = id;
 			this.name = name;
 			this.description = description;
 			this.weight = weight;
 			this.averageRating = 0;
 			this.status = status;
-			this.supplier = supplier;
+			this.supplierID = supplierID;
 			this.category = category;
 		}
 		//constructor for average rating
@@ -140,27 +141,27 @@ import com.qac.row5project.entities.Supplier;
 			return ratings;
 		}
 
-		public String getCategory() {
+		public Category getCategory() {
 			return category;
 		}
 
-		public void setCategory(String category) {
+		public void setCategory(Category category) {
 			this.category = category;
 		}
 
-		public Supplier getSupplier() {
-			return supplier;
+		public long getSupplierID() {
+			return supplierID;
 		}
 
-		public void setSupplier(Supplier supplier) {
-			this.supplier = supplier;
+		public void setSupplier(long supplierID) {
+			this.supplierID = supplierID;
 		}
 
-		public String getStatus() {
+		public ItemStatus getStatus() {
 			return status;
 		}
 
-		public void setStatus(String status) {
+		public void setStatus(ItemStatus status) {
 			this.status = status;
 		}
 		public int getAverageRating() {
