@@ -7,7 +7,9 @@ import javax.inject.Inject;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.ProductManager;
-//add author
+/**
+ * @author Mark Freeman
+**/
 @Stateless
 public class GenerateService {
 	@Inject
@@ -20,32 +22,32 @@ public class GenerateService {
 	 * @return	All of the products with a low stock count.
 	 */
 	public List<ProductItem> getProducts(){
-		List<ProductItem> returnable = new ArrayList<ProductItem>();
-		List<ProductItem> stock = productService.findAllProducts();	//Get all products
-		Iterator i = stock.iterator();
+		List<ProductItem> productItems = new ArrayList<ProductItem>();
+		List<ProductItem> productsInStock = productService.findAllProducts();	//Get all products
+		Iterator i = productsInStock.iterator();
 		while (i.hasNext()){
-			ProductItem p = (ProductItem) i.next();	//If a ProductItem has less than 5 items then we add it to the list.
-			if (p.getStockLevel() < 5){
-				returnable.add(p);
+			ProductItem product = (ProductItem) i.next();	//If a ProductItem has less than 5 items then we add it to the list.
+			if (product.getStockLevel() < 5){
+				productItems.add(product);
 			} 
 		}
-		return returnable;	//Return the final list.
+		return productItems;	//Return the final list.
 	}
 
 	public List<Integer> getQuantities() {
-		List<Integer> quantities = new ArrayList<Integer>();
-		List<ProductItem> stock = productService.findAllProducts();	//Get all products
+		List<Integer> productQuantities = new ArrayList<Integer>();
+		List<ProductItem> productsInStockQuantities = productService.findAllProducts();	//Get all products
 		//change reference type
-		Iterator i = stock.iterator();
+		Iterator i = productsInStockQuantities.iterator();
 		while (i.hasNext()){
-			ProductItem p = (ProductItem) i.next();	
+			ProductItem product = (ProductItem) i.next();	
 			
-			int stockLevel = p.getStockLevel();
+			int stockLevel = product.getStockLevel();
 			if (stockLevel < 5){					//If a ProductItem has less than 5 items then we add it to the list.
-				quantities.add(5-stockLevel);
+				productQuantities.add(5-stockLevel);
 			} 
 		}
-		return quantities;
+		return productQuantities;
 	}
 	/**
 	 * This method generates an order in test data for a product the user wants to generate an order for.
