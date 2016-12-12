@@ -63,9 +63,9 @@ public class TestData {
 
 		suppliers.add(new Supplier());
 		suppliers.add(new Supplier());
-		ratings.add(new Rating(4, 0, 1));
+		short s = 5;
+		new Rating(s,0l,0l);
 		
-
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
 		products.get(0).setProductID(1);
