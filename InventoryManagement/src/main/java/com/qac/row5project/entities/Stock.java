@@ -24,7 +24,7 @@ public class Stock {
 	@Id
 	@Column(name="id", nullable=false,unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
-	private long stockID;
+	private long id;
 	@NotNull @Column(name="poroursware", nullable=false)
 	private boolean porous;
 	@NotNull @Column(name="refurbished", nullable=false)
@@ -50,7 +50,7 @@ public class Stock {
 	 */
 	public Stock(long stockID, boolean porous, int quantity,boolean refurbished, long productID, double price) {
 		super();
-		this.stockID = stockID;
+		this.id = stockID;
 		this.porous = porous;
 		this.refurbished = refurbished;
 		this.quantity = quantity;
@@ -68,7 +68,7 @@ public class Stock {
 	public Stock(long stockID, int quantity, boolean refurbished, long productID, double price) {
 		super();
 		this.porous=false;
-		this.stockID = stockID;
+		this.id = stockID;
 		this.refurbished = refurbished;
 		this.quantity = quantity;
 		this.productID = productID;
@@ -87,7 +87,7 @@ public class Stock {
 		super();
 		this.refurbished = false;
 		this.porous=porous;
-		this.stockID = stockID;
+		this.id = stockID;
 		this.porous=porous;
 		this.quantity = quantity;
 		this.productID = productID;
@@ -104,17 +104,17 @@ public class Stock {
 		super();
 		this.porous=false;
 		this.refurbished=false;
-		this.stockID = stockID;
+		this.id = stockID;
 		this.quantity = quantity;
 		this.productID = productID;
 		this.price = price;
 	}
 
-	public long getStockID() {
-		return stockID;
+	public long getID() {
+		return id;
 	}
-	public void setStockID(long stockID) {
-		this.stockID = stockID;
+	public void setID(long stockID) {
+		this.id = stockID;
 	}
 	public boolean isPorousware() {
 		return porous;
@@ -151,7 +151,7 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stock [stockID=" + stockID + ", porous=" + porous + ", refurbished=" + refurbished
+		return "Stock [stockID=" + id + ", porous=" + porous + ", refurbished=" + refurbished
 				+ ", quantity=" + quantity + ", productID=" + productID + "]";
 	}
 }
