@@ -33,7 +33,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	@Override
 	public void createPurchaseOrder(PurchaseOrder newPOrder) {
 		List<PurchaseOrder> pOrders = testData.getPurchaseOrders();
-		newPOrder.setOrder_idOrder(pOrders.size() + 1);
+		newPOrder.setOrderID(pOrders.size() + 1);
 		pOrders.add(newPOrder);
 		testData.setPurchaseOrders(pOrders);
 		
@@ -48,7 +48,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	@Override
 	public PurchaseOrder readByID(int pOrdID) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
-			if (purchaseOrder.getOrder_id() == pOrdID) {
+			if (purchaseOrder.getOrderID() == pOrdID) {
 				return purchaseOrder;
 			}
 		}

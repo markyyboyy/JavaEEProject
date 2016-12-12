@@ -46,7 +46,7 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	@Override
 	public ProductSupplier readProductSupplierByProductID(int pID){
 		for (ProductSupplier SSP : testData.getProductSupplier()) {
-			if (SSP.getProduct().getProductId() == pID) {
+			if (SSP.getProduct().getProductID() == pID) {
 				return SSP;
 			}
 		}
