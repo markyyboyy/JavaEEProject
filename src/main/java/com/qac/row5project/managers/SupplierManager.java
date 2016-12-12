@@ -23,5 +23,5 @@ public interface SupplierManager {
 	 * @param idSupplier
 	 * @return supplier Id
 	 */
-	public Supplier readByIdSupplier(int idSupplier);
+	public Supplier readByIdSupplier(long id);
 }

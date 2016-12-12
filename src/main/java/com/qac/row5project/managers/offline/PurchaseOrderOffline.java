@@ -63,7 +63,7 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	@Override
 	public PurchaseOrder readBySupplier(int supID) {
 		for (PurchaseOrder purchaseOrder : testData.getPurchaseOrders()) {
-			if (purchaseOrder.getSupplier_id().getIdSupplier() == supID) {
+			if (purchaseOrder.getSupplier_id().getID() == supID) {
 				return purchaseOrder;
 			}
 		}

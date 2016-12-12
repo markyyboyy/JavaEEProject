@@ -12,6 +12,8 @@ import com.qac.row5project.managers.AddressManager;
 /***
  * 
  * @author Michael Crowther
+ * 
+ * Get the data from an offline state -- not  using a database
  *
  */
 
