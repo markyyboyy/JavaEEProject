@@ -1,4 +1,3 @@
-`````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 package com.qac.row5project.entities;
 import java.io.Serializable;
 
@@ -53,5 +52,4 @@ public class Supplier  implements Serializable {
 	public void setIdSupplier(int idSupplier) {
 		this.idSupplier = idSupplier;
 	}
-	
 }
