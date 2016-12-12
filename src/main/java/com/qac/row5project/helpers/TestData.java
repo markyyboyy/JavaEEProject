@@ -96,7 +96,7 @@ public class TestData {
 		loginDetails.add(imsLogin);
 
 		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
-		Supplier s = new Supplier(1);
+	//	Supplier s = new Supplier(1);
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
 
@@ -112,9 +112,9 @@ public class TestData {
 
 		Calendar c1 = Calendar.getInstance();
 
-		c1.set(5, 6, 2012);
+/*		c1.set(5, 6, 2012);
 		purchaseOrders.add(new PurchaseOrder(1, s, "Pending", c, c1));
-		generateCustomerOrder(50);
+		generateCustomerOrder(50);*/
 	}
 
 	/***
