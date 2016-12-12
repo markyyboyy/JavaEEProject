@@ -26,7 +26,7 @@ public class Stock {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	private long stockID;
 	@NotNull @Column(name="poroursware", nullable=false)
-	private boolean porousware;
+	private boolean porous;
 	@NotNull @Column(name="refurbished", nullable=false)
 	private boolean refurbished;
 	@NotNull @Column(name="quantity", nullable=false)
@@ -38,20 +38,36 @@ public class Stock {
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private long productID;
-	//java dog for parameters
-	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID, double price) {
+	
+	/***
+	 * 
+	 * @param stockID
+	 * @param porous
+	 * @param quantity
+	 * @param refurbished
+	 * @param productID
+	 *
+	 */
+	public Stock(long stockID, boolean porous, int quantity,boolean refurbished, long productID, double price) {
 		super();
 		this.stockID = stockID;
-		this.porousware = porousware;
+		this.porous = porous;
 		this.refurbished = refurbished;
 		this.quantity = quantity;
 		this.productID = productID;
 		this.price = price;
 	}
-	
+	/***
+	 * 
+	 * @param stockID
+	 * @param quantity
+	 * @param refurbished
+	 * @param productID
+	 * @param price
+	 */
 	public Stock(long stockID, int quantity, boolean refurbished, long productID, double price) {
 		super();
-		this.porousware=false;
+		this.porous=false;
 		this.stockID = stockID;
 		this.refurbished = refurbished;
 		this.quantity = quantity;
@@ -59,21 +75,34 @@ public class Stock {
 		this.price = price;
 	}
 	
-
-	public Stock(long stockID, boolean porousware, int quantity, long productID, double price) {
+	/***
+	 * 
+	 * @param stockID
+	 * @param porous
+	 * @param quantity
+	 * @param productID
+	 * @param price
+	 */
+	public Stock(long stockID, boolean porous, int quantity, long productID, double price) {
 		super();
 		this.refurbished = false;
-		this.porousware=porousware;
+		this.porous=porous;
 		this.stockID = stockID;
-		this.porousware=porousware;
+		this.porous=porous;
 		this.quantity = quantity;
 		this.productID = productID;
 		this.price = price;
 	}
-	
+	/***
+	 * 
+	 * @param stockID
+	 * @param quantity
+	 * @param productID
+	 * @param price
+	 */
 	public Stock(long stockID, int quantity, long productID, double price) {
 		super();
-		this.porousware=false;
+		this.porous=false;
 		this.refurbished=false;
 		this.stockID = stockID;
 		this.quantity = quantity;
@@ -88,10 +117,10 @@ public class Stock {
 		this.stockID = stockID;
 	}
 	public boolean isPorousware() {
-		return porousware;
+		return porous;
 	}
-	public void setPorousware(boolean porousware) {
-		this.porousware = porousware;
+	public void setPorousware(boolean porous) {
+		this.porous = porous;
 	}
 	public boolean isRefurbished() {
 		return refurbished;
@@ -122,7 +151,7 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stock [stockID=" + stockID + ", porousware=" + porousware + ", refurbished=" + refurbished
+		return "Stock [stockID=" + stockID + ", porous=" + porous + ", refurbished=" + refurbished
 				+ ", quantity=" + quantity + ", productID=" + productID + "]";
 	}
 }

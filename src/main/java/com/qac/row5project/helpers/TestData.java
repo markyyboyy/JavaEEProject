@@ -95,7 +95,7 @@ public class TestData {
 		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
 		loginDetails.add(imsLogin);
 
-		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
+		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
 	//	Supplier s = new Supplier(1);
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
@@ -103,12 +103,11 @@ public class TestData {
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
 		employees.add(new Employee(imsLogin, 10));
 		
-		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
-		stocks.add(new Stock(1, true, 3, false, products.get(1), 250));
-		stocks.add(new Stock(2, true, 10, false, products.get(2), 250));
-		stocks.add(new Stock(3, false, 15, false, products.get(3), 200));
-		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
-		stocks.add(new Stock(5, true, 2, false, products.get(5), 250));
+		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
+		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
+		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
+		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
+
 
 		Calendar c1 = Calendar.getInstance();
 
