@@ -20,6 +20,8 @@ public class Supplier  implements Serializable {
 	static final long serialVersionUID = 6586263742271776754L;
 	//list of product supplier
 	@Id private long id;
+	
+	private ProductSupplier pSupplier;
 
 	
 	/**
@@ -32,8 +34,9 @@ public class Supplier  implements Serializable {
 	 * Constructor for each variable
 	 * @param idSupplier
 	 */
-	public Supplier(long id) {
+	public Supplier(long id, ProductSupplier pSupplier) {
 		this.id = id;
+		
 	}
 	
 	// Getters and Setters

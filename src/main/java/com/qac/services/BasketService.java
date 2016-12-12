@@ -46,7 +46,7 @@ public class BasketService {
 	 * @param quantity
 	 * @return
 	 */	
-	public void addToBasket(Stock stock, CurrentUser cu) {
+	public void addToBasket(Stock stock, CurrentUser cu, int quantity) {
 				
 		if (cu.isLoggedIn()){
 			CustomerOrder custOrder = customerOrderManager.readCustomerOrderById(cu.getCustomer().getID());

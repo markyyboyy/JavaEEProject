@@ -49,7 +49,7 @@ public interface CustomerOrderManager {
 	 * @param Stock
 	 * @param quantity
 	 */
-	public void addToBasket(long customerID, Stock stock);
+	public void addToBasket(long customerID, Stock stock, int quantity);
 	
 	/**
 	 * REMOVES AN ITEM FROM THE CUSTOMER'S BASKET
@@ -57,7 +57,7 @@ public interface CustomerOrderManager {
 	 * @param Stock
 	 * @param quantity
 	 */
-	public void removeFromBasket(long customerId, Stock stock);
+	public void removeFromBasket(long customerId, Stock stock, int quantity);
 	
 	/**
 	 * PULL UP A LIST OF ALL CUSTOMERORDERS
