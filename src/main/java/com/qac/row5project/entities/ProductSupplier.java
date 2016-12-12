@@ -1,4 +1,6 @@
 package com.qac.row5project.entities;
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,9 +18,9 @@ import javax.validation.constraints.NotNull;
  *
  */
 
-//change name
+
 @Entity
-@Table(name = "Supplier_Supplies_Product")
+@Table(name = "ProductSupplier")
 
 //@NamedQuery(name = "FindBySupplier", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.Supplier_id = :Supplier_id ")
 //@NamedQuery(name = "FindByProduct", query = "SELECT * FROM Supplier_Supplies_Product sSP WHERE sSP.Product_id = :Product_id ")
@@ -27,22 +29,25 @@ import javax.validation.constraints.NotNull;
 
 public class ProductSupplier {
 	
-	//change names camelcase
+	
 	@OneToOne
-	@JoinColumn(name = "Supplier_id", nullable = false)
+	@JoinColumn(name = "Supplier", nullable = false)
 	@NotNull
 	private Supplier supplier;
 	
 	@OneToOne
-	@JoinColumn(name = "Product_id", nullable = false)
+	@JoinColumn(name = "Product", nullable = false)
 	@NotNull
 	private	Product product;
-	//double
+	
 	@Column(name = "price", nullable = false)
 	@NotNull
-	private float price;
+	private double price;
 	
-	// ADD DATE CREATED
+	@Column(name = "DateCreated", nullable = false)
+	@NotNull
+	Calendar dateCreated;
+	
 	
 	public ProductSupplier()
 	{}
@@ -53,11 +58,12 @@ public class ProductSupplier {
 	 * Create new supplier with an ID 
 	 * 
 	 */
-	public ProductSupplier(Supplier supplier, Product product, float price)
+	public ProductSupplier(Supplier supplier, Product product, double price, Calendar dateCreated)
 	{
 		this.supplier = supplier;
 		this.product = product;
 		this.price = price;
+		this.dateCreated = dateCreated;
 	}
 	/** 
 	 * 
@@ -104,7 +110,7 @@ public class ProductSupplier {
 	 * @author Richard Allen
 	 * @return price for a product
 	 */
-	public float getPrice()
+	public double getPrice()
 	{
 		return this.price;
 	}
@@ -113,7 +119,7 @@ public class ProductSupplier {
 	 * @author Richard Allen
 	 * set supplier price
 	 */
-	public void setPrice(float price)
+	public void setPrice(double price)
 	{
 		this.price = price;
 	}
