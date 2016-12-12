@@ -86,11 +86,12 @@ public class TestData {
 		c.set(1, 1, 1990);
 
 		employees.add(new Employee(imsLogin, 10));
-		
-		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
-		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
-		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
-		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
+		stocks.add(new Stock(0, false, 5, false, products.get(0).getProductID(), 200));
+		stocks.add(new Stock(1, true, 3, false, products.get(1).getProductID(), 250));
+		stocks.add(new Stock(2, true, 10, false, products.get(2).getProductID(), 250));
+		stocks.add(new Stock(3, false, 15, false, products.get(3).getProductID(), 200));
+		stocks.add(new Stock(4, true, 1, false, products.get(4).getProductID(), 250));
+		stocks.add(new Stock(4, true, 1, false, products.get(5).getProductID(), 250));
 
 
 		Calendar c1 = Calendar.getInstance();

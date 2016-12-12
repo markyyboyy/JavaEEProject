@@ -69,16 +69,6 @@ public class ProductService {
 		}
 	}
 
-/**
- * V1
- * SEARCH FOR A PRODUCT ITEM BY USING THE PRODUCT AND STOCK MANAGERS
- * @param id
- * @return PRODUCTITEM
- */
-	
-	public ProductItem getProductItem(long id) {
-		return getProductItem(productManager.readProductById(id), stockManager.findStocksbyID(id));
-	}
 
 	/**
 	 * V2
@@ -88,21 +78,12 @@ public class ProductService {
 	 * @return PRODUCT ITEM
 	 */
 	
-	public ProductItem getProductItem(long id, Stock stock) {
-		return getProductItem(productManager.readProductById(id), stock);
+	public ProductItem getProductItem(long id) {
+		return getProductItem(productManager.readProductById(id));
 
 	}
 
-	/**
-	 * V3
-	 * SEARCH FOR A PRODUCT'S INFORMATION
-	 * @param Product
-	 * @return PRODUCT ITEM
-	 */
-	
-	public ProductItem getProductItem(Product product) {
-		return getProductItem(product, stockManager.findStocksbyID(product.getProductID()));
-	}
+
 
 	/**
 	 * V4
@@ -112,19 +93,17 @@ public class ProductService {
 	 * @return PRODUCT ITEM
 	 */
 	
-	public ProductItem getProductItem(Product product, Stock stock) {
+	public ProductItem getProductItem(Product product) {
 		ProductItem productItem = new ProductItem();
 		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductID());
-		System.out.println(stock2.size());
-		
-		productItem.addStockInfo(stock2.size(), (float) stock2.get(0).getPrice());
+
 		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
 			productItem.addProductInfo(product.getProductID(), product.getName(), product.getDesc(), product.getSize(),
-					product.getWeight(), product.getItemStatus(), product.getSupplier(), product.getCategory());
+					product.getWeight(), product.getItemStatus(), product.getSupplier(), product.getCategory(),product.getPrice());
 		//CHECK TO SEE IF THE STOCK IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
-		if (stock != null){
-			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())), (float) stock.getPrice());
+		if (!stock2.isEmpty()){
+			productItem.addStockInfo(productManager.findsTotalStockLevel(stock2));
 		}
 		
 
@@ -146,9 +125,7 @@ public class ProductService {
 			temp.add(getProductItem(pro));
 
 		});
-		
 		return temp;
-
 	}
 }
 
