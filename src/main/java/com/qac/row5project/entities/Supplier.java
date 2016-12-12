@@ -52,5 +52,4 @@ public class Supplier  implements Serializable {
 	public void setIdSupplier(int idSupplier) {
 		this.idSupplier = idSupplier;
 	}
-	
 }
