@@ -31,7 +31,7 @@ import Controllers.session.CurrentUser;
 /**
  * Adding basket functionality
  */
-@Named("basket")
+@Named("conBasket")
 @RequestScoped
 public class BasketController {
 
@@ -95,6 +95,13 @@ public class BasketController {
 		}
 	}
 
+	public void addToBasket(Long lProductID){
+		Stock stock = stockService.getStockByProductID(lProductID);
+		addToBasket(stock, 1);
+	}
+	
+	
+	
 	//add to basker stuff    vvv
 	//user.getCustomer().getID(), id, quantity
 	/***
