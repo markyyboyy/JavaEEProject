@@ -20,7 +20,7 @@ public class Product implements Serializable{
 	private double weight;
 	private String colour;
 	private double size;
-	private Supplier supplier;
+	private long supplierID;
 	private static final long serialVersionUID = 7526472295622776147L;
 
 
@@ -30,7 +30,7 @@ public class Product implements Serializable{
 	
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
 	public Product(String name, String desc, double price, double weight, String colour, double size,
-			Supplier supplier, Category category, ItemStatus status) {
+			long supplierID, Category category, ItemStatus status) {
 		
 		this.name = name;
 		this.desc = desc;
@@ -38,7 +38,7 @@ public class Product implements Serializable{
 		this.weight = weight;
 		this.colour = colour;
 		this.size = size;
-		this.supplier = supplier;
+		this.supplierID = supplierID;
 	}
 
 	//GETTERS AND SETTERS
@@ -46,8 +46,8 @@ public class Product implements Serializable{
 		return productID;
 	}
 
-	public void setProductID(long productId) {
-		this.productID = productId;
+	public void setProductID(long productID) {
+		this.productID = productID;
 	}
 
 	public String getName() {
@@ -98,17 +98,17 @@ public class Product implements Serializable{
 		this.colour = colour;
 	}
 
-	public Supplier getSupplier() {
-		return supplier;
+	public long getSupplier() {
+		return supplierID;
 	}
 
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
+	public void setSupplier(long supplierID) {
+		this.supplierID = supplierID;
 	}
 
 	@Override
 	public String toString() {
-		return "Product [supplier=" + supplier + "]";
+		return "Product [supplier=" + supplierID + "]";
 	}
 	
 }

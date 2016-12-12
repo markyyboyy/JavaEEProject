@@ -33,7 +33,7 @@ public interface CustomerOrderManager {
 	 * @return CUSTOMER ORDER
 	 */
 	//READ - CUSTOMER/INVENTORY MANAGER
-	public CustomerOrder readCustomerOrderById(long id);
+	public CustomerOrder readCustomerOrderById(long ID);
 
 	/**
 	 * FINDS AN ORDER BY DATE PLACED
@@ -49,7 +49,7 @@ public interface CustomerOrderManager {
 	 * @param Stock
 	 * @param quantity
 	 */
-	public void addToBasket(long customerId, Stock stock, int quantity);
+	public void addToBasket(long customerID, Stock stock);
 	
 	/**
 	 * REMOVES AN ITEM FROM THE CUSTOMER'S BASKET
@@ -57,7 +57,7 @@ public interface CustomerOrderManager {
 	 * @param Stock
 	 * @param quantity
 	 */
-	public void removeFromBasket(long customerId, Stock stock, int quantity);
+	public void removeFromBasket(long customerId, Stock stock);
 	
 	/**
 	 * PULL UP A LIST OF ALL CUSTOMERORDERS
