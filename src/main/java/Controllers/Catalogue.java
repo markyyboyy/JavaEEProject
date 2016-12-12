@@ -14,10 +14,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qac.row5project.entities.Product;
-import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Rating;
 import com.qac.row5project.helpers.*;
-import com.qac.row5project.helpers.PaginationHelper;
 import com.qac.services.ProductService;
 import com.qac.services.SearchService;
 

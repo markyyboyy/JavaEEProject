@@ -18,16 +18,20 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="Rating")
 public class Rating {
+	//short
 	@NotNull @Size(min=1, max=10)
 	@Column(name="name", nullable=false,length=10)
 	private int score;
 	@Column(name="comment", nullable=true,length=225)
 	private String comment;
+	
+	//long
 	@Id
 	@ManyToOne
 	@JoinColumn(name="customerID", nullable=false)
 	@NotNull
 	private int customerID;
+	//long
 	@Id
 	@ManyToOne
 	@JoinColumn(name="productID", nullable=false)

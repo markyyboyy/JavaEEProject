@@ -43,8 +43,10 @@ public class Customer {
 	@NotNull
 	private String sSecretAnswer;
 	
+	//Telephone Number (Main)
 	@Column(nullable=true)
 	private String sTelMain;
+	
 	
 	@Column(nullable=false)
 	@NotNull
@@ -182,7 +184,7 @@ public class Customer {
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+	//MOVE TO TOP
 	public Customer() {
 	}
 	
@@ -215,8 +217,8 @@ public class Customer {
 	 * @param dtDOB
 	 * @param loginDetails
 	 */
-	public Customer(String sSurname, String sFirstname, String sFacebook, String sSecretAnswer, String sTelMain,
-			Calendar dtDOB, LoginDetails loginDetails) {
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer, Calendar dtDOB, LoginDetails loginDetails, String sTelMain,
+			String sFacebook) {
 
 		this.sSurname = sSurname;
 		this.sFirstname = sFirstname;
@@ -227,5 +229,27 @@ public class Customer {
 		this.loginDetails = loginDetails;
 
 	}
+	
+	/***
+	 * 
+	 * @param sSurname
+	 * @param sFirstname
+	 * @param sFacebook
+	 * @param sSecretAnswer
+	 * @param dtDOB
+	 * @param loginDetails
+	 */
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer, Calendar dtDOB, LoginDetails loginDetails,
+			String sFacebook) {
 
+		this.sSurname = sSurname;
+		this.sFirstname = sFirstname;
+		this.sFacebook = sFacebook;
+		this.sSecretAnswer = sSecretAnswer;
+		this.dtDOB = dtDOB;
+		this.loginDetails = loginDetails;
+
+	}
+	
+	//ADD MORE CONSTURCTER
 }

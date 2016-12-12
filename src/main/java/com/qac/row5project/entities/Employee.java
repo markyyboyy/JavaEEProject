@@ -33,14 +33,14 @@ public class Employee {
 	unique=true)
 	@GeneratedValue(strategy=GenerationType.
 	IDENTITY)
-	private int id;
+	private long id;
 
 	public Employee() {
 	}
 	/**
 	To construct a user you need a username, a password and an employeeID.
 	 */
-	public Employee(LoginDetails logInDetails, int id) {
+	public Employee(LoginDetails logInDetails, long id) {
 		this.logInDetails = logInDetails;
 		this.id = id;
 	}
@@ -51,8 +51,7 @@ public class Employee {
 		return this.logInDetails;
 	}
 
-	public int getID() {
-		// TODO Auto-generated method stub
+	public long getID() {
 		return id;
 	}
 }

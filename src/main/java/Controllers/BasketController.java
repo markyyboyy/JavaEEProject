@@ -12,8 +12,8 @@ import java.util.List;
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.entities.ProductItem;
 import com.qac.row5project.entities.Stock;
+import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.managers.CustomerOrderLineManager;
 import com.qac.row5project.managers.CustomerOrderManager;
 import com.qac.services.BasketService;
@@ -123,7 +123,7 @@ public class BasketController {
 			CustomerOrderLine newOL = new CustomerOrderLine();
 			
 			Stock stock = stockService.getStockByProductID(productID);
-			newOrder.setCustomerId(user.getCustomer().getID());
+			newOrder.setCustomerID(user.getCustomer().getID());
 			newOL.setStock(stock);
 			
 			olM.createCustomerOrderLine(newOL);
@@ -165,7 +165,7 @@ public class BasketController {
 	 * 
 	 * @return total price of customers current Basket/Order
 	 */
-	public float getTotalBasketPrice() {
+	public double getTotalBasketPrice() {
 		return cOrder.getTotalPrice();
 
 	}

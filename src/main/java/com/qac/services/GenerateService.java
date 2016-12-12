@@ -2,18 +2,13 @@ package com.qac.services;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-
-import com.qac.row5project.entities.ProductItem;
-import com.qac.row5project.entities.PurchaseOrder;
-import com.qac.row5project.entities.Stock;
+import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.ProductManager;
-
+//add author
 @Stateless
-
 public class GenerateService {
 	@Inject
 	private ProductManager productManager;
@@ -38,16 +33,15 @@ public class GenerateService {
 	}
 
 	public List<Integer> getQuantities() {
-		// TODO Auto-generated method stub
-		//DUMMY DATA FOR TESTING PURPOSES
 		List<Integer> quantities = new ArrayList<Integer>();
 		List<ProductItem> stock = productService.findAllProducts();	//Get all products
+		//change reference type
 		Iterator i = stock.iterator();
 		while (i.hasNext()){
-			ProductItem p = (ProductItem) i.next();	//If a ProductItem has less than 5 items then we add it to the list.
+			ProductItem p = (ProductItem) i.next();	
 			
 			int stockLevel = p.getStockLevel();
-			if (stockLevel < 5){
+			if (stockLevel < 5){					//If a ProductItem has less than 5 items then we add it to the list.
 				quantities.add(5-stockLevel);
 			} 
 		}

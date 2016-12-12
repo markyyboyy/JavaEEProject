@@ -20,11 +20,11 @@ public class Feedback {
 
 	@Id @Column (nullable = false, unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idFeedback;
+	private int idFeedback; //long / just id
 	
 	@Size(min=3, max=225)
 	@Column(name="feedbackRating_id", nullable=true)
-	private int feedbackRating;
+	private int feedbackRating; //byte
 	
 	@Size(min=3, max=225)
 	@Column(name="comment_id", nullable=true)

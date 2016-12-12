@@ -10,7 +10,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
-import com.qac.row5project.entities.ProductItem;
+
+import com.qac.row5project.helpers.ProductItem;
 import com.qac.services.SearchService;
 import Controllers.session.SelectedProduct;
 

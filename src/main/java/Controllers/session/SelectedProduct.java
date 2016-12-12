@@ -3,7 +3,8 @@ package Controllers.session;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-import com.qac.row5project.entities.ProductItem;
+
+import com.qac.row5project.helpers.ProductItem;
 
 /**
  * hols product user selected

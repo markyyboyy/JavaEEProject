@@ -10,6 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Payment implements Serializable{
+	//camelcase
 	private String Type;
 	private String CardNumber;
 	private Calendar ExpiryDate;
@@ -17,13 +18,14 @@ public class Payment implements Serializable{
 	private String IssueNumber;
 	private Customer Customer;
 	private Address Address;
-	@Id private int id;
+	@Id private int id; //long
 
 	private static final long serialVersionUID = -2174734891446114791L;
 
 	
 	public Payment() {
 	}
+	//params and extra constructor
 	/**
 	To construct a payment you need a customer, their address and their card details.
 	 */
@@ -98,8 +100,6 @@ public class Payment implements Serializable{
 	}
 
 	public int getID() {
-		// TODO Auto-generated method stub
 		return id;
 	}
-
 }

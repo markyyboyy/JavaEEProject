@@ -18,8 +18,9 @@ public class Supplier  implements Serializable {
 	 * Declaring the variable
 	 */
 	static final long serialVersionUID = 6586263742271776754L;
+	//list of product supplier
 	@Id private long id;
-	
+	//delete
 	private int idSupplier;
 	
 	/**

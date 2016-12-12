@@ -26,7 +26,7 @@ public class Image {
 	@Size(max=225)
 	private String desc;
 	@Column(nullable=false,unique=true )
-	private int productID;
+	private int productID; //long
 	
 	public void Images(String url, String desc, int productID) {
 		this.url = url;
