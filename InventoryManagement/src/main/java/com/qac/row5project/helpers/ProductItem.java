@@ -3,7 +3,6 @@ package com.qac.row5project.helpers;
 
 import com.qac.row5project.entities.Category;
 import com.qac.row5project.entities.ItemStatus;
-import com.qac.row5project.entities.Rating;
 import com.qac.row5project.entities.Supplier;
 
 	public class ProductItem {
@@ -14,7 +13,6 @@ import com.qac.row5project.entities.Supplier;
 		private double weight;
 		private int stockLevel;
 		private double price;
-		private List<Rating> ratings;
 		private int averageRating;
 		Category category;
 		ItemStatus status;
@@ -75,10 +73,6 @@ import com.qac.row5project.entities.Supplier;
 			this.stockLevel = stockLevel;
 			this.price = price;
 		}
-		
-		public void addRatingInfo(List<Rating> r){
-			this.ratings = r;
-		}
 
 		public long getID() {
 			return ID;
@@ -132,16 +126,8 @@ import com.qac.row5project.entities.Supplier;
 			this.weight = weight;
 		}
 
-		public void setRatings(List<Rating> ratings) {
-			this.ratings = ratings;
-		}
-
 		public double getWeight() {
 			return weight;
-		}
-
-		public List<Rating> getRatings() {
-			return ratings;
 		}
 
 		public Category getCategory() {
