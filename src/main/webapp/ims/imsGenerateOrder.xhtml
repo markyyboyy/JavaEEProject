@@ -25,20 +25,20 @@
 	<ui:define name="mainContent2">
 	<div id = "productID">
 	<h3>ProductID</h3>
-	<ui:repeat var="produ" value="#{generated.productItems}">
-	<p><h:outputText value="#{produ.id}" /></p>
+	<ui:repeat var="p" value="#{generated.productItems}">
+	<p><h:outputText value="#{p.ID}" /></p>
 	</ui:repeat>
 </div>
 	<div id = "productName">
 	<h3>Product Name</h3>
-	<ui:repeat var="produc" value="#{generated.productItems}">
-	<p><h:outputText value="#{produc.name}" /></p>
+	<ui:repeat var="p" value="#{generated.productItems}">
+	<p><h:outputText value="#{p.name}" /></p>
 	</ui:repeat>
 </div>
 	<div id="quantity">
 		<h3>Quantity Remaining</h3>
-		<ui:repeat var="pro" value="#{generated.productItems}">
-	<p><h:outputText value="#{pro.stockLevel}" /></p>
+		<ui:repeat var="p" value="#{generated.productItems}">
+	<p><h:outputText value="#{p.stockLevel}" /></p>
 	</ui:repeat>
 	</div>
 	<div id="suggested">
