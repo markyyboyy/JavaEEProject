@@ -55,7 +55,8 @@ public DataModel<ProductItem> getProducts() {
 ** @param DataModel<String>
 * @return ListDataModel<>
 */
-		public ListDataModel<Category> getCategories(){
+		public DataModel<Category> getCategories(){
+
 			
 			List<ProductItem> lsTemp = productService.findAllProducts();			
 			categories = new ArrayList<Category>();
