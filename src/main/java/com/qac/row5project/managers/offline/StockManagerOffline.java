@@ -98,7 +98,7 @@ public class StockManagerOffline implements StockManager {
 		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
-			if(s.getProductID().getProductId()==productId)
+			if(s.getProductID().getProductID()==productId)
 				tStockList.add(s);
 		}
 		return tStockList;
