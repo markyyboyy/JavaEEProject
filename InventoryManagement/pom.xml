@@ -55,7 +55,7 @@
 	</dependencies>
 	<build>
 	
-    <finalName>Row5IMS</finalName>
+    <finalName>ims</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

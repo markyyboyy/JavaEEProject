@@ -55,7 +55,7 @@
 	</dependencies>
 	<build>
 	
-    <finalName>Row5Catalogue</finalName>
+    <finalName>catalogue</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
