@@ -20,7 +20,9 @@ public class Product implements Serializable{
 	private double weight;
 	private String colour;
 	private double size;
-	private Supplier supplier;
+	private long supplierID;
+	Category category;
+	ItemStatus status;
 	private static final long serialVersionUID = 7526472295622776147L;
 
 
@@ -29,16 +31,17 @@ public class Product implements Serializable{
 	}
 	
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
-	public Product(String name, String desc, double price, double weight, String colour, double size,
-			Supplier supplier, Category category, ItemStatus status) {
-		
+	public Product(long productID, String name, String desc, double price, double weight, String colour, double size,
+			long supplierID, Category category, ItemStatus status) {
+		this.productID = productID;
 		this.name = name;
 		this.desc = desc;
 		this.price = price;
 		this.weight = weight;
 		this.colour = colour;
 		this.size = size;
-		this.supplier = supplier;
+		this.supplierID = supplierID;
+		this.category = category;
 	}
 
 	//GETTERS AND SETTERS
@@ -46,8 +49,32 @@ public class Product implements Serializable{
 		return productID;
 	}
 
-	public void setProductID(long productId) {
-		this.productID = productId;
+	public void setProductID(long productID) {
+		this.productID = productID;
+	}
+
+	public long getSupplierID() {
+		return supplierID;
+	}
+
+	public void setSupplierID(long supplierID) {
+		this.supplierID = supplierID;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public ItemStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ItemStatus status) {
+		this.status = status;
 	}
 
 	public String getName() {
@@ -98,17 +125,6 @@ public class Product implements Serializable{
 		this.colour = colour;
 	}
 
-	public Supplier getSupplier() {
-		return supplier;
-	}
 
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
-	@Override
-	public String toString() {
-		return "Product [supplier=" + supplier + "]";
-	}
 	
 }
