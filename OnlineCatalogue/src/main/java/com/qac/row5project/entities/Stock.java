@@ -25,7 +25,7 @@ public class Stock {
 	@Id
 	@Column(name="id", nullable=false,unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)	
-	private long stockID;
+	private long id;
 	@NotNull @Column(name="poroursware", nullable=false)
 	private boolean porousware;
 	@NotNull @Column(name="refurbished", nullable=false)
@@ -41,9 +41,9 @@ public class Stock {
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private Product productID;
 		//java dog for parameters
-	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, Product productID, float price) {
+	public Stock(long id, boolean porousware, int quantity,boolean refurbished, Product productID, float price) {
 		super();
-		this.stockID = stockID;
+		this.id = id;
 		this.porousware = porousware;
 		this.refurbished = refurbished;
 		this.quantity = quantity;
@@ -51,10 +51,10 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, boolean refurbished, Product productID, float price) {
+	public Stock(long id, int quantity, boolean refurbished, Product productID, float price) {
 		super();
 		this.porousware=false;
-		this.stockID = stockID;
+		this.id = id;
 		this.refurbished = refurbished;
 		this.quantity = quantity;
 		this.productID = productID;
@@ -62,32 +62,32 @@ public class Stock {
 	}
 	
 
-	public Stock(long stockID, boolean porousware, int quantity, Product productID, float price) {
+	public Stock(long id, boolean porousware, int quantity, Product productID, float price) {
 		super();
 		this.refurbished = false;
 		this.porousware=porousware;
-		this.stockID = stockID;
+		this.id = id;
 		this.porousware=porousware;
 		this.quantity = quantity;
 		this.productID = productID;
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, Product productID, float price) {
+	public Stock(long id, int quantity, Product productID, float price) {
 		super();
 		this.porousware=false;
 		this.refurbished=false;
-		this.stockID = stockID;
+		this.id = id;
 		this.quantity = quantity;
 		this.productID = productID;
 		this.price = price;
 	}
 
-	public long getStockID() {
-		return stockID;
+	public long getID() {
+		return id;
 	}
-	public void setStockID(long stockID) {
-		this.stockID = stockID;
+	public void setID(long id) {
+		this.id = id;
 	}
 	public boolean isPorousware() {
 		return porousware;
@@ -124,7 +124,7 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stock [stockID=" + stockID + ", porousware=" + porousware + ", refurbished=" + refurbished
+		return "Stock [id=" + id + ", porousware=" + porousware + ", refurbished=" + refurbished
 				+ ", quantity=" + quantity + ", productID=" + productID + "]";
 	}
 }
