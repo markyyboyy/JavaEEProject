@@ -51,14 +51,15 @@ public DataModel<ProductItem> getProducts() {
 		}
 
 /**
-*FIND PRODUCTS BY THEIR NAME 
+*FIND PRODUCTS BY THEIR CATEGORY 
 ** @param DataModel<String>
 * @return ListDataModel<>
 */
 		public DataModel<Category> getCategories(){
+
 			
 			List<ProductItem> lsTemp = productService.findAllProducts();			
-			categories = new ArrayList<>();
+			categories = new ArrayList<Category>();
 			
 			for (ProductItem productItem : lsTemp) {
 					
@@ -68,7 +69,7 @@ public DataModel<ProductItem> getProducts() {
 					categories.add(productItem.getCategory());
 			}
 			
-			return new ListDataModel<>(categories) ;
+			return new ListDataModel<Category>(categories) ;
 		}
 
 
