@@ -12,11 +12,9 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
-import com.qac.row5project.entities.Rating;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.managers.ProductManager;
-import com.qac.row5project.managers.RatingManager;
 import com.qac.row5project.managers.StockManager;
 
 @Stateless
@@ -26,8 +24,6 @@ public class ProductService {
 	private ProductManager productManager;
 	@Inject
 	private StockManager stockManager;
-	@Inject
-	private RatingManager ratingManager;
 
 	ProductItem productItem;
 
@@ -121,49 +117,21 @@ public class ProductService {
 		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductID());
 		System.out.println(stock2.size());
 		
-		productItem.addStockInfo(stock2.size(), stock2.get(0).getPrice());
+		productItem.addStockInfo(stock2.size(), (float) stock2.get(0).getPrice());
 		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
 			productItem.addProductInfo(product.getProductID(), product.getName(), product.getDesc(), product.getSize(),
 					product.getWeight(), product.getItemStatus(), product.getSupplier(), product.getCategory());
 		//CHECK TO SEE IF THE STOCK IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (stock != null){
-			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())), stock.getPrice());
+			productItem.addStockInfo(productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())), (float) stock.getPrice());
 		}
-		//CHECK TO SEE IF THE PRODUCT HAS RATINGS
-		if (product != null && ratingManager.findRatingsbyProductID(product.getProductID()) != null) {
-
-			List<Rating> r = ratingManager.findRatingsbyProductID(product.getProductID());
-			productItem.addRatingInfo(r);
-
-			productItem.setAverageRating(setAverageRating(r));
-
-		} else {
-			productItem.setAverageRating(0);
-		}
+		
 
 		return productItem;
 
 	}
 
-	/**
-	 * AVERAGES THE PRODUCT'S RATINGS WHICH ARE LEFT BY CUSTOMERS
-	 * @param List<Rating>
-	 * @return int
-	 */
-	public int setAverageRating(List<Rating> rating){
-		
-		int iRating = 0;
-	//LOOK THROUGH ALL RATINGS FOR THE ITEM AND ADD THEM TO THE ARRAYLIST	
-		for (Rating r : rating) {
-			iRating += r.getScore();
-		}
-		
-		return iRating / rating.size();
-		
-		
-	}
-	
 	
 /**
  * 	LIST ALL PRODUCTS
