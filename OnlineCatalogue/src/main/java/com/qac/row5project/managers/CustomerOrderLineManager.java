@@ -30,14 +30,14 @@ public interface CustomerOrderLineManager {
 	 * @param CustomerOrder_idOrder
 	 * @return Order Id
 	 */
-	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder);
+	public CustomerOrderLine readByCustomerOrder(CustomerOrderLine CustomerOrder);
 	
 	/**
 	 * READ - Customer and Inventory Manager Only
-	 * @param Stock_idStock
+	 * @param Stock
 	 * @return
 	 */
-	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock);
+	public CustomerOrderLine readByStock(CustomerOrderLine Stock);
 	
 	public void deriveTotalPrice(long id);
 	
