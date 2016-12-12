@@ -13,6 +13,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.qac.row5project.entities.Category;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.services.ProductService;
 
@@ -27,7 +28,7 @@ private DataModel<ProductItem> productItem;
 
 private List<ProductItem> products;
 
-private List<String> categories;
+private List<Category> categories;
 
 
 
@@ -45,7 +46,7 @@ public DataModel<ProductItem> getProducts() {
 			return null;}
 		}
 
-		public void setCategories(List<String> temp){
+		public void setCategories(List<Category> temp){
 			this.categories = temp;
 		}
 
@@ -54,7 +55,7 @@ public DataModel<ProductItem> getProducts() {
 ** @param DataModel<String>
 * @return ListDataModel<>
 */
-		public DataModel<String> getCategories(){
+		public DataModel<Category> getCategories(){
 			
 			List<ProductItem> lsTemp = productService.findAllProducts();			
 			categories = new ArrayList<>();
