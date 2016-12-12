@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 @Table(name="Stock")
 public class Stock {
 	
-	//should stock id be generated if its the same as product
+	//should stock id be generated if its the same as long
 	
 	//change to id
 	@Id
@@ -34,14 +34,13 @@ public class Stock {
 	private int quantity;
 	//double
 	@NotNull @Column(name="price", nullable=false)
-	private float price;
-	//does this need to be changed to Product instead of int
-	//change to long
+	private double price;
+	
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
-	private Product productID;
+	private long productID;
 		
-	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, Product productID, float price) {
+	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, long productID, double price) {
 		super();
 		this.stockID = stockID;
 		this.porousware = porousware;
@@ -51,7 +50,7 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, boolean refurbished, Product productID, float price) {
+	public Stock(long stockID, int quantity, boolean refurbished, long productID, double price) {
 		super();
 		this.porousware=false;
 		this.stockID = stockID;
@@ -62,7 +61,7 @@ public class Stock {
 	}
 	
 
-	public Stock(long stockID, boolean porousware, int quantity, Product productID, float price) {
+	public Stock(long stockID, boolean porousware, int quantity, long productID, double price) {
 		super();
 		this.refurbished = false;
 		this.porousware=porousware;
@@ -73,7 +72,7 @@ public class Stock {
 		this.price = price;
 	}
 	
-	public Stock(long stockID, int quantity, Product productID, float price) {
+	public Stock(long stockID, int quantity, long productID, double price) {
 		super();
 		this.porousware=false;
 		this.refurbished=false;
@@ -107,18 +106,18 @@ public class Stock {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public Product getProductID() {
+	public long getProductID() {
 		return productID;
 	}
-	public void setProductID(Product productID) {
+	public void setProductID(long productID) {
 		this.productID = productID;
 	}
 
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

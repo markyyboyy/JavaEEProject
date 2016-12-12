@@ -20,28 +20,28 @@ import javax.validation.constraints.Size;
 @Table(name = "Image")
 public class Image {
 	@Id
-	@Column(name="url",nullable=false,unique=true)
-	private String url;
+	@Column(name="fileName",nullable=false,unique=true)
+	private String fileName;
 	@Column(nullable=true, length=225)
 	@Size(max=225)
 	private String desc;
 	@Column(nullable=false,unique=true )
-	private int productID; //long
+	private long productID; //long
 	
-	public void Images(String url, String desc, int productID) {
-		this.url = url;
+	public void Images(String fileName, String desc, long productID) {
+		this.fileName = fileName;
 		this.desc = desc;
 		this.productID = productID;
 	}
-	public void Images(String url, int productID) {
-		this.url = url;
+	public void Images(String fileName, long productID) {
+		this.fileName = fileName;
 		this.productID = productID;
 	}
 	public String getUrl() {
-		return url;
+		return fileName;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setUrl(String fileName) {
+		this.fileName = fileName;
 	}
 	public String getDesc() {
 		return desc;
@@ -49,14 +49,14 @@ public class Image {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public int getProductID() {
+	public long getProductID() {
 		return productID;
 	}
-	public void setProductID(int productID) {
+	public void setProductID(long productID) {
 		this.productID = productID;
 	}
 	@Override
 	public String toString() {
-		return "Images [url=" + url + ", desc=" + desc + ", productID=" + productID + "]";
+		return "Images [fileName=" + fileName + ", desc=" + desc + ", productID=" + productID + "]";
 	}
 }

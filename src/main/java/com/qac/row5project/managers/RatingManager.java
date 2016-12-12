@@ -53,7 +53,7 @@ public interface RatingManager {
 	 * @param score
 	 * @return
 	 */
-	public List<Rating> findRatingsbyScore(int Score);
+	public List<Rating> findRatingsbyScore(short Score);
 	/**
 	 * CUSTOMER, VISITOR INVENTORY MANAGER
 	 * finds a collection of ratings by score

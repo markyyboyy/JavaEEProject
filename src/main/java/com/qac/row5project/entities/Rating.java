@@ -21,7 +21,7 @@ public class Rating {
 	//short
 	@NotNull @Size(min=1, max=10)
 	@Column(name="name", nullable=false,length=10)
-	private int score;
+	private short score;
 	@Column(name="comment", nullable=true,length=225)
 	private String comment;
 	
@@ -30,32 +30,32 @@ public class Rating {
 	@ManyToOne
 	@JoinColumn(name="customerID", nullable=false)
 	@NotNull
-	private int customerID;
+	private long customerID;
 	//long
 	@Id
 	@ManyToOne
 	@JoinColumn(name="productID", nullable=false)
 	@NotNull
-	private int productID;
+	private long productID;
 
-	public Rating(int score,String comment,int customerID,int productID) {
+	public Rating(short score,String comment,long customerID,long productID) {
 		this.score = score;
 		this.comment = comment;
 		this.productID = productID;
 		this.customerID=customerID;
 	}
 	
-	public Rating(int score, int customerID, int productID) {
+	public Rating(short score, long customerID, long productID) {
 		super();
 		this.score = score;
 		this.customerID = customerID;
 		this.productID = productID;
 	}
 
-	public int getScore() {
+	public long getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(short score) {
 		this.score = score;
 	}
 	public String getComment() {
@@ -64,16 +64,16 @@ public class Rating {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public int getCustomerID() {
+	public long getCustomerID() {
 		return customerID;
 	}
-	public void setCustomerID(int customerID) {
+	public void setCustomerID(long customerID) {
 		this.customerID = customerID;
 	}
-	public int getProductID() {
+	public long getProductID() {
 		return productID;
 	}
-	public void setProductID(int productID) {
+	public void setProductID(long productID) {
 		this.productID = productID;
 	}
 

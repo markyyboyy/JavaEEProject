@@ -24,6 +24,14 @@ public class StockManagerOffline implements StockManager {
 	TestData testData;
 	
 	//CREATE, UPDATE: INVENTORY MANAGER
+	/**
+	 * Creates stock and adds to list
+	 * 
+	 * @param stock
+	 * 
+	 * @return newly created stock
+	 * 
+	 */
 	@Override	
 	public Stock createStock(Stock stock){
 		List<Stock> stockList = testData.getStockItems();
@@ -35,6 +43,12 @@ public class StockManagerOffline implements StockManager {
 	
 	/**
 	 * @param stock stock to be updated
+	 */
+	/**
+	 * Updates stock in stock list
+	 * 
+	 * @param stock
+	 * 
 	 */
 	public void updateStock(Stock stock){
 
@@ -50,16 +64,32 @@ public class StockManagerOffline implements StockManager {
 	}
 	
 	//READ: VISITOR, CUSTOMER, INVENTORY MANAGER
-	public Stock findStocksbyID(long stockID){
+	/**
+	 * Finds stock by ID
+	 * 
+	 * @param sID
+	 * 
+	 * @return stock
+	 * 
+	 */
+	public Stock findStocksbyID(long sID){
 		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
-			if(s.getStockID()==stockID)
+			if(s.getStockID()==sID)
 				return s;
 		}
 		return null;
 		
 	}
+	/**
+	 * Finds a collection of stocks that are porouswared
+	 * 
+	 * @param porous
+	 * 
+	 * @return list of stocks 
+	 * 
+	 */
 	public List<Stock> findStocksbyPorousware(boolean porous){
 		List<Stock> tStockList= new ArrayList<Stock>();
 		List<Stock> stockList = testData.getStockItems();
@@ -73,6 +103,14 @@ public class StockManagerOffline implements StockManager {
 		else
 			return null;
 	}
+	/**
+	 * Finds stocks stocks that are refurbished
+	 * 
+	 * @param refurbished
+	 * 
+	 * @return collection of stock that are refurbished
+	 * 
+	 */
 	public List<Stock> findStocksbyRefurbished(boolean refurbished)
 	{
 
@@ -89,16 +127,21 @@ public class StockManagerOffline implements StockManager {
 			return null;
 	}
 		
-	/***
+	/**
+	 * Gets a collection of stock that are associated with a product
+	 * 
+	 * @param pID
+	 * 
+	 * @return collection of stocks with a product
 	 * 
 	 */
-	public List<Stock> getStockByProductID(long productId) {
+	public List<Stock> getStockByProductID(long pID) {
 
 		List<Stock> tStockList= new ArrayList<Stock>();
 		List<Stock> stockList = testData.getStockItems();
 		for(Stock s:stockList)
 		{
-			if(s.getProductID().getProductId()==productId)
+			if(s.getProductID()==pID)
 				tStockList.add(s);
 		}
 		return tStockList;
