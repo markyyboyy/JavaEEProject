@@ -15,7 +15,6 @@ import javax.inject.Named;
 
 import com.qac.row5project.entities.Category;
 import com.qac.row5project.entities.ItemStatus;
-import com.qac.row5project.entities.Supplier;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.services.ProductService;
 
