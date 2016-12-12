@@ -40,7 +40,7 @@ public class Stock {
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
 	private Product productID;
-		
+		//java dog for parameters
 	public Stock(long stockID, boolean porousware, int quantity,boolean refurbished, Product productID, float price) {
 		super();
 		this.stockID = stockID;
