@@ -91,7 +91,7 @@ public class TestData {
 		stocks.add(new Stock(2, true, 10, false, products.get(2).getProductID(), 250));
 		stocks.add(new Stock(3, false, 15, false, products.get(3).getProductID(), 200));
 		stocks.add(new Stock(4, true, 1, false, products.get(4).getProductID(), 250));
-		stocks.add(new Stock(4, true, 1, false, products.get(5).getProductID(), 250));
+		stocks.add(new Stock(4, true, 3, false, products.get(5).getProductID(), 250));
 
 
 		Calendar c1 = Calendar.getInstance();
