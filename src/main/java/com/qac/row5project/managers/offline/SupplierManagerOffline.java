@@ -29,7 +29,7 @@ public class SupplierManagerOffline implements SupplierManager {
 	@Override
 	public Supplier createSupplier(Supplier supplier) {
 		List<Supplier> s = testData.getSuppliers();
-		supplier.setIdSupplier(s.size() +1);
+		supplier.setID(s.size() +1);
 		s.add(supplier);
 		testData.setSuppliers(s);
 		return supplier;
@@ -44,7 +44,7 @@ public class SupplierManagerOffline implements SupplierManager {
 	@Override
 	public Supplier readByIdSupplier(int idSupplier) {
 		for (Supplier supplier : testData.getSuppliers()) {
-			if (supplier.getIdSupplier() == idSupplier) {
+			if (supplier.getID() == idSupplier) {
 				return supplier;
 			}
 			

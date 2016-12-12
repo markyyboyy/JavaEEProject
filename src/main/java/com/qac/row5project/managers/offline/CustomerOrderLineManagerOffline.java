@@ -27,7 +27,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	@Override
 	public void createCustomerOrderLine(CustomerOrderLine customerOrderLine) {
 		List<CustomerOrderLine> newCOLine = testData.getCustomerOrderLine();
-		customerOrderLine.setId(newCOLine.size()+1);
+		customerOrderLine.setID(newCOLine.size()+1);
 		newCOLine.add(customerOrderLine);
 		testData.setCustomerOrderLine(customerOrderLine);
 	}
@@ -55,7 +55,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
 		List<CustomerOrderLine> rCO_idOrder = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rCO_idOrder) {
-			if (col.getId() == CustomerOrder_idOrder.getId()) {
+			if (col.getID() == CustomerOrder_idOrder.getID()) {
 				return col;
 			}
 		}
@@ -70,7 +70,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock) {
 		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rS_idStock) {
-			if (col.getStock().getStockID() == Stock_idStock.getId()) {
+			if (col.getStock().getStockID() == Stock_idStock.getID()) {
 				return col;
 			}
 
@@ -88,7 +88,7 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 		List<CustomerOrderLine> uCOrders = testData.getCustomerOrderLine();
 		
 		for (int i = 0; i < uCOrders.size(); i++) {
-			if (uCOrders.get(i).getId() == customerOrderLine.getId())
+			if (uCOrders.get(i).getID() == customerOrderLine.getID())
 				uCOrders.set(i, customerOrderLine);
 		}
 		

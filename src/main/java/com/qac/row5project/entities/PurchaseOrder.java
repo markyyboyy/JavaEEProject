@@ -25,22 +25,23 @@ import javax.validation.constraints.NotNull;
 //@NamedQuery(name = "FindBydateReceived", query = "SELECT * FROM PurchaseOrder pO WHERE pO.dateReceived = :dateReceived ")
 
 /** 
- * asdadsswhweg
+ * Purchase Order object, to store all of the information related to the purchase order.
+ * 
  * @author Richard Allen
  *
  */
 
 public class PurchaseOrder {
-	//name change, long
+	
 	@Id
-	@Column(name = "Order_idOrder", nullable = false, unique = true)
+	@Column(name = "OrderID", nullable = false, unique = true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int Order_id;
+	private int orderID;
 	
 	@OneToOne
 	@JoinColumn(name = "Supplier_id", nullable = false)
 	@NotNull
-	private Supplier Supplier_id;
+	private Supplier supplierID;
 	
 	@Column(name = "Status", nullable = true)
 	private String status;
@@ -60,8 +61,8 @@ public class PurchaseOrder {
 	 * parameters
 	 */
 	public PurchaseOrder(int Order_id, Supplier Supplier_id, String status, Calendar datePlaced, Calendar dateReceived) {
-		this.Order_id= Order_id;
-		this.Supplier_id= Supplier_id;
+		this.orderID= Order_id;
+		this.supplierID= Supplier_id;
 		this.status = status;
 		this.datePlaced = datePlaced;
 		this.dateReceived = dateReceived;
@@ -72,8 +73,8 @@ public class PurchaseOrder {
 	 * Create a new purchase order with only the order and supplier IDs
 	 */
 	public PurchaseOrder(int Order_id, Supplier Supplier_id) {
-		this.Order_id= Order_id;
-		this.Supplier_id= Supplier_id;
+		this.orderID= Order_id;
+		this.supplierID= Supplier_id;
 	}
 
 	/** 
@@ -82,9 +83,9 @@ public class PurchaseOrder {
 	 * @return the order ID
 	 */
 	//change
-	public int getOrder_id()
+	public int getOrderID()
 	{
-		return this.Order_id;
+		return this.orderID;
 	}
 	
 	/** 
@@ -92,9 +93,9 @@ public class PurchaseOrder {
 	 * @author Richard Allen
 	 * Set the order ID
 	 */
-	public void setOrder_idOrder(int Order_id)
+	public void setOrderID(int Order_id)
 	{
-		this.Order_id= Order_id;
+		this.orderID= Order_id;
 	}
 	
 	/** 
@@ -104,7 +105,7 @@ public class PurchaseOrder {
 	 */
 	public Supplier getSupplier_id()
 	{
-		return Supplier_id;
+		return supplierID;
 	}
 	
 	/** 
@@ -112,9 +113,9 @@ public class PurchaseOrder {
 	 * @author Richard Allen
 	 * Set the order ID
 	 */
-	public void setSupplier_idSupplier(Supplier Supplier_id)
+	public void setSupplierID(Supplier supplierID)
 	{
-		this.Supplier_id= Supplier_id;
+		this.supplierID= supplierID;
 	}
 	/** 
 	 * 
@@ -179,5 +180,8 @@ public class PurchaseOrder {
 	public void setStockList(List<Stock> stockList) {
 		this.stockList = stockList;
 	}
-	//add method
+	
+	public void addToStockList(Stock stock){
+		this.stockList.add(stock);
+	}
 }

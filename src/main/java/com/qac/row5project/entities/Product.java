@@ -13,19 +13,13 @@ public class Product implements Serializable{
 	
 	//VARIABLES
 	//id
-	@Id private long productId;
+	@Id private long productID;
 	private String name;
 	private String desc;
 	private double price;
 	private double weight;
 	private String colour;
-	//double size
-	private int size;
-	//get rid
-	private int quantity;
-	//enum
-	private String category;
-	private String status;
+	private double size;
 	private Supplier supplier;
 	private static final long serialVersionUID = 7526472295622776147L;
 
@@ -35,8 +29,8 @@ public class Product implements Serializable{
 	}
 	
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
-	public Product(String name, String desc, double price, double weight, String colour, int size,
-			int quantity, String category, String status, Supplier supplier) {
+	public Product(String name, String desc, double price, double weight, String colour, double size,
+			Supplier supplier, Category category, ItemStatus status) {
 		
 		this.name = name;
 		this.desc = desc;
@@ -44,19 +38,16 @@ public class Product implements Serializable{
 		this.weight = weight;
 		this.colour = colour;
 		this.size = size;
-		this.quantity = quantity;
-		this.category = category;
-		this.status = status;
 		this.supplier = supplier;
 	}
 
 	//GETTERS AND SETTERS
-	public long getProductId() {
-		return productId;
+	public long getProductID() {
+		return productID;
 	}
 
-	public void setProductId(long productId) {
-		this.productId = productId;
+	public void setProductID(long productId) {
+		this.productID = productId;
 	}
 
 	public String getName() {
@@ -91,44 +82,20 @@ public class Product implements Serializable{
 		this.weight = weight;
 	}
 
+	public double getSize() {
+		return size;
+	}
+
+	public void setSize(double size) {
+		this.size = size;
+	}
+
 	public String getColour() {
 		return colour;
 	}
 
 	public void setColour(String colour) {
 		this.colour = colour;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public Supplier getSupplier() {
