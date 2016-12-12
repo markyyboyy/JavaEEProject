@@ -72,7 +72,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	public void addToBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder cOrder = readCustomerOrderById(customerId);
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
-			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+			if (stock.getID() == customerOrderLine.getStock().getID()) {
 				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
 				break;
 			}
@@ -95,7 +95,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	public void removeFromBasket(long customerId, Stock stock, int quantity) {
 		CustomerOrder cOrder = readCustomerOrderById(customerId);
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
-			if (stock.getStockID() == customerOrderLine.getStock().getStockID()) {
+			if (stock.getID() == customerOrderLine.getStock().getID()) {
 				if (customerOrderLine.getQuantity() > 1) {
 					customerOrderLine.setQuantity(customerOrderLine.getQuantity() - 1);
 				} else {
