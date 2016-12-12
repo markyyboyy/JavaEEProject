@@ -5,11 +5,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qac.row5project.managers.CustomerManager;
-import com.qac.row5project.managers.EmployeeManager;
 import com.qac.services.LoginService;
 
 import Controllers.session.CurrentUser;
-import Controllers.session.CurrentUserEmployee;
 /**
  * 
  * @author Richard Allen
@@ -24,19 +22,13 @@ public class Login {
 
 	@Inject
 	private CurrentUser currentUser;
-	
-	@Inject
-	private CurrentUserEmployee currentUserEmployee;
-	
+		
 	@Inject
 	private LoginService loginService;
 	
 	@Inject
 	private CustomerManager customerManager;
 	
-	@Inject
-	private EmployeeManager empManager;
-
 	private String email = "";
 	private String password = "";
 
@@ -88,21 +80,6 @@ public class Login {
 		return "home";
 	}
 	
-	/**
-	 * Pass login information if both email and password exist to login service for the ims
-	 * @return ims front page
-	 */
-	public String ims() {
-		if (!email.isEmpty() && !password.isEmpty()) {
-			if (loginService.validLogin(email, password)) {
-				currentUserEmployee.setEmployee(empManager.readEmployee(email.toLowerCase()));
-				System.out.println("Logged In");
-			} else {
-				password = "";
-			}
-		}
-		return "imsFrontPage";
-	}
 	
 	/**
 	 * Set current customer to null
@@ -114,13 +91,5 @@ public class Login {
 		return "login";
 	}
 	
-	/**
-	 * Set current employee to null
-	 * @return ims login page
-	 */
-	public String imsLogoff(){
-		currentUserEmployee.setEmployee(null);
-		System.out.println("Logged out");
-		return "imsLogin";
-	}
+
 }
