@@ -2,7 +2,7 @@
 
 @CHARSET "ISO-8859-1";
 /*Michael Crowther*/
-* {
+ {
 	box-sizing: border-box;
 	line-height: 1.4;
 	color: #373740;	
@@ -129,19 +129,8 @@ main nav input[type="submit"] {
 
 .logoffButton {
 	float: left;
-	margin: 250px 1%;
-	
-}
-
-.logoffButton1 {
-	float: left;
-	padding-left: 10%;
-	margin: 250px 1%;
-	
 }
 
 .lButton {
 	float: left;
-	padding-left: 10%;
-	margin: 250px 1%;
 }
