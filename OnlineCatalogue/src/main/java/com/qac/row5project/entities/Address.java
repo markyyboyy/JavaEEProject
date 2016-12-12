@@ -14,13 +14,13 @@ public class Address implements Serializable {
 	static final long serialVersionUID = 2342342342342L;
 	
 	@Id long id;
-	private String sName;
-	private String sAddressLine1;
-	private String sAddressLine2;
-	private String sAddressLine3;
-	private String sTown;
-	private String sPostcode;
-	private String sCounty;	
+	private String name;
+	private String  addressLine1;
+	private String addressLine2;
+	private String addressLine3;
+	private String town;
+	private String postcode;
+	private String county;	
 
 	public Address() {
 	}
@@ -35,16 +35,16 @@ public class Address implements Serializable {
 	 * @param sPostcode formatted with no spaces
 	 * @param sCounty 
 	 */
-	public Address(String sName, String sAddressLine1, String sAddressLine2, String sAddressLine3, String sTown,
-			String sPostcode, String sCounty) {
+	public Address(String name, String addressLine1, String addressLine2, String addressLine3, String town,
+			String postcode, String county) {
 
-		this.sName = sName;
-		this.sAddressLine1 = sAddressLine1;
-		this.sAddressLine2 = sAddressLine2;
-		this.sAddressLine3 = sAddressLine3;
-		this.sTown = sTown;
-		this.sPostcode = sPostcode;
-		this.sCounty = sCounty;
+		this.name = name;
+		this.addressLine1 = addressLine1;
+		this.addressLine2 = addressLine2;
+		this.addressLine3 = addressLine3;
+		this.town = town;
+		this.postcode = postcode;
+		this.county = county;
 	}
 	
 	
@@ -53,63 +53,63 @@ public class Address implements Serializable {
 	}
 		
 	public String getCounty() {
-		return this.sCounty;
+		return this.county;
 	}
 
 	public void setCounty(String sCounty) {
-		this.sCounty = sCounty;
+		this.county = sCounty;
 	}
 	
 	public String getPostcode() {
-		return this.sPostcode;
+		return this.postcode;
 	}
 
 	public void setPostcode(String sPostcode) {
-		this.sPostcode = sPostcode;		
+		this.postcode = sPostcode;		
 	}
 	
 	public String getTown() {
-		return this.sTown;
+		return this.town;
 	}
 
 	public void setTown(String sTown) {
-		this.sTown = sTown;
+		this.town = sTown;
 	}
 	
 	public String getAddressLine3() {
-		return this.sAddressLine3;
+		return this.addressLine3;
 	}
 
 	public void setAddressLine3(String sAddressLine3) {
-		this.sAddressLine3 = sAddressLine3;
+		this.addressLine3 = sAddressLine3;
 	}
 	
 	
 	public String getAddressLine2() {
-		return this.sAddressLine2;
+		return this.addressLine2;
 	}
 
 	public void setAddressLine2(String sAddressLine2) {
-		this.sAddressLine2 = sAddressLine2;
+		this.addressLine2 = sAddressLine2;
 	}
 	
 	
 	public String getAddressLine1() {
-		return this.sAddressLine1;
+		return this.addressLine1;
 	}
 
 	public void setAddressLine1(String sAddressLine1) {
-		this.sAddressLine1 = sAddressLine1;
+		this.addressLine1 = sAddressLine1;
 	}
 
 	
 	
 	public String getName() {
-		return this.sName;
+		return this.name;
 	}
 
 	public void setName(String sName) {
-		this.sName = sName;
+		this.name = sName;
 	}
 
 	

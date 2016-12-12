@@ -42,9 +42,9 @@ public class SupplierManagerOffline implements SupplierManager {
 	 * reading a supplier by id
 	 */
 	@Override
-	public Supplier readByIdSupplier(int idSupplier) {
+	public Supplier readByIdSupplier(long id) {
 		for (Supplier supplier : testData.getSuppliers()) {
-			if (supplier.getID() == idSupplier) {
+			if (supplier.getID() == id) {
 				return supplier;
 			}
 			

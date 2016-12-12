@@ -64,32 +64,38 @@ public class TestData {
 		suppliers.add(new Supplier());
 		suppliers.add(new Supplier());
 		ratings.add(new Rating(4, 0, 1));
-		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
+		
 
-		products.add(new Product("Blue Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active",
-				suppliers.get(0)));
-		products.get(0).setProductId(0);
-		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(1).setProductId(1);
-		products.add(new Product("Red Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(2).setProductId(2);
-		products.add(new Product("Orange Gnome", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(3).setProductId(3);
-		products.add(new Product("Yellow Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 3, "Ornament", "Active",
-				suppliers.get(0)));
-		products.get(4).setProductId(4);
-		products.add(new Product("Brown Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(5).setProductId(5);
-
+		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(0).setProductID(1);
+	
+		products.add(new Product("Ryan", "Gnome of Ryan", 14.99, 14.0, "Red", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(1).setProductID(2);
+		
+		products.add(new Product("Iman", "Gnome of Iman", 14.99, 14.0, "Orange", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(2).setProductID(3);
+		
+		products.add(new Product("Mark", "Gnome of Mark", 14.99, 14.0, "Purple", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(3).setProductID(4);
+		
+		products.add(new Product("Richard", "Gnome of Richard", 14.99, 14.0, "Green", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(4).setProductID(5);
+		
+		products.add(new Product("Michael", "Gnome of Michael", 14.99, 14.0, "Yellow", 21.0,
+				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+		products.get(5).setProductID(6);
+		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
 		loginDetails.add(imsLogin);
 
+		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
 		Supplier s = new Supplier(1);
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
@@ -125,13 +131,13 @@ public class TestData {
 		Random rand = new Random();
 		Calendar c2 = Calendar.getInstance();
 		//change variable names
-		int randomFeedback;
+		long randomFeedback;
 		int randomNumYear;
 		int randomNumDay;
 		int randomNumMonth;
 		int randomNumAddressID;
 		// ITERATES FOR THE QUANTITY OF CUSTOMER ORDER SPECIFIED
-		for (int i = 1; i <= q; i++) {
+		for (long i = 1; i <= q; i++) {
 			// SET VARIABLES TO RANDOM LEVELS
 			// address specified between 1 and 3
 			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
@@ -142,7 +148,7 @@ public class TestData {
 			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
 			randomNumMonth = rand.nextInt((12 - 1) + 1) + 1;
 			c2.set(randomNumYear, randomNumMonth, randomNumDay);
-			cOrder1 = new CustomerOrder(i, randomFeedback, c2, randomNumAddressID);
+			cOrder1 = new CustomerOrder(i, randomFeedback, i, c2, randomNumAddressID);
 			customerOrders.add(cOrder1);
 		}
 	}
