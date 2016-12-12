@@ -22,7 +22,25 @@ public class Product implements Serializable{
 	private double size;
 	private long supplierID;
 	private static final long serialVersionUID = 7526472295622776147L;
+	Category category;
+	ItemStatus status;
 
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public ItemStatus getItemStatus() {
+		return status;
+	}
+
+	public void setItemStatus(ItemStatus status) {
+		this.status = status;
+	}
 
 	//NO ARGS CONSTRUCTOR FOR A PRODUCT
 	public Product() {
@@ -39,6 +57,8 @@ public class Product implements Serializable{
 		this.colour = colour;
 		this.size = size;
 		this.supplierID = supplierID;
+		this.category = category;
+		this.status = status;
 	}
 
 	//GETTERS AND SETTERS
