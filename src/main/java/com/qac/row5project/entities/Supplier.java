@@ -32,10 +32,11 @@ public class Supplier  implements Serializable {
 	
 	/**
 	 * Constructor for each variable
-	 * @param idSupplier
+	 * @param id
 	 */
 	public Supplier(long id, ProductSupplier pSupplier) {
 		this.id = id;
+		this.pSupplier = pSupplier;
 		
 	}
 	
@@ -51,12 +52,20 @@ public class Supplier  implements Serializable {
 	
 	/**
 	 * Set the Supplier Id
-	 * @param idSupplier
+	 * @param id
 	 */
 	public void setID(long id) {
 		this.id = id;
 	}
 	
+	public ProductSupplier getpSupplier() {
+		return pSupplier;
+	}
+
+	public void setpSupplier(ProductSupplier pSupplier) {
+		this.pSupplier = pSupplier;
+	}
+
 	@Override
 	public String toString() {
 		return (String.valueOf(this.id));
