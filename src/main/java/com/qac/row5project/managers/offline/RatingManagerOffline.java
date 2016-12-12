@@ -23,6 +23,12 @@ public class RatingManagerOffline implements RatingManager {
 	@Inject
 	private TestData testData;
 	//CREATE: CUSTOMER
+	/**
+	 * Creates a rating object and adds to list of ratings
+	 * 
+	 * @param img
+	 * 
+	 */
 	public void createRating(Rating rating){
 		List<Rating> ratingList = testData.getRatings();
 		ratingList.add(rating);
@@ -33,6 +39,15 @@ public class RatingManagerOffline implements RatingManager {
 	//READ: CUSTOMER, VISITOR INVENTORY MANAGER
 
 	//READ - CUSTOMER/VISITOR/INV MANAGER
+	
+	/**
+	 *  Finds one rating by product and customer ID.
+	 * 
+	 * @param productID
+	 * @param customerID
+	 * @return rating
+	 * 
+	 */
 	public Rating findRatingsbyProductCustomerID(long productID, long customerID){
 		
 		List<Rating> ratingList = testData.getRatings();
@@ -43,12 +58,19 @@ public class RatingManagerOffline implements RatingManager {
 		}
 		return null;
 	}
-	public List<Rating> findRatingsbyCustomerID(long customerID){
+	/**
+	 *Finds a list of ratings of by a customer with the ID.
+	 * 
+	 * @param cID
+	 * 
+	 * @return list of ratings by customer ID
+	 */
+	public List<Rating> findRatingsbyCustomerID(long cID){
 		List<Rating> tRatingList = new ArrayList<Rating>();
 		List<Rating> ratingList = testData.getRatings();
 		for(Rating r:ratingList)
 		{
-			if(r.getCustomerID()== customerID)
+			if(r.getCustomerID()== cID)
 				tRatingList.add(r);
 		}
 		if(tRatingList.isEmpty())
@@ -56,13 +78,21 @@ public class RatingManagerOffline implements RatingManager {
 		else
 			return tRatingList;
 	}
-	public List<Rating> findRatingsbyProductID(long productID){
+	/**
+	 * Finds a list of ratings for a product
+	 * 
+	 * @param pID
+	 * 
+	 * @return list of ratings of product
+	 * 
+	 */
+	public List<Rating> findRatingsbyProductID(long pID){
 		List<Rating> tRatingList = new ArrayList<Rating>();
 		List<Rating> ratingList = testData.getRatings();
 		
 		for(Rating r:ratingList)
 		{
-			if(r.getProductID()== productID)
+			if(r.getProductID()== pID)
 				tRatingList.add(r);
 		}
 		if(tRatingList.isEmpty())
@@ -71,10 +101,16 @@ public class RatingManagerOffline implements RatingManager {
 			return tRatingList;
 	}
 	
-	
-	public int findAvgRatingsbyProductID(long productID){
+	/**
+	 * inds the average rating for a product
+	 * 
+	 * @param pID
+	 * 
+	 * @return average rating
+	 */
+	public int findAvgRatingsbyProductID(long pID){
 		
-		List<Rating> tRatingList = findRatingsbyProductID(productID);
+		List<Rating> tRatingList = findRatingsbyProductID(pID);
 		int average =0;
 		
 		if(tRatingList ==null)
@@ -88,8 +124,13 @@ public class RatingManagerOffline implements RatingManager {
 		
 	}
 	
-	
-	public List<Rating> findRatingsbyScore(int score)
+	/**
+	 * Creates an image object and adds to list of images
+	 * 
+	 * @param img
+	 * 
+	 */
+	public List<Rating> findRatingsbyScore(short score)
 	{
 		List<Rating> tRatingList = new ArrayList<Rating>();
 		List<Rating> ratingList = testData.getRatings();
@@ -104,6 +145,12 @@ public class RatingManagerOffline implements RatingManager {
 			return tRatingList;
 	}
 	
+	/**
+	 * Updates the rating
+	 * 
+	 * @param rating
+	 * 
+	 */
 	//UPDATE	
 	public void updateRating(Rating rating){
 		List<Rating> ratingList = testData.getRatings();
@@ -112,9 +159,6 @@ public class RatingManagerOffline implements RatingManager {
 			if(r.getProductID()==rating.getProductID()&&r.getCustomerID()== rating.getCustomerID())
 				r=rating;
 		}
-
 		testData.setRatings(ratingList);
 	}
-
-	
 }

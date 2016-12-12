@@ -29,10 +29,10 @@ public interface ImageManager {
 	/**
 	 * Finds a specific image by url
 	 * 
-	 * @param url
+	 * @param name
 	 * @return
 	 */
-	public Image findImagebyURL(String url);
+	public Image findImagebyName(String name);
 	/**
 	 * Finds a collection of images by id
 	 * 

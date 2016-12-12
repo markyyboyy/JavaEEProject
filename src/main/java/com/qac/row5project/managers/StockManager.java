@@ -22,5 +22,5 @@ public interface StockManager {
 	public void updateStock(Stock Stock);
 	//what if someone buys a product twice could do by order
 	
-	public List<Stock> getStockByProductID(long productId);
+	public List<Stock> getStockByProductID(long pID);
 }
