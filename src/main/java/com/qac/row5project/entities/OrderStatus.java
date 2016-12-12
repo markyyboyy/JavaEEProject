@@ -1,5 +1,5 @@
 package com.qac.row5project.entities;
 
-public enum Status {
+public enum OrderStatus {
 			PLACED, PICKED, CHECKED, PACKED, DISPATCHED
 	};

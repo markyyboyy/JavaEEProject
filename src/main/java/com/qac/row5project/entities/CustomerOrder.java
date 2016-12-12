@@ -39,23 +39,17 @@ public class CustomerOrder {
 	@NotNull
 	@JoinColumn(name = "customerOrderLines", nullable = false, unique = false)
 	private List<CustomerOrderLine> customerOrderLines = new ArrayList<>();
-
-	//ADD Total Price - derived from order lines
 	
 	@OneToOne
 	@NotNull
 	@JoinColumn(name="totalPrice", nullable=false)
-	private double totalPrice;
 	
-	//MOVE ENUM
-	private enum status {
-		PLACED, PICKED, CHECKED, PACKED, DISPATCHED
-	};
-
+	private double totalPrice;
 	private Calendar datePlaced;
 	private Calendar dateReceived;
 	private long addressID;
 	private long paymentID;
+
 
 	//NO-ARGS CONSTRUCTOR FOR A CUSTOMER ORDER V1
 	public CustomerOrder() {
@@ -63,13 +57,12 @@ public class CustomerOrder {
 	};
 	
 	//CONSTRUCTOR V2
-	public CustomerOrder(long customerOrderID, long customerID, Calendar datePlaced, long addressID) {
+	public CustomerOrder(long customerOrderID, long customerID, Calendar datePlaced, long addressID, long paymentID) {
 		super();
 		this.id = customerOrderID;
 		this.customerID = customerID;
 		this.datePlaced = datePlaced;
 		this.addressID = addressID;
-
 		this.paymentID = paymentID;
 		
 		customerOrderLines = new ArrayList<>();
@@ -79,14 +72,38 @@ public class CustomerOrder {
 	}
 	//CONSTRUCTOR V3
 	
+	public long getAddressID() {
+		return addressID;
+	}
+
+	public void setAddressID(long addressID) {
+		this.addressID = addressID;
+	}
+
+	public long getPaymentID() {
+		return paymentID;
+	}
+
+	public void setPaymentID(long paymentID) {
+		this.paymentID = paymentID;
+	}
+
+	public void setFeedbackID(long feedbackID) {
+		this.feedbackID = feedbackID;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
 	//BIG D ;) LONG, DOUBLE
-	public CustomerOrder(int customerOrderId, int feedbackId, int customerId, Calendar datePlaced,int addressId) {
+	public CustomerOrder(long customerOrderID, long feedbackID, long customerID, Calendar datePlaced,long addressID) {
 		super();
-		this.id = customerOrderId;
-		this.feedbackID = feedbackId;
-		this.customerID = customerId;
+		this.id = customerOrderID;
+		this.feedbackID = feedbackID;
+		this.customerID = customerID;
 		this.datePlaced = datePlaced;
-		this.addressID = addressId;
+		this.addressID = addressID;
 		customerOrderLines = new ArrayList<>();
 
 		deriveTotalPrice();
