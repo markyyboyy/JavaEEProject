@@ -88,7 +88,7 @@ public class Login {
 	public String logoff(){
 		currentUser.setCustomer(null);
 		System.out.println("Logged out");
-		return "login";
+		return "home";
 	}
 	
 
