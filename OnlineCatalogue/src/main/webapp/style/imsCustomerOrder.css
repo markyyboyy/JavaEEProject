@@ -1,0 +1,7 @@
+th {
+	height: 1%;
+}
+table th td, table tr td {
+	width: 1%;
+	text-align: center;
+}

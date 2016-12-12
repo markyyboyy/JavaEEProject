@@ -1,0 +1,105 @@
+<html xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<!--  @author Iman Hassan  -->
+
+<ui:composition template="../templates/main.xhtml">
+
+	<ui:define name="mainContent">
+
+
+<c:if test="#{user.loggedIn}" />
+		<h1>Shopping Basket</h1>
+
+
+
+		<div id="shopping">
+
+
+
+			<div class="container-fluid">
+
+				<div class="row">
+					<div class="col-md-12">
+						<a href="catalogue.xhtml">
+							<button name="continueShopping">Continue Shopping</button>
+						</a>
+					</div>
+				</div>
+
+
+				<!-- 	Repeater -->
+				<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
+					<div class="row">
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							<img src="img/fgnome1.jpeg" />
+						</div>
+
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							#{orderLine.stock.productID.desc}<br />
+						</div>
+
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							#{orderLine.stock.price}<br />
+						</div>
+
+						<div class="col-sm-3">
+
+							<div class="row quantityChange">
+
+								<div class="col-sm-4">
+									<input type="submit" value="-"></input>
+								</div>
+
+								<div class="col-sm-4">
+
+									<h:inputText>
+
+										<f:passThroughAttribute name="quantity" value="text" />
+										<f:passThroughAttribute name="placeholder" value="1" />
+										<f:passThroughAttribute name="alt" value="1" />
+
+										<h:form>
+											<h:commandButton value="Remove From Basket"
+												action="#{basket.removeItem(id)}"
+												class="btn btn-primary btn-block" />
+										</h:form>
+									</h:inputText>
+								</div>
+
+
+								<div class="col-sm-4">
+									<input type="submit" value="+"></input>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</ui:repeat>
+
+				<!-- 	Repeater -->
+
+
+				<div class="row">
+					<div class="text-right col-xs-12">
+						<button name="proceedToCheckout">Proceed to Checkout</button>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

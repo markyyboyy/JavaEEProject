@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>NB Gardens</title>
+<meta charset="ISO-8859-1" />
+
+<link href="style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="style/main.css" rel="stylesheet" type="text/css" />
+<link href="style/catalogue.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+	<main>
+	<h1>Catalogue</h1>
+
+	<section id="filter" class="container">
+
+		<form>
+			<h3>Search</h3>
+
+			<div class="inputDivider">
+				<input id="searchBar" type="text" placeholder="Search" />
+			</div>
+
+			<div class="inputDivider obj50">
+				<label for="maxPrice">Max Price</label> <input type="range"
+					name="ageInputName" id="maxPriceRangeId" value="2500" min="1"
+					max="5000" oninput="maxPriceRange.value = maxPriceRangeId.value">
+				<output name="ageOutputName" id="maxPriceRange">2500</output>
+			</div>
+
+			<div class="inputDivider obj50">
+				<label for="Rating">Min Rating</label> <select name="Rating"
+					id="Rating">
+					<option value="1">1 Star</option>
+					<option value="2">2 Star</option>
+					<option value="3">3 Star</option>
+					<option value="4">4 Star</option>
+					<option value="5">5 Star</option>
+				</select>
+			</div>
+
+			<div class="inputDivider obj50">
+				<button name="btnSearch"value"Search">Search</button>
+			</div>
+		</form>
+	</section>
+	
+	
+	<section id="" class="container">
+
+	<section id="results">
+
+		<form>
+			<label for="sortProduct">Sort By</label>
+			<section class="sort" id="sortProduct">
+				<select name="sortBy">
+					<option value="rating">Rating (desc)</option>
+					<option value="rating">Price (desc)</option>
+					<option value="rating">Rating (asc)</option>
+					<option value="rating">Price (asc)</option>
+				</select>
+			</section>
+			
+			<section class="row productResult">
+
+				<!-- This will be a repeater -->
+				<div class="col-xs-4 col-md-4 productSmallView">
+					<div=class"productWrapper">
+						<div class="fgfd">
+							<a href="#"> <img
+								src="http://joshspilker.com/wp-content/uploads/2014/02/Gnomes.gif"
+								alt="bound from jsp" />
+							</a>
+						</div>
+
+						<div class="productInfo">
+							<a href="#"><span>This is a gnomes</span></a>
+							<div class="rating" style="witdh: 100%;">
+								<span class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span>
+							</div>
+
+							<div class="userActions">
+								<button name="addToWishlist">WishList</button>
+								<button name="addToBasket">Basket</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- This will be a repeater -->
+				<div class="col-xs-4 col-md-4 productSmallView">
+					<div=class"productWrapper">
+						<div class="fgfd">
+							<a href="#"> <img
+								src="http://joshspilker.com/wp-content/uploads/2014/02/Gnomes.gif"
+								alt="bound from jsp" />
+							</a>
+						</div>
+
+						<div class="productInfo">
+							<a href="#"><span>This is a gnomes</span></a>
+							<div class="rating" style="witdh: 100%;">
+								<span class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span>
+							</div>
+
+							<div class="userActions">
+								<button name="addToWishlist">WishList</button>
+								<button name="addToBasket">Basket</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-md-4 productSmallView">
+					<div=class"productWrapper">
+						<div class="fgfd">
+							<a href="#"> <img
+								src="http://joshspilker.com/wp-content/uploads/2014/02/Gnomes.gif"
+								alt="bound from jsp" />
+							</a>
+						</div>
+
+						<div class="productInfo">
+							<a href="#"><span>This is a gnomes</span></a>
+							<div class="rating" style="witdh: 100%;">
+								<span class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span>
+							</div>
+
+							<div class="userActions">
+								<button name="addToWishlist">WishList</button>
+								<button name="addToBasket">Basket</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- This will be a repeater -->
+				<div class="col-xs-4 col-md-4 productSmallView">
+					<div=class"productWrapper">
+						<div class="fgfd">
+							<a href="#"> <img
+								src="http://joshspilker.com/wp-content/uploads/2014/02/Gnomes.gif"
+								alt="bound from jsp" />
+							</a>
+						</div>
+
+						<div class="productInfo">
+							<a href="#"><span>This is a gnomes</span></a>
+							<div class="rating" style="witdh: 100%;">
+								<span class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span> <span
+									class="glyphicon glyphicon-star"> </span>
+							</div>
+
+							<div class="userActions">
+								<button name="addToWishlist">WishList</button>
+								<button name="addToBasket">Basket</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		</form>
+	</section>
+	</section>
+
+
+	</main>
+
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+package com.qac.row5project.entities;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+/***
+ * 
+ * @author Michael Crowther
+ *
+ */
+@Entity
+@Table(name="Customer")
+@NamedQuery(name="findByUsername", query="select c from Customer c inner join on LoginDetails ld where ld.username = :user")
+public class Customer {
+
+	@Id @Column(nullable=false, unique=true)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	
+	@Column(nullable=false)
+	@NotNull
+	private String sSurname;
+	
+	@Column(nullable=false)
+	@NotNull
+	private String sFirstname;
+	
+	@Column(nullable=true)
+	private String sFacebook;
+	
+	@Column(nullable=false)
+	@NotNull
+	private String sSecretAnswer;
+	
+	//Telephone Number (Main)
+	@Column(nullable=true)
+	private String sTelMain;
+	
+	
+	@Column(nullable=false)
+	@NotNull
+	private Calendar dtDOB;	
+
+	@Column(nullable=false)
+	@NotNull
+	private Double dBalance;	
+	
+	@OneToOne
+	@JoinColumn(name="loginDetails_id", nullable=false)
+	@NotNull
+	private LoginDetails loginDetails;
+		
+	@OneToMany
+	@JoinColumn(name="address_id", nullable=false)
+	@NotNull
+	private List<Address> address = new ArrayList<>();
+	
+	@OneToOne
+	@JoinColumn(name="customer_id", nullable = false)
+	@NotNull
+	private SecurityQuestion question;
+		
+	@OneToMany(mappedBy="id")
+	private List<CustomerOrder> orderHistory;	
+	
+	@OneToOne(mappedBy="id")
+	private List<Product> wishList = new ArrayList<>();
+	
+	public long getID(){
+		return this.id;
+	}	
+	
+	
+	public void setID(int id){
+		this.id = id;
+	}
+		
+	public List<Product> getWishList() {
+		return wishList;
+	}
+
+	public void setWishList(List<Product> wishList) {
+		this.wishList = wishList;
+	}
+
+
+	public LoginDetails getLoginDetails() {
+		return this.loginDetails;
+	}
+
+	public void getLoginDetails(LoginDetails loginDetails) {
+		this.loginDetails = loginDetails;
+	}
+
+	public String getSurname() {
+		return this.sSurname;
+	}
+
+	public void setSurname(String sSurname) {
+		this.sSurname = sSurname;
+	}
+
+	public String getFirstname() {
+		return this.sFirstname;
+	}
+
+	public void setFirstname(String sFirstname) {
+		this.sFirstname = sFirstname;
+	}
+
+	public String getFacebook(){
+		return this.sFirstname;
+	}
+
+	public void setFacebook(String sFacebook) {
+		this.sFacebook = sFacebook;
+	}
+
+	public String getSecretAnswer(){
+		return this.sSecretAnswer;
+	}
+
+	public void setSecretAnswer(String sSecretAnswer) {
+		this.sSecretAnswer = sSecretAnswer;
+	}
+
+	public String getTelephone(){
+		return this.sTelMain;
+	}
+
+	public void setTelephone(String sTelMain) {
+		this.sTelMain = sTelMain;
+	}
+
+	public Calendar getDateOfBirth(){
+		return this.dtDOB;
+	}
+
+	public void setDateOfBirth(Calendar dtDOB) {
+		this.dtDOB = dtDOB;
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @param address
+	 */
+	public void setAddress(List<Address> address){
+		this.address = address;
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @return address
+	 */
+	public List<Address> getAddress(){
+		return this.address;
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @param address
+	 */
+	public void setQuestion(String question){
+		new SecurityQuestion(question);
+	}
+	
+	/**
+	 * @author Richard Allen
+	 * @return address
+	 */
+	public List<Address> getQuestion(){
+		return this.address;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//MOVE TO TOP
+	public Customer() {
+	}
+	
+	/***
+	 * 
+	 * @param sSurname
+	 * @param sFirstname
+	 * @param sSecretAnswer
+	 * @param dtDOB
+	 * @param loginDetails
+	 */
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer,
+			Calendar dtDOB, LoginDetails loginDetails) {
+
+		this.sSurname = sSurname;
+		this.sFirstname = sFirstname;
+		this.sSecretAnswer = sSecretAnswer;
+		this.dtDOB = dtDOB;
+		this.loginDetails = loginDetails;
+		
+	}
+		
+	/***
+	 * 
+	 * @param sSurname
+	 * @param sFirstname
+	 * @param sFacebook
+	 * @param sSecretAnswer
+	 * @param sTelMain format starts with 0 no need for international code
+	 * @param dtDOB
+	 * @param loginDetails
+	 */
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer, Calendar dtDOB, LoginDetails loginDetails, String sTelMain,
+			String sFacebook) {
+
+		this.sSurname = sSurname;
+		this.sFirstname = sFirstname;
+		this.sFacebook = sFacebook;
+		this.sSecretAnswer = sSecretAnswer;
+		this.sTelMain = sTelMain;
+		this.dtDOB = dtDOB;
+		this.loginDetails = loginDetails;
+
+	}
+	
+	/***
+	 * 
+	 * @param sSurname
+	 * @param sFirstname
+	 * @param sFacebook
+	 * @param sSecretAnswer
+	 * @param dtDOB
+	 * @param loginDetails
+	 */
+	public Customer(String sSurname, String sFirstname, String sSecretAnswer, Calendar dtDOB, LoginDetails loginDetails,
+			String sFacebook) {
+
+		this.sSurname = sSurname;
+		this.sFirstname = sFirstname;
+		this.sFacebook = sFacebook;
+		this.sSecretAnswer = sSecretAnswer;
+		this.dtDOB = dtDOB;
+		this.loginDetails = loginDetails;
+
+	}
+	
+	//ADD MORE CONSTURCTER
+}

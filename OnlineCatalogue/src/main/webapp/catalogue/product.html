@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--Author: RyanB-->
+<html lang="en">
+
+<head>
+  <title>Example Product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="style/practice.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+	<div id="container">
+	
+	<!-- Top navigation bar; standard template structure -->
+		<div id="wholenavbar">
+			<div id="logo">
+			<a href="home.html"> <img src=logo.png width=129px height=101px /></a>
+			</div>
+			<div id="searchandnav">
+			<input name="search" type=text placeholder="Search.." /> 
+			<button href="catalogue.html" class="navButton">Browse</button>
+			<button href="SpecialOffers.html" class="navButton">Special Offers</button>
+			<button href="FAQpage.html" class="navButton">FAQ</button>
+			<button href="aboutus.html" class="navButton">About Us</button>
+			<button href="myAccount.html" class="navButton">MyAccount</button>
+			</div>
+			<div id="loginregister">
+			<button href="login.html" class="navButton">Login/Register</button>
+			</div>
+		</div>
+		
+		<!-- Product information; item images and description -->
+		<div id="product">
+			<div id="titlepricecarousel">
+				<div id="title">
+					<h1><strong>Large Blue Gnome &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;£14.99</strong></h1>
+				</div>
+				<div id= "carousel">
+				<center><img src=gnome.jpg width=400px height=300px /></a><center>
+				</div>		
+			</div>	
+					
+			<!-- Add to wishlist/add to basket buttons -->			
+			<div id="info">
+				<div id="basketwishlist">
+					<a href="wishlist.html"> <img src=star.png width=80px height=70px /></a>
+					<a href="basket.html"> <img src=cartIcon.png width=80px height=70px /></a>
+				</div>
+				<div id="productinfo">
+					<div id="description">
+					<h4><center>Dimensions: 35cm x 15cm x 10cm <center><br/></h4>
+					<h5><center>This product is a fantastic addition to any garden property. 
+						It is made of porcelain and so can withstand adverse weather conditions.
+						If you require this item in its <a href="product.html"> porouswear </a> version,
+						please click <a href="product.html"> here</a>.<center></h5>
+					</div>
+					<div id="buttons" class="row">
+						<div id="col-md-6">
+						<button href="wishlist.html" class="navButton">Add to Wishlist</button>
+						</div>
+						<div id="col-md-6">
+					<button href="basket.html" class="navButton">Add to Basket</button>
+						</div>
+					</div>
+					
+				<!-- Extra product information -->
+					<div id="delivery">
+					<h5><center><ul>
+					<li>This item is in stock. Delivery in 3-5 working days.</li>
+					<li>This item comes with a manufacturer's warranty of five years. </li>
+					</ul></center></h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+				<!-- Static recommendation images/hyperlinks -->
+		<div id="recommendations">
+			<div id="recommendedimages">
+			<center><h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3></center>
+			<a href="practice.html"><img src=gnome.jpg width=200px height=150px />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="practice.html"><img src=gnome.jpg width=200px height=150px />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="practice.html"><img src=gnome.jpg width=200px height=150px />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="practice.html"><img src=gnome.jpg width=200px height=150px />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="practice.html"><img src=gnome.jpg width=200px height=150px />
+			</div>
+		</div>
+	</div>
+</body>
+
+				<!-- Footer not yet implemented -->
+</html>
+	

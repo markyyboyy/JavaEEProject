@@ -1,0 +1,48 @@
+<html xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<!--  Iman Hassan  -->
+
+<ui:composition template="../templates/imsTemplate.xhtml">
+	
+	<ui:define name="pageName">IMS - Home Page</ui:define>
+	<ui:param name="hideFooter" value="true" />
+	
+	<ui:define name="mainContent2">
+
+		<div class="container-fluid">
+				<header>
+	<div class="logoFP">
+						<img src="../img/logo.png" width="250px" height="210px" />
+					</div> 
+					
+					</header> 
+			<nav>
+						
+				<h:form >
+				
+					
+					
+					<h:button  styleClass="navButton btn btn-success fpButton" outcome="IMSPurchaseOrder"
+						value="Purchase Order" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsCustomerOrder" value="Customer Order" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsStockLevel" value="Stock Level" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsGenerateOrder" value="Generate Order" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsproduct"
+						value="Product" />
+					<h:button styleClass="navButton btn btn-success" outcome="imsSuppliers" value="Suppliers" />
+
+
+				</h:form>
+
+			</nav>
+		</div>
+	</ui:define>
+
+
+
+
+</ui:composition>
+</html>
