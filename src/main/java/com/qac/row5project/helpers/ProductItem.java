@@ -19,6 +19,7 @@ import com.qac.row5project.entities.Supplier;
 		Category category;
 		ItemStatus status;
 		private long supplierID;
+		private int quantity;
 
 		
 		public ProductItem(){}

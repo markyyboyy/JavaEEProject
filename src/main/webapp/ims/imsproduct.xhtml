@@ -78,8 +78,8 @@
         <f:facet name="header">
             Product Information
         </f:facet>
-										<p:column headerText="Product ID" sortBy="#{prod.id}">
-											<h:outputText value="#{prod.id}" />
+										<p:column headerText="Product ID" sortBy="#{prod.ID}">
+											<h:outputText value="#{prod.ID}" />
 										</p:column>
 										
 										<p:column headerText="Category" sortBy="#{prod.category}" >
@@ -92,10 +92,6 @@
 
 										<p:column headerText="Description" sortBy="#{prod.description}" >
 											<h:outputText value="#{prod.description}" />
-										</p:column>
-
-										<p:column headerText="Supplier" sortBy="#{prod.supplier}" >
-											<h:outputText value="#{prod.supplier}" />
 										</p:column>
 
 										<p:column headerText="Stock Level" sortBy="#{prod.stockLevel}" >
