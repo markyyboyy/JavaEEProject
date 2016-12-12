@@ -59,7 +59,7 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	 * @author Richard Allen
 	 * @return Supplier by supplier ID
 	 */
-/*	@Override
+	@Override
 	public ProductSupplier readProductSupplierBySupplierID(int sID){
 		for (ProductSupplier SSP : testData.getProductSupplier()) {
 			if (SSP.getSupplier().getID() == sID) {
@@ -69,5 +69,5 @@ public class ProductSupplierManagerOffline implements ProductSupplierManager{
 		return null;
 		
 	}
-*/
+
 }
