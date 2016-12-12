@@ -17,9 +17,11 @@ public class Supplier  implements Serializable {
 	 * Declaring the variable
 	 */
 	static final long serialVersionUID = 6586263742271776754L;
+	//list of product supplier
 	@Id private long id;
 	
-	private int idSupplier;
+	private ProductSupplier pSupplier;
+
 	
 	/**
 	 * Constructor with no arguments
@@ -29,10 +31,12 @@ public class Supplier  implements Serializable {
 	
 	/**
 	 * Constructor for each variable
-	 * @param idSupplier
+	 * @param id
 	 */
-	public Supplier(int idSupplier) {
-		this.idSupplier = idSupplier;
+	public Supplier(long id, ProductSupplier pSupplier) {
+		this.id = id;
+		this.pSupplier = pSupplier;
+		
 	}
 	
 	// Getters and Setters
@@ -41,15 +45,29 @@ public class Supplier  implements Serializable {
 	 * 
 	 * @return the Supplier Id
 	 */
-	public int getIdSupplier() {
-		return idSupplier;
+	public long getID() {
+		return id;
 	}
 	
 	/**
 	 * Set the Supplier Id
-	 * @param idSupplier
+	 * @param id
 	 */
-	public void setIdSupplier(int idSupplier) {
-		this.idSupplier = idSupplier;
+	public void setID(long id) {
+		this.id = id;
+	}
+	
+	public ProductSupplier getpSupplier() {
+		return pSupplier;
+	}
+
+	public void setpSupplier(ProductSupplier pSupplier) {
+		this.pSupplier = pSupplier;
+	}
+
+	@Override
+	public String toString() {
+		return (String.valueOf(this.id));
+		
 	}
 }

@@ -25,16 +25,14 @@ public class TestData {
 	private List<Address> addresses;
 	private List<CustomerOrder> customerOrders;
 	private List<CustomerOrderLine> customerOrderLines;
-	private List<Employee> employees;
 	private List<Feedback> feedbacks;
 	private List<Image> images;
 	private List<LoginDetails> loginDetails;
 	private List<Payment> payments;
-	private List<PurchaseOrder> purchaseOrders;
+
 	private List<Rating> ratings;
 	private List<SecurityQuestion> securityQuestions;
-	private List<ProductSupplier> productSuppliers;
-	private List<Supplier> suppliers;
+
 
 	/***
 	 * 
@@ -49,53 +47,31 @@ public class TestData {
 		addresses = new ArrayList<Address>();
 		customerOrders = new ArrayList<CustomerOrder>();
 		customerOrderLines = new ArrayList<CustomerOrderLine>();
-		employees = new ArrayList<Employee>();
+
 		feedbacks = new ArrayList<Feedback>();
 		images = new ArrayList<Image>();
 		loginDetails = new ArrayList<LoginDetails>();
 		payments = new ArrayList<Payment>();
-		purchaseOrders = new ArrayList<PurchaseOrder>();
+	
 		ratings = new ArrayList<Rating>();
 		securityQuestions = new ArrayList<SecurityQuestion>();
 		stocks = new ArrayList<Stock>();
-		productSuppliers = new ArrayList<ProductSupplier>();
-		suppliers = new ArrayList<Supplier>();
+		
 
-		suppliers.add(new Supplier());
-		suppliers.add(new Supplier());
-		ratings.add(new Rating(4, 0, 1));
 		stocks.add(new Stock(1, 50, products.get(0), 15.99f));
 
-		products.add(new Product("Blue Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 1, "Ornament", "Active",
-				suppliers.get(0)));
-		products.get(0).setProductId(0);
-		products.add(new Product("Stylish Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(1).setProductId(1);
-		products.add(new Product("Red Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(2).setProductId(2);
-		products.add(new Product("Orange Gnome", "Desc", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(3).setProductId(3);
-		products.add(new Product("Yellow Gnome", "Fsdgdsfsdfsd", 3434.34d, 10.3d, "Purple", 4, 3, "Ornament", "Active",
-				suppliers.get(0)));
-		products.get(4).setProductId(4);
-		products.add(new Product("Brown Gnome", "Funky...", 3434.34d, 10.3d, "Black", 4, 18, "Garden", "Active",
-				suppliers.get(0)));
-		products.get(5).setProductId(5);
 
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
 		loginDetails.add(imsLogin);
 
-		Supplier s = new Supplier(1);
+		
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
 
 		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
-		employees.add(new Employee(imsLogin, 10));
+		
 		
 		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
 		stocks.add(new Stock(1, true, 3, false, products.get(1), 250));
@@ -107,7 +83,7 @@ public class TestData {
 		Calendar c1 = Calendar.getInstance();
 
 		c1.set(5, 6, 2012);
-		purchaseOrders.add(new PurchaseOrder(1, s, "Pending", c, c1));
+		
 		generateCustomerOrder(50);
 	}
 
@@ -131,7 +107,7 @@ public class TestData {
 		int randomNumMonth;
 		int randomNumAddressID;
 		// ITERATES FOR THE QUANTITY OF CUSTOMER ORDER SPECIFIED
-		for (int i = 1; i <= q; i++) {
+		for (long i = 1; i <= q; i++) {
 			// SET VARIABLES TO RANDOM LEVELS
 			// address specified between 1 and 3
 			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
@@ -142,7 +118,7 @@ public class TestData {
 			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
 			randomNumMonth = rand.nextInt((12 - 1) + 1) + 1;
 			c2.set(randomNumYear, randomNumMonth, randomNumDay);
-			cOrder1 = new CustomerOrder(i, randomFeedback, c2, randomNumAddressID);
+			cOrder1 = new CustomerOrder(i, randomFeedback, c2, randomNumAddressID, 1L);
 			customerOrders.add(cOrder1);
 		}
 	}
@@ -226,14 +202,6 @@ public class TestData {
 		this.customerOrderLines.add(customerOrderLine);
 	}
 
-	public List<Employee> getEmployees() {
-		return employees;
-	}
-
-	public void setEmployees(List<Employee> employees) {
-		this.employees = employees;
-	}
-
 	public List<Feedback> getFeedbacks() {
 		return feedbacks;
 	}
@@ -266,13 +234,7 @@ public class TestData {
 		this.payments = payments;
 	}
 
-	public List<PurchaseOrder> getPurchaseOrders() {
-		return purchaseOrders;
-	}
 
-	public void setPurchaseOrders(List<PurchaseOrder> purchaseOrders) {
-		this.purchaseOrders = purchaseOrders;
-	}
 
 	public List<Rating> getRatings() {
 		return ratings;
@@ -298,19 +260,4 @@ public class TestData {
 		this.stocks = stockItems;
 	}
 
-	public List<ProductSupplier> getProductSupplier() {
-		return productSuppliers;
-	}
-
-	public void setProductSupplier(List<ProductSupplier> productSupplier) {
-		this.productSuppliers = productSupplier;
-	}
-
-	public List<Supplier> getSuppliers() {
-		return suppliers;
-	}
-
-	public void setSuppliers(List<Supplier> suppliers) {
-		this.suppliers = suppliers;
-	}
 }
