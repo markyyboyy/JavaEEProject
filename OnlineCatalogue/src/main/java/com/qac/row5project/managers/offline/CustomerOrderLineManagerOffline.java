@@ -52,10 +52,10 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	 * reading a customer order line by customer order id
 	 */
 	@Override
-	public CustomerOrderLine readByCustomerOrder_idOrder(CustomerOrderLine CustomerOrder_idOrder) {
+	public CustomerOrderLine readByCustomerOrder(CustomerOrderLine CustomerOrder) {
 		List<CustomerOrderLine> rCO_idOrder = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rCO_idOrder) {
-			if (col.getID() == CustomerOrder_idOrder.getID()) {
+			if (col.getID() == CustomerOrder.getID()) {
 				return col;
 			}
 		}
@@ -67,10 +67,10 @@ public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager
 	 * reading a customer order line by stock id
 	 */
 	@Override
-	public CustomerOrderLine readByStock_idStock(CustomerOrderLine Stock_idStock) {
+	public CustomerOrderLine readByStock(CustomerOrderLine Stock) {
 		List<CustomerOrderLine> rS_idStock = testData.getCustomerOrderLine();
 		for (CustomerOrderLine col : rS_idStock) {
-			if (col.getStock().getStockID() == Stock_idStock.getID()) {
+			if (col.getStock().getID() == Stock.getID()) {
 				return col;
 			}
 
