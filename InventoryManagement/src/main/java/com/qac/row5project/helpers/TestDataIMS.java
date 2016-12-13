@@ -97,11 +97,11 @@ public class TestDataIMS {
 		Calendar c1 = Calendar.getInstance();
 
 		c1.set(5, 6, 2012);
-	//	purchaseOrders.add(new PurchaseOrder(1, s, "Pending", c, c1));
+	//	purchaseOrders.add(new PurchaseOrder(1, s, "
+
 		generateCustomerOrder(50);
 		//generateCustomerOrderLine();
 	}
-
 	/***
 	 * This method generates a random customerorder of the quantity specified.
 	 * 
