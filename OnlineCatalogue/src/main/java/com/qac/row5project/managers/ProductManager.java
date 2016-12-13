@@ -32,7 +32,7 @@ public interface  ProductManager {
 	 * @param id
 	 * @return PRODUCT
 	 */
-	public Product readProductById(long id);
+	public Product readProductById(long ID);
 	
 	/**
 	 * FIND PRODUCTS BY THEIR NAME 

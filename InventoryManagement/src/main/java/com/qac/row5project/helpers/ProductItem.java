@@ -57,7 +57,7 @@ import com.qac.row5project.entities.Supplier;
 		 * @param 
 		 * @param weight
 		 */
-		public void addProductInfo(long ID, String name, String description, double size, double weight, ItemStatus status, long supplierID, Category category) {
+		public void addProductInfo(long ID, String name, String description, double size, double weight, ItemStatus status, long supplierID, Category category,double price) {
 			this.ID = ID;
 			this.name = name;
 			this.description = description;
@@ -66,12 +66,12 @@ import com.qac.row5project.entities.Supplier;
 			this.status = status;
 			this.supplierID = supplierID;
 			this.category = category;
+			this.price = price;
 		}
 		//constructor for average rating
 
-		public void addStockInfo(int stockLevel, float price) {
+		public void addStockInfo(int stockLevel) {
 			this.stockLevel = stockLevel;
-			this.price = price;
 		}
 
 		public long getID() {

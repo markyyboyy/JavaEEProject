@@ -34,18 +34,18 @@
 
 			<div class="footerWrapper">
 				<div class="logo">
-					<img src="../img/logo.png" width="200px" height="160px" />
+					<img src="img/logo.png" width="200px" height="160px" />
 				</div>
 				<h:button styleClass="btn btn-info " outcome="imsFrontPage"
 					value="Back" />
 
-				<div class="logoffButton1">
+				<div class="logoffButton">
 					<h:form class="lButton">
 						<h:commandButton styleClass="btn btn-primary"
-							action="#{login.imsLogoff()}" value="Log Out" />
+							rendered="#{userEmp.loggedIn}" action="#{login.imsLogoff()}" value="Log Out" />
 					</h:form>
 					
-<!-- 					Removed rendered="#{userEmp.loggedIn}" - button was not appearing on page -->
+
 				</div>
 			</div>
 

@@ -80,7 +80,6 @@ public class StockManagerOffline implements StockManager {
 				return s;
 		}
 		return null;
-		
 	}
 	/**
 	 * Finds a collection of stocks that are porouswared

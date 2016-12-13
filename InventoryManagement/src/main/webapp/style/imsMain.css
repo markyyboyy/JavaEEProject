@@ -75,7 +75,7 @@ footer{
 }
 
 .footerWrapper div{
-	float: left;
+	float: bottom;
 	width: 18%;
 	padding: 0 1%;
 	margin: 10px 1%;
@@ -123,6 +123,7 @@ main nav input[type="submit"] {
 }
 
 .footerWrapper {
+	float: left;
 	padding-top: 80%;
 	padding-left: 30%;
 }
@@ -133,4 +134,6 @@ main nav input[type="submit"] {
 
 .lButton {
 	float: left;
+	padding-top: 15%;
+	padding-left: 98%;
 }
