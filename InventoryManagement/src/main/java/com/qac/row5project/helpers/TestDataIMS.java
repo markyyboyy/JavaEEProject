@@ -46,7 +46,6 @@ public class TestDataIMS {
 		stocks = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		suppliers = new ArrayList<Supplier>();
-
 		suppliers.add(new Supplier());
 		suppliers.add(new Supplier());
 		short s = 5;

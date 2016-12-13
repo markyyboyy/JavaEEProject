@@ -100,7 +100,7 @@ public class ProductService {
 		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
 			productItem.addProductInfo(product.getProductID(), product.getName(), product.getDesc(), product.getSize(),
-					product.getWeight(), product.getItemStatus(), product.getSupplier(), product.getCategory(),product.getPrice());
+					product.getWeight(), product.getItemStatus(), product.getSupplierID(), product.getCategory(),product.getPrice());
 		//CHECK TO SEE IF THE STOCK IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (!stock2.isEmpty()){
 			productItem.addStockInfo(productManager.findsTotalStockLevel(stock2));
