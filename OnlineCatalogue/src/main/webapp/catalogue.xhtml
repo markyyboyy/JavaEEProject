@@ -46,7 +46,7 @@
 						<div class="row">
 							<div class="col-md-12">
 
-								<h:inputText value="#{search.term}" class="form-control">
+								<h:inputText value="#{search.term}" class="form-control" styleClass="form-control">
 
 									<f:passThroughAttribute name="type" value="text" />
 									<f:passThroughAttribute name="placeholder" value="Search..." />
@@ -62,7 +62,7 @@
 
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
-								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}">
+								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}" styleClass="btn btn-primary dropdown-toggle">
 									<f:selectItems value="#{search.selectFilterRating}" />
 
 
@@ -84,7 +84,7 @@
 				</div>
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton type="submit" action="#{search.search()}"
+						<h:commandButton type="submit" action="#{search.search()}" styleClass="btn btn-primary"
 							value="Seach" />
 						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
