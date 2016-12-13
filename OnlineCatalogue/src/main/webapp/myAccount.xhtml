@@ -1,96 +1,98 @@
 <!-- Author: Richard Allen -->
 
-<html lang="en" 
-	xmlns="https://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
->
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<h:head>
-	<ui:define name="pageName" value = "MyAccount">
-	</ui:define>
-	
-</h:head>
 
 
 <h:body>
 	<ui:composition template="templates/main.xhtml">
-	<ui:define name="mainContent">
-		<div id = "Heading">
-			<h1>My Account</h1>
-		</div>
-		
-		<div id = "AccountMenu">
-			<div id = "TopSection">
-				<h3>Account Name: </h3> 
-				<h2> #{user.customer.firstname}</h2> 
-				<h2> #{user.customer.surname} </h2>
-				
-				<h3>Account Number:</h3>
-				<h3>Balance:</h3>
-			</div>			
-			<h:form>
-			<div id ="ButtonSection">
-				<div class = "col-sm-4">
-				<h:commandButton action="#{MyAccount.editDetails()}">
-					<f:passThroughAttribute name="value" value="Edit Details"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="edit details"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<div class = "col-sm-5">
-				<h:commandButton action="#{navigation.orderHistory}">
-					<f:passThroughAttribute name="value" value="Order History"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="order history"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<br />
-				<div class = "col-sm-4">
-				<h:commandButton action="#{navigation.makePayment}">
-					<f:passThroughAttribute name="value" value="Make Payment"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="make payment"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<div class = "col-sm-5">
-				<h:commandButton action="#{navigation.returns}">
-					<f:passThroughAttribute name="value" value="Returns"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="returns"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<br />
-				<div class = "col-sm-4">
-				<h:commandButton action="#{navigation.reviewedProducts}">
-					<f:passThroughAttribute name="value" value="Reviewed Products"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="reviewed products"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<div class = "col-sm-5">
-				<h:commandButton action="#{navigation.changePassword}">
-					<f:passThroughAttribute name="value" value="Change Password"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="change password"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<br />
-				<div class = "col-sm-4">
-				<h:commandButton action="#{navigation.editPaymentDetails}">
-					<f:passThroughAttribute name="value" value="Edit Payment Details"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="edit payment details"  ></f:passThroughAttribute>
-				</h:commandButton>
-				</div>
-				<div class = "col-sm-5">
-				<h:commandButton action="#{navigation.deleteAccount}">
-					<f:passThroughAttribute name="value" value="Delete Account"></f:passThroughAttribute>
-					<f:passThroughAttribute name="alt" value="delete account"  ></f:passThroughAttribute>
-				</h:commandButton><br />	
-				</div>		
-			</div>
-			</h:form>
-		</div>
-		
-		
+		<ui:define name="pageName" value="">MyAccount
 	</ui:define>
 
-</ui:composition>
+		<ui:define name="mainContent">
+			<div id="Heading">
+				<h1>My Account</h1>
+			</div>
+
+			<div id="AccountMenu">
+				<div id="TopSection">
+					<h3>Account Name: #{user.customer.firstname}
+						#{user.customer.surname}</h3>
+					<h3>Account Number: #{user.customer.ID}</h3>
+					<h3>Balance: &#163;#{user.customer.balance}</h3>
+				</div>
+				<h:form>
+					<div id="ButtonSection">
+						<div class="col-sm-4 col-md-6">
+							<h:commandButton action="#{MyAccount.editDetails()}">
+								<f:passThroughAttribute name="value" value="Edit Details"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="edit details"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+										<div class = "col-sm-4 col-md-6">
+
+							<h:commandButton action="#{navigation.orderHistory}">
+								<f:passThroughAttribute name="value" value="Order History"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="order history"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+						<br />
+						<div class="col-sm-4 col-md-6">
+
+							<h:commandButton action="#{navigation.makePayment}">
+								<f:passThroughAttribute name="value" value="Make Payment"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="make payment"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+						<div class="col-sm-4 col-md-6">
+
+							<h:commandButton action="#{navigation.returns}">
+								<f:passThroughAttribute name="value" value="Returns"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="returns"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+						<br />
+						<div class="col-sm-4 col-md-6">
+
+							<h:commandButton action="#{navigation.reviewedProducts}">
+								<f:passThroughAttribute name="value" value="Reviewed Products"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="reviewed products"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+						<div class="col-sm-4 col-md-6">
+							<h:commandButton action="#{navigation.changePassword}">
+								<f:passThroughAttribute name="value" value="Change Password"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="change password"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+						<br />
+						<div class="col-sm-4 col-md-6">
+
+							<h:commandButton action="#{navigation.editPaymentDetails}">
+								<f:passThroughAttribute name="value"
+									value="Edit Payment Details"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="edit payment details"></f:passThroughAttribute>
+							</h:commandButton>
+						</div>
+						<div class="col-sm-4 col-md-6">
+
+							<h:commandButton action="#{navigation.deleteAccount}">
+								<f:passThroughAttribute name="value" value="Delete Account"></f:passThroughAttribute>
+								<f:passThroughAttribute name="alt" value="delete account"></f:passThroughAttribute>
+							</h:commandButton>
+							<br />
+						</div>
+					</div>
+				</h:form>
+			</div>
+
+
+		</ui:define>
+
+	</ui:composition>
 </h:body>
 </html>
 
