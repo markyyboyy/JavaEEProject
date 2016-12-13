@@ -49,6 +49,7 @@ public class ProductManagerOffline implements ProductManager {
 		for (Product prod : testData.getProducts())
 			if (prod.getProductID() == id)
 				return prod;
+		System.out.println("This doesnt work");
 		return null;
 	}
 

@@ -118,11 +118,11 @@ public class Product implements Serializable{
 		this.colour = colour;
 	}
 
-	public long getSupplier() {
+	public long getSupplierID() {
 		return supplierID;
 	}
 
-	public void setSupplier(long supplierID) {
+	public void setSupplierID(long supplierID) {
 		this.supplierID = supplierID;
 	}
 

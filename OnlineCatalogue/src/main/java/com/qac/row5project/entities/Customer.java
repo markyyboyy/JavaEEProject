@@ -167,6 +167,16 @@ public class Customer {
 	}
 
 
+	public void addProductToWishlist(Product p){
+		this.wishList.add(p);
+	}
+	
+	public void removeProductToWishlist(Product p){
+		this.wishList.remove(p);
+	}
+	
+	
+	
 	public LoginDetails getLoginDetails() {
 		return this.loginDetails;
 	}

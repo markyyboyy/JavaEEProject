@@ -59,7 +59,9 @@ public class BasketController {
 	
 	private double totalPrice; 
 	
-	
+	private void setTotalPrice(double d){
+		this.totalPrice = d;
+	}
 	public double getTotalPrice(){
 		
 		double dPrice = 0.0d;
