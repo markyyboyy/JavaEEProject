@@ -10,7 +10,7 @@
 
 <h:body>
 	<ui:composition template="templates/main.xhtml">
-	<ui:define name="pageName" value="">Login/Register</ui:define>
+		<ui:define name="pageName" value="">Login/Register</ui:define>
 		<ui:define name="mainContent">
 			<script>
 
@@ -38,14 +38,16 @@
 				<br />
 				<label>Password</label>
 				<h:inputText value="#{login.password}">
+					<f:passThroughAttribute name="class" value="form-control"></f:passThroughAttribute>
 					<f:passThroughAttribute name="type" value="password"></f:passThroughAttribute>
 					<f:passThroughAttribute name="placeholder" value="password.."></f:passThroughAttribute>
 					<f:passThroughAttribute name="alt" value="Password"></f:passThroughAttribute>
 					<f:passThroughAttribute name="required" value="required"></f:passThroughAttribute>
 				</h:inputText>
 				<br></br>
-				<br></br>
-				<h:commandButton action="#{login.login}" styleClass="btn btn-primary">
+
+				<h:commandButton action="#{login.login}"
+					styleClass="btn btn-primary">
 					<f:passThroughAttribute name="value" value="Login" />
 					<f:passThroughAttribute name="type" value="submit" />
 				</h:commandButton>
@@ -54,22 +56,23 @@
 
 
 					<f:passThroughAttribute name="value" value="Forgotten Password" />
-					                             
+
 				</h:commandButton>
 				<br></br>
-				</h:form>
-		
-			
-				<h:commandButton onmousedown="showRegister(this)" styleClass="btn btn-primary">
+			</h:form>
 
-					<f:passThroughAttribute name="value" value="Register" />
-				</h:commandButton>
-	
+
+			<h:commandButton onmousedown="showRegister(this)"
+				styleClass="btn btn-primary">
+				<f:passThroughAttribute name="value" value="Register" />
+				<f:passThroughAttribute name="id" value="Register" />
+			</h:commandButton>
+
 			<br />
 			<br />
 
 			<hr />
-			<h:form id = "formRegister" class="register" style="display: none">
+			<h:form id="formRegister" class="register" style="display: none">
 				<h4>Register</h4>
 				<label>Email</label>
 				<h:inputText value="#{register.email}">
@@ -112,7 +115,7 @@
 				</h:inputText>
 				<br />
 				<h5>Address</h5>
-				
+
 				<br></br>
 				<label> House Name/Number</label>
 				<h:inputText value="#{register.sHName}">
@@ -150,7 +153,8 @@
 				<label> Secret Question</label>
 				<h:inputText value="#{register.sQuestion}">
 					<f:passThroughAttribute name="type" value="text" />
-					<f:passThroughAttribute name="placeholder" value="secret question.." />
+					<f:passThroughAttribute name="placeholder"
+						value="secret question.." />
 					<f:passThroughAttribute name="alt" value="secret question" />
 					<f:passThroughAttribute name="required" value="required" />
 				</h:inputText>
@@ -165,7 +169,7 @@
 				</h:inputText>
 				<br></br>
 				<br></br>
-				
+
 				<h:commandButton action="#{register.register}" value="Register"
 					styleClass="btn btn-primary">
 					<f:passThroughAttribute name="type" value="submit" />
