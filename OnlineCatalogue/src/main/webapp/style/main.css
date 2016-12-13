@@ -218,6 +218,12 @@ main{
 	margin: 0 10px;
 }
 
+.col-md-6{
+	float: left;
+	margin-bottom: 10px; 
+}
+
+
 
 /* Yellow Buttons  */
 .btn.btn-primary{

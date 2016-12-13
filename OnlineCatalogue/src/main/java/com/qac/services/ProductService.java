@@ -119,7 +119,6 @@ public class ProductService {
 		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductID());
 		System.out.println(stock2.size());
 		
-		productItem.addStockInfo(stock2.size(), (float) stock2.get(0).getPrice());
 		//CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE PRODUCTITEM ARRAYLIST
 		if (product != null)
 			productItem.addProductInfo(product.getProductID(), product.getName(), product.getDesc(), product.getSize(),

@@ -8,10 +8,10 @@
 	<ui:define name="pageName">Stock Level</ui:define>
 
 	<ui:define name="filter">
-		<h:inputText value=""  >
+		<h:form>
 			<f:passThroughAttribute name="placeholder" value="Filter Results"/>
 			<f:passThroughAttribute name="alt" value="Filter Results"/>			
-		</h:inputText>
+		</h:form>
 	</ui:define>
 	
 	<ui:define name="filterResults">
@@ -36,17 +36,23 @@
 	</ui:repeat>
 </div>
 	<div id="quantity">
-		<h3>Quantity Remaining</h3>
+		<h3>Remaining</h3>
 		<ui:repeat var="p" value="#{generated.productItems}">
 	<p><h:outputText value="#{p.stockLevel}" /></p>
 	</ui:repeat>
 	</div>
 	<div id="suggested">
-		<h3>Suggested Order</h3>
+		<h3>Suggested</h3>
 	<ui:repeat var="quantity" value="#{generated.suggestedQuanity}">
 	<p><h:outputText value="#{quantity.intValue()}" /></p>
 	</ui:repeat>
 		<ui:repeat var="quantity" value="#{generated.suggestedQuanity}">
+	</ui:repeat>
+	</div>
+	<div id = "price">
+	<h3>Price</h3>
+	<ui:repeat var="p" value="#{generated.price}">
+	<p><h:outputText value="#{p}" /></p>
 	</ui:repeat>
 	</div>
 	<div id = "form">
