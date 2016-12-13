@@ -114,7 +114,7 @@ public class TestDataIMS {
 		// DECLARE ALL NECESSARY VARIABLES FOR CUSTOMER ORDER
 		CustomerOrder cOrder1;
 		Random rand = new Random();
-		Calendar c2 = Calendar.getInstance();
+		Calendar c2 ;
 		//change variable names
 		long randomFeedback;
 		int randomNumYear;
@@ -123,6 +123,7 @@ public class TestDataIMS {
 		int randomNumAddressID;
 		// ITERATES FOR THE QUANTITY OF CUSTOMER ORDER SPECIFIED
 		for (long i = 1; i <= q; i++) {
+			c2 = Calendar.getInstance();
 			// SET VARIABLES TO RANDOM LEVELS
 			// address specified between 1 and 3
 			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
