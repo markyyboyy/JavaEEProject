@@ -121,10 +121,11 @@ public class ProductService {
 	public List<ProductItem> findAllProducts() {
 
 		List<ProductItem> temp = new ArrayList<>();
-		productManager.findAllProducts().forEach(pro -> {
-			temp.add(getProductItem(pro));
-
-		});
+		List<Product> lsProduct = productManager.findAllProducts();
+				
+		for(int i = 0; i <lsProduct.size() -1; i++){
+			temp.add(getProductItem(lsProduct.get(i)));
+		}
 
 		return temp;
 	}
