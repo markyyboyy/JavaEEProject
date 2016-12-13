@@ -19,14 +19,17 @@
 
 
 		<SCRIPT type="text/javascript">
+		
+			// on mouse enter		
 			function showHover(args) {
 
-				var onHover = $(args).children()[0].children[1];
+				var onHover = $(args).children()[0].children[1]; //get overlay element
 				$(onHover).show();
 			}
 
+			// on mouse exit
 			function hideHover(args) {
-				var onHover = $(args).children()[0].children[1];
+				var onHover = $(args).children()[0].children[1]; //get overlay element
 				$(onHover).hide();
 			}
 		</SCRIPT>
@@ -69,7 +72,8 @@
 
 							<!-- Slider to show the max price -->
 							<div class="col-md-6 col-xs-12">
-								<h:outputText id="displayRange" value="Between £ 100 and £5000}" />
+								<h:outputText id="displayRange"
+									value="Between £ 100 and £5000}" />
 								<!-- 								<p:slider range="true" max="5000"/> -->
 							</div>
 
@@ -137,17 +141,22 @@
 										<div id="imgProduct" class="onHover">
 
 											<div class="star">
+
 												<c:if test="#{user.loggedIn}">
 													<h:commandLink action="#{basket.addToBasket(prod.id)}"
 														styleClass="glyphicon glyphicon-star"></h:commandLink>
 												</c:if>
 
+
 											</div>
 
 											<div class="basket">
-											
-												<h:commandLink action="#{basket.addToBasket(prod.id)}"
-													styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+												<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
+
+													<h:commandLink action="#{basket.addToBasket(prod.id)}"
+														styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+												</h:panelGroup>
+
 											</div>
 
 										</div>
@@ -172,10 +181,10 @@
 											</div>
 											<div>
 
-											<!-- Shows the rating of the product  DOES NOT WORK -->					
-											<ui:repeat size="5">
-												<span class="glyphicon glyphicon-star"></span>
-											</ui:repeat>
+												<!-- Shows the rating of the product  DOES NOT WORK -->
+												<ui:repeat size="5">
+													<span class="glyphicon glyphicon-star"></span>
+												</ui:repeat>
 
 
 
