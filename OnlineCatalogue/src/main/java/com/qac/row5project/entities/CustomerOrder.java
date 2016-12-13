@@ -182,6 +182,14 @@ public class CustomerOrder {
 	}
 
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerOrder [customerOrderId=" + id + ", feedbackId=" + feedbackID + ", customerId="

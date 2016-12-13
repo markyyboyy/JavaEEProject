@@ -10,6 +10,7 @@
 
 <h:body>
 	<ui:composition template="templates/main.xhtml">
+	<ui:define name="pageName" value="">Login/Register</ui:define>
 		<ui:define name="mainContent">
 			<script>
 
@@ -45,8 +46,6 @@
 				<br></br>
 				<br></br>
 				<h:commandButton action="#{login.login}" styleClass="btn btn-primary">
-
-
 					<f:passThroughAttribute name="value" value="Login" />
 					<f:passThroughAttribute name="type" value="submit" />
 				</h:commandButton>

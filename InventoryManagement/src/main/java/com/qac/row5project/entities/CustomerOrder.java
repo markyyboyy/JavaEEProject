@@ -180,6 +180,15 @@ public class CustomerOrder {
 	public void setDateReceived(Calendar dateReceived) {
 		this.dateReceived = dateReceived;
 	}
+	
+	public long getID() {
+		return id;
+	}
+
+	public void setID(long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerOrder [customerOrderId=" + id + ", feedbackId=" + feedbackID + ", customerId="

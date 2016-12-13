@@ -4,7 +4,7 @@
 	<groupId>com.qac</groupId>
 	<artifactId>row5Catalogue</artifactId>
     <version>0.1</version>
-	<name>Row 5 </name>
+	<name>Row 5		 </name>
 	<packaging>war</packaging>
 	<description>The project for row 5.</description>
 	<dependencies>
