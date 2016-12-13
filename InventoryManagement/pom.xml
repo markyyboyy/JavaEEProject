@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.qac</groupId>
 	<artifactId>row5IMS</artifactId>
-    <version>0.1</version>
+	<version>0.1</version>
 	<name>Row 5 </name>
 	<packaging>war</packaging>
 	<description>The project for row 5.</description>
@@ -47,27 +47,37 @@
 			</artifactId>
 			<version>5.1.28</version>
 		</dependency>
-		<dependency>  
-    		<groupId>org.primefaces</groupId>  
-   			 <artifactId>primefaces</artifactId>  
-   			 <version>6.0</version>  
-</dependency>  
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.16-beta1</version>
+</dependency>
 	</dependencies>
 	<build>
-	
-    <finalName>ims</finalName>
+
+		<finalName>ims</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 				<configuration>
-				
+
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>

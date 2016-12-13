@@ -5,13 +5,15 @@
 	xmlns:p="http://primefaces.org/ui">
 <!-- RyanB -->
 
-<h:head>
-	<ui:define name="pageName" value="Product Information">
-	</ui:define>
-</h:head>
 
 <h:body>
 	<ui:composition template="templates/imsTemplate.xhtml">
+	
+	<ui:define name="pageName"> Product Information
+	</ui:define>
+		<h:outputStylesheet  name="./style/primefacesoverwrite.css" />
+	
+	
 		<div class="container">
 
 			<div class="leftnavbar">
@@ -57,13 +59,27 @@
 		<ui:define name="mainContent2">
 			<div class="righttitletable">
 
-				<div id="scrollpane">
+			
 					<h:form>
-						<p:dataTable var="prod" value="#{product.products}"
-							sortMode="multiple">
-							<f:facet name="header">
-            Product Information
-        </f:facet>
+						<p:dataTable id="tbl" var="prod" value="#{product.products}"
+							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
+							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 			paginator="true" rows="23" style="margin-bottom:20px">>
+									
+								<f:facet name="{Exporters}">
+					            <h:commandLink>
+					            	<img src="./img/excel.jpg" width="24"/>
+					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
+					            </h:commandLink>
+					 
+					            <h:commandLink>
+					                <img src="./img/pdf.jpg" width="24"/>
+					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
+					            </h:commandLink>
+
+					        </f:facet>
+					        
+					        
 							<p:column headerText="Product ID" sortBy="#{prod.ID}">
 								<h:outputText value="#{prod.ID}" />
 							</p:column>
@@ -88,7 +104,6 @@
 								<h:outputText value="#{prod.status}" />
 							</p:column>
 						</p:dataTable>
-						<h:commandButton value="Sort By Product ID" action="#{product.sortByStock}" />
 					</h:form>
 
 
@@ -96,7 +111,6 @@
 
 
 
-				</div>
 			</div>
 		</ui:define>
 	</ui:composition>
