@@ -108,7 +108,16 @@ button {
 
 
 .glyphicon.glyphicon-star.selected{
-		color: black;
-
+		color: #967505;
 }
+
+
+.glyphicon.glyphicon-star.selected:hover{
+		color: white;
+}
+
+
+
+
+
 
