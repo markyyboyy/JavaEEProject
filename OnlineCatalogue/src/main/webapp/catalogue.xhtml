@@ -138,14 +138,15 @@
 
 											<div class="star">
 												<c:if test="#{user.loggedIn}">
-													<h:commandLink action="#{basket.addToBasket(prod.ID)}"
+													<h:commandLink action="#{basket.addToBasket(prod.id)}"
 														styleClass="glyphicon glyphicon-star"></h:commandLink>
 												</c:if>
 
 											</div>
 
 											<div class="basket">
-												<h:commandLink action="#{basket.addToBasket(prod.ID)}"
+											
+												<h:commandLink action="#{basket.addToBasket(prod.id)}"
 													styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 											</div>
 

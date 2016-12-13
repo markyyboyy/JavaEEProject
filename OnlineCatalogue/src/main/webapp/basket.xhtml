@@ -32,8 +32,8 @@
 
 				<!-- 	Repeater -->
 				<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
-					<div class="row">
-						<div class="col-sm-3" style="background-color: #F4F4F4;">
+					<div class="row orderLineRow">
+						<div class="col-sm-3 imgBasketPane" >
 							<img src="img/fgnome1.jpeg" />
 						</div>
 
@@ -63,7 +63,7 @@
 
 										<h:form>
 											<h:commandButton value="Remove From Basket"
-												action="#{basket.removeItem(id)}"
+												action="#{basket.removeItem(orderLine.stock.productID)}"
 												class="btn btn-primary btn-block" />
 										</h:form>
 									</h:inputText>
@@ -81,6 +81,13 @@
 				</ui:repeat>
 
 				<!-- 	Repeater -->
+
+
+				<div class="row">
+					<div class="text-right col-xs-12">
+						Total  #{orderLine.totalPrice}
+					</div>
+				</div>
 
 
 				<div class="row">

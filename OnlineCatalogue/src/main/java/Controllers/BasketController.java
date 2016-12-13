@@ -31,7 +31,7 @@ import Controllers.session.CurrentUser;
 /**
  * Adding basket functionality
  */
-@Named("conBasket")
+@Named("basket")
 @RequestScoped
 public class BasketController {
 
@@ -56,6 +56,26 @@ public class BasketController {
 	private CustomerOrder cOrder;
 	
 	private List<CustomerOrderLine> custOrderMdl = null;
+	
+	private double totalPrice; 
+	
+	
+	public double getTotalPrice(){
+		
+		double dPrice = 0.0d;
+		
+		for (CustomerOrderLine customerOrderLine : custOrderMdl) {
+			
+			dPrice += customerOrderLine.getStock().getPrice() * customerOrderLine.getQuantity();
+			
+		}
+		
+		
+		return dPrice;
+	}
+	
+	
+	
 	
 	/***
 	 * Gets logged in users Basket/Order
@@ -85,19 +105,27 @@ public class BasketController {
 	 * 
 	 * @param id
 	 */
-	public void addToBasket(Stock stock, int quantity) {
+	public String addToBasket(Stock stock, int quantity) {
 		if (user.isLoggedIn() && user.getCustomer() != null){
 			//Stock stock = stockService.getStockByProductID(id);
-			basketService.addToBasket(stock, user, 0);
-
-			
-			
+			basketService.addToBasket(stock, user, 0);			
 		}
+		
+		return "catalogue";
+
 	}
 
-	public void addToBasket(Long lProductID){
+	public String addToBasket(Long lProductID){
 		Stock stock = stockService.getStockByProductID(lProductID);
-		addToBasket(stock, 1);
+		
+		if(stock != null){
+			addToBasket(stock, 1);
+		}else{
+			// how to handle this
+		}
+		
+		
+		return "catalogue";
 	}
 	
 	
@@ -109,7 +137,8 @@ public class BasketController {
 	 * if not possible add new customer order and orderline.
 	 * @param id
 	 */
-	public void addToBasket(String id) {
+	@SuppressWarnings("finally")
+	public String addToBasket(String id) {
 
 		int productID = 0;
 
@@ -136,8 +165,12 @@ public class BasketController {
 			olM.createCustomerOrderLine(newOL);
 			newOrder.addToCustomerOrderLine(newOL);
 			cM.createCustomerOrder(newOrder);
+		}finally{
+			return "catalogue";
 		}
 
+
+		
 	}
 
 	/**
