@@ -21,7 +21,7 @@ import com.qac.row5project.helpers.*;
 public class RatingManagerOffline implements RatingManager {
 
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 	//CREATE: CUSTOMER
 	/**
 	 * Creates a rating object and adds to list of ratings

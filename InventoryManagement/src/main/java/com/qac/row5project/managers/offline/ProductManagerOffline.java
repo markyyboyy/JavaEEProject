@@ -20,7 +20,7 @@ import com.qac.row5project.managers.ProductManager;
 
 public class ProductManagerOffline implements ProductManager {
 	@Inject
-	private TestData testData;
+	private TestDataIMS testData;
 
 	// CREATE - INVENTORY MANAGER
 	@Override

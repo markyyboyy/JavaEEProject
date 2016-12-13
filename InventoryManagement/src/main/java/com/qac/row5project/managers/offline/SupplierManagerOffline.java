@@ -19,7 +19,7 @@ import com.qac.row5project.managers.SupplierManager;
 
 public class SupplierManagerOffline implements SupplierManager {
 	@Inject
-	private TestData testData;
+	private TestDataIMS testData;
 	
 	
 	/**

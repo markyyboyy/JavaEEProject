@@ -24,7 +24,7 @@ import java.util.List;
 public class SecurityQuestionOffline implements SecurityQuestionManager {
 	//CREATE - CUSTOMER ONLY
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 	
 	@Override
 	/** 

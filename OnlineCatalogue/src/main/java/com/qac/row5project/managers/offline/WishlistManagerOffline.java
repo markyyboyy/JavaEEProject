@@ -18,7 +18,7 @@ import com.qac.row5project.managers.WishlistManager;
 
 public class WishlistManagerOffline implements WishlistManager {
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 
 	//READ - Customer Only
 	@Override

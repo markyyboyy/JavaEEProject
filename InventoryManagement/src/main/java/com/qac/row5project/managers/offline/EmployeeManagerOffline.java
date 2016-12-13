@@ -19,7 +19,7 @@ public class EmployeeManagerOffline implements EmployeeManager {
 	
     
     @Inject
-    TestData testData;
+    TestDataIMS testData;
     
 	//READ - Inventory Manager Only
 	public Employee readEmployee(String emailAddress){

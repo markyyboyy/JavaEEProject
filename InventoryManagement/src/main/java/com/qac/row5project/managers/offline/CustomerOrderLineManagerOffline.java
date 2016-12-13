@@ -4,7 +4,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import com.qac.row5project.entities.CustomerOrderLine;
-import com.qac.row5project.helpers.TestData;
+import com.qac.row5project.helpers.TestDataIMS;
 import com.qac.row5project.managers.CustomerOrderLineManager;
 
 @Stateless
@@ -18,7 +18,7 @@ import com.qac.row5project.managers.CustomerOrderLineManager;
 public class CustomerOrderLineManagerOffline implements CustomerOrderLineManager {
 	
 	@Inject
-	private TestData testData;
+	private TestDataIMS testData;
 	
 	//CREATE - Customer Only
 	/**

@@ -21,7 +21,7 @@ public class StockManagerOffline implements StockManager {
 	
 		
 	@Inject 
-	TestData testData;
+	TestDataIMS testData;
 	
 	//CREATE, UPDATE: INVENTORY MANAGER
 	/**

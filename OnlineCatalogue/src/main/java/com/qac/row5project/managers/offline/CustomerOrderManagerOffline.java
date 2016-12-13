@@ -22,7 +22,7 @@ import com.qac.row5project.managers.CustomerOrderManager;
 public class CustomerOrderManagerOffline implements CustomerOrderManager {
 
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 
 	// CREATE - CUSTOMER
 	@Override

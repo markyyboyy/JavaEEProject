@@ -22,7 +22,7 @@ import java.util.List;
 public class PurchaseOrderOffline implements PurchaseOrderManager {
 
 	@Inject
-	private TestData testData;
+	private TestDataIMS testData;
 
 	// CREATE - INVENTORY MANAGER ONLY
 	/** 

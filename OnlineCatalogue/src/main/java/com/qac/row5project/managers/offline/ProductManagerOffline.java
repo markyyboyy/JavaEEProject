@@ -12,7 +12,7 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.Stock;
-import com.qac.row5project.helpers.TestData;
+import com.qac.row5project.helpers.TestDataCatalogue;
 import com.qac.row5project.managers.ProductManager;
 
 @Stateless
@@ -20,7 +20,7 @@ import com.qac.row5project.managers.ProductManager;
 
 public class ProductManagerOffline implements ProductManager {
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 
 	// CREATE - INVENTORY MANAGER
 	@Override

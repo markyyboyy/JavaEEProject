@@ -17,22 +17,17 @@ import com.qac.row5project.entities.*;
  */
 @Startup
 @Singleton
-public class TestData {
+public class TestDataIMS {
 
 	private List<Product> products;
 	private List<Stock> stocks;
-	private List<Customer> customers;
-	private List<Address> addresses;
 	private List<CustomerOrder> customerOrders;
 	private List<CustomerOrderLine> customerOrderLines;
-	private List<Feedback> feedbacks;
-	private List<Image> images;
+	private List<Employee> employees;
 	private List<LoginDetails> loginDetails;
-	private List<Payment> payments;
-
-	private List<Rating> ratings;
-	private List<SecurityQuestion> securityQuestions;
-
+	private List<PurchaseOrder> purchaseOrders;
+	private List<ProductSupplier> productSuppliers;
+	private List<Supplier> suppliers;
 
 	/***
 	 * 
@@ -43,31 +38,19 @@ public class TestData {
 	@PostConstruct
 	private void setupData() {
 		products = new ArrayList<Product>();
-		customers = new ArrayList<Customer>();
-		addresses = new ArrayList<Address>();
 		customerOrders = new ArrayList<CustomerOrder>();
 		customerOrderLines = new ArrayList<CustomerOrderLine>();
-
-		feedbacks = new ArrayList<Feedback>();
-		images = new ArrayList<Image>();
+		employees = new ArrayList<Employee>();
 		loginDetails = new ArrayList<LoginDetails>();
-		payments = new ArrayList<Payment>();
-	
-		ratings = new ArrayList<Rating>();
-		securityQuestions = new ArrayList<SecurityQuestion>();
+		purchaseOrders = new ArrayList<PurchaseOrder>();
 		stocks = new ArrayList<Stock>();
+		productSuppliers = new ArrayList<ProductSupplier>();
+		suppliers = new ArrayList<Supplier>();
 
-		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
-		loginDetails.add(testLogin);
-		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
-		loginDetails.add(imsLogin);
-
+		suppliers.add(new Supplier());
+		suppliers.add(new Supplier());
+		short s = 5;
 		
-		Calendar c = Calendar.getInstance();
-		c.set(1, 1, 1990);
-
-		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
-				
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
 		products.get(0).setProductID(1);
@@ -92,17 +75,30 @@ public class TestData {
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
 		products.get(5).setProductID(6);
 		
-		
-		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
-		stocks.add(new Stock(1, true, 3, false, products.get(1), 250));
-		stocks.add(new Stock(2, true, 10, false, products.get(2), 250));
-		stocks.add(new Stock(3, false, 15, false, products.get(3), 200));
-		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
+		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
+		loginDetails.add(testLogin);
+		LoginDetails imsLogin = new LoginDetails("m@nb.com", "p");
+		loginDetails.add(imsLogin);
+
+		stocks.add(new Stock(1 , false, 50, false, 1, 15.99d));
+	//	Supplier s = new Supplier(1);
+		Calendar c = Calendar.getInstance();
+		c.set(1, 1, 1990);
+
+		employees.add(new Employee(imsLogin, 10));
+		stocks.add(new Stock(0, false, 5, false, products.get(0).getProductID(), 200));
+		stocks.add(new Stock(1, true, 3, false, products.get(1).getProductID(), 250));
+		stocks.add(new Stock(2, true, 10, false, products.get(2).getProductID(), 250));
+		stocks.add(new Stock(3, false, 15, false, products.get(3).getProductID(), 200));
+		stocks.add(new Stock(4, true, 1, false, products.get(4).getProductID(), 250));
+		stocks.add(new Stock(4, true, 3, false, products.get(5).getProductID(), 250));
+
+
 		Calendar c1 = Calendar.getInstance();
 
-		c1.set(5, 6, 2012);
-		
-		//generateCustomerOrder(50);
+/*		c1.set(5, 6, 2012);
+		purchaseOrders.add(new PurchaseOrder(1, s, "Pending", c, c1));
+		generateCustomerOrder(50);*/
 	}
 
 	/***
@@ -113,13 +109,13 @@ public class TestData {
 	 *
 	 */
 	public void generateCustomerOrder(int q) {
-
+/*
 		// DECLARE ALL NECESSARY VARIABLES FOR CUSTOMER ORDER
 		CustomerOrder cOrder1;
 		Random rand = new Random();
 		Calendar c2 = Calendar.getInstance();
 		//change variable names
-		int randomFeedback;
+		long randomFeedback;
 		int randomNumYear;
 		int randomNumDay;
 		int randomNumMonth;
@@ -136,9 +132,10 @@ public class TestData {
 			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
 			randomNumMonth = rand.nextInt((12 - 1) + 1) + 1;
 			c2.set(randomNumYear, randomNumMonth, randomNumDay);
-			cOrder1 = new CustomerOrder(i, randomFeedback, c2, randomNumAddressID, 1L);
+			cOrder1 = new CustomerOrder(i, randomFeedback, i, c2, randomNumAddressID);
 			customerOrders.add(cOrder1);
 		}
+		*/
 	}
 
 	/***
@@ -187,21 +184,6 @@ public class TestData {
 		this.stocks = stocks;
 	}
 
-	public List<Customer> getCustomers() {
-		return customers;
-	}
-
-	public void setCustomers(List<Customer> customers) {
-		this.customers = customers;
-	}
-
-	public List<Address> getAddresses() {
-		return addresses;
-	}
-
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
 
 	public List<CustomerOrder> getCustomerOrders() {
 		return customerOrders;
@@ -220,20 +202,12 @@ public class TestData {
 		this.customerOrderLines.add(customerOrderLine);
 	}
 
-	public List<Feedback> getFeedbacks() {
-		return feedbacks;
+	public List<Employee> getEmployees() {
+		return employees;
 	}
 
-	public void setFeedbacks(List<Feedback> feedbacks) {
-		this.feedbacks = feedbacks;
-	}
-
-	public List<Image> getImages() {
-		return images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
 	}
 
 	public List<LoginDetails> getLoginDetails() {
@@ -244,30 +218,12 @@ public class TestData {
 		this.loginDetails = loginDetails;
 	}
 
-	public List<Payment> getPayments() {
-		return payments;
+	public List<PurchaseOrder> getPurchaseOrders() {
+		return purchaseOrders;
 	}
 
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
-	}
-
-
-
-	public List<Rating> getRatings() {
-		return ratings;
-	}
-
-	public void setRatings(List<Rating> ratings) {
-		this.ratings = ratings;
-	}
-
-	public List<SecurityQuestion> getSecurityQuestions() {
-		return securityQuestions;
-	}
-
-	public void setSecurityQuestions(List<SecurityQuestion> securityQuestions) {
-		this.securityQuestions = securityQuestions;
+	public void setPurchaseOrders(List<PurchaseOrder> purchaseOrders) {
+		this.purchaseOrders = purchaseOrders;
 	}
 
 	public List<Stock> getStockItems() {
@@ -278,4 +234,19 @@ public class TestData {
 		this.stocks = stockItems;
 	}
 
+	public List<ProductSupplier> getProductSupplier() {
+		return productSuppliers;
+	}
+
+	public void setProductSupplier(List<ProductSupplier> productSupplier) {
+		this.productSuppliers = productSupplier;
+	}
+
+	public List<Supplier> getSuppliers() {
+		return suppliers;
+	}
+
+	public void setSuppliers(List<Supplier> suppliers) {
+		this.suppliers = suppliers;
+	}
 }

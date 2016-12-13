@@ -21,7 +21,7 @@ import com.qac.row5project.managers.FeedbackManager;
  */
 public class FeedbackManagerOffline implements FeedbackManager {
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 	
 	
 	//CREATE - Customer Only

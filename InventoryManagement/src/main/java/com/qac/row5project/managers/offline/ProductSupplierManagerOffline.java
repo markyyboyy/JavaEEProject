@@ -21,7 +21,7 @@ import java.util.List;
 public class ProductSupplierManagerOffline implements ProductSupplierManager{
 	
 	@Inject
-	private TestData testData;
+	private TestDataIMS testData;
 	
 	//CREATE - INVENTORY MANAGER ONLY
 	/** 

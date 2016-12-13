@@ -17,7 +17,7 @@ import com.qac.row5project.managers.LoginDetailsManager;
 
 public class LoginDetailsManagerOffline implements LoginDetailsManager {
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 	
 	//CREATE - Inventory Manager Only
 	@Override

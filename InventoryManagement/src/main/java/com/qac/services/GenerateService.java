@@ -7,7 +7,7 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.helpers.ProductItem;
-import com.qac.row5project.helpers.TestData;
+import com.qac.row5project.helpers.TestDataIMS;
 import com.qac.row5project.managers.ProductManager;
 /**
  * @author Mark Freeman
@@ -18,7 +18,7 @@ public class GenerateService {
 	private ProductManager productManager;
 	@Inject
 	private ProductService productService;
-	private TestData testData;
+	private TestDataIMS testData;
 	/**
 	 * This method gets all of the products in the system, but only returns those with a low stock count.
 	 * @return	All of the products with a low stock count.

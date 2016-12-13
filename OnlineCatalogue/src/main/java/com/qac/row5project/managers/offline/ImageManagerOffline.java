@@ -19,7 +19,7 @@ import com.qac.row5project.helpers.*;
 public class ImageManagerOffline implements ImageManager{
 	
 	//CREATE, READ, UPDATE:INVENTORY MANAGER
-	TestData testData;
+	TestDataCatalogue testData;
 	/**
 	 * Creates an image object and adds to list of images
 	 * 

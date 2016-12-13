@@ -20,7 +20,7 @@ import com.qac.row5project.managers.PaymentManager;
 
 public class PaymentManagerOffline implements PaymentManager {
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 	
 	//CREATE - Inventory Manager Only
 	@Override

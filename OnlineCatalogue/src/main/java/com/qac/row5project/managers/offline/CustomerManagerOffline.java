@@ -5,7 +5,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import com.qac.row5project.entities.Customer;
-import com.qac.row5project.helpers.TestData;
+import com.qac.row5project.helpers.TestDataCatalogue;
 import com.qac.row5project.managers.CustomerManager;
 /***
  * 
@@ -18,7 +18,7 @@ import com.qac.row5project.managers.CustomerManager;
 public class CustomerManagerOffline implements CustomerManager {
 
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 	
 	@Override
 	public void createCustomer(Customer newCustomer) {

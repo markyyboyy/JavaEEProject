@@ -21,7 +21,7 @@ import com.qac.row5project.managers.AddressManager;
 @Default
 public class AddressManagerOffline implements AddressManager {
 	@Inject
-	private TestData testData;
+	private TestDataCatalogue testData;
 
 	/***
 	 *
