@@ -1,0 +1,131 @@
+<!-- Author: Richard Allen -->
+
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+
+<h:body>
+	<ui:composition template="templates/main.xhtml">
+		<ui:define name="pageName" value="">MyAccount
+	</ui:define>
+
+		<ui:define name="mainContent">
+		
+		<h1>Edit Details</h1>
+		
+		<h:form class="passwordUpdate">
+				<label>Password</label>
+				<h:inputText value="#{MyAccount.password}">
+					<f:passThroughAttribute name="type" value="password" />
+					<f:passThroughAttribute name="placeholder" value="password" />
+					<f:passThroughAttribute name="alt" value="password" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br />
+				
+				<h:commandButton action="#{MyAccount.newPassword}" value="Update Password"
+					styleClass="btn btn-primary">
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+				
+			
+				<br />
+				<br />
+		</h:form>
+		<h:form class ="newAddress">
+				<h5>Address</h5>
+				
+				<br></br>
+				<label> House Name/Number</label>
+				<h:inputText value="#{MyAccount.sHName}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="house name.." />
+					<f:passThroughAttribute name="alt" value="house name" />
+				</h:inputText>
+				<br></br>
+				<label> Street</label>
+				<h:inputText value="#{MyAccount.sStreet}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="street.." />
+					<f:passThroughAttribute name="alt" value="street" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<label> Town</label>
+				<h:inputText value="#{MyAccount.sTown}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="town.." />
+					<f:passThroughAttribute name="alt" value="town" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+
+				<label> Postcode</label>
+				<h:inputText value="#{MyAccount.sPost}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="postcode.." />
+					<f:passThroughAttribute name="alt" value="postcode" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+					<h:commandButton action="#{MyAccount.newAddress}" value="Add Address"
+					styleClass="btn btn-primary">
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+				<br />
+				<br />
+			</h:form>
+				<h:form class="newSecurity">
+				<h2>Security Question</h2>
+				<label> Secret Question</label>
+				<h:inputText value="#{MyAccount.sQuestion}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="secret question.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				<label> Secret Answer</label>
+				<h:inputText value="#{MyAccount.sAnswer}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="secret answer.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				<h:commandButton action="#{MyAccount.newSecurity}" value="Update Security Question"
+					styleClass="btn btn-primary">
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+				</h:form>
+				<h:form class="newFacebook">
+				<h2>Add Facebook</h2>
+				<label> Facebook</label>
+				<h:inputText value="#{MyAccount.sFacebook}">
+					<f:passThroughAttribute name="type" value="text" />
+					<f:passThroughAttribute name="placeholder" value="facebook.." />
+					<f:passThroughAttribute name="alt" value="secret question" />
+					<f:passThroughAttribute name="required" value="required" />
+				</h:inputText>
+				<br></br>
+				<br></br>
+				<h:commandButton action="#{MyAccount.newFacebook}" value="Update Facebook"
+					styleClass="btn btn-primary">
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+			
+				</h:form>
+		
+		
+		
+		</ui:define>
+		</ui:composition>
+		</h:body>
+		</html>
