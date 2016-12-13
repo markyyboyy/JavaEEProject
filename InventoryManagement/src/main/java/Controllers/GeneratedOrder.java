@@ -25,6 +25,7 @@ public class GeneratedOrder {
 	private List<ProductItem> productItems = new ArrayList<ProductItem>();
 	private List<String> productOrders = new ArrayList<String>();
 	List<Integer> suggestedQuantity = new ArrayList<Integer>();
+	List<Double> price = new ArrayList<Double>();
 	
 	/**
 	 * This method returns a list of all of the products in the system.
@@ -91,13 +92,20 @@ public class GeneratedOrder {
 	public List<ProductItem> unsort(){
 		getSuggestedQuanity();
 		productItems = generateService.getProducts();
-		return productItems;
+		return productItems; 
 	}
 	/**
 	 * This method generates an order from a productID
 	 * @param	The productID of the product the user wanted to order.
 	 */
-	public void generateOrder(String poID){
-		generateService.generateOrder(poID);
+	public void generateOrder(){
+		generateService.generateOrder(3,ProductID);
+	}
+	public List<Double> getPrice(){
+		price.clear();
+		for (int i = 0; i<suggestedQuantity.size();i++){
+			price.add(suggestedQuantity.get(i)*productItems.get(i).getPrice());
+		}
+		return price;
 	}
 }

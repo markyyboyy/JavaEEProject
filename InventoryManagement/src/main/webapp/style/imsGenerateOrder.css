@@ -1,17 +1,21 @@
 #suggested{
-	width:20%;
+	width:10%;
 	float:left;
 }
 #quantity{
-	width:20%;
+	width:10%;
 	float:left;
 }
 #productName{
-	width:20%;
+	width:10%;
 	float:left;
 }
 #productID{
-	width:20%;
+	width:10%;
+	float:left;
+}
+#price{
+	width:10%;
 	float:left;
 }
 #Row{
