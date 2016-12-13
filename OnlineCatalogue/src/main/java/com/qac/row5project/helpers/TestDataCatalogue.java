@@ -57,16 +57,18 @@ public class TestDataCatalogue {
 		securityQuestions = new ArrayList<SecurityQuestion>();
 		stocks = new ArrayList<Stock>();
 
+		//Test Login Details
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);
 		LoginDetails imsLogin = new LoginDetails("manager@nb.com", "password");
 		loginDetails.add(imsLogin);
-
 		
+		//Test Customer
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
-
-		customers.add(new Customer("Allen", "Richard", "Fall", c, testLogin));
+		Customer testCust = new Customer("Allen", "Richard", "Fall", c, testLogin);
+		testCust.setBalance(50.5);
+		customers.add(testCust);
 				
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));

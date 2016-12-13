@@ -255,4 +255,12 @@ public class Customer {
 		return this.address;
 	}
 	
+	public void setBalance(double balance){
+	    this.balance = balance;
+	}
+	
+	public double getBalance(){
+	    return this.balance;
+	}
+	
 }
