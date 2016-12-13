@@ -53,12 +53,17 @@
 					</div>
 				</div>
 
-				<div class="dropdown">
+				<div class="dropdown logoffButton">
 					<h:button class="dropbtn" rendered="#{user.loggedIn}" value="MyAccount"></h:button>
 					<div class="dropdown-content" style="left: 0;">
+						
+						
 						<a href="myAccount.xhtml">My Account</a> 
 						<a href="basket.xhtml">Basket</a> 
 						<a href="wishlist.xhtml">WishList</a>
+						<h:form>
+						<h:commandLink action="#{login.logoff()}" value ="Log Off" />
+						</h:form>
 					</div>
 				</div>
 
@@ -70,13 +75,7 @@
 					</h:form>
 				</div>
 
-				<div class="logoffButton">
-					<h:form>
-						<h:commandButton styleClass="btn btn-primary"
-							rendered="#{user.loggedIn}" action="#{login.logoff()}"
-							value="Log Out" />
-					</h:form>
-				</div>
+				
 			</div>
 		</nav>
 	</header>
