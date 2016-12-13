@@ -1,5 +1,6 @@
 package com.qac.services;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -8,10 +9,12 @@ import javax.inject.Inject;
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.PurchaseOrder;
 import com.qac.row5project.entities.Stock;
+import com.qac.row5project.entities.Supplier;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.helpers.TestDataIMS;
 import com.qac.row5project.managers.ProductManager;
 import com.qac.row5project.managers.StockManager;
+import com.qac.row5project.managers.SupplierManager;
 /**
  * @author Mark Freeman
 **/
@@ -23,6 +26,9 @@ public class GenerateService {
 	private StockManager stockManager;
 	@Inject
 	private ProductService productService;
+	@Inject
+	private SupplierManager supplierManager;
+	@Inject
 	private TestDataIMS testData;
 	/**
 	 * This method gets all of the products in the system, but only returns those with a low stock count.
@@ -56,19 +62,28 @@ public class GenerateService {
 	}
 	/**
 	 * This method generates an order in test data for a product the user wants to generate an order for.
-	 * @param i 
+	 * @param quantity
 	 * @param	The productID the user entered.
 	 * @return	The suggested quantities for the user.
 	 */
-	public void generateOrder(int i, String poID){
-		System.out.println(testData.getPurchaseOrders().size());
+	public void generateOrder(int quantity, String poID){
 		List<Stock> stock = new ArrayList<Stock>();
-		stock.add(new Stock(1, i, Integer.parseInt(poID), 14.99f));
-		PurchaseOrder po = new PurchaseOrder(0, null);	//Create a new purchaseorder
+		stock.add(new Stock(1, quantity, Integer.parseInt(poID), 14.99f));
+		Calendar cal = Calendar.getInstance();
+		long supplierID = productManager.readProductById(Long.getLong(poID)).getSupplierID();
+		Supplier supplier = supplierManager.readByIdSupplier(supplierID);
+		PurchaseOrder po = new PurchaseOrder(quantity, supplier, poID, cal, cal);	//Create a new purchaseorder
 		po.setStockList(stock);	//Add the users stock to it.
-		List<PurchaseOrder> current = testData.getPurchaseOrders();
+		List<PurchaseOrder> current;
+	if (!testData.getPurchaseOrders().isEmpty()){
+				current = testData.getPurchaseOrders();
+		}
+		else{
+			current = new ArrayList<PurchaseOrder>();
+		}
+		System.out.println(current.size());
 		current.add(po);
+		System.out.println(current.size());
 		testData.setPurchaseOrders(current);
-		System.out.println(testData.getPurchaseOrders().size());
 	}
 }

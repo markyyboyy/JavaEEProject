@@ -132,6 +132,8 @@ public class PurchaseOrderOffline implements PurchaseOrderManager {
 	
 	@Override
 	public List<PurchaseOrder> returnPurchaseOrders(){
+		System.out.println("Got purchase orders");
+		System.out.println(testData.getPurchaseOrders().size());
 		return testData.getPurchaseOrders();
 	}
 
