@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+
+import com.qac.row5project.entities.Product;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.helpers.TestData;
 import com.qac.row5project.managers.ProductManager;
@@ -38,11 +40,9 @@ public class GenerateService {
 		List<Integer> productQuantities = new ArrayList<Integer>();
 		List<ProductItem> productsInStockQuantities = productService.findAllProducts();	//Get all products
 		//change reference type
-		Iterator i = productsInStockQuantities.iterator();
-		while (i.hasNext()){
-			ProductItem product = (ProductItem) i.next();	
-			
-			int stockLevel = product.getStockLevel();
+		for(ProductItem prod: productsInStockQuantities)
+			{
+			int stockLevel = prod.getStockLevel();
 			if (stockLevel < 5){					//If a ProductItem has less than 5 items then we add it to the list.
 				productQuantities.add(5-stockLevel);
 			} 
