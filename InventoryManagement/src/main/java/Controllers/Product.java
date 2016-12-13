@@ -5,7 +5,6 @@
 package Controllers;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -28,8 +27,6 @@ private ProductService productService;
 
 private DataModel<ProductItem> productItem;
 
-private List<ProductItem> products1;
-
 private List<ProductItem> products;
 
 private List<Category> categories;
@@ -47,9 +44,8 @@ private List<ItemStatus> status;
 public DataModel<ProductItem> getProducts() {
 	 	setProducts(productService.findAllProducts());
 	 
-		if(products1 != null){
-			ListDataModel<ProductItem> products = new ListDataModel<>(products1);
-			return products;}
+		if(products != null)
+			return new ListDataModel<>(products);
 		else {
 			return null;}
 		}
@@ -101,10 +97,6 @@ public DataModel<ProductItem> getProducts() {
 		public void setProducts(List<ProductItem> lsTemp)
 		{
 			
-				this.products1 =lsTemp;
-		}
-		
-		public void sortbyid(){
-			Collections.sort(products, (s1, s2) -> ((int)(s1.getId()) - ((int)s2.getId())));
+				this.products =lsTemp;
 		}
 }
