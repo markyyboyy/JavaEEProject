@@ -143,7 +143,10 @@ public class Catalogue implements Serializable {
 					if(productsResults != null)
 						return productsResults.size();
 					
-					return productService.findAllProducts().size();
+					List<ProductItem> items = productService.findAllProducts();
+					int iSize = items.size();
+					
+					return iSize;
 				}
 
 				@Override
