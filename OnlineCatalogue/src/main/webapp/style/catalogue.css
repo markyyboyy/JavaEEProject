@@ -107,5 +107,8 @@ button {
 }
 
 
+.glyphicon.glyphicon-star.selected{
+		color: black;
 
+}
 

@@ -143,8 +143,8 @@
 											<div class="star">
 
 												<c:if test="#{user.loggedIn}">
-													<h:commandLink action="#{basket.addToBasket(prod.id)}"
-														styleClass="glyphicon glyphicon-star"></h:commandLink>
+													<h:commandLink action="#{wishlist.addToWishlistToggle(prod.id)}"
+														styleClass="#{wishlist.isInWishlist(prod.id)} ? glyphicon glyphicon-star selected : glyphicon glyphicon-star"></h:commandLink>
 												</c:if>
 
 
