@@ -47,8 +47,10 @@ public class ProductManagerOffline implements ProductManager {
 	//RETURN PRODUCT BASED ON A SEARCH OF ID
 	public Product readProductById(long id) {
 		for (Product prod : testData.getProducts())
-			if (prod.getProductID() == id)
+			if (prod.getProductID() == id){
+				System.out.println("This does work");
 				return prod;
+			}
 		System.out.println("This doesnt work");
 		return null;
 	}

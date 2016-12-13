@@ -67,10 +67,12 @@ public class GenerateService {
 	 * @return	The suggested quantities for the user.
 	 */
 	public void generateOrder(int quantity, String poID){
+		System.out.println("Generating");
 		List<Stock> stock = new ArrayList<Stock>();
+		long productID = Integer.parseInt(poID);
 		stock.add(new Stock(1, quantity, Integer.parseInt(poID), 14.99f));
 		Calendar cal = Calendar.getInstance();
-		long supplierID = productManager.readProductById(Long.getLong(poID)).getSupplierID();
+		long supplierID = productManager.readProductById(productID).getSupplierID();
 		Supplier supplier = supplierManager.readByIdSupplier(supplierID);
 		PurchaseOrder po = new PurchaseOrder(quantity, supplier, poID, cal, cal);	//Create a new purchaseorder
 		po.setStockList(stock);	//Add the users stock to it.

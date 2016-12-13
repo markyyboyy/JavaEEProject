@@ -1,5 +1,7 @@
 package com.qac.row5project.managers;
 
+import java.util.List;
+
 import com.qac.row5project.entities.Supplier;
 
 /**
@@ -24,4 +26,6 @@ public interface SupplierManager {
 	 * @return supplier Id
 	 */
 	public Supplier readByIdSupplier(long id);
+
+	public List<Supplier> getSuppliers();
 }
