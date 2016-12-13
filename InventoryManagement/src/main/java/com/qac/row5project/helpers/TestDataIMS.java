@@ -96,9 +96,10 @@ public class TestDataIMS {
 
 		Calendar c1 = Calendar.getInstance();
 
-/*		c1.set(5, 6, 2012);
-		purchaseOrders.add(new PurchaseOrder(1, s, "Pending", c, c1));
-		generateCustomerOrder(50);*/
+		c1.set(5, 6, 2012);
+	//	purchaseOrders.add(new PurchaseOrder(1, s, "Pending", c, c1));
+		generateCustomerOrder(50);
+		//generateCustomerOrderLine();
 	}
 
 	/***
@@ -109,7 +110,7 @@ public class TestDataIMS {
 	 *
 	 */
 	public void generateCustomerOrder(int q) {
-/*
+
 		// DECLARE ALL NECESSARY VARIABLES FOR CUSTOMER ORDER
 		CustomerOrder cOrder1;
 		Random rand = new Random();
@@ -126,7 +127,7 @@ public class TestDataIMS {
 			// address specified between 1 and 3
 			randomNumAddressID = rand.nextInt((3 - 1) + 1) + 1;
 			// sets feedback id between 0 and the number of customers
-			randomFeedback = rand.nextInt((customers.size() - 0) + 1) + 0;
+			randomFeedback = rand.nextInt((1 - 0) + 1) + 0;
 			// sets date between 1920 and 2016
 			randomNumYear = rand.nextInt((2016 - 1920) + 1) + 1920;
 			randomNumDay = rand.nextInt((29 - 1) + 1) + 1;
@@ -135,7 +136,6 @@ public class TestDataIMS {
 			cOrder1 = new CustomerOrder(i, randomFeedback, i, c2, randomNumAddressID);
 			customerOrders.add(cOrder1);
 		}
-		*/
 	}
 
 	/***

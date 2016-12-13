@@ -2,7 +2,6 @@
  * CUSTOMERORDERCONTROLLER CALLS ON THE SERVICE TO PERFORM METHODS
  * @author RyanB
  */
-
 package Controllers;
 
 import java.io.Serializable;

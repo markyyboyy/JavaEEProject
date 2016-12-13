@@ -79,15 +79,22 @@
 						<div class="table-scroll">
 							<table border="1" style="width: 100%">
 								<h:form>
-									<h:dataTable styleClass="table table-hover" value="#{customerOrder.}"
+									<h:dataTable styleClass="table table-hover" value="#{customerOrder.customerOrders}"
 										var="cus" border="2" cellspacing="1" cellpadding="1" >
 										<h:column>
-											<c:facet name="header">Customer Order ID</c:facet>
-							                    #{cus.customerId}
-							                </h:column>
+											<c:facet name="header">
+												<h:commandLink action="#{customerOrder.sortCustomerByID}">
+    	   											Customer Order ID
+    											</h:commandLink>
+    										</c:facet>
+							                    #{cus.customerID}
+							            </h:column>
 										<h:column>
-											<c:facet name="header">Price</c:facet>
-							                    #{cus.totalPrice}
+											<c:facet name="header">
+												<h:commandLink action="#{customerOrder.sortCustomerByAddress}">
+    	   											Customer Order ID
+    											</h:commandLink></c:facet>
+							                    #{cus.addressID}
 							                </h:column>
 										<h:column>
 											<c:facet name="header">Date</c:facet>
