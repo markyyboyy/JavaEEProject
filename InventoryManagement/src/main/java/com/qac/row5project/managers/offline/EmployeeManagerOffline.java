@@ -30,7 +30,7 @@ public class EmployeeManagerOffline implements EmployeeManager {
 			}
 		}
 		return null;	//If the user doesnt exist just return null.
-	}
+	}	
 	
 	public Employee readEmployee(int ID){
 		List<Employee> returned = testData.getEmployees();	//Get all of the employees
