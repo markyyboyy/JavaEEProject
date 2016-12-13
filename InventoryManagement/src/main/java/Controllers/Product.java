@@ -104,10 +104,10 @@ public DataModel<ProductItem> getProducts() {
 			
 				this.products = new ListDataModel<ProductItem>(lsTemp);
 		}
-public DataModel<ProductItem> sortByStock(){
-	List<ProductItem> lsTemp = productService.findAllProducts();	
-	Collections.sort(lsTemp, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());
-	setProducts(lsTemp);		
-	return products ;
+		public DataModel<ProductItem> sortByStock(){
+			List<ProductItem> lsTemp = productService.findAllProducts();	
+			Collections.sort(lsTemp, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());
+			setProducts(lsTemp);		
+			return products ;
 		}
 }
