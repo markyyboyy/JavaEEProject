@@ -32,9 +32,9 @@ public class GeneratedOrder {
 	 */
 	public List<ProductItem> getProductItems() {
 		System.out.println("1");
-		//if (productItems.size() == 0){	//If we already have a list then the user called sort, so dont display the unsorted list.
+		if (productItems.size() == 0){	//If we already have a list then the user called sort, so dont display the unsorted list.
 				productItems = generateService.getProducts();
-		//}
+		}
 		return productItems;
 	}
 	/**
@@ -67,7 +67,7 @@ public class GeneratedOrder {
 	 */
 	public List<ProductItem> sortByQuantity(){
 		Collections.sort(productItems, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());	//Get the products and sort them.
-		getSuggestedQuanitySorted();
+		Collections.sort(suggestedQuantity, (s1,s2) -> s2 - s1);
 		return productItems;
 	}
 	/**

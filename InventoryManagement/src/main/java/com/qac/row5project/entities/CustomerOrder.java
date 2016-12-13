@@ -180,13 +180,10 @@ public class CustomerOrder {
 	public void setDateReceived(Calendar dateReceived) {
 		this.dateReceived = dateReceived;
 	}
-
-
 	@Override
 	public String toString() {
 		return "CustomerOrder [customerOrderId=" + id + ", feedbackId=" + feedbackID + ", customerId="
 				+ customerID + ", datePlaced=" + datePlaced + ", dateReceived=" + dateReceived + ", addressId="
 				+ addressID + ", paymentId=" + paymentID + "]";
 	}
-
 }
