@@ -1,69 +1,74 @@
-<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+<html xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<!-- Mark Freeman -->
-<ui:composition template="templates/imsTemplate.xhtml">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<!-- RyanB -->
 
-	<ui:define name="pageName">Stock Level</ui:define>
+<h:head>
+	<ui:define name="pageName" value="Product Information">
+	</ui:define>
+</h:head>
 
-	<ui:define name="filter">
-		<h:form>
-			<f:passThroughAttribute name="placeholder" value="Filter Results"/>
-			<f:passThroughAttribute name="alt" value="Filter Results"/>			
-		</h:form>
-	</ui:define>
-	
-	<ui:define name="filterResults">
-		<h1>Generate Order</h1>
-		<h:form>
-		<h:commandButton value="Sort By Quantity" action="#{generated.sortByQuantity}" />
-		<h:commandButton value="Unsort" action="#{generated.unsort}" />
-		</h:form>
-	</ui:define>
-		
-	<ui:define name="mainContent2">
-	<div id = "productID">
-	<h3>ProductID</h3>
-	<ui:repeat var="p" value="#{generated.productItems}">
-	<p><h:outputText value="#{p.ID}" /></p>
-	</ui:repeat>
-</div>
-	<div id = "productName">
-	<h3>Product Name</h3>
-	<ui:repeat var="p" value="#{generated.productItems}">
-	<p><h:outputText value="#{p.name}" /></p>
-	</ui:repeat>
-</div>
-	<div id="quantity">
-		<h3>Remaining</h3>
-		<ui:repeat var="p" value="#{generated.productItems}">
-	<p><h:outputText value="#{p.stockLevel}" /></p>
-	</ui:repeat>
-	</div>
-	<div id="suggested">
-		<h3>Suggested</h3>
-	<ui:repeat var="quantity" value="#{generated.suggestedQuanity}">
-	<p><h:outputText value="#{quantity.intValue()}" /></p>
-	</ui:repeat>
-		<ui:repeat var="quantity" value="#{generated.suggestedQuanity}">
-	</ui:repeat>
-	</div>
-	<div id = "price">
-	<h3>Price</h3>
-	<ui:repeat var="p" value="#{generated.price}">
-	<p><h:outputText value="#{p}" /></p>
-	</ui:repeat>
-	</div>
-	<div id = "form">
-	<h:form>
-		<label>Enter the number you would like to keep:</label>
-		<h:inputText value="#{generated.productID}">
-			<f:passThroughAttribute name="placeholder" value="message..."/>
-		</h:inputText>
-		<h:commandButton value="Add To Order" action="#{generated.generateOrder}" />
-	</h:form>
-	</div>
-	</ui:define>
-</ui:composition>
+<h:body>
+	<ui:composition template="templates/imsTemplate.xhtml">
+		<div class="container">
+
+			<div class="leftnavbar">
+				<br />
+				<ui:define name="filterName">
+					<h3>Generate Order</h3>
+				</ui:define>
+
+				<ui:define name="filterResults">
+					<div class="filter">
+						<h:form>
+							<label>Enter a new message:</label>
+							<h:inputText value="#{generated.productID}" >
+								<f:passThroughAttribute name="placeholder" value="Product To Order..."/>
+							</h:inputText>
+							<h:commandButton action="#{generated.generateOrder}" value="Generate Order" />
+						</h:form>						
+					</div>
+
+				</ui:define>
+			</div>
+		</div>
+
+
+
+		<ui:define name="mainContent2">
+			<div class="righttitletable">
+
+				<div id="scrollpane">
+					<h:form>
+	<p:dataTable var="prod" value="#{generated.productItems}"
+							sortMode="multiple">
+							<f:facet name="header">
+            Product Information
+        </f:facet>
+							<p:column headerText="Product ID" sortBy="#{prod.productItem.ID}">
+								<h:outputText value="#{prod.productItem.ID}" />
+							</p:column>
+
+							<p:column headerText="Current Stock Level" sortBy="#{prod.productItem.stockLevel}">
+								<h:outputText value="#{prod.productItem.stockLevel}" />
+							</p:column>
+							
+							<p:column headerText="Suggested Quanity" sortBy="#{prod.intValue}">
+								<h:outputText value="#{prod.intValue}" />
+							</p:column>
+						</p:dataTable>
+							</h:form>
+
+
+
+
+
+
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
 </html>

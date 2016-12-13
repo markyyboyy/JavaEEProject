@@ -1,9 +1,13 @@
 package com.qac.services;
 
+import java.util.Calendar;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.Stock;
+import com.qac.row5project.helpers.TestDataCatalogue;
 import com.qac.row5project.managers.CustomerOrderManager;
 import com.qac.row5project.managers.StockManager;
 import Controllers.session.CurrentUser;
@@ -27,6 +31,9 @@ public class BasketService {
 	@Inject
 	private StockManager stockManager;
 	
+	@Inject
+	TestDataCatalogue testDataCat;
+	
 	/**
 	 * To get basket for the customer order
 	 * 
@@ -48,12 +55,25 @@ public class BasketService {
 	 */	
 	public void addToBasket(Stock stock, CurrentUser cu, int quantity) {
 				
-		if (cu.isLoggedIn()){
-			CustomerOrder custOrder = custOrderMan.readCustomerOrderById(cu.getCustomer().getID());
+		
+		if (cu.isLoggedIn()){		
+			
+			long customerID =  cu.getCustomer().getID();
+			Calendar cNow = Calendar.getInstance();
+		
+			CustomerOrder custOrder = custOrderMan.readCustomerOrderById(customerID);
 
-			if (custOrder != null) {
-				custOrderMan.addToBasket(cu.getCustomer().getID(), stock, 1);
+	
+			if (custOrder == null) {
+				custOrder = new CustomerOrder(5, customerID, cNow, 0, 0);
+				List<CustomerOrder> orders = testDataCat.getCustomerOrders();
+				orders.add(custOrder);
+				testDataCat.setCustomerOrders(orders);
+
 			}
+				
+			custOrderMan.addToBasket(customerID, stock, 1);
+		
 		}
 	}
 
