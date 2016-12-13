@@ -45,10 +45,6 @@
 									<f:selectItems value="#{product.statuses}" />
 								</h:selectOneMenu>
 							</div>
-
-							<h:form>
-								<h:commandButton value="Sort By Product ID" action="#{product.}" />
-							</h:form>
 						</div>
 					</div>
 
@@ -92,10 +88,7 @@
 								<h:outputText value="#{prod.status}" />
 							</p:column>
 						</p:dataTable>
-					</h:form>
-
-					<h:form>
-						<h:commandButton value="Sort By Product ID" action="#{product.}" />
+						<h:commandButton value="Sort By Product ID" action="#{product.sortByStock}" />
 					</h:form>
 
 

@@ -69,23 +69,24 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 	}
 
 	@Override
-	public void addToBasket(long customerId, Stock stock, int quantity) {
+	public void addToBasket(long customerId, Stock stock, int quantity) {		
+		
 		CustomerOrder cOrder = readCustomerOrderById(customerId);
+		
+		// if product is already in basket, increase the quanity
+		// Need a check to see if there is enough sotck todo!!!!!
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
 			if (stock.getID() == customerOrderLine.getStock().getID()) {
 				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
-				break;
+				return;
 			}
-		}
-		
-		
+		}		
 		
 		CustomerOrderLine cl = new CustomerOrderLine(customerId, quantity, stock);
 		
 		cOrder.addToCustomerOrderLine(cl);
 		
-		testData.setCustomerOrderLine(cl);
-		testData.setCustomerOrders(new ArrayList<CustomerOrder>());
+
 		
 		
 		

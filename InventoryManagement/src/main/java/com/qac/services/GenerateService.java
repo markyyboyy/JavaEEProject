@@ -6,9 +6,12 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.PurchaseOrder;
+import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.helpers.TestDataIMS;
 import com.qac.row5project.managers.ProductManager;
+import com.qac.row5project.managers.StockManager;
 /**
  * @author Mark Freeman
 **/
@@ -16,6 +19,8 @@ import com.qac.row5project.managers.ProductManager;
 public class GenerateService {
 	@Inject
 	private ProductManager productManager;
+	@Inject
+	private StockManager stockManager;
 	@Inject
 	private ProductService productService;
 	private TestDataIMS testData;
@@ -51,17 +56,19 @@ public class GenerateService {
 	}
 	/**
 	 * This method generates an order in test data for a product the user wants to generate an order for.
+	 * @param i 
 	 * @param	The productID the user entered.
 	 * @return	The suggested quantities for the user.
 	 */
-	public void generateOrder(String poID){
-		/*List<Stock> stock = new ArrayList<Stock>();
-		Stock e = stockManager.findStocksbyID(Integer.parseInt(poID));	//Find all items of stock with the productID the user gave.
-		stock.add(e);
+	public void generateOrder(int i, String poID){
+		System.out.println(testData.getPurchaseOrders().size());
+		List<Stock> stock = new ArrayList<Stock>();
+		stock.add(new Stock(1, i, Integer.parseInt(poID), 14.99f));
 		PurchaseOrder po = new PurchaseOrder(0, null);	//Create a new purchaseorder
 		po.setStockList(stock);	//Add the users stock to it.
 		List<PurchaseOrder> current = testData.getPurchaseOrders();
 		current.add(po);
-		testData.setPurchaseOrders(current);*/
+		testData.setPurchaseOrders(current);
+		System.out.println(testData.getPurchaseOrders().size());
 	}
 }
