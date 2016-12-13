@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,7 +28,6 @@ public class GeneratedOrder {
 	private List<String> productOrders = new ArrayList<String>();
 	List<Integer> suggestedQuantity = new ArrayList<Integer>();
 	List<Double> price = new ArrayList<Double>();
-	
 	/**
 	 * This method returns a list of all of the products in the system.
 	 * @return All of the products in the system.

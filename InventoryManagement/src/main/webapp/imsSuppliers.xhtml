@@ -36,28 +36,19 @@
 			<div class="righttitletable">
 
 				<div>
-					<h:dataTable styleClass="table table-hover" value="#" var="supplier"
-						border="2" cellspacing="1" cellpadding="1">
-						<f:facet name="header">
-							<h2>
-								<b>Supplier Information</b>
-							</h2>
-						</f:facet>
-
-						<h:column value="Supplier ID" sortFunction="#">
-							<h:outputText  />
-						</h:column>
-
-						<h:column value="Product ID" sortFunction="#">
-							<h:outputText  />
-						</h:column>
-
-						<h:column value="Product Name" sortFunction="#">
-							<h:outputText  />
-						</h:column>
-
-
-						</h:dataTable>
+						<h:form>
+	<p:dataTable var="prod" value="#{supplier.supplier}"
+							sortMode="multiple">
+							<f:facet name="header">
+            Purchase Orders
+        </f:facet>
+							<p:column headerText="Supplier ID" sortBy="#{prod.ID}">
+								<h:outputText value="#{prod.ID}" />
+							</p:column>
+							
+							
+						</p:dataTable>
+							</h:form>
 				</div>
 			</div>
 		</ui:define>

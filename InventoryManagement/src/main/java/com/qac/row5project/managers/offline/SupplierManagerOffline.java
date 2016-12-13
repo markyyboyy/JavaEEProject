@@ -14,8 +14,8 @@ import com.qac.row5project.managers.SupplierManager;
  * @author Iman Hassan
  *
  */
-@Stateless
 @Default
+@Stateless
 
 public class SupplierManagerOffline implements SupplierManager {
 	@Inject
@@ -50,6 +50,14 @@ public class SupplierManagerOffline implements SupplierManager {
 			
 		}
 		return null;
+	}
+
+
+
+	@Override
+	public List<Supplier> getSuppliers() {
+		// TODO Auto-generated method stub
+		return testData.getSuppliers();
 	}
 		
 	
