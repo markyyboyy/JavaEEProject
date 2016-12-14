@@ -13,10 +13,9 @@
 
 	<ui:define name="Page Name">Catalogue</ui:define>
 
+
+
 	<ui:define name="mainContent">
-
-		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
-
 
 		<SCRIPT type="text/javascript">
 		
@@ -34,6 +33,7 @@
 			}
 		</SCRIPT>
 
+		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
 
 		<div class="container-fluid">
 
@@ -41,33 +41,25 @@
 				<h2>Catalogue</h2>
 
 				<div class="row">
-
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-12">
-
 								<h:inputText value="#{search.term}" class="form-control"
 									styleClass="form-control">
-
 									<f:passThroughAttribute name="type" value="text" />
 									<f:passThroughAttribute name="placeholder" value="Search..." />
 									<f:passThroughAttribute name="alt" value="Search" />
-
 								</h:inputText>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-12">
-
 						<div class="row marginBottom">
-
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
 								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}"
 									styleClass="btn btn-primary dropdown-toggle">
 									<f:selectItems value="#{search.selectFilterRating}" />
-
-
 								</h:selectOneMenu>
 							</div>
 
@@ -78,9 +70,6 @@
 									value="Between £ 100 and £5000}" />
 								<!-- 								<p:slider range="true" max="5000"/> -->
 							</div>
-
-
-
 						</div>
 					</div>
 				</div>
@@ -90,31 +79,23 @@
 							styleClass="btn btn-primary" value="Seach" />
 						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
-
 				</div>
 				<div class="row marginBottom">
 					<div class="col-md-12">
-
 						<div class="col-md-2 col-xs-12 fr sortBy"></div>
-
 					</div>
 				</div>
-
 			</h:form>
 			<h:form>
-
 				<!-- Pagination buttons  -->
 				<div class="row marginBottom">
 					<div class="col-md-12" style="height: 20px">
-
 						<h:commandLink value="Previous" action="#{Catalogue.previous}"
 							rendered="#{Catalogue.pagination.hasPreviousPage}" />
-
 						<h:outputText
 							value="#{Catalogue.pagination.pageFirstItem + 1}..
 									#{Catalogue.pagination.pageLastItem + 1}/
 									#{Catalogue.pagination.itemsCount}" />
-
 						<h:commandLink value="Next" action="#{Catalogue.next}"
 							rendered="#{Catalogue.pagination.hasNextPage}" />
 					</div>
@@ -123,36 +104,25 @@
 
 				<!-- Pagination buttons  -->
 				<div class="row marginBottom">
-
 					<h:panelGroup id="resultsSection">
 						<h:panelGroup>
-
 							<ui:repeat var="prod" value="#{Catalogue.products}">
-
-
 								<!-- Wishlist does not show when a user is not logged in.
 									on hover show wishlist and basket icons -->
 								<div id="produc1t" onmouseover="showHover(this)"
 									onmouseleave="hideHover(this)"
 									class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
-
 									<div class="imgWrapper">
-
 										<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
-
 										<div id="imgProduct" class="onHover">
-
 											<div class="star">
-
 												<c:if test="#{user.loggedIn}">
 													<h:commandLink
 														action="#{wishlist.addToWishlistToggle(prod.id)}"
 														styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
 												</c:if>
-
-
 											</div>
-
+											<!-- Basket -->
 											<div class="basket">
 												<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
 
@@ -161,16 +131,14 @@
 												</h:panelGroup>
 
 											</div>
-
+											<!-- Select Product -->
 											<div class="selectProduct">
-												<h:panelGroup>
+												<h:panelGroup outcome="product.xhtml">
 													<!-- display = "hidden" -->
-													<h:commandLink action="#{selected.setProduct(prod)}" onmousedown="product.xhtml"
+													<h:commandLink action="#{selected.goTo(prod)}"
 														styleClass="glyphicon glyphicon-eye-open"></h:commandLink>
 												</h:panelGroup>
-
 											</div>
-
 										</div>
 									</div>
 
@@ -245,6 +213,8 @@
 			</h:form>
 
 		</div>
+
+
 	</ui:define>
 </ui:composition>
 
