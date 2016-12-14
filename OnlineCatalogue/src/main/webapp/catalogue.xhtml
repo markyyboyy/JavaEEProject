@@ -18,21 +18,7 @@
 		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
 
 
-		<SCRIPT type="text/javascript">
-		
-			// on mouse enter		
-			function showHover(args) {
-
-				var onHover = $(args).children()[0].children[1]; //get overlay element
-				$(onHover).show();
-			}
-
-			// on mouse exit
-			function hideHover(args) {
-				var onHover = $(args).children()[0].children[1]; //get overlay element
-				$(onHover).hide();
-			}
-		</SCRIPT>
+	
 
 
 		<div class="container-fluid">
@@ -245,6 +231,22 @@
 			</h:form>
 
 		</div>
+		
+			<SCRIPT type="text/javascript">
+		
+			// on mouse enter		
+			function showHover(args) {
+
+				var onHover = $(args).children()[0].children[1]; //get overlay element
+				$(onHover).show();
+			}
+
+			// on mouse exit
+			function hideHover(args) {
+				var onHover = $(args).children()[0].children[1]; //get overlay element
+				$(onHover).hide();
+			}
+		</SCRIPT>
 	</ui:define>
 </ui:composition>
 
