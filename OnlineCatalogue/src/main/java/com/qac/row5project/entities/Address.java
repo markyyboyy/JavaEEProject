@@ -117,6 +117,12 @@ public class Address implements Serializable {
 	public long getID(){
 		return this.id;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getName() + "\n" + this.getAddressLine1() + "\n" + this.addressLine2 + "\n" + this.addressLine3  + "\n" + this.postcode  + "\n" + this.county;
+	}
 
 
 }

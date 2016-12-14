@@ -24,7 +24,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<a href="catalogue.xhtml">
-							<button name="continueShopping">Continue Shopping</button>
+							<button class="btn btn-primary" name="continueShopping">Continue Shopping</button>
 						</a>
 					</div>
 				</div>
@@ -42,7 +42,7 @@
 						</div>
 
 						<div class="col-sm-3" style="background-color: #F4F4F4;">
-							#{orderLine.stock.price}<br />
+							£ #{orderLine.stock.price}<br />
 						</div>
 
 						<div class="col-sm-3">
@@ -50,7 +50,8 @@
 							<div class="row quantityChange">
 
 								<div class="col-sm-4">
-									<input type="submit" value="-"></input>
+									<input type="submit" value="-" ></input>
+									
 								</div>
 
 								<div class="col-sm-4">
@@ -58,20 +59,16 @@
 									<h:inputText>
 
 										<f:passThroughAttribute name="quantity" value="text" />
-										<f:passThroughAttribute name="placeholder" value="1" />
+										<f:passThroughAttribute name="placeholder" value="#{orderLine.quantity}" />
 										<f:passThroughAttribute name="alt" value="1" />
 
-										<h:form>
-											<h:commandButton value="Remove From Basket"
-												action="#{basket.removeItem(orderLine.stock.productID)}"
-												class="btn btn-primary btn-block" />
-										</h:form>
+									
 									</h:inputText>
 								</div>
 
 
 								<div class="col-sm-4">
-									<input type="submit" value="+"></input>
+									<input type="submit" value="+" ></input>
 								</div>
 							</div>
 
@@ -85,7 +82,7 @@
 
 				<div class="row">
 					<div class="text-right col-xs-12">
-						Total Price: #{orderLine.totalPrice}
+						Total Price: £ #{basket.totalPrice}
 					</div>
 				</div>
 
@@ -93,7 +90,7 @@
 				<div class="row">
 					<div class="text-right col-xs-12">
 					<a href="deliveryAddress.xhtml">
-						<button name="proceedToCheckout">Proceed to Checkout</button>
+						<button class="btn btn-primary" name="proceedToCheckout">Proceed to Checkout</button>
 						</a>
 					</div>
 				</div>

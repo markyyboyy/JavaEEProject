@@ -16,52 +16,27 @@
 	
 		
 		<div id="info">
-		<h3> Hi #{user.customer.firstname}, confirm delivery address</h3>
+		<h3>Confirm delivery address</h3>
+		<h4>Account: #{user.customer.firstname} #{user.customer.surname}</h4>
 		</div>
-	<div id="addressTable">
-	<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+<div>
+<h4>
+Address: #{user.customer.address}
+</h4>
 </div>
+
 		<div class="row">
 					<div class="col-md-12">
 						<a href="basket.xhtml">
-							<button name="back">Back</button>
+							<button class="btn btn-primary" name="back">Back</button>
 						</a>
 					</div>
 				</div>
 				
 				<div class="row">
-					<div class="col-md-12">
-						<a href="#">
-							<button name="back">Continue</button>
+					<div class="text-right col-md-12">
+						<a href="OrderConfirm.xhtml">
+							<button class="btn btn-primary" name="back">Continue</button>
 						</a>
 					</div>
 				</div>
