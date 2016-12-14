@@ -102,12 +102,18 @@ height: 100%;
 	
 }
 #logoImage{
-	margin:0px 0px;
+	margin-top:0px;
+	margin-bottom:10%;
 	margin-left:33%;
 	margin-right:33%;
 	padding:0px;
 	width:34%;
+	height:28%;
 }
 #nav{
-	margin-bottom:0px;
+	margin-bottom:3%;
+	margin-right:3%;
+	margin-right:3%;
+	height:10%;
+	width:45%
 }
