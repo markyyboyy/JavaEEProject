@@ -73,7 +73,7 @@ button {
 	margin: 0;
 }
 
-.star, .basket {
+.star, .basket{
 	font-size: 4rem;
 	text-decoration: none;
 	bottom: 5px;
@@ -106,6 +106,13 @@ button {
 	margin-bottom: 10px;
 }
 
+.selectProduct{
+	position: abolsute;
+	top: 10px;
+	left: 10px;
+	font-size: 4rem;
+}
+
 
 .glyphicon.glyphicon-star.selected{
 		color: #967505;
@@ -115,6 +122,12 @@ button {
 .glyphicon.glyphicon-star.selected:hover{
 		color: white;
 }
+
+.glyphicon.glyphicon-eye-open{
+	color:white;
+}
+
+
 
 
 

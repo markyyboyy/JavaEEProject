@@ -75,7 +75,7 @@
 	width: 200px;
 	position: absolute;
 	top: -10;
-    right: 16%;
+    right: 30%;
    }
 .loginButton input{
 	width: 100%
@@ -109,7 +109,6 @@ nav {
 	background-color: #73AF55;
 	position: relative;
 	padding: 30px 0;
-	    padding-bottom: 0;
 	float: left;
 	width: 80%;
 }
@@ -156,7 +155,6 @@ main, .navWrapper, .footerWrapper{
 
 .navWrapper{
 	    margin-left: 5%;
-	    margin-top: 20px;
 }
 
 
@@ -260,14 +258,8 @@ main{
 	margin-bottom: 10px;
 }
 
-
-.glyphicon.glyphicon-search{
-	cursor: pointer;
+.center {
+    margin: 3% auto;
+    width: 80%;
 }
-
-.glyphicon.glyphicon-search:hover{
-	color: black;
-}
-
-
 

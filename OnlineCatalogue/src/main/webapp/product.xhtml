@@ -1,78 +1,88 @@
 <!-- Author: RyanB -->
 <!-- Edited: Richard Allen -->
 
-<html lang="en" 
-xmlns="https://www.w3.org/1999/xhtml"
-xmlns:f="http://xmlns.jcp.org/jsf/core"
-xmlns:h="http://xmlns.jcp.org/jsf/html"
-xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-	
-	<ui:composition template="templates/main.xhtml">
-	
-		<!-- Defining page title -->
-		<ui:define name="pageName">Product</ui:define>
-		
-		<!-- Defining main content contained on the page -->
-		<ui:define name="mainContent">
-		
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="templates/main.xhtml">
+
+	<!-- Defining page title -->
+	<ui:define name="pageName">Product</ui:define>
+
+	<!-- Defining main content contained on the page -->
+	<ui:define name="mainContent">
+
 		<div id="product">
 			<div id="titlepricecarousel">
 				<div id="title">
-					<h1><strong>#{selected.product.name}</strong></h1>
+					<h1>
+						<strong>#{selected.product.name}</strong>
+					</h1>
 				</div>
-				<div id= "carousel">
-				<center><a> <img src="./img/ggnome1.jpg" width="400px" height="300px" /></a></center>
-				</div>		
-			</div>	
+				<div id="carousel">
 					
+						<a> <img src="./img/ggnome1.jpg" width="400px" height="300px" /></a>
 					
+				</div>
+			</div>
+
+
 			<div id="info">
-				<div id="basketwishlist">
-					<div id="buttonwishlist">
-					<a href="wishlist.xhtml"> <img src="./img/star.png" width="80px" height="70px" /></a>
-					</div>
-					<div id="buttonbasket">
-					<a href="basket.xhtml"> <img src="./img/cartIcon.png" width="80px" height="70px" /></a>
-					</div>
-				</div>
 				<div id="productinfo">
 					<div id="description">
-					<h4><center>Dimensions: 35cm x 15cm x 10cm </center><br/></h4>
-					<h5><center>This product is a fantastic addition to any garden property. 
-						It is made of porcelain and so can withstand adverse weather conditions.
-						If you require this item in its <a href="item.xhtml"> porouswear </a> version,
-						please click <a href="item.xhtml"> here</a>.</center></h5>
+						<h4>
+							Dimensions: #{selected.product.size} <br />
+						</h4>
+						<h5>#{selected.product.desc}</h5>
 					</div>
+					<h:form>
 					<div id="buttons" class="row">
 						<div class="col-md-6">
-						<button href="wishlist.xhtml" class="navButtonproduct">Add to Wishlist</button>
+							<h:commandButton action ="#{wishlist.addToWishlistToggle(prod.id)}" styleClass="navButtonproduct">Add								to Wishlist</h:commandButton>
 						</div>
 						<div class="col-md-6">
-					<button href="basket.xhtml" class="navButtonproduct">Add to Basket</button>
+							<h:commandButton action="#{basket.addToBasket(prod.id)}" styleClass="navButtonproduct" rendered="#{stock.isInStock(prod.id)}">Add
+								to Basket</h:commandButton>
 						</div>
-					</div>					<div id="delivery">
-					<h5><center><ul>
-					<li>This item is in stock. Delivery in 3-5 working days.</li>
-					<li>This item comes with a manufacturer's warranty of five years. </li>
-					</ul></center></h5>
+					</div>
+					</h:form>
+					<div id="delivery">
+
+						<h:form>
+							<h:outputText rendered="#{selected.product.inStock}" value ="Product is in Stock "> </h:outputText>
+							<h:outputText rendered="#{!selected.product.inStock}" value= "Product is out of Stock"> </h:outputText>
+							<br />
+							<h:outputText value = "This item comes with a manufacturer's warranty of five years."></h:outputText>
+						</h:form>
+
+
+						
+
 					</div>
 				</div>
 			</div>
 		</div>
-	
+
 		<div id="recommendations">
 			<div id="recommendedimages">
-			<center><h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3></center>
-			<a href="practice.xhtml"><img src="./img/ggnome1.jpg" width="200px" height="150px" /></a>
-			<a href="practice.xhtml"><img src="./img/ggnome1.jpg" width="200px" height="150px" /></a>
-			<a href="practice.xhtml"><img src="./img/ggnome1.jpg" width="200px" height="150px" /></a>
-			<a href="practice.xhtml"><img src="./img/ggnome1.jpg" width="200px" height="150px" /></a>
-			<a href="practice.xhtml"><img src="./img/ggnome1.jpg" width="200px" height="150px" /></a>
+				<center>
+					<h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3>
+				</center>
+				<a href="practice.xhtml"><img src="./img/ggnome1.jpg"
+					width="200px" height="150px" /></a> <a href="practice.xhtml"><img
+					src="./img/ggnome1.jpg" width="200px" height="150px" /></a> <a
+					href="practice.xhtml"><img src="./img/ggnome1.jpg"
+					width="200px" height="150px" /></a> <a href="practice.xhtml"><img
+					src="./img/ggnome1.jpg" width="200px" height="150px" /></a> <a
+					href="practice.xhtml"><img src="./img/ggnome1.jpg"
+					width="200px" height="150px" /></a>
 			</div>
 		</div>
-		
-		</ui:define>
-		
-	</ui:composition>
-	
+
+	</ui:define>
+
+</ui:composition>
+
 </html>
