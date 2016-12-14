@@ -28,7 +28,8 @@ public class SelectedProduct implements Serializable {
 	this.product = product;
     }
     
-    public void deselect(){
-	this.product = null;
+    public String goTo(ProductItem product){
+	this.product = product;
+	return "product";
     }
 }

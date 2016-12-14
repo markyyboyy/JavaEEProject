@@ -163,9 +163,9 @@
 											</div>
 
 											<div class="selectProduct">
-												<h:panelGroup>
+												<h:panelGroup outcome="product.xhtml">
 													<!-- display = "hidden" -->
-													<h:commandLink action="#{selected.setProduct(prod)}" onmousedown="product.xhtml"
+													<h:commandLink action="#{selected.goTo(prod)}" 
 														styleClass="glyphicon glyphicon-eye-open"></h:commandLink>
 												</h:panelGroup>
 

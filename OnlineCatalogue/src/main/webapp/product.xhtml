@@ -37,16 +37,17 @@
 						</h4>
 						<h5>#{selected.product.desc}</h5>
 					</div>
+					<h:form>
 					<div id="buttons" class="row">
 						<div class="col-md-6">
-							<button href="wishlist.xhtml" class="navButtonproduct">Add
-								to Wishlist</button>
+							<h:commandButton action ="#{wishlist.addToWishlistToggle(prod.id)}" styleClass="navButtonproduct">Add								to Wishlist</h:commandButton>
 						</div>
 						<div class="col-md-6">
-							<button href="basket.xhtml" class="navButtonproduct">Add
-								to Basket</button>
+							<h:commandButton action="#{basket.addToBasket(prod.id)}" styleClass="navButtonproduct" rendered="#{stock.isInStock(prod.id)}">Add
+								to Basket</h:commandButton>
 						</div>
 					</div>
+					</h:form>
 					<div id="delivery">
 
 						<h:form>
