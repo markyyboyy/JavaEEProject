@@ -24,7 +24,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<a href="catalogue.xhtml">
-							<button name="continueShopping">Continue Shopping</button>
+							<button class="btn btn-primary" name="continueShopping">Continue Shopping</button>
 						</a>
 					</div>
 				</div>
@@ -51,6 +51,7 @@
 
 								<div class="col-sm-4">
 									<input type="submit" value="-"></input>
+									
 								</div>
 
 								<div class="col-sm-4">
@@ -64,7 +65,8 @@
 										<h:form>
 											<h:commandButton value="Remove From Basket"
 												action="#{basket.removeItem(orderLine.stock.productID)}"
-												class="btn btn-primary btn-block" />
+												class="btn btn-primary btn-block" 
+												></h:commandButton>
 										</h:form>
 									</h:inputText>
 								</div>
@@ -85,7 +87,7 @@
 
 				<div class="row">
 					<div class="text-right col-xs-12">
-						Total Price: #{orderLine.totalPrice}
+						Total Price: #{basket.totalPrice}
 					</div>
 				</div>
 
@@ -93,7 +95,7 @@
 				<div class="row">
 					<div class="text-right col-xs-12">
 					<a href="deliveryAddress.xhtml">
-						<button name="proceedToCheckout">Proceed to Checkout</button>
+						<button class="btn btn-primary" name="proceedToCheckout">Proceed to Checkout</button>
 						</a>
 					</div>
 				</div>
