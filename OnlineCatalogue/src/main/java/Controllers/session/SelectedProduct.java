@@ -27,4 +27,8 @@ public class SelectedProduct implements Serializable {
     public void setProduct(ProductItem product) {
 	this.product = product;
     }
+    
+    public void deselect(){
+	this.product = null;
+    }
 }

@@ -50,9 +50,10 @@
 					<div id="delivery">
 
 						<h:form>
-							<h:outputText rendered="#{selected.product.inStock}"> Product is in Stock </h:outputText>
-							<h:outputText rendered="#{!selected.product.inStock}"> Product is out of Stock </h:outputText>
-							<h:outputText>This item comes with a manufacturer's warranty of five years.</h:outputText>
+							<h:outputText rendered="#{selected.product.inStock}" value ="Product is in Stock "> </h:outputText>
+							<h:outputText rendered="#{!selected.product.inStock}" value= "Product is out of Stock"> </h:outputText>
+							<br />
+							<h:outputText value = "This item comes with a manufacturer's warranty of five years."></h:outputText>
 						</h:form>
 
 
