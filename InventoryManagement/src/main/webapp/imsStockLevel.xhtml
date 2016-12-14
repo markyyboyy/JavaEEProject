@@ -1,9 +1,9 @@
 
 <html xmlns= "https://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui" 
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui" >
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 	<ui:define name="pageName" value="Stock Information">
 	</ui:define>
@@ -15,7 +15,7 @@
 			<div class="leftnavbar">
 				<br />
 				<ui:define name="filterName">
-					<h3>Generate Order</h3>
+					<h3>Stock Tracker</h3>
 				</ui:define>
 
 				<ui:define name="filterResults">
@@ -26,7 +26,10 @@
 			</div>
 		</div>
 	<ui:define name="mainContent2">
-   <p:chart type="pie" model="#{bean.pieModel}" legendPosition="w" title="Sample Pie Chart" style="width:400px;height:300px" />
+   <p:chart type="pie" model="#{stock.pieModel}" legendPosition="w" title="Product Pie Chart" style="width:400px;height:300px" />
+   <div id ="bar" style="width: 30em; overflow-x: auto; white-space: nowrap;">
+   <p:chart type="bar" model="#{stock.animatedModel1}" style="width:2000px;" />
+   </div>
       </ui:define>
       </ui:composition>
 </h:body>
