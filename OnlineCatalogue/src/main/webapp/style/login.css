@@ -41,9 +41,13 @@
 }
 .regButton{
 	width: 50%;
-	margin-left: 48%;
+	margin-left: 24%;
 }
 
+.fPW{
+	width: 50%;
+	margin-left: 24%;
+}
 .register{
 	width: 50%;
 	align: center;

@@ -52,21 +52,24 @@
 					<f:passThroughAttribute name="type" value="submit" />
 				</h:commandButton>
 				<br></br>
-				<h:commandButton styleClass="btn btn-primary">
-			
+			</h:form>
+			<h:form class ="fPW">
+				<h:commandButton styleClass="btn btn-primary"
+					action="forgottenPassword">
+
 					<f:passThroughAttribute name="value" value="Forgotten Password" />
 
 				</h:commandButton>
 				<br></br>
 			</h:form>
 
-<h:form class = "regButton">
-			<h:commandButton onmousedown="showRegister(this)"
-				styleClass="btn btn-primary">
-				<f:passThroughAttribute name="value" value="Register" />
-				
-			</h:commandButton>
-</h:form>
+			<h:form class="regButton">
+				<h:commandButton onmousedown="showRegister(this)"
+					styleClass="btn btn-primary">
+					<f:passThroughAttribute name="value" value="Register" />
+
+				</h:commandButton>
+			</h:form>
 			<br />
 			<br />
 
