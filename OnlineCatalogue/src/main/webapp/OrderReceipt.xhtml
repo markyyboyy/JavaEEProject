@@ -9,30 +9,21 @@
 
 <h:body>
 	<ui:composition template="templates/main.xhtml">
-		<ui:define name="pageName" value="">DeliveryAddress
+		<ui:define name="pageName" value="">Order Receipt
 	</ui:define>
 
 		<ui:define name="mainContent">
 	
 		
 		<div id="info">
-		<h3>Confirm delivery address</h3>
-		<h4>Account: #{user.customer.firstname} #{user.customer.surname}</h4>
+		<h3>Order Receipt</h3>
 		</div>
 
 
 		<div class="row">
 					<div class="col-md-12">
-						<a href="basket.xhtml">
-							<button class="btn btn-primary" name="back">Back</button>
-						</a>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-12">
-						<a href="OrderConfirm.xhtml">
-							<button class="btn btn-primary" name="back">Continue</button>
+						<a href="catalogue.xhtml">
+							<button class="btn btn-primary" name="continueShopping">Continue Shopping</button>
 						</a>
 					</div>
 				</div>

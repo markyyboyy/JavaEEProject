@@ -1,0 +1,80 @@
+<!-- Author: Iman Hassan -->
+
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+
+<h:body>
+	<ui:composition template="templates/main.xhtml">
+		<ui:define name="pageName" value="">Order Confirmation
+	</ui:define>
+
+		<ui:define name="mainContent">
+
+			<h3>Order Confirmation</h3>
+			<div id="Product info"></div>
+			<div class="container-fluid">
+			<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-3">Product</div>
+			<div class="col-sm-3">Price</div>
+			<div class="col-sm-3">Quantity</div>
+			</div>
+				<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
+					<div class="row orderLineRow">
+						<div class="col-sm-3 imgBasketPane">
+							<img src="img/fgnome1.jpeg" height="50" style="max-width: 50px" />
+						</div>
+
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							#{orderLine.stock.productID.desc}<br />
+						</div>
+
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							#{orderLine.stock.price}<br />
+						</div>
+
+						<div class="col-sm-3">#{orderLine.quantity}</div>
+
+					</div>
+				</ui:repeat>
+					<div class="row">
+					<div class="text-left col-xs-12">Delivery Address: 
+						</div>
+				</div>
+					<div class="row">
+					<div class="text-left col-xs-12">Estimated Delivery: 
+						</div>
+				</div>
+				<div class="row">
+					<div class="text-right col-xs-12">Total Price: 
+						#{basket.totalPrice}</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-md-12">
+						<a href="deliveryAddress.xhtml">
+							<button class="btn btn-primary" name="back">Back</button>
+						</a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<a href="OrderReceipt.xhtml#">
+							<button class="btn btn-primary" name="back">Confirm and
+								Proceed to Secure Payment</button>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
