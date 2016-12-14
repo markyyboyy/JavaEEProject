@@ -46,7 +46,8 @@
 						<div class="row">
 							<div class="col-md-12">
 
-								<h:inputText value="#{search.term}" class="form-control" styleClass="form-control">
+								<h:inputText value="#{search.term}" class="form-control"
+									styleClass="form-control">
 
 									<f:passThroughAttribute name="type" value="text" />
 									<f:passThroughAttribute name="placeholder" value="Search..." />
@@ -62,7 +63,8 @@
 
 							<div class="col-md-6 col-xs-12">
 								<label for="Rating">Min Rating</label>
-								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}" styleClass="btn btn-primary dropdown-toggle">
+								<h:selectOneMenu ID="Rating" value="#{search.sRatingFilter}"
+									styleClass="btn btn-primary dropdown-toggle">
 									<f:selectItems value="#{search.selectFilterRating}" />
 
 
@@ -84,8 +86,8 @@
 				</div>
 				<div class="row marginBottom">
 					<div class="text-right col-md-12 col-xs-12">
-						<h:commandButton type="submit" action="#{search.search()}" styleClass="btn btn-primary"
-							value="Seach" />
+						<h:commandButton type="submit" action="#{search.search()}"
+							styleClass="btn btn-primary" value="Seach" />
 						<!-- 						<button name="btnSearch">Search</button> -->
 					</div>
 
@@ -136,14 +138,16 @@
 
 									<div class="imgWrapper">
 
-										<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#{selected.setProduct(prod)}"  />
+										<h:graphicImage value="" url="/img/ggnome1.jpg"
+											onclick="#{selected.setProduct(prod)}" />
 
 										<div id="imgProduct" class="onHover">
 
 											<div class="star">
 
 												<c:if test="#{user.loggedIn}">
-													<h:commandLink action="#{wishlist.addToWishlistToggle(prod.id)}"
+													<h:commandLink
+														action="#{wishlist.addToWishlistToggle(prod.id)}"
 														styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
 												</c:if>
 
@@ -170,7 +174,7 @@
 											<h2>#{prod.name}</h2>
 
 											<div>
-												<span>#{prod.description}</span>
+												<span>#{prod.desc}</span>
 											</div>
 
 											<div>

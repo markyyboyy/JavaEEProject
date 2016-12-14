@@ -1,58 +1,75 @@
-<html xmlns="https://www.w3.org/1999/xhtml"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<!--  Iman Hassan  -->
+<html>
+<!-- Michael Crowther -->
+<head id="j_idt2">
+<link type="text/css" rel="stylesheet"
+	href="/ims/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo" />
+<script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en_GB';PrimeFaces.settings.projectStage='Development';}</script>
+<!-- Meta Tags -->
+<title>IMS - Home Page</title>
 
-<ui:composition template="templates/imsTemplate.xhtml">
-	
-	<ui:define name="pageName">IMS - Home Page</ui:define>
-	<ui:param name="hideFooter" value="true" />
-	
-	<ui:define name="mainContent2">
+<link rel="stylesheet" media="screen" href="style/bootstrap.min.css" />
+<link href="style/imsMain.css" type="text/css" rel="stylesheet" />
+<link href="style/imsFrontPage.css" type="text/css" rel="stylesheet" />
 
-		<div class="container-fluid">
-				<header>
-	<div class="logoFP">
-						<img src="img/logo.png" width="250px" height="210px" />
-					</div> 
-					
-					</header> 
-			<nav>
-						
-				<h:form >
-				
-					
-					
-					<h:button  styleClass="navButton btn btn-success fpButton" outcome="IMSPurchaseOrder"
-						value="Purchase Order" />
-					<h:button styleClass="navButton btn btn-success" outcome="imsCustomerOrder" value="Customer Order" />
-					<h:button styleClass="navButton btn btn-success" outcome="imsStockLevel" value="Stock Level" />
-					<h:button styleClass="navButton btn btn-success" outcome="imsGenerateOrder" value="Generate Order" />
-					<h:button styleClass="navButton btn btn-success" outcome="imsproduct"
-						value="Product" />
-					<h:button styleClass="navButton btn btn-success" outcome="imsSuppliers" value="Suppliers" />
+<script src="js/jquery-3.1.1.min.js"></script>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<main class="content">
+
+	<div class="container-fluid">
+		<header>
+			<div class="logoFP">
+				<img src="img/logo.png" width="250px" height="210px" id="logoImage" />
+			</div>
+
+		</header>
+		<nav>
+			<form id="j_idt18" name="j_idt18" method="post"
+				action="/ims/imsFrontPage.xhtml"
+				enctype="application/x-www-form-urlencoded">
+				<input type="hidden" name="j_idt18" value="j_idt18" /> <input
+					type="button"
+					onclick="window.location.href='/ims/IMSPurchaseOrder.xhtml'; return false;"
+					value="Purchase Order" class="navButton btn btn-success fpButton"
+					id="nav" /><input type="button"
+					onclick="window.location.href='/ims/imsCustomerOrder.xhtml'; return false;"
+					value="Customer Order" class="navButton btn btn-success" id="nav" /><input
+					type="button"
+					onclick="window.location.href='/ims/imsStockLevel.xhtml'; return false;"
+					value="Stock Level" class="navButton btn btn-success" id="nav" /><input
+					type="button"
+					onclick="window.location.href='/ims/imsGenerateOrder.xhtml'; return false;"
+					value="Generate Order" class="navButton btn btn-success" id="nav" /><input
+					type="button"
+					onclick="window.location.href='/ims/imsproduct.xhtml'; return false;"
+					value="Product" class="navButton btn btn-success" id="nav" /><input
+					type="button"
+					onclick="window.location.href='/ims/imsSuppliers.xhtml'; return false;"
+					value="Suppliers" class="navButton btn btn-success" id="nav" /><input
+					type="hidden" name="javax.faces.ViewState"
+					id="j_id1:javax.faces.ViewState:0"
+					value="-5117212211206768921:597167738740387183" autocomplete="off" />
+			</form>
+			<div class="logoffButton">
+				<form id="j_idt26" name="j_idt26" method="post"
+					action="/ims/imsFrontPage.xhtml" class="lButton"
+					enctype="application/x-www-form-urlencoded">
+					<input type="hidden" name="j_idt26" value="j_idt26" /> <input
+						type="submit" name="j_idt26:j_idt27" value="Log In"
+						class="btn btn-primary" /><input type="hidden"
+						name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1"
+						value="-5117212211206768921:597167738740387183" autocomplete="off" />
+				</form>
+			</div>
+
+		</nav>
 
 
-				</h:form>
-					<div class="logoffButton">
-					<h:form class="lButton">
-						<h:commandButton styleClass="btn btn-primary"
-							 action="#{login.imsLogoff()}"
-							value="Log Out" />
-					</h:form>
-				</div>
 
-			</nav>
-			
-			
-				
-		</div>
-	</ui:define>
-
-
-
-
-</ui:composition>
+	</div>
+	</main>
+</body>
 </html>
