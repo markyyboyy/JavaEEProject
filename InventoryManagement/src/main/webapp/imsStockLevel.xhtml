@@ -1,32 +1,33 @@
-<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+
+<html xmlns= "https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<!-- Michael Crowther -->
-
-
-
-<ui:composition template="templates/imsTemplate.xhtml">
-
-	<ui:define name="pageName">Stock Level</ui:define>
-
-	<ui:define name="filter">
-		<h:inputText value=""  >
-			<f:passThroughAttribute name="placeholder" value="Filter Results"/>
-			<f:passThroughAttribute name="alt" value="Filter Results"/>			
-		</h:inputText>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" >
+<h:head>
+	<ui:define name="pageName" value="Stock Information">
 	</ui:define>
-	
-	<ui:define name="filterResults">
-		
-	</ui:define>
+</h:head>
+<h:body>
+	<ui:composition template="templates/imsTemplate.xhtml">
+	<div class="container">
 
+			<div class="leftnavbar">
+				<br />
+				<ui:define name="filterName">
+					<h3>Generate Order</h3>
+				</ui:define>
+
+				<ui:define name="filterResults">
+					<div class="filter">				
+					</div>
+
+				</ui:define>
+			</div>
+		</div>
 	<ui:define name="mainContent2">
-		
-	
-	</ui:define>
-
-</ui:composition>
-
-
+   <p:chart type="pie" model="#{bean.pieModel}" legendPosition="w" title="Sample Pie Chart" style="width:400px;height:300px" />
+      </ui:define>
+      </ui:composition>
+</h:body>
 </html>
