@@ -14,71 +14,78 @@
 	<!-- Defining main content contained on the page -->
 	<ui:define name="mainContent">
 
-		<div id="product">
-			<div id="titlepricecarousel">
-				<div id="title">
-					<h1>
-						<strong>#{selected.product.name}</strong>
-					</h1>
-				</div>
-				<div id="carousel">
-					
-						<a> <img src="./img/ggnome1.jpg" width="400px" height="300px" /></a>
-					
-				</div>
-			</div>
-
-
-			<div id="info">
-				<div id="productinfo">
-					<div id="description">
-						<h4>
-							Dimensions: #{selected.product.size} <br />
-						</h4>
-						<h5>#{selected.product.desc}</h5>
-					</div>
-					<h:form>
-					<div id="buttons" class="row">
-						<div class="col-md-6">
-							<h:commandButton action ="#{wishlist.addToWishlistToggle(prod.id)}" styleClass="navButtonproduct">Add								to Wishlist</h:commandButton>
-						</div>
-						<div class="col-md-6">
-							<h:commandButton action="#{basket.addToBasket(prod.id)}" styleClass="navButtonproduct" rendered="#{stock.isInStock(prod.id)}">Add
-								to Basket</h:commandButton>
-						</div>
-					</div>
-					</h:form>
-					<div id="delivery">
-
-						<h:form>
-							<h:outputText rendered="#{selected.product.inStock}" value ="Product is in Stock "> </h:outputText>
-							<h:outputText rendered="#{!selected.product.inStock}" value= "Product is out of Stock"> </h:outputText>
-							<br />
-							<h:outputText value = "This item comes with a manufacturer's warranty of five years."></h:outputText>
-						</h:form>
-
-
-						
-
-					</div>
-				</div>
+		<!-- Title -->
+		<div class="row">
+			<div class="col-md-8" id="titlepricecarousel">
+				<h1>
+					<strong>#{selected.product.name}</strong>
+				</h1>
 			</div>
 		</div>
-
-		<div id="recommendations">
-			<div id="recommendedimages">
-				<center>
-					<h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3>
-				</center>
-				<a href="practice.xhtml"><img src="./img/ggnome1.jpg"
-					width="200px" height="150px" /></a> <a href="practice.xhtml"><img
-					src="./img/ggnome1.jpg" width="200px" height="150px" /></a> <a
-					href="practice.xhtml"><img src="./img/ggnome1.jpg"
-					width="200px" height="150px" /></a> <a href="practice.xhtml"><img
-					src="./img/ggnome1.jpg" width="200px" height="150px" /></a> <a
-					href="practice.xhtml"><img src="./img/ggnome1.jpg"
-					width="200px" height="150px" /></a>
+		<!-- Product Image + Info -->
+		<div id="thePicture" class="row">
+			<div class="col-md-6" id="carousel">
+				<a> <img src="./img/ggnome1.jpg" /></a>
 			</div>
+
+
+			<div id="productinfo" class="col-md-6">
+				<h4>Dimensions: #{selected.product.size}</h4>
+				<h5>#{selected.product.desc}</h5>
+
+
+				<h:form>
+					<div id="theButton">
+
+						<h:commandButton action="#{wishlist.addToWishlistToggle(prod.id)}"
+							styleClass="btn btn-primary" value="Add to Wishlist"></h:commandButton>
+
+						<h:commandButton action="#{basket.addToBasket(prod.id)}"
+							styleClass="btn btn-primary"
+							rendered="#{stock.isInStock(prod.id)}" value="Add to Basket"></h:commandButton>
+
+					</div>
+				</h:form>
+			</div>
+
+		
+
+		
+			<h:form>
+				<h:outputText rendered="#{selected.product.inStock}" style="font-size:x-large" value="Product is in Stock ">
+				</h:outputText>
+				<h:outputText rendered="#{!selected.product.inStock}" style="font-size:x-large" value="Product is out of Stock">
+				</h:outputText>
+				<br />
+				<h:outputText
+					value="This item comes with a manufacturer's warranty of five years."></h:outputText>
+			</h:form>
+			</div>
+		
+
+
+		<div class="row">
+			<h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3>
+		</div>
+
+		<div class="row" id="recommendations">
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+
+
 		</div>
 
 	</ui:define>
