@@ -66,7 +66,8 @@ public class TestDataCatalogue {
 		//Test Customer
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
-		Customer testCust = new Customer("Allen", "Richard", "Fall", c, testLogin);
+		Address testAddress = new Address("12", "Main Road", "Street", "Land", "London", "SW56 KLM", "England"); 
+		Customer testCust = new Customer("Allen", "Richard", "Fall", c, testLogin, testAddress);
 		testCust.setBalance(50.5);
 		customers.add(testCust);
 				

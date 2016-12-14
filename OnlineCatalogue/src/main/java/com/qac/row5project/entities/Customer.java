@@ -156,6 +156,17 @@ public class Customer {
 	
 	//ADD MORE CONSTURCTER
 	
+	public Customer(String surname, String firstname, String secretAnswer, Calendar DOB, LoginDetails loginDetails, Address address) {
+
+		this.surname = surname;
+		this.firstname = firstname;
+		this.secretAnswer = secretAnswer;
+		this.DOB = DOB;
+		this.loginDetails = loginDetails;
+		this.address.add(address);
+		
+		this.balance = 0.0;
+	}
 	
 	public long getID(){
 		return this.id;

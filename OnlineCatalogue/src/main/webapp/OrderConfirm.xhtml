@@ -21,9 +21,15 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-sm-3"></div>
-						<div class="col-sm-3">Product</div>
-						<div class="col-sm-3">Price</div>
-						<div class="col-sm-3">Quantity</div>
+						<div class="col-sm-3">
+							<h4>Product</h4>
+						</div>
+						<div class="col-sm-3">
+							<h4>Price</h4>
+						</div>
+						<div class="col-sm-3">
+							<h4>Quantity</h4>
+						</div>
 					</div>
 					<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
 						<div class="row orderLineRow">
@@ -44,39 +50,53 @@
 						</div>
 					</ui:repeat>
 					<div class="row">
-						<div class="text-left col-xs-12">Delivery Address: #{user.customer.address}</div>
+						<div class="text-left col-xs-12">
+							<h4>Delivery Address: #{user.customer.address}</h4>
+						</div>
 					</div>
 					<div class="row">
-						<div class="text-left col-xs-12">Estimated Delivery:</div>
-					</div>
-				
+						<div class="text-left col-xs-12">
+							<h4>
+								<script>
+									var myDelayInDays = 5, myDate = new Date();
+									myDate.setDate(myDate.getDate()
+											+ myDelayInDays);
 
-				<div class="row">
-					<div class="text-right col-xs-12">Total Price: £
-						#{basket.totalPrice}</div>
-				</div>
-
-</div>
-<br/>
-</div>
-<br />
-				<div class="row">
-					<div class="col-md-12">
-						<a href="deliveryAddress.xhtml">
-							<button class="btn btn-primary" name="back">Back</button>
-						</a>
+									document.write('Estimated Delivery: '
+											+ myDate.toLocaleDateString());
+								</script>
+							</h4>
+						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="text-right col-md-12">
-						<a href="OrderReceipt.xhtml#">
-							<button class="btn btn-primary" name="back">Confirm and
-								Proceed to Secure Payment</button>
-						</a>
+
+					<div class="row">
+						<div class="text-right col-xs-12">
+							<h4>Total Price: £ #{basket.totalPrice}</h4>
+						</div>
 					</div>
+
 				</div>
-			
+				<br />
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<a href="deliveryAddress.xhtml">
+						<button class="btn btn-primary" name="back">Back</button>
+					</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="text-right col-md-12">
+					<a href="OrderReceipt.xhtml#">
+						<button class="btn btn-primary" name="back">Confirm and
+							Proceed to Secure Payment</button>
+					</a>
+				</div>
+			</div>
+
 
 		</ui:define>
 	</ui:composition>
