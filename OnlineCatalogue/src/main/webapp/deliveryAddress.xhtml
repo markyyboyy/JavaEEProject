@@ -19,7 +19,11 @@
 		<h3>Confirm delivery address</h3>
 		<h4>Account: #{user.customer.firstname} #{user.customer.surname}</h4>
 		</div>
-
+<div>
+<h4>
+Address: #{user.customer.address}
+</h4>
+</div>
 
 		<div class="row">
 					<div class="col-md-12">
@@ -30,7 +34,7 @@
 				</div>
 				
 				<div class="row">
-					<div class="col-md-12">
+					<div class="text-right col-md-12">
 						<a href="OrderConfirm.xhtml">
 							<button class="btn btn-primary" name="back">Continue</button>
 						</a>

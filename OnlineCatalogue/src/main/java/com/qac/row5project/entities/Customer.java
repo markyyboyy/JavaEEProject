@@ -100,6 +100,9 @@ public class Customer {
 		this.DOB = dtDOB;
 		this.loginDetails = loginDetails;
 		
+		this.balance = 0.0;
+		
+		
 	}
 		
 	/***
@@ -122,6 +125,9 @@ public class Customer {
 		this.telephoneMain = telephoneMain;
 		this.DOB = DOB;
 		this.loginDetails = loginDetails;
+		
+		this.balance = 0.0;
+
 
 	}
 	
@@ -143,6 +149,8 @@ public class Customer {
 		this.secretAnswer = secretAnswer;
 		this.DOB = DOB;
 		this.loginDetails = loginDetails;
+		
+		this.balance = 0.0;
 
 	}
 	
