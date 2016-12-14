@@ -50,7 +50,7 @@
 							<div class="row quantityChange">
 
 								<div class="col-sm-4">
-									<input type="submit" value="-"></input>
+									<input type="submit" value="-" ></input>
 									
 								</div>
 
@@ -59,21 +59,16 @@
 									<h:inputText>
 
 										<f:passThroughAttribute name="quantity" value="text" />
-										<f:passThroughAttribute name="placeholder" value="1" />
+										<f:passThroughAttribute name="placeholder" value="#{orderLine.quantity}" />
 										<f:passThroughAttribute name="alt" value="1" />
 
-										<h:form>
-											<h:commandButton value="Remove From Basket"
-												action="#{basket.removeItem(orderLine.stock.productID)}"
-												class="btn btn-primary btn-block" 
-												></h:commandButton>
-										</h:form>
+									
 									</h:inputText>
 								</div>
 
 
 								<div class="col-sm-4">
-									<input type="submit" value="+"></input>
+									<input type="submit" value="+" ></input>
 								</div>
 							</div>
 
