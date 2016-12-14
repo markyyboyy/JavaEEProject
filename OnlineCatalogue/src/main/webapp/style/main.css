@@ -258,8 +258,8 @@ main{
 	margin-bottom: 10px;
 }
 
-
-
-
-
+.center {
+    margin: 3% auto;
+    width: 80%;
+}
 
