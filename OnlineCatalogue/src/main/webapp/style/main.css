@@ -265,3 +265,26 @@ main {
 	color:red;
 	font-weight: bold;
 }
+
+
+
+.navMenu{
+	background-color: rgba(0,0,0,0);
+    border: none;
+	
+}
+
+.navbar.navbar-default.navMenu{
+	width: 100%;
+}
+
+.navbar-toggle.collapsed{
+	background-color: #38074b;
+}
+
+
+.icon-bar{
+	color: #38074b;
+	
+	
+}
