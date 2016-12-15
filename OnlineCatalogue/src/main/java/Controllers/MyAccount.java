@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.qac.row5project.entities.Address;
+import com.qac.row5project.entities.Payment;
 import com.qac.row5project.managers.CustomerManager;
 
 import Controllers.session.CurrentUser;
@@ -29,6 +30,7 @@ public class MyAccount {
     private String sTown = "";
     private String sPost = "";
     private List<Address> address = new ArrayList<>();
+    private Payment sPaymentDetails;
 
     private String sQuestion = "";
     private String sAnswer = "";
@@ -145,5 +147,13 @@ public class MyAccount {
     public void setsFacebook(String sFacebook) {
         this.sFacebook = sFacebook;
     }
+
+	public Payment getsPaymentDetails() {
+		return sPaymentDetails;
+	}
+
+	public void setsPaymentDetails(Payment sPaymentDetails) {
+		this.sPaymentDetails = sPaymentDetails;
+	}
 
 }

@@ -43,6 +43,14 @@ public class GenerateService {
 			if (product.getStockLevel() < 5){
 				productItems.add(product);
 			} 
+			
+	
+			do{
+			}while(true);
+			
+					
+		
+			
 		}
 		return productItems;	//Return the final list.
 	}
