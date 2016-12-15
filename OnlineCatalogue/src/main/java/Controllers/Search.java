@@ -56,14 +56,14 @@ public class Search {
 	public void init(){	
 		
 		selectFilterRating = new ArrayList<String>();
-		selectFilterRating.add("-1");
+		selectFilterRating.add("Rating");
 		selectFilterRating.add("1");
 		selectFilterRating.add("2");
 		selectFilterRating.add("3");
 		selectFilterRating.add("4");
 		selectFilterRating.add("5");
 		
-		sRatingFilter = "3";
+		sRatingFilter = "Rating";
 
 	}
 	
@@ -101,8 +101,8 @@ public class Search {
 			
 		}catch(NumberFormatException ex){
 			
-			sRatingFilter = "3";			
-			return 3;
+			sRatingFilter = "Rating";			
+			return -1;
 		}
 		
 		
