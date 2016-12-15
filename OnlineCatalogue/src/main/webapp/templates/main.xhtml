@@ -1,8 +1,7 @@
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
 	<!-- Meta Tags -->
@@ -12,7 +11,7 @@
 	<link href="./style/mobileMain.css" type="text/css" rel="stylesheet" />
 	<script src="./js/jquery-3.1.1.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
-	
+
 	<meta charset="UTF-8" />
 
 </h:head>
@@ -26,21 +25,23 @@
 			<div class="navWrapper">
 				<div class="searchInputBanner">
 					<div class="mainSearchBanner">
-					
-					
-							<h:inputText alt="search" value="#{search.term}">
-								<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
-							</h:inputText>
-						</div>
-						<div style="float: left">
-							<h:commandButton action="seach.search">
-						
-							<span class="glyphicon glyphicon-search	Try it searchIcon" />
-							</h:commandButton>
-						</div>
-					
-					
-					
+
+
+						<h:inputText alt="search" value="#{search.term}">
+							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
+						</h:inputText>
+					</div>
+					<div style="float: left">
+						<h:form>
+							<h:commandLink action="#{search.search()}">
+								<span class="glyphicon glyphicon-search	Try it searchIcon" />
+							</h:commandLink>
+						</h:form>
+
+					</div>
+
+
+
 				</div>
 
 				<div class="">
@@ -65,15 +66,15 @@
 				</div>
 
 				<div class="dropdown logoffButton">
-					<h:button class="dropbtn" rendered="#{user.loggedIn}" value="MyAccount"></h:button>
+					<h:button class="dropbtn" rendered="#{user.loggedIn}"
+						value="MyAccount"></h:button>
 					<div class="dropdown-content" style="left: 0;">
-						
-						
-						<a href="myAccount.xhtml">My Account</a> 
-						<a href="basket.xhtml">Basket</a> 
+
+
+						<a href="myAccount.xhtml">My Account</a> <a href="basket.xhtml">Basket</a>
 						<a href="wishlist.xhtml">WishList</a>
 						<h:form>
-						<h:commandLink action="#{login.logoff()}" value ="Log Off" />
+							<h:commandLink action="#{login.logoff()}" value="Log Off" />
 						</h:form>
 					</div>
 				</div>
@@ -86,18 +87,16 @@
 					</h:form>
 				</div>
 
-				
+
 			</div>
 		</nav>
 	</header>
 	<main class="content"> <ui:insert name="mainContent" /> </main>
 	<footer class="">
 		<div class="footerWrapper">
+			<div>© NB Gardens 2016</div>
 			<div>
-				 © NB Gardens 2016  
-			</div>
-			<div>
-				<a href="home.xhtml">| Home</a> 
+				<a href="home.xhtml">| Home</a>
 			</div>
 			<div>
 				<a href="catalogue.xhtml">| Browse</a>
@@ -109,7 +108,7 @@
 				<a href="faq.xhtml">| FAQ</a>
 			</div>
 		</div>
-	
+
 	</footer>
 </h:body>
 </html>
