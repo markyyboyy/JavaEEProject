@@ -19,7 +19,8 @@ public class CurrentUser implements Serializable{
 
 	private static final long serialVersionUID = 1111L;
 	private Customer customer = null;
-
+	
+	
 	/**
 	 * Set logged in customer
 	 * 
@@ -46,6 +47,8 @@ public class CurrentUser implements Serializable{
 		return (customer == null) ? false : true;
 	}
 	
+
+
 	public void getBasket() {
 		
 	}

@@ -31,6 +31,8 @@ public class Login {
 	
 	private String email = "";
 	private String password = "";
+	
+	private boolean forgottenSent = false;
 
 	/**
 	 * Retrieve email variable
@@ -92,5 +94,12 @@ public class Login {
 		return "home";
 	}
 	
-
+	public void forgotten(){
+	    this.forgottenSent = true;
+	}
+	
+	public boolean isForgottenSent(){
+	    return this.forgottenSent;
+	}
+	
 }
