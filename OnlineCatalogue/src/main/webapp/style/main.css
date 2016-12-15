@@ -151,6 +151,7 @@ main, .navWrapper, .footerWrapper {
 	float: left;
 	width: 80%;
 	margin-left: 20%;
+	margin-top: 25px;
 }
 
 .navWrapper {
@@ -266,9 +267,48 @@ main {
 	font-weight: bold;
 }
 
+
+
+.navMenu{
+	background-color: rgba(0,0,0,0);
+    border: none;
+	
+}
+
+.navbar.navbar-default.navMenu{
+	margin: 5px 0;
+	padding:  0;
+	}
+
+.navbar-toggle.collapsed{
+	background-color: #38074b;
+}
+
+
+.icon-bar{
+	color: #38074b;
+	
+	
+}
+
 .olRow {
 	padding-top: 26px;
 }
+
+
+.nav.navbar-nav li{
+	margin: 0 3%;
+}
+
+.navbar-brand{
+	display: none;
+}
+
+
+.nav.navbar-nav{
+	width: 100%;
+}
+
 
 .infoAddr {
 	padding-bottom: 3%;

@@ -21,17 +21,19 @@
 		<div class="homeLogo">
 			<a href="home.xhtml"> <img src="img/logo.png"></img></a>
 		</div>
-		<nav>
-			<div class="navWrapper">
-				<div class="searchInputBanner">
-					<div class="mainSearchBanner">
 
 
+
+		<!-- Desktop Version -->
+			<div class="navWrapper ">
+				<div class="searchInputBanner row">
+
+					<div class="mainSearchBanner col-md-4 col-xs-12">
 						<h:inputText alt="search" value="#{search.term}">
 							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
 						</h:inputText>
-					</div>
-					<div style="float: left">
+						
+								<div style="float: left">
 						<h:form>
 							<h:commandLink action="#{search.search()}">
 								<span class="glyphicon glyphicon-search	Try it searchIcon" />
@@ -39,59 +41,99 @@
 						</h:form>
 
 					</div>
+					</div>
+
+			
+
+					<div class="col-md-12 col-xs-12">
+						<h:form>
+							<nav class="navbar navbar-default navMenu">
+								<div class="">
+									<!-- Brand and toggle get grouped for better mobile display -->
+									<div class="navbar-header">
+										<button type="button" class="navbar-toggle collapsed"
+											data-toggle="collapse"
+											data-target="#bs-example-navbar-collapse-1"
+											aria-expanded="false">
+											<span class="sr-only">Toggle navigation</span> <span
+												class="icon-bar"></span> <span class="icon-bar"></span> <span
+												class="icon-bar"></span>
+										</button>
+										<a class="navbar-brand" href="#"></a>
+									</div>
+
+									<!-- Collect the nav links, forms, and other content for toggling -->
+									<div class="collapse navbar-collapse"
+										id="bs-example-navbar-collapse-1">
+										<ul class="nav navbar-nav">
+											<li><h:button styleClass="btn btn-primary"
+													outcome="catalogue" value="Browse" /></li>
+
+											<li><h:button styleClass="btn btn-primary"
+													outcome="SpecialOffer" value="Special Offer" /></li>
+
+											<li><h:button styleClass="btn btn-primary" outcome="faq"
+													value="FAQ" /></li>
+
+											<li><h:button styleClass="btn btn-primary"
+													outcome="about" value="About Us" /></li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</h:form>
 
 
+					</div>
 
-				</div>
+					<div class="dropdown logoffButton">
+						<h:button class="dropbtn" rendered="#{user.loggedIn}"
+							value="MyAccount"></h:button>
+						<div class="dropdown-content" style="left: 0;">
 
-				<div class="">
-					<div class="navigation row">
-						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="catalogue"
-								value="Browse" />
-						</div>
-						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary"
-								outcome="SpecialOffer.xhtml" value="Special Offers" />
-						</div>
-						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="faq.xhtml"
-								value="FAQ" />
-						</div>
-						<div class="col-sm-3 buttonMargin">
-							<h:button styleClass="btn btn-primary" outcome="about.xhtml"
-								value="About Us" />
+
+							<a href="myAccount.xhtml">My Account</a> <a href="basket.xhtml">Basket</a>
+							<a href="wishlist.xhtml">WishList</a>
+							<h:form>
+								<h:commandLink action="#{login.logoff()}" value="Log Off" />
+							</h:form>
 						</div>
 					</div>
-				</div>
 
-				<div class="dropdown logoffButton">
-					<h:button class="dropbtn" rendered="#{user.loggedIn}"
-						value="MyAccount"></h:button>
-					<div class="dropdown-content" style="left: 0;">
-
-
-						<a href="myAccount.xhtml">My Account</a> <a href="basket.xhtml">Basket</a>
-						<a href="wishlist.xhtml">WishList</a>
+					<div class="loginButton">
 						<h:form>
-							<h:commandLink action="#{login.logoff()}" value="Log Off" />
+							<h:commandButton styleClass="btn btn-primary"
+								rendered="#{!user.loggedIn}" action="login.xhtml"
+								value="Login/Register" />
 						</h:form>
 					</div>
 				</div>
 
-				<div class="loginButton">
-					<h:form>
-						<h:commandButton styleClass="btn btn-primary"
-							rendered="#{!user.loggedIn}" action="login.xhtml"
-							value="Login/Register" />
-					</h:form>
-				</div>
 
 
 			</div>
-		</nav>
+
+
+
+
+
+
+
+		<!-- Mobile Version -->
+
+
+
+
 	</header>
 	<main class="content"> <ui:insert name="mainContent" /> </main>
+
+
+
+
+
+
+
+
 	<footer class="">
 		<div class="footerWrapper">
 			<div>© NB Gardens 2016</div>
