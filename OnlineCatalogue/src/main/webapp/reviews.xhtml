@@ -1,0 +1,46 @@
+<html xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets" lang="en"
+	template="0template/main.xhtml">
+<h:body>
+	<ui:composition template="templates/main.xhtml">
+		<ui:define name="mainContent">
+			<div>
+				<div class="row">
+					<h3>Ratings You Have Given</h3>
+				</div>
+
+<div id="productWrapper">
+				<div class="row orderLineRow" id ="">
+
+					<ui:repeat var="pro" value="#{review.reviewView}">
+						<div class="row wishlistPaneRow" id="productBox">
+
+
+							<div id="productImage">
+								<h:graphicImage value="#{pro.productItem.url}" height="300px" width="200px"></h:graphicImage>
+								</div>
+								<div id="reviewText">
+								<h:outputText value="Rating: #{pro.ratingItem.score}/5"></h:outputText>
+								<br></br>
+								<h:outputText value="Comment: #{pro.ratingItem.comment}"></h:outputText>
+								<br></br>
+								<h:outputText value="Name: #{pro.productItem.name}"></h:outputText>
+								<br></br>
+								<h:outputText value="Description: #{pro.productItem.desc}"></h:outputText>
+								</div>
+						
+
+						</div>
+</ui:repeat>
+				</div>
+			</div>
+</div>
+
+
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

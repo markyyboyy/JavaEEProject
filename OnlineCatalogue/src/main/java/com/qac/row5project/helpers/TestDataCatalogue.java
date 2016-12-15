@@ -80,35 +80,35 @@ public class TestDataCatalogue {
 		//Test Product
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(0).setProductID(1);
+		products.get(0).setProductID(0);
 	
 		products.add(new Product("Ryan", "Gnome of Ryan", 14.99, 14.0, "Red", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(1).setProductID(2);
+		products.get(1).setProductID(1);
 		
 		products.add(new Product("Iman", "Gnome of Iman", 14.99, 14.0, "Orange", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(2).setProductID(3);
+		products.get(2).setProductID(2);
 		
 		products.add(new Product("Mark", "Gnome of Mark", 14.99, 14.0, "Purple", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(3).setProductID(4);
+		products.get(3).setProductID(3);
 		
 		products.add(new Product("Richard", "Gnome of Richard", 14.99, 14.0, "Green", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(4).setProductID(5);
+		products.get(4).setProductID(4);
 		
 		products.add(new Product("Michael", "Gnome of Michael", 14.99, 14.0, "Yellow", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(5).setProductID(6);
+		products.get(5).setProductID(5);
 		
 		//Test Images
-		Image img1 = new Image("./img/gnome.png","image", 1L);
-		Image img2 = new Image("./img/gnome2.png","image", 2L);
-		Image img3 = new Image("./img/gnome3.png","image", 3L);
-		Image img4 = new Image("./img/gnome4.png","image", 4L);
-		Image img5 = new Image("./img/gnome5.png","image", 5L);
-		Image img6 = new Image("./img/gnome7.png","image", 6L);
+		Image img1 = new Image("./img/gnome.png","image", 0L);
+		Image img2 = new Image("./img/gnome2.png","image", 1L);
+		Image img3 = new Image("./img/gnome3.png","image", 2L);
+		Image img4 = new Image("./img/gnome4.png","image", 3L);
+		Image img5 = new Image("./img/gnome5.png","image", 4L);
+		Image img6 = new Image("./img/gnome7.png","image", 5L);
 		
 		images.add(img1);
 		images.add(img2);
@@ -125,8 +125,8 @@ public class TestDataCatalogue {
 		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
 		Calendar c1 = Calendar.getInstance();
 
-		ratings.add(new Rating((short) 3, 0, 0));
-		
+		ratings.add(new Rating((short) 3,"This gnome is very nice. I like it.", 0, 0));
+		ratings.add(new Rating((short) 4,"I love this gnome.",0,1));
 		c1.set(5, 6, 2012);
 		
 		//generateCustomerOrder(50);

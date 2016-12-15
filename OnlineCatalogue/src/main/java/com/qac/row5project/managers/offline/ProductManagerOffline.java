@@ -46,9 +46,15 @@ public class ProductManagerOffline implements ProductManager {
 	@Override
 	//RETURN PRODUCT BASED ON A SEARCH OF ID
 	public Product readProductById(long id) {
-		for (Product prod : testData.getProducts())
-			if (prod.getProductID() == id)
+		for (Product prod : testData.getProducts()){
+			if (prod.getProductID() == id){
+				System.out.println("not Print null");
 				return prod;
+			}
+		System.out.println(prod.getProductID());
+		}
+		System.out.println("id=" + id);
+		System.out.println("Print null");
 		return null;
 	}
 
