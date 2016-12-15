@@ -23,6 +23,8 @@ public class LoginService {
 	
 	private LoginDetails login;
 	
+	
+	
 	/**
 	 * 
 	 * @param email
@@ -43,4 +45,6 @@ public class LoginService {
 	public Customer loginUser(String email){
 		return customerManager.readCustomerByEmail(email);
 	}
+	
+
 }
