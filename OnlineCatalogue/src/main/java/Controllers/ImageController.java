@@ -1,5 +1,8 @@
 package Controllers;
 
+import java.io.Serializable;
+
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,7 +18,9 @@ import com.qac.services.ImageService;
 
 @Named("image")
 @SessionScoped
-public class ImageController {
+public class ImageController implements Serializable{
+    
+    private static final long serialVersionUID = 15555555L;
     
     @Inject
     private ImageService imgServ;

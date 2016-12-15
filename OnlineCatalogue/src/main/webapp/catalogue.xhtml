@@ -123,7 +123,7 @@
 																		
 									
 									<div class="imgWrapper">
-										<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
+										<h:graphicImage value="" url="#{image.getProductImage(prod.id)}" onclick="#" />
 										<div id="imgProduct" class="onHover">
 											<div class="star">
 												<c:if test="#{user.loggedIn}">
