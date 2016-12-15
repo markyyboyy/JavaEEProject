@@ -11,11 +11,15 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.Address;
+import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.CustomerOrderLine;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.*;
 import com.qac.row5project.managers.CustomerOrderManager;
+
+import Controllers.session.CurrentUser;
 
 @Stateless
 @Default
@@ -23,6 +27,9 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 
 	@Inject
 	private TestDataCatalogue testData;
+	
+	@Inject
+	private CurrentUser user;
 
 	// CREATE - CUSTOMER
 	@Override
@@ -85,10 +92,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 		CustomerOrderLine cl = new CustomerOrderLine(customerId, quantity, stock);
 		
 		cOrder.addToCustomerOrderLine(cl);
-		
 
-		
-		
 		
 	}
 
@@ -104,5 +108,13 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void setAddress(Address address) {
+		List<Address> addresses = new ArrayList<Address>();
+		Customer customer = user.getCustomer();
+		addresses.add(address);
+		customer.setAddress(addresses);
 	}
 }

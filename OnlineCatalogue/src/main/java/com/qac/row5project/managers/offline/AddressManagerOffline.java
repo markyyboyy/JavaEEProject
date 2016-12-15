@@ -55,4 +55,13 @@ public class AddressManagerOffline implements AddressManager {
 		}
 		return null;
 	}
+
+	@Override
+	public Address readAddressById(long id) {
+		
+		for (Address a : testData.getAddresses()) {
+			if (a.getID() == id)
+				return a;
+		} return null;
+	} 
 }
