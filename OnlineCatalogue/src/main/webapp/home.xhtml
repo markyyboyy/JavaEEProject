@@ -99,18 +99,6 @@
 						</p>
 						
 						
-						<div id="produc1t" class="selectProduct">
-						<h:form var="prod" value="#{Catalogue.products}">
-							<h:panelGroup outcome="product.xhtml">
-
-								<h:commandLink action="#{selected.goTo(prod)}"
-									styleClass="btn btn-default" value="View
-								details"></h:commandLink>
-							</h:panelGroup>
-						</h:form>
-						</div>
-						
-						
 						
 					</div>
 					<!-- /.col-lg-4 -->
@@ -203,20 +191,7 @@
 
 			<!-- /END THE FEATURETTES -->
 
-			<div class="">
-				<h2>#{prod.name}</h2>
-
-				<div>
-					<span>#{prod.desc}</span>
-				</div>
-
-				<div>
-					<span>£ #{prod.price}</span>
-				</div>
-				<div>
-					<span>£ #{prod.id}</span>
-				</div>
-				</div>
+		
 		</ui:define>
 
 	</ui:composition>

@@ -15,31 +15,33 @@
 		<ui:define name="mainContent">
 
 			<div class="row infoAddr">
-					<h3>Confirm delivery address</h3>
-					<h4>Account: #{user.customer.firstname}
-						#{user.customer.surname}</h4>
+				<h3>Confirm delivery address</h3>
+				<h4>Account: #{user.customer.firstname}
+					#{user.customer.surname}</h4>
 
 			</div>
-			
-			<ui:repeat var="addr" value="#{user.customer.address}">
-		<div class="addr">
-			<div class="col-xs-1">
-			<h:form class="radio-inline">
-    
-      <input type="radio" name="optradio"></input>
-    
-    </h:form>
-    
-    <h:selectOneRadio value="#{userData.data}">
-   <f:selectItems itemValue="1" itemLabel="Item 1" />
-   	   			
-</h:selectOneRadio>
-			</div>
-			
-			<div class="col-xs-11"> #{addr}</div>
 
-</div>
-</ui:repeat>
+			<ui:repeat var="addresss" value="#{user.customer.address}">
+
+				<div class="addr">
+					<div class="col-xs-1">
+
+						<h:selectOneRadio onclick="return true">
+							<f:selectItems itemLabel="" />
+
+						</h:selectOneRadio>
+					</div>
+
+					<div class="col-xs-11">#{addresss}</div>
+
+				</div>
+
+
+			</ui:repeat>
+
+
+
+
 
 
 			<div class="row">
