@@ -21,27 +21,11 @@
 
 			</div>
 
-			<ui:repeat var="addresss" value="#{user.customer.address}">
 
-				<div class="addr">
-					<div class="col-xs-1">
+			<h:selectOneRadio layout="pageDirection" display="inline">
+				<f:selectItems var="addresss" value="#{user.customer.address}" />
 
-						<h:selectOneRadio onclick="return true">
-							<f:selectItems itemLabel="" />
-
-						</h:selectOneRadio>
-					</div>
-
-					<div class="col-xs-11">#{addresss}</div>
-
-				</div>
-
-
-			</ui:repeat>
-
-
-
-
+			</h:selectOneRadio>
 
 
 			<div class="row">

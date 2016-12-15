@@ -107,4 +107,20 @@ public DataModel<ProductItem> getProducts() {
 		public void sortbyid(){
 			Collections.sort(products, (s1, s2) -> ((int)(s1.getId()) - ((int)s2.getId())));
 		}
+		
+		public ProductItem getProductItem(long id) {
+			List<ProductItem> lsTemp = productService.findAllProducts();			
+			categories = new ArrayList<>();
+			
+			for (ProductItem productItem : lsTemp) {
+					
+				
+				if(id == productItem.getId())					
+					return productItem;
+			}
+			
+			return null ;
+		}
+		
+		
 }
