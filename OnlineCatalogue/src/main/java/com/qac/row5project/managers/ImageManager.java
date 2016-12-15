@@ -39,5 +39,5 @@ public interface ImageManager {
 	 * @param productID
 	 * @return
 	 */
-	public List<Image> findImagesbyProductID(int productID);
+	public List<Image> findImagesbyProductID(long productID);
 }
