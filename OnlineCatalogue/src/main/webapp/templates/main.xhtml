@@ -26,13 +26,21 @@
 			<div class="navWrapper">
 				<div class="searchInputBanner">
 					<div class="mainSearchBanner">
-						<h:inputText alt="search">
-							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
-						</h:inputText>
-					</div>
-					<div style="float: left">
-						<span class="glyphicon glyphicon-search	Try it searchIcon" />
-					</div>
+					
+					
+							<h:inputText alt="search" value="#{search.term}">
+								<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
+							</h:inputText>
+						</div>
+						<div style="float: left">
+							<h:commandButton action="seach.search">
+						
+							<span class="glyphicon glyphicon-search	Try it searchIcon" />
+							</h:commandButton>
+						</div>
+					
+					
+					
 				</div>
 
 				<div class="">

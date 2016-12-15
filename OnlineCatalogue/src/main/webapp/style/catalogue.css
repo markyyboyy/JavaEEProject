@@ -92,9 +92,15 @@ button {
 	position: absolute;
 	left: 10px;
 }
-.star a:hover, .basket a:hover {
+.star a:hover{
 	color: #967505;
 	text-decoration: none;
+}
+
+
+.basket:hover  a{
+		color: #967505;
+	text-decoration: none
 }
 
 
@@ -111,6 +117,7 @@ button {
 	top: 10px;
 	left: 10px;
 	font-size: 4rem;
+	 bottom: 55px !important;
 }
 
 

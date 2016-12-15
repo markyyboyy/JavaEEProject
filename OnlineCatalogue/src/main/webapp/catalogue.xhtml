@@ -26,12 +26,17 @@
 				$(onHover).show();
 			}
 
-			// on mouse exit
+	 		// on mouse exit
 			function hideHover(args) {
 				var onHover = $(args).children()[0].children[1]; //get overlay element
 				$(onHover).hide();
 			}
+ 
+
+
+			
 		</SCRIPT>
+		
 
 		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
 
@@ -109,9 +114,14 @@
 							<ui:repeat var="prod" value="#{Catalogue.products}">
 								<!-- Wishlist does not show when a user is not logged in.
 									on hover show wishlist and basket icons -->
+									
+								<h:commandLink action="#{selected.goTo(prod)}"/>	
+									
 								<div id="produc1t" onmouseover="showHover(this)"
 									onmouseleave="hideHover(this)"
 									class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
+																		
+									
 									<div class="imgWrapper">
 										<h:graphicImage value="" url="/img/ggnome1.jpg" onclick="#" />
 										<div id="imgProduct" class="onHover">
@@ -141,6 +151,7 @@
 											</div>
 										</div>
 									</div>
+
 
 
 									<!-- Key Product Details for product pane-->
