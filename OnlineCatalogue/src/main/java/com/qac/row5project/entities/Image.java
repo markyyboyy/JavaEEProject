@@ -28,12 +28,12 @@ public class Image {
 	@Column(nullable=false,unique=true )
 	private long productID; //long
 	
-	public void Images(String fileName, String desc, long productID) {
+	public  Image(String fileName, String desc, long productID) {
 		this.fileName = fileName;
 		this.desc = desc;
 		this.productID = productID;
 	}
-	public void Images(String fileName, long productID) {
+	public Image(String fileName, long productID) {
 		this.fileName = fileName;
 		this.productID = productID;
 	}

@@ -77,7 +77,8 @@ public class TestDataCatalogue {
 		
 		testCust.setBalance(50.5);
 		customers.add(testCust);
-				
+		
+		//Test Product
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
 		products.get(0).setProductID(1);
@@ -102,7 +103,18 @@ public class TestDataCatalogue {
 				1, Category.ORNAMENTS, ItemStatus.AVAILABLE));
 		products.get(5).setProductID(6);
 		
+		//Test Images
+		Image img1 = new Image("./img/ggnome1/jpg","image", 1L);
+		Image img2 = new Image("./img/ggnome2.jpg","image", 2L);
+		Image img3 = new Image("./img/ggnome3.jpg","image", 3L);
+		Image img4 = new Image("./img/fgnome1.jpeg","image", 4L);
 		
+		images.add(img1);
+		images.add(img2);
+		images.add(img3);
+		images.add(img4);
+		
+		//Test Stock
 		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
 		stocks.add(new Stock(1, true, 3, false, products.get(1), 250));
 		stocks.add(new Stock(2, true, 10, false, products.get(2), 250));
