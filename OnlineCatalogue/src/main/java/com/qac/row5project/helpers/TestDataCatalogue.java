@@ -65,8 +65,8 @@ public class TestDataCatalogue {
 		//Test Customer
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
-		Address testAddress = new Address("12", "Main Road", "Street", "Land", "London", "SW56 KLM", "England"); 
-		Address testAddress2 = new Address("8", "London Street", "Road", "Lond", "Manchester", "M23 9OP", "England");
+		Address testAddress = new Address("12", "Main Road", "Street", "London", "Surrey", "SW56 KLM", "England"); 
+		Address testAddress2 = new Address("8", "London Street", "Road", "Manchester", "Salford", "M23 9OP", "England");
 		Customer testCust = new Customer("Allen", "Richard", "Fall", c, testLogin, testAddress);
 		
 		List<Address> addressList = new ArrayList<>();
