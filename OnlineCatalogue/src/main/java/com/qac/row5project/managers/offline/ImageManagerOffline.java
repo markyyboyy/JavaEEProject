@@ -72,7 +72,7 @@ public class ImageManagerOffline implements ImageManager{
 	 * 
 	 * @return tImgList
 	 */
-	public List<Image> findImagesbyProductID(int productID){
+	public List<Image> findImagesbyProductID(long productID){
 
 		List<Image> tImgList = new ArrayList<Image>();
 		List<Image> imgList = testData.getImages();
