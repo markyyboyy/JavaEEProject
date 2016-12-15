@@ -24,28 +24,28 @@
 						<div class="text-center col-sm-3">
 							<h4>Product</h4>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-3 text-center">
 							<h4>Price</h4>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-3 text-center">
 							<h4>Quantity</h4>
 						</div>
 					</div>
 					<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
 						<div class="row orderLineRow">
-							<div class="text-right col-sm-3 imgBasketPane">
+							<div class="text-center col-sm-3 imgBasketPane">
 								<img src="img/fgnome1.jpeg" height="80" style="max-width: 80px" />
 							</div>
 
-							<div class="col-sm-3 text-center" style="background-color: white;">
+							<div class="col-sm-3 text-center olRow" style="background-color: white;">
 								#{orderLine.stock.productID.desc}<br />
 							</div>
 
-							<div class="col-sm-3 text-center" style="background-color: white;">
+							<div class="col-sm-3 text-center olRow" style="background-color: white;">
 								£ #{orderLine.stock.price}<br />
 							</div>
 
-							<div class="col-sm-3 text-center">#{orderLine.quantity}</div>
+							<div class="col-sm-3 text-center olRow">#{orderLine.quantity}</div>
 
 						</div>
 					</ui:repeat>
