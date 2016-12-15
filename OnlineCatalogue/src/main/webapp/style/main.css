@@ -151,6 +151,7 @@ main, .navWrapper, .footerWrapper {
 	float: left;
 	width: 80%;
 	margin-left: 20%;
+	margin-top: 25px;
 }
 
 .navWrapper {
@@ -275,8 +276,9 @@ main {
 }
 
 .navbar.navbar-default.navMenu{
-	width: 100%;
-}
+	margin: 5px 0;
+	padding:  0;
+	}
 
 .navbar-toggle.collapsed{
 	background-color: #38074b;
@@ -292,4 +294,19 @@ main {
 .olRow {
 	padding-top: 26px;
 }
+
+
+.nav.navbar-nav li{
+	margin: 0 3%;
+}
+
+.navbar-brand{
+	display: none;
+}
+
+
+.nav.navbar-nav{
+	width: 100%;
+}
+
 
