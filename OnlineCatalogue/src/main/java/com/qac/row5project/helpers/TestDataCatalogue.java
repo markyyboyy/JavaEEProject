@@ -105,9 +105,9 @@ public class TestDataCatalogue {
 		//Test Images
 		Image img1 = new Image("./img/ggnome1.jpg","image", 1L);
 		Image img2 = new Image("./img/ggnome2.jpg","image", 2L);
-		Image img3 = new Image("./img/ggnome3.jpg","image", 3L);
+		Image img3 = new Image("./img/featuregnome1.jpg","image", 3L);
 		Image img4 = new Image("./img/fgnome1.jpeg","image", 4L);
-		Image img5 = new Image("./img/ggnome3.jpg","image", 5L);
+		Image img5 = new Image("./img/featuregnome1.jpg","image", 5L);
 		Image img6 = new Image("./img/fgnome1.jpeg","image", 6L);
 		
 		images.add(img1);

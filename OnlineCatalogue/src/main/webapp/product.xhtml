@@ -40,7 +40,7 @@ Oringally: RyanB
 					<div id="theButton">
 
 						<h:commandButton action="#{wishlist.addToWishlistToggle(prod.id)}"
-							styleClass="btn btn-primary" value="Add to Wishlist"></h:commandButton>
+							styleClass="btn btn-primary" value="Add to Wishlist" rendered="#{user.isLoggedIn()}"></h:commandButton>
 
 						<h:commandButton action="#{basket.addToBasket(prod.id)}"
 							styleClass="btn btn-primary"
