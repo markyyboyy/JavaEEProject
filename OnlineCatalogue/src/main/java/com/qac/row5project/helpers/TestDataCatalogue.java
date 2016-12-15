@@ -29,7 +29,6 @@ public class TestDataCatalogue {
 	private List<Image> images;
 	private List<LoginDetails> loginDetails;
 	private List<Payment> payments;
-
 	private List<Rating> ratings;
 	private List<SecurityQuestion> securityQuestions;
 
@@ -122,6 +121,8 @@ public class TestDataCatalogue {
 		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
 		Calendar c1 = Calendar.getInstance();
 
+		ratings.add(new Rating((short) 3, 0, 0));
+		
 		c1.set(5, 6, 2012);
 		
 		//generateCustomerOrder(50);
