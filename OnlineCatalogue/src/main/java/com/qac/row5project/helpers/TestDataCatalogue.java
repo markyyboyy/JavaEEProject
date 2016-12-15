@@ -29,7 +29,6 @@ public class TestDataCatalogue {
 	private List<Image> images;
 	private List<LoginDetails> loginDetails;
 	private List<Payment> payments;
-
 	private List<Rating> ratings;
 	private List<SecurityQuestion> securityQuestions;
 
@@ -66,8 +65,8 @@ public class TestDataCatalogue {
 		//Test Customer
 		Calendar c = Calendar.getInstance();
 		c.set(1, 1, 1990);
-		Address testAddress = new Address("12", "Main Road", "Street", "Land", "London", "SW56 KLM", "England"); 
-		Address testAddress2 = new Address("8", "London Street", "Road", "Lond", "Manchester", "M23 9OP", "England");
+		Address testAddress = new Address("12", "Main Road", "Street", "London", "Surrey", "SW56 KLM", "England"); 
+		Address testAddress2 = new Address("8", "London Street", "Road", "Manchester", "Salford", "M23 9OP", "England");
 		Customer testCust = new Customer("Allen", "Richard", "Fall", c, testLogin, testAddress);
 		
 		List<Address> addressList = new ArrayList<>();
@@ -104,15 +103,19 @@ public class TestDataCatalogue {
 		products.get(5).setProductID(6);
 		
 		//Test Images
-		Image img1 = new Image("./img/ggnome1/jpg","image", 1L);
+		Image img1 = new Image("./img/ggnome1.jpg","image", 1L);
 		Image img2 = new Image("./img/ggnome2.jpg","image", 2L);
 		Image img3 = new Image("./img/ggnome3.jpg","image", 3L);
 		Image img4 = new Image("./img/fgnome1.jpeg","image", 4L);
+		Image img5 = new Image("./img/ggnome3.jpg","image", 5L);
+		Image img6 = new Image("./img/fgnome1.jpeg","image", 6L);
 		
 		images.add(img1);
 		images.add(img2);
 		images.add(img3);
 		images.add(img4);
+		images.add(img5);
+		images.add(img6);
 		
 		//Test Stock
 		stocks.add(new Stock(0, false, 5, false, products.get(0), 200));
@@ -122,6 +125,8 @@ public class TestDataCatalogue {
 		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
 		Calendar c1 = Calendar.getInstance();
 
+		ratings.add(new Rating((short) 3, 0, 0));
+		
 		c1.set(5, 6, 2012);
 		
 		//generateCustomerOrder(50);

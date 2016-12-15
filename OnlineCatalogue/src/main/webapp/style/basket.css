@@ -45,11 +45,9 @@ hr {
 .quantityChange .col-sm-4{
 	padding-left: 0;
 	padding-right: 0;
-/*     margin-left: 15px;
-    margin-right: 15px */
-}
 
-.orderLineRow{
+
+.orderLineRow {
 	margin: 10px 0;
 }
 
@@ -57,5 +55,7 @@ hr {
 .imgBasket{
 	padding: 0;
 }
+
+.quanBtn {}
 
 

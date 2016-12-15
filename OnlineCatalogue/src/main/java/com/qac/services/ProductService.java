@@ -5,6 +5,7 @@
  */
 package com.qac.services;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +13,11 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.Image;
 import com.qac.row5project.entities.Rating;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.ProductItem;
+import com.qac.row5project.managers.ImageManager;
 import com.qac.row5project.managers.ProductManager;
 import com.qac.row5project.managers.RatingManager;
 import com.qac.row5project.managers.StockManager;
@@ -28,6 +31,8 @@ public class ProductService {
 	private StockManager stockManager;
 	@Inject
 	private RatingManager ratingManager;
+	@Inject
+	private ImageManager imgManager;
 
 	/**
 	 * CUSTOMER/INV MANAGER CONVERTS A STRING PRODUCT ID TO A LONG ID
@@ -117,7 +122,8 @@ public class ProductService {
 	public ProductItem getProductItem(Product product, Stock stock) {
 		ProductItem productItem = new ProductItem();
 		List<Stock> stock2 = stockManager.getStockByProductID(product.getProductID());
-		System.out.println(stock2.size());
+		//System.out.println(stock2.size());
+		List<Image> image = imgManager.findImagesbyProductID(product.getProductID());
 
 		// CHECK TO SEE IF THE PRODUCT IS NULL AND ADDS ALL ITEMS TO THE
 		// PRODUCTITEM ARRAYLIST
@@ -130,6 +136,10 @@ public class ProductService {
 			productItem.addStockInfo(
 					productManager.findsTotalStockLevel(stockManager.getStockByProductID(product.getProductID())),
 					(float) stock.getPrice());
+		}
+		
+		if(image != null){
+		    productItem.setUrl(image.get(0).getUrl());
 		}
 
 		return productItem;

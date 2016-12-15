@@ -19,6 +19,7 @@ import com.qac.row5project.entities.Rating;
 		Category category;
 		ItemStatus status;
 		private boolean inStock;
+		private String url;
 		
 		public ProductItem(){}
 		
@@ -176,6 +177,14 @@ import com.qac.row5project.entities.Rating;
 		
 		public boolean isinStock(){
 		    return (this.stockLevel > 0) ? true : false;
+		}
+
+		public String getUrl() {
+		    return url;
+		}
+
+		public void setUrl(String url) {
+		    this.url = url;
 		}
 
 	}
