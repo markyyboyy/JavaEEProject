@@ -57,11 +57,12 @@
 
 
 		<ui:define name="mainContent2">
+		<br/> <br/> <br/> <br/> <br/>
 			<div class="righttitletable">
 
 			
 					<h:form>
-						<p:dataTable id="tbl" var="prod" value="#{product.products}"
+						<p:dataTable styleclass="fixed-size" id="tbl" var="prod" value="#{product.products}"
 							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
 							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                  			paginator="true" rows="23" style="margin-bottom:20px">>
