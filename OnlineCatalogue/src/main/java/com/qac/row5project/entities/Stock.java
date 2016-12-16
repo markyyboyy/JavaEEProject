@@ -39,8 +39,12 @@ public class Stock {
 	//change to long
 	@ManyToOne 
 	@NotNull @JoinColumn(name="productID", nullable=false)
+	
+	//CHANGE OF NAME vvv
 	private Product productID;
-		//java dog for parameters
+	//TODO
+	
+	//java dog for parameters
 	public Stock(long id, boolean porousware, int quantity,boolean refurbished, Product productID, float price) {
 		super();
 		this.id = id;
