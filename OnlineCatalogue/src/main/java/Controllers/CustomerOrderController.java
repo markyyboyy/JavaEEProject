@@ -1,13 +1,10 @@
 package Controllers;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.qac.row5project.managers.CustomerManager;
-import com.qac.services.LoginService;
-
-import Controllers.session.CurrentUser;
+import com.qac.row5project.managers.CustomerOrderManager;
 
 /**
  * 
@@ -16,7 +13,12 @@ import Controllers.session.CurrentUser;
  */
 
 @Named("customerOrder")
-@RequestScoped
+@SessionScoped
 public class CustomerOrderController {
+	
+	@Inject
+	private CustomerOrderManager coManager;
+	
+	
 
 }

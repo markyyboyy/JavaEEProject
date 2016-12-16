@@ -1,13 +1,13 @@
 package com.qac.services;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.qac.row5project.entities.Customer;
-import com.qac.row5project.entities.LoginDetails;
-import com.qac.row5project.managers.CustomerManager;
-
-import com.qac.row5project.managers.LoginDetailsManager;
+import com.qac.row5project.entities.CustomerOrder;
+import com.qac.row5project.managers.CustomerOrderManager;
+import Controllers.session.CurrentUser;
 
 /**
  * 
@@ -17,5 +17,14 @@ import com.qac.row5project.managers.LoginDetailsManager;
 
 @Stateless
 public class CustomerOrderService {
-
+	@Inject
+	private CustomerOrderManager coManager;
+	
+	@Inject
+	private CurrentUser cU;
+	
+	private List<CustomerOrder> coList;
+	
+	
+	
 }
