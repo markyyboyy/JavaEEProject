@@ -317,3 +317,23 @@ main {
 .addr {
 	padding-bottom: 5%;
 }
+
+
+.navbar-collapse.collapse.in ul li input,
+.collapse.navbar-collapse ul li input{
+
+	width: 100%;
+	
+	
+}
+
+.mainSearchBanner{
+padding-left: 0;	
+}
+
+
+
+.navWrapper{
+	width: 67%;
+}
+
