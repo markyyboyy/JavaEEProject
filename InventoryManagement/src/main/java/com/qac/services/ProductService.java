@@ -28,12 +28,12 @@ public class ProductService {
 	ProductItem productItem;
 
 
-/**
- * CUSTOMER/INV MANAGER
- * CONVERTS A STRING PRODUCT ID TO A LONG ID
- * @param name
- * @return PRODUCT
- */
+	/**
+	 * CUSTOMER/INV MANAGER
+	 * CONVERTS A STRING PRODUCT ID TO A LONG ID
+	 * @param name
+	 * @return PRODUCT
+	 */
 	public Product readProductByName(String name) {
 		try {
 			return readProductById(Long.parseLong(name));
@@ -55,12 +55,12 @@ public class ProductService {
 		return productManager.readProductById(id);
 	}
 
-/**
- * SEARCH PRODUCTS BY COLOUR
- * @param colour
- * @return PRODUCT/S
- */
-	
+	/**
+	 * SEARCH PRODUCTS BY COLOUR
+	 * @param colour
+	 * @return PRODUCT/S
+	 */
+		
 	public List<Product> readProductByColour(String colour) {
 		try {
 			return productManager.readProductByColour(colour);
@@ -111,12 +111,12 @@ public class ProductService {
 
 	}
 
-	
-/**
- * 	LIST ALL PRODUCTS
- * @return List<ProductItem>
- * 
- */
+		
+	/**
+	 * 	LIST ALL PRODUCTS
+	 * @return List<ProductItem>
+	 * 
+	 */
 	
 	public List<ProductItem> findAllProducts() {
 
