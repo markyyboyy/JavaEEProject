@@ -334,4 +334,9 @@ background-color: #46b8da !important;
 		display: block;
 		border: 0 none
 	}
+	
+	.fixed-size{
+	table-layout: fixed;
+    word-wrap: break-word;
+	}
 }

@@ -34,7 +34,7 @@
 				<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
 					<div class="row orderLineRow">
 						<div class="col-sm-3 imgBasketPane" >
-							<img src="img/fgnome1.jpeg" />
+							<h:graphicImage value="#{image.getProductImage(orderLine.stock.productID.productID)}" />
 						</div>
 
 						<div class="col-sm-3" style="background-color: #F4F4F4;"><h4>

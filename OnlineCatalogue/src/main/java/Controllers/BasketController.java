@@ -188,7 +188,7 @@ public class BasketController {
 		return "basket";
 
 	}
-
+	
 	/**
 	 * selecting the basket for the customer when logged in
 	 * 

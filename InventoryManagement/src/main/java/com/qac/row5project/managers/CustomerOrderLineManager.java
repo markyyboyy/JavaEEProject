@@ -11,7 +11,6 @@ import com.qac.row5project.entities.CustomerOrderLine;
  */
 public interface CustomerOrderLineManager {
 	
-
 	/**
 	 * CREATE - Customer Only
 	 * @param customerOrderLine
