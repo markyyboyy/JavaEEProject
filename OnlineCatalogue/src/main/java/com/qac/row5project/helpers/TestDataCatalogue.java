@@ -129,7 +129,7 @@ public class TestDataCatalogue {
 		ratings.add(new Rating((short) 4,"I love this gnome.",0,1));
 		c1.set(5, 6, 2012);
 		
-		//generateCustomerOrder(50);
+		generateCustomerOrder(50);
 	}
 
 	/***
