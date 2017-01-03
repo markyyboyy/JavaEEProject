@@ -47,7 +47,7 @@ public class CurrentUser implements Serializable{
 		return (customer == null) ? false : true;
 	}
 	
-
+	
 
 	public void getBasket() {
 		

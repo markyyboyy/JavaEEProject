@@ -226,6 +226,7 @@ main {
 	color: black;
 	border: 1px solid black;
 	margin-top: 5px;
+	
 }
 
 .btn.btn-primary:hover {
@@ -258,7 +259,15 @@ main {
 }
 
 .footerWrapper {
-	padding-top: 20px;
+   	padding-left:13%;
+   	bottom:0px;
+   	height:30px;
+   	width:100%;
+}
+
+.link{
+	font-family: "Myriad", Helvetica;
+	font-size: 20;
 }
 
 #outputMessage{
