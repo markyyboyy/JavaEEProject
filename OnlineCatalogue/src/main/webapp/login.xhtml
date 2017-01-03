@@ -16,10 +16,16 @@
 
 			function showRegister(args) {
 
-				var elm = $("#formRegister");
 
-				$(elm).toggle();
-				return false;
+					
+					var elm = $("#formRegister");
+
+					$(elm).toggle();
+
+					setTimeout(function(){ 
+						}, 3000);
+							
+
 			}
 
 		</script>
@@ -64,10 +70,9 @@
 			</h:form>
 
 			<h:form class="regButton">
-				<h:commandButton onmousedown="showRegister(this)"
-					styleClass="btn btn-primary">
+				<h:commandButton onmousedown="showRegister(this)" styleClass="btn btn-primary">
 					<f:passThroughAttribute name="value" value="Register Now" />
-
+					<f:ajax execute="@form" render ="@none" />
 				</h:commandButton>
 			</h:form>
 			<br />
