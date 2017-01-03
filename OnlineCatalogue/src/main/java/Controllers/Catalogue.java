@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.enterprise.context.ConversationScoped;
 import javax.faces.model.DataModel;
@@ -167,7 +168,7 @@ public class Catalogue implements Serializable {
 				}
 
 			};		
-
+			
 		return pagenationHelper;
 	}
 
