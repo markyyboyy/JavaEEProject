@@ -15,11 +15,24 @@
 
 				<div id="scrollpane">
 					<h:form>
-	<p:dataTable var="prod" value="#{purchaseOrder.purchaseList}"
-							sortMode="multiple">
+							<p:dataTable styleclass="fixed-size" id="tbl" var="prod" value="#{purchaseOrder.purchaseList}"
+							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
+							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 			paginator="true" rows="23" style="margin-bottom:20px">
+                 			<f:facet name="{Exporters}">
+					            <h:commandLink>
+					            	<img src="./img/excel.jpg" width="24"/>
+					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
+					            </h:commandLink>
+					 
+					            <h:commandLink>
+					                <img src="./img/pdf.jpg" width="24"/>
+					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
+					            </h:commandLink>
+
+					        </f:facet>
 							<f:facet name="header">
-            Purchase Orders
-        </f:facet>
+       						 </f:facet>
 							<p:column headerText="Product ID" sortBy="#{prod.orderID}">
 								<h:outputText value="#{prod.orderID}" />
 							</p:column>

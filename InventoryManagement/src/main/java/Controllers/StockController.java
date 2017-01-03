@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -32,7 +34,8 @@ import com.qac.services.ProductService;
 public class StockController {
 	@Inject
 	private ProductService productService;
-	List<ProductItem> products = new ArrayList<ProductItem>();
+	private DataModel<ProductItem> products;
+	List<ProductItem> products2 = new ArrayList<ProductItem>();
 	PieChartModel pieModel = new PieChartModel();
 	BarChartModel lineModel = new BarChartModel();
     private BarChartModel animatedModel1;
@@ -40,6 +43,36 @@ public class StockController {
 	 * This method returns a list of all of the products in the system.
 	 * @return All of the products in the system.
 	 */
+public DataModel<ProductItem> getProducts() {
+	 	
+		if(products == null){
+		 	setProducts(productService.findAllProducts());
+		 	removeUnuused(products);
+			return products;
+		}
+		else {
+			return products;
+		}
+}
+
+private void removeUnuused(DataModel<ProductItem> products3) {
+		// TODO Auto-generated method stub
+	List<ProductItem> items = new ArrayList<ProductItem>();
+		for (ProductItem p:products3){
+			if (p.getStockLevel() != 0){
+				items.add(p);
+			}
+		}
+		this.products = new ListDataModel<ProductItem>(items);
+	}
+
+public void setProducts(List<ProductItem> lsTemp)
+{
+	
+		this.products = new ListDataModel<ProductItem>(lsTemp);
+}
+
+
 	public PieChartModel getPieModel() {
 			setPieModel();
         return pieModel;
@@ -49,7 +82,7 @@ public class StockController {
     return animatedModel1;
 }
 	public void setPieModel(){
-		products = productService.findAllProducts();
+		products2 = productService.findAllProducts();
 		for (ProductItem i:products){
 			pieModel.set(i.getDescription(), i.getStockLevel());
 			System.out.println(i.getDescription());
@@ -66,7 +99,7 @@ public class StockController {
 		
         BarChartSeries series1 = new BarChartSeries();
         
-        products = productService.findAllProducts();
+        products2 = productService.findAllProducts();
 		for (ProductItem i:products){
 			series1.set(i.getDescription(),i.getStockLevel());
     }
