@@ -110,7 +110,7 @@ public class BasketController {
 	public String addToBasket(Stock stock, int quantity) {
 		if (user.isLoggedIn() && user.getCustomer() != null){
 			//Stock stock = stockService.getStockByProductID(id);
-			basketService.addToBasket(stock, user, 0);			
+			basketService.addToBasket(stock, user, 1);			
 		}
 		
 		return "catalogue";
