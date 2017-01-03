@@ -77,7 +77,7 @@ public class CustomerOrderManagerOffline implements CustomerOrderManager {
 		// Need a check to see if there is enough sotck todo!!!!!
 		for (CustomerOrderLine customerOrderLine : cOrder.getCustomerOrderLines()) {
 			if (stock.getID() == customerOrderLine.getStock().getID()) {
-				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + 1);
+				customerOrderLine.setQuantity(customerOrderLine.getQuantity() + quantity);
 				return;
 			}
 		}		

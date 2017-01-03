@@ -42,7 +42,7 @@ public class StockController {
 		if (productID < 0)
 			return 0;
 
-		if (cu != null && cu.getCustomer() != null) {
+		if (cu.getCustomer() != null) {
 			CustomerOrder order = custOrder.readCustomerOrderById(cu.getCustomer().getID());
 
 			if (order == null) // 
