@@ -6,15 +6,45 @@ Oringally: RyanB
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="templates/main.xhtml">
 
+	
+
+
 	<!-- Defining page title -->
 	<ui:define name="pageName">Product</ui:define>
+	
+	
+		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
 
 	<!-- Defining main content contained on the page -->
 	<ui:define name="mainContent">
+
+	<SCRIPT type="text/javascript">
+		
+			// on mouse enter		
+			function showHover(args) {
+
+				var onHover = $(args).children()[0].children[1]; //get overlay element
+				$(onHover).show();
+			}
+
+	 		// on mouse exit
+			function hideHover(args) {
+				var onHover = $(args).children()[0].children[1]; //get overlay element
+				$(onHover).hide();
+			}
+ 
+
+
+			
+		</SCRIPT>
+	
+
 
 		<!-- Title -->
 		<div class="row">
@@ -40,7 +70,8 @@ Oringally: RyanB
 					<div id="theButton">
 
 						<h:commandButton action="#{wishlist.addToWishlistToggle(prod.id)}"
-							styleClass="btn btn-primary" value="Add to Wishlist" rendered="#{user.isLoggedIn()}"></h:commandButton>
+							styleClass="btn btn-primary" value="Add to Wishlist"
+							rendered="#{user.isLoggedIn()}"></h:commandButton>
 
 						<h:commandButton action="#{basket.addToBasket(prod.id)}"
 							styleClass="btn btn-primary"
@@ -50,45 +81,95 @@ Oringally: RyanB
 				</h:form>
 			</div>
 
-		
 
-		
+
+
 			<h:form>
-				<h:outputText rendered="#{selected.product.inStock}" style="font-size:x-large" value="Product is in Stock ">
+				<h:outputText rendered="#{selected.product.inStock}"
+					style="font-size:x-large" value="Product is in Stock ">
 				</h:outputText>
-				<h:outputText rendered="#{!selected.product.inStock}" style="font-size:x-large" value="Product is out of Stock">
+				<h:outputText rendered="#{!selected.product.inStock}"
+					style="font-size:x-large" value="Product is out of Stock">
 				</h:outputText>
 				<br />
 				<h:outputText
 					value="This item comes with a manufacturer's warranty of five years."></h:outputText>
 			</h:form>
-			</div>
-		
+		</div>
+
 
 
 		<div class="row">
 			<h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3>
 		</div>
+<h:form>
+		<h:panelGroup id="resultsSection">
+			<h:panelGroup>
+				<ui:repeat var="prod" value="#{Catalogue.products}" size="4">
+					<!-- Wishlist does not show when a user is not logged in.
+									on hover show wishlist and basket icons -->
 
-		<div class="row" id="recommendations">
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
+					<h:commandLink action="#{selected.goTo(prod)}" />
+
+					<div id="produc1t" onmouseover="showHover(this)"
+						onmouseleave="hideHover(this)"
+						class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
 
 
-		</div>
+						<div class="imgWrapper">
+							<h:graphicImage value="#{prod.url}" onclick="#" />
+							<div id="imgProduct" class="onHover">
+								<div class="star">
+									<c:if test="#{user.loggedIn}">
+										<h:commandLink
+											action="#{wishlist.addToWishlistToggle(prod.id)}"
+											styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
+									</c:if>
+								</div>
+								<!-- Basket -->
+								<div class="basket">
+									<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
+
+										<h:commandLink action="#{basket.addToBasket(prod.id)}"
+											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+									</h:panelGroup>
+
+								</div>
+								<!-- Select Product -->
+								<div class="selectProduct">
+									<h:panelGroup outcome="product.xhtml">
+										<!-- display = "hidden" -->
+										<h:commandLink action="#{selected.goTo(prod)}"
+											styleClass="glyphicon glyphicon-eye-open"></h:commandLink>
+									</h:panelGroup>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ui:repeat>
+			</h:panelGroup>
+		</h:panelGroup>
+</h:form>
+
+		<!-- 	<div class="row" id="recommendations">
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+			<div class="col-md-2">
+				<img id="recomPic" src="./img/fgnome1.jpeg" />
+			</div>
+
+
+		</div> -->
 
 	</ui:define>
 
