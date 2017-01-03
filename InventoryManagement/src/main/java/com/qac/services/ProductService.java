@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.ItemStatus;
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.ProductItem;
@@ -128,6 +129,11 @@ public class ProductService {
 		}
 
 		return temp;
+	}
+	
+	public void addProduct(ProductItem p){
+		Product product = new Product(p.getName(), p.getDescription(), p.getPrice(), p.getWeight(), "blue", p.getSize(), 0, p.getCategory(), ItemStatus.AVAILABLE);
+		productManager.createProduct(product);
 	}
 }
 
