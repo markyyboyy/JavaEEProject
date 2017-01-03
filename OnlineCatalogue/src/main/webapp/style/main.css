@@ -82,7 +82,7 @@
 	width: 200px;
 	position: absolute;
 	top: -10;
-	right: 30%;
+	right: 20%;
 }
 
 .loginButton input {
@@ -175,7 +175,7 @@ main {
 
 .mainSearchBanner {
 	float: left;
-	width: 94%;
+	width: 91%;
 	margin-right: 1%;
 }
 
@@ -316,7 +316,7 @@ main {
 }
 
 .nav.navbar-nav {
-	width: 100%;
+	width: 93%;
 }
 
 .infoAddr {
