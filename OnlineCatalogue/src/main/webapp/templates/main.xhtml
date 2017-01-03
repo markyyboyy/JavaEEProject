@@ -18,7 +18,7 @@
 
 <h:body>
 	<header>
-		<div class="homeLogo">
+		<div class="homeLogo mob-md-Hide ">
 			<a href="home.xhtml"> <img src="img/logo.png"></img></a>
 		</div>
 
@@ -27,12 +27,12 @@
 		<div class="navWrapper ">
 			<div class="searchInputBanner row">
 
-				<div class="mainSearchBanner col-md-4 col-xs-12">
+				<div class="mainSearchBanner mob-md-Hide col-md-4 col-xs-12">
 					<h:inputText alt="search" value="#{search.term}">
 						<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
 					</h:inputText>
 
-					<div style="float: left">
+					<div class="searchIcon " style="float: left">
 						<h:form>
 							<h:commandLink action="#{search.search()}">
 								<span class="glyphicon glyphicon-search	Try it searchIcon" />
@@ -44,7 +44,7 @@
 
 
 
-				<div class="col-md-12 col-xs-12">
+				<div class="col-md-12 col-xs-12 noSpacingX">
 					<h:form>
 						<nav class="navbar navbar-default navMenu">
 							<div class="">
@@ -62,10 +62,10 @@
 								</div>
 
 								<!-- Collect the nav links, forms, and other content for toggling -->
-								<div class="collapse navbar-collapse"
+								<div class="collapse navbar-collapse noSpacingX"
 									id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><h:button styleClass="btn btn-primary"
+										<li><h:button styleClass="btn btn-primary "
 												outcome="catalogue" value="Browse" /></li>
 
 										<li><h:button styleClass="btn btn-primary"
