@@ -36,8 +36,18 @@ private List<Category> categories;
 
 private List<ItemStatus> status;
 
+private ProductItem productToAdd = new ProductItem();
 
 
+
+
+public ProductItem getProductToAdd() {
+	return productToAdd;
+}
+
+public void setProductToAdd(ProductItem productToAdd) {
+	this.productToAdd = productToAdd;
+}
 
 /**
  * FIND ALL PRODUCTS BY INVOKING FINDALLPRODUCTS() FROM THE PRODUCTSERVICE
@@ -109,5 +119,9 @@ public DataModel<ProductItem> getProducts() {
 			Collections.sort(lsTemp, (s1, s2) -> s1.getStockLevel() - s2.getStockLevel());
 			setProducts(lsTemp);		
 			return products ;
+		}
+		public void addProduct(){
+			System.out.println("Product added");
+			System.out.println(productToAdd.getName());
 		}
 }
