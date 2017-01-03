@@ -12,19 +12,24 @@ Oringally: RyanB
 
 <ui:composition template="templates/main.xhtml">
 
-	
+
+
 
 
 	<!-- Defining page title -->
 	<ui:define name="pageName">Product</ui:define>
-	
-	
-		<h:outputScript library="javax.faces" name="jsf.js" target="head" />
+
+
+	<h:outputScript library="javax.faces" name="jsf.js" target="head" />
 
 	<!-- Defining main content contained on the page -->
 	<ui:define name="mainContent">
 
-	<SCRIPT type="text/javascript">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+		<link rel="stylesheet"
+			href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+		<SCRIPT type="text/javascript">
 		
 			// on mouse enter		
 			function showHover(args) {
@@ -38,12 +43,31 @@ Oringally: RyanB
 				var onHover = $(args).children()[0].children[1]; //get overlay element
 				$(onHover).hide();
 			}
- 
+
+			var opt = {
+			        autoOpen: false,
+			        modal: true,
+			        width: 550,
+			        height:650,
+			        title: 'Review'
+			}; 
+			
+			$(document).ready(function(){
+				
+				var btn = $('.btnReview');
+				var btnReview = $('.btnReview')[0];
+
+				
+				$(btnReview).click(function(){
+				 	 $( "#dialog" ).dialog(opt).dialog( "open" );
+				});
+					
+			});	 		
 
 
 			
 		</SCRIPT>
-	
+
 
 
 		<!-- Title -->
@@ -57,7 +81,7 @@ Oringally: RyanB
 		<!-- Product Image + Info -->
 		<div id="thePicture" class="row">
 			<div class="col-md-6" id="carousel">
-				<a> <img src="#{selected.product.url}" /></a>
+				<a> <img id="thePicture" src="#{selected.product.url}" /></a>
 			</div>
 
 
@@ -77,10 +101,14 @@ Oringally: RyanB
 							styleClass="btn btn-primary"
 							rendered="#{stock.isInStock(prod.id)}" value="Add to Basket"></h:commandButton>
 
+						<h:commandButton styleClass="btn btn-primary btnReview" value="Review">						
+							 <f:ajax execute="@form" render ="@none" />
+						 </h:commandButton>
+
+
 					</div>
 				</h:form>
 			</div>
-
 
 
 
@@ -102,74 +130,59 @@ Oringally: RyanB
 		<div class="row">
 			<h3>SEE BELOW FOR RECOMMENDATIONS BASED ON THIS ITEM:</h3>
 		</div>
-<h:form>
-		<h:panelGroup id="resultsSection">
-			<h:panelGroup>
-				<ui:repeat var="prod" value="#{Catalogue.products}" size="4">
-					<!-- Wishlist does not show when a user is not logged in.
+		<h:form>
+			<h:panelGroup id="resultsSection">
+				<h:panelGroup>
+					<ui:repeat var="prod" value="#{Catalogue.products}" size="4">
+						<!-- Wishlist does not show when a user is not logged in.
 									on hover show wishlist and basket icons -->
 
-					<h:commandLink action="#{selected.goTo(prod)}" />
+						<h:commandLink action="#{selected.goTo(prod)}" />
 
-					<div id="produc1t" onmouseover="showHover(this)"
-						onmouseleave="hideHover(this)"
-						class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
+						<div id="produc1t" onmouseover="showHover(this)"
+							onmouseleave="hideHover(this)"
+							class="col-md-3 col-sm-6 col-xs-12 resultSingleWrapper">
 
 
-						<div class="imgWrapper">
-							<h:graphicImage value="#{prod.url}" onclick="#" />
-							<div id="imgProduct" class="onHover">
-								<div class="star">
-									<c:if test="#{user.loggedIn}">
-										<h:commandLink
-											action="#{wishlist.addToWishlistToggle(prod.id)}"
-											styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
-									</c:if>
-								</div>
-								<!-- Basket -->
-								<div class="basket">
-									<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
+							<div class="imgWrapper">
+								<h:graphicImage value="#{prod.url}" onclick="#" />
+								<div id="imgProduct" class="onHover">
+									<div class="star">
+										<c:if test="#{user.loggedIn}">
+											<h:commandLink
+												action="#{wishlist.addToWishlistToggle(prod.id)}"
+												styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
+										</c:if>
+									</div>
+									<!-- Basket -->
+									<div class="basket">
+										<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
 
-										<h:commandLink action="#{basket.addToBasket(prod.id)}"
-											styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
-									</h:panelGroup>
+											<h:commandLink action="#{basket.addToBasket(prod.id)}"
+												styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
+										</h:panelGroup>
 
-								</div>
-								<!-- Select Product -->
-								<div class="selectProduct">
-									<h:panelGroup outcome="product.xhtml">
-										<!-- display = "hidden" -->
-										<h:commandLink action="#{selected.goTo(prod)}"
-											styleClass="glyphicon glyphicon-eye-open"></h:commandLink>
-									</h:panelGroup>
+
+										<div id="dialog" title="Basic dialog">
+											<p>Shit.</p>
+										</div>
+									</div>
+									<!-- Select Product -->
+									<div class="selectProduct">
+										<h:panelGroup outcome="product.xhtml">
+											<!-- display = "hidden" -->
+											<h:commandLink action="#{selected.goTo(prod)}"
+												styleClass="glyphicon glyphicon-eye-open"></h:commandLink>
+										</h:panelGroup>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</ui:repeat>
+					</ui:repeat>
+				</h:panelGroup>
 			</h:panelGroup>
-		</h:panelGroup>
-</h:form>
+		</h:form>
 
-		<!-- 	<div class="row" id="recommendations">
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-			<div class="col-md-2">
-				<img id="recomPic" src="./img/fgnome1.jpeg" />
-			</div>
-
-
-		</div> -->
 
 	</ui:define>
 
