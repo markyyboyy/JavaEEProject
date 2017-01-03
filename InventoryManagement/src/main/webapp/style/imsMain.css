@@ -31,8 +31,6 @@ body{
 
 .sidebar div {
 	margin: 10px 0;
-	float: left;
-	width: 100%;
 }
 
 .content {
@@ -75,12 +73,6 @@ footer{
 	height: 2%;
 }
 
-.footerWrapper div{
-	float: bottom;
-	width: 18%;
-	padding: 0 1%;
-	margin: 10px 1%;
-}
 
 
 main div, main nav {
@@ -120,13 +112,17 @@ main nav input[type="submit"] {
 }
 
 .logoSB {
-	padding-bottom: -5%
+}
+
+.logo {
+text-align: center
 }
 
 .footerWrapper {
 	float: left;
-	padding-top: 80%;
-	padding-left: 30%;
+	padding-top: 0%;
+	margin:0px auto;
+	width:100%;
 }
 
 .logoffButton {
@@ -137,4 +133,15 @@ main nav input[type="submit"] {
 	float: left;
 	padding-top: 15%;
 	padding-left: 98%;
+}
+
+.filterResults {
+}
+
+.logo img{
+	width:50%;
+	height:20%;
+} 
+
+.filter{
 }
