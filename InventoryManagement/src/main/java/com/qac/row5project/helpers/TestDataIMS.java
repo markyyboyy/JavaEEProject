@@ -46,9 +46,12 @@ public class TestDataIMS {
 		stocks = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		Supplier supply = new Supplier();
+		Supplier supply2 = new Supplier();
 		supply.setID(1);
+		supply2.setID(2);
 		suppliers = new ArrayList<Supplier>();
 		suppliers.add(supply);
+		suppliers.add(supply2);
 		short s = 5;
 		
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,

@@ -19,10 +19,14 @@
 				<br />
 				<ui:define name="filterName">
 					<div class="search">
-						<h:inputText alt="search">
+					<h:form>
+						<h:inputText value="#{supplier.supplierID}" alt="search">
 							<f:passThroughAttribute name="placeholder"
 								value="Search by Supplier ID..."></f:passThroughAttribute>
 						</h:inputText>
+						<h:commandButton value="Search" action="#{supplier.searchByID()}" />
+					</h:form>
+
 					</div>
 				</ui:define>
 
@@ -38,7 +42,6 @@
 							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
 							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                  			paginator="true" rows="23" style="margin-bottom:20px">>
-									
 								<f:facet name="{Exporters}">
 					            <h:commandLink>
 					            	<img src="./img/excel.jpg" width="24"/>
@@ -51,13 +54,15 @@
 					            </h:commandLink>
 
 					        </f:facet>
+					        <f:facet name="header">Sales/Profits of Manufacturers</f:facet>	
 					     	<p:column headerText="Name" sortBy="#{prod.ID}">
 								<h:outputText value="#{prod.ID}" />
 							</p:column>
-							<p:column headerText="Description" sortBy="#{prod.pSupplier.supplier.toString()}">
-								<h:outputText value="#{prod.pSupplier.supplier.toString()}" />
-							</p:column>
 						</p:dataTable>
+						<br></br>
+						<div id="error">
+						<h:outputText value="#{supplier.error}"> </h:outputText>
+						</div>
 					</h:form>
 		</ui:define>
 	</ui:composition>

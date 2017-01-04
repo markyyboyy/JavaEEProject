@@ -339,4 +339,9 @@ background-color: #46b8da !important;
 	table-layout: fixed;
     word-wrap: break-word;
 	}
+	
+	.ui-datatable-header ui-widget-header ui-corner-top
+	{
+	margin:0px;
+	}
 }
