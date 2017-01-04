@@ -19,11 +19,14 @@
 				<br />
 				<ui:define name="filterName">
 					<div class="search">
+					<h:form>
 						<h:inputText value="#{supplier.supplierID}" alt="search">
 							<f:passThroughAttribute name="placeholder"
 								value="Search by Supplier ID..."></f:passThroughAttribute>
 						</h:inputText>
 						<h:commandButton value="Search" action="#{supplier.searchByID()}" />
+					</h:form>
+
 					</div>
 				</ui:define>
 
@@ -56,6 +59,10 @@
 								<h:outputText value="#{prod.ID}" />
 							</p:column>
 						</p:dataTable>
+						<br></br>
+						<div id="error">
+						<h:outputText value="#{supplier.error}"> </h:outputText>
+						</div>
 					</h:form>
 		</ui:define>
 	</ui:composition>
