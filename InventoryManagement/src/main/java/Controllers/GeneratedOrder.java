@@ -33,6 +33,7 @@ public class GeneratedOrder {
 	 * @return All of the products in the system.
 	 */
 	public List<ProductWrapper> getProductItems() {
+		System.out.println("ran");
 		if (productItems.size() == 0){	//If we already have a list then the user called sort, so dont display the unsorted list.
 				//productItems = generateService.getProducts();
 				List<ProductItem> tmpList = generateService.getProducts();

@@ -23,12 +23,30 @@ public class SupplierController {
 	@Inject
 	private SupplierService supplierService;
 	private List<Supplier> supplier = new ArrayList<Supplier>();
+	public String getSupplierID() {
+		return supplierID;
+	}
+	public void setSupplierID(String supplierID) {
+		this.supplierID = supplierID;
+	}
+	private String supplierID;
+	public void searchByID(){
+		System.out.println("Search By ID");
+		supplier = supplierService.getByID(supplierID);
+		supplier.add(supplier.get(0));
+		setSupplier(supplier);
+	}
 	public List<Supplier> getSupplier() {
+		System.out.println("method called");
 		supplier = supplierService.getSuppliers();
 		return supplier;
 	}
 	public void setSupplier(List<Supplier> supplier) {
+		if (supplier == null){
+			System.out.println("set supplier");
 		this.supplier = supplier;
+		}
+		System.out.println("set supplier to null");
 	}
 	
 }

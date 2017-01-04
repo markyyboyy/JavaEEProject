@@ -145,3 +145,7 @@ text-align: center
 
 .filter{
 }
+
+main div, main nav {
+	margin:0px;
+	}

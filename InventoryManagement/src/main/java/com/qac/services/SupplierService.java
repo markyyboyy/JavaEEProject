@@ -1,5 +1,6 @@
 package com.qac.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -14,6 +15,17 @@ SupplierManager supplierManager;
 	public List<Supplier> getSuppliers() {
 		// TODO Auto-generated method stub
 		return supplierManager.getSuppliers();
+	}
+	public List<Supplier> getByID(String supplierID) {
+		// TODO Auto-generated method stub
+		for (Supplier s: supplierManager.getSuppliers()){
+			if (s.getID() == Long.parseLong(supplierID)){
+				ArrayList returnable = new ArrayList<Supplier>();
+				returnable.add(s);
+				return returnable;
+			}
+		}
+		return null;
 	}
 
 }
