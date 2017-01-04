@@ -75,7 +75,12 @@ Oringally: RyanB
 			<div class="col-md-8" id="titlepricecarousel">
 				<h1>
 					<strong>#{selected.product.name}</strong>
-				</h1>
+									</h1><h2>
+				
+				<h:outputText value="#{review.averageScore}" escape="false" />
+				</h2>
+				
+				
 			</div>
 		</div>
 		<!-- Product Image + Info -->
@@ -101,9 +106,11 @@ Oringally: RyanB
 							styleClass="btn btn-primary"
 							rendered="#{stock.isInStock(prod.id)}" value="Add to Basket"></h:commandButton>
 
-						<h:commandButton styleClass="btn btn-primary btnReview" value="Review">						
-							 <f:ajax execute="@form" render ="@none" />
-						 </h:commandButton>
+						<h:commandButton styleClass="btn btn-primary btnReview"
+							value="Review"
+							rendered="#{user.isLoggedIn()}">
+							<f:ajax execute="@form" render="@none" />
+						</h:commandButton>
 
 
 					</div>
@@ -124,6 +131,50 @@ Oringally: RyanB
 					value="This item comes with a manufacturer's warranty of five years."></h:outputText>
 			</h:form>
 		</div>
+
+		<div class="row">
+			<h1>Reviews </h1>
+			<div class="col-md-6">
+
+				<ui:repeat var="r" value="#{review.productRating}">
+					<hr/>
+
+					<p><span>Rating </span>#{r.score}</p>
+					<p><span>Comment </span>#{r.comment}</p>
+					
+
+				</ui:repeat>
+<hr/>
+
+
+			</div>
+
+
+		</div>
+
+
+
+			<div id="dialog" title="Basic dialog" style="display: none;">
+					<h:form>
+			
+				<h2>Review</h2>
+
+				<h:outputLabel value="Review" for="txtReview" />
+				<h:inputTextarea id="txtReview" value="#{review.review}" />
+				
+				<h:outputLabel value="Rating" for="txtScore" />
+				<h:inputText id="txtScore" value="#{review.score}" />
+
+				<h:commandButton value="Submit" 
+					styleClass="btn btn-primary btnReview"
+					action="#{review.addReview}">
+					<f:passThroughAttribute name="type" value="submit" />
+				</h:commandButton>
+		</h:form>
+
+
+			</div>
+
 
 
 
@@ -163,9 +214,11 @@ Oringally: RyanB
 										</h:panelGroup>
 
 
-										<div id="dialog" title="Basic dialog">
-											<p>Shit.</p>
-										</div>
+
+
+
+
+
 									</div>
 									<!-- Select Product -->
 									<div class="selectProduct">
