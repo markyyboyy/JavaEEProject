@@ -6,11 +6,14 @@
 package com.qac.services;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
+import com.qac.row5project.entities.Category;
 import com.qac.row5project.entities.ItemStatus;
 import com.qac.row5project.entities.Product;
 import com.qac.row5project.entities.Stock;
@@ -134,6 +137,47 @@ public class ProductService {
 	public void addProduct(ProductItem p){
 		Product product = new Product(p.getName(), p.getDescription(), p.getPrice(), p.getWeight(), "blue", p.getSize(), 0, p.getCategory(), ItemStatus.AVAILABLE);
 		productManager.createProduct(product);
+	}
+
+	public List<ProductItem> findAllAvailableProducts() {
+		List<ProductItem> temp = new ArrayList<>();
+		List<Product> lsProduct = productManager.findAllProducts();
+				
+		for(int i = 0; i <lsProduct.size() -1; i++){
+			if (getProductItem(lsProduct.get(i)).getStatus() == ItemStatus.AVAILABLE){
+			temp.add(getProductItem(lsProduct.get(i)));
+			}
+		}
+
+		return temp;
+	}
+
+	public List<ProductItem> findAllProductsByStatus(ItemStatus selecteditemstatus, DataModel<ProductItem> products) {
+		// TODO Auto-generated method stub
+		List<ProductItem> temp = new ArrayList<>();
+		Iterator<ProductItem> i = products.iterator();
+		while (i.hasNext()){
+			ProductItem p = i.next();
+			if (p.getStatus() == selecteditemstatus){
+			temp.add(p);
+			}
+		}
+			//System.out.println(selecteditemstatus.name());
+		return temp;
+	}
+
+	public List<ProductItem> findAllProductsByCategory(Category selecteditemcategory, DataModel<ProductItem> products) {
+		// TODO Auto-generated method stub
+		List<ProductItem> temp = new ArrayList<>();
+		Iterator<ProductItem> i = products.iterator();
+		while (i.hasNext()){
+			ProductItem p = i.next();
+			if (p.getCategory() == selecteditemcategory){
+			temp.add(p);
+			}
+		}
+			//System.out.println(selecteditemstatus.name());
+		return temp;
 	}
 }
 
