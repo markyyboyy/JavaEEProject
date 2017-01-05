@@ -49,14 +49,17 @@ public class GenerateService {
 				productItems.add(product);
 			} 
 		}
-		int[] strings = new int[productItems.size()];
-		for(ProductItem p:productItems){
+		//System.out.println(productItems.size());
+		int[] strings = new int[productsInStock.size() + 1];
+		Iterator i2 = productItems.iterator();
+		while(i2.hasNext()){
+			ProductItem p = (ProductItem) i2.next();
 			if (strings[(int) p.getID()] == 0){
 				strings[(int) p.getID()] = 1;
 				returnable.add(p);
 			}
 		}
-		System.out.println("found" + productItems.size() + "items");
+		//System.out.println("found" + productItems.size() + "items");
 		return returnable;	//Return the final list.
 	}
 
@@ -96,9 +99,9 @@ public class GenerateService {
 		else{
 			current = new ArrayList<PurchaseOrder>();
 		}
-		System.out.println(current.size());
+		//System.out.println(current.size());
 		current.add(po);
-		System.out.println(current.size());
+		//System.out.println(current.size());
 		testData.setPurchaseOrders(current);
 	}
 }
