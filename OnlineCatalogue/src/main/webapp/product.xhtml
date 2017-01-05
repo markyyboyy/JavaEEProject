@@ -98,13 +98,13 @@ Oringally: RyanB
 				<h:form>
 					<div id="theButton">
 
-						<h:commandButton action="#{wishlist.addToWishlistToggle(prod.id)}"
+						<h:commandButton action="#{wishlist.addToWishlistToggle(prod.ID)}"
 							styleClass="btn btn-primary" value="Add to Wishlist"
 							rendered="#{user.isLoggedIn()}"></h:commandButton>
 
-						<h:commandButton action="#{basket.addToBasket(prod.id)}"
+						<h:commandButton action="#{basket.addToBasket(prod.ID)}"
 							styleClass="btn btn-primary"
-							rendered="#{stock.isInStock(prod.id)}" value="Add to Basket"></h:commandButton>
+							rendered="#{stock.isInStock(prod.ID)}" value="Add to Basket"></h:commandButton>
 
 						<h:commandButton styleClass="btn btn-primary btnReview"
 							value="Review"
@@ -201,15 +201,15 @@ Oringally: RyanB
 									<div class="star">
 										<c:if test="#{user.loggedIn}">
 											<h:commandLink
-												action="#{wishlist.addToWishlistToggle(prod.id)}"
-												styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
+												action="#{wishlist.addToWishlistToggle(prod.ID)}"
+												styleClass="#{wishlist.isInWishlist(prod.ID) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
 										</c:if>
 									</div>
 									<!-- Basket -->
 									<div class="basket">
-										<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
+										<h:panelGroup rendered="#{stock.isInStock(prod.ID)}">
 
-											<h:commandLink action="#{basket.addToBasket(prod.id)}"
+											<h:commandLink action="#{basket.addToBasket(prod.ID)}"
 												styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 										</h:panelGroup>
 

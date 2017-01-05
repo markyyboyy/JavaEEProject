@@ -106,7 +106,7 @@ public class reviewController {
 		List<Rating> ratings = null;
 		
 		if (slctPrd != null && slctPrd.getProduct() != null)			
-			ratings = reviewService.getReviewByCustomerID(slctPrd.getProduct().getId());				
+			ratings = reviewService.getReviewByCustomerID(slctPrd.getProduct().getID());				
 			
 		
 		if(ratings == null)
@@ -124,7 +124,7 @@ public class reviewController {
 			if(currentUser != null && currentUser.getCustomer() != null)
 			{
 				Customer customer = currentUser.getCustomer();						
-				Rating r = new Rating(score, customer.getID(), slctPrd.getProduct().getId());
+				Rating r = new Rating(score, customer.getID(), slctPrd.getProduct().getID());
 				r.setComment(review);
 	
 				reviewService.addReivew(r);				
@@ -136,8 +136,8 @@ public class reviewController {
 	}
 	
 	
-	private String generateStarRating(String productID){
-		
+	@SuppressWarnings("unused")
+	public String generateStarRating(String productID){		
 		
 		try{
 			
@@ -149,28 +149,31 @@ public class reviewController {
 		}
 		
 	}
- 
-	
-	
-	
-	private String generateStarRating(Long productID){
+ 	
+	public String generateStarRating(){
+		return generateStarRating(slctPrd.getProduct().getID());		
+	}	
+		
+	public String generateStarRating(Long productID){
 		
 		final String css = "<span class='glyphicon glyphicon-star'></span>";
-		StringBuilder strRating = new StringBuilder();		
+		StringBuilder strRating = new StringBuilder("<span></span>");	
+		
+		
 		
 		for(int i =0; i < reviewService.getAverageRating(productID); i++)			
-			strRating.append(css);			
+			strRating.append(css);		
+		
+		
+		
+		
 		
 		return strRating.toString();		
 	}
 
 	
 	
-	
-	private String generateStarRating(){
-		return generateStarRating(slctPrd.getProduct().getId());		
-	}
-	
+
 	
 	
 	

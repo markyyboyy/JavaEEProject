@@ -9,6 +9,60 @@
 <ui:composition template="templates/main.xhtml">
 	<ui:define name="mainContent">
 
+		<script type="text/javascript">
+		//<![CDATA[
+			var inputQuan;
+			var increase;
+			var decrease;
+
+
+			$(document).ready(function(){
+				
+				inputQuan = $('.quantityVal')[0];
+				increase = $('#increase');
+				decrease = $('#decrease');
+
+				
+				
+				
+				$(increase).click(function(){
+					changeQuan(1);});
+				
+				$(decrease).click(function(){
+					changeQuan(-1);});	
+
+								
+			});
+
+			function changeQuan(changeBy){
+				
+				
+				var currentQuan = $(inputQuan).val();
+				currentQuan = parseInt(currentQuan);			
+					
+				var newQuantity = currentQuan + changeBy;			
+				
+
+
+				var isValidValue = newQuantity <= 0;
+
+				if(isValidValue)
+					newQuantity = 0;
+	
+
+				
+	
+				
+				$(inputQuan).val(newQuantity);
+
+			}
+			
+
+			//]]>
+			
+
+		</script>
+
 
 		<c:if test="#{user.loggedIn}" />
 		<h1>Shopping Basket</h1>
@@ -54,18 +108,15 @@
 							<div class="row quantityChange">
 
 								<div class="col-sm-4">
-									<input type="submit" value="-"></input>
+									<input id="decrease" type="submit" value="-"></input>
 
 								</div>
 
 								<div class="col-sm-4 quanBtn">
 
-									<h:inputText>
+									<h:inputText styleClass="quantityVal"
+										value="#{orderLine.quantity}" disabled="true">
 
-										<f:passThroughAttribute name="quantity" value="text" />
-										<f:passThroughAttribute name="placeholder"
-											value="#{orderLine.quantity}" />
-										<f:passThroughAttribute name="alt" value="1" />
 
 
 									</h:inputText>
@@ -73,7 +124,7 @@
 
 
 								<div class="col-sm-4">
-									<input type="submit" value="+"></input>
+									<input id="increase" type="submit" value="+"></input>
 								</div>
 							</div>
 

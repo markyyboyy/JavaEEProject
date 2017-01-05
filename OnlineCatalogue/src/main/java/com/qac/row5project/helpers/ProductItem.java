@@ -6,7 +6,7 @@ import com.qac.row5project.entities.ItemStatus;
 import com.qac.row5project.entities.Rating;
 
 	public class ProductItem {
-		private long id;
+		private long ID;
 		private String name;
 		private String desc;
 		private double size;
@@ -24,7 +24,7 @@ import com.qac.row5project.entities.Rating;
 		public ProductItem(){}
 		
 		public ProductItem(long id) {
-			this.id = id;
+			this.ID = id;
 		}
 		
 		/***
@@ -39,7 +39,7 @@ import com.qac.row5project.entities.Rating;
 		 */
 		public ProductItem(long id, String name, String desc, double size, double weight, 
 			 ItemStatus status, long supplierID, Category category) {
-			this.id = id;
+			this.ID = id;
 			this.name = name;
 			this.desc= desc;
 			this.weight = weight;
@@ -60,7 +60,7 @@ import com.qac.row5project.entities.Rating;
 		 * @param weight
 		 */
 		public void addProductInfo(long id, String name, String desc, double size, double weight, ItemStatus status, long supplierID, Category category) {
-			this.id = id;
+			this.ID = id;
 			this.name = name;
 			this.desc= desc;
 			this.weight = weight;
@@ -80,12 +80,12 @@ import com.qac.row5project.entities.Rating;
 			this.ratings = r;
 		}
 
-		public long getId() {
-			return id;
+		public long getID() {
+			return ID;
 		}
 
-		public void setId(long id) {
-			this.id = id;
+		public void setID(long id) {
+			this.ID = id;
 		}
 
 		public String getName() {

@@ -128,15 +128,15 @@
 											<div class="star">
 												<c:if test="#{user.loggedIn}">
 													<h:commandLink
-														action="#{wishlist.addToWishlistToggle(prod.id)}"
-														styleClass="#{wishlist.isInWishlist(prod.id) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
+														action="#{wishlist.addToWishlistToggle(prod.ID)}"
+														styleClass="#{wishlist.isInWishlist(prod.ID) ? 'selected' : ''} glyphicon glyphicon-star"></h:commandLink>
 												</c:if>
 											</div>
 											<!-- Basket -->
 											<div class="basket">
-												<h:panelGroup rendered="#{stock.isInStock(prod.id)}">
+												<h:panelGroup rendered="#{stock.isInStock(prod.ID)}">
 
-													<h:commandLink action="#{basket.addToBasket(prod.id)}"
+													<h:commandLink action="#{basket.addToBasket(prod.ID)}"
 														styleClass="glyphicon glyphicon-shopping-cart"></h:commandLink>
 												</h:panelGroup>
 
@@ -168,7 +168,7 @@
 												<span>£ #{prod.price}</span>
 											</div>
 											<div>
-												<h:outputText value="#{review.generateStarRating(prod.getId())}" escape="false" />
+												<h:outputText value="#{review.generateStarRating(prod.ID)}" escape="false" />
 											</div>
 											<div></div>
 
