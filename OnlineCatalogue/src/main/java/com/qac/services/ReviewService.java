@@ -12,6 +12,7 @@ import com.qac.row5project.entities.Rating;
 import com.qac.row5project.entities.Stock;
 import com.qac.row5project.helpers.TestDataCatalogue;
 import com.qac.row5project.managers.CustomerOrderManager;
+import com.qac.row5project.managers.RatingManager;
 import com.qac.row5project.managers.StockManager;
 import Controllers.session.CurrentUser;
 
@@ -30,10 +31,13 @@ public class ReviewService {
 	@Inject
 	private StockManager stockManager;
 	
+	@Inject RatingManager rm;
+	
+	
 	@Inject
 	TestDataCatalogue testDataCat;
 
-	public List<Rating> getReviewByID(long id) {
+	public List<Rating> getReviewByCustomerID(long id) {
 		// TODO Auto-generated method stub
 		Iterator i = testDataCat.getRatings().iterator();
 		List<Rating> returnable = new ArrayList<Rating>();
@@ -45,4 +49,47 @@ public class ReviewService {
 		}
 		return returnable;
 	}
+	
+	
+	public List<Rating> getReviewByProductID(long id) {
+		// TODO Auto-generated method stub
+		Iterator i = testDataCat.getRatings().iterator();
+		List<Rating> returnable = new ArrayList<Rating>();
+		
+		while (i.hasNext()){
+			Rating rating = (Rating) i.next();
+			
+			if (rating.getProductID() == id){
+				returnable.add(rating);
+			}
+		}
+		return returnable;
+	}
+	
+	
+	
+	
+	public int getAverageRating(long productID){		
+		return rm.findAvgRatingsbyProductID(productID);		
+	}
+	
+	
+	
+	public void addReivew(Rating rating){	
+		
+		List<Rating> reviews = testDataCat.getRatings();
+		reviews.add(rating);		
+		testDataCat.setRatings(reviews);		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

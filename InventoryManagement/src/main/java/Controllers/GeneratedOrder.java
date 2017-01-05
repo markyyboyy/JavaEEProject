@@ -33,6 +33,7 @@ public class GeneratedOrder {
 	 * @return All of the products in the system.
 	 */
 	public List<ProductWrapper> getProductItems() {
+		System.out.println("ran");
 		if (productItems.size() == 0){	//If we already have a list then the user called sort, so dont display the unsorted list.
 				//productItems = generateService.getProducts();
 				List<ProductItem> tmpList = generateService.getProducts();
@@ -68,6 +69,15 @@ public class GeneratedOrder {
 	 * @param	The productID of the product the user wanted to order.
 	 */
 	public void generateOrder(){
-		generateService.generateOrder(3,ProductID);
+		System.out.println("Actually called" + ProductID);
+		for (ProductWrapper p:productItems){
+			System.out.println("The ID is: " + p.getProductItem().getID());
+			if (p.getProductItem().getID() == Long.parseLong(ProductID)){
+				System.out.println(p.getProductItem().getID());
+				generateService.generateOrder(p.getIntValue(),ProductID);
+				break;
+			}
+		}
+		generateService.generateOrder(2,ProductID);
 	}
 }

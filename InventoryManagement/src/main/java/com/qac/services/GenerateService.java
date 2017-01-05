@@ -1,8 +1,11 @@
 package com.qac.services;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -35,7 +38,9 @@ public class GenerateService {
 	 * @return	All of the products with a low stock count.
 	 */
 	public List<ProductItem> getProducts(){
+		System.out.println("ran2");
 		List<ProductItem> productItems = new ArrayList<ProductItem>();
+		List<ProductItem> returnable = new ArrayList<ProductItem>();
 		List<ProductItem> productsInStock = productService.findAllProducts();	//Get all products
 		Iterator i = productsInStock.iterator();
 		while (i.hasNext()){
@@ -43,16 +48,19 @@ public class GenerateService {
 			if (product.getStockLevel() < 5){
 				productItems.add(product);
 			} 
-			
-	
-			do{
-			}while(true);
-			
-					
-		
-			
 		}
-		return productItems;	//Return the final list.
+		//System.out.println(productItems.size());
+		int[] strings = new int[productsInStock.size() + 1];
+		Iterator i2 = productItems.iterator();
+		while(i2.hasNext()){
+			ProductItem p = (ProductItem) i2.next();
+			if (strings[(int) p.getID()] == 0){
+				strings[(int) p.getID()] = 1;
+				returnable.add(p);
+			}
+		}
+		//System.out.println("found" + productItems.size() + "items");
+		return returnable;	//Return the final list.
 	}
 
 	public List<Integer> getQuantities() {
@@ -91,9 +99,9 @@ public class GenerateService {
 		else{
 			current = new ArrayList<PurchaseOrder>();
 		}
-		System.out.println(current.size());
+		//System.out.println(current.size());
 		current.add(po);
-		System.out.println(current.size());
+		//System.out.println(current.size());
 		testData.setPurchaseOrders(current);
 	}
 }

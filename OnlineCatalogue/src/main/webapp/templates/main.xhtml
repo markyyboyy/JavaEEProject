@@ -1,7 +1,8 @@
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<!-- Meta Tags -->
@@ -18,22 +19,21 @@
 
 <h:body>
 	<header>
-		<div class="homeLogo">
+		<div class="homeLogo mob-md-Hide ">
 			<a href="home.xhtml"> <img src="img/logo.png"></img></a>
 		</div>
 
 
 
-		<!-- Desktop Version -->
-			<div class="navWrapper ">
-				<div class="searchInputBanner row">
+		<div class="navWrapper ">
+			<div class="searchInputBanner row">
 
-					<div class="mainSearchBanner col-md-4 col-xs-12">
-						<h:inputText alt="search" value="#{search.term}">
-							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
-						</h:inputText>
-						
-								<div style="float: left">
+				<div class="mainSearchBanner mob-md-Hide col-md-4 col-xs-12">
+					<h:inputText alt="search" value="#{search.term}">
+						<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
+					</h:inputText>
+
+					<div class="searchIcon " style="float: left">
 						<h:form>
 							<h:commandLink action="#{search.search()}">
 								<span class="glyphicon glyphicon-search	Try it searchIcon" />
@@ -41,77 +41,77 @@
 						</h:form>
 
 					</div>
-					</div>
-
-			
-
-					<div class="col-md-12 col-xs-12">
-						<h:form>
-							<nav class="navbar navbar-default navMenu">
-								<div class="">
-									<!-- Brand and toggle get grouped for better mobile display -->
-									<div class="navbar-header">
-										<button type="button" class="navbar-toggle collapsed"
-											data-toggle="collapse"
-											data-target="#bs-example-navbar-collapse-1"
-											aria-expanded="false">
-											<span class="sr-only">Toggle navigation</span> <span
-												class="icon-bar"></span> <span class="icon-bar"></span> <span
-												class="icon-bar"></span>
-										</button>
-										<a class="navbar-brand" href="#"></a>
-									</div>
-
-									<!-- Collect the nav links, forms, and other content for toggling -->
-									<div class="collapse navbar-collapse"
-										id="bs-example-navbar-collapse-1">
-										<ul class="nav navbar-nav">
-											<li><h:button styleClass="btn btn-primary"
-													outcome="catalogue" value="Browse" /></li>
-
-											<li><h:button styleClass="btn btn-primary"
-													outcome="SpecialOffer" value="Special Offer" /></li>
-
-											<li><h:button styleClass="btn btn-primary" outcome="faq"
-													value="FAQ" /></li>
-
-											<li><h:button styleClass="btn btn-primary"
-													outcome="about" value="About Us" /></li>
-										</ul>
-									</div>
-								</div>
-							</nav>
-						</h:form>
-
-
-					</div>
-
-					<div class="dropdown logoffButton">
-						<h:button class="dropbtn" rendered="#{user.loggedIn}"
-							value="MyAccount"></h:button>
-						<div class="dropdown-content" style="left: 0;">
-
-
-							<a href="myAccount.xhtml">My Account</a> <a href="basket.xhtml">Basket</a>
-							<a href="wishlist.xhtml">WishList</a>
-							<h:form>
-								<h:commandLink action="#{login.logoff()}" value="Log Off" />
-							</h:form>
-						</div>
-					</div>
-
-					<div class="loginButton">
-						<h:form>
-							<h:commandButton styleClass="btn btn-primary"
-								rendered="#{!user.loggedIn}" action="login.xhtml"
-								value="Login/Register" />
-						</h:form>
-					</div>
 				</div>
 
 
 
+				<div class="col-md-12 col-xs-12 noSpacingX">
+					<h:form>
+						<nav class="navbar navbar-default navMenu">
+							<div class="">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed"
+										data-toggle="collapse"
+										data-target="#bs-example-navbar-collapse-1"
+										aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span> <span
+											class="icon-bar"></span> <span class="icon-bar"></span> <span
+											class="icon-bar"></span>
+									</button>
+									<a class="navbar-brand" href="#"></a>
+								</div>
+
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse noSpacingX"
+									id="bs-example-navbar-collapse-1">
+									<ul class="nav navbar-nav">
+										<li><h:button styleClass="btn btn-primary "
+												outcome="catalogue" value="Browse" /></li>
+
+										<li><h:button styleClass="btn btn-primary"
+												outcome="SpecialOffer" value="Special Offer" /></li>
+
+										<li><h:button styleClass="btn btn-primary" outcome="faq"
+												value="FAQ" /></li>
+
+										<li><h:button styleClass="btn btn-primary"
+												outcome="about" value="About Us" /></li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+					</h:form>
+
+
+				</div>
+
+				<div class="dropdown logoffButton">
+					<h:button class="dropbtn" rendered="#{user.loggedIn}"
+						value="MyAccount"></h:button>
+					<div class="dropdown-content" style="left: 0;">
+
+
+						<a href="myAccount.xhtml">My Account</a> <a href="basket.xhtml">Basket</a>
+						<a href="wishlist.xhtml">WishList</a>
+						<h:form>
+							<h:commandLink action="#{login.logoff()}" value="Log Off" />
+						</h:form>
+					</div>
+				</div>
+
+				<div class="loginButton">
+					<h:form>
+						<h:commandButton styleClass="btn btn-primary"
+							rendered="#{!user.loggedIn}" action="login.xhtml"
+							value="Login/Register" />
+					</h:form>
+				</div>
 			</div>
+
+
+
+		</div>
 
 
 
@@ -136,19 +136,24 @@
 
 	<footer class="">
 		<div class="footerWrapper">
-			<div>© NB Gardens 2016</div>
-			<div>
-				<a href="home.xhtml">| Home</a>
+			<div class="link">© NB Gardens 2017</div>
+			<div class="link"> | </div>			
+			<div class="link">
+				<a href="home.xhtml">Home</a>
 			</div>
-			<div>
-				<a href="catalogue.xhtml">| Browse</a>
+			<div class="link"> | </div>
+			<div class="link">
+				<a href="catalogue.xhtml">Browse</a>
 			</div>
-			<div>
-				<a href="about.xhtml">| About us</a>
+			<div class="link"> | </div>
+			<div class="link">
+				<a href="about.xhtml">About us</a>
 			</div>
-			<div>
-				<a href="faq.xhtml">| FAQ</a>
+			<div class="link"> | </div>
+			<div class="link">
+				<a href="faq.xhtml">FAQ</a>
 			</div>
+			<div class="link"> | </div>
 		</div>
 
 	</footer>

@@ -46,9 +46,12 @@ public class TestDataIMS {
 		stocks = new ArrayList<Stock>();
 		productSuppliers = new ArrayList<ProductSupplier>();
 		Supplier supply = new Supplier();
+		Supplier supply2 = new Supplier();
 		supply.setID(1);
+		supply2.setID(2);
 		suppliers = new ArrayList<Supplier>();
 		suppliers.add(supply);
+		suppliers.add(supply2);
 		short s = 5;
 		
 		products.add(new Product("Ynyr", "Gnome of Ynyr", 14.99, 14.0, "Blue", 21.0,
@@ -64,56 +67,28 @@ public class TestDataIMS {
 		products.get(2).setProductID(3);
 		
 		products.add(new Product("Mark", "Gnome of Mark", 14.99, 14.0, "Purple", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+				0, Category.ORNAMENTS, ItemStatus.DISCONTINUED));
 		products.get(3).setProductID(4);
 		
 		products.add(new Product("Richard", "Gnome of Richard", 14.99, 14.0, "Green", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
+				0, Category.ORNAMENTS, ItemStatus.DISCONTINUED));
 		products.get(4).setProductID(5);
 		
 		products.add(new Product("Michael", "Gnome of Michael", 14.99, 14.0, "Yellow", 21.0,
 				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
 		products.get(5).setProductID(6);
 		
-		products.add(new Product("Ryan", "Gnome of Yn", 14.99, 14.0, "Red", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(1).setProductID(2);
+		products.add(new Product("Another", "Gnome of Another", 14.99, 14.0, "Green", 21.0,
+				0, Category.FURNITURE, ItemStatus.DISCONTINUED));
+		products.get(6).setProductID(7);
 		
-		products.add(new Product("Iman", "Gnome of Ry", 14.99, 14.0, "Orange", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(2).setProductID(3);
+		products.add(new Product("Yet Another", "Yet Another", 14.99, 14.0, "Yellow", 21.0,
+				0, Category.FURNITURE, ItemStatus.AVAILABLE));
+		products.get(7).setProductID(8);
 		
-		products.add(new Product("Mark", "Gnome of Ma", 14.99, 14.0, "Purple", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(3).setProductID(4);
-		
-		products.add(new Product("Richard", "Gnome of Ri", 14.99, 14.0, "Green", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(4).setProductID(5);
-		
-		products.add(new Product("Michael", "Gnome of Mi", 14.99, 14.0, "Yellow", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(5).setProductID(6);
-		
-		products.add(new Product("Ryan", "Gnome of R", 14.99, 14.0, "Red", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(1).setProductID(2);
-		
-		products.add(new Product("Iman", "Gnome of I", 14.99, 14.0, "Orange", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(2).setProductID(3);
-		
-		products.add(new Product("Mark", "Gnome of M", 14.99, 14.0, "Purple", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(3).setProductID(4);
-		
-		products.add(new Product("Richard", "Gnome of R", 14.99, 14.0, "Green", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(4).setProductID(5);
-		
-		products.add(new Product("Michael", "Gnome of Mz", 14.99, 14.0, "Yellow", 21.0,
-				0, Category.ORNAMENTS, ItemStatus.AVAILABLE));
-		products.get(5).setProductID(6);
+		products.add(new Product("Yet Another", "Yet Another", 14.99, 14.0, "Yellow", 21.0,
+				0, Category.FURNITURE, ItemStatus.AVAILABLE));
+		products.get(8).setProductID(9);
 		
 		LoginDetails testLogin = new LoginDetails("test@test.com", "password");
 		loginDetails.add(testLogin);

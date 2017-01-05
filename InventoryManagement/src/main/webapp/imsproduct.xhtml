@@ -20,44 +20,48 @@
 				<br />
 				<ui:define name="filterName">
 					<div class="search">
-						<h:inputText alt="search">
-							<f:passThroughAttribute name="placeholder"
-								value="Search by Product ID..."></f:passThroughAttribute>
+					<h:form>
+						<h:inputText value="#{product.productID}" >
+							<f:passThroughAttribute name="placeholder" value="message..."/>
 						</h:inputText>
+						<h:commandButton value="Find By ProductID" action="#{product.findByID}" />
+					</h:form>
 					</div>
 				</ui:define>
 
 				<ui:define name="filterResults">
 					<div class="filter">
-
-						<div class="category dropdown">
-							<div class="dropdown">
-								<button class="btn btn-primary dropdown-toggle" type="button"
-									data-toggle="dropdown" />
-								<h:selectOneMenu value="dropdown">
-									<f:selectItems value="#{product.categories}" />
-								</h:selectOneMenu>
-							</div>
-
-							<div class="status dropdown">
-								<br />
-								<button class="btn btn-primary dropdown-toggle" type="button"
-									data-toggle="dropdown" />
-								<h:selectOneMenu value="dropdown">
-									<f:selectItems value="#{product.statuses}" />
-								</h:selectOneMenu>
-							</div>
+							<h:form>
+							<h:outputText value="Filter By Availability"></h:outputText>
+							<br></br>
+							<h:selectOneMenu value="#{product.itemstatustring}">
+							<f:selectItem itemValue="None" itemLabel="None" />
+   								<f:selectItem itemValue="Available" itemLabel="Available" />
+   								<f:selectItem itemValue="On Order" itemLabel="On Order" />
+   								<f:selectItem itemValue="Discontinued" itemLabel="Discontinued" />
+							</h:selectOneMenu>
+							<h:commandButton value="Filter" action="#{product.availableProducts()}" />
+							</h:form>
+							<h:form>
+							<h:outputText value="Filter By Category"></h:outputText>
+							<br></br>
+							<h:selectOneMenu value="#{product.itemcategorystring}">
+							<f:selectItem itemValue="None" itemLabel="None" />
+   								<f:selectItems value="#{product.categories}" />
+							</h:selectOneMenu>
+							<h:commandButton value="Filter" action="#{product.categorisedProducts()}" />
+							</h:form>
+							<h:form>
+							<h:outputText value="Remove All Filters"></h:outputText>
+							<br></br>
+							
+							<h:commandButton value="Remove" action="#{product.fetchProducts()}" />
+							</h:form>
 						</div>
-					</div>
-
-				</ui:define>
-			</div>
-		</div>
-
-
-
+						</ui:define>
+						</div>
+				</div>
 		<ui:define name="mainContent2">
-		<br/> <br/> <br/> <br/> <br/>
 			<div class="righttitletable">
 
 			
@@ -99,7 +103,7 @@
 
 							<p:column headerText="Stock Level" sortBy="#{prod.stockLevel}">
 								<h:outputText value="#{prod.stockLevel}" />
-							</p:column>> 
+							</p:column>
 								        
 								        <p:column headerText="Status" sortBy="#{prod.status}">
 								<h:outputText value="#{prod.status}" />

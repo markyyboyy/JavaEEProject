@@ -9,8 +9,62 @@
 <ui:composition template="templates/main.xhtml">
 	<ui:define name="mainContent">
 
+		<script type="text/javascript">
+		//<![CDATA[
+			var inputQuan;
+			var increase;
+			var decrease;
 
-<c:if test="#{user.loggedIn}" />
+
+			$(document).ready(function(){
+				
+				inputQuan = $('.quantityVal')[0];
+				increase = $('#increase');
+				decrease = $('#decrease');
+
+				
+				
+				
+				$(increase).click(function(){
+					changeQuan(1);});
+				
+				$(decrease).click(function(){
+					changeQuan(-1);});	
+
+								
+			});
+
+			function changeQuan(changeBy){
+				
+				
+				var currentQuan = $(inputQuan).val();
+				currentQuan = parseInt(currentQuan);			
+					
+				var newQuantity = currentQuan + changeBy;			
+				
+
+
+				var isValidValue = newQuantity <= 0;
+
+				if(isValidValue)
+					newQuantity = 0;
+	
+
+				
+	
+				
+				$(inputQuan).val(newQuantity);
+
+			}
+			
+
+			//]]>
+			
+
+		</script>
+
+
+		<c:if test="#{user.loggedIn}" />
 		<h1>Shopping Basket</h1>
 
 
@@ -24,7 +78,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<a href="catalogue.xhtml">
-							<button class="btn btn-primary" name="continueShopping">Continue Shopping</button>
+							<button class="btn btn-primary" name="continueShopping">Continue
+								Shopping</button>
 						</a>
 					</div>
 				</div>
@@ -33,16 +88,19 @@
 				<!-- 	Repeater -->
 				<ui:repeat var="orderLine" value="#{basket.custOrderMdl}">
 					<div class="row orderLineRow">
-						<div class="col-sm-3 imgBasketPane" >
-							<h:graphicImage value="#{image.getProductImage(orderLine.stock.productID.productID)}" />
+						<div class="col-sm-3 imgBasketPane">
+							<h:graphicImage
+								value="#{image.getProductImage(orderLine.stock.productID.productID)}" />
 						</div>
 
-						<div class="col-sm-3" style="background-color: #F4F4F4;"><h4>
-							#{orderLine.stock.productID.desc}</h4><br />
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							<h4>#{orderLine.stock.productID.desc}</h4>
+							<br />
 						</div>
 
-						<div class="col-sm-3" style="background-color: #F4F4F4;"><h4>
-							£ #{orderLine.stock.price}</h4><br />
+						<div class="col-sm-3" style="background-color: #F4F4F4;">
+							<h4>£ #{orderLine.stock.price}</h4>
+							<br />
 						</div>
 
 						<div class="col-sm-3">
@@ -50,25 +108,23 @@
 							<div class="row quantityChange">
 
 								<div class="col-sm-4">
-									<input type="submit" value="-" ></input>
-									
+									<input id="decrease" type="submit" value="-"></input>
+
 								</div>
 
 								<div class="col-sm-4 quanBtn">
 
-									<h:inputText>
+									<h:inputText styleClass="quantityVal"
+										value="#{orderLine.quantity}" disabled="true">
 
-										<f:passThroughAttribute name="quantity" value="text" />
-										<f:passThroughAttribute name="placeholder" value="#{orderLine.quantity}" />
-										<f:passThroughAttribute name="alt" value="1" />
 
-									
+
 									</h:inputText>
 								</div>
 
 
 								<div class="col-sm-4">
-									<input type="submit" value="+" ></input>
+									<input id="increase" type="submit" value="+"></input>
 								</div>
 							</div>
 
@@ -81,16 +137,17 @@
 
 
 				<div class="row">
-					<div class="text-right col-xs-12"><h4>
-						Total Price: £ #{basket.totalPrice}</h4>
+					<div class="text-right col-xs-12">
+						<h4>Total Price: £ #{basket.totalPrice}</h4>
 					</div>
 				</div>
 
 
 				<div class="row">
 					<div class="text-right col-xs-12">
-					<a href="deliveryAddress.xhtml">
-						<button class="btn btn-primary" name="proceedToCheckout">Proceed to Checkout</button>
+						<a href="deliveryAddress.xhtml">
+							<button class="btn btn-primary" name="proceedToCheckout">Proceed
+								to Checkout</button>
 						</a>
 					</div>
 				</div>

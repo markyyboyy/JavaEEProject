@@ -26,10 +26,37 @@
 			</div>
 		</div>
 	<ui:define name="mainContent2">
-   <p:chart type="pie" model="#{stock.pieModel}" legendPosition="w" title="Product Pie Chart" style="width:400px;height:300px" />
-   <div id ="bar" style="width: 30em; overflow-x: auto; white-space: nowrap;">
-   <p:chart type="bar" model="#{stock.animatedModel1}" style="width:2000px;" />
-   </div>
+     <h:form>
+						<p:dataTable styleclass="fixed-size" id="tbl" var="prod" value="#{stock.products}"
+							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
+							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 			paginator="true" rows="23" style="margin-bottom:20px">>
+									
+								<f:facet name="{Exporters}">
+					            <h:commandLink>
+					            	<img src="./img/excel.jpg" width="24"/>
+					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
+					            </h:commandLink>
+					 
+					            <h:commandLink>
+					                <img src="./img/pdf.jpg" width="24"/>
+					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
+					            </h:commandLink>
+
+					        </f:facet>
+					     	<p:column headerText="Name" sortBy="#{prod.name}">
+								<h:outputText value="#{prod.name}" />
+							</p:column>
+							<p:column headerText="Description" sortBy="#{prod.description}">
+								<h:outputText value="#{prod.description}" />
+							</p:column>
+					        <p:column headerText="Stock Level" sortBy="#{prod.stockLevel}">
+								<h:outputText value="#{prod.stockLevel}" />
+							</p:column>
+						</p:dataTable>
+					</h:form>
+   
+   
       </ui:define>
       </ui:composition>
 </h:body>

@@ -19,10 +19,14 @@
 				<br />
 				<ui:define name="filterName">
 					<div class="search">
-						<h:inputText alt="search">
+					<h:form>
+						<h:inputText value="#{supplier.supplierID}" alt="search">
 							<f:passThroughAttribute name="placeholder"
 								value="Search by Supplier ID..."></f:passThroughAttribute>
 						</h:inputText>
+						<h:commandButton value="Search" action="#{supplier.searchByID()}" />
+					</h:form>
+
 					</div>
 				</ui:define>
 
@@ -33,24 +37,33 @@
 
 
 		<ui:define name="mainContent2">
-			<div class="righttitletable">
+			     <h:form>
+						<p:dataTable styleclass="fixed-size" id="tbl" var="prod" value="#{supplier.supplier}"
+							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
+							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 			paginator="true" rows="23" style="margin-bottom:20px">>
+								<f:facet name="{Exporters}">
+					            <h:commandLink>
+					            	<img src="./img/excel.jpg" width="24"/>
+					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
+					            </h:commandLink>
+					 
+					            <h:commandLink>
+					                <img src="./img/pdf.jpg" width="24"/>
+					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
+					            </h:commandLink>
 
-				<div>
-						<h:form>
-	<p:dataTable var="prod" value="#{supplier.supplier}"
-							sortMode="multiple">
-							<f:facet name="header">
-            Purchase Orders
-        </f:facet>
-							<p:column headerText="Supplier ID" sortBy="#{prod.ID}">
+					        </f:facet>
+					        <f:facet name="header">Sales/Profits of Manufacturers</f:facet>	
+					     	<p:column headerText="Name" sortBy="#{prod.ID}">
 								<h:outputText value="#{prod.ID}" />
 							</p:column>
-							
-							
 						</p:dataTable>
-							</h:form>
-				</div>
-			</div>
+						<br></br>
+						<div id="error">
+						<h:outputText value="#{supplier.error}"> </h:outputText>
+						</div>
+					</h:form>
 		</ui:define>
 	</ui:composition>
 </h:body>

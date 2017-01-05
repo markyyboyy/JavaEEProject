@@ -1,0 +1,59 @@
+
+<html xmlns= "https://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<!-- Imam And Mark Freeman -->
+<h:head id="j_idt2">
+<link type="text/css" rel="stylesheet"
+	href="/ims/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo" />
+<script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en_GB';PrimeFaces.settings.projectStage='Development';}</script>
+<!-- Meta Tags -->
+<title>IMS - Home Page</title>
+
+<link rel="stylesheet" media="screen" href="style/bootstrap.min.css" />
+<link href="style/imsMain.css" type="text/css" rel="stylesheet" />
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<meta charset="UTF-8" />
+</h:head>
+<h:body>
+
+	<main class="content">
+	<div class="title">
+			<h3 class="heading">Homepage</h3>
+	</div>
+	<div class="logout">
+			<h:button action="#{login.imsLogoff()}" value="Log Off" class="logoff"/>
+	</div>
+	<div class="container-fluid">
+		<header>
+			<div class="logoFP">
+				<img src="img/logo.png" width="250px" height="210px" id="logoImage" />
+			</div>
+		</header>
+		<nav>
+		<form id="j_idt18" name="j_idt18" method="post" action="/ims/imsFrontPage.xhtml" enctype="application/x-www-form-urlencoded">
+			<input
+					type="button"
+					onclick="window.location.href='/accounts/accPayments.xhtml'; return false;"
+					value="Payments" class="navButton btn btn-success fpButton"
+					id="nav" /><input type="button"
+					onclick="window.location.href='/accounts/accAuthorise.xhtml'; return false;"
+					value="Authorise Accounts" class="navButton btn btn-success" id="nav" /><input
+					type="button"
+					onclick="window.location.href='/accounts/accGenerateEmails.xhtml'; return false;"
+					value="Generate Emails" class="navButton btn btn-success" id="nav" /><input
+					type="button"
+					onclick="window.location.href='/accounts/accViewAccounts.xhtml'; return false;"
+					value="View All Accounts" class="navButton btn btn-success" id="nav" />
+			</form>
+		</nav>
+</div>
+	<div class="create">
+			<h:button action="#{login.ims()}" value="Register" class="register"/>
+	</div>
+	</main>
+</h:body>
+</html>

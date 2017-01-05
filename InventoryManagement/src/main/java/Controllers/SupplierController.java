@@ -22,13 +22,39 @@ import com.qac.services.SupplierService;
 public class SupplierController {
 	@Inject
 	private SupplierService supplierService;
+	private String error = "";
 	private List<Supplier> supplier = new ArrayList<Supplier>();
+	public String getSupplierID() {
+		return supplierID;
+	}
+	public void setSupplierID(String supplierID) {
+		this.supplierID = supplierID;
+	}
+	private String supplierID;
+	public void searchByID(){
+		System.out.println("Search By ID");
+		supplier = supplierService.getByID(supplierID);
+		setSupplier(supplier);
+	}
 	public List<Supplier> getSupplier() {
-		supplier = supplierService.getSuppliers();
+		if (supplier.size() == 0){
+			System.out.println("printed 0");
+			this.supplier = supplierService.getSuppliers();
+		}
 		return supplier;
 	}
 	public void setSupplier(List<Supplier> supplier) {
-		this.supplier = supplier;
+		if (supplier == null || supplier.size() == 0){
+			if (supplier == null){
+				setError("ID has not been found");
+			}
+			this.supplier = supplierService.getSuppliers();
+		}
 	}
-	
+	public String getError() {
+		return error;
+	}
+	public void setError(String error) {
+		this.error = error;
+	}
 }

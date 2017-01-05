@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Named;
 
 import com.qac.row5project.entities.Customer;
@@ -47,7 +48,14 @@ public class CurrentUser implements Serializable{
 		return (customer == null) ? false : true;
 	}
 	
-
+	public String checkLogin(){
+		
+		if(!isLoggedIn())
+			return "login";
+		else if(isLoggedIn())
+			return "myAccount";
+		return null;
+	}
 
 	public void getBasket() {
 		

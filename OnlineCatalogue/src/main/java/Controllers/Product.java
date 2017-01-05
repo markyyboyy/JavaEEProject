@@ -105,7 +105,7 @@ public DataModel<ProductItem> getProducts() {
 		}
 		
 		public void sortbyid(){
-			Collections.sort(products, (s1, s2) -> ((int)(s1.getId()) - ((int)s2.getId())));
+			Collections.sort(products, (s1, s2) -> ((int)(s1.getID()) - ((int)s2.getID())));
 		}
 		
 		public ProductItem getProductItem(long id) {
@@ -115,11 +115,15 @@ public DataModel<ProductItem> getProducts() {
 			for (ProductItem productItem : lsTemp) {
 					
 				
-				if(id == productItem.getId())					
+				if(id == productItem.getID())					
 					return productItem;
 			}
 			
 			return null ;
+		}
+		
+		public void review(Long id){
+			
 		}
 		
 		

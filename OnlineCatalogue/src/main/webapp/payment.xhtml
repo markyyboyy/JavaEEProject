@@ -1,0 +1,74 @@
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/templates/main.xhtml">
+
+	<ui:define name="Page Name">My Account - Make a Payment</ui:define>
+
+
+	<ui:define name="mainContent">
+
+		<div class="container-fluid">
+
+			<h1>Make A Payment</h1>
+
+
+			<div class="row">
+
+				<div class="col-md-12">
+					<span> Lorem ipsum dolor sit amet, consectetur adipiscing
+						elit. Curabitur mattis condimentum ante, id ultricies velit
+						suscipit nec. Nullam tincidunt arcu at diam mollis mollis.
+						Praesent eu massa placerat, luctus nisl ut, commodo erat. Donec
+						rutrum lectus in congue varius. Nam congue lectus ex, sit amet
+						mattis arcu ullamcorper sit amet. Nullam varius massa viverra
+						fermentum pretium. Nulla cursus risus risus, nec hendrerit eros
+						gravida sit amet. Sed imperdiet tellus velit, ut sagittis turpis
+						ornare eu. Quisque pellentesque accumsan aliquam. Nam nec cursus
+						enim. Suspendisse vel sapien venenatis, dictum leo ut, sagittis
+						tortor. Pellentesque gravida turpis a tempor porta. Maecenas magna
+						est, tristique in orci pharetra, gravida finibus nunc. Proin
+						laoreet vitae ipsum vitae sodales. Nullam porta vitae dolor nec
+						euismod. Integer in lorem sit amet diam rhoncus facilisis. </span>
+				</div>
+
+			</div>
+
+
+			<div class="row">
+
+				<div class="col-md-12 col-xs-12">
+
+					<h4>You outstanding balance is #{user.customer.balance}</h4>
+					Proceed to pay off your balance:
+
+				</div>
+
+				<div class="col-md-12 col-xs-12">
+
+					<h:button styleClass="btn btn-primary" outcome=""
+						value="Pay" />
+				</div>
+
+
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+
+	</ui:define>
+
+</ui:composition>
+
+
+
+
+</html>
