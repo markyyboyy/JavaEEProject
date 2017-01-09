@@ -80,7 +80,7 @@ public class Login {
 				return "login";
 			}
 		}
-		return "imsFrontPage";
+		return "accFrontPage";
 	}
 
 	/**

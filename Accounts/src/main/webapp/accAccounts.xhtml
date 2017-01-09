@@ -1,0 +1,92 @@
+<html xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- Iman Hassan -->
+
+<h:head>
+	<ui:define name="pageName" value="IMS Supplier Information">
+	</ui:define>
+</h:head>
+
+<h:body>
+	<ui:composition template="templates/imsTemplate.xhtml">
+		<div class="container">
+
+			<div class="leftnavbar">
+				<br />
+				<ui:define name="filterName">
+				<h:form>
+						<h:inputText value="#{account.accountID}" >
+							<f:passThroughAttribute name="placeholder" value="AccountID"/>
+						</h:inputText>
+						<h:commandButton value="Find By AccountID" action="#{account.findByID()}" />
+					</h:form>
+				</ui:define>
+			</div>
+		</div>
+
+
+
+		<ui:define name="mainContent2">
+		<div class="righttitletable">
+
+				<div id="scrollpane">
+				<h:form>
+					<p:dataTable styleclass="fixed-size" id="tbl" var="acc" value="#{account.accounts}"
+							sortMode="multiple" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} 
+							{PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                 			paginator="true" rows="23" style="margin-bottom:20px">
+                 			<f:facet name="{Exporters}">
+					            <h:commandLink>
+					            	<img src="./img/excel.jpg" width="24"/>
+					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
+					            </h:commandLink>
+					 
+					            <h:commandLink>
+					                <img src="./img/pdf.jpg" width="24"/>
+					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
+					            </h:commandLink>
+
+					        </f:facet>
+						
+							<p:column headerText="Account ID" sortBy="#{acc.ID}">
+								<h:outputText value="#{acc.ID}" />
+							</p:column>
+
+							<p:column headerText="Name" sortBy="#{acc.firstname}">
+								<h:outputText value="#{acc.firstname}" />
+								<h:outputText value=" "/>
+								<h:outputText value="#{acc.surname}"/>
+							</p:column>
+
+							<p:column headerText="DOB" sortBy="#{acc.dateOfBirth.time.toGMTString()}">
+								<h:outputText value="#{acc.dateOfBirth.time.toGMTString()}" />
+							</p:column>
+							
+							<p:column headerText="Account Status" sortBy="#{acc.accountStatus}">
+								<h:outputText value="#{acc.accountStatus}" />
+							</p:column>
+							
+							<p:column headerText="Address" sortBy="#{acc.address}">
+								<h:outputText value="#{acc.address}" />
+							</p:column>
+							
+							<p:column headerText="Contact Email" sortBy="#{acc.getLoginDetails().email}">
+								<h:outputText value="#{acc.getLoginDetails().email}" />
+							</p:column>
+							
+							<p:column headerText="Contact Telephone" sortBy="#{acc.telephone}">
+								<h:outputText value="#{acc.telephone}" />
+							</p:column>
+							
+						</p:dataTable>
+						</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
