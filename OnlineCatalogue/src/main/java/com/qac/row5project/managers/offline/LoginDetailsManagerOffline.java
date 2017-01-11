@@ -34,8 +34,8 @@ public class LoginDetailsManagerOffline implements LoginDetailsManager {
 																// the database
 		List<LoginDetails> returned = testData.getLoginDetails();
 		
-		String sHashPassword = HasingPassword.hashPassword(loginDetails.getPassword().toCharArray());
-		loginDetails.setPassword(sHashPassword);
+		//String sHashPassword = HasingPassword.hashPassword(loginDetails.getPassword().toCharArray());
+		//loginDetails.setPassword(sHashPassword);
 		
 		returned.add(loginDetails); // Construct the updated ArrayList.
 		

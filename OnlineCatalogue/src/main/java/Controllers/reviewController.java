@@ -164,7 +164,8 @@ public class reviewController {
 		for(int i =0; i < reviewService.getAverageRating(productID); i++)			
 			strRating.append(css);		
 		
-		
+		if(strRating.length() == 0)
+			strRating.append("<br />");
 		
 		
 		

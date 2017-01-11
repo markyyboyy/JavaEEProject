@@ -38,29 +38,44 @@ public class wishListController {
 	CurrentUser currentUser;
 	
 	
-	private DataModel<Product> wishlistView;
+	private DataModel<ProductItem> wishlistView;
 	
 	
 	@SuppressWarnings("unchecked")
-	public DataModel<Product> getWishlistView() {
-		
+	public DataModel<ProductItem> getWishlistView() {
+		List<ProductItem> ls3 = new ArrayList<>();
+
 		if(currentUser != null && currentUser.getCustomer() != null && 
 				currentUser.getCustomer().getWishList() != null){
 			
-			List<Product> ls = currentUser.getCustomer().getWishList();	
+			List<Product> ls = currentUser.getCustomer().getWishList();				
+			List<ProductItem> ls2 = productService.findAllProducts();
 
-			return new ListDataModel<Product>( ls);
+			
+			for (Product product : ls) {
+				
+				for (ProductItem productItem : ls2) {
+					if(product.getProductID() == productItem.getID())
+						ls3.add(productItem);
+				}
+				
+			}
+			
+			
+			
+			
+			return new ListDataModel<ProductItem>( ls3);
 
 		}
 		
-		List<Product> ls = new ArrayList<Product>();
-		return new ListDataModel<Product>( ls);
+		List<ProductItem> ls = new ArrayList<ProductItem>();
+		return new ListDataModel<ProductItem>( ls3);
 
 		
 	}
 
 
-	public void setWishlistView(DataModel<Product> wishlistView) {
+	public void setWishlistView(DataModel<ProductItem> wishlistView) {
 		this.wishlistView = wishlistView;
 	}
 
