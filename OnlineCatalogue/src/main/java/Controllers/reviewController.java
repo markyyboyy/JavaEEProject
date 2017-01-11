@@ -127,7 +127,15 @@ public class reviewController {
 				Rating r = new Rating(score, customer.getID(), slctPrd.getProduct().getID());
 				r.setComment(review);
 	
-				reviewService.addReivew(r);				
+				reviewService.addReivew(r);		
+								
+				List<Rating> itemRatings = slctPrd.getProduct().getRatings();
+				
+				itemRatings.add(r);		
+				
+				slctPrd.getProduct().setRatings(itemRatings);			
+				
+				
 			}	
 		
 		}
@@ -157,7 +165,7 @@ public class reviewController {
 	public String generateStarRating(Long productID){
 		
 		final String css = "<span class='glyphicon glyphicon-star'></span>";
-		StringBuilder strRating = new StringBuilder("<span></span>");	
+		StringBuilder strRating = new StringBuilder("");	
 		
 		
 		

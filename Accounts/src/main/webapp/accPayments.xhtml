@@ -12,13 +12,14 @@
 </h:head>
 
 <h:body>
-	<ui:composition template="templates/imsTemplate.xhtml">
+	<ui:composition template="templates/accTemplate.xhtml">
 		<div class="container">
 
 			<div class="leftnavbar">
 				<br />
 				<ui:define name="filterName">
 				<h:form>
+				<h2>Payments</h2>
 							<h:outputText value="Filter By Paid"></h:outputText>
 							<br></br>
 							<h:selectOneMenu value="#{payment.paid}">

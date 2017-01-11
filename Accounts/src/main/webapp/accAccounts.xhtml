@@ -12,13 +12,14 @@
 </h:head>
 
 <h:body>
-	<ui:composition template="templates/imsTemplate.xhtml">
+	<ui:composition template="templates/accTemplate.xhtml">
 		<div class="container">
 
 			<div class="leftnavbar">
 				<br />
 				<ui:define name="filterName">
 				<h:form>
+								<h2>Accounts</h2>
 						<h:inputText value="#{account.accountID}" >
 							<f:passThroughAttribute name="placeholder" value="AccountID"/>
 						</h:inputText>
