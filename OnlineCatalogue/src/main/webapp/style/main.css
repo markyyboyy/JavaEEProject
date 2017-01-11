@@ -16,6 +16,8 @@
 
 @import url("reviews.css");
 
+@import url("carousel.css");
+
 /*Michael Crowther*/
 .dropbtn {
 	background-color: rgb(249, 246, 126);
