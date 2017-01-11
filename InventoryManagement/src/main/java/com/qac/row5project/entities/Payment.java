@@ -18,6 +18,9 @@ public class Payment implements Serializable{
 	private String price;
 	private Calendar duedate;
 	private Customer customer;
+	private Category category;
+	private ItemStatus status;
+	
 
 	public Category getCategory() {
 		return category;
@@ -42,14 +45,6 @@ public class Payment implements Serializable{
 	//CONSTRUCTOR FOR PRODUCT THAT TAKES ALL VARIABLES
 	public Payment(String name, String desc, double price, double weight, String colour, double size,
 			long supplierID, Category category, ItemStatus status) {
-		
-		this.name = name;
-		this.desc = desc;
-		this.price = price;
-		this.weight = weight;
-		this.colour = colour;
-		this.size = size;
-		this.supplierID = supplierID;
 		this.category = category;
 		this.status = status;
 	}
