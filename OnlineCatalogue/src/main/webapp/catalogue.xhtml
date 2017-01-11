@@ -71,9 +71,16 @@
 
 							<!-- Slider to show the max price -->
 							<div class="col-md-6 col-xs-12">
-								<h:outputText id="displayRange"
-									value="Between £ 100 and £5000}" />
-								<!-- 								<p:slider range="true" max="5000"/> -->
+						
+								<h:panelGrid columns="1" style="margin: 10px 0; width: 100%;">
+								
+									<h:inputHidden id="idInPrice"  value="#{search.minPrice}"/>									
+									<h:inputHidden id="idMaxPrice"  value="#{search.maxPrice}"/>
+									
+								    <h:outputText id="displayRange" value="Between #{search.minPrice} and #{search.maxPrice}" />									
+									<p:slider for="idInPrice, idMaxPrice" type="horizontal" display="displayRange" displayTemplate="Between {min} and {max}" range="true" minValue="100" maxValue="5000" />
+									
+								</h:panelGrid>
 							</div>
 						</div>
 					</div>
@@ -168,7 +175,8 @@
 												<span>£ #{prod.price}</span>
 											</div>
 											<div>
-												<h:outputText value="#{review.generateStarRating(prod.ID)}" escape="false" />
+												<h:outputText value="#{review.generateStarRating(prod.ID)}"
+													escape="false" />
 											</div>
 											<div></div>
 

@@ -35,6 +35,26 @@ public class Search {
 	
 	private String term = "";
 	private String sRatingFilter;	
+	
+	public String getMaxPrice() {
+		return maxPrice;
+	}
+
+	public void setMaxPrice(String maxPrice) {
+		this.maxPrice = maxPrice;
+	}
+
+	public String getMinPrice() {
+		return minPrice;
+	}
+
+	public void setMinPrice(String mixPrice) {
+		this.minPrice = mixPrice;
+	}
+
+	private String maxPrice;
+	private String minPrice;
+
 	private List<String> selectFilterRating;// = new ArrayList<SelectItem>();
 
 	public List<String> getSelectFilterRating() {
@@ -109,7 +129,16 @@ public class Search {
 	}
 	
 	public String search() {
-		List<ProductItem> results = searchService.search(term, toInt(sRatingFilter), 0.0d);
+		double dMinPrice =0, dMaxPrice = 0;
+		try{
+			dMinPrice = Double.parseDouble(minPrice);
+			dMaxPrice = Double.parseDouble(maxPrice);
+
+		}catch(NumberFormatException ex){
+			
+		}
+		
+		List<ProductItem> results = searchService.search(term, toInt(sRatingFilter), dMinPrice, dMaxPrice);
 		System.out.println("Searched for term " + term);
 		if (results != null)
 			if (results.size() == 1) {
