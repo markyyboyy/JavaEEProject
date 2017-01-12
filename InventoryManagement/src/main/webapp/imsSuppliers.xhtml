@@ -34,8 +34,6 @@
 			</div>
 		</div>
 
-
-
 		<ui:define name="mainContent2">
 			     <h:form>
 						<p:dataTable styleclass="fixed-size" id="tbl" var="prod" value="#{supplier.supplier}"
@@ -46,13 +44,11 @@
 					            <h:commandLink>
 					            	<img src="./img/excel.jpg" width="24"/>
 					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
-					            </h:commandLink>
-					 
+					            </h:commandLink> 
 					            <h:commandLink>
 					                <img src="./img/pdf.jpg" width="24"/>
 					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
 					            </h:commandLink>
-
 					        </f:facet>
 					        <f:facet name="header">Sales/Profits of Manufacturers</f:facet>	
 					     	<p:column headerText="Name" sortBy="#{prod.ID}">

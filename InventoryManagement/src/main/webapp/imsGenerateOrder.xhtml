@@ -4,22 +4,18 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <!-- RyanB -->
-
 <h:head>
 	<ui:define name="pageName" value="Product Information">
 	</ui:define>
 </h:head>
-
 <h:body>
 	<ui:composition template="templates/imsTemplate.xhtml">
 		<div class="container">
-
 			<div class="leftnavbar">
 				<br />
 				<ui:define name="filterName">
 					<h3>Generate Order</h3>
 				</ui:define>
-
 				<ui:define name="filterResults">
 					<div class="filter">
 						<h:form>
@@ -30,16 +26,11 @@
 							<h:commandButton action="#{generated.generateOrder}" value="Generate Order" />
 						</h:form>						
 					</div>
-
 				</ui:define>
 			</div>
 		</div>
-
-
-
 		<ui:define name="mainContent2">
 			<div class="righttitletable">
-
 				<div id="scrollpane">
 					<h:form>
 								<p:dataTable styleclass="fixed-size" id="tbl" var="prod" value="#{generated.productItems}"
@@ -50,34 +41,23 @@
 					            <h:commandLink>
 					            	<img src="./img/excel.jpg" width="24"/>
 					                <p:dataExporter type="xls" target="tbl" fileName="StockReport" />
-					            </h:commandLink>
-					 
+					            </h:commandLink>				 
 					            <h:commandLink>
 					                <img src="./img/pdf.jpg" width="24"/>
 					                <p:dataExporter type="pdf" target="tbl" fileName="StockReport"/>
 					            </h:commandLink>
-
-					        </f:facet>
-						
+					        </f:facet>					
 							<p:column headerText="Product ID" sortBy="#{prod.productItem.ID}">
 								<h:outputText value="#{prod.productItem.ID}" />
 							</p:column>
-
 							<p:column headerText="Current Stock Level" sortBy="#{prod.productItem.stockLevel}">
 								<h:outputText value="#{prod.productItem.stockLevel}" />
-							</p:column>
-							
+							</p:column>					
 							<p:column headerText="Suggested Quanity" sortBy="#{prod.intValue}">
 								<h:outputText value="#{prod.intValue}" />
 							</p:column>
 						</p:dataTable>
-							</h:form>
-
-
-
-
-
-
+					</h:form>
 				</div>
 			</div>
 		</ui:define>
