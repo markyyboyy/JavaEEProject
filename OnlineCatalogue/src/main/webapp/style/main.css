@@ -366,6 +366,9 @@ main {
 	width: 100%;
 }
 
+.ui-slider .ui-corner-all{
+	background-color: rgb(249, 246, 126);
+}
 #AccountMenu{
 	color: white;
 	background-color: #73af55;

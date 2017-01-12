@@ -1,4 +1,4 @@
-<!-- Author: Iman Hassan -->
+<!-- Author: Iman Hassan and Richard Allen -->
 
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
@@ -21,11 +21,16 @@
 
 			</div>
 
+			<h:form>
+				<h:selectOneRadio layout="pageDirection" display="inline" >
+					<f:selectItems var="addresss" value="#{user.customer.address}" />
 
-			<h:selectOneRadio layout="pageDirection" display="inline">
-				<f:selectItems var="addresss" value="#{user.customer.address}" />
+				</h:selectOneRadio>
 
-			</h:selectOneRadio>
+
+				<h:commandButton class="" value="Submit" />
+
+			</h:form>
 
 
 			<div class="row">

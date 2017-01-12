@@ -13,4 +13,6 @@ public interface AddressManager {
 	//LONG
 	//READ - Inventory Manager Only
 	public Address readEmployee(int ID);
+	
+	public Address readAddressById(long id);
 }

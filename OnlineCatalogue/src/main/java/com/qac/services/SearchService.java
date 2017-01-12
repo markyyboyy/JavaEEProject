@@ -35,22 +35,44 @@ public class SearchService {
 	}
 
 	
-	public List<ProductItem> search(String sName, int iRating, double dMaxPrice){
+	public List<ProductItem> search(String sName, int iRating, double dMinPrice, double dMaxPrice){
 		
 		List<ProductItem> productResults = searchBy(sName);
 
-		if(iRating > 0 && iRating <=5){		
+		if(iRating > 0 && iRating <=5)	
 			productResults = searchByRating(iRating, productResults);			
-		}
 		
-		if(dMaxPrice > 0){
-			System.out.println("Price match");
-		}		
 		
+		if(dMaxPrice > 0 && dMinPrice > 0 && dMinPrice < dMaxPrice)
+			productResults = searchByPrice(dMinPrice, dMaxPrice, productResults);				
+							
 		
 		return productResults;
 		
 	}
+	
+	
+	
+	private List<ProductItem> searchByPrice(double dMinPrice, double dMaxPrice, List<ProductItem> results){
+		
+		List<ProductItem> resultsPrice= new ArrayList<>();
+
+		
+		for (ProductItem productItem : results) {
+			
+			final double dPrice = productItem.getPrice();
+			
+			if(dPrice > dMinPrice && dPrice < dMaxPrice)
+				resultsPrice.add(productItem);
+			
+		}
+		
+		
+		return resultsPrice;
+		
+	}
+	
+	
 	
 	
 	public List<ProductItem> searchByRating(int iRating, List<ProductItem> results){

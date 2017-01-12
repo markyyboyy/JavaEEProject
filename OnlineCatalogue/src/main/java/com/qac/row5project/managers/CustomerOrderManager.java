@@ -4,6 +4,7 @@
  */
 
 package com.qac.row5project.managers;
+import com.qac.row5project.entities.Address;
 import com.qac.row5project.entities.CustomerOrder;
 import com.qac.row5project.entities.Stock;
 
@@ -64,4 +65,6 @@ public interface CustomerOrderManager {
 	 * @return List<CustomerOrder>
 	 */
 	public List<CustomerOrder> readCustomerOrders();
+
+	public void setAddress(Address address);
 }
