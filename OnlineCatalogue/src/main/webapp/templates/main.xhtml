@@ -7,11 +7,15 @@
 <h:head>
 	<!-- Meta Tags -->
 	<title><ui:insert name="pageName" /></title>
+	
+	<ui:insert name="jsScritps"></ui:insert>
+	
 	<link rel="stylesheet" media="screen" href="style/bootstrap.min.css" />
 	<link href="./style/main.css" type="text/css" rel="stylesheet" />
 	<link href="./style/mobileMain.css" type="text/css" rel="stylesheet" />
-<!-- 	<script src="./js/jquery-3.1.1.min.js"></script>
- -->	<script src="./js/bootstrap.min.js"></script>
+	<!-- 	<script src="./js/jquery-3.1.1.min.js"></script>
+ -->
+	<script src="./js/bootstrap.min.js"></script>
 
 	<meta charset="UTF-8" />
 
@@ -29,18 +33,20 @@
 			<div class="searchInputBanner row">
 
 				<div class="mainSearchBanner mob-md-Hide col-md-4 col-xs-12">
-					<h:inputText alt="search" value="#{search.term}">
-						<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
-					</h:inputText>
+					<h:form>
+						<h:inputText alt="search" value="#{search.term}">
+							<f:passThroughAttribute name="placeholder" value="Search..."></f:passThroughAttribute>
+						</h:inputText>
 
-					<div class="searchIcon " style="float: left">
-						<h:form>
+						<div class="searchIcon " style="float: left">
+
 							<h:commandLink action="#{search.search()}">
 								<span class="glyphicon glyphicon-search	Try it searchIcon" />
 							</h:commandLink>
-						</h:form>
 
-					</div>
+						</div>
+					</h:form>
+
 				</div>
 
 
@@ -137,23 +143,23 @@
 	<footer class="">
 		<div class="footerWrapper">
 			<div class="link">© NB Gardens 2017</div>
-			<div class="link"> | </div>			
+			<div class="link">|</div>
 			<div class="link">
 				<a href="home.xhtml">Home</a>
 			</div>
-			<div class="link"> | </div>
+			<div class="link">|</div>
 			<div class="link">
 				<a href="catalogue.xhtml">Browse</a>
 			</div>
-			<div class="link"> | </div>
+			<div class="link">|</div>
 			<div class="link">
 				<a href="about.xhtml">About us</a>
 			</div>
-			<div class="link"> | </div>
+			<div class="link">|</div>
 			<div class="link">
 				<a href="faq.xhtml">FAQ</a>
 			</div>
-			<div class="link"> | </div>
+			<div class="link">|</div>
 		</div>
 
 	</footer>

@@ -32,10 +32,10 @@ public class Search {
 	private SelectedProduct selectedProduct;
 	@Inject
 	private Catalogue searchResults;
-	
+
 	private String term = "";
-	private String sRatingFilter;	
-	
+	private String sRatingFilter;
+
 	public String getMaxPrice() {
 		return maxPrice;
 	}
@@ -64,6 +64,7 @@ public class Search {
 	public void setSelectFilterItem(List<String> selectFilterRating) {
 		this.selectFilterRating = selectFilterRating;
 	}
+
 	public String getsRatingFilter() {
 		return sRatingFilter;
 	}
@@ -71,10 +72,10 @@ public class Search {
 	public void setsRatingFilter(String sRatingFilter) {
 		this.sRatingFilter = sRatingFilter;
 	}
-	
+
 	@PostConstruct
-	public void init(){	
-		
+	public void init() {
+
 		selectFilterRating = new ArrayList<String>();
 		selectFilterRating.add("Rating");
 		selectFilterRating.add("1");
@@ -82,62 +83,69 @@ public class Search {
 		selectFilterRating.add("3");
 		selectFilterRating.add("4");
 		selectFilterRating.add("5");
-		
+
 		sRatingFilter = "Rating";
 
 	}
-	
-/*	public void sortBy(ValueChangeEvent e) {		
-		
-		String sValue = e.getNewValue().toString();
-		System.out.println(sValue);
-		sRatingFilter = sValue;
-		
-		List<ProductItem> temp = searchService.search("", Integer.valueOf(sValue), -1);
-		
-		searchResults.setResults(temp);
-	    try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect("catalogue.xhtml");
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 
-		
-		System.out.println(temp);
-		
-	}*/
+	/*
+	 * public void sortBy(ValueChangeEvent e) {
+	 * 
+	 * String sValue = e.getNewValue().toString(); System.out.println(sValue);
+	 * sRatingFilter = sValue;
+	 * 
+	 * List<ProductItem> temp = searchService.search("",
+	 * Integer.valueOf(sValue), -1);
+	 * 
+	 * searchResults.setResults(temp); try {
+	 * FacesContext.getCurrentInstance().getExternalContext().redirect(
+	 * "catalogue.xhtml"); } catch (IOException e1) { // TODO Auto-generated
+	 * catch block e1.printStackTrace(); }
+	 * 
+	 * 
+	 * System.out.println(temp);
+	 * 
+	 * }
+	 */
 
-	
 	public String submit() {
-	    return "catalogue";
+		return "catalogue";
 	}
 
-	public int toInt(String sRating){
-		
-		try{
+	public int toInt(String sRating) {
+
+		try {
+			
+			if (sRating == null) {
+				sRatingFilter = "Rating";
+				return -1;			
+			}
 			
 			return Integer.parseInt(sRating);
-			
-		}catch(NumberFormatException ex){
-			
-			sRatingFilter = "Rating";			
+
+		} catch (NumberFormatException ex) {
+
+			sRatingFilter = "Rating";
 			return -1;
 		}
-		
-		
-	}
-	
-	public String search() {
-		double dMinPrice =0, dMaxPrice = 0;
-		try{
-			dMinPrice = Double.parseDouble(minPrice);
-			dMaxPrice = Double.parseDouble(maxPrice);
 
-		}catch(NumberFormatException ex){
-			
+	}
+
+	public String search() {
+		double dMinPrice = 0, dMaxPrice = 0;
+
+		try {
+
+			if (minPrice != null)
+				dMinPrice = Double.parseDouble(minPrice);
+
+			if (maxPrice != null)
+				dMaxPrice = Double.parseDouble(maxPrice);
+
+		} catch (NumberFormatException ex) {
+
 		}
-		
+
 		List<ProductItem> results = searchService.search(term, toInt(sRatingFilter), dMinPrice, dMaxPrice);
 		System.out.println("Searched for term " + term);
 		if (results != null)
@@ -148,8 +156,7 @@ public class Search {
 				searchResults.setResults(results);
 				return "catalogue";
 			}
-		
-		
+
 		return "catalogue";
 	}
 
