@@ -27,14 +27,14 @@
 					        </f:facet>
 							<f:facet name="header">
        						 </f:facet>
-							<p:column headerText="Product ID" sortBy="#{prod.orderID}">
-								<h:outputText value="#{prod.orderID}" />
+							<p:column headerText="Product ID" sortBy="#{prod.status}">
+								<h:outputText value="#{prod.status}" />
 							</p:column>
 							<p:column headerText="Date Placed" sortBy="#{prod.datePlaced}">
 								<h:outputText value="#{prod.datePlaced.time.toGMTString()}" />
 							</p:column>
-							<p:column headerText="Status" sortBy="#{prod.status}">
-								<h:outputText value="#{prod.status}" />
+							<p:column headerText="Status" sortBy="#{prod.orderID}">
+								<h:outputText value="#{prod.orderID}" />
 							</p:column>
 						</p:dataTable>
 					</h:form>
