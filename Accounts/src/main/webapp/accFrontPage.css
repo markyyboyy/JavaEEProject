@@ -1,0 +1,58 @@
+@CHARSET "utf8";
+
+html{}
+
+body{
+box-sizing: border-box;
+color: #373740;
+background-color: #D3D3D3;
+margin:0px;
+padding:0px;
+}
+
+
+.container-fluid{
+	width:90%;
+	height:100%;
+	margin:0px 5%;
+}
+
+.content{
+	width: 50%;
+    margin: 0px 25%;
+    height:90%;
+	padding:0px;
+	border:0px;
+}
+
+.logoFP{
+	padding-left:0%;
+	padding-right:0%;
+	
+}
+#logoImage{
+	margin-top:0px;
+	margin-bottom:10%;
+	margin-left:33%;
+	margin-right:33%;
+	padding:0px;
+	width:34%;
+	height:28%;
+}
+#nav{
+	margin-bottom:3%;
+	margin-right:3%;
+	margin-right:3%;
+	height:10%;
+	width:45%;
+	}
+
+.logo {
+	width: 10%;
+	margin:0px auto;
+	float: left;
+}
+
+#logoDiv{
+	width:100%;
+}

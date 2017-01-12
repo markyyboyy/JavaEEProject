@@ -12,7 +12,7 @@
 }
 
 body{
-	background-color: #adadad;
+	background-color: #D3D3D3;
 }
 .sidebar {
 	width: 18%;
@@ -34,8 +34,9 @@ body{
 }
 
 .content {
-	width: 100%;
-	text-align:center;
+	width: 80%;
+	float: right;
+	border-left: 1px solid black;
 }
 
 input, inputText {
@@ -48,8 +49,8 @@ tr:hover td{
 	background-color: #FFF;
 }
 nav {
-	width: 50%;
-	margin-left:auto;
+	width: 100%;
+	float: left;
 }
 
 nav .navButton {
@@ -60,6 +61,7 @@ nav .navButton {
 
 main {
 	width: 100%;
+	float: left;
 }
 
 footer, .footerWrapper {
@@ -74,7 +76,9 @@ footer{
 
 
 main div, main nav {
-	width: 100%;
+	width: 90%;
+	margin-left: 5%;
+	float: left;
 }
 
 main nav input[type="submit"] {
@@ -103,6 +107,8 @@ main nav input[type="submit"] {
 }
 
 .logoFP {
+	padding-top: 15%;
+	padding-left: 34%;
 }
 
 .logoSB {
@@ -143,33 +149,3 @@ text-align: center
 main div, main nav {
 	margin:0px;
 	}
-.logoff{
-	width:20%;
-	height:100%;
-		float:right;
-	}
-.logout{
-	width:100%;
-	height:5%;
-	}
-	.register{
-	width:20%;
-	height:50%;
-		float:right;
-	}
-.create{
-	margin-top:5%;
-	width:100%;
-	height:25%;
-	}
-.title{
-	width:20%;
-	height:50%;
-		float:left;
-}
-.heading{
-	margin-top:5%;
-	width:100%;
-	height:25%;
-}
-}

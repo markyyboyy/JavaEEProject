@@ -124,10 +124,6 @@ public class TestDataCatalogue {
 		stocks.add(new Stock(3, false, 15, false, products.get(3), 200));
 		stocks.add(new Stock(4, true, 1, false, products.get(4), 250));
 		Calendar c1 = Calendar.getInstance();
-
-		ratings.add(new Rating((short) 3,"This gnome is very nice. I like it.", 0, 0));
-		ratings.add(new Rating((short) 4,"I love this gnome.",0,1));
-		c1.set(5, 6, 2012);
 		
 		generateCustomerOrder(50);
 	}

@@ -25,16 +25,17 @@
 	</ui:define>
 
 		<ui:define name="mainContent">
-		
-		<h:body>
-    <h:form>
-        <p:remoteCommand name="onload" action="#{user.checkLogin()}" autoRun="true" />
-    </h:form>
-</h:body>
 
-		
-		
-		
+			<h:body>
+				<h:form>
+					<p:remoteCommand name="onload" action="#{user.checkLogin()}"
+						autoRun="true" />
+				</h:form>
+			</h:body>
+
+
+
+
 			<div id="Heading">
 				<h1>My Account</h1>
 			</div>
@@ -45,7 +46,16 @@
 						#{user.customer.surname}</h3>
 					<h3>Account Number: #{user.customer.ID}</h3>
 					<h3>Balance: &#163;#{user.customer.balance}</h3>
+
+					<h3>Addresses:</h3>
+					<div id="addressDetails">
+						<ui:repeat var="i" value="#{user.customer.address}">
+							<h3>#{i}</h3>
+						</ui:repeat>
+					</div>
 				</div>
+			</div>
+			<div id="buttons">
 				<h:form>
 					<div id="ButtonSection">
 						<div class="col-sm-4 col-md-6">

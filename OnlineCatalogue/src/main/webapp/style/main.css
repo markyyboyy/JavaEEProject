@@ -16,6 +16,8 @@
 
 @import url("reviews.css");
 
+@import url("carousel.css");
+
 /*Michael Crowther*/
 .dropbtn {
 	background-color: rgb(249, 246, 126);
@@ -361,6 +363,29 @@ main {
 }
 
 .navbar.navbar-default.navMenu{
+	width: 100%;
+}
+
+.ui-slider .ui-corner-all{
+	background-color: rgb(249, 246, 126);
+}
+#AccountMenu{
+	color: white;
+	background-color: #73af55;
+	padding:3%;
+}
+
+#TopSection{
+	margin-left: 5%;
+}
+
+#addressDetails{
+	margin-left: 7%;
+}
+
+#buttons{
+	margin-top: 1%;
+	float: left;
 	width: 100%;
 }
 

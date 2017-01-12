@@ -8,7 +8,6 @@ import javax.inject.Inject;
 
 import com.qac.row5project.entities.Customer;
 import com.qac.row5project.entities.LoginDetails;
-import com.qac.row5project.helpers.HasingPassword;
 import com.qac.row5project.managers.CustomerManager;
 
 import com.qac.row5project.managers.LoginDetailsManager;
@@ -40,9 +39,9 @@ public class LoginService {
 	public boolean validLogin(String email, String password){
 		login = loginManager.readLoginDetails(email);		
 		
-		String sHashPassword = HasingPassword.hashPassword(password.trim().toCharArray());
+		//String sHashPassword = HasingPassword.hashPassword(password.trim().toCharArray());
 		
-		return login.getPassword().equals(sHashPassword);
+		return login.getPassword().equals(password);
 	}
 
 	/**

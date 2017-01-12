@@ -22,14 +22,35 @@ public class ImageController implements Serializable{
     
     private static final long serialVersionUID = 15555555L;
     
-    @Inject
+    private String url;
+    
+    
+    
+    public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	@Inject
     private ImageService imgServ;
     
     public String getProductImage(long productID){
 	
-	String url = imgServ.findImage(productID);
-	return url;
+		String url = imgServ.findImage(productID);
+		return url;
+		
     }
     
 
+    
+    
+    
+    
+    
+    
+    
+    
 }

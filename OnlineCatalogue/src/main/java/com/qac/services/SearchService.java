@@ -10,8 +10,11 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import com.qac.row5project.entities.Product;
+import com.qac.row5project.entities.Rating;
 import com.qac.row5project.helpers.ProductItem;
 import com.qac.row5project.managers.ProductManager;
+import com.qac.row5project.managers.RatingManager;
+import com.qac.row5project.managers.offline.RatingManagerOffline;
 
 @Stateless
 public class SearchService {
@@ -19,6 +22,9 @@ public class SearchService {
 	private ProductManager productRepository;
 	@Inject
 	private ProductService productService;
+	
+	@Inject
+	private RatingManager rm;
 
 	private List<Product> searchByProductName(String name) {
 		return productRepository.readProductByName(name);
@@ -29,22 +35,44 @@ public class SearchService {
 	}
 
 	
-	public List<ProductItem> search(String sName, int iRating, double dMaxPrice){
+	public List<ProductItem> search(String sName, int iRating, double dMinPrice, double dMaxPrice){
 		
 		List<ProductItem> productResults = searchBy(sName);
 
-		if(iRating > 0 && iRating <=5){		
+		if(iRating > 0 && iRating <=5)	
 			productResults = searchByRating(iRating, productResults);			
-		}
 		
-		if(dMaxPrice > 0){
-			System.out.println("Price match");
-		}		
 		
+		if(dMaxPrice > 0 && dMinPrice > 0 && dMinPrice < dMaxPrice)
+			productResults = searchByPrice(dMinPrice, dMaxPrice, productResults);				
+							
 		
 		return productResults;
 		
 	}
+	
+	
+	
+	private List<ProductItem> searchByPrice(double dMinPrice, double dMaxPrice, List<ProductItem> results){
+		
+		List<ProductItem> resultsPrice= new ArrayList<>();
+
+		
+		for (ProductItem productItem : results) {
+			
+			final double dPrice = productItem.getPrice();
+			
+			if(dPrice > dMinPrice && dPrice < dMaxPrice)
+				resultsPrice.add(productItem);
+			
+		}
+		
+		
+		return resultsPrice;
+		
+	}
+	
+	
 	
 	
 	public List<ProductItem> searchByRating(int iRating, List<ProductItem> results){
@@ -53,7 +81,13 @@ public class SearchService {
 		
 		for (ProductItem productItem : results) {		
 			
-			if(productItem.getAverageRating() > iRating) 
+		List<Rating> r = rm.findRatingsbyProductID(productItem.getID());
+		
+		if(r == null)
+			continue;
+		
+			
+			if(getAverageRating(r) >= iRating) 
 				resultsRating.add(productItem);	
 			
 		}
@@ -61,6 +95,27 @@ public class SearchService {
 		
 		return resultsRating;
 	}
+	
+	
+	public int getAverageRating(List<Rating> r) {
+		
+		int iAvg = 0;
+		
+		for (Rating rating : r) {
+			iAvg += rating.getScore();
+		}
+		
+		
+		
+		if(r.size() < 1)
+			return 0;
+		
+		return iAvg / r.size();
+		
+		
+	}
+	
+	
 	
 	
 	public List<ProductItem> searchBy(String term) {

@@ -96,7 +96,7 @@ public class RatingManagerOffline implements RatingManager {
 				tRatingList.add(r);
 		}
 		if(tRatingList.isEmpty())
-			return null;
+			return new ArrayList<>();
 		else
 			return tRatingList;
 	}
@@ -119,6 +119,9 @@ public class RatingManagerOffline implements RatingManager {
 		for (Rating rating : tRatingList) {
 			average += rating.getScore();
 		}
+		
+		if(tRatingList.size() < 1)
+			return 0;
 		
 		return average/ tRatingList.size();		
 		

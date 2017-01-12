@@ -1,0 +1,151 @@
+@import url(primefacesoverwrite.css);
+
+@CHARSET "ISO-8859-1";
+/*Michael Crowther (Mark Freeman Fixed Scrolling)*/
+ {
+	box-sizing: border-box;
+	line-height: 1.4;
+	color: #373740;	
+	background-color: #cecece;
+	line-height: 1.4;
+	color: #373740;
+}
+
+body{
+	background-color: #adadad;
+}
+.sidebar {
+	width: 18%;
+	margin: 0 1%;
+	float: left;
+	position: fixed;
+}
+
+.sidebar, .content{
+	height: 90%;
+}
+
+body{
+	height: 98%;
+}
+
+.sidebar div {
+	margin: 10px 0;
+}
+
+.content {
+	width: 80%;
+	float: right;
+	border-left: 1px solid black;
+}
+
+input, inputText {
+	width: 100%;
+	float: left;
+	background-color: #c7c7c7;
+	
+}
+tr:hover td{
+	background-color: #FFF;
+}
+nav {
+	width: 100%;
+	float: left;
+}
+
+nav .navButton {
+	float: left;
+	width: 48%;
+	margin: 10px 1%;
+}
+
+main {
+	width: 100%;
+	float: left;
+}
+
+footer, .footerWrapper {
+	float: left;
+	width: 100%;
+}
+
+footer{
+	height: 2%;
+}
+
+
+
+main div, main nav {
+	width: 90%;
+	margin-left: 5%;
+	float: left;
+}
+
+main nav input[type="submit"] {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.login{
+	padding-top: 25%;
+	padding-left: 10%;
+	width: 60%;
+}
+
+#loginBox #loginBox2{
+	color: white;
+}
+
+#loginButton{
+	color: white;
+}
+
+.table table-hover{
+	overflow: scroll;
+	width:50%;
+  table-layout: fixed;
+}
+
+.logoFP {
+	padding-top: 15%;
+	padding-left: 34%;
+}
+
+.logoSB {
+}
+
+.logo {
+text-align: center
+}
+
+.footerWrapper {
+	float: left;
+	padding-top: 0%;
+	margin:0px auto;
+	width:100%;
+}
+
+.logoffButton {
+	float: left;
+}
+
+.lButton {
+	float: left;
+	padding-top: 15%;
+	padding-left: 98%;
+}
+
+.filterResults {
+}
+
+.logo img{
+	width:50%;
+	height:20%;
+} 
+
+.filter{
+}
+
+main div, main nav {
+	margin:0px;
+	}
