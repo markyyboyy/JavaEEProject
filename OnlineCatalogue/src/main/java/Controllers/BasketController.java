@@ -24,7 +24,7 @@ import Controllers.session.CurrentUser;
 
 /**
  * 
- * @author Iman Hassan & Mike Crowther
+ * @author Iman Hassan & Mike Crowther & Richard Allen
  *
  */
 
